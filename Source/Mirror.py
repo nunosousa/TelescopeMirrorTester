@@ -22,15 +22,14 @@ class Mirror:
 		
         self.test_measurements
 
-    def set_parameter(self):
+    def set_parameter(self, **kwarg):
         #TBD
 		#https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 		#https://docs.python.org/3/tutorial/datastructures.html#tut-tuples
-        print("TBD")
+        pass
 
-    def get_parameter(self):
-        #TBD
-        print("TBD")
+    def get_parameter(self, **kwarg):
+        pass
 
     def find_best_fit_conic(self):
         """
