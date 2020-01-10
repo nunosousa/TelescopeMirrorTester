@@ -8,20 +8,24 @@ class Mirror:
     """
 
     def __init__(self, name, diameter, K, RoC):
-        self.name = name
-        self.diameter = diameter
+		self.mirror_details = {'name': "", 'diameter': 0, 'user_defined_K': 0, 'user_defined_RoC': 0, 'best_fit_d': 0, 'best_fit_K': 0, 'best_fit_RoC': 0}
+        self.mirror_details['name'] = name
+        self.mirror_details['diameter'] = diameter
 
-        self.user_defined_K = K
-        self.user_defined_RoC = RoC
+        self.mirror_details['user_defined_K'] = K
+        self.mirror_details['user_defined_RoC'] = RoC
 
+        self.mirror_details['best_fit_d'] = 0.0
+        self.mirror_details['best_fit_K'] = self.user_defined_K
+        self.mirror_details['best_fit_RoC'] = self.user_defined_RoC
+		
+		
         self.test_measurements
-
-        self.best_fit_d = 0.0
-        self.best_fit_K = self.user_defined_K
-        self.best_fit_RoC = self.user_defined_RoC
 
     def set_parameter(self):
         #TBD
+		#https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
+		#https://docs.python.org/3/tutorial/datastructures.html#tut-tuples
         print("TBD")
 
     def get_parameter(self):
