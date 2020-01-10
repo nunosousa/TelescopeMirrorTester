@@ -22,13 +22,16 @@ class Mirror:
 		
         self.test_measurements
 
-    def set_parameter(self, **kwarg):
+    def set_parameter(self, parameter):
         #TBD
 		#https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 		#https://docs.python.org/3/tutorial/datastructures.html#tut-tuples
+		
+		# if parameter in self.mirror_details
+		#self.mirror_details[parameter] = parameter
         pass
 
-    def get_parameter(self, **kwarg):
+    def get_parameter(self, parameter):
         pass
 
     def find_best_fit_conic(self):
