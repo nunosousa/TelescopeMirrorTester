@@ -1,4 +1,6 @@
+import numpy as np
 from scipy.optimize import curve_fit
+from math import sqrt
 
 class Mirror:
     """
@@ -11,6 +13,8 @@ class Mirror:
 
         self.user_defined_K = K
         self.user_defined_RoC = RoC
+
+        self.test_measurements
 
         self.best_fit_d = 0.0
         self.best_fit_K = self.user_defined_K
@@ -31,12 +35,16 @@ class Mirror:
 
         curve_fit(aspheric_surface_function)
 
-    def aspheric_surface_function(self, function_parameters, function_input, function_output):
+    def aspheric_surface_function(self, r, d, K, RoC):
         """
         Representation of the aspheric surface function.
         """
+        l = sqrt(RoC * RoC - (1 + K) * r * r)
+        f = ((RoC + l) * (RoC + l)) / (2 * (RoC + l) + ((1 + K) * r * r) / l)
+        f = f + (r * r) / (RoC + l)
+        f = f + d
 
-        return 0
+        return f
         
     def aspheric_surface_function_jacobian(self, function_parameters, function_input, function_output):
         """
