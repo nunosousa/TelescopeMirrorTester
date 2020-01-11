@@ -22,7 +22,8 @@ if test == 167:
 my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curvature)
 my_telescope_mirror.set_test_measurement_data(r, f)
 my_telescope_mirror.set_parameter("expected_k", -1.0)
-my_telescope_mirror.find_best_fit_conic()
+p = my_telescope_mirror.find_best_fit_conic()
+print(p)
 
 pyplot.plot(r, f)
 pyplot.show()
