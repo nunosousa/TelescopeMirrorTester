@@ -46,7 +46,7 @@ def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
     den_k_1_b = np.divide((1 + k) * np.multiply(r, r), l)
     den_k_1 = np.multiply(np.add(den_k_1_a, den_k_1_b), np.add(den_k_1_a, den_k_1_b))
 
-    num_k_2 = np.multiply(r, np.multiply(r, np.multiply(r, np.multiply(r, r))))
+    num_k_2 = np.multiply(r, np.multiply(r, np.multiply(r, r)))
     den_k_2 = 2 * np.multiply(l, np.multiply(radius_of_curvature + l, radius_of_curvature + l))
 
     part_div_k = np.subtract(np.divide(num_k_2, den_k_2), np.divide(num_k_1, den_k_1))
@@ -60,7 +60,7 @@ def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
     num_r_o_c_1_f = 2 + (2 * radius_of_curvature * np.reciprocal(l))
     num_r_o_c_1_g = np.divide(radius_of_curvature * (1 + k) * np.multiply(r, r), np.multiply(l, np.multiply(l, l)))
     num_r_o_c_1_A = np.multiply(num_r_o_c_1_a, np.multiply(num_r_o_c_1_b, np.add(num_r_o_c_1_c, num_r_o_c_1_d)))
-    num_r_o_c_1_B = np.multiply(num_r_o_c_1_e, np.add(num_r_o_c_1_f, num_r_o_c_1_g))
+    num_r_o_c_1_B = np.multiply(num_r_o_c_1_e, np.subtract(num_r_o_c_1_f, num_r_o_c_1_g))
     num_r_o_c_1 = np.subtract(num_r_o_c_1_A, num_r_o_c_1_B)
 
     den_r_o_c_1_a = 2 * (radius_of_curvature + l)
@@ -74,6 +74,7 @@ def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
 
     jacobian_vector = np.vstack((part_div_d, part_div_k, part_div_r_o_c))
     jacobian_vector = np.transpose(jacobian_vector)
+
     return jacobian_vector
 
 
