@@ -101,8 +101,8 @@ class Mirror:
             return self.mirror_details[parameter]
 
     def set_test_measurement_data(self, r, f):
-        self.test_measurement_data_f = r
-        self.test_measurement_data_r = f
+        self.test_measurement_data_r = r
+        self.test_measurement_data_f = f
 
     def find_best_fit_conic(self):
         """
@@ -120,8 +120,8 @@ class Mirror:
                                                               jac=aspheric_surface_function_jacobian)
 
         self.mirror_details['best_fit_d'] = best_fit_parameters[0]
-        self.mirror_details['best_fit_k'] = best_fit_parameters[0]
-        self.mirror_details['best_fit_radius_of_curvature'] = best_fit_parameters[0]
+        self.mirror_details['best_fit_k'] = best_fit_parameters[1]
+        self.mirror_details['best_fit_radius_of_curvature'] = best_fit_parameters[2]
 
         return best_fit_parameters
 
@@ -144,7 +144,7 @@ class Mirror:
         """
         r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=number_of_samples)
 
-        f_sample_points = aspheric_surface_function(r_sample_points, 0,
+        f_sample_points = aspheric_surface_function(r_sample_points, 0.0,
                                                     self.mirror_details['expected_k'],
                                                     self.mirror_details['expected_radius_of_curvature'])
 
