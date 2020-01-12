@@ -23,20 +23,25 @@ my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curv
 my_telescope_mirror.set_parameter("expected_k", -1.0)
 
 my_telescope_mirror.set_test_measurement_data(r, f)
-p = my_telescope_mirror.find_best_fit_conic()
+best_fit_parameters = my_telescope_mirror.find_best_fit_conic()
 best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generate_best_fit_conic_samples(100)
 expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_samples(100)
 
-print(p)
 
 pyplot.figure(1)
 pyplot.title('Mirror measurement data')
-pyplot.plot(expected_r_sample_points, expected_f_sample_points, "b-", label="Expected")
-pyplot.plot(best_fit_r_sample_points, best_fit_f_sample_points, "r-", label="Best fit")
-pyplot.scatter(r, f, label="Test")
+pyplot.plot(expected_r_sample_points, expected_f_sample_points, "b-",
+            label="Expected curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(0.0,
+                                                                                    my_telescope_mirror.get_parameter("expected_k"),
+                                                                                    my_telescope_mirror.get_parameter("expected_radius_of_curvature")))
+pyplot.plot(best_fit_r_sample_points, best_fit_f_sample_points, "r-",
+            label="Best fit curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(best_fit_parameters[0],
+                                                                                    best_fit_parameters[1],
+                                                                                    best_fit_parameters[2]))
+pyplot.scatter(r, f, label="Collected test data")
 pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Foucault/Wire test offsets [mm]')
-pyplot.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+pyplot.legend()
 
 pyplot.show()
 
