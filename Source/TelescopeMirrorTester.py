@@ -29,7 +29,22 @@ expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generat
 
 print(p)
 
-#pyplot.plot(best_fit_r_sample_points, best_fit_f_sample_points)
-pyplot.plot(expected_r_sample_points, expected_f_sample_points)
-pyplot.scatter(r, f)
+pyplot.figure(1)
+pyplot.subplot(211)
+pyplot.title('Expected and real test data curves')
+pyplot.plot(expected_r_sample_points, expected_f_sample_points, "b-", label="Expected")
+pyplot.scatter(r, f, label="Test")
+pyplot.xlabel('Mirror radius [mm]')
+pyplot.ylabel('Foucault/Wire test offsets [mm]')
+pyplot.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+
+pyplot.subplot(212)
+pyplot.title('Best fit curve')
+pyplot.plot(best_fit_r_sample_points, best_fit_f_sample_points, "b-", label="Best fit")
+pyplot.xlabel('Mirror radius [mm]')
+pyplot.ylabel('Foucault/Wire test offsets [mm]')
+pyplot.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+
 pyplot.show()
+
+

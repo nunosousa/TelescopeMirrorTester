@@ -128,7 +128,7 @@ class Mirror:
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
-        r_sample_points = np.linspace(0.1, self.mirror_details['diameter']/2, num=number_of_samples)
+        r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=number_of_samples)
 
         f_sample_points = aspheric_surface_function(r_sample_points,
                                                     self.mirror_details['best_fit_d'],
@@ -137,12 +137,11 @@ class Mirror:
 
         return r_sample_points, f_sample_points - self.mirror_details['best_fit_radius_of_curvature']
 
-
     def generate_desired_conic_samples(self, number_of_samples):
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
-        r_sample_points = np.linspace(0.1, self.mirror_details['diameter']/2, num=number_of_samples)
+        r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=number_of_samples)
 
         f_sample_points = aspheric_surface_function(r_sample_points, 0,
                                                     self.mirror_details['expected_k'],
