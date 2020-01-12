@@ -26,4 +26,5 @@ p = my_telescope_mirror.find_best_fit_conic()
 print(p)
 
 pyplot.plot(r, f)
+#pyplot.scatter(r, f)
 pyplot.show()

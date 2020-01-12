@@ -1,16 +1,74 @@
 import numpy as np
 from scipy.optimize import curve_fit
-from math import sqrt
+
+
+def aspheric_surface_function(r, d, k, radius_of_curvature):
+    """
+    Representation of the aspheric surface function.
+    """
+    l = np.sqrt((radius_of_curvature * radius_of_curvature) - ((1 + k) * np.multiply(r, r)))
+
+    num_1_a = np.multiply((radius_of_curvature + l), (radius_of_curvature + l))
+    den_1_a = 2 * (radius_of_curvature + l)
+    den_1_b = np.divide((1 + k) * np.multiply(r, r), l)
+
+    frac_1 = np.divide(num_1_a, np.add(den_1_a, den_1_b))
+    frac_2 = np.divide(np.multiply(r, r), radius_of_curvature + l)
+
+    return np.add(frac_1, frac_2) + d
+
+
+def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
+    """
+    Representation of the aspheric surface jacobian function.
+    """
+    sample_number = r.size
+
+    l = np.sqrt((radius_of_curvature * radius_of_curvature) - ((1 + k) * np.multiply(r, r)))
+
+    # Partial derivative on d
+    part_div_d = np.negative(np.ones(sample_number))
+
+    # Partial derivative on k
+    num_k_1_a = radius_of_curvature + l
+    num_k_1_b = np.divide(np.multiply(r, r), l)
+    num_k_1_c = 2 * (radius_of_curvature + l)
+    num_k_1_d = np.divide((1 + k) * np.multiply(r, r), l)
+    num_k_1_e = np.multiply(r, r)
+    num_k_1_f = np.multiply(radius_of_curvature + l, radius_of_curvature + l)
+    num_k_1_g = np.divide(np.add(l, (1 + k) * np.reciprocal(2 * l)), np.multiply(l, l))
+    num_k_1_h = np.reciprocal(l)
+    num_k_1_A = np.multiply(np.multiply(num_k_1_a, num_k_1_b), np.add(num_k_1_c, num_k_1_d))
+    num_k_1_B = np.multiply(np.multiply(num_k_1_e, num_k_1_f), np.subtract(num_k_1_g, num_k_1_h))
+    num_k_1 = np.add(num_k_1_A, num_k_1_B)
+
+    den_k_1_a = 2 * (radius_of_curvature + l)
+    den_k_1_b = np.divide((1 + k) * np.multiply(r, r), l)
+    den_k_1 = np.multiply(np.add(den_k_1_a, den_k_1_b), np.add(den_k_1_a, den_k_1_b))
+
+    num_k_2 = np.multiply(r, np.multiply(r, np.multiply(r, np.multiply(r, r))))
+    den_k_2 = 2 * np.multiply(l, np.multiply(radius_of_curvature + l, radius_of_curvature + l))
+
+    part_div_k = np.subtract(np.divide(num_k_2, den_k_2), np.divide(num_k_1, den_k_1))
+
+    # Partial derivative on the radius of curvature
+    # part_div_r_o_c =
+
+    jacobian_vector = np.vstack((part_div_d, part_div_k, part_div_d))
+    jacobian_vector = np.transpose(jacobian_vector)
+    return jacobian_vector
 
 
 class Mirror:
     """
     Represents a Telescope Parabolic Mirror and the tools to analyse it.
     """
+
     def __init__(self, name, diameter, radius_of_curvature):
         self.mirror_details = {'name': name, 'diameter': diameter, 'expected_k': -1.0,
                                'expected_radius_of_curvature': radius_of_curvature,
-                               'best_fit_d': 0.0, 'best_fit_k': -1.0, 'best_fit_radius_of_curvature': radius_of_curvature}
+                               'best_fit_d': 0.0, 'best_fit_k': -1.0,
+                               'best_fit_radius_of_curvature': radius_of_curvature}
 
         self.test_measurement_data_f = np.array([])
         self.test_measurement_data_r = np.array([])
@@ -34,32 +92,12 @@ class Mirror:
         f_plus_radius_of_curvature = self.test_measurement_data_f + self.mirror_details['expected_radius_of_curvature']
         p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
 
-        popt = curve_fit(self.aspheric_surface_function,
-                         self.test_measurement_data_r,
-                         f_plus_radius_of_curvature,
-                         p0, None, False, True)
+        best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_function,
+                                                              xdata=self.test_measurement_data_r,
+                                                              ydata=f_plus_radius_of_curvature,
+                                                              p0=p0,
+                                                              check_finite=True,
+                                                              method="lm",
+                                                              jac=aspheric_surface_function_jacobian)
 
-        return popt
-
-    def aspheric_surface_function(self, r, d, k, radius_of_curvature):
-        """
-        Representation of the aspheric surface function.
-        """
-
-        l = np.sqrt(radius_of_curvature * radius_of_curvature - (1 + k) * np.multiply(r, r))
-        a = np.multiply((radius_of_curvature + l), (radius_of_curvature + l))
-        b = 2 * (radius_of_curvature + l)
-        c = np.divide((1 + k) * np.multiply(r, r), l)
-        e = np.divide(np.multiply(r, r), radius_of_curvature + l)
-
-        f = np.divide(a, np.add(b, c))
-        f = np.add(f, e) + d
-
-        return f
-
-    def aspheric_surface_function_jacobian(self, function_parameters, function_input, function_output):
-        """
-        Representation of the aspheric surface jacobian function.
-        """
-
-        return 0
+        return best_fit_parameters
