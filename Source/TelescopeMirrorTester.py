@@ -16,19 +16,22 @@ if test == 158:
 
 if test == 167:
     # Test data - Test 167
-    r = np.array([49.14, 52.85, 55.22, 61.06, 65.42, 68.53, 72.53, 74.06, 76.96, 78.39, 79.91, 81.06, 82.16, 84.38, 85.83, 87.21, 89.09, 90.55, 92.70, 95.68, 99.52])
-    f = np.array([0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.45, 1.50, 1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.90, 1.95, 2.00])
+    r = np.array([0.0, 49.14, 52.85, 55.22, 61.06, 65.42, 68.53, 72.53, 74.06, 76.96, 78.39, 79.91, 81.06, 82.16, 84.38, 85.83, 87.21, 89.09, 90.55, 92.70, 95.68, 99.52])
+    f = np.array([0.0, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.45, 1.50, 1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.90, 1.95, 2.00])
 
 my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curvature)
 my_telescope_mirror.set_parameter("expected_k", -1.0)
 
 my_telescope_mirror.set_test_measurement_data(r, f)
 best_fit_parameters = my_telescope_mirror.find_best_fit_conic()
-best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generate_best_fit_conic_samples(100)
-expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_samples(100)
+best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generate_best_fit_conic_samples()
+expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_samples()
 
+r_interpolated, f_interpolated = my_telescope_mirror.test_measurement_data_analysis()
 
 pyplot.figure(1)
+
+pyplot.subplot(2, 1, 1)
 pyplot.title('Mirror measurement data')
 pyplot.plot(expected_r_sample_points, expected_f_sample_points, "b-",
             label="Expected curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(0.0,
@@ -43,6 +46,16 @@ pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Foucault/Wire test offsets [mm]')
 pyplot.legend()
 
+pyplot.subplot(2, 1, 2)
+pyplot.title('Mirror measurement data analysis')
+pyplot.plot(r_interpolated, f_interpolated, "b-", label="")
+pyplot.scatter(r, f, label="Collected test data")
+pyplot.xlabel('Mirror radius [mm]')
+pyplot.ylabel('Foucault/Wire test offsets [mm]')
+pyplot.legend()
+
 pyplot.show()
+
+
 
 
