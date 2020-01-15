@@ -3,6 +3,7 @@ from scipy.integrate import solve_ivp
 from scipy.optimize import curve_fit
 from scipy import interpolate
 
+
 def aspheric_surface_function(r, d, k, radius_of_curvature):
     """
     Representation of the aspheric surface function.
@@ -83,7 +84,14 @@ def aspheric_surface_ode(r, z, f):
     """
     Representation of the aspheric surface function.
     """
-    dz = r / (f(r) - z)
+    print("--")
+    print(r)
+    print(z)
+    print(f(r))
+
+    dz = np.divide(r, np.subtract(f(r), z))
+
+    print(dz)
 
     return dz
 
@@ -148,7 +156,12 @@ class Mirror:
 
         f_test_data_interpolated_points = test_data_interpolation_function(r_sample_points)
 
-        sol = solve_ivp(aspheric_surface_ode, [0, self.mirror_details['diameter'] / 2], 0.0)
+        sol = solve_ivp(fun=lambda r, z: aspheric_surface_ode(r, z, test_data_interpolation_function),
+                        t_span=[0, self.mirror_details['diameter'] / 2],
+                        y0=[0.0],
+                        method="RK45",
+                        t_eval=r_sample_points,
+                        first_step=1)
 
         return r_sample_points, f_test_data_interpolated_points
 
