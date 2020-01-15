@@ -79,6 +79,15 @@ def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
     return jacobian_vector
 
 
+def aspheric_surface_ode(r, z, f):
+    """
+    Representation of the aspheric surface function.
+    """
+    dz = r / (f(r) - z)
+
+    return dz
+
+
 class Mirror:
     """
     Represents a Telescope Parabolic Mirror and the tools to analyse it.
@@ -130,10 +139,6 @@ class Mirror:
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
-        if self.test_measurement_data_r[0] != 0:
-            self.test_measurement_data_r = np.insert(self.test_measurement_data_r, 0, 0.0)
-            self.test_measurement_data_f = np.insert(self.test_measurement_data_f, 0, 0.0)
-
         test_data_interpolation_function = interpolate.interp1d(self.test_measurement_data_r,
                                                                 self.test_measurement_data_f,
                                                                 kind="linear",
@@ -143,14 +148,9 @@ class Mirror:
 
         f_test_data_interpolated_points = test_data_interpolation_function(r_sample_points)
 
-        return r_sample_points, f_test_data_interpolated_points
+        sol = solve_ivp(aspheric_surface_ode, [0, self.mirror_details['diameter'] / 2], 0.0)
 
-    def aspheric_surface_ode(self, r, z):
-        """
-        Representation of the aspheric surface function.
-        """
-        #return np.divide(r, )
-        pass
+        return r_sample_points, f_test_data_interpolated_points
 
     def generate_best_fit_conic_samples(self):
         """
