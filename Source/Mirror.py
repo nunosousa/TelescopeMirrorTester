@@ -160,8 +160,7 @@ class Mirror:
                         t_span=[0, self.mirror_details['diameter'] / 2],
                         y0=[0.0],
                         method="RK45",
-                        t_eval=r_sample_points,
-                        first_step=1)
+                        t_eval=r_sample_points)
 
         return r_sample_points, f_test_data_interpolated_points
 
