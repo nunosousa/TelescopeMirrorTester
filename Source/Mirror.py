@@ -152,15 +152,17 @@ class Mirror:
                                                                 kind="cubic",
                                                                 fill_value="extrapolate")
 
-        r_sample_points = np.arange(0.0, self.mirror_details['diameter'] / 2, step=0.5)
+        r_sample_points = np.arange(0.0, self.mirror_details['diameter'] / 2, step=1.0)
 
         f_test_data_interpolated_points = test_data_interpolation_function(r_sample_points)
 
         sol = solve_ivp(fun=lambda r, z: aspheric_surface_ode(r, z, test_data_interpolation_function(r)),
                         t_span=[0.0, self.mirror_details['diameter'] / 2],
                         y0=[0.0],
-                        method="RK45",
-                        t_eval=r_sample_points)
+                        method="RK23",
+                        t_eval=r_sample_points,
+                        dense_output=True,
+                        vectorized=False)
 
         return r_sample_points, f_test_data_interpolated_points
 
