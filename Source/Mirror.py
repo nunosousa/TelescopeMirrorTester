@@ -87,9 +87,9 @@ def aspheric_surface_ode(r, z, f):
     print("--")
     print(r)
     print(z)
-    print(f(r))
+    print(f)
 
-    dz = np.divide(r, np.subtract(f(r), z))
+    dz = np.divide(r, np.subtract(f, z))
 
     print(dz)
 
@@ -149,15 +149,15 @@ class Mirror:
         """
         test_data_interpolation_function = interpolate.interp1d(self.test_measurement_data_r,
                                                                 self.test_measurement_data_f,
-                                                                kind="linear",
+                                                                kind="cubic",
                                                                 fill_value="extrapolate")
 
-        r_sample_points = np.arange(0, self.mirror_details['diameter'] / 2, step=0.5)
+        r_sample_points = np.arange(0.0, self.mirror_details['diameter'] / 2, step=0.5)
 
         f_test_data_interpolated_points = test_data_interpolation_function(r_sample_points)
 
-        sol = solve_ivp(fun=lambda r, z: aspheric_surface_ode(r, z, test_data_interpolation_function),
-                        t_span=[0, self.mirror_details['diameter'] / 2],
+        sol = solve_ivp(fun=lambda r, z: aspheric_surface_ode(r, z, test_data_interpolation_function(r)),
+                        t_span=[0.0, self.mirror_details['diameter'] / 2],
                         y0=[0.0],
                         method="RK45",
                         t_eval=r_sample_points)
