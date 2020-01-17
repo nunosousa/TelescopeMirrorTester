@@ -84,14 +84,7 @@ def aspheric_surface_ode(r, z, f):
     """
     Representation of the aspheric surface function.
     """
-    print("--")
-    print(r)
-    print(z)
-    print(f)
-
     dz = np.divide(r, np.subtract(f, z))
-
-    print(dz)
 
     return dz
 
@@ -109,6 +102,8 @@ class Mirror:
 
         self.test_measurement_data_f = np.array([])
         self.test_measurement_data_r = np.array([])
+
+        self.sample_points_number = 100
 
     def set_parameter(self, parameter, value):
         if parameter in self.mirror_details:
@@ -147,30 +142,35 @@ class Mirror:
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
+        f_plus_radius_of_curvature = self.test_measurement_data_f + self.mirror_details['expected_radius_of_curvature']
+
         test_data_interpolation_function = interpolate.interp1d(self.test_measurement_data_r,
-                                                                self.test_measurement_data_f,
+                                                                f_plus_radius_of_curvature,
                                                                 kind="cubic",
                                                                 fill_value="extrapolate")
 
-        r_sample_points = np.arange(0.0, self.mirror_details['diameter'] / 2, step=1.0)
+        r_sample_points = np.linspace(0.0, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
         f_test_data_interpolated_points = test_data_interpolation_function(r_sample_points)
 
-        sol = solve_ivp(fun=lambda r, z: aspheric_surface_ode(r, z, test_data_interpolation_function(r)),
-                        t_span=[0.0, self.mirror_details['diameter'] / 2],
-                        y0=[0.0],
-                        method="RK23",
-                        t_eval=r_sample_points,
-                        dense_output=True,
-                        vectorized=False)
+        ode_solution = solve_ivp(fun=lambda r, z: aspheric_surface_ode(r, z, test_data_interpolation_function(r)),
+                                 t_span=[r_sample_points[0], r_sample_points[-1]],
+                                 y0=[0.0],
+                                 method="RK45",
+                                 t_eval=r_sample_points,
+                                 dense_output=True)
 
-        return r_sample_points, f_test_data_interpolated_points
+        results = (r_sample_points,
+                   f_test_data_interpolated_points - self.mirror_details['expected_radius_of_curvature'],
+                   np.transpose(ode_solution.y))
+
+        return results
 
     def generate_best_fit_conic_samples(self):
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
-        r_sample_points = np.arange(0.1, self.mirror_details['diameter'] / 2, step=0.5)
+        r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
         f_sample_points = aspheric_surface_function(r_sample_points,
                                                     self.mirror_details['best_fit_d'],
@@ -183,7 +183,7 @@ class Mirror:
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
-        r_sample_points = np.arange(0.1, self.mirror_details['diameter'] / 2, step=0.5)
+        r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
         f_sample_points = aspheric_surface_function(r_sample_points, 0.0,
                                                     self.mirror_details['expected_k'],
