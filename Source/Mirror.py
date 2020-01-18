@@ -88,7 +88,7 @@ def aspheric_surface_equation(r, d, k, radius_of_curvature):
 
     num = np.multiply(r, r)
     den = radius_of_curvature + l
-    z = num/den + d
+    z = num / den + d
 
     return z
 
@@ -175,7 +175,7 @@ class Mirror:
 
         results = (r_sample_points,
                    f_test_data_interpolated_points - self.mirror_details['expected_radius_of_curvature'],
-                   np.transpose(ode_solution.y))
+                   np.reshape(ode_solution.y, (-1)))
 
         return results
 
@@ -211,7 +211,7 @@ class Mirror:
         r_sample_points = np.linspace(0.0, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
         z_sample_points = aspheric_surface_equation(r_sample_points,
-                                                    self.mirror_details['best_fit_d'],
+                                                    0.0,  # self.mirror_details['best_fit_d'],
                                                     self.mirror_details['best_fit_k'],
                                                     self.mirror_details['best_fit_radius_of_curvature'])
 
