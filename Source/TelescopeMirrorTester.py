@@ -24,15 +24,15 @@ my_telescope_mirror.set_parameter("expected_k", -1.0)
 
 my_telescope_mirror.set_test_measurement_data(r, f)
 best_fit_parameters = my_telescope_mirror.find_best_fit_conic()
-best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generate_best_fit_conic_samples()
-expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_samples()
 
-r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.test_measurement_data_analysis()
 
 # Display results
 pyplot.figure(1)
 
 # Plot test measurement data and best fit curve
+best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generate_best_fit_conic_offset_samples()
+expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_offset_samples()
+
 pyplot.subplot(3, 1, 1)
 pyplot.title('Mirror measurement data')
 pyplot.plot(expected_r_sample_points, expected_f_sample_points, "b-",
@@ -49,6 +49,8 @@ pyplot.ylabel('Foucault/Wire test offsets [mm]')
 pyplot.legend()
 
 # Plot test measurement interpolated data
+r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.test_measurement_data_analysis()
+
 pyplot.subplot(3, 1, 2)
 pyplot.title('Mirror measurement data analysis')
 pyplot.plot(r_interpolated, f_interpolated, "b-", label="")
@@ -58,9 +60,14 @@ pyplot.ylabel('Foucault/Wire test offsets [mm]')
 pyplot.legend()
 
 # Plot mirror profile
+best_fit_r_sample_points, best_fit_z_sample_points = my_telescope_mirror.generate_best_fit_conic_samples()
+expected_r_sample_points, expected_z_sample_points = my_telescope_mirror.generate_desired_conic_samples()
+
 pyplot.subplot(3, 1, 3)
 pyplot.title('Mirror profile')
 pyplot.plot(r_interpolated, mirror_profile, "b-", label="Mirror profile")
+pyplot.plot(r_interpolated, expected_z_sample_points, "r-", label="Mirror profile")
+#pyplot.plot(r_interpolated, np.subtract(mirror_profile, expected_z_sample_points), "r-", label="Mirror profile error")
 pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Mirror height [mm]')
 pyplot.legend()

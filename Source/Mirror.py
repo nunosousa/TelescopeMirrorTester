@@ -4,7 +4,7 @@ from scipy.optimize import curve_fit
 from scipy import interpolate
 
 
-def aspheric_surface_function(r, d, k, radius_of_curvature):
+def aspheric_surface_offset_function(r, d, k, radius_of_curvature):
     """
     Representation of the aspheric surface function.
     """
@@ -20,7 +20,7 @@ def aspheric_surface_function(r, d, k, radius_of_curvature):
     return np.add(frac_1, frac_2) + d
 
 
-def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
+def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
     """
     Representation of the aspheric surface jacobian function.
     """
@@ -80,6 +80,19 @@ def aspheric_surface_function_jacobian(r, d, k, radius_of_curvature):
     return jacobian_vector
 
 
+def aspheric_surface_equation(r, d, k, radius_of_curvature):
+    """
+    Representation of the aspheric surface function.
+    """
+    l = np.sqrt((radius_of_curvature * radius_of_curvature) - ((1 + k) * np.multiply(r, r)))
+
+    num = np.multiply(r, r)
+    den = radius_of_curvature + l
+    z = num/den + d
+
+    return z
+
+
 def aspheric_surface_ode(r, z, f):
     """
     Representation of the aspheric surface function.
@@ -124,13 +137,13 @@ class Mirror:
         f_plus_radius_of_curvature = self.test_measurement_data_f + self.mirror_details['expected_radius_of_curvature']
         p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
 
-        best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_function,
+        best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
                                                               xdata=self.test_measurement_data_r,
                                                               ydata=f_plus_radius_of_curvature,
                                                               p0=p0,
                                                               check_finite=True,
                                                               method="lm",
-                                                              jac=aspheric_surface_function_jacobian)
+                                                              jac=aspheric_surface_offset_function_jacobian)
 
         self.mirror_details['best_fit_d'] = best_fit_parameters[0]
         self.mirror_details['best_fit_k'] = best_fit_parameters[1]
@@ -166,27 +179,52 @@ class Mirror:
 
         return results
 
-    def generate_best_fit_conic_samples(self):
+    def generate_best_fit_conic_offset_samples(self):
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
         r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
-        f_sample_points = aspheric_surface_function(r_sample_points,
+        f_sample_points = aspheric_surface_offset_function(r_sample_points,
+                                                           self.mirror_details['best_fit_d'],
+                                                           self.mirror_details['best_fit_k'],
+                                                           self.mirror_details['best_fit_radius_of_curvature'])
+
+        return r_sample_points, f_sample_points - self.mirror_details['best_fit_radius_of_curvature']
+
+    def generate_desired_conic_offset_samples(self):
+        """
+        Find the best fit conic for the given test data and desired mirror parameters.
+        """
+        r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
+
+        f_sample_points = aspheric_surface_offset_function(r_sample_points, 0.0,
+                                                           self.mirror_details['expected_k'],
+                                                           self.mirror_details['expected_radius_of_curvature'])
+
+        return r_sample_points, f_sample_points - self.mirror_details['expected_radius_of_curvature']
+
+    def generate_best_fit_conic_samples(self):
+        """
+        Find the best fit conic for the given test data and desired mirror parameters.
+        """
+        r_sample_points = np.linspace(0.0, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
+
+        z_sample_points = aspheric_surface_equation(r_sample_points,
                                                     self.mirror_details['best_fit_d'],
                                                     self.mirror_details['best_fit_k'],
                                                     self.mirror_details['best_fit_radius_of_curvature'])
 
-        return r_sample_points, f_sample_points - self.mirror_details['best_fit_radius_of_curvature']
+        return r_sample_points, z_sample_points
 
     def generate_desired_conic_samples(self):
         """
         Find the best fit conic for the given test data and desired mirror parameters.
         """
-        r_sample_points = np.linspace(0.1, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
+        r_sample_points = np.linspace(0.0, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
-        f_sample_points = aspheric_surface_function(r_sample_points, 0.0,
+        z_sample_points = aspheric_surface_equation(r_sample_points, 0.0,
                                                     self.mirror_details['expected_k'],
                                                     self.mirror_details['expected_radius_of_curvature'])
 
-        return r_sample_points, f_sample_points - self.mirror_details['expected_radius_of_curvature']
+        return r_sample_points, z_sample_points
