@@ -135,6 +135,7 @@ class Mirror:
         Find the best fit conic for the given test data and desired mirror parameters.
         """
         f_plus_radius_of_curvature = self.test_measurement_data_f + self.mirror_details['expected_radius_of_curvature']
+
         p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
@@ -142,14 +143,19 @@ class Mirror:
                                                               ydata=f_plus_radius_of_curvature,
                                                               p0=p0,
                                                               check_finite=True,
-                                                              method="lm",
-                                                              jac=aspheric_surface_offset_function_jacobian)
+                                                              method="trf",
+                                                              jac=aspheric_surface_offset_function_jacobian,
+                                                              x_scale="jac",
+                                                              max_nfev=1000,
+                                                              verbose=2)
+
+        p_standard_deviation = np.sqrt(np.diag(estimated_covariance))
 
         self.mirror_details['best_fit_d'] = best_fit_parameters[0]
         self.mirror_details['best_fit_k'] = best_fit_parameters[1]
         self.mirror_details['best_fit_radius_of_curvature'] = best_fit_parameters[2]
 
-        return best_fit_parameters
+        return best_fit_parameters, p_standard_deviation
 
     def test_measurement_data_analysis(self):
         """

@@ -26,7 +26,9 @@ my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curv
 my_telescope_mirror.set_parameter("expected_k", -1.0)
 
 my_telescope_mirror.set_test_measurement_data(r, f)
-best_fit_parameters = my_telescope_mirror.find_best_fit_conic()
+best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic()
+
+print(p_std)
 
 # Display results
 pyplot.figure(1)
