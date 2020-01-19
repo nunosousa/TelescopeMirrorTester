@@ -146,7 +146,7 @@ class Mirror:
                                                               method="trf",
                                                               jac=aspheric_surface_offset_function_jacobian,
                                                               x_scale="jac",
-                                                              max_nfev=1000,
+                                                              loss="soft_l1",
                                                               verbose=2)
 
         p_standard_deviation = np.sqrt(np.diag(estimated_covariance))
@@ -196,7 +196,8 @@ class Mirror:
                                                            self.mirror_details['best_fit_k'],
                                                            self.mirror_details['best_fit_radius_of_curvature'])
 
-        return r_sample_points, f_sample_points - self.mirror_details['best_fit_radius_of_curvature']
+        return r_sample_points, \
+               f_sample_points - self.mirror_details['best_fit_radius_of_curvature'] - self.mirror_details['best_fit_d']
 
     def generate_desired_conic_offset_samples(self):
         """
