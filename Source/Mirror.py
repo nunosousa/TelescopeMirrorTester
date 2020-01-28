@@ -8,16 +8,12 @@ def aspheric_surface_offset_function(r, d, k, radius_of_curvature):
     """
     Representation of the aspheric surface function.
     """
-    l = np.sqrt((radius_of_curvature * radius_of_curvature) - ((1 + k) * np.multiply(r, r)))
+    fraction_1 = np.divide(np.power(r, 2), radius_of_curvature * (
+            np.sqrt(1 - ((k + 1) / (radius_of_curvature * radius_of_curvature)) * np.power(r, 2)) + 1))
+    fraction_2 = radius_of_curvature * np.sqrt(
+        1 - ((k + 1) / (radius_of_curvature * radius_of_curvature)) * np.power(r, 2))
 
-    num_1_a = np.multiply((radius_of_curvature + l), (radius_of_curvature + l))
-    den_1_a = 2 * (radius_of_curvature + l)
-    den_1_b = np.divide((1 + k) * np.multiply(r, r), l)
-
-    frac_1 = np.divide(num_1_a, np.add(den_1_a, den_1_b))
-    frac_2 = np.divide(np.multiply(r, r), radius_of_curvature + l)
-
-    return np.add(frac_1, frac_2) + d
+    return d + np.add(fraction_1, fraction_2)
 
 
 def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
@@ -26,53 +22,28 @@ def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
     """
     sample_number = r.size
 
-    l = np.sqrt((radius_of_curvature * radius_of_curvature) - ((1 + k) * np.multiply(r, r)))
+    l = np.sqrt(np.negative((k * np.power(r, 2) - radius_of_curvature * radius_of_curvature + np.power(r, 2)) / (
+            radius_of_curvature * radius_of_curvature)))
 
     # Partial derivative on d
-    part_div_d = np.negative(np.ones(sample_number))
+    part_div_d = np.ones(sample_number)
 
     # Partial derivative on k
-    num_k_1_a = radius_of_curvature + l
-    num_k_1_b = np.divide(np.multiply(r, r), l)
-    num_k_1_c = 2 * (radius_of_curvature + l)
-    num_k_1_d = np.divide((1 + k) * np.multiply(r, r), l)
-    num_k_1_e = np.multiply(r, r)
-    num_k_1_f = np.multiply(radius_of_curvature + l, radius_of_curvature + l)
-    num_k_1_g = np.divide(np.add(l, (1 + k) * np.reciprocal(2 * l)), np.multiply(l, l))
-    num_k_1_h = np.reciprocal(l)
-    num_k_1_A = np.multiply(np.multiply(num_k_1_a, num_k_1_b), np.add(num_k_1_c, num_k_1_d))
-    num_k_1_B = np.multiply(np.multiply(num_k_1_e, num_k_1_f), np.subtract(num_k_1_g, num_k_1_h))
-    num_k_1 = np.add(num_k_1_A, num_k_1_B)
+    num = np.multiply(np.power(r, 2), np.add((2 * radius_of_curvature * radius_of_curvature * l),
+                                             np.add(np.negative(k * np.power(r, 2)),
+                                                    2 * (radius_of_curvature * radius_of_curvature - np.power(r, 2)))))
+    den = 2 * radius_of_curvature * radius_of_curvature * radius_of_curvature * np.multiply(l, np.power(l + 1, 2))
 
-    den_k_1_a = 2 * (radius_of_curvature + l)
-    den_k_1_b = np.divide((1 + k) * np.multiply(r, r), l)
-    den_k_1 = np.multiply(np.add(den_k_1_a, den_k_1_b), np.add(den_k_1_a, den_k_1_b))
-
-    num_k_2 = np.multiply(r, np.multiply(r, np.multiply(r, r)))
-    den_k_2 = 2 * np.multiply(l, np.multiply(radius_of_curvature + l, radius_of_curvature + l))
-
-    part_div_k = np.subtract(np.divide(num_k_2, den_k_2), np.divide(num_k_1, den_k_1))
+    part_div_k = np.negative(np.divide(num, den))
 
     # Partial derivative on the radius of curvature
-    num_r_o_c_1_a = 2 * (radius_of_curvature + l)
-    num_r_o_c_1_b = 1 + (radius_of_curvature * np.reciprocal(l))
-    num_r_o_c_1_c = 2 * (radius_of_curvature + l)
-    num_r_o_c_1_d = np.divide((1 + k) * np.multiply(r, r), l)
-    num_r_o_c_1_e = np.multiply(radius_of_curvature + l, radius_of_curvature + l)
-    num_r_o_c_1_f = 2 + (2 * radius_of_curvature * np.reciprocal(l))
-    num_r_o_c_1_g = np.divide(radius_of_curvature * (1 + k) * np.multiply(r, r), np.multiply(l, np.multiply(l, l)))
-    num_r_o_c_1_A = np.multiply(num_r_o_c_1_a, np.multiply(num_r_o_c_1_b, np.add(num_r_o_c_1_c, num_r_o_c_1_d)))
-    num_r_o_c_1_B = np.multiply(num_r_o_c_1_e, np.subtract(num_r_o_c_1_f, num_r_o_c_1_g))
-    num_r_o_c_1 = np.subtract(num_r_o_c_1_A, num_r_o_c_1_B)
+    num = np.add(np.multiply(2 * radius_of_curvature * radius_of_curvature - np.power(r, 2), l),
+                 np.add(np.negative(k * np.power(r, 2)),
+                        2 * (radius_of_curvature * radius_of_curvature - np.power(r, 2))))
 
-    den_r_o_c_1_a = 2 * (radius_of_curvature + l)
-    den_r_o_c_1_b = np.divide((1 + k) * np.multiply(r, r), l)
-    den_r_o_c_1 = np.multiply(np.add(den_r_o_c_1_a, den_r_o_c_1_b), np.add(den_r_o_c_1_a, den_r_o_c_1_b))
+    den = radius_of_curvature * radius_of_curvature * np.multiply(l, np.power(l + 1, 2))
 
-    num_r_o_c_2 = np.multiply(np.multiply(r, r), 1 + (radius_of_curvature * np.reciprocal(l)))
-    den_r_o_c_2 = np.multiply(radius_of_curvature + l, radius_of_curvature + l)
-
-    part_div_r_o_c = np.subtract(np.divide(num_r_o_c_1, den_r_o_c_1), np.divide(num_r_o_c_2, den_r_o_c_2))
+    part_div_r_o_c = np.divide(num, den)
 
     jacobian_vector = np.vstack((part_div_d, part_div_k, part_div_r_o_c))
     jacobian_vector = np.transpose(jacobian_vector)

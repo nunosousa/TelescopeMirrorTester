@@ -7,6 +7,7 @@ test = 167
 mirror_name = "My Telescope Mirror"
 mirror_diameter = 203.5
 mirror_radius_of_curvature = 2132.0
+conic_constant = -1.0
 
 if test == 158:
     # Test data - Test 158
@@ -32,7 +33,7 @@ if test == 1670:
          1.85])
 
 my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curvature)
-my_telescope_mirror.set_parameter("expected_k", -1.0)
+my_telescope_mirror.set_parameter("expected_k", conic_constant)
 
 my_telescope_mirror.set_test_measurement_data(r, f)
 best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic()
