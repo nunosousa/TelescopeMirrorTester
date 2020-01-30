@@ -43,7 +43,8 @@ def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
 
     den = radius_of_curvature * radius_of_curvature * np.multiply(l, np.power(l + 1, 2))
 
-    part_div_r_o_c = np.divide(num, den)
+    #part_div_r_o_c = np.divide(num, den) # check if this makes sence
+    part_div_r_o_c = np.zeros(sample_number)
 
     jacobian_vector = np.vstack((part_div_d, part_div_k, part_div_r_o_c))
     jacobian_vector = np.transpose(jacobian_vector)
@@ -112,8 +113,8 @@ class Mirror:
                       self.mirror_details['expected_radius_of_curvature']])
         
         # TODO: Tidy this code up
-        roc_std = 5.0
-        foucault_std = 0.002
+        roc_std = 1/5.0
+        foucault_std = 1/0.002
         sample_number = self.test_measurement_data_f.size
         measurements_std = np.ones(sample_number)*foucault_std
         measurements_std[0] = roc_std
