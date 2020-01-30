@@ -110,11 +110,21 @@ class Mirror:
 
         p0 = np.array([self.mirror_details['expected_d'], self.mirror_details['expected_k'],
                       self.mirror_details['expected_radius_of_curvature']])
+        
+        # TODO: Tidy this code up
+        roc_std = 5.0
+        foucault_std = 0.002
+        sample_number = self.test_measurement_data_f.size
+        measurements_std = np.ones(sample_number)*foucault_std
+        measurements_std[0] = roc_std
+        # TODO: Tidy this code up
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
                                                               xdata=self.test_measurement_data_r,
                                                               ydata=f_plus_radius_of_curvature,
                                                               p0=p0,
+                                                              sigma=measurements_std,
+                                                              absolute_sigma=True,
                                                               check_finite=True,
                                                               method="trf",
                                                               jac=aspheric_surface_offset_function_jacobian,
