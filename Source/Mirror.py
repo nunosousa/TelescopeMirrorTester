@@ -26,7 +26,7 @@ def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
             radius_of_curvature * radius_of_curvature)))
 
     # Partial derivative on d
-    part_div_d = np.ones(sample_number)
+    part_div_d = np.negative(np.ones(sample_number))
 
     # Partial derivative on k
     num = np.multiply(np.power(r, 2), np.add((2 * radius_of_curvature * radius_of_curvature * l),
