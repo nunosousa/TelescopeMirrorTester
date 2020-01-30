@@ -13,7 +13,7 @@ def aspheric_surface_offset_function(r, d, k, radius_of_curvature):
     fraction_2 = radius_of_curvature * np.sqrt(
         1 - ((k + 1) / (radius_of_curvature * radius_of_curvature)) * np.power(r, 2))
 
-    return d + np.add(fraction_1, fraction_2)
+    return np.add(fraction_1, fraction_2) + d
 
 
 def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
@@ -26,7 +26,7 @@ def aspheric_surface_offset_function_jacobian(r, d, k, radius_of_curvature):
             radius_of_curvature * radius_of_curvature)))
 
     # Partial derivative on d
-    part_div_d = np.negative(np.ones(sample_number))
+    part_div_d = np.ones(sample_number)
 
     # Partial derivative on k
     num = np.multiply(np.power(r, 2), np.add((2 * radius_of_curvature * radius_of_curvature * l),
@@ -79,7 +79,8 @@ class Mirror:
     """
 
     def __init__(self, name, diameter, radius_of_curvature):
-        self.mirror_details = {'name': name, 'diameter': diameter, 'expected_k': -1.0,
+        self.mirror_details = {'name': name, 'diameter': diameter, 'expected_d': 0.0,
+                               'expected_k': -1.0,
                                'expected_radius_of_curvature': radius_of_curvature,
                                'best_fit_d': 0.0, 'best_fit_k': -1.0,
                                'best_fit_radius_of_curvature': radius_of_curvature}
@@ -107,7 +108,8 @@ class Mirror:
         """
         f_plus_radius_of_curvature = self.test_measurement_data_f + self.mirror_details['expected_radius_of_curvature']
 
-        p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
+        p0 = np.array([self.mirror_details['expected_d'], self.mirror_details['expected_k'],
+                      self.mirror_details['expected_radius_of_curvature']])
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
                                                               xdata=self.test_measurement_data_r,

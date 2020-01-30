@@ -8,6 +8,7 @@ mirror_name = "My Telescope Mirror"
 mirror_diameter = 203.5
 mirror_radius_of_curvature = 2132.0
 conic_constant = -1.0
+best_fit_vertex_offset = 0.0
 
 if test == 158:
     # Test data - Test 158
@@ -34,6 +35,7 @@ if test == 1670:
 
 my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curvature)
 my_telescope_mirror.set_parameter("expected_k", conic_constant)
+my_telescope_mirror.set_parameter("expected_d", best_fit_vertex_offset)
 
 my_telescope_mirror.set_test_measurement_data(r, f)
 best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic()
@@ -51,7 +53,8 @@ r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.test_measur
 pyplot.subplot(2, 1, 1)
 pyplot.title('Mirror measurement data')
 pyplot.plot(expected_f_sample_points, expected_r_sample_points, "b-",
-            label="Expected curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(0.0,
+            label="Expected curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(my_telescope_mirror.get_parameter(
+                                                                                        "expected_d"),
                                                                                     my_telescope_mirror.get_parameter(
                                                                                         "expected_k"),
                                                                                     my_telescope_mirror.get_parameter(
