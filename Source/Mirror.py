@@ -86,8 +86,9 @@ class Mirror:
                                'best_fit_d': 0.0, 'best_fit_k': -1.0,
                                'best_fit_radius_of_curvature': radius_of_curvature}
 
-        self.test_measurement_data_f = np.array([])
         self.test_measurement_data_r = np.array([])
+        self.test_measurement_data_f = np.array([])
+        self.test_measurement_data_f_standard_deviation = np.array([])
 
         self.sample_points_number = 100
 
@@ -99,9 +100,10 @@ class Mirror:
         if parameter in self.mirror_details:
             return self.mirror_details[parameter]
 
-    def set_test_measurement_data(self, r, f):
+    def set_test_measurement_data(self, r, f, f_std):
         self.test_measurement_data_r = r
         self.test_measurement_data_f = f
+        self.test_measurement_data_f_standard_deviation = f_std
 
     def find_best_fit_conic(self):
         """
@@ -112,20 +114,13 @@ class Mirror:
         p0 = np.array([self.mirror_details['expected_d'], self.mirror_details['expected_k'],
                       self.mirror_details['expected_radius_of_curvature']])
         
-        # TODO: Tidy this code up
-        roc_std = 5.0
-        foucault_std = 0.02
-        sample_number = self.test_measurement_data_f.size
-        measurements_std = np.ones(sample_number)*foucault_std
-        measurements_std[0] = roc_std
         p_scale = np.array([0.01, 1, self.mirror_details['expected_radius_of_curvature']])
-        # TODO: Tidy this code up
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
                                                               xdata=self.test_measurement_data_r,
                                                               ydata=f_plus_radius_of_curvature,
                                                               p0=p0,
-                                                              sigma=measurements_std,
+                                                              sigma=self.test_measurement_data_f_standard_deviation,
                                                               absolute_sigma=True,
                                                               check_finite=True,
                                                               method="trf",

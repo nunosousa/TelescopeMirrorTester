@@ -37,7 +37,13 @@ my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curv
 my_telescope_mirror.set_parameter("expected_k", conic_constant)
 my_telescope_mirror.set_parameter("expected_d", best_fit_vertex_offset)
 
-my_telescope_mirror.set_test_measurement_data(r, f)
+
+roc_std = 5.0
+foucault_std = 0.02
+measurements_std = np.ones(f.size)*foucault_std
+measurements_std[0] = roc_std
+
+my_telescope_mirror.set_test_measurement_data(r, f, measurements_std)
 best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic()
 
 print(p_std)
