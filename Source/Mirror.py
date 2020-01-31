@@ -114,7 +114,7 @@ class Mirror:
         
         # TODO: Tidy this code up
         roc_std = 5.0
-        foucault_std = 0.002
+        foucault_std = 0.02
         sample_number = self.test_measurement_data_f.size
         measurements_std = np.ones(sample_number)*foucault_std
         measurements_std[0] = roc_std
@@ -180,9 +180,11 @@ class Mirror:
                                                            self.mirror_details['best_fit_d'],
                                                            self.mirror_details['best_fit_k'],
                                                            self.mirror_details['best_fit_radius_of_curvature'])
+        
+        best_fit_offset = self.mirror_details['best_fit_radius_of_curvature'] + self.mirror_details['best_fit_d'] - self.mirror_details['expected_radius_of_curvature']
 
         return r_sample_points, \
-               f_sample_points - self.mirror_details['best_fit_radius_of_curvature'] - self.mirror_details['best_fit_d']
+               f_sample_points - self.mirror_details['best_fit_radius_of_curvature'] - self.mirror_details['best_fit_d'] + best_fit_offset
 
     def generate_desired_conic_offset_samples(self):
         """
