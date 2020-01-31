@@ -199,7 +199,7 @@ class Mirror:
         r_sample_points = np.linspace(0.0, self.mirror_details['diameter'] / 2, num=self.sample_points_number)
 
         z_sample_points = aspheric_surface_equation(r_sample_points,
-                                                    0.0,  # self.mirror_details['best_fit_d'],
+                                                    0.0, #self.mirror_details['best_fit_d'],
                                                     self.mirror_details['best_fit_k'],
                                                     self.mirror_details['best_fit_radius_of_curvature'])
 

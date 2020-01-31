@@ -2,7 +2,7 @@ from Mirror import Mirror
 import numpy as np
 import matplotlib.pyplot as pyplot
 
-test = 167
+test = 213
 
 mirror_name = "My Telescope Mirror"
 mirror_diameter = 203.5
@@ -24,14 +24,13 @@ if test == 167:
         [0.0, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.45, 1.50, 1.55, 1.60, 1.65, 1.70, 1.75, 1.80,
          1.85, 1.90, 1.95, 2.00])
 
-if test == 1670:
-    # Test data - Test 167
+if test == 213:
+    # Test data - Test 213 b
     r = np.array(
-        [0.0, 49.14, 52.85, 55.22, 61.06, 65.42, 68.53, 72.53, 74.06, 76.96, 78.39, 79.91, 81.06, 82.16, 84.38, 85.83,
-         87.21, 89.09, 90.55])
+        [5.73, 31.02, 38.87, 45.63, 49.60, 50.95, 53.56, 56.14, 59.10, 62.95, 66.45, 70.51, 74.62, 77.33, 78.90, 81.57, 84.55, 86.39, 89.15, 91.90, 95.27, 97.36])
     f = np.array(
-        [0.0, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.45, 1.50, 1.55, 1.60, 1.65, 1.70, 1.75, 1.80,
-         1.85])
+        [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.50, 1.60, 1.70, 1.80, 1.90, 2.00, 2.10])
+
 
 my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curvature)
 my_telescope_mirror.set_parameter("expected_k", conic_constant)
@@ -55,7 +54,6 @@ best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generat
 expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_offset_samples()
 r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.test_measurement_data_analysis()
 
-pyplot.subplot(2, 1, 1)
 pyplot.title('Mirror measurement data')
 pyplot.plot(expected_f_sample_points, expected_r_sample_points, "b-",
             label="Expected curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(0.0,
@@ -73,18 +71,34 @@ pyplot.ylabel('Mirror radius [mm]')
 pyplot.xlabel('Foucault/Wire test offsets [mm]')
 pyplot.legend()
 
+
+# Display results
+pyplot.figure(2)
+
 # Plot mirror profile
 best_fit_r_sample_points, best_fit_z_sample_points = my_telescope_mirror.generate_best_fit_conic_samples()
 expected_r_sample_points, expected_z_sample_points = my_telescope_mirror.generate_desired_conic_samples()
 
-pyplot.subplot(2, 1, 2)
-pyplot.title('Mirror profile')
+pyplot.title('Mirror profile error')
 pyplot.plot(r_interpolated, np.subtract(mirror_profile, best_fit_z_sample_points), "b-",
-            label="Mirror profile error (best fit)")
+            label="Mirror profile error (real - best fit)")
 pyplot.plot(r_interpolated, np.subtract(mirror_profile, expected_z_sample_points), "r-",
-            label="Mirror profile error (expected)")
+            label="Mirror profile error (real - expected)")
+pyplot.xlabel('Mirror radius [mm]')
+pyplot.ylabel('Mirror height [mm]')
+pyplot.legend()
+
+
+# Display results
+pyplot.figure(3)
+
+pyplot.title('Mirror profile')
+pyplot.plot(r_interpolated, mirror_profile, "b-", label="Mirror profile (real)")
+pyplot.plot(r_interpolated, expected_z_sample_points, "r-", label="Mirror profile (expected)")
+pyplot.plot(r_interpolated, best_fit_z_sample_points, "g-", label="Mirror profile (best fit)")
 pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Mirror height [mm]')
 pyplot.legend()
 
 pyplot.show()
+
