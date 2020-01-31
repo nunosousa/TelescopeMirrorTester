@@ -80,7 +80,7 @@ class Mirror:
     """
 
     def __init__(self, name, diameter, radius_of_curvature):
-        self.mirror_details = {'name': name, 'diameter': diameter, 'expected_d': 0.0,
+        self.mirror_details = {'name': name, 'diameter': diameter,
                                'expected_k': -1.0,
                                'expected_radius_of_curvature': radius_of_curvature,
                                'best_fit_d': 0.0, 'best_fit_k': -1.0,
@@ -111,10 +111,9 @@ class Mirror:
         """
         f_plus_radius_of_curvature = self.test_measurement_data_f + self.mirror_details['expected_radius_of_curvature']
 
-        p0 = np.array([self.mirror_details['expected_d'], self.mirror_details['expected_k'],
-                      self.mirror_details['expected_radius_of_curvature']])
+        p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
         
-        p_scale = np.array([0.01, 1, self.mirror_details['expected_radius_of_curvature']])
+        p_scale = np.array([0.001, 1, self.mirror_details['expected_radius_of_curvature']])
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
                                                               xdata=self.test_measurement_data_r,
