@@ -142,7 +142,7 @@ class Mirror:
 
         p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
 
-        p_scale = np.array([0.001, 1, self.mirror_details['expected_radius_of_curvature']])
+        p_scale = np.array([0.0001, 1, self.mirror_details['expected_radius_of_curvature']])
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_offset_function,
                                                               xdata=self.test_measurement_data_r,
@@ -171,11 +171,9 @@ class Mirror:
         """
         r_interpolated, f_interpolated, mirror_profile = self.integrate_mirror_test_data()
 
-        f_plus_radius_of_curvature = f_interpolated + self.mirror_details['expected_radius_of_curvature']
-
         p0 = np.array([0.0, self.mirror_details['expected_k'], self.mirror_details['expected_radius_of_curvature']])
 
-        p_scale = np.array([0.001, 1, self.mirror_details['expected_radius_of_curvature']])
+        p_scale = np.array([0.0001, 1, self.mirror_details['expected_radius_of_curvature']])
 
         best_fit_parameters, estimated_covariance = curve_fit(f=aspheric_surface_equation,
                                                               xdata=r_interpolated,
