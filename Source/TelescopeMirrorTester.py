@@ -27,22 +27,22 @@ if test == 167:
 if test == 213:
     # Test data - Test 213 b
     r = np.array(
-        [5.73, 31.02, 38.87, 45.63, 49.60, 50.95, 53.56, 56.14, 59.10, 62.95, 66.45, 70.51, 74.62, 77.33, 78.90, 81.57, 84.55, 86.39, 89.15, 91.90, 95.27, 97.36])
+        [5.73, 31.02, 38.87, 45.63, 49.60, 50.95, 53.56, 56.14, 59.10, 62.95, 66.45, 70.51, 74.62, 77.33, 78.90, 81.57,
+         84.55, 86.39, 89.15, 91.90, 95.27, 97.36])
     f = np.array(
-        [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.50, 1.60, 1.70, 1.80, 1.90, 2.00, 2.10])
-
+        [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.50, 1.60, 1.70,
+         1.80, 1.90, 2.00, 2.10])
 
 my_telescope_mirror = Mirror(mirror_name, mirror_diameter, mirror_radius_of_curvature)
 my_telescope_mirror.set_parameter("expected_k", conic_constant)
 
-
 roc_std = 5.0
 foucault_std = 0.02
-measurements_std = np.ones(f.size)*foucault_std
+measurements_std = np.ones(f.size) * foucault_std
 measurements_std[0] = roc_std
 
 my_telescope_mirror.set_test_measurement_data(r, f, measurements_std)
-best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic()
+best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic_on_offset_data()
 
 print(p_std)
 
@@ -52,7 +52,7 @@ pyplot.figure(1)
 # Plot test measurement data, best fit curve and interpolated data
 best_fit_r_sample_points, best_fit_f_sample_points = my_telescope_mirror.generate_best_fit_conic_offset_samples()
 expected_r_sample_points, expected_f_sample_points = my_telescope_mirror.generate_desired_conic_offset_samples()
-r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.test_measurement_data_analysis()
+r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.integrate_mirror_test_data()
 
 pyplot.title('Mirror measurement data')
 pyplot.plot(expected_f_sample_points, expected_r_sample_points, "b-",
@@ -71,7 +71,6 @@ pyplot.ylabel('Mirror radius [mm]')
 pyplot.xlabel('Foucault/Wire test offsets [mm]')
 pyplot.legend()
 
-
 # Display results
 pyplot.figure(2)
 
@@ -88,7 +87,6 @@ pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Mirror height [mm]')
 pyplot.legend()
 
-
 # Display results
 pyplot.figure(3)
 
@@ -100,5 +98,25 @@ pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Mirror height [mm]')
 pyplot.legend()
 
-pyplot.show()
+# Display results
+pyplot.figure(4)
 
+# Plot mirror profile
+best_fit_parameters, p_std = my_telescope_mirror.find_best_fit_conic_on_integrated_data()
+best_fit_r_sample_points, best_fit_z_sample_points = my_telescope_mirror.generate_best_fit_conic_samples()
+expected_r_sample_points, expected_z_sample_points = my_telescope_mirror.generate_desired_conic_samples()
+r_interpolated, f_interpolated, mirror_profile = my_telescope_mirror.integrate_mirror_test_data()
+
+pyplot.title('Mirror profile error')
+pyplot.plot(r_interpolated, np.subtract(mirror_profile, best_fit_z_sample_points), "b-",
+            label="Best fit error curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(best_fit_parameters[0],
+                                                                                          best_fit_parameters[1],
+                                                                                          best_fit_parameters[2]))
+#pyplot.plot(r_interpolated, np.subtract(mirror_profile, expected_z_sample_points), "r-",
+#            label="Mirror profile error (real - expected)")
+
+pyplot.xlabel('Mirror radius [mm]')
+pyplot.ylabel('Mirror height [mm]')
+pyplot.legend()
+
+pyplot.show()
