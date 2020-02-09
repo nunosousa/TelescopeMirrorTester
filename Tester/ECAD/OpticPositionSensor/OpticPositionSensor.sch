@@ -19,7 +19,7 @@ U 1 1 5E3F46B3
 P 2150 4200
 F 0 "U2" H 1850 4800 50  0000 C CNN
 F 1 "PMW3360DM-T2QU" H 2150 3850 50  0000 C CNN
-F 2 "" H 2150 4200 50  0001 C CNN
+F 2 "PixArt:PMW3360DM-T2QU" H 2150 4200 50  0001 C CNN
 F 3 "" H 2150 4200 50  0001 C CNN
 	1    2150 4200
 	1    0    0    -1  
@@ -476,7 +476,7 @@ U 1 1 5E4AD5A0
 P 8500 3500
 F 0 "J1" H 8472 3474 50  0000 R CNN
 F 1 "Conn_01x10_Male" H 8472 3383 50  0000 R CNN
-F 2 "" H 8500 3500 50  0001 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-1010_1x10_P1.25mm_Horizontal" H 8500 3500 50  0001 C CNN
 F 3 "~" H 8500 3500 50  0001 C CNN
 	1    8500 3500
 	-1   0    0    -1  
@@ -592,4 +592,60 @@ Text Notes 8100 7650 0    50   ~ 0
 08/02/2020
 Text Notes 7350 7500 0    50   ~ 0
 Optic Position sensor schematic
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5E417948
+P 9700 1650
+F 0 "H1" H 9800 1696 50  0000 L CNN
+F 1 "MountingHole" H 9800 1605 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 1650 50  0001 C CNN
+F 3 "~" H 9700 1650 50  0001 C CNN
+	1    9700 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5E417FD8
+P 9700 1950
+F 0 "H2" H 9800 1996 50  0000 L CNN
+F 1 "MountingHole" H 9800 1905 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 1950 50  0001 C CNN
+F 3 "~" H 9700 1950 50  0001 C CNN
+	1    9700 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5E4186E0
+P 9700 2250
+F 0 "H3" H 9800 2296 50  0000 L CNN
+F 1 "MountingHole" H 9800 2205 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 2250 50  0001 C CNN
+F 3 "~" H 9700 2250 50  0001 C CNN
+	1    9700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5E4188C7
+P 9700 2500
+F 0 "H4" H 9800 2546 50  0000 L CNN
+F 1 "MountingHole" H 9800 2455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 2500 50  0001 C CNN
+F 3 "~" H 9700 2500 50  0001 C CNN
+	1    9700 2500
+	1    0    0    -1  
+$EndComp
+Text Label 6400 1400 0    50   ~ 0
+~NCS_HEADER
+Text Label 6400 2550 0    50   ~ 0
+MISO_HEADER
+Text Label 6450 3600 0    50   ~ 0
+MOSI_HEADER
+Text Label 6500 4600 0    50   ~ 0
+SCLK_HEADER
+Text Label 6550 5600 0    50   ~ 0
+MOTION_HEADER
+Text Label 6550 6150 0    50   ~ 0
+~NRESET_HEADER
 $EndSCHEMATC
