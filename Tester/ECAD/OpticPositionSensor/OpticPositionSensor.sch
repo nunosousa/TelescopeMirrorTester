@@ -176,8 +176,6 @@ Wire Wire Line
 Text Label 2850 4850 0    50   ~ 0
 ~NRESET
 Wire Wire Line
-	3850 7400 3850 7300
-Wire Wire Line
 	3850 1950 4300 1950
 Wire Wire Line
 	4750 1950 4750 1800
@@ -228,12 +226,6 @@ Wire Wire Line
 Text Label 2250 5250 0    50   ~ 0
 GND
 Wire Wire Line
-	1200 6300 1200 6450
-Wire Wire Line
-	1200 6450 1450 6450
-Wire Wire Line
-	1650 6450 1650 6300
-Wire Wire Line
 	1650 6000 1650 5850
 Wire Wire Line
 	1650 5850 1450 5850
@@ -246,16 +238,6 @@ Wire Wire Line
 Connection ~ 1450 5850
 Wire Wire Line
 	1450 5850 1200 5850
-Wire Wire Line
-	1450 6450 1450 7300
-Wire Wire Line
-	1450 7300 3850 7300
-Connection ~ 1450 6450
-Wire Wire Line
-	1450 6450 1650 6450
-Connection ~ 3850 7300
-Wire Wire Line
-	3850 7300 3850 7200
 Wire Wire Line
 	1700 4050 1600 4050
 Wire Wire Line
@@ -592,4 +574,22 @@ Wire Wire Line
 Connection ~ 2050 2200
 Wire Wire Line
 	2050 2200 2550 2200
+Wire Wire Line
+	3850 7200 3850 7300
+Wire Wire Line
+	1200 6300 1200 7300
+Wire Wire Line
+	1200 7300 1650 7300
+Connection ~ 3850 7300
+Wire Wire Line
+	3850 7300 3850 7400
+Wire Wire Line
+	1650 6300 1650 7300
+Connection ~ 1650 7300
+Wire Wire Line
+	1650 7300 3850 7300
+Text Notes 8100 7650 0    50   ~ 0
+08/02/2020
+Text Notes 7350 7500 0    50   ~ 0
+Optic Position sensor schematic
 $EndSCHEMATC
