@@ -35,4 +35,26 @@ F 3 "" H 7880 2900 50  0001 C CNN
 	1    7850 3100
 	1    0    0    -1  
 $EndComp
+$Comp
+L Transistor_FET:ZXMP4A16G Q?
+U 1 1 5E46C00F
+P 5650 3800
+F 0 "Q?" H 5854 3846 50  0000 L CNN
+F 1 "ZXMP4A16G" H 5854 3755 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 5850 3725 50  0001 L CIN
+F 3 "https://www.diodes.com/assets/Datasheets/ZXMP4A16G.pdf" H 5650 3800 50  0001 L CNN
+	1    5650 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Analog_DAC:MCP4728 U?
+U 1 1 5E46C78E
+P 5500 2600
+F 0 "U?" H 5500 3081 50  0000 C CNN
+F 1 "MCP4728" H 5500 2990 50  0000 C CNN
+F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 5500 2000 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf" H 5500 2850 50  0001 C CNN
+	1    5500 2600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
