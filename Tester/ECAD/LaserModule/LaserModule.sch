@@ -14,47 +14,340 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Diode_Laser_Custom:SLD3134VL LD?
-U 1 1 5E456480
-P 6800 3100
-F 0 "LD?" H 6850 3507 50  0000 C CNN
-F 1 "SLD3134VL" H 6850 3416 50  0000 C CNN
-F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 6800 2800 50  0001 C CNN
-F 3 "" H 6830 2900 50  0001 C CNN
-	1    6800 3100
-	1    0    0    -1  
-$EndComp
-$Comp
 L Diode_Laser_Custom:Generic_650nm-5mW LD?
 U 1 1 5E457FDF
-P 7850 3100
-F 0 "LD?" H 7900 3507 50  0000 C CNN
-F 1 "Generic_650nm-5mW" H 7900 3416 50  0000 C CNN
-F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 7850 2800 50  0001 C CNN
-F 3 "" H 7880 2900 50  0001 C CNN
-	1    7850 3100
+P 9050 4200
+F 0 "LD?" H 9100 4607 50  0000 C CNN
+F 1 "Generic_650nm-5mW" H 9100 4516 50  0000 C CNN
+F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9050 3900 50  0001 C CNN
+F 3 "" H 9080 4000 50  0001 C CNN
+	1    9050 4200
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_FET:ZXMP4A16G Q?
-U 1 1 5E46C00F
-P 5650 3800
-F 0 "Q?" H 5854 3846 50  0000 L CNN
-F 1 "ZXMP4A16G" H 5854 3755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 5850 3725 50  0001 L CIN
-F 3 "https://www.diodes.com/assets/Datasheets/ZXMP4A16G.pdf" H 5650 3800 50  0001 L CNN
-	1    5650 3800
+L Analog_DAC_Custom:MCP4716 U?
+U 1 1 5E474307
+P 3650 3050
+F 0 "U?" H 4294 3046 50  0000 L CNN
+F 1 "MCP4716" H 4294 2955 50  0000 L CNN
+F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 3650 2450 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf" H 3650 3300 50  0001 C CNN
+	1    3650 3050
 	1    0    0    -1  
 $EndComp
 $Comp
-L Analog_DAC:MCP4728 U?
-U 1 1 5E46C78E
-P 5500 2600
-F 0 "U?" H 5500 3081 50  0000 C CNN
-F 1 "MCP4728" H 5500 2990 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 5500 2000 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf" H 5500 2850 50  0001 C CNN
-	1    5500 2600
+L Transistor_FET_Custom:ZXMP6A17E6Q Q?
+U 1 1 5E477867
+P 8950 3050
+F 0 "Q?" H 9338 3171 50  0000 L CNN
+F 1 "ZXMP6A17E6Q" H 9338 3080 50  0000 L CNN
+F 2 "" H 9150 2975 50  0001 L CIN
+F 3 "" H 8950 3050 50  0001 L CNN
+	1    8950 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational_Custom:AD8601 U?
+U 1 1 5E4799F9
+P 6000 3050
+F 0 "U?" H 6344 3096 50  0000 L CNN
+F 1 "AD8601" H 6344 3005 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6000 3050 50  0001 C CNN
+F 3 "" H 6000 3250 50  0001 C CNN
+	1    6000 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5E479FC2
+P 10600 2900
+F 0 "R5" H 10670 2946 50  0000 L CNN
+F 1 "4kR" H 10670 2855 50  0000 L CNN
+F 2 "" V 10530 2900 50  0001 C CNN
+F 3 "~" H 10600 2900 50  0001 C CNN
+	1    10600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5E47A4F4
+P 7350 3650
+F 0 "R4" V 7143 3650 50  0000 C CNN
+F 1 "10kR" V 7234 3650 50  0000 C CNN
+F 2 "" V 7280 3650 50  0001 C CNN
+F 3 "~" H 7350 3650 50  0001 C CNN
+	1    7350 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E47A91E
+P 4800 2950
+F 0 "R2" V 5007 2950 50  0000 C CNN
+F 1 "20kR" V 4916 2950 50  0000 C CNN
+F 2 "" V 4730 2950 50  0001 C CNN
+F 3 "~" H 4800 2950 50  0001 C CNN
+	1    4800 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E47AA27
+P 5000 2650
+F 0 "R3" H 5070 2696 50  0000 L CNN
+F 1 "30kR" H 5070 2605 50  0000 L CNN
+F 2 "" V 4930 2650 50  0001 C CNN
+F 3 "~" H 5000 2650 50  0001 C CNN
+	1    5000 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E47AB6E
+P 9050 2050
+F 0 "R1" H 9120 2096 50  0000 L CNN
+F 1 "12R" H 9120 2005 50  0000 L CNN
+F 2 "" V 8980 2050 50  0001 C CNN
+F 3 "~" H 9050 2050 50  0001 C CNN
+	1    9050 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5E47AED4
+P 5000 3550
+F 0 "C2" H 5115 3596 50  0000 L CNN
+F 1 "1nC" H 5115 3505 50  0000 L CNN
+F 2 "" H 5038 3400 50  0001 C CNN
+F 3 "~" H 5000 3550 50  0001 C CNN
+	1    5000 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5E47B442
+P 6850 3200
+F 0 "C1" H 6965 3246 50  0000 L CNN
+F 1 "100pC" H 6965 3155 50  0000 L CNN
+F 2 "" H 6888 3050 50  0001 C CNN
+F 3 "~" H 6850 3200 50  0001 C CNN
+	1    6850 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E47BBB2
+P 6750 6050
+F 0 "#PWR?" H 6750 5800 50  0001 C CNN
+F 1 "GND" H 6755 5877 50  0000 C CNN
+F 2 "" H 6750 6050 50  0001 C CNN
+F 3 "" H 6750 6050 50  0001 C CNN
+	1    6750 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 2950 4650 2950
+Wire Wire Line
+	5700 2950 5000 2950
+Wire Wire Line
+	5000 2800 5000 2950
+Connection ~ 5000 2950
+Wire Wire Line
+	5000 2950 4950 2950
+Wire Wire Line
+	5000 2950 5000 3400
+Wire Wire Line
+	6300 3050 6850 3050
+Wire Wire Line
+	5700 3150 5700 3650
+Wire Wire Line
+	5700 3650 6850 3650
+Wire Wire Line
+	6850 3650 6850 3350
+Wire Wire Line
+	6850 3650 7200 3650
+Connection ~ 6850 3650
+Wire Wire Line
+	9050 3250 9050 3550
+Wire Wire Line
+	9050 3550 8650 3550
+Wire Wire Line
+	8650 3550 8650 4200
+Wire Wire Line
+	8650 4200 8850 4200
+Wire Wire Line
+	9350 4100 9900 4100
+Wire Wire Line
+	9900 4100 9900 5400
+Wire Wire Line
+	9900 5400 6750 5400
+Wire Wire Line
+	3650 5400 3650 3450
+Wire Wire Line
+	5000 3700 5000 5400
+Connection ~ 5000 5400
+Wire Wire Line
+	5000 5400 3650 5400
+Wire Wire Line
+	6750 6050 6750 5400
+Connection ~ 6750 5400
+Wire Wire Line
+	6750 5400 5900 5400
+Wire Wire Line
+	10600 3050 10600 5400
+Wire Wire Line
+	10600 5400 9900 5400
+Connection ~ 9900 5400
+Wire Wire Line
+	10600 2750 10600 2400
+Wire Wire Line
+	10600 2400 9050 2400
+Wire Wire Line
+	9050 2400 9050 2200
+Wire Wire Line
+	9050 2700 9050 2550
+Connection ~ 9050 2400
+Wire Wire Line
+	9250 2700 9150 2700
+Connection ~ 9050 2700
+Wire Wire Line
+	9050 2700 8950 2700
+Connection ~ 9150 2700
+Wire Wire Line
+	9150 2700 9050 2700
+Wire Wire Line
+	6850 3050 8750 3050
+Connection ~ 6850 3050
+Wire Wire Line
+	7500 3650 8200 3650
+Wire Wire Line
+	8200 3650 8200 2550
+Wire Wire Line
+	8200 2550 9050 2550
+Connection ~ 9050 2550
+Wire Wire Line
+	9050 2550 9050 2400
+Wire Wire Line
+	9050 1900 9050 1500
+Wire Wire Line
+	9050 1500 7100 1500
+Wire Wire Line
+	5000 1500 5000 2500
+Wire Wire Line
+	3650 2750 3650 1500
+Wire Wire Line
+	3650 1500 5000 1500
+Connection ~ 5000 1500
+Wire Wire Line
+	5900 2750 5900 1500
+Connection ~ 5900 1500
+Wire Wire Line
+	5900 1500 5000 1500
+Wire Wire Line
+	5900 3350 5900 5400
+Connection ~ 5900 5400
+Wire Wire Line
+	5900 5400 5000 5400
+$Comp
+L power:+5C #PWR?
+U 1 1 5E48B4EC
+P 7100 1500
+F 0 "#PWR?" H 7100 1350 50  0001 C CNN
+F 1 "+5C" H 7115 1673 50  0000 C CNN
+F 2 "" H 7100 1500 50  0001 C CNN
+F 3 "" H 7100 1500 50  0001 C CNN
+	1    7100 1500
+	1    0    0    -1  
+$EndComp
+Connection ~ 7100 1500
+Wire Wire Line
+	7100 1500 5900 1500
+Wire Wire Line
+	3050 3150 2400 3150
+Wire Wire Line
+	2400 1500 3650 1500
+Wire Wire Line
+	2400 1500 2400 3150
+Connection ~ 3650 1500
+$Comp
+L Connector:Conn_01x04_Male J?
+U 1 1 5E4950DC
+P 1200 3250
+F 0 "J?" H 1308 3531 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
+F 2 "" H 1200 3250 50  0001 C CNN
+F 3 "~" H 1200 3250 50  0001 C CNN
+	1    1200 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 3150 1900 3150
+Wire Wire Line
+	1900 3150 1900 1500
+Wire Wire Line
+	1900 1500 2400 1500
+Connection ~ 2400 1500
+Wire Wire Line
+	3050 2950 2100 2950
+Wire Wire Line
+	2100 2950 2100 3250
+Wire Wire Line
+	2100 3250 1400 3250
+Wire Wire Line
+	3050 3050 2200 3050
+Wire Wire Line
+	2200 3050 2200 3350
+Wire Wire Line
+	2200 3350 1400 3350
+Wire Wire Line
+	3650 5400 2350 5400
+Wire Wire Line
+	2350 5400 2350 3450
+Wire Wire Line
+	2350 3450 1400 3450
+Connection ~ 3650 5400
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 5E4A9DE3
+P 1550 6450
+F 0 "H?" H 1650 6496 50  0000 L CNN
+F 1 "MountingHole" H 1650 6405 50  0000 L CNN
+F 2 "" H 1550 6450 50  0001 C CNN
+F 3 "~" H 1550 6450 50  0001 C CNN
+	1    1550 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 5E4A9F61
+P 1550 6700
+F 0 "H?" H 1650 6746 50  0000 L CNN
+F 1 "MountingHole" H 1650 6655 50  0000 L CNN
+F 2 "" H 1550 6700 50  0001 C CNN
+F 3 "~" H 1550 6700 50  0001 C CNN
+	1    1550 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 5E4AA3C7
+P 1550 6950
+F 0 "H?" H 1650 6996 50  0000 L CNN
+F 1 "MountingHole" H 1650 6905 50  0000 L CNN
+F 2 "" H 1550 6950 50  0001 C CNN
+F 3 "~" H 1550 6950 50  0001 C CNN
+	1    1550 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 5E4AA4F4
+P 1550 7200
+F 0 "H?" H 1650 7246 50  0000 L CNN
+F 1 "MountingHole" H 1650 7155 50  0000 L CNN
+F 2 "" H 1550 7200 50  0001 C CNN
+F 3 "~" H 1550 7200 50  0001 C CNN
+	1    1550 7200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
