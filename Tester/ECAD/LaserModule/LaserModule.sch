@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Diode_Laser_Custom:Generic_650nm-5mW LD?
+L Diode_Laser_Custom:Generic_650nm-5mW LD1
 U 1 1 5E457FDF
 P 9050 4200
-F 0 "LD?" H 9100 4607 50  0000 C CNN
+F 0 "LD1" H 9100 4607 50  0000 C CNN
 F 1 "Generic_650nm-5mW" H 9100 4516 50  0000 C CNN
 F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9050 3900 50  0001 C CNN
 F 3 "" H 9080 4000 50  0001 C CNN
@@ -25,10 +25,10 @@ F 3 "" H 9080 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Analog_DAC_Custom:MCP4716 U?
+L Analog_DAC_Custom:MCP4716 U1
 U 1 1 5E474307
 P 3650 3050
-F 0 "U?" H 4294 3046 50  0000 L CNN
+F 0 "U1" H 4294 3046 50  0000 L CNN
 F 1 "MCP4716" H 4294 2955 50  0000 L CNN
 F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 3650 2450 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf" H 3650 3300 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf" H 3650 3300 50 
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_FET_Custom:ZXMP6A17E6Q Q?
+L Transistor_FET_Custom:ZXMP6A17E6Q Q1
 U 1 1 5E477867
 P 8950 3050
-F 0 "Q?" H 9338 3171 50  0000 L CNN
+F 0 "Q1" H 9338 3171 50  0000 L CNN
 F 1 "ZXMP6A17E6Q" H 9338 3080 50  0000 L CNN
 F 2 "" H 9150 2975 50  0001 L CIN
 F 3 "" H 8950 3050 50  0001 L CNN
@@ -47,10 +47,10 @@ F 3 "" H 8950 3050 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational_Custom:AD8601 U?
+L Amplifier_Operational_Custom:AD8601 U2
 U 1 1 5E4799F9
 P 6000 3050
-F 0 "U?" H 6344 3096 50  0000 L CNN
+F 0 "U2" H 6344 3096 50  0000 L CNN
 F 1 "AD8601" H 6344 3005 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6000 3050 50  0001 C CNN
 F 3 "" H 6000 3250 50  0001 C CNN
@@ -135,10 +135,10 @@ F 3 "~" H 6850 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR01
 U 1 1 5E47BBB2
 P 6750 6050
-F 0 "#PWR?" H 6750 5800 50  0001 C CNN
+F 0 "#PWR01" H 6750 5800 50  0001 C CNN
 F 1 "GND" H 6755 5877 50  0000 C CNN
 F 2 "" H 6750 6050 50  0001 C CNN
 F 3 "" H 6750 6050 50  0001 C CNN
@@ -249,10 +249,10 @@ Connection ~ 5900 5400
 Wire Wire Line
 	5900 5400 5000 5400
 $Comp
-L power:+5C #PWR?
+L power:+5C #PWR02
 U 1 1 5E48B4EC
 P 7100 1500
-F 0 "#PWR?" H 7100 1350 50  0001 C CNN
+F 0 "#PWR02" H 7100 1350 50  0001 C CNN
 F 1 "+5C" H 7115 1673 50  0000 C CNN
 F 2 "" H 7100 1500 50  0001 C CNN
 F 3 "" H 7100 1500 50  0001 C CNN
@@ -270,10 +270,10 @@ Wire Wire Line
 	2400 1500 2400 3150
 Connection ~ 3650 1500
 $Comp
-L Connector:Conn_01x04_Male J?
+L Connector:Conn_01x04_Male J1
 U 1 1 5E4950DC
 P 1200 3250
-F 0 "J?" H 1308 3531 50  0000 C CNN
+F 0 "J1" H 1308 3531 50  0000 C CNN
 F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
 F 2 "" H 1200 3250 50  0001 C CNN
 F 3 "~" H 1200 3250 50  0001 C CNN
@@ -307,45 +307,45 @@ Wire Wire Line
 	2350 3450 1400 3450
 Connection ~ 3650 5400
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1
 U 1 1 5E4A9DE3
 P 1550 6450
-F 0 "H?" H 1650 6496 50  0000 L CNN
+F 0 "H1" H 1650 6496 50  0000 L CNN
 F 1 "MountingHole" H 1650 6405 50  0000 L CNN
-F 2 "" H 1550 6450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6450 50  0001 C CNN
 F 3 "~" H 1550 6450 50  0001 C CNN
 	1    1550 6450
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H2
 U 1 1 5E4A9F61
 P 1550 6700
-F 0 "H?" H 1650 6746 50  0000 L CNN
+F 0 "H2" H 1650 6746 50  0000 L CNN
 F 1 "MountingHole" H 1650 6655 50  0000 L CNN
-F 2 "" H 1550 6700 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6700 50  0001 C CNN
 F 3 "~" H 1550 6700 50  0001 C CNN
 	1    1550 6700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H3
 U 1 1 5E4AA3C7
 P 1550 6950
-F 0 "H?" H 1650 6996 50  0000 L CNN
+F 0 "H3" H 1650 6996 50  0000 L CNN
 F 1 "MountingHole" H 1650 6905 50  0000 L CNN
-F 2 "" H 1550 6950 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6950 50  0001 C CNN
 F 3 "~" H 1550 6950 50  0001 C CNN
 	1    1550 6950
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H4
 U 1 1 5E4AA4F4
 P 1550 7200
-F 0 "H?" H 1650 7246 50  0000 L CNN
+F 0 "H4" H 1650 7246 50  0000 L CNN
 F 1 "MountingHole" H 1650 7155 50  0000 L CNN
-F 2 "" H 1550 7200 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 7200 50  0001 C CNN
 F 3 "~" H 1550 7200 50  0001 C CNN
 	1    1550 7200
 	1    0    0    -1  
