@@ -470,19 +470,6 @@ Wire Wire Line
 	5950 650  5950 900 
 Connection ~ 1300 1600
 Connection ~ 5950 900 
-$Comp
-L Connector:Conn_01x10_Male J1
-U 1 1 5E4AD5A0
-P 8500 3500
-F 0 "J1" H 8472 3474 50  0000 R CNN
-F 1 "Conn_01x10_Male" H 8472 3383 50  0000 R CNN
-F 2 "Connector_Molex:Molex_PicoBlade_53048-1010_1x10_P1.25mm_Horizontal" H 8500 3500 50  0001 C CNN
-F 3 "~" H 8500 3500 50  0001 C CNN
-	1    8500 3500
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8300 4000 8050 4000
 Wire Wire Line
 	7650 4000 7650 6300
 Wire Wire Line
@@ -493,9 +480,7 @@ Wire Wire Line
 	6500 7200 4750 7200
 Connection ~ 4750 7200
 Wire Wire Line
-	8300 3100 8050 3100
-Wire Wire Line
-	7650 3100 7650 650 
+	7650 3300 7650 650 
 Wire Wire Line
 	7650 650  5950 650 
 Connection ~ 5950 650 
@@ -507,8 +492,6 @@ Wire Wire Line
 	6350 6150 7500 6150
 Wire Wire Line
 	7500 6150 7500 3900
-Wire Wire Line
-	7500 3900 8300 3900
 Wire Wire Line
 	5150 5600 7350 5600
 Wire Wire Line
@@ -522,51 +505,31 @@ Wire Wire Line
 Wire Wire Line
 	7200 3700 8300 3700
 Wire Wire Line
-	8300 3600 8050 3600
-Wire Wire Line
-	8050 3600 8050 4000
-Connection ~ 8050 4000
-Wire Wire Line
-	8050 4000 7650 4000
-Wire Wire Line
-	5150 3600 7900 3600
-Wire Wire Line
-	7900 3600 7900 3500
-Wire Wire Line
-	7900 3500 8300 3500
-Wire Wire Line
 	5150 1400 7500 1400
 Wire Wire Line
-	7500 1400 7500 3200
+	7500 1400 7500 3400
 Wire Wire Line
-	7500 3200 8300 3200
+	7500 3400 8300 3400
 Wire Wire Line
 	5150 2550 7350 2550
 Wire Wire Line
-	7350 2550 7350 3300
+	7350 2550 7350 3500
 Wire Wire Line
-	7350 3300 8300 3300
-Wire Wire Line
-	8300 3400 8050 3400
-Wire Wire Line
-	8050 3400 8050 3100
-Connection ~ 8050 3100
-Wire Wire Line
-	8050 3100 7850 3100
+	7350 3500 8300 3500
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 5E50D827
-P 7850 3100
-F 0 "#FLG0101" H 7850 3175 50  0001 C CNN
-F 1 "PWR_FLAG" H 7850 3273 50  0000 C CNN
-F 2 "" H 7850 3100 50  0001 C CNN
-F 3 "~" H 7850 3100 50  0001 C CNN
-	1    7850 3100
+P 7850 3300
+F 0 "#FLG0101" H 7850 3375 50  0001 C CNN
+F 1 "PWR_FLAG" H 7850 3473 50  0000 C CNN
+F 2 "" H 7850 3300 50  0001 C CNN
+F 3 "~" H 7850 3300 50  0001 C CNN
+	1    7850 3300
 	1    0    0    -1  
 $EndComp
-Connection ~ 7850 3100
+Connection ~ 7850 3300
 Wire Wire Line
-	7850 3100 7650 3100
+	7850 3300 7650 3300
 Wire Wire Line
 	1300 2200 2050 2200
 Wire Wire Line
@@ -648,4 +611,23 @@ Text Label 6550 5600 0    50   ~ 0
 MOTION_HEADER
 Text Label 6550 6150 0    50   ~ 0
 ~NRESET_HEADER
+$Comp
+L Connector:Conn_01x08_Male J1
+U 1 1 5E497C0D
+P 8500 3700
+F 0 "J1" H 8472 3582 50  0000 R CNN
+F 1 "Conn_01x08_Male" H 8472 3673 50  0000 R CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8500 3700 50  0001 C CNN
+F 3 "~" H 8500 3700 50  0001 C CNN
+	1    8500 3700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7850 3300 8300 3300
+Wire Wire Line
+	7500 3900 8300 3900
+Wire Wire Line
+	7650 4000 8300 4000
+Wire Wire Line
+	5150 3600 8300 3600
 $EndSCHEMATC

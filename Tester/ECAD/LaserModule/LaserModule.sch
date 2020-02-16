@@ -47,17 +47,6 @@ F 3 "" H 8950 3050 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational_Custom:AD8601 U2
-U 1 1 5E4799F9
-P 6000 3050
-F 0 "U2" H 6344 3096 50  0000 L CNN
-F 1 "AD8601" H 6344 3005 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6000 3050 50  0001 C CNN
-F 3 "" H 6000 3250 50  0001 C CNN
-	1    6000 3050
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R5
 U 1 1 5E479FC2
 P 10600 2900
@@ -71,12 +60,12 @@ $EndComp
 $Comp
 L Device:R R4
 U 1 1 5E47A4F4
-P 7350 3650
-F 0 "R4" V 7143 3650 50  0000 C CNN
-F 1 "10kR" V 7234 3650 50  0000 C CNN
-F 2 "" V 7280 3650 50  0001 C CNN
-F 3 "~" H 7350 3650 50  0001 C CNN
-	1    7350 3650
+P 7300 2550
+F 0 "R4" V 7093 2550 50  0000 C CNN
+F 1 "10kR" V 7184 2550 50  0000 C CNN
+F 2 "" V 7230 2550 50  0001 C CNN
+F 3 "~" H 7300 2550 50  0001 C CNN
+	1    7300 2550
 	0    1    1    0   
 $EndComp
 $Comp
@@ -126,12 +115,12 @@ $EndComp
 $Comp
 L Device:C C1
 U 1 1 5E47B442
-P 6850 3200
-F 0 "C1" H 6965 3246 50  0000 L CNN
-F 1 "100pC" H 6965 3155 50  0000 L CNN
-F 2 "" H 6888 3050 50  0001 C CNN
-F 3 "~" H 6850 3200 50  0001 C CNN
-	1    6850 3200
+P 6850 2800
+F 0 "C1" H 6965 2846 50  0000 L CNN
+F 1 "100pC" H 6965 2755 50  0000 L CNN
+F 2 "" H 6888 2650 50  0001 C CNN
+F 3 "~" H 6850 2800 50  0001 C CNN
+	1    6850 2800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -156,17 +145,6 @@ Wire Wire Line
 	5000 2950 4950 2950
 Wire Wire Line
 	5000 2950 5000 3400
-Wire Wire Line
-	6300 3050 6850 3050
-Wire Wire Line
-	5700 3150 5700 3650
-Wire Wire Line
-	5700 3650 6850 3650
-Wire Wire Line
-	6850 3650 6850 3350
-Wire Wire Line
-	6850 3650 7200 3650
-Connection ~ 6850 3650
 Wire Wire Line
 	9050 3250 9050 3550
 Wire Wire Line
@@ -204,8 +182,6 @@ Wire Wire Line
 	10600 2400 9050 2400
 Wire Wire Line
 	9050 2400 9050 2200
-Wire Wire Line
-	9050 2700 9050 2550
 Connection ~ 9050 2400
 Wire Wire Line
 	9250 2700 9150 2700
@@ -215,18 +191,6 @@ Wire Wire Line
 Connection ~ 9150 2700
 Wire Wire Line
 	9150 2700 9050 2700
-Wire Wire Line
-	6850 3050 8750 3050
-Connection ~ 6850 3050
-Wire Wire Line
-	7500 3650 8200 3650
-Wire Wire Line
-	8200 3650 8200 2550
-Wire Wire Line
-	8200 2550 9050 2550
-Connection ~ 9050 2550
-Wire Wire Line
-	9050 2550 9050 2400
 Wire Wire Line
 	9050 1900 9050 1500
 Wire Wire Line
@@ -350,4 +314,40 @@ F 3 "~" H 1550 7200 50  0001 C CNN
 	1    1550 7200
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6300 3050 6850 3050
+$Comp
+L Amplifier_Operational_Custom:AD8601 U2
+U 1 1 5E4799F9
+P 6000 3050
+F 0 "U2" H 6344 3096 50  0000 L CNN
+F 1 "AD8601" H 6344 3005 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6000 3050 50  0001 C CNN
+F 3 "" H 6000 3250 50  0001 C CNN
+	1    6000 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 2400 9050 2550
+Wire Wire Line
+	7450 2550 9050 2550
+Connection ~ 9050 2550
+Wire Wire Line
+	9050 2550 9050 2700
+Wire Wire Line
+	7150 2550 6850 2550
+Wire Wire Line
+	5600 2550 5600 3150
+Wire Wire Line
+	5600 3150 5700 3150
+Wire Wire Line
+	6850 2650 6850 2550
+Connection ~ 6850 2550
+Wire Wire Line
+	6850 2550 5600 2550
+Wire Wire Line
+	6850 2950 6850 3050
+Connection ~ 6850 3050
+Wire Wire Line
+	6850 3050 8750 3050
 $EndSCHEMATC
