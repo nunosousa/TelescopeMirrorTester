@@ -239,7 +239,7 @@ U 1 1 5E4950DC
 P 1200 3250
 F 0 "J1" H 1308 3531 50  0000 C CNN
 F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
-F 2 "" H 1200 3250 50  0001 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 1200 3250 50  0001 C CNN
 F 3 "~" H 1200 3250 50  0001 C CNN
 	1    1200 3250
 	1    0    0    -1  
@@ -350,4 +350,5 @@ Wire Wire Line
 Connection ~ 6850 3050
 Wire Wire Line
 	6850 3050 8750 3050
+NoConn ~ 9350 4300
 $EndSCHEMATC
