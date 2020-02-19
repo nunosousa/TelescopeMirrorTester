@@ -14,45 +14,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Diode_Laser_Custom:Generic_650nm-5mW LD1
-U 1 1 5E457FDF
-P 9050 4200
-F 0 "LD1" H 9100 4607 50  0000 C CNN
-F 1 "Generic_650nm-5mW" H 9100 4516 50  0000 C CNN
-F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9050 3900 50  0001 C CNN
-F 3 "" H 9080 4000 50  0001 C CNN
-	1    9050 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Analog_DAC_Custom:MCP4716 U1
-U 1 1 5E474307
-P 3650 3050
-F 0 "U1" H 4294 3046 50  0000 L CNN
-F 1 "MCP4716" H 4294 2955 50  0000 L CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 3650 2450 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf" H 3650 3300 50  0001 C CNN
-	1    3650 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_FET_Custom:ZXMP6A17E6Q Q1
-U 1 1 5E477867
-P 8950 3050
-F 0 "Q1" H 9338 3171 50  0000 L CNN
-F 1 "ZXMP6A17E6Q" H 9338 3080 50  0000 L CNN
-F 2 "" H 9150 2975 50  0001 L CIN
-F 3 "" H 8950 3050 50  0001 L CNN
-	1    8950 3050
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R5
 U 1 1 5E479FC2
 P 10600 2900
 F 0 "R5" H 10670 2946 50  0000 L CNN
 F 1 "4kR" H 10670 2855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0815_2038Metric_Pad1.53x4.00mm_HandSolder" V 10530 2900 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10530 2900 50  0001 C CNN
 F 3 "~" H 10600 2900 50  0001 C CNN
 	1    10600 2900
 	1    0    0    -1  
@@ -63,7 +30,7 @@ U 1 1 5E47A4F4
 P 7300 2550
 F 0 "R4" V 7093 2550 50  0000 C CNN
 F 1 "10kR" V 7184 2550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0815_2038Metric_Pad1.53x4.00mm_HandSolder" V 7230 2550 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7230 2550 50  0001 C CNN
 F 3 "~" H 7300 2550 50  0001 C CNN
 	1    7300 2550
 	0    1    1    0   
@@ -74,7 +41,7 @@ U 1 1 5E47A91E
 P 4550 2950
 F 0 "R2" V 4757 2950 50  0000 C CNN
 F 1 "20kR" V 4666 2950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0815_2038Metric_Pad1.53x4.00mm_HandSolder" V 4480 2950 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4480 2950 50  0001 C CNN
 F 3 "~" H 4550 2950 50  0001 C CNN
 	1    4550 2950
 	0    -1   -1   0   
@@ -85,7 +52,7 @@ U 1 1 5E47AA27
 P 5000 2300
 F 0 "R3" H 5070 2346 50  0000 L CNN
 F 1 "30kR" H 5070 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0815_2038Metric_Pad1.53x4.00mm_HandSolder" V 4930 2300 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4930 2300 50  0001 C CNN
 F 3 "~" H 5000 2300 50  0001 C CNN
 	1    5000 2300
 	1    0    0    -1  
@@ -146,20 +113,6 @@ Wire Wire Line
 Wire Wire Line
 	5000 2950 5000 3400
 Wire Wire Line
-	9050 3250 9050 3550
-Wire Wire Line
-	9050 3550 8650 3550
-Wire Wire Line
-	8650 3550 8650 4200
-Wire Wire Line
-	8650 4200 8850 4200
-Wire Wire Line
-	9350 4100 9900 4100
-Wire Wire Line
-	9900 4100 9900 5400
-Wire Wire Line
-	9900 5400 6750 5400
-Wire Wire Line
 	3650 5400 3650 3450
 Wire Wire Line
 	5000 3700 5000 5400
@@ -174,23 +127,12 @@ Wire Wire Line
 Wire Wire Line
 	10600 3050 10600 5400
 Wire Wire Line
-	10600 5400 9900 5400
-Connection ~ 9900 5400
-Wire Wire Line
 	10600 2750 10600 2400
 Wire Wire Line
 	10600 2400 9050 2400
 Wire Wire Line
 	9050 2400 9050 2200
 Connection ~ 9050 2400
-Wire Wire Line
-	9250 2700 9150 2700
-Connection ~ 9050 2700
-Wire Wire Line
-	9050 2700 8950 2700
-Connection ~ 9150 2700
-Wire Wire Line
-	9150 2700 9050 2700
 Wire Wire Line
 	9050 1900 9050 1500
 Wire Wire Line
@@ -333,8 +275,6 @@ Wire Wire Line
 	7450 2550 9050 2550
 Connection ~ 9050 2550
 Wire Wire Line
-	9050 2550 9050 2700
-Wire Wire Line
 	7150 2550 6850 2550
 Wire Wire Line
 	5600 2550 5600 3150
@@ -350,5 +290,71 @@ Wire Wire Line
 Connection ~ 6850 3050
 Wire Wire Line
 	6850 3050 8750 3050
-NoConn ~ 9350 4300
+NoConn ~ 9250 4100
+$Comp
+L Transistor_FET_Custom:ZXMP6A17G Q1
+U 1 1 5E4DF28A
+P 9150 3050
+F 0 "Q1" H 9354 3096 50  0000 L CNN
+F 1 "ZXMP6A17G" H 9354 3005 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 9350 2975 50  0001 L CIN
+F 3 "" H 9150 3050 50  0001 L CNN
+	1    9150 3050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9050 2550 9050 2850
+$Comp
+L Diode_Laser_Custom:SLD3134VL LD1
+U 1 1 5E4E7513
+P 9150 4400
+F 0 "LD1" V 9246 4200 50  0000 R CNN
+F 1 "SLD3134VL" V 9155 4200 50  0000 R CNN
+F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9150 4100 50  0001 C CNN
+F 3 "" H 9180 4200 50  0001 C CNN
+	1    9150 4400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6750 5400 9150 5400
+Wire Wire Line
+	9050 3250 9050 4100
+Wire Wire Line
+	9150 4600 9150 5400
+Connection ~ 9150 5400
+Wire Wire Line
+	9150 5400 10600 5400
+Text Label 5600 3150 0    50   ~ 0
+V-
+Text Label 5650 2950 0    50   ~ 0
+V+
+Wire Wire Line
+	8750 3050 8750 3500
+Wire Wire Line
+	8750 3500 9350 3500
+Wire Wire Line
+	9350 3500 9350 3050
+Text Label 7500 3050 0    50   ~ 0
+G
+Text Label 9050 2750 0    50   ~ 0
+S
+Text Label 9050 3750 0    50   ~ 0
+D
+Text Label 4250 2950 0    50   ~ 0
+VOUT
+Text Label 2700 2950 0    50   ~ 0
+SCL
+Text Label 2700 3050 0    50   ~ 0
+SDA
+$Comp
+L Analog_DAC_Custom:MCP4716 U1
+U 1 1 5E4F9088
+P 3650 3050
+F 0 "U1" H 4294 3046 50  0000 L CNN
+F 1 "MCP4716" H 4294 2955 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3650 2450 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22272C.pdf" H 3650 3300 50  0001 C CNN
+	1    3650 3050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
