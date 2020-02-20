@@ -335,26 +335,4 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22272C.pdf" H 3650 3300 50 
 	1    3650 3050
 	1    0    0    -1  
 $EndComp
-$Comp
-L Mechanical:MountingHole H3
-U 1 1 5E4EA105
-P 1550 6950
-F 0 "H3" H 1650 6996 50  0000 L CNN
-F 1 "MountingHole" H 1650 6905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6950 50  0001 C CNN
-F 3 "~" H 1550 6950 50  0001 C CNN
-	1    1550 6950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H4
-U 1 1 5E4EA534
-P 1550 7200
-F 0 "H4" H 1650 7246 50  0000 L CNN
-F 1 "MountingHole" H 1650 7155 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 7200 50  0001 C CNN
-F 3 "~" H 1550 7200 50  0001 C CNN
-	1    1550 7200
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
