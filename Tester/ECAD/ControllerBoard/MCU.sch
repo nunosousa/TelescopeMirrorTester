@@ -24,4 +24,28 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAMD21-Family-DataSheet-DS4
 	1    5450 3800
 	1    0    0    -1  
 $EndComp
+Text HLabel 9900 1400 2    50   Output ~ 0
+MOTOR_CTRL_1A
+Text HLabel 9900 1500 2    50   Output ~ 0
+MOTOR_CTRL_1B
+Text HLabel 9900 1650 2    50   Output ~ 0
+MOTOR_CTRL_2A
+Text HLabel 9900 1750 2    50   Output ~ 0
+MOTOR_CTRL_2B
+Text HLabel 9900 1900 2    50   Output ~ 0
+MOTOR_CTRL_3A
+Text HLabel 9900 2000 2    50   Output ~ 0
+MOTOR_CTRL_3B
+Text HLabel 9900 2150 2    50   Output ~ 0
+MOTOR_CTRL_4A
+Text HLabel 9900 2250 2    50   Output ~ 0
+MOTOR_CTRL_4B
+Text HLabel 9900 2400 2    50   Input ~ 0
+MOTOR_FAULT_12
+Text HLabel 9900 2500 2    50   Input ~ 0
+MOTOR_FAULT_34
+Text HLabel 9900 2650 2    50   Output ~ 0
+MOTOR_SLEEP_12
+Text HLabel 9900 2750 2    50   Output ~ 0
+MOTOR_SLEPP_34
 $EndSCHEMATC
