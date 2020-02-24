@@ -70,12 +70,12 @@ L Connector:Conn_01x02_Male J?
 U 1 1 5E51F506
 P 10200 1450
 AR Path="/5E507163/5E51F506" Ref="J?"  Part="1" 
-AR Path="/5E51F506" Ref="J?"  Part="1" 
-F 0 "J?" H 10172 1332 50  0000 R CNN
+AR Path="/5E51F506" Ref="J2"  Part="1" 
+F 0 "J2" H 10172 1332 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1423 50  0000 R CNN
 F 2 "" H 10200 1450 50  0001 C CNN
 F 3 "~" H 10200 1450 50  0001 C CNN
-F 4 "tbd" H 10200 1450 50  0001 C CNN "Manufacturer Part Number"
+F 4 "0530480210" H 10200 1450 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1450
 	-1   0    0    1   
 $EndComp
@@ -84,12 +84,12 @@ L Connector:Conn_01x02_Male J?
 U 1 1 5E51F50C
 P 10200 1700
 AR Path="/5E507163/5E51F50C" Ref="J?"  Part="1" 
-AR Path="/5E51F50C" Ref="J?"  Part="1" 
-F 0 "J?" H 10172 1582 50  0000 R CNN
+AR Path="/5E51F50C" Ref="J3"  Part="1" 
+F 0 "J3" H 10172 1582 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1673 50  0000 R CNN
 F 2 "" H 10200 1700 50  0001 C CNN
 F 3 "~" H 10200 1700 50  0001 C CNN
-F 4 "tbd" H 10200 1700 50  0001 C CNN "Manufacturer Part Number"
+F 4 "0530480210" H 10200 1700 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1700
 	-1   0    0    1   
 $EndComp
@@ -98,12 +98,12 @@ L Connector:Conn_01x02_Male J?
 U 1 1 5E51F512
 P 10200 1950
 AR Path="/5E507163/5E51F512" Ref="J?"  Part="1" 
-AR Path="/5E51F512" Ref="J?"  Part="1" 
-F 0 "J?" H 10172 1832 50  0000 R CNN
+AR Path="/5E51F512" Ref="J4"  Part="1" 
+F 0 "J4" H 10172 1832 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1923 50  0000 R CNN
 F 2 "" H 10200 1950 50  0001 C CNN
 F 3 "~" H 10200 1950 50  0001 C CNN
-F 4 "tbd" H 10200 1950 50  0001 C CNN "Manufacturer Part Number"
+F 4 "0530480210" H 10200 1950 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1950
 	-1   0    0    1   
 $EndComp
@@ -112,20 +112,20 @@ L Connector:Conn_01x02_Male J?
 U 1 1 5E51F518
 P 10200 2200
 AR Path="/5E507163/5E51F518" Ref="J?"  Part="1" 
-AR Path="/5E51F518" Ref="J?"  Part="1" 
-F 0 "J?" H 10172 2082 50  0000 R CNN
+AR Path="/5E51F518" Ref="J5"  Part="1" 
+F 0 "J5" H 10172 2082 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 2173 50  0000 R CNN
 F 2 "" H 10200 2200 50  0001 C CNN
 F 3 "~" H 10200 2200 50  0001 C CNN
-F 4 "tbd" H 10200 2200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "0530480210" H 10200 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 2200
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:Barrel_Jack J?
+L Connector:Barrel_Jack J1
 U 1 1 5E526230
 P 1050 1050
-F 0 "J?" H 1107 1375 50  0000 C CNN
+F 0 "J1" H 1107 1375 50  0000 C CNN
 F 1 "Barrel_Jack" H 1107 1284 50  0000 C CNN
 F 2 "" H 1100 1010 50  0001 C CNN
 F 3 "https://www.cuidevices.com/product/resource/pj-037b.pdf" H 1100 1010 50  0001 C CNN
@@ -142,10 +142,10 @@ Wire Wire Line
 Wire Wire Line
 	1500 1150 1350 1150
 $Comp
-L power:GND #PWR?
+L power:GND #PWR02
 U 1 1 5E52861B
 P 4800 7550
-F 0 "#PWR?" H 4800 7300 50  0001 C CNN
+F 0 "#PWR02" H 4800 7300 50  0001 C CNN
 F 1 "GND" H 4805 7377 50  0000 C CNN
 F 2 "" H 4800 7550 50  0001 C CNN
 F 3 "" H 4800 7550 50  0001 C CNN
@@ -156,10 +156,10 @@ Connection ~ 4800 7550
 Wire Wire Line
 	4800 7550 1500 7550
 $Comp
-L power:+12V #PWR?
+L power:+12V #PWR01
 U 1 1 5E52879A
 P 2050 950
-F 0 "#PWR?" H 2050 800 50  0001 C CNN
+F 0 "#PWR01" H 2050 800 50  0001 C CNN
 F 1 "+12V" H 2065 1123 50  0000 C CNN
 F 2 "" H 2050 950 50  0001 C CNN
 F 3 "" H 2050 950 50  0001 C CNN

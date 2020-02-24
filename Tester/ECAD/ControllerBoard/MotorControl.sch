@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Driver_Motor:DRV8833PW U?
+L Driver_Motor:DRV8833PW U3
 U 1 1 5E51B362
 P 8850 2050
-F 0 "U?" H 8850 1261 50  0000 C CNN
+F 0 "U3" H 8850 1261 50  0000 C CNN
 F 1 "DRV8833PW" H 8850 1170 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 9300 2500 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 8700 2600 50  0001 C CNN
@@ -46,58 +46,58 @@ Text HLabel 1350 850  0    50   Input ~ 0
 Text HLabel 950  7350 0    50   Input ~ 0
 GND
 $Comp
-L Device:R R?
+L Device:R R4
 U 1 1 5E52ACD2
 P 7500 5650
-F 0 "R?" H 7430 5604 50  0000 R CNN
+F 0 "R4" H 7430 5604 50  0000 R CNN
 F 1 "1R" H 7430 5695 50  0000 R CNN
-F 2 "" V 7430 5650 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7430 5650 50  0001 C CNN
 F 3 "~" H 7500 5650 50  0001 C CNN
-F 4 "tbd" H 7500 5650 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-071RL" H 7500 5650 50  0001 C CNN "Manufacturer Part Number"
 	1    7500 5650
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R2
 U 1 1 5E52B98B
 P 7150 5650
-F 0 "R?" H 7220 5696 50  0000 L CNN
+F 0 "R2" H 7220 5696 50  0000 L CNN
 F 1 "1R" H 7220 5605 50  0000 L CNN
-F 2 "" V 7080 5650 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7080 5650 50  0001 C CNN
 F 3 "~" H 7150 5650 50  0001 C CNN
-F 4 "tbd" H 7150 5650 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-071RL" H 7150 5650 50  0001 C CNN "Manufacturer Part Number"
 	1    7150 5650
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R3
 U 1 1 5E52A923
 P 7450 2900
-F 0 "R?" H 7520 2946 50  0000 L CNN
+F 0 "R3" H 7520 2946 50  0000 L CNN
 F 1 "1R" H 7520 2855 50  0000 L CNN
-F 2 "" V 7380 2900 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7380 2900 50  0001 C CNN
 F 3 "~" H 7450 2900 50  0001 C CNN
-F 4 "tbd" H 7450 2900 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-071RL" H 7450 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    7450 2900
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R1
 U 1 1 5E529A2C
 P 7100 2900
-F 0 "R?" H 7170 2946 50  0000 L CNN
+F 0 "R1" H 7170 2946 50  0000 L CNN
 F 1 "1R" H 7170 2855 50  0000 L CNN
-F 2 "" V 7030 2900 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7030 2900 50  0001 C CNN
 F 3 "~" H 7100 2900 50  0001 C CNN
-F 4 "tbd" H 7100 2900 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-071RL" H 7100 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    7100 2900
 	1    0    0    -1  
 $EndComp
 $Comp
-L Driver_Motor:DRV8833PW U?
+L Driver_Motor:DRV8833PW U4
 U 1 1 5E51A8F9
 P 8850 4800
-F 0 "U?" H 8850 4011 50  0000 C CNN
+F 0 "U4" H 8850 4011 50  0000 C CNN
 F 1 "DRV8833PW" H 8850 3920 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 9300 5250 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 8700 5350 50  0001 C CNN
@@ -149,18 +149,6 @@ Wire Wire Line
 	9150 1150 10400 1150
 Wire Wire Line
 	10400 1150 10400 1250
-$Comp
-L Device:CP C?
-U 1 1 5E54FC20
-P 10400 4100
-F 0 "C?" H 10518 4146 50  0000 L CNN
-F 1 "10uCP" H 10518 4055 50  0000 L CNN
-F 2 "" H 10438 3950 50  0001 C CNN
-F 3 "~" H 10400 4100 50  0001 C CNN
-F 4 "tbd" H 10400 4100 50  0001 C CNN "Manufacturer Part Number"
-	1    10400 4100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9150 4100 9150 3750
 Wire Wire Line
@@ -200,10 +188,10 @@ Low-ESR (ceramic)\nbypass capacitor
 Text Notes 10250 4400 0    50   ~ 0
 Low-ESR (ceramic)\nbypass capacitor
 $Comp
-L Device:C C?
+L Device:C C1
 U 1 1 5E554940
 P 7550 1250
-F 0 "C?" H 7665 1296 50  0000 L CNN
+F 0 "C1" H 7665 1296 50  0000 L CNN
 F 1 "0.01uC" H 7665 1205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7588 1100 50  0001 C CNN
 F 3 "~" H 7550 1250 50  0001 C CNN
@@ -225,14 +213,14 @@ Wire Wire Line
 Wire Wire Line
 	7550 1750 8250 1750
 $Comp
-L Device:C C?
+L Device:C C2
 U 1 1 5E556072
 P 7600 4050
-F 0 "C?" H 7715 4096 50  0000 L CNN
+F 0 "C2" H 7715 4096 50  0000 L CNN
 F 1 "0.01uC" H 7715 4005 50  0000 L CNN
-F 2 "" H 7638 3900 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7638 3900 50  0001 C CNN
 F 3 "~" H 7600 4050 50  0001 C CNN
-F 4 "tbd" H 7600 4050 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805KRX7R9BB103" H 7600 4050 50  0001 C CNN "Manufacturer Part Number"
 	1    7600 4050
 	1    0    0    -1  
 $EndComp
@@ -248,10 +236,10 @@ Low-ESR ceramic\ncapacitor rated for 16 V.
 Text Notes 7350 3900 0    50   ~ 0
 Low-ESR ceramic\ncapacitor rated for 16 V.
 $Comp
-L Device:C C?
+L Device:C C3
 U 1 1 5E5579B2
 P 9500 1400
-F 0 "C?" H 9615 1446 50  0000 L CNN
+F 0 "C3" H 9615 1446 50  0000 L CNN
 F 1 "2.2uC" H 9615 1355 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9538 1250 50  0001 C CNN
 F 3 "~" H 9500 1400 50  0001 C CNN
@@ -273,14 +261,14 @@ Connection ~ 10400 1800
 Wire Wire Line
 	10400 1800 10400 1550
 $Comp
-L Device:C C?
+L Device:C C4
 U 1 1 5E5593EC
 P 9500 4100
-F 0 "C?" H 9615 4146 50  0000 L CNN
+F 0 "C4" H 9615 4146 50  0000 L CNN
 F 1 "2.2uC" H 9615 4055 50  0000 L CNN
-F 2 "" H 9538 3950 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9538 3950 50  0001 C CNN
 F 3 "~" H 9500 4100 50  0001 C CNN
-F 4 "tbd" H 9500 4100 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805KRX5R7BB225" H 9500 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 4100
 	1    0    0    -1  
 $EndComp
@@ -328,10 +316,10 @@ Connection ~ 8850 3750
 Wire Wire Line
 	8850 3750 7600 3750
 $Comp
-L Regulator_Switching:TPS562200 U?
+L Regulator_Switching:TPS562200 U2
 U 1 1 5E567A0E
 P 3550 3800
-F 0 "U?" H 3550 4167 50  0000 C CNN
+F 0 "U2" H 3550 4167 50  0000 C CNN
 F 1 "TPS562200" H 3550 4076 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3600 3550 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tps563200.pdf" H 3550 3800 50  0001 C CNN
@@ -347,15 +335,27 @@ Wire Wire Line
 	950  7350 6600 7350
 Connection ~ 7050 5800
 $Comp
-L Device:C C?
+L Device:C C5
 U 1 1 5E5466EF
 P 10400 1400
-F 0 "C?" H 10515 1446 50  0000 L CNN
+F 0 "C5" H 10515 1446 50  0000 L CNN
 F 1 "10uC" H 10515 1355 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10438 1250 50  0001 C CNN
 F 3 "~" H 10400 1400 50  0001 C CNN
 F 4 "CC0805MRX5R6BB106" H 10400 1400 50  0001 C CNN "Manufacturer Part Number"
 	1    10400 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5E5419EC
+P 10400 4100
+F 0 "C6" H 10515 4146 50  0000 L CNN
+F 1 "10uC" H 10515 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10438 3950 50  0001 C CNN
+F 3 "~" H 10400 4100 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 10400 4100 50  0001 C CNN "Manufacturer Part Number"
+	1    10400 4100
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
