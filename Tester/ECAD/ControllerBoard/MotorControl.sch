@@ -21,7 +21,7 @@ F 0 "U?" H 8850 1261 50  0000 C CNN
 F 1 "DRV8833PW" H 8850 1170 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 9300 2500 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 8700 2600 50  0001 C CNN
-F 4 "tbd" H 8850 2050 50  0001 C CNN "Manufacturer Part Number"
+F 4 "DRV8833PWR" H 8850 2050 50  0001 C CNN "Manufacturer Part Number"
 	1    8850 2050
 	1    0    0    -1  
 $EndComp
@@ -101,7 +101,7 @@ F 0 "U?" H 8850 4011 50  0000 C CNN
 F 1 "DRV8833PW" H 8850 3920 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 9300 5250 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 8700 5350 50  0001 C CNN
-F 4 "tbd" H 8850 4800 50  0001 C CNN "Manufacturer Part Number"
+F 4 "DRV8833PWR" H 8850 4800 50  0001 C CNN "Manufacturer Part Number"
 	1    8850 4800
 	1    0    0    -1  
 $EndComp
@@ -145,18 +145,6 @@ Text HLabel 8250 5100 0    50   Input ~ 0
 MOTOR_CTRL_4A
 Text HLabel 8250 5200 0    50   Input ~ 0
 MOTOR_CTRL_4B
-$Comp
-L Device:CP C?
-U 1 1 5E54E959
-P 10400 1400
-F 0 "C?" H 10518 1446 50  0000 L CNN
-F 1 "10uCP" H 10518 1355 50  0000 L CNN
-F 2 "" H 10438 1250 50  0001 C CNN
-F 3 "~" H 10400 1400 50  0001 C CNN
-F 4 "tbd" H 10400 1400 50  0001 C CNN "Manufacturer Part Number"
-	1    10400 1400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9150 1150 10400 1150
 Wire Wire Line
@@ -217,9 +205,9 @@ U 1 1 5E554940
 P 7550 1250
 F 0 "C?" H 7665 1296 50  0000 L CNN
 F 1 "0.01uC" H 7665 1205 50  0000 L CNN
-F 2 "" H 7588 1100 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7588 1100 50  0001 C CNN
 F 3 "~" H 7550 1250 50  0001 C CNN
-F 4 "tbd" H 7550 1250 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805KRX7R9BB103" H 7550 1250 50  0001 C CNN "Manufacturer Part Number"
 	1    7550 1250
 	1    0    0    -1  
 $EndComp
@@ -265,9 +253,9 @@ U 1 1 5E5579B2
 P 9500 1400
 F 0 "C?" H 9615 1446 50  0000 L CNN
 F 1 "2.2uC" H 9615 1355 50  0000 L CNN
-F 2 "" H 9538 1250 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9538 1250 50  0001 C CNN
 F 3 "~" H 9500 1400 50  0001 C CNN
-F 4 "tbd" H 9500 1400 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805KRX5R7BB225" H 9500 1400 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 1400
 	1    0    0    -1  
 $EndComp
@@ -358,4 +346,16 @@ Wire Wire Line
 Wire Wire Line
 	950  7350 6600 7350
 Connection ~ 7050 5800
+$Comp
+L Device:C C?
+U 1 1 5E5466EF
+P 10400 1400
+F 0 "C?" H 10515 1446 50  0000 L CNN
+F 1 "10uC" H 10515 1355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10438 1250 50  0001 C CNN
+F 3 "~" H 10400 1400 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 10400 1400 50  0001 C CNN "Manufacturer Part Number"
+	1    10400 1400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
