@@ -21,6 +21,7 @@ F 0 "U2" H 1850 4800 50  0000 C CNN
 F 1 "PMW3360DM-T2QU" H 2150 3850 50  0000 C CNN
 F 2 "PixArt:PMW3360DM-T2QU" H 2150 4200 50  0001 C CNN
 F 3 "" H 2150 4200 50  0001 C CNN
+F 4 "tbd" H 2150 4200 50  0001 C CNN "Manufacturer Part Number"
 	1    2150 4200
 	1    0    0    -1  
 $EndComp
@@ -32,6 +33,7 @@ F 0 "C1" H 1315 6196 50  0000 L CNN
 F 1 "4.7uC" H 1315 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1238 6000 50  0001 C CNN
 F 3 "~" H 1200 6150 50  0001 C CNN
+F 4 "tbd" H 1200 6150 50  0001 C CNN "Manufacturer Part Number"
 	1    1200 6150
 	1    0    0    -1  
 $EndComp
@@ -43,6 +45,7 @@ F 0 "C3" H 1765 6196 50  0000 L CNN
 F 1 "100nC" H 1765 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1688 6000 50  0001 C CNN
 F 3 "~" H 1650 6150 50  0001 C CNN
+F 4 "tbd" H 1650 6150 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 6150
 	1    0    0    -1  
 $EndComp
@@ -65,6 +68,7 @@ F 0 "U4" H 5050 2900 50  0000 L CNN
 F 1 "SN74LVC1T45DBV" H 5050 2200 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 4750 2100 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf" H 3850 1900 50  0001 C CNN
+F 4 "tbd" H 4750 2550 50  0001 C CNN "Manufacturer Part Number"
 	1    4750 2550
 	1    0    0    -1  
 $EndComp
@@ -76,6 +80,7 @@ F 0 "U5" H 5050 3950 50  0000 L CNN
 F 1 "SN74LVC1T45DBV" H 5050 3250 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 4750 3150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf" H 3850 2950 50  0001 C CNN
+F 4 "tbd" H 4750 3600 50  0001 C CNN "Manufacturer Part Number"
 	1    4750 3600
 	1    0    0    -1  
 $EndComp
@@ -87,6 +92,7 @@ F 0 "U8" H 5050 7050 50  0000 L CNN
 F 1 "SN74LVC1T45DBV" H 5050 6350 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 4750 6250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf" H 3850 6050 50  0001 C CNN
+F 4 "tbd" H 4750 6700 50  0001 C CNN "Manufacturer Part Number"
 	1    4750 6700
 	1    0    0    -1  
 $EndComp
@@ -98,6 +104,7 @@ F 0 "U7" H 5050 5950 50  0000 L CNN
 F 1 "SN74LVC1T45DBV" H 5050 5250 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 4750 5150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf" H 3850 4950 50  0001 C CNN
+F 4 "tbd" H 4750 5600 50  0001 C CNN "Manufacturer Part Number"
 	1    4750 5600
 	1    0    0    -1  
 $EndComp
@@ -109,6 +116,7 @@ F 0 "U6" H 5050 4950 50  0000 L CNN
 F 1 "SN74LVC1T45DBV" H 5050 4250 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 4750 4150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf" H 3850 3950 50  0001 C CNN
+F 4 "tbd" H 4750 4600 50  0001 C CNN "Manufacturer Part Number"
 	1    4750 4600
 	1    0    0    -1  
 $EndComp
@@ -120,6 +128,7 @@ F 0 "U3" H 5050 1750 50  0000 L CNN
 F 1 "SN74LVC1T45DBV" H 5050 1050 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 4750 950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf" H 3850 750 50  0001 C CNN
+F 4 "tbd" H 4750 1400 50  0001 C CNN "Manufacturer Part Number"
 	1    4750 1400
 	1    0    0    -1  
 $EndComp
@@ -252,6 +261,7 @@ F 0 "U1" H 2300 1450 50  0000 C CNN
 F 1 "TLV70019_SOT23-5" H 2200 1950 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 2050 2025 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv700.pdf" H 2050 1750 50  0001 C CNN
+F 4 "tbd" H 2050 1700 50  0001 C CNN "Manufacturer Part Number"
 	1    2050 1700
 	1    0    0    -1  
 $EndComp
@@ -361,6 +371,7 @@ F 0 "C4" H 2665 1896 50  0000 L CNN
 F 1 "1uC" H 2665 1805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2588 1700 50  0001 C CNN
 F 3 "~" H 2550 1850 50  0001 C CNN
+F 4 "tbd" H 2550 1850 50  0001 C CNN "Manufacturer Part Number"
 	1    2550 1850
 	1    0    0    -1  
 $EndComp
@@ -372,6 +383,7 @@ F 0 "C2" H 1415 1896 50  0000 L CNN
 F 1 "1uC" H 1415 1805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1338 1700 50  0001 C CNN
 F 3 "~" H 1300 1850 50  0001 C CNN
+F 4 "tbd" H 1300 1850 50  0001 C CNN "Manufacturer Part Number"
 	1    1300 1850
 	1    0    0    -1  
 $EndComp
@@ -406,6 +418,7 @@ F 0 "R1" H 2970 3446 50  0000 L CNN
 F 1 "39R" H 2970 3355 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2830 3400 50  0001 C CNN
 F 3 "~" H 2900 3400 50  0001 C CNN
+F 4 "tbd" H 2900 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    2900 3400
 	1    0    0    -1  
 $EndComp
@@ -563,6 +576,7 @@ F 0 "H1" H 9800 1696 50  0000 L CNN
 F 1 "MountingHole" H 9800 1605 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 1650 50  0001 C CNN
 F 3 "~" H 9700 1650 50  0001 C CNN
+F 4 "tbd" H 9700 1650 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 1650
 	1    0    0    -1  
 $EndComp
@@ -574,6 +588,7 @@ F 0 "H2" H 9800 1996 50  0000 L CNN
 F 1 "MountingHole" H 9800 1905 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 1950 50  0001 C CNN
 F 3 "~" H 9700 1950 50  0001 C CNN
+F 4 "tbd" H 9700 1950 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 1950
 	1    0    0    -1  
 $EndComp
@@ -585,6 +600,7 @@ F 0 "H3" H 9800 2296 50  0000 L CNN
 F 1 "MountingHole" H 9800 2205 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 2250 50  0001 C CNN
 F 3 "~" H 9700 2250 50  0001 C CNN
+F 4 "tbd" H 9700 2250 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 2250
 	1    0    0    -1  
 $EndComp
@@ -596,6 +612,7 @@ F 0 "H4" H 9800 2546 50  0000 L CNN
 F 1 "MountingHole" H 9800 2455 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 2500 50  0001 C CNN
 F 3 "~" H 9700 2500 50  0001 C CNN
+F 4 "tbd" H 9700 2500 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 2500
 	1    0    0    -1  
 $EndComp
@@ -619,6 +636,7 @@ F 0 "J1" H 8472 3582 50  0000 R CNN
 F 1 "Conn_01x08_Male" H 8472 3673 50  0000 R CNN
 F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8500 3700 50  0001 C CNN
 F 3 "~" H 8500 3700 50  0001 C CNN
+F 4 "tbd" H 8500 3700 50  0001 C CNN "Manufacturer Part Number"
 	1    8500 3700
 	-1   0    0    1   
 $EndComp

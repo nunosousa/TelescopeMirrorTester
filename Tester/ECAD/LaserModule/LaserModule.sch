@@ -21,6 +21,7 @@ F 0 "R5" H 10670 2946 50  0000 L CNN
 F 1 "4kR" H 10670 2855 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10530 2900 50  0001 C CNN
 F 3 "~" H 10600 2900 50  0001 C CNN
+F 4 "tbd" H 10600 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    10600 2900
 	1    0    0    -1  
 $EndComp
@@ -32,6 +33,7 @@ F 0 "R4" V 7093 2550 50  0000 C CNN
 F 1 "10kR" V 7184 2550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7230 2550 50  0001 C CNN
 F 3 "~" H 7300 2550 50  0001 C CNN
+F 4 "tbd" H 7300 2550 50  0001 C CNN "Manufacturer Part Number"
 	1    7300 2550
 	0    1    1    0   
 $EndComp
@@ -43,6 +45,7 @@ F 0 "R2" V 4757 2950 50  0000 C CNN
 F 1 "20kR" V 4666 2950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4480 2950 50  0001 C CNN
 F 3 "~" H 4550 2950 50  0001 C CNN
+F 4 "tbd" H 4550 2950 50  0001 C CNN "Manufacturer Part Number"
 	1    4550 2950
 	0    -1   -1   0   
 $EndComp
@@ -54,6 +57,7 @@ F 0 "R3" H 5070 2346 50  0000 L CNN
 F 1 "30kR" H 5070 2255 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4930 2300 50  0001 C CNN
 F 3 "~" H 5000 2300 50  0001 C CNN
+F 4 "tbd" H 5000 2300 50  0001 C CNN "Manufacturer Part Number"
 	1    5000 2300
 	1    0    0    -1  
 $EndComp
@@ -65,6 +69,7 @@ F 0 "R1" H 9120 2096 50  0000 L CNN
 F 1 "12R" H 9120 2005 50  0000 L CNN
 F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.52x3.35mm_HandSolder" V 8980 2050 50  0001 C CNN
 F 3 "~" H 9050 2050 50  0001 C CNN
+F 4 "tbd" H 9050 2050 50  0001 C CNN "Manufacturer Part Number"
 	1    9050 2050
 	1    0    0    -1  
 $EndComp
@@ -76,6 +81,7 @@ F 0 "C2" H 5115 3596 50  0000 L CNN
 F 1 "1nC" H 5115 3505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5038 3400 50  0001 C CNN
 F 3 "~" H 5000 3550 50  0001 C CNN
+F 4 "tbd" H 5000 3550 50  0001 C CNN "Manufacturer Part Number"
 	1    5000 3550
 	1    0    0    -1  
 $EndComp
@@ -87,6 +93,7 @@ F 0 "C1" H 6965 2846 50  0000 L CNN
 F 1 "100pC" H 6965 2755 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6888 2650 50  0001 C CNN
 F 3 "~" H 6850 2800 50  0001 C CNN
+F 4 "tbd" H 6850 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    6850 2800
 	1    0    0    -1  
 $EndComp
@@ -183,6 +190,7 @@ F 0 "J1" H 1308 3531 50  0000 C CNN
 F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
 F 2 "Connector_Molex:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 1200 3250 50  0001 C CNN
 F 3 "~" H 1200 3250 50  0001 C CNN
+F 4 "tbd" H 1200 3250 50  0001 C CNN "Manufacturer Part Number"
 	1    1200 3250
 	1    0    0    -1  
 $EndComp
@@ -220,6 +228,7 @@ F 0 "H1" H 1650 6496 50  0000 L CNN
 F 1 "MountingHole" H 1650 6405 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6450 50  0001 C CNN
 F 3 "~" H 1550 6450 50  0001 C CNN
+F 4 "tbd" H 1550 6450 50  0001 C CNN "Manufacturer Part Number"
 	1    1550 6450
 	1    0    0    -1  
 $EndComp
@@ -231,6 +240,7 @@ F 0 "H2" H 1650 6746 50  0000 L CNN
 F 1 "MountingHole" H 1650 6655 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6700 50  0001 C CNN
 F 3 "~" H 1550 6700 50  0001 C CNN
+F 4 "tbd" H 1550 6700 50  0001 C CNN "Manufacturer Part Number"
 	1    1550 6700
 	1    0    0    -1  
 $EndComp
@@ -244,6 +254,7 @@ F 0 "U2" H 6344 3096 50  0000 L CNN
 F 1 "AD8601" H 6344 3005 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6000 3050 50  0001 C CNN
 F 3 "" H 6000 3250 50  0001 C CNN
+F 4 "tbd" H 6000 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    6000 3050
 	1    0    0    -1  
 $EndComp
@@ -277,6 +288,7 @@ F 0 "Q1" H 9354 3096 50  0000 L CNN
 F 1 "ZXMP6A17G" H 9354 3005 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 9350 2975 50  0001 L CIN
 F 3 "" H 9150 3050 50  0001 L CNN
+F 4 "tbd" H 9150 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    9150 3050
 	-1   0    0    1   
 $EndComp
@@ -290,6 +302,7 @@ F 0 "LD1" V 9246 4200 50  0000 R CNN
 F 1 "SLD3134VL" V 9155 4200 50  0000 R CNN
 F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9150 4100 50  0001 C CNN
 F 3 "" H 9180 4200 50  0001 C CNN
+F 4 "tbd" H 9150 4400 50  0001 C CNN "Manufacturer Part Number"
 	1    9150 4400
 	0    -1   -1   0   
 $EndComp
@@ -332,6 +345,7 @@ F 0 "U1" H 4294 3046 50  0000 L CNN
 F 1 "MCP4716" H 4294 2955 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3650 2450 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22272C.pdf" H 3650 3300 50  0001 C CNN
+F 4 "tbd" H 3650 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    3650 3050
 	1    0    0    -1  
 $EndComp

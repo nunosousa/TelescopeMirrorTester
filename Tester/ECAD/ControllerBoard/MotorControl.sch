@@ -21,6 +21,7 @@ F 0 "U?" H 8850 1261 50  0000 C CNN
 F 1 "DRV8833PW" H 8850 1170 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 9300 2500 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 8700 2600 50  0001 C CNN
+F 4 "tbd" H 8850 2050 50  0001 C CNN "Manufacturer Part Number"
 	1    8850 2050
 	1    0    0    -1  
 $EndComp
@@ -52,6 +53,7 @@ F 0 "R?" H 7430 5604 50  0000 R CNN
 F 1 "1R" H 7430 5695 50  0000 R CNN
 F 2 "" V 7430 5650 50  0001 C CNN
 F 3 "~" H 7500 5650 50  0001 C CNN
+F 4 "tbd" H 7500 5650 50  0001 C CNN "Manufacturer Part Number"
 	1    7500 5650
 	-1   0    0    1   
 $EndComp
@@ -63,6 +65,7 @@ F 0 "R?" H 7220 5696 50  0000 L CNN
 F 1 "1R" H 7220 5605 50  0000 L CNN
 F 2 "" V 7080 5650 50  0001 C CNN
 F 3 "~" H 7150 5650 50  0001 C CNN
+F 4 "tbd" H 7150 5650 50  0001 C CNN "Manufacturer Part Number"
 	1    7150 5650
 	1    0    0    -1  
 $EndComp
@@ -74,6 +77,7 @@ F 0 "R?" H 7520 2946 50  0000 L CNN
 F 1 "1R" H 7520 2855 50  0000 L CNN
 F 2 "" V 7380 2900 50  0001 C CNN
 F 3 "~" H 7450 2900 50  0001 C CNN
+F 4 "tbd" H 7450 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    7450 2900
 	1    0    0    -1  
 $EndComp
@@ -85,6 +89,7 @@ F 0 "R?" H 7170 2946 50  0000 L CNN
 F 1 "1R" H 7170 2855 50  0000 L CNN
 F 2 "" V 7030 2900 50  0001 C CNN
 F 3 "~" H 7100 2900 50  0001 C CNN
+F 4 "tbd" H 7100 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    7100 2900
 	1    0    0    -1  
 $EndComp
@@ -96,6 +101,7 @@ F 0 "U?" H 8850 4011 50  0000 C CNN
 F 1 "DRV8833PW" H 8850 3920 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 9300 5250 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 8700 5350 50  0001 C CNN
+F 4 "tbd" H 8850 4800 50  0001 C CNN "Manufacturer Part Number"
 	1    8850 4800
 	1    0    0    -1  
 $EndComp
@@ -147,6 +153,7 @@ F 0 "C?" H 10518 1446 50  0000 L CNN
 F 1 "10uCP" H 10518 1355 50  0000 L CNN
 F 2 "" H 10438 1250 50  0001 C CNN
 F 3 "~" H 10400 1400 50  0001 C CNN
+F 4 "tbd" H 10400 1400 50  0001 C CNN "Manufacturer Part Number"
 	1    10400 1400
 	1    0    0    -1  
 $EndComp
@@ -162,6 +169,7 @@ F 0 "C?" H 10518 4146 50  0000 L CNN
 F 1 "10uCP" H 10518 4055 50  0000 L CNN
 F 2 "" H 10438 3950 50  0001 C CNN
 F 3 "~" H 10400 4100 50  0001 C CNN
+F 4 "tbd" H 10400 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    10400 4100
 	1    0    0    -1  
 $EndComp
@@ -211,6 +219,7 @@ F 0 "C?" H 7665 1296 50  0000 L CNN
 F 1 "0.01uC" H 7665 1205 50  0000 L CNN
 F 2 "" H 7588 1100 50  0001 C CNN
 F 3 "~" H 7550 1250 50  0001 C CNN
+F 4 "tbd" H 7550 1250 50  0001 C CNN "Manufacturer Part Number"
 	1    7550 1250
 	1    0    0    -1  
 $EndComp
@@ -235,6 +244,7 @@ F 0 "C?" H 7715 4096 50  0000 L CNN
 F 1 "0.01uC" H 7715 4005 50  0000 L CNN
 F 2 "" H 7638 3900 50  0001 C CNN
 F 3 "~" H 7600 4050 50  0001 C CNN
+F 4 "tbd" H 7600 4050 50  0001 C CNN "Manufacturer Part Number"
 	1    7600 4050
 	1    0    0    -1  
 $EndComp
@@ -257,6 +267,7 @@ F 0 "C?" H 9615 1446 50  0000 L CNN
 F 1 "2.2uC" H 9615 1355 50  0000 L CNN
 F 2 "" H 9538 1250 50  0001 C CNN
 F 3 "~" H 9500 1400 50  0001 C CNN
+F 4 "tbd" H 9500 1400 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 1400
 	1    0    0    -1  
 $EndComp
@@ -281,6 +292,7 @@ F 0 "C?" H 9615 4146 50  0000 L CNN
 F 1 "2.2uC" H 9615 4055 50  0000 L CNN
 F 2 "" H 9538 3950 50  0001 C CNN
 F 3 "~" H 9500 4100 50  0001 C CNN
+F 4 "tbd" H 9500 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 4100
 	1    0    0    -1  
 $EndComp
@@ -335,6 +347,7 @@ F 0 "U?" H 3550 4167 50  0000 C CNN
 F 1 "TPS562200" H 3550 4076 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3600 3550 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tps563200.pdf" H 3550 3800 50  0001 C CNN
+F 4 "tbd" H 3550 3800 50  0001 C CNN "Manufacturer Part Number"
 	1    3550 3800
 	1    0    0    -1  
 $EndComp

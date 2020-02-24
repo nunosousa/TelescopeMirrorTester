@@ -75,6 +75,7 @@ F 0 "J?" H 10172 1332 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1423 50  0000 R CNN
 F 2 "" H 10200 1450 50  0001 C CNN
 F 3 "~" H 10200 1450 50  0001 C CNN
+F 4 "tbd" H 10200 1450 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1450
 	-1   0    0    1   
 $EndComp
@@ -88,6 +89,7 @@ F 0 "J?" H 10172 1582 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1673 50  0000 R CNN
 F 2 "" H 10200 1700 50  0001 C CNN
 F 3 "~" H 10200 1700 50  0001 C CNN
+F 4 "tbd" H 10200 1700 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1700
 	-1   0    0    1   
 $EndComp
@@ -101,6 +103,7 @@ F 0 "J?" H 10172 1832 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1923 50  0000 R CNN
 F 2 "" H 10200 1950 50  0001 C CNN
 F 3 "~" H 10200 1950 50  0001 C CNN
+F 4 "tbd" H 10200 1950 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1950
 	-1   0    0    1   
 $EndComp
@@ -114,6 +117,7 @@ F 0 "J?" H 10172 2082 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 2173 50  0000 R CNN
 F 2 "" H 10200 2200 50  0001 C CNN
 F 3 "~" H 10200 2200 50  0001 C CNN
+F 4 "tbd" H 10200 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 2200
 	-1   0    0    1   
 $EndComp
@@ -125,6 +129,7 @@ F 0 "J?" H 1107 1375 50  0000 C CNN
 F 1 "Barrel_Jack" H 1107 1284 50  0000 C CNN
 F 2 "" H 1100 1010 50  0001 C CNN
 F 3 "~" H 1100 1010 50  0001 C CNN
+F 4 "tbd" H 1050 1050 50  0001 C CNN "Manufacturer Part Number"
 	1    1050 1050
 	1    0    0    -1  
 $EndComp
