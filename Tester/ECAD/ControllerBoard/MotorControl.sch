@@ -323,7 +323,7 @@ F 0 "U2" H 3550 4167 50  0000 C CNN
 F 1 "TPS562200" H 3550 4076 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3600 3550 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tps563200.pdf" H 3550 3800 50  0001 C CNN
-F 4 "tbd" H 3550 3800 50  0001 C CNN "Manufacturer Part Number"
+F 4 "TPS562200DDCR" H 3550 3800 50  0001 C CNN "Manufacturer Part Number"
 	1    3550 3800
 	1    0    0    -1  
 $EndComp

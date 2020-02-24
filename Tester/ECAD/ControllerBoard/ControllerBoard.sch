@@ -73,7 +73,7 @@ AR Path="/5E507163/5E51F506" Ref="J?"  Part="1"
 AR Path="/5E51F506" Ref="J2"  Part="1" 
 F 0 "J2" H 10172 1332 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1423 50  0000 R CNN
-F 2 "" H 10200 1450 50  0001 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 10200 1450 50  0001 C CNN
 F 3 "~" H 10200 1450 50  0001 C CNN
 F 4 "0530480210" H 10200 1450 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1450
@@ -87,7 +87,7 @@ AR Path="/5E507163/5E51F50C" Ref="J?"  Part="1"
 AR Path="/5E51F50C" Ref="J3"  Part="1" 
 F 0 "J3" H 10172 1582 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1673 50  0000 R CNN
-F 2 "" H 10200 1700 50  0001 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 10200 1700 50  0001 C CNN
 F 3 "~" H 10200 1700 50  0001 C CNN
 F 4 "0530480210" H 10200 1700 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1700
@@ -101,7 +101,7 @@ AR Path="/5E507163/5E51F512" Ref="J?"  Part="1"
 AR Path="/5E51F512" Ref="J4"  Part="1" 
 F 0 "J4" H 10172 1832 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 1923 50  0000 R CNN
-F 2 "" H 10200 1950 50  0001 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 10200 1950 50  0001 C CNN
 F 3 "~" H 10200 1950 50  0001 C CNN
 F 4 "0530480210" H 10200 1950 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 1950
@@ -115,7 +115,7 @@ AR Path="/5E507163/5E51F518" Ref="J?"  Part="1"
 AR Path="/5E51F518" Ref="J5"  Part="1" 
 F 0 "J5" H 10172 2082 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 10172 2173 50  0000 R CNN
-F 2 "" H 10200 2200 50  0001 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 10200 2200 50  0001 C CNN
 F 3 "~" H 10200 2200 50  0001 C CNN
 F 4 "0530480210" H 10200 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 2200
