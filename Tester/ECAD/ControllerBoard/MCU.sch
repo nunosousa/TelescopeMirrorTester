@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 2 5
 Title ""
 Date ""
 Rev ""
@@ -48,5 +48,184 @@ MOTOR_FAULT_34
 Text HLabel 9900 2650 2    50   Output ~ 0
 MOTOR_SLEEP_12
 Text HLabel 9900 2750 2    50   Output ~ 0
-MOTOR_SLEPP_34
+MOTOR_SLEEP_34
+Text HLabel 1000 7150 0    50   Input ~ 0
+GND
+Wire Wire Line
+	5350 5700 5350 6150
+Wire Wire Line
+	5350 7150 4100 7150
+Text HLabel 1100 900  0    50   Input ~ 0
+VMCU
+Wire Wire Line
+	5550 5700 5350 5700
+Connection ~ 5350 5700
+$Comp
+L Device:C C15
+U 1 1 5E5846F6
+P 7250 1700
+F 0 "C15" H 7365 1746 50  0000 L CNN
+F 1 "1uC" H 7365 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7288 1550 50  0001 C CNN
+F 3 "~" H 7250 1700 50  0001 C CNN
+	1    7250 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 1900 5650 1300
+Wire Wire Line
+	5650 1300 7250 1300
+Wire Wire Line
+	7250 1300 7250 1550
+Wire Wire Line
+	7250 1850 7250 6150
+Wire Wire Line
+	7250 6150 5350 6150
+Connection ~ 5350 6150
+Wire Wire Line
+	5350 6150 5350 7150
+$Comp
+L Device:C C12
+U 1 1 5E58564D
+P 1700 3600
+F 0 "C12" H 1815 3646 50  0000 L CNN
+F 1 "10uC" H 1815 3555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1738 3450 50  0001 C CNN
+F 3 "~" H 1700 3600 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 1700 3600 50  0001 C CNN "Manufacturer Part Number"
+	1    1700 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 900  1700 900 
+Wire Wire Line
+	1700 900  1700 3450
+Wire Wire Line
+	1700 3750 1700 7150
+Connection ~ 1700 7150
+Wire Wire Line
+	1700 7150 1000 7150
+$Comp
+L Device:C C14
+U 1 1 5E586DB7
+P 4100 1700
+F 0 "C14" H 4215 1746 50  0000 L CNN
+F 1 "0.1uC" H 4215 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4138 1550 50  0001 C CNN
+F 3 "~" H 4100 1700 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 4100 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    4100 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 1900 5350 1300
+Wire Wire Line
+	5350 1300 4100 1300
+Wire Wire Line
+	4100 1300 4100 1550
+Wire Wire Line
+	4100 1850 4100 7150
+Connection ~ 4100 7150
+Wire Wire Line
+	4100 7150 3550 7150
+Wire Wire Line
+	4100 1300 4100 900 
+Wire Wire Line
+	4100 900  3550 900 
+Connection ~ 4100 1300
+Connection ~ 1700 900 
+$Comp
+L Device:C C13
+U 1 1 5E588280
+P 3550 1700
+F 0 "C13" H 3665 1746 50  0000 L CNN
+F 1 "0.1uC" H 3665 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3588 1550 50  0001 C CNN
+F 3 "~" H 3550 1700 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3550 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    3550 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1900 5250 1400
+Wire Wire Line
+	5250 1400 3550 1400
+Wire Wire Line
+	3550 1400 3550 1550
+Wire Wire Line
+	3550 1850 3550 7150
+Connection ~ 3550 7150
+Wire Wire Line
+	3550 7150 1700 7150
+Wire Wire Line
+	3550 1400 3550 900 
+Connection ~ 3550 1400
+Connection ~ 3550 900 
+Wire Wire Line
+	3550 900  1700 900 
+Wire Wire Line
+	5550 1900 5550 1400
+Wire Wire Line
+	5550 1400 7700 1400
+Wire Wire Line
+	7700 1550 7700 1400
+Connection ~ 7700 1400
+Wire Wire Line
+	7700 1850 7700 6150
+Wire Wire Line
+	7700 6150 7250 6150
+Connection ~ 7250 6150
+Connection ~ 7700 6150
+$Comp
+L Device:C C16
+U 1 1 5E58C2F2
+P 7700 1700
+F 0 "C16" H 7815 1746 50  0000 L CNN
+F 1 "0.1uC" H 7815 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7738 1550 50  0001 C CNN
+F 3 "~" H 7700 1700 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 7700 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    7700 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C17
+U 1 1 5E58C960
+P 8200 1700
+F 0 "C17" H 8315 1746 50  0000 L CNN
+F 1 "10uC" H 8315 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8238 1550 50  0001 C CNN
+F 3 "~" H 8200 1700 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 8200 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    8200 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 1550 8200 1400
+Wire Wire Line
+	7700 1400 8200 1400
+Wire Wire Line
+	8200 1850 8200 6150
+Wire Wire Line
+	7700 6150 8200 6150
+$Comp
+L Device:L L2
+U 1 1 5E58F693
+P 4800 900
+F 0 "L2" V 4990 900 50  0000 C CNN
+F 1 "L" V 4899 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4800 900 50  0001 C CNN
+F 3 "~" H 4800 900 50  0001 C CNN
+F 4 "BLM21SP471SH1D" H 4800 900 50  0001 C CNN "Manufacturer Part Number"
+	1    4800 900 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4650 900  4100 900 
+Connection ~ 4100 900 
+Wire Wire Line
+	4950 900  5550 900 
+Wire Wire Line
+	5550 900  5550 1400
+Connection ~ 5550 1400
 $EndSCHEMATC
