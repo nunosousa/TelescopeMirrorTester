@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 5
+Sheet 4 5
 Title ""
 Date ""
 Rev ""
@@ -253,9 +253,15 @@ Text HLabel 9900 4350 2    50   Output ~ 0
 Text HLabel 9900 4450 2    50   Output ~ 0
 ~POSZ_NRESET
 Text HLabel 9950 4850 2    50   Input ~ 0
-END_STOP_X
+END_STOP_X+
 Text HLabel 9950 5000 2    50   Input ~ 0
-END_STOP_Y
+END_STOP_Y+
 Text HLabel 9950 5200 2    50   Input ~ 0
-END_STOP_Z
+END_STOP_Z+
+Text HLabel 9950 5400 2    50   Input ~ 0
+END_STOP_X-
+Text HLabel 9950 5550 2    50   Input ~ 0
+END_STOP_Y-
+Text HLabel 9950 5750 2    50   Input ~ 0
+END_STOP_Z-
 $EndSCHEMATC
