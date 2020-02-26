@@ -264,4 +264,8 @@ Text HLabel 9950 5550 2    50   Input ~ 0
 END_STOP_Y-
 Text HLabel 9950 5750 2    50   Input ~ 0
 END_STOP_Z-
+Text HLabel 10050 6050 2    50   BiDi ~ 0
+LASER_SDA
+Text HLabel 10100 6250 2    50   Output ~ 0
+LASER_SCL
 $EndSCHEMATC
