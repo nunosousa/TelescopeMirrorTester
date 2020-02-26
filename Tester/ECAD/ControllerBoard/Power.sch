@@ -244,4 +244,8 @@ Wire Wire Line
 	1700 1950 1700 7500
 Text HLabel 8350 3800 2    50   Output ~ 0
 VMCU
+Text HLabel 8450 5150 2    50   Output ~ 0
+VPOS_SENS_5V
+Text HLabel 8650 5450 2    50   Output ~ 0
+VLASER_5V
 $EndSCHEMATC

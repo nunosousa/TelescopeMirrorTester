@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 5 5
 Title ""
 Date ""
 Rev ""
@@ -228,4 +228,34 @@ Wire Wire Line
 Wire Wire Line
 	5550 900  5550 1400
 Connection ~ 5550 1400
+Text HLabel 9900 3200 2    50   Input ~ 0
+POS_MISO
+Text HLabel 9900 3300 2    50   Output ~ 0
+POS_MOSI
+Text HLabel 9900 3400 2    50   Output ~ 0
+POS_SCLK
+Text HLabel 9900 3550 2    50   Output ~ 0
+~POSX_NCS
+Text HLabel 9900 3650 2    50   Output ~ 0
+~POSY_NCS
+Text HLabel 9900 3750 2    50   Output ~ 0
+~POSZ_NCS
+Text HLabel 9900 3900 2    50   Input ~ 0
+POSX_MOTION
+Text HLabel 9900 4000 2    50   Input ~ 0
+POSY_MOTION
+Text HLabel 9900 4100 2    50   Input ~ 0
+POSZ_MOTION
+Text HLabel 9900 4250 2    50   Output ~ 0
+~POSX_NRESET
+Text HLabel 9900 4350 2    50   Output ~ 0
+~POSY_NRESET
+Text HLabel 9900 4450 2    50   Output ~ 0
+~POSZ_NRESET
+Text HLabel 9950 4850 2    50   Input ~ 0
+END_STOP_X
+Text HLabel 9950 5000 2    50   Input ~ 0
+END_STOP_Y
+Text HLabel 9950 5200 2    50   Input ~ 0
+END_STOP_Z
 $EndSCHEMATC
