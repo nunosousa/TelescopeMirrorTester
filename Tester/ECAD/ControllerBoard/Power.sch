@@ -242,7 +242,7 @@ Wire Wire Line
 	1700 1950 3500 1950
 Wire Wire Line
 	1700 1950 1700 3850
-Text HLabel 8400 5150 2    50   Output ~ 0
+Text HLabel 8300 4850 2    50   Output ~ 0
 V3_3
 Text HLabel 8300 2750 2    50   Output ~ 0
 V5_0
@@ -455,7 +455,7 @@ Connection ~ 3950 3850
 Wire Wire Line
 	3950 3850 3500 3850
 Wire Wire Line
-	7700 2750 8300 2750
+	7700 2750 8100 2750
 Connection ~ 7700 2750
 Wire Wire Line
 	4900 3850 3950 3850
@@ -472,5 +472,84 @@ Wire Wire Line
 Connection ~ 3500 3850
 Connection ~ 1700 3850
 Wire Wire Line
-	1700 3850 1700 7500
+	1700 3850 1700 5350
+$Comp
+L Regulator_Linear:TLV70033_SOT23-5 U7
+U 1 1 5E59F3DE
+P 4900 4950
+F 0 "U7" H 4900 5292 50  0000 C CNN
+F 1 "TLV70033_SOT23-5" H 4900 5201 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4900 5275 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv700.pdf" H 4900 5000 50  0001 C CNN
+F 4 "TLV70033DDCT" H 4900 4950 50  0001 C CNN "Manufacturer Part Number"
+	1    4900 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2750 8100 4450
+Wire Wire Line
+	8100 4450 3850 4450
+Wire Wire Line
+	3850 4450 3850 4850
+Wire Wire Line
+	3850 4850 4200 4850
+Connection ~ 8100 2750
+Wire Wire Line
+	8100 2750 8300 2750
+Wire Wire Line
+	4600 4850 4600 4950
+Connection ~ 4600 4850
+Wire Wire Line
+	4900 5250 4900 5350
+Wire Wire Line
+	4900 5350 4200 5350
+Connection ~ 1700 5350
+Wire Wire Line
+	1700 5350 1700 7500
+Wire Wire Line
+	5200 4850 5500 4850
+$Comp
+L Device:C C30
+U 1 1 5E5ACBC2
+P 5500 5050
+F 0 "C30" H 5615 5096 50  0000 L CNN
+F 1 "1uC" H 5615 5005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5538 4900 50  0001 C CNN
+F 3 "~" H 5500 5050 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 5500 5050 50  0001 C CNN "Manufacturer Part Number"
+	1    5500 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C29
+U 1 1 5E5AD351
+P 4200 5050
+F 0 "C29" H 4315 5096 50  0000 L CNN
+F 1 "1uC" H 4315 5005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4238 4900 50  0001 C CNN
+F 3 "~" H 4200 5050 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 4200 5050 50  0001 C CNN "Manufacturer Part Number"
+	1    4200 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 4900 5500 4850
+Connection ~ 5500 4850
+Wire Wire Line
+	5500 4850 8300 4850
+Wire Wire Line
+	5500 5200 5500 5350
+Wire Wire Line
+	5500 5350 4900 5350
+Connection ~ 4900 5350
+Wire Wire Line
+	4200 4900 4200 4850
+Connection ~ 4200 4850
+Wire Wire Line
+	4200 4850 4600 4850
+Wire Wire Line
+	4200 5200 4200 5350
+Connection ~ 4200 5350
+Wire Wire Line
+	4200 5350 1700 5350
 $EndSCHEMATC
