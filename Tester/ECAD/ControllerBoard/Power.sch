@@ -232,7 +232,7 @@ Wire Wire Line
 	7700 850  8300 850 
 Connection ~ 7700 850 
 Wire Wire Line
-	1400 850  3500 850 
+	1400 850  2050 850 
 Wire Wire Line
 	1700 7500 850  7500
 Wire Wire Line
@@ -241,11 +241,236 @@ Connection ~ 3500 1950
 Wire Wire Line
 	1700 1950 3500 1950
 Wire Wire Line
-	1700 1950 1700 7500
-Text HLabel 8350 3800 2    50   Output ~ 0
-VMCU
-Text HLabel 8450 5150 2    50   Output ~ 0
-VPOS_SENS_5V
-Text HLabel 8650 5450 2    50   Output ~ 0
-VLASER_5V
+	1700 1950 1700 3850
+Text HLabel 8400 5150 2    50   Output ~ 0
+V3_3
+Text HLabel 8300 2750 2    50   Output ~ 0
+V5_0
+$Comp
+L Regulator_Switching:TPS562200 U?
+U 1 1 5E6B255B
+P 4900 2850
+AR Path="/5E507163/5E6B255B" Ref="U?"  Part="1" 
+AR Path="/5E55CCDC/5E6B255B" Ref="U6"  Part="1" 
+F 0 "U6" H 4900 3217 50  0000 C CNN
+F 1 "TPS562200" H 4900 3126 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 4950 2600 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps563200.pdf" H 4900 2850 50  0001 C CNN
+F 4 "TPS562200DDCR" H 4900 2850 50  0001 C CNN "Manufacturer Part Number"
+	1    4900 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 2950 4300 2950
+Wire Wire Line
+	4300 2950 4300 2750
+Connection ~ 4300 2750
+Wire Wire Line
+	4300 2750 4500 2750
+$Comp
+L Device:C C?
+U 1 1 5E6B2566
+P 3950 3150
+AR Path="/5E507163/5E6B2566" Ref="C?"  Part="1" 
+AR Path="/5E55CCDC/5E6B2566" Ref="C25"  Part="1" 
+F 0 "C25" H 4065 3196 50  0000 L CNN
+F 1 "10uC" H 4065 3105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3988 3000 50  0001 C CNN
+F 3 "~" H 3950 3150 50  0001 C CNN
+F 4 "C3216X5R1E106K085AC" H 3950 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    3950 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5E6B256D
+P 5900 2900
+AR Path="/5E507163/5E6B256D" Ref="C?"  Part="1" 
+AR Path="/5E55CCDC/5E6B256D" Ref="C26"  Part="1" 
+F 0 "C26" H 6015 2946 50  0000 L CNN
+F 1 "0.1uC" H 6015 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5938 2750 50  0001 C CNN
+F 3 "~" H 5900 2900 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 5900 2900 50  0001 C CNN "Manufacturer Part Number"
+	1    5900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5E6B2574
+P 6350 2750
+AR Path="/5E507163/5E6B2574" Ref="L?"  Part="1" 
+AR Path="/5E55CCDC/5E6B2574" Ref="L3"  Part="1" 
+F 0 "L3" V 6540 2750 50  0000 C CNN
+F 1 "4.7uL" V 6449 2750 50  0000 C CNN
+F 2 "" H 6350 2750 50  0001 C CNN
+F 3 "https://www.bourns.com/docs/Product-Datasheets/SRN6045.pdf" H 6350 2750 50  0001 C CNN
+F 4 "SRN6045-4R7Y" H 6350 2750 50  0001 C CNN "Manufacturer Part Number"
+	1    6350 2750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5300 2750 5900 2750
+Connection ~ 5900 2750
+Wire Wire Line
+	5900 2750 6200 2750
+Wire Wire Line
+	5900 3050 5900 3200
+Wire Wire Line
+	5900 3200 5600 3200
+Wire Wire Line
+	5600 3200 5600 2850
+Wire Wire Line
+	5600 2850 5300 2850
+$Comp
+L Device:R R?
+U 1 1 5E6B2582
+P 6850 2950
+AR Path="/5E507163/5E6B2582" Ref="R?"  Part="1" 
+AR Path="/5E55CCDC/5E6B2582" Ref="R23"  Part="1" 
+F 0 "R23" H 6920 2996 50  0000 L CNN
+F 1 "56.2kR" H 6920 2905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6780 2950 50  0001 C CNN
+F 3 "~" H 6850 2950 50  0001 C CNN
+F 4 "RC0805FR-0756K2L" H 6850 2950 50  0001 C CNN "Manufacturer Part Number"
+	1    6850 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E6B2589
+P 6850 3450
+AR Path="/5E507163/5E6B2589" Ref="R?"  Part="1" 
+AR Path="/5E55CCDC/5E6B2589" Ref="R24"  Part="1" 
+F 0 "R24" H 6920 3496 50  0000 L CNN
+F 1 "10kR" H 6920 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6780 3450 50  0001 C CNN
+F 3 "~" H 6850 3450 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 6850 3450 50  0001 C CNN "Manufacturer Part Number"
+	1    6850 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 2750 6850 2750
+Wire Wire Line
+	6850 2750 6850 2800
+Wire Wire Line
+	6850 3100 6850 3200
+Wire Wire Line
+	6850 3600 6850 3850
+Wire Wire Line
+	6850 3850 4900 3850
+Wire Wire Line
+	6850 3200 6600 3200
+Wire Wire Line
+	6600 3200 6600 3350
+Wire Wire Line
+	6600 3350 5450 3350
+Wire Wire Line
+	5450 3350 5450 2950
+Wire Wire Line
+	5450 2950 5300 2950
+Connection ~ 6850 3200
+Wire Wire Line
+	6850 3200 6850 3300
+$Comp
+L Device:C C?
+U 1 1 5E6B259C
+P 7250 3200
+AR Path="/5E507163/5E6B259C" Ref="C?"  Part="1" 
+AR Path="/5E55CCDC/5E6B259C" Ref="C27"  Part="1" 
+F 0 "C27" H 7365 3246 50  0000 L CNN
+F 1 "22uC" H 7365 3155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7288 3050 50  0001 C CNN
+F 3 "~" H 7250 3200 50  0001 C CNN
+F 4 "LMK212BJ226MG-T" H 7250 3200 50  0001 C CNN "Manufacturer Part Number"
+	1    7250 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 3050 7250 2750
+Wire Wire Line
+	7250 2750 6850 2750
+Connection ~ 6850 2750
+Wire Wire Line
+	7250 3350 7250 3850
+Wire Wire Line
+	7250 3850 6850 3850
+Connection ~ 6850 3850
+Wire Wire Line
+	7250 2750 7700 2750
+Connection ~ 7250 2750
+$Comp
+L Device:C C?
+U 1 1 5E6B25AB
+P 3500 3150
+AR Path="/5E507163/5E6B25AB" Ref="C?"  Part="1" 
+AR Path="/5E55CCDC/5E6B25AB" Ref="C24"  Part="1" 
+F 0 "C24" H 3615 3196 50  0000 L CNN
+F 1 "10uC" H 3615 3105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3538 3000 50  0001 C CNN
+F 3 "~" H 3500 3150 50  0001 C CNN
+F 4 "C3216X5R1E106K085AC" H 3500 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    3500 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3000 3950 2750
+Connection ~ 3950 2750
+Wire Wire Line
+	3950 2750 4300 2750
+Wire Wire Line
+	3500 3000 3500 2750
+Wire Wire Line
+	3500 2750 3950 2750
+$Comp
+L Device:C C?
+U 1 1 5E6B25B8
+P 7700 3200
+AR Path="/5E507163/5E6B25B8" Ref="C?"  Part="1" 
+AR Path="/5E55CCDC/5E6B25B8" Ref="C28"  Part="1" 
+F 0 "C28" H 7815 3246 50  0000 L CNN
+F 1 "22uC" H 7815 3155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7738 3050 50  0001 C CNN
+F 3 "~" H 7700 3200 50  0001 C CNN
+F 4 "LMK212BJ226MG-T" H 7700 3200 50  0001 C CNN "Manufacturer Part Number"
+	1    7700 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 3050 7700 2750
+Wire Wire Line
+	7700 3350 7700 3850
+Wire Wire Line
+	7700 3850 7250 3850
+Connection ~ 7250 3850
+Wire Wire Line
+	4900 3150 4900 3850
+Wire Wire Line
+	3500 3850 3500 3300
+Connection ~ 4900 3850
+Wire Wire Line
+	3950 3300 3950 3850
+Connection ~ 3950 3850
+Wire Wire Line
+	3950 3850 3500 3850
+Wire Wire Line
+	7700 2750 8300 2750
+Connection ~ 7700 2750
+Wire Wire Line
+	4900 3850 3950 3850
+Wire Wire Line
+	3500 2750 2050 2750
+Wire Wire Line
+	2050 2750 2050 850 
+Connection ~ 3500 2750
+Connection ~ 2050 850 
+Wire Wire Line
+	2050 850  3500 850 
+Wire Wire Line
+	3500 3850 1700 3850
+Connection ~ 3500 3850
+Connection ~ 1700 3850
+Wire Wire Line
+	1700 3850 1700 7500
 $EndSCHEMATC

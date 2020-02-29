@@ -56,7 +56,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 7150 4100 7150
 Text HLabel 1100 900  0    50   Input ~ 0
-VMCU
+V3_3
 Wire Wire Line
 	5550 5700 5350 5700
 Connection ~ 5350 5700
