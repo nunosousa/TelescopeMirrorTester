@@ -232,8 +232,6 @@ Wire Wire Line
 	7700 850  8300 850 
 Connection ~ 7700 850 
 Wire Wire Line
-	1400 850  2050 850 
-Wire Wire Line
 	1700 7500 850  7500
 Wire Wire Line
 	4900 1950 3950 1950
@@ -460,14 +458,6 @@ Connection ~ 7700 2750
 Wire Wire Line
 	4900 3850 3950 3850
 Wire Wire Line
-	3500 2750 2050 2750
-Wire Wire Line
-	2050 2750 2050 850 
-Connection ~ 3500 2750
-Connection ~ 2050 850 
-Wire Wire Line
-	2050 850  3500 850 
-Wire Wire Line
 	3500 3850 1700 3850
 Connection ~ 3500 3850
 Connection ~ 1700 3850
@@ -552,4 +542,28 @@ Wire Wire Line
 Connection ~ 4200 5350
 Wire Wire Line
 	4200 5350 1700 5350
+Wire Wire Line
+	1400 850  1850 850 
+Wire Wire Line
+	3500 2750 2950 2750
+Wire Wire Line
+	2950 2750 2950 850 
+Connection ~ 3500 2750
+Connection ~ 2950 850 
+Wire Wire Line
+	2950 850  3500 850 
+$Comp
+L Device:D_Schottky D1
+U 1 1 5E5CDC6F
+P 2000 850
+F 0 "D1" H 2000 634 50  0000 C CNN
+F 1 "D_Schottky" H 2000 725 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 2000 850 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/NSR0320MW2T1-D.PDF" H 2000 850 50  0001 C CNN
+F 4 "NSR0320MW2T3G" H 2000 850 50  0001 C CNN "Manufacturer Part Number"
+	1    2000 850 
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2150 850  2950 850 
 $EndSCHEMATC

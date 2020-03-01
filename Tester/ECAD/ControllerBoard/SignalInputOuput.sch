@@ -16,53 +16,53 @@ $EndDescr
 $Comp
 L Connector:Conn_01x08_Male J?
 U 1 1 5E62062E
-P 8450 5700
+P 8700 4750
 AR Path="/5E5070AC/5E62062E" Ref="J?"  Part="1" 
 AR Path="/5E55806E/5E62062E" Ref="J14"  Part="1" 
 AR Path="/5E62062E" Ref="J?"  Part="1" 
-F 0 "J14" H 8100 5650 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 8100 5750 50  0000 C CNN
-F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8450 5700 50  0001 C CNN
-F 3 "~" H 8450 5700 50  0001 C CNN
-F 4 "0530480810" H 8450 5700 50  0001 C CNN "Manufacturer Part Number"
-	1    8450 5700
+F 0 "J14" H 8350 4700 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 8350 4800 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8700 4750 50  0001 C CNN
+F 3 "~" H 8700 4750 50  0001 C CNN
+F 4 "0530480810" H 8700 4750 50  0001 C CNN "Manufacturer Part Number"
+	1    8700 4750
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x08_Male J?
 U 1 1 5E620635
-P 8450 4650
+P 8700 3700
 AR Path="/5E5070AC/5E620635" Ref="J?"  Part="1" 
 AR Path="/5E55806E/5E620635" Ref="J13"  Part="1" 
 AR Path="/5E620635" Ref="J?"  Part="1" 
-F 0 "J13" H 8100 4600 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 8100 4700 50  0000 C CNN
-F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8450 4650 50  0001 C CNN
-F 3 "~" H 8450 4650 50  0001 C CNN
-F 4 "0530480810" H 8450 4650 50  0001 C CNN "Manufacturer Part Number"
-	1    8450 4650
+F 0 "J13" H 8350 3650 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 8350 3750 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8700 3700 50  0001 C CNN
+F 3 "~" H 8700 3700 50  0001 C CNN
+F 4 "0530480810" H 8700 3700 50  0001 C CNN "Manufacturer Part Number"
+	1    8700 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x08_Male J?
 U 1 1 5E62063C
-P 8450 3600
+P 8700 2650
 AR Path="/5E5070AC/5E62063C" Ref="J?"  Part="1" 
 AR Path="/5E55806E/5E62063C" Ref="J12"  Part="1" 
 AR Path="/5E62063C" Ref="J?"  Part="1" 
-F 0 "J12" H 8100 3550 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 8100 3650 50  0000 C CNN
-F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8450 3600 50  0001 C CNN
-F 3 "~" H 8450 3600 50  0001 C CNN
-F 4 "0530480810" H 8450 3600 50  0001 C CNN "Manufacturer Part Number"
-	1    8450 3600
+F 0 "J12" H 8350 2600 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 8350 2700 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8700 2650 50  0001 C CNN
+F 3 "~" H 8700 2650 50  0001 C CNN
+F 4 "0530480810" H 8700 2650 50  0001 C CNN "Manufacturer Part Number"
+	1    8700 2650
 	1    0    0    -1  
 $EndComp
-Text Notes 7800 3450 0    50   ~ 0
+Text Notes 8050 2500 0    50   ~ 0
 Position\nSensor\nX
-Text Notes 7800 4550 0    50   ~ 0
+Text Notes 8050 3600 0    50   ~ 0
 Position\nSensor\nY
-Text Notes 7800 5600 0    50   ~ 0
+Text Notes 8050 4650 0    50   ~ 0
 Position\nSensor\nZ
 Text Notes 5000 1500 0    50   ~ 0
 Laser\nModule
@@ -177,29 +177,29 @@ Text Notes 1400 3100 2    50   ~ 0
 End Stop Y+
 Text Notes 1400 4700 2    50   ~ 0
 End Stop Z+
-Text HLabel 10300 950  2    50   Output ~ 0
-POS_MISO
-Text HLabel 10300 1050 2    50   Input ~ 0
-POS_MOSI
-Text HLabel 10300 1150 2    50   Input ~ 0
-POS_SCLK
-Text HLabel 10300 1350 2    50   Input ~ 0
+Text HLabel 8900 2550 2    50   Output ~ 0
+POSX_MISO
+Text HLabel 8900 2650 2    50   Input ~ 0
+POSX_MOSI
+Text HLabel 8900 2750 2    50   Input ~ 0
+POSX_SCLK
+Text HLabel 8900 2450 2    50   Input ~ 0
 ~POSX_NCS
-Text HLabel 10300 1450 2    50   Input ~ 0
+Text HLabel 8900 3500 2    50   Input ~ 0
 ~POSY_NCS
-Text HLabel 10300 1550 2    50   Input ~ 0
+Text HLabel 8900 4550 2    50   Input ~ 0
 ~POSZ_NCS
-Text HLabel 10300 1700 2    50   Output ~ 0
+Text HLabel 8900 2850 2    50   Output ~ 0
 POSX_MOTION
-Text HLabel 10300 1800 2    50   Output ~ 0
+Text HLabel 8900 3900 2    50   Output ~ 0
 POSY_MOTION
-Text HLabel 10300 1900 2    50   Output ~ 0
+Text HLabel 8900 4950 2    50   Output ~ 0
 POSZ_MOTION
-Text HLabel 10300 2100 2    50   Input ~ 0
+Text HLabel 8900 2950 2    50   Input ~ 0
 ~POSX_NRESET
-Text HLabel 10300 2200 2    50   Input ~ 0
+Text HLabel 8900 4000 2    50   Input ~ 0
 ~POSY_NRESET
-Text HLabel 10300 2300 2    50   Input ~ 0
+Text HLabel 8900 5050 2    50   Input ~ 0
 ~POSZ_NRESET
 Text HLabel 3900 1550 2    50   Output ~ 0
 END_STOP_X+
@@ -858,140 +858,33 @@ Wire Wire Line
 	6350 7450 5750 7450
 Connection ~ 5750 7450
 Wire Wire Line
-	8650 4000 8750 4000
-Wire Wire Line
-	8750 4000 8750 5050
-Wire Wire Line
-	8750 5050 8650 5050
-Wire Wire Line
-	8750 5050 8750 6100
-Wire Wire Line
-	8750 6100 8650 6100
-Connection ~ 8750 5050
-Wire Wire Line
-	8750 6100 8750 6350
-Wire Wire Line
-	8750 6350 6350 6350
-Wire Wire Line
 	6350 6350 6350 7450
-Connection ~ 8750 6100
+Text HLabel 8900 3600 2    50   Output ~ 0
+POSY_MISO
+Text HLabel 8900 3700 2    50   Input ~ 0
+POSY_MOSI
+Text HLabel 8900 3800 2    50   Input ~ 0
+POSY_SCLK
+Text HLabel 8900 4650 2    50   Output ~ 0
+POSZ_MISO
+Text HLabel 8900 4750 2    50   Input ~ 0
+POSZ_MOSI
+Text HLabel 8900 4850 2    50   Input ~ 0
+POSZ_SCLK
 Wire Wire Line
-	8650 5400 8850 5400
+	8900 3050 9800 3050
 Wire Wire Line
-	8850 5400 8850 4350
+	9800 3050 9800 4100
 Wire Wire Line
-	8850 4350 8650 4350
+	9800 4100 8900 4100
 Wire Wire Line
-	8850 4350 8850 3300
+	9800 4100 9800 5150
 Wire Wire Line
-	8850 3300 8650 3300
-Connection ~ 8850 4350
+	9800 5150 8900 5150
+Connection ~ 9800 4100
 Wire Wire Line
-	8850 3300 8850 800 
+	6350 6350 9800 6350
 Wire Wire Line
-	8850 800  6800 800 
-Connection ~ 8850 3300
-Connection ~ 6800 800 
-Wire Wire Line
-	10300 950  9000 950 
-Wire Wire Line
-	9000 950  9000 3500
-Wire Wire Line
-	8650 3500 9000 3500
-Wire Wire Line
-	9000 3500 9000 4550
-Wire Wire Line
-	9000 4550 8650 4550
-Connection ~ 9000 3500
-Wire Wire Line
-	9000 4550 9000 5600
-Wire Wire Line
-	9000 5600 8650 5600
-Connection ~ 9000 4550
-Wire Wire Line
-	10300 1050 9100 1050
-Wire Wire Line
-	9100 1050 9100 3600
-Wire Wire Line
-	9100 3600 8650 3600
-Wire Wire Line
-	9100 3600 9100 4650
-Wire Wire Line
-	9100 4650 8650 4650
-Connection ~ 9100 3600
-Wire Wire Line
-	9100 4650 9100 5700
-Wire Wire Line
-	9100 5700 8650 5700
-Connection ~ 9100 4650
-Wire Wire Line
-	10300 1150 9200 1150
-Wire Wire Line
-	9200 1150 9200 3700
-Wire Wire Line
-	9200 3700 8650 3700
-Wire Wire Line
-	9200 3700 9200 4750
-Wire Wire Line
-	9200 4750 8650 4750
-Connection ~ 9200 3700
-Wire Wire Line
-	9200 4750 9200 5800
-Wire Wire Line
-	9200 5800 8650 5800
-Connection ~ 9200 4750
-Wire Wire Line
-	10300 1350 9300 1350
-Wire Wire Line
-	9300 1350 9300 3400
-Wire Wire Line
-	9300 3400 8650 3400
-Wire Wire Line
-	10300 1450 9400 1450
-Wire Wire Line
-	9400 1450 9400 4450
-Wire Wire Line
-	9400 4450 8650 4450
-Wire Wire Line
-	10300 1550 9500 1550
-Wire Wire Line
-	9500 1550 9500 5500
-Wire Wire Line
-	9500 5500 8650 5500
-Wire Wire Line
-	10300 1700 9600 1700
-Wire Wire Line
-	9600 1700 9600 3800
-Wire Wire Line
-	9600 3800 8650 3800
-Wire Wire Line
-	10300 1800 9700 1800
-Wire Wire Line
-	9700 1800 9700 4850
-Wire Wire Line
-	9700 4850 8650 4850
-Wire Wire Line
-	10300 1900 9800 1900
-Wire Wire Line
-	9800 1900 9800 5900
-Wire Wire Line
-	9800 5900 8650 5900
-Wire Wire Line
-	10300 2100 9900 2100
-Wire Wire Line
-	9900 2100 9900 3900
-Wire Wire Line
-	9900 3900 8650 3900
-Wire Wire Line
-	10300 2200 10000 2200
-Wire Wire Line
-	10000 2200 10000 4950
-Wire Wire Line
-	10000 4950 8650 4950
-Wire Wire Line
-	10300 2300 10100 2300
-Wire Wire Line
-	10100 2300 10100 6000
-Wire Wire Line
-	10100 6000 8650 6000
+	9800 6350 9800 5150
+Connection ~ 9800 5150
 $EndSCHEMATC
