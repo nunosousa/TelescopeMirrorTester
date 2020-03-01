@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 5
+Sheet 5 5
 Title ""
 Date ""
 Rev ""
@@ -41,13 +41,13 @@ Text HLabel 9900 2150 2    50   Output ~ 0
 MOTOR_CTRL_4A
 Text HLabel 9900 2250 2    50   Output ~ 0
 MOTOR_CTRL_4B
-Text HLabel 9900 2400 2    50   Input ~ 0
+Text HLabel 8650 4850 2    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 9900 2500 2    50   Input ~ 0
+Text HLabel 8650 4950 2    50   Input ~ 0
 MOTOR_FAULT_34
-Text HLabel 9900 2650 2    50   Output ~ 0
+Text HLabel 9850 4650 2    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 9900 2750 2    50   Output ~ 0
+Text HLabel 9850 4750 2    50   Output ~ 0
 MOTOR_SLEEP_34
 Text HLabel 1000 7150 0    50   Input ~ 0
 GND
@@ -229,44 +229,56 @@ Wire Wire Line
 Wire Wire Line
 	5550 900  5550 1400
 Connection ~ 5550 1400
-Text HLabel 9900 3200 2    50   Input ~ 0
-POS_MISO
-Text HLabel 9900 3300 2    50   Output ~ 0
-POS_MOSI
-Text HLabel 9900 3400 2    50   Output ~ 0
-POS_SCLK
-Text HLabel 9900 3550 2    50   Output ~ 0
+Text HLabel 8900 1350 2    50   Input ~ 0
+POSX_MISO
+Text HLabel 8900 1450 2    50   Output ~ 0
+POSX_MOSI
+Text HLabel 8900 1550 2    50   Output ~ 0
+POSX_SCLK
+Text HLabel 8900 2700 2    50   Output ~ 0
 ~POSX_NCS
-Text HLabel 9900 3650 2    50   Output ~ 0
+Text HLabel 8900 2800 2    50   Output ~ 0
 ~POSY_NCS
-Text HLabel 9900 3750 2    50   Output ~ 0
+Text HLabel 8900 2900 2    50   Output ~ 0
 ~POSZ_NCS
-Text HLabel 9900 3900 2    50   Input ~ 0
+Text HLabel 8700 4500 2    50   Input ~ 0
 POSX_MOTION
-Text HLabel 9900 4000 2    50   Input ~ 0
+Text HLabel 8700 4600 2    50   Input ~ 0
 POSY_MOTION
-Text HLabel 9900 4100 2    50   Input ~ 0
+Text HLabel 8700 4700 2    50   Input ~ 0
 POSZ_MOTION
-Text HLabel 9900 4250 2    50   Output ~ 0
+Text HLabel 8850 3150 2    50   Output ~ 0
 ~POSX_NRESET
-Text HLabel 9900 4350 2    50   Output ~ 0
+Text HLabel 8850 3250 2    50   Output ~ 0
 ~POSY_NRESET
-Text HLabel 9900 4450 2    50   Output ~ 0
+Text HLabel 8850 3350 2    50   Output ~ 0
 ~POSZ_NRESET
-Text HLabel 9950 4850 2    50   Input ~ 0
+Text HLabel 8800 5150 2    50   Input ~ 0
 END_STOP_X+
-Text HLabel 9950 5000 2    50   Input ~ 0
+Text HLabel 8800 5300 2    50   Input ~ 0
 END_STOP_Y+
-Text HLabel 9950 5200 2    50   Input ~ 0
+Text HLabel 8800 5500 2    50   Input ~ 0
 END_STOP_Z+
-Text HLabel 9950 5400 2    50   Input ~ 0
+Text HLabel 8800 5700 2    50   Input ~ 0
 END_STOP_X-
-Text HLabel 9950 5550 2    50   Input ~ 0
+Text HLabel 8800 5850 2    50   Input ~ 0
 END_STOP_Y-
-Text HLabel 9950 5750 2    50   Input ~ 0
+Text HLabel 8800 6050 2    50   Input ~ 0
 END_STOP_Z-
-Text HLabel 10050 6050 2    50   BiDi ~ 0
+Text HLabel 9850 2550 2    50   BiDi ~ 0
 LASER_SDA
-Text HLabel 10100 6250 2    50   Output ~ 0
+Text HLabel 9900 2750 2    50   Output ~ 0
 LASER_SCL
+Text HLabel 8900 1750 2    50   Input ~ 0
+POSY_MISO
+Text HLabel 8900 1850 2    50   Output ~ 0
+POSY_MOSI
+Text HLabel 8900 1950 2    50   Output ~ 0
+POSY_SCLK
+Text HLabel 8900 2200 2    50   Input ~ 0
+POSZ_MISO
+Text HLabel 8900 2300 2    50   Output ~ 0
+POSZ_MOSI
+Text HLabel 8900 2400 2    50   Output ~ 0
+POSZ_SCLK
 $EndSCHEMATC
