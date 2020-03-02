@@ -377,4 +377,48 @@ Wire Wire Line
 Connection ~ 5700 7550
 Wire Wire Line
 	5700 7550 6800 7550
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5E5E084B
+P 9300 4750
+F 0 "H1" H 9400 4796 50  0000 L CNN
+F 1 "MountingHole" H 9400 4705 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9300 4750 50  0001 C CNN
+F 3 "~" H 9300 4750 50  0001 C CNN
+	1    9300 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5E5E0C61
+P 9300 4950
+F 0 "H2" H 9400 4996 50  0000 L CNN
+F 1 "MountingHole" H 9400 4905 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9300 4950 50  0001 C CNN
+F 3 "~" H 9300 4950 50  0001 C CNN
+	1    9300 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5E5E107E
+P 9300 5150
+F 0 "H3" H 9400 5196 50  0000 L CNN
+F 1 "MountingHole" H 9400 5105 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9300 5150 50  0001 C CNN
+F 3 "~" H 9300 5150 50  0001 C CNN
+	1    9300 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5E5E12C4
+P 9300 5350
+F 0 "H4" H 9400 5396 50  0000 L CNN
+F 1 "MountingHole" H 9400 5305 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9300 5350 50  0001 C CNN
+F 3 "~" H 9300 5350 50  0001 C CNN
+	1    9300 5350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
