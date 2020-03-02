@@ -177,33 +177,8 @@ Text HLabel 8900 2300 2    50   Output ~ 0
 POSZ_MOSI
 Text HLabel 8900 2400 2    50   Output ~ 0
 POSZ_SCLK
-$Comp
-L MCU_Microchip_SAMD_Custom:ATSAMD21J18A-AU U1
-U 1 1 5E5C7565
-P 5550 4200
-F 0 "U1" H 5550 2011 50  0000 C CNN
-F 1 "ATSAMD21J18A-AU" H 5550 1920 50  0000 C CNN
-F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5100 1550 50  0001 L BNN
-F 3 "" H 5550 4200 50  0001 L BNN
-	1    5550 4200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5300 6300 5400 6300
-Connection ~ 5400 6300
-Wire Wire Line
-	5400 6300 5500 6300
-Connection ~ 5500 6300
-Wire Wire Line
-	5500 6300 5600 6300
-Connection ~ 5600 6300
-Wire Wire Line
-	5600 6300 5750 6300
-Wire Wire Line
-	5300 6300 5100 6300
 Wire Wire Line
 	5100 6300 5100 7150
-Connection ~ 5300 6300
 Wire Wire Line
 	5850 2200 5850 1750
 Wire Wire Line
@@ -230,17 +205,11 @@ Connection ~ 7200 2050
 Wire Wire Line
 	7200 2050 6700 2050
 Wire Wire Line
-	5200 2200 5300 2200
-Connection ~ 5300 2200
-Wire Wire Line
-	5300 2200 5400 2200
-Wire Wire Line
 	5400 2200 5400 1550
 Wire Wire Line
 	5400 1550 8200 1550
 Wire Wire Line
 	8200 1550 8200 1750
-Connection ~ 5400 2200
 Wire Wire Line
 	8200 2050 7700 2050
 Connection ~ 7700 2050
@@ -254,10 +223,7 @@ Wire Wire Line
 Wire Wire Line
 	5550 1450 5550 2200
 Wire Wire Line
-	5750 6300 7450 6300
-Wire Wire Line
 	7450 6300 7450 2050
-Connection ~ 5750 6300
 Connection ~ 7450 2050
 Wire Wire Line
 	7450 2050 7200 2050
@@ -268,20 +234,226 @@ Connection ~ 4650 900
 Wire Wire Line
 	4650 2050 6700 2050
 Wire Wire Line
-	1100 900  4650 900 
+	1100 900  2450 900 
 Wire Wire Line
-	1000 7150 5100 7150
+	1000 7150 1250 7150
 Wire Wire Line
 	4650 900  5050 900 
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J16
 U 1 1 5E5DF00C
-P 2600 2150
-F 0 "J16" H 2650 2567 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 2650 2476 50  0000 C CNN
-F 2 "" H 2600 2150 50  0001 C CNN
-F 3 "~" H 2600 2150 50  0001 C CNN
-	1    2600 2150
+P 1550 2050
+F 0 "J16" H 1600 2467 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 1600 2376 50  0000 C CNN
+F 2 "" H 1550 2050 50  0001 C CNN
+F 3 "~" H 1550 2050 50  0001 C CNN
+	1    1550 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 6300 7450 6300
+Connection ~ 5750 6300
+Wire Wire Line
+	5600 6300 5750 6300
+Connection ~ 5600 6300
+Wire Wire Line
+	5500 6300 5600 6300
+Connection ~ 5500 6300
+Connection ~ 5400 2200
+Wire Wire Line
+	5400 6300 5500 6300
+Connection ~ 5400 6300
+Wire Wire Line
+	5300 6300 5100 6300
+Wire Wire Line
+	5300 6300 5400 6300
+Connection ~ 5300 6300
+Wire Wire Line
+	5300 2200 5400 2200
+Wire Wire Line
+	5200 2200 5300 2200
+Connection ~ 5300 2200
+$Comp
+L MCU_Microchip_SAMD_Custom:ATSAMD21J18A-AU U1
+U 1 1 5E5C7565
+P 5550 4200
+F 0 "U1" H 5550 2011 50  0000 C CNN
+F 1 "ATSAMD21J18A-AU" H 5550 1920 50  0000 C CNN
+F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5100 1550 50  0001 L BNN
+F 3 "" H 5550 4200 50  0001 L BNN
+	1    5550 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 1950 1350 2000
+Wire Wire Line
+	1350 2000 1250 2000
+Wire Wire Line
+	1250 2000 1250 3300
+Connection ~ 1350 2000
+Wire Wire Line
+	1350 2000 1350 2050
+Connection ~ 1250 7150
+Wire Wire Line
+	1250 7150 5100 7150
+Text Label 1850 1850 0    50   ~ 0
+SWDIO
+Text Label 6450 5150 0    50   ~ 0
+SWDIO
+Text Label 1850 1950 0    50   ~ 0
+SWCLK
+Text Label 6450 5050 0    50   ~ 0
+SWCLK
+Wire Wire Line
+	6350 5000 6400 5000
+Wire Wire Line
+	6400 5000 6400 5050
+Wire Wire Line
+	6350 5100 6400 5100
+Wire Wire Line
+	6400 5100 6400 5150
+Wire Wire Line
+	6400 5050 6450 5050
+Wire Wire Line
+	6400 5150 6450 5150
+$Comp
+L Device:R R25
+U 1 1 5E5EDE05
+P 2450 1700
+F 0 "R25" H 2520 1746 50  0000 L CNN
+F 1 "1kR" H 2520 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2380 1700 50  0001 C CNN
+F 3 "~" H 2450 1700 50  0001 C CNN
+	1    2450 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 1950 2450 1950
+Wire Wire Line
+	2450 1950 2450 1850
+Wire Wire Line
+	2450 1550 2450 900 
+Connection ~ 2450 900 
+Wire Wire Line
+	2450 900  3250 900 
+$Comp
+L Device:R R26
+U 1 1 5E5F1172
+P 3800 2000
+F 0 "R26" V 3593 2000 50  0000 C CNN
+F 1 "39R" V 3684 2000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3730 2000 50  0001 C CNN
+F 3 "~" H 3800 2000 50  0001 C CNN
+F 4 "RC0805FR-0739RL" H 3800 2000 50  0001 C CNN "Manufacturer Part Number"
+	1    3800 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R27
+U 1 1 5E5F27BD
+P 3350 2250
+F 0 "R27" H 3420 2296 50  0000 L CNN
+F 1 "330R" H 3420 2205 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3280 2250 50  0001 C CNN
+F 3 "~" H 3350 2250 50  0001 C CNN
+F 4 "RC0805FR-07330RL" H 3350 2250 50  0001 C CNN "Manufacturer Part Number"
+	1    3350 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R28
+U 1 1 5E5F34E6
+P 3250 1700
+F 0 "R28" H 3320 1746 50  0000 L CNN
+F 1 "10kR" H 3320 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3180 1700 50  0001 C CNN
+F 3 "~" H 3250 1700 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 3250 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    3250 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C33
+U 1 1 5E5F699E
+P 2900 2450
+F 0 "C33" H 3015 2496 50  0000 L CNN
+F 1 "0.1uC" H 3015 2405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2938 2300 50  0001 C CNN
+F 3 "~" H 2900 2450 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2900 2450 50  0001 C CNN "Manufacturer Part Number"
+	1    2900 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 5E5F8021
+P 3350 2750
+F 0 "SW1" V 3304 2848 50  0000 L CNN
+F 1 "SW_SPST" V 3395 2848 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_Straight_KSA0Axx1LFTR" H 3350 2750 50  0001 C CNN
+F 3 "~" H 3350 2750 50  0001 C CNN
+F 4 "KSA0A311 LFTR" H 3350 2750 50  0001 C CNN "Manufacturer Part Number"
+	1    3350 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4750 3000 4300 3000
+Wire Wire Line
+	4300 3000 4300 2000
+Wire Wire Line
+	4300 2000 3950 2000
+Wire Wire Line
+	3650 2000 3350 2000
+Wire Wire Line
+	2450 2000 2450 2250
+Wire Wire Line
+	2450 2250 1850 2250
+Wire Wire Line
+	3250 1550 3250 900 
+Connection ~ 3250 900 
+Wire Wire Line
+	3250 900  4650 900 
+Wire Wire Line
+	3250 1850 3250 2000
+Connection ~ 3250 2000
+Wire Wire Line
+	3250 2000 2900 2000
+Wire Wire Line
+	3350 2100 3350 2000
+Connection ~ 3350 2000
+Wire Wire Line
+	3350 2000 3250 2000
+Wire Wire Line
+	2900 2300 2900 2000
+Connection ~ 2900 2000
+Wire Wire Line
+	2900 2000 2450 2000
+Wire Wire Line
+	2900 2600 2900 2950
+Wire Wire Line
+	2900 2950 3150 2950
+Wire Wire Line
+	3350 2550 3350 2400
+Wire Wire Line
+	3150 2950 3150 3300
+Wire Wire Line
+	3150 3300 1250 3300
+Connection ~ 3150 2950
+Wire Wire Line
+	3150 2950 3350 2950
+Connection ~ 1250 3300
+Wire Wire Line
+	1250 3300 1250 7150
+$Comp
+L Power_Protection:PRTR5V0U2X D2
+U 1 1 5E6091FE
+P 2750 5100
+F 0 "D2" H 3294 5146 50  0000 L CNN
+F 1 "PRTR5V0U2X" H 3294 5055 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-143" H 2810 5100 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf" H 2810 5100 50  0001 C CNN
+F 4 "PRTR5V0U2X,215" H 2750 5100 50  0001 C CNN "Manufacturer Part Number"
+	1    2750 5100
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
