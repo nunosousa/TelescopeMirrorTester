@@ -97,18 +97,6 @@ F 4 "0530480210" H 10200 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 2200
 	-1   0    0    1   
 $EndComp
-$Comp
-L Connector:Barrel_Jack J1
-U 1 1 5E526230
-P 1050 1050
-F 0 "J1" H 1107 1375 50  0000 C CNN
-F 1 "Barrel_Jack" H 1107 1284 50  0000 C CNN
-F 2 "" H 1100 1010 50  0001 C CNN
-F 3 "https://www.cuidevices.com/product/resource/pj-037b.pdf" H 1100 1010 50  0001 C CNN
-F 4 "PJ-037B" H 1050 1050 50  0001 C CNN "Manufacturer Part Number"
-	1    1050 1050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1500 1150 1350 1150
 $Comp
@@ -120,17 +108,6 @@ F 1 "GND" H 4605 7377 50  0000 C CNN
 F 2 "" H 4600 7550 50  0001 C CNN
 F 3 "" H 4600 7550 50  0001 C CNN
 	1    4600 7550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+12V #PWR01
-U 1 1 5E52879A
-P 1550 950
-F 0 "#PWR01" H 1550 800 50  0001 C CNN
-F 1 "+12V" H 1565 1123 50  0000 C CNN
-F 2 "" H 1550 950 50  0001 C CNN
-F 3 "" H 1550 950 50  0001 C CNN
-	1    1550 950 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -165,11 +142,6 @@ Wire Wire Line
 	8000 2800 8650 2800
 Wire Wire Line
 	8650 2900 8000 2900
-Wire Wire Line
-	1700 950  1550 950 
-Connection ~ 1550 950 
-Wire Wire Line
-	1550 950  1350 950 
 Wire Wire Line
 	1900 1350 1700 1350
 Wire Wire Line
@@ -421,4 +393,12 @@ F 3 "~" H 9300 5350 50  0001 C CNN
 	1    9300 5350
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1350 950  1700 950 
+$Sheet
+S 600  1350 650  600 
+U 5E5E989B
+F0 "USB Interface" 50
+F1 "USB.sch" 50
+$EndSheet
 $EndSCHEMATC
