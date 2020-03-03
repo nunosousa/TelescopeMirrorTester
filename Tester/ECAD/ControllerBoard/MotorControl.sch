@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -34,10 +34,10 @@ L Device:R R4
 U 1 1 5E52ACD2
 P 4500 5900
 F 0 "R4" H 4430 5854 50  0000 R CNN
-F 1 "1R" H 4430 5945 50  0000 R CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4430 5900 50  0001 C CNN
+F 1 "3.9R" H 4430 5945 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4430 5900 50  0001 C CNN
 F 3 "~" H 4500 5900 50  0001 C CNN
-F 4 "RC0805FR-071RL" H 4500 5900 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CRCW12063R90FKEA" H 4500 5900 50  0001 C CNN "Manufacturer Part Number"
 	1    4500 5900
 	-1   0    0    1   
 $EndComp
@@ -46,10 +46,10 @@ L Device:R R2
 U 1 1 5E52B98B
 P 4150 5900
 F 0 "R2" H 4220 5946 50  0000 L CNN
-F 1 "1R" H 4220 5855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4080 5900 50  0001 C CNN
+F 1 "3.9R" H 4220 5855 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4080 5900 50  0001 C CNN
 F 3 "~" H 4150 5900 50  0001 C CNN
-F 4 "RC0805FR-071RL" H 4150 5900 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CRCW12063R90FKEA" H 4150 5900 50  0001 C CNN "Manufacturer Part Number"
 	1    4150 5900
 	1    0    0    -1  
 $EndComp
@@ -58,10 +58,10 @@ L Device:R R3
 U 1 1 5E52A923
 P 4450 3150
 F 0 "R3" H 4520 3196 50  0000 L CNN
-F 1 "1R" H 4520 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4380 3150 50  0001 C CNN
+F 1 "3.9R" H 4520 3105 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4380 3150 50  0001 C CNN
 F 3 "~" H 4450 3150 50  0001 C CNN
-F 4 "RC0805FR-071RL" H 4450 3150 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CRCW12063R90FKEA" H 4450 3150 50  0001 C CNN "Manufacturer Part Number"
 	1    4450 3150
 	1    0    0    -1  
 $EndComp
@@ -70,10 +70,10 @@ L Device:R R1
 U 1 1 5E529A2C
 P 4100 3150
 F 0 "R1" H 4170 3196 50  0000 L CNN
-F 1 "1R" H 4170 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4030 3150 50  0001 C CNN
+F 1 "3.9R" H 4170 3105 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4030 3150 50  0001 C CNN
 F 3 "~" H 4100 3150 50  0001 C CNN
-F 4 "RC0805FR-071RL" H 4100 3150 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CRCW12063R90FKEA" H 4100 3150 50  0001 C CNN "Manufacturer Part Number"
 	1    4100 3150
 	1    0    0    -1  
 $EndComp
@@ -108,9 +108,9 @@ Wire Wire Line
 Wire Wire Line
 	4100 3000 4100 2100
 Text Notes 4400 3450 0    50   ~ 0
-Rated for 200mA
+Rated for 50mA
 Text Notes 4400 6200 0    50   ~ 0
-Rated for 200mA
+Rated for 50mA
 Text HLabel 5250 2400 0    50   Input ~ 0
 MOTOR_CTRL_1A
 Text HLabel 5250 2500 0    50   Input ~ 0

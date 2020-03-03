@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -97,8 +97,6 @@ F 4 "0530480210" H 10200 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    10200 2200
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	1500 1150 1350 1150
 $Comp
 L power:GND #PWR02
 U 1 1 5E52861B
@@ -142,42 +140,19 @@ Wire Wire Line
 	8000 2800 8650 2800
 Wire Wire Line
 	8650 2900 8000 2900
-Wire Wire Line
-	1900 1350 1700 1350
-Wire Wire Line
-	1700 1350 1700 950 
-Wire Wire Line
-	8400 650  8400 1350
-Wire Wire Line
-	8400 1350 8650 1350
 $Sheet
-S 1900 1250 1200 1000
+S 1650 2000 1200 1000
 U 5E55CCDC
 F0 "Power" 50
 F1 "Power.sch" 50
-F2 "12V_POWER_IN" I L 1900 1350 50 
-F3 "GND" I L 1900 2000 50 
-F4 "VMOTOR" O R 3100 1350 50 
-F5 "V5_0" O R 3100 1800 50 
-F6 "V3_3_MCU" O R 3100 1500 50 
-F7 "V3_3_SENS" O R 3100 1650 50 
+F2 "GND" I L 1650 2750 50 
+F3 "VMOTOR" O R 2850 2100 50 
+F4 "V5_0" O R 2850 2550 50 
+F5 "V3_3_MCU" O R 2850 2250 50 
+F6 "V3_3_SENS" O R 2850 2400 50 
+F7 "V5_USB" I L 1650 2150 50 
 $EndSheet
-Wire Wire Line
-	1500 1150 1500 2000
-Wire Wire Line
-	1900 2000 1500 2000
-Connection ~ 1500 2000
-Wire Wire Line
-	1500 2000 1500 7550
-Wire Wire Line
-	3100 1350 3350 1350
-Wire Wire Line
-	3350 1350 3350 650 
-Wire Wire Line
-	3350 650  8400 650 
 Connection ~ 4600 7550
-Wire Wire Line
-	1500 7550 3800 7550
 $Sheet
 S 4100 1350 1450 3050
 U 5E55806E
@@ -221,24 +196,6 @@ Connection ~ 3800 7550
 Wire Wire Line
 	3800 7550 4600 7550
 Wire Wire Line
-	3100 1500 3550 1500
-Wire Wire Line
-	3550 1500 3550 800 
-Wire Wire Line
-	3550 800  5700 800 
-Wire Wire Line
-	3100 1650 3800 1650
-Wire Wire Line
-	3800 1650 3800 1500
-Wire Wire Line
-	3800 1500 4100 1500
-Wire Wire Line
-	3100 1800 3950 1800
-Wire Wire Line
-	3950 1800 3950 1650
-Wire Wire Line
-	3950 1650 4100 1650
-Wire Wire Line
 	5550 3400 5950 3400
 Wire Wire Line
 	5950 3500 5550 3500
@@ -254,10 +211,6 @@ Wire Wire Line
 	5550 4050 5950 4050
 Wire Wire Line
 	5950 4150 5550 4150
-Wire Wire Line
-	5950 1300 5700 1300
-Wire Wire Line
-	5700 1300 5700 800 
 Wire Wire Line
 	5550 3250 5950 3250
 Wire Wire Line
@@ -393,12 +346,35 @@ F 3 "~" H 9300 5350 50  0001 C CNN
 	1    9300 5350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1350 950  1700 950 
 $Sheet
-S 600  1350 650  600 
+S 1600 4750 1300 1200
 U 5E5E989B
 F0 "USB Interface" 50
 F1 "USB.sch" 50
+F2 "GND" O L 1600 5800 50 
+F3 "V_USB" O R 2900 4850 50 
+F4 "USB_D+" B R 2900 5000 50 
+F5 "USB_D-" B R 2900 5150 50 
 $EndSheet
+Wire Wire Line
+	1600 5800 1350 5800
+Wire Wire Line
+	1350 5800 1350 7550
+Wire Wire Line
+	1350 7550 3800 7550
+Wire Wire Line
+	1350 5800 1350 2750
+Wire Wire Line
+	1350 2750 1650 2750
+Connection ~ 1350 5800
+Wire Wire Line
+	2900 4850 3100 4850
+Wire Wire Line
+	3100 4850 3100 3700
+Wire Wire Line
+	3100 3700 1000 3700
+Wire Wire Line
+	1000 3700 1000 2150
+Wire Wire Line
+	1000 2150 1650 2150
 $EndSCHEMATC

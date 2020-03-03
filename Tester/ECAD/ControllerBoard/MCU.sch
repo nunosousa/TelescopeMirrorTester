@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 5
+Sheet 5 6
 Title ""
 Date ""
 Rev ""
@@ -281,6 +281,7 @@ F 0 "U1" H 5550 2011 50  0000 C CNN
 F 1 "ATSAMD21J18A-AU" H 5550 1920 50  0000 C CNN
 F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5100 1550 50  0001 L BNN
 F 3 "" H 5550 4200 50  0001 L BNN
+F 4 "ATSAMD21J18A-AUT" H 5550 4200 50  0001 C CNN "Manufacturer Part Number"
 	1    5550 4200
 	1    0    0    -1  
 $EndComp
@@ -444,16 +445,4 @@ Wire Wire Line
 Connection ~ 1250 3300
 Wire Wire Line
 	1250 3300 1250 7150
-$Comp
-L Power_Protection:PRTR5V0U2X D2
-U 1 1 5E6091FE
-P 2750 5100
-F 0 "D2" H 3294 5146 50  0000 L CNN
-F 1 "PRTR5V0U2X" H 3294 5055 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-143" H 2810 5100 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf" H 2810 5100 50  0001 C CNN
-F 4 "PRTR5V0U2X,215" H 2750 5100 50  0001 C CNN "Manufacturer Part Number"
-	1    2750 5100
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
