@@ -98,48 +98,52 @@ USB_D-
 $Comp
 L Power_Protection:USBLC6-2SC6 U2
 U 1 1 5E62B9EB
-P 6050 3200
-F 0 "U2" H 6450 2750 50  0000 C CNN
-F 1 "USBLC6-2SC6" H 6650 2850 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5300 3600 50  0001 C CNN
-F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 6250 3550 50  0001 C CNN
-F 4 "USBLC6-2SC6" H 6050 3200 50  0001 C CNN "Manufacturer Part Number"
-	1    6050 3200
+P 6050 3400
+F 0 "U2" H 6450 2950 50  0000 C CNN
+F 1 "USBLC6-2SC6" H 6650 3050 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5300 3800 50  0001 C CNN
+F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 6250 3750 50  0001 C CNN
+F 4 "USBLC6-2SC6" H 6050 3400 50  0001 C CNN "Manufacturer Part Number"
+	1    6050 3400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	8150 2600 6050 2600
-Wire Wire Line
-	6050 2700 6050 2600
 Connection ~ 6050 2600
 Wire Wire Line
 	6050 2600 4100 2600
 Wire Wire Line
-	4100 2800 5350 2800
-Wire Wire Line
-	5350 2800 5350 3100
-Wire Wire Line
-	5350 3100 5550 3100
-Wire Wire Line
-	6550 3100 6750 3100
-Wire Wire Line
-	6750 3100 6750 2800
-Wire Wire Line
-	6750 2800 8150 2800
-Wire Wire Line
-	8150 2900 6850 2900
-Wire Wire Line
-	6850 2900 6850 3300
-Wire Wire Line
-	6850 3300 6550 3300
-Wire Wire Line
-	5550 3300 5250 3300
-Wire Wire Line
-	5250 3300 5250 2900
-Wire Wire Line
-	5250 2900 4100 2900
-Wire Wire Line
-	6050 3700 6050 4800
-Wire Wire Line
 	4550 4800 6050 4800
+Wire Wire Line
+	6050 3900 6050 4800
+Wire Wire Line
+	6050 2600 6050 2900
+Wire Wire Line
+	4100 2800 6650 2800
+Wire Wire Line
+	6650 2800 6650 3300
+Wire Wire Line
+	6650 3300 6550 3300
+Wire Wire Line
+	6550 3500 6800 3500
+Wire Wire Line
+	6800 3500 6800 2800
+Wire Wire Line
+	6800 2800 8150 2800
+Wire Wire Line
+	4100 2900 5450 2900
+Wire Wire Line
+	5450 2900 5450 3300
+Wire Wire Line
+	5450 3300 5550 3300
+Wire Wire Line
+	5550 3500 5450 3500
+Wire Wire Line
+	5450 3500 5450 3950
+Wire Wire Line
+	5450 3950 7150 3950
+Wire Wire Line
+	7150 3950 7150 2900
+Wire Wire Line
+	7150 2900 8150 2900
 $EndSCHEMATC
