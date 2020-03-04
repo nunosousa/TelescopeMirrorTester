@@ -111,7 +111,7 @@ Wire Wire Line
 	8150 2600 6050 2600
 Connection ~ 6050 2600
 Wire Wire Line
-	6050 2600 4100 2600
+	6050 2600 5200 2600
 Wire Wire Line
 	4550 4800 6050 4800
 Wire Wire Line
@@ -146,4 +146,18 @@ Wire Wire Line
 	7150 3950 7150 2900
 Wire Wire Line
 	7150 2900 8150 2900
+$Comp
+L Device:Ferrite_Bead FB1
+U 1 1 5E60ECFA
+P 5050 2600
+F 0 "FB1" V 4776 2600 50  0000 C CNN
+F 1 "Ferrite_Bead" V 4867 2600 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4980 2600 50  0001 C CNN
+F 3 "~" H 5050 2600 50  0001 C CNN
+F 4 "BLM21PG221SN1D" H 5050 2600 50  0001 C CNN "Manufacturer Part Number"
+	1    5050 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4900 2600 4100 2600
 $EndSCHEMATC
