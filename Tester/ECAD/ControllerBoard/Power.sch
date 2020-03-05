@@ -19,7 +19,7 @@ Text HLabel 9500 2800 2    50   Output ~ 0
 VMOTOR
 Text HLabel 9400 1050 2    50   Output ~ 0
 V3_3_MCU
-Text HLabel 9500 5600 2    50   Output ~ 0
+Text HLabel 9500 3000 2    50   Output ~ 0
 V5_0
 $Comp
 L Regulator_Linear:TLV70033_SOT23-5 U7
@@ -86,72 +86,70 @@ Wire Wire Line
 $Comp
 L Regulator_Linear:TLV70033_SOT23-5 U8
 U 1 1 5E5D3E36
-P 4900 6250
-F 0 "U8" H 4900 6592 50  0000 C CNN
-F 1 "TLV70033_SOT23-5" H 4900 6501 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4900 6575 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/tlv700.pdf" H 4900 6300 50  0001 C CNN
-F 4 "TLV70033DDCT" H 4900 6250 50  0001 C CNN "Manufacturer Part Number"
-	1    4900 6250
+P 6000 4450
+F 0 "U8" H 6000 4792 50  0000 C CNN
+F 1 "TLV70033_SOT23-5" H 6000 4701 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6000 4775 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv700.pdf" H 6000 4500 50  0001 C CNN
+F 4 "TLV70033DDCT" H 6000 4450 50  0001 C CNN "Manufacturer Part Number"
+	1    6000 4450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 6150 4200 6150
+	4950 4350 5300 4350
 Wire Wire Line
-	4600 6150 4600 6250
-Connection ~ 4600 6150
+	5700 4350 5700 4450
+Connection ~ 5700 4350
 Wire Wire Line
-	4900 6550 4900 6650
+	6000 4750 6000 4850
 Wire Wire Line
-	4900 6650 4200 6650
+	6000 4850 5300 4850
 Wire Wire Line
-	5200 6150 5500 6150
+	6300 4350 6600 4350
 $Comp
 L Device:C C32
 U 1 1 5E5D3E45
-P 5500 6350
-F 0 "C32" H 5615 6396 50  0000 L CNN
-F 1 "1uC" H 5615 6305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5538 6200 50  0001 C CNN
-F 3 "~" H 5500 6350 50  0001 C CNN
-F 4 "CC0805MKX7R7BB105" H 5500 6350 50  0001 C CNN "Manufacturer Part Number"
-	1    5500 6350
+P 6600 4550
+F 0 "C32" H 6715 4596 50  0000 L CNN
+F 1 "1uC" H 6715 4505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6638 4400 50  0001 C CNN
+F 3 "~" H 6600 4550 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 6600 4550 50  0001 C CNN "Manufacturer Part Number"
+	1    6600 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C31
 U 1 1 5E5D3E4C
-P 4200 6350
-F 0 "C31" H 4315 6396 50  0000 L CNN
-F 1 "1uC" H 4315 6305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4238 6200 50  0001 C CNN
-F 3 "~" H 4200 6350 50  0001 C CNN
-F 4 "CC0805MKX7R7BB105" H 4200 6350 50  0001 C CNN "Manufacturer Part Number"
-	1    4200 6350
+P 5300 4550
+F 0 "C31" H 5415 4596 50  0000 L CNN
+F 1 "1uC" H 5415 4505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5338 4400 50  0001 C CNN
+F 3 "~" H 5300 4550 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 5300 4550 50  0001 C CNN "Manufacturer Part Number"
+	1    5300 4550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5500 6200 5500 6150
-Connection ~ 5500 6150
+	6600 4400 6600 4350
+Connection ~ 6600 4350
 Wire Wire Line
-	5500 6150 8300 6150
+	6600 4350 9400 4350
 Wire Wire Line
-	5500 6500 5500 6650
+	6600 4700 6600 4850
 Wire Wire Line
-	5500 6650 4900 6650
-Connection ~ 4900 6650
+	6600 4850 6000 4850
+Connection ~ 6000 4850
 Wire Wire Line
-	4200 6200 4200 6150
-Connection ~ 4200 6150
+	5300 4400 5300 4350
+Connection ~ 5300 4350
 Wire Wire Line
-	4200 6150 4600 6150
+	5300 4350 5700 4350
 Wire Wire Line
-	4200 6500 4200 6650
-Connection ~ 4200 6650
-Wire Wire Line
-	4200 6650 1700 6650
-Text HLabel 8300 6150 2    50   Output ~ 0
-V3_3_SENS
+	5300 4700 5300 4850
+Connection ~ 5300 4850
+Text HLabel 9400 4350 2    50   Output ~ 0
+V3_3
 Text HLabel 1300 1050 0    50   Input ~ 0
 V5_USB
 Wire Wire Line
@@ -163,21 +161,10 @@ Wire Wire Line
 Connection ~ 5300 1550
 Wire Wire Line
 	1300 7500 850  7500
-$Comp
-L Power_Management:TPS2041B U6
-U 1 1 5E61B45E
-P 6000 2800
-F 0 "U6" H 6000 3267 50  0000 C CNN
-F 1 "TPS2041B" H 6000 3176 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6000 3300 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps2041.pdf" H 5950 3100 50  0001 C CNN
-	1    6000 2800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6500 2600 6700 2600
 Wire Wire Line
-	6700 2000 4900 2000
+	6700 2000 5200 2000
 Wire Wire Line
 	3350 2000 3350 1050
 Connection ~ 3350 1050
@@ -189,77 +176,185 @@ Wire Wire Line
 	6000 3650 1300 3650
 Connection ~ 1300 3650
 Wire Wire Line
-	1300 3650 1300 7500
-Wire Wire Line
 	6700 2600 6700 2000
 $Comp
 L Device:C C8
 U 1 1 5E61FCAC
-P 7200 2250
-F 0 "C8" H 7315 2296 50  0000 L CNN
-F 1 "0.1uC" H 7315 2205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7238 2100 50  0001 C CNN
-F 3 "~" H 7200 2250 50  0001 C CNN
-F 4 "" H 7200 2250 50  0001 C CNN "Manufacturer Part Number"
-	1    7200 2250
+P 7000 2250
+F 0 "C8" H 7115 2296 50  0000 L CNN
+F 1 "0.1uC" H 7115 2205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7038 2100 50  0001 C CNN
+F 3 "~" H 7000 2250 50  0001 C CNN
+F 4 "" H 7000 2250 50  0001 C CNN "Manufacturer Part Number"
+	1    7000 2250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6700 2000 7200 2000
-Wire Wire Line
-	7200 2000 7200 2100
+	6700 2000 7000 2000
 Connection ~ 6700 2000
-Wire Wire Line
-	7200 2400 7200 3650
-Wire Wire Line
-	7200 3650 6000 3650
 Connection ~ 6000 3650
 $Comp
 L Device:C C9
 U 1 1 5E6221E4
-P 7500 3150
-F 0 "C9" H 7615 3196 50  0000 L CNN
-F 1 "0.1uC" H 7615 3105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7538 3000 50  0001 C CNN
-F 3 "~" H 7500 3150 50  0001 C CNN
-F 4 "" H 7500 3150 50  0001 C CNN "Manufacturer Part Number"
-	1    7500 3150
+P 7200 3150
+F 0 "C9" H 7315 3196 50  0000 L CNN
+F 1 "0.1uC" H 7315 3105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7238 3000 50  0001 C CNN
+F 3 "~" H 7200 3150 50  0001 C CNN
+F 4 "" H 7200 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    7200 3150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6500 2800 7500 2800
+	6500 2800 7200 2800
 Wire Wire Line
-	7500 2800 7500 3000
-Wire Wire Line
-	7500 3300 7500 3650
-Wire Wire Line
-	7500 3650 7200 3650
-Connection ~ 7200 3650
+	7200 2800 7200 3000
 Text HLabel 5500 3000 0    50   Input ~ 0
-~POWER_SWITCH
+~POWER_SWITCH_ANALOGUE_LOADS
 $Comp
 L Device:R R6
 U 1 1 5E62500B
-P 4900 2300
-F 0 "R6" H 4970 2346 50  0000 L CNN
-F 1 "R" H 4970 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4830 2300 50  0001 C CNN
-F 3 "~" H 4900 2300 50  0001 C CNN
-	1    4900 2300
+P 4850 2300
+F 0 "R6" H 4920 2346 50  0000 L CNN
+F 1 "10kR" H 4920 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 2300 50  0001 C CNN
+F 3 "~" H 4850 2300 50  0001 C CNN
+	1    4850 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5500 2600 4900 2600
+	4850 2600 4850 2450
 Wire Wire Line
-	4900 2600 4900 2450
-Wire Wire Line
-	4900 2150 4900 2000
-Connection ~ 4900 2000
-Wire Wire Line
-	4900 2000 3350 2000
-Text Notes 5350 2200 0    50   ~ 0
+	4850 2150 4850 2000
+Text Notes 5400 2150 0    50   ~ 0
 Power switch and current limiter
+Text HLabel 4750 2600 0    50   Output ~ 0
+LOAD_OVERCURRENT_MOTOR
 Wire Wire Line
-	7500 2800 9500 2800
-Connection ~ 7500 2800
+	1300 4850 5300 4850
+Wire Wire Line
+	1300 3650 1300 4850
+Connection ~ 1300 4850
+Wire Wire Line
+	1300 4850 1300 7500
+Wire Wire Line
+	4950 3900 4950 4350
+Wire Wire Line
+	9500 3000 9100 3000
+Wire Wire Line
+	9100 3000 9100 2800
+Connection ~ 9100 2800
+Wire Wire Line
+	9100 2800 9500 2800
+Text HLabel 5500 3100 0    50   Input ~ 0
+~POWER_SWITCH_DIGITAL_LOGIC
+$Comp
+L Device:R R23
+U 1 1 5E61DACA
+P 5200 2300
+F 0 "R23" H 5270 2346 50  0000 L CNN
+F 1 "10kR" H 5270 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5130 2300 50  0001 C CNN
+F 3 "~" H 5200 2300 50  0001 C CNN
+	1    5200 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2700 5200 2700
+Wire Wire Line
+	5200 2700 5200 2450
+Wire Wire Line
+	5200 2150 5200 2000
+Connection ~ 5200 2000
+Wire Wire Line
+	5200 2700 4750 2700
+Connection ~ 5200 2700
+Text HLabel 4750 2700 0    50   Output ~ 0
+LOAD_OVERCURRENT_DIGITAL_LOGIC
+Wire Wire Line
+	7000 2100 7000 2000
+Wire Wire Line
+	7000 2400 7000 3650
+Wire Wire Line
+	7000 3650 6000 3650
+Connection ~ 7200 2800
+Wire Wire Line
+	7200 3300 7200 3650
+Wire Wire Line
+	7200 3650 7000 3650
+Connection ~ 7000 3650
+$Comp
+L Device:C C10
+U 1 1 5E629047
+P 8250 3150
+F 0 "C10" H 8365 3196 50  0000 L CNN
+F 1 "0.1uC" H 8365 3105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8288 3000 50  0001 C CNN
+F 3 "~" H 8250 3150 50  0001 C CNN
+F 4 "" H 8250 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    8250 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 2800 7750 2800
+Wire Wire Line
+	7750 3300 7750 3650
+Wire Wire Line
+	7750 3650 7200 3650
+Connection ~ 7200 3650
+Connection ~ 4850 2000
+Wire Wire Line
+	4850 2000 3350 2000
+Wire Wire Line
+	4850 2000 5200 2000
+Connection ~ 4850 2600
+Wire Wire Line
+	4850 2600 4750 2600
+Wire Wire Line
+	4850 2600 5500 2600
+$Comp
+L Power_Management_Custom:TPS2046B U6
+U 1 1 5E64DFDB
+P 6000 2800
+F 0 "U6" H 6000 3267 50  0000 C CNN
+F 1 "TPS2046B" H 6000 3176 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6000 3300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps2046b.pdf" H 5950 3100 50  0001 C CNN
+F 4 "TPS2046BDR" H 6000 2800 50  0001 C CNN "Manufacturer Part Number"
+	1    6000 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C11
+U 1 1 5E651B36
+P 7750 3150
+F 0 "C11" H 7868 3196 50  0000 L CNN
+F 1 "150uCP" H 7868 3105 50  0000 L CNN
+F 2 "" H 7788 3000 50  0001 C CNN
+F 3 "~" H 7750 3150 50  0001 C CNN
+F 4 "T495D157K010ATE100" H 7750 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    7750 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 2900 8850 3900
+Wire Wire Line
+	4950 3900 8850 3900
+Wire Wire Line
+	8250 3300 8250 3650
+Wire Wire Line
+	8250 3650 7750 3650
+Connection ~ 7750 3650
+Wire Wire Line
+	8250 3000 8250 2900
+Connection ~ 8250 2900
+Wire Wire Line
+	8250 2900 8850 2900
+Wire Wire Line
+	6500 2900 8250 2900
+Wire Wire Line
+	7750 3000 7750 2800
+Connection ~ 7750 2800
+Wire Wire Line
+	7750 2800 9100 2800
 $EndSCHEMATC
