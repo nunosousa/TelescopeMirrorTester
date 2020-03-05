@@ -180,18 +180,15 @@ Wire Wire Line
 $Comp
 L Device:C C8
 U 1 1 5E61FCAC
-P 7000 2250
-F 0 "C8" H 7115 2296 50  0000 L CNN
-F 1 "0.1uC" H 7115 2205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7038 2100 50  0001 C CNN
-F 3 "~" H 7000 2250 50  0001 C CNN
-F 4 "" H 7000 2250 50  0001 C CNN "Manufacturer Part Number"
-	1    7000 2250
+P 6700 3150
+F 0 "C8" H 6815 3196 50  0000 L CNN
+F 1 "0.1uC" H 6815 3105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6738 3000 50  0001 C CNN
+F 3 "~" H 6700 3150 50  0001 C CNN
+F 4 "" H 6700 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    6700 3150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6700 2000 7000 2000
-Connection ~ 6700 2000
 Connection ~ 6000 3650
 $Comp
 L Device:C C9
@@ -271,18 +268,9 @@ Wire Wire Line
 Connection ~ 5200 2700
 Text HLabel 4750 2700 0    50   Output ~ 0
 LOAD_OVERCURRENT_DIGITAL_LOGIC
-Wire Wire Line
-	7000 2100 7000 2000
-Wire Wire Line
-	7000 2400 7000 3650
-Wire Wire Line
-	7000 3650 6000 3650
 Connection ~ 7200 2800
 Wire Wire Line
 	7200 3300 7200 3650
-Wire Wire Line
-	7200 3650 7000 3650
-Connection ~ 7000 3650
 $Comp
 L Device:C C10
 U 1 1 5E629047
@@ -357,4 +345,14 @@ Wire Wire Line
 Connection ~ 7750 2800
 Wire Wire Line
 	7750 2800 9100 2800
+Connection ~ 6700 2600
+Connection ~ 6700 3650
+Wire Wire Line
+	6700 3650 6000 3650
+Wire Wire Line
+	6700 3650 7200 3650
+Wire Wire Line
+	6700 3000 6700 2600
+Wire Wire Line
+	6700 3300 6700 3650
 $EndSCHEMATC
