@@ -453,4 +453,16 @@ Wire Wire Line
 Connection ~ 1250 900 
 Wire Wire Line
 	1250 900  2450 900 
+Text HLabel 2450 4250 0    50   BiDi ~ 0
+USB_D+
+Text HLabel 2450 4500 0    50   BiDi ~ 0
+USB_D-
+Text HLabel 2450 4900 0    50   Input ~ 0
+OC_ALOADS
+Text HLabel 2450 5200 0    50   Input ~ 0
+OC_DLOADS
+Text HLabel 2400 5450 0    50   Output ~ 0
+~PS_ALOADS
+Text HLabel 2400 5700 0    50   Output ~ 0
+~PS_DLOADS
 $EndSCHEMATC

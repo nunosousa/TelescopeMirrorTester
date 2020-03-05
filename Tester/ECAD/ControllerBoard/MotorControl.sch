@@ -231,9 +231,9 @@ Text Notes 6450 1500 0    50   ~ 0
 Ceramic capacitor\nrated 6.3 V.
 Text Notes 6400 4200 0    50   ~ 0
 Ceramic capacitor\nrated 6.3 V.
-Text HLabel 6450 2200 2    50   Output ~ 0
+Text HLabel 8650 2200 2    50   Output ~ 0
 MOTOR_FAULT_12
-Text HLabel 6450 4950 2    50   Output ~ 0
+Text HLabel 8650 4950 2    50   Output ~ 0
 MOTOR_FAULT_34
 Text HLabel 5250 1900 0    50   Input ~ 0
 MOTOR_SLEEP_12
@@ -395,4 +395,59 @@ Wire Wire Line
 	6450 5350 8950 5350
 Wire Wire Line
 	8950 5450 6450 5450
+$Comp
+L Device:R R29
+U 1 1 5E624B95
+P 8350 4700
+F 0 "R29" H 8420 4746 50  0000 L CNN
+F 1 "10kR" H 8420 4655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8280 4700 50  0001 C CNN
+F 3 "~" H 8350 4700 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 8350 4700 50  0001 C CNN "Manufacturer Part Number"
+	1    8350 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 4950 8350 4950
+Wire Wire Line
+	8350 4850 8350 4950
+Connection ~ 8350 4950
+Wire Wire Line
+	8350 4950 8650 4950
+$Comp
+L Device:R R24
+U 1 1 5E6297EE
+P 8350 1950
+F 0 "R24" H 8420 1996 50  0000 L CNN
+F 1 "10kR" H 8420 1905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8280 1950 50  0001 C CNN
+F 3 "~" H 8350 1950 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 8350 1950 50  0001 C CNN "Manufacturer Part Number"
+	1    8350 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 2200 8350 2200
+Wire Wire Line
+	8350 2100 8350 2200
+Connection ~ 8350 2200
+Wire Wire Line
+	8350 2200 8650 2200
+Text HLabel 2050 900  0    50   Input ~ 0
+V3_3
+Wire Wire Line
+	2050 900  8350 900 
+Wire Wire Line
+	8350 900  8350 1700
+Wire Wire Line
+	8350 1700 8150 1700
+Wire Wire Line
+	8150 1700 8150 3000
+Wire Wire Line
+	8150 3000 8350 3000
+Wire Wire Line
+	8350 3000 8350 4550
+Connection ~ 8350 1700
+Wire Wire Line
+	8350 1700 8350 1800
 $EndSCHEMATC

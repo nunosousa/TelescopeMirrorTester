@@ -68,7 +68,7 @@ Wire Wire Line
 	6600 1100 6600 1050
 Connection ~ 6600 1050
 Wire Wire Line
-	6600 1050 9400 1050
+	6600 1050 7150 1050
 Wire Wire Line
 	6600 1400 6600 1550
 Wire Wire Line
@@ -162,8 +162,6 @@ Wire Wire Line
 Wire Wire Line
 	6500 2600 6700 2600
 Wire Wire Line
-	6700 2000 5200 2000
-Wire Wire Line
 	3350 2000 3350 1050
 Connection ~ 3350 1050
 Wire Wire Line
@@ -220,8 +218,6 @@ F 4 "RC0805FR-0710KL" H 4850 2300 50  0001 C CNN "Manufacturer Part Number"
 $EndComp
 Wire Wire Line
 	4850 2600 4850 2450
-Wire Wire Line
-	4850 2150 4850 2000
 Text Notes 5400 2150 0    50   ~ 0
 Power switch and current limiter
 Text HLabel 4750 2600 0    50   Output ~ 0
@@ -254,9 +250,6 @@ Wire Wire Line
 Wire Wire Line
 	5200 2700 5200 2450
 Wire Wire Line
-	5200 2150 5200 2000
-Connection ~ 5200 2000
-Wire Wire Line
 	5200 2700 4750 2700
 Connection ~ 5200 2700
 Text HLabel 4750 2700 0    50   Output ~ 0
@@ -283,11 +276,6 @@ Wire Wire Line
 Wire Wire Line
 	7750 3650 7200 3650
 Connection ~ 7200 3650
-Connection ~ 4850 2000
-Wire Wire Line
-	4850 2000 3350 2000
-Wire Wire Line
-	4850 2000 5200 2000
 Connection ~ 4850 2600
 Wire Wire Line
 	4850 2600 4750 2600
@@ -348,4 +336,20 @@ Wire Wire Line
 	6700 3300 6700 3650
 Wire Wire Line
 	7750 2800 9500 2800
+Wire Wire Line
+	3350 2000 6700 2000
+Wire Wire Line
+	7150 1050 7150 1800
+Wire Wire Line
+	7150 1800 5200 1800
+Wire Wire Line
+	4850 1800 4850 2150
+Connection ~ 7150 1050
+Wire Wire Line
+	7150 1050 9400 1050
+Wire Wire Line
+	5200 2150 5200 1800
+Connection ~ 5200 1800
+Wire Wire Line
+	5200 1800 4850 1800
 $EndSCHEMATC
