@@ -317,6 +317,7 @@ F 0 "R8" V 2543 1550 50  0000 C CNN
 F 1 "10kR" V 2634 1550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 1550 50  0001 C CNN
 F 3 "~" H 2750 1550 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2750 1550 50  0001 C CNN "Manufacturer Part Number"
 	1    2750 1550
 	0    1    1    0   
 $EndComp
@@ -328,6 +329,7 @@ F 0 "C18" H 3115 1746 50  0000 L CNN
 F 1 "0.1uC" H 3115 1655 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 1550 50  0001 C CNN
 F 3 "~" H 3000 1700 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3000 1700 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 1700
 	1    0    0    -1  
 $EndComp
@@ -345,6 +347,7 @@ F 0 "R9" H 2420 2196 50  0000 L CNN
 F 1 "10kR" H 2420 2105 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 2150 50  0001 C CNN
 F 3 "~" H 2350 2150 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2350 2150 50  0001 C CNN "Manufacturer Part Number"
 	1    2350 2150
 	1    0    0    -1  
 $EndComp
@@ -369,6 +372,7 @@ F 0 "R14" V 2543 2350 50  0000 C CNN
 F 1 "10kR" V 2634 2350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 2350 50  0001 C CNN
 F 3 "~" H 2750 2350 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2750 2350 50  0001 C CNN "Manufacturer Part Number"
 	1    2750 2350
 	0    1    1    0   
 $EndComp
@@ -383,6 +387,7 @@ F 0 "C19" H 3115 2546 50  0000 L CNN
 F 1 "0.1uC" H 3115 2455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 2350 50  0001 C CNN
 F 3 "~" H 3000 2500 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3000 2500 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 2500
 	1    0    0    -1  
 $EndComp
@@ -397,6 +402,7 @@ F 0 "R10" H 2420 2996 50  0000 L CNN
 F 1 "10kR" H 2420 2905 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 2950 50  0001 C CNN
 F 3 "~" H 2350 2950 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2350 2950 50  0001 C CNN "Manufacturer Part Number"
 	1    2350 2950
 	1    0    0    -1  
 $EndComp
@@ -418,6 +424,7 @@ F 0 "R15" V 2543 3150 50  0000 C CNN
 F 1 "10kR" V 2634 3150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 3150 50  0001 C CNN
 F 3 "~" H 2750 3150 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2750 3150 50  0001 C CNN "Manufacturer Part Number"
 	1    2750 3150
 	0    1    1    0   
 $EndComp
@@ -429,6 +436,7 @@ F 0 "C20" H 3115 3346 50  0000 L CNN
 F 1 "0.1uC" H 3115 3255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 3150 50  0001 C CNN
 F 3 "~" H 3000 3300 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3000 3300 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 3300
 	1    0    0    -1  
 $EndComp
@@ -463,6 +471,7 @@ F 0 "R7" H 2420 1396 50  0000 L CNN
 F 1 "10kR" H 2420 1305 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 1350 50  0001 C CNN
 F 3 "~" H 2350 1350 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2350 1350 50  0001 C CNN "Manufacturer Part Number"
 	1    2350 1350
 	1    0    0    -1  
 $EndComp
@@ -506,6 +515,7 @@ F 0 "R11" H 2420 3796 50  0000 L CNN
 F 1 "10kR" H 2420 3705 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 3750 50  0001 C CNN
 F 3 "~" H 2350 3750 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2350 3750 50  0001 C CNN "Manufacturer Part Number"
 	1    2350 3750
 	1    0    0    -1  
 $EndComp
@@ -517,6 +527,7 @@ F 0 "R16" V 2543 3950 50  0000 C CNN
 F 1 "10kR" V 2634 3950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 3950 50  0001 C CNN
 F 3 "~" H 2750 3950 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2750 3950 50  0001 C CNN "Manufacturer Part Number"
 	1    2750 3950
 	0    1    1    0   
 $EndComp
@@ -528,6 +539,7 @@ F 0 "C21" H 3115 4146 50  0000 L CNN
 F 1 "0.1uC" H 3115 4055 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 3950 50  0001 C CNN
 F 3 "~" H 3000 4100 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3000 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 4100
 	1    0    0    -1  
 $EndComp
@@ -572,6 +584,7 @@ F 0 "R12" H 2420 4596 50  0000 L CNN
 F 1 "10kR" H 2420 4505 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 4550 50  0001 C CNN
 F 3 "~" H 2350 4550 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2350 4550 50  0001 C CNN "Manufacturer Part Number"
 	1    2350 4550
 	1    0    0    -1  
 $EndComp
@@ -583,6 +596,7 @@ F 0 "R17" V 2543 4750 50  0000 C CNN
 F 1 "10kR" V 2634 4750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 4750 50  0001 C CNN
 F 3 "~" H 2750 4750 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2750 4750 50  0001 C CNN "Manufacturer Part Number"
 	1    2750 4750
 	0    1    1    0   
 $EndComp
@@ -594,6 +608,7 @@ F 0 "C22" H 3115 4946 50  0000 L CNN
 F 1 "0.1uC" H 3115 4855 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 4750 50  0001 C CNN
 F 3 "~" H 3000 4900 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3000 4900 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 4900
 	1    0    0    -1  
 $EndComp
@@ -638,6 +653,7 @@ F 0 "R13" H 2420 5396 50  0000 L CNN
 F 1 "10kR" H 2420 5305 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 5350 50  0001 C CNN
 F 3 "~" H 2350 5350 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2350 5350 50  0001 C CNN "Manufacturer Part Number"
 	1    2350 5350
 	1    0    0    -1  
 $EndComp
@@ -649,6 +665,7 @@ F 0 "R18" V 2543 5550 50  0000 C CNN
 F 1 "10kR" V 2634 5550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 5550 50  0001 C CNN
 F 3 "~" H 2750 5550 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 2750 5550 50  0001 C CNN "Manufacturer Part Number"
 	1    2750 5550
 	0    1    1    0   
 $EndComp
@@ -660,6 +677,7 @@ F 0 "C23" H 3115 5746 50  0000 L CNN
 F 1 "0.1uC" H 3115 5655 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 5550 50  0001 C CNN
 F 3 "~" H 3000 5700 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3000 5700 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 5700
 	1    0    0    -1  
 $EndComp
@@ -764,6 +782,7 @@ F 0 "R21" V 6343 1350 50  0000 C CNN
 F 1 "10kR" V 6434 1350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6480 1350 50  0001 C CNN
 F 3 "~" H 6550 1350 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 6550 1350 50  0001 C CNN "Manufacturer Part Number"
 	1    6550 1350
 	-1   0    0    1   
 $EndComp
@@ -775,6 +794,7 @@ F 0 "R19" V 5943 1350 50  0000 C CNN
 F 1 "10kR" V 6034 1350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6080 1350 50  0001 C CNN
 F 3 "~" H 6150 1350 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 6150 1350 50  0001 C CNN "Manufacturer Part Number"
 	1    6150 1350
 	1    0    0    -1  
 $EndComp
@@ -786,6 +806,7 @@ F 0 "R22" V 6343 2000 50  0000 C CNN
 F 1 "10kR" V 6434 2000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6480 2000 50  0001 C CNN
 F 3 "~" H 6550 2000 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 6550 2000 50  0001 C CNN "Manufacturer Part Number"
 	1    6550 2000
 	-1   0    0    1   
 $EndComp
@@ -831,6 +852,7 @@ F 0 "R20" V 5943 2000 50  0000 C CNN
 F 1 "10kR" V 6034 2000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6080 2000 50  0001 C CNN
 F 3 "~" H 6150 2000 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 6150 2000 50  0001 C CNN "Manufacturer Part Number"
 	1    6150 2000
 	1    0    0    -1  
 $EndComp
