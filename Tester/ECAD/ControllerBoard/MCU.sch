@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 5
+Sheet 5 6
 Title ""
 Date ""
 Rev ""
@@ -234,7 +234,7 @@ Connection ~ 4650 900
 Wire Wire Line
 	4650 2050 6700 2050
 Wire Wire Line
-	1100 900  2450 900 
+	1100 900  1250 900 
 Wire Wire Line
 	1000 7150 1250 7150
 Wire Wire Line
@@ -281,6 +281,7 @@ F 0 "U1" H 5550 2011 50  0000 C CNN
 F 1 "ATSAMD21J18A-AU" H 5550 1920 50  0000 C CNN
 F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5100 1550 50  0001 L BNN
 F 3 "" H 5550 4200 50  0001 L BNN
+F 4 "ATSAMD21J18A-AUT" H 5550 4200 50  0001 C CNN "Manufacturer Part Number"
 	1    5550 4200
 	1    0    0    -1  
 $EndComp
@@ -324,6 +325,7 @@ F 0 "R25" H 2520 1746 50  0000 L CNN
 F 1 "1kR" H 2520 1655 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2380 1700 50  0001 C CNN
 F 3 "~" H 2450 1700 50  0001 C CNN
+F 4 "RC0805FR-071KL" H 2450 1700 50  0001 C CNN "Manufacturer Part Number"
 	1    2450 1700
 	1    0    0    -1  
 $EndComp
@@ -444,16 +446,23 @@ Wire Wire Line
 Connection ~ 1250 3300
 Wire Wire Line
 	1250 3300 1250 7150
-$Comp
-L Power_Protection:PRTR5V0U2X D2
-U 1 1 5E6091FE
-P 2750 5100
-F 0 "D2" H 3294 5146 50  0000 L CNN
-F 1 "PRTR5V0U2X" H 3294 5055 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-143" H 2810 5100 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf" H 2810 5100 50  0001 C CNN
-F 4 "PRTR5V0U2X,215" H 2750 5100 50  0001 C CNN "Manufacturer Part Number"
-	1    2750 5100
-	1    0    0    -1  
-$EndComp
+Wire Wire Line
+	1350 1850 1250 1850
+Wire Wire Line
+	1250 1850 1250 900 
+Connection ~ 1250 900 
+Wire Wire Line
+	1250 900  2450 900 
+Text HLabel 2450 4250 0    50   BiDi ~ 0
+USB_D+
+Text HLabel 2450 4500 0    50   BiDi ~ 0
+USB_D-
+Text HLabel 2450 4900 0    50   Input ~ 0
+OC_ALOADS
+Text HLabel 2450 5200 0    50   Input ~ 0
+OC_DLOADS
+Text HLabel 2400 5450 0    50   Output ~ 0
+~PS_ALOADS
+Text HLabel 2400 5700 0    50   Output ~ 0
+~PS_DLOADS
 $EndSCHEMATC

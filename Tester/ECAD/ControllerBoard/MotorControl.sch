@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -13,22 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 6450 2700 2    50   Output ~ 0
-MOTOR_OUT_2-
-Text HLabel 6450 2600 2    50   Output ~ 0
-MOTOR_OUT_2+
-Text HLabel 6450 2500 2    50   Output ~ 0
-MOTOR_OUT_1-
-Text HLabel 6450 2400 2    50   Output ~ 0
-MOTOR_OUT_1+
-Text HLabel 6450 5450 2    50   Output ~ 0
-MOTOR_OUT_4-
-Text HLabel 6450 5350 2    50   Output ~ 0
-MOTOR_OUT_4+
-Text HLabel 6450 5250 2    50   Output ~ 0
-MOTOR_OUT_3-
-Text HLabel 6450 5150 2    50   Output ~ 0
-MOTOR_OUT_3+
 $Comp
 L Device:R R4
 U 1 1 5E52ACD2
@@ -247,9 +231,9 @@ Text Notes 6450 1500 0    50   ~ 0
 Ceramic capacitor\nrated 6.3 V.
 Text Notes 6400 4200 0    50   ~ 0
 Ceramic capacitor\nrated 6.3 V.
-Text HLabel 6450 2200 2    50   Output ~ 0
+Text HLabel 8650 2200 2    50   Output ~ 0
 MOTOR_FAULT_12
-Text HLabel 6450 4950 2    50   Output ~ 0
+Text HLabel 8650 4950 2    50   Output ~ 0
 MOTOR_FAULT_34
 Text HLabel 5250 1900 0    50   Input ~ 0
 MOTOR_SLEEP_12
@@ -339,4 +323,131 @@ Wire Wire Line
 Connection ~ 4050 5050
 Wire Wire Line
 	4050 5050 4050 6050
+$Comp
+L Connector:Conn_01x02_Male J2
+U 1 1 5E623A42
+P 9100 2500
+AR Path="/5E507163/5E623A42" Ref="J2"  Part="1" 
+AR Path="/5E623A42" Ref="J?"  Part="1" 
+F 0 "J2" H 9072 2382 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 9072 2473 50  0000 R CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9100 2500 50  0001 C CNN
+F 3 "~" H 9100 2500 50  0001 C CNN
+F 4 "0530480210" H 9100 2500 50  0001 C CNN "Manufacturer Part Number"
+	1    9100 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J3
+U 1 1 5E623A49
+P 9100 2700
+AR Path="/5E507163/5E623A49" Ref="J3"  Part="1" 
+AR Path="/5E623A49" Ref="J?"  Part="1" 
+F 0 "J3" H 9072 2582 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 9072 2673 50  0000 R CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9100 2700 50  0001 C CNN
+F 3 "~" H 9100 2700 50  0001 C CNN
+F 4 "0530480210" H 9100 2700 50  0001 C CNN "Manufacturer Part Number"
+	1    9100 2700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J4
+U 1 1 5E623A50
+P 9150 5250
+AR Path="/5E507163/5E623A50" Ref="J4"  Part="1" 
+AR Path="/5E623A50" Ref="J?"  Part="1" 
+F 0 "J4" H 9122 5132 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 9122 5223 50  0000 R CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9150 5250 50  0001 C CNN
+F 3 "~" H 9150 5250 50  0001 C CNN
+F 4 "0530480210" H 9150 5250 50  0001 C CNN "Manufacturer Part Number"
+	1    9150 5250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J5
+U 1 1 5E623A57
+P 9150 5450
+AR Path="/5E507163/5E623A57" Ref="J5"  Part="1" 
+AR Path="/5E623A57" Ref="J?"  Part="1" 
+F 0 "J5" H 9122 5332 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 9122 5423 50  0000 R CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9150 5450 50  0001 C CNN
+F 3 "~" H 9150 5450 50  0001 C CNN
+F 4 "0530480210" H 9150 5450 50  0001 C CNN "Manufacturer Part Number"
+	1    9150 5450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6450 2400 8900 2400
+Wire Wire Line
+	6450 2500 8900 2500
+Wire Wire Line
+	6450 2600 8900 2600
+Wire Wire Line
+	6450 2700 8900 2700
+Wire Wire Line
+	6450 5150 8950 5150
+Wire Wire Line
+	8950 5250 6450 5250
+Wire Wire Line
+	6450 5350 8950 5350
+Wire Wire Line
+	8950 5450 6450 5450
+$Comp
+L Device:R R29
+U 1 1 5E624B95
+P 8350 4700
+F 0 "R29" H 8420 4746 50  0000 L CNN
+F 1 "10kR" H 8420 4655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8280 4700 50  0001 C CNN
+F 3 "~" H 8350 4700 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 8350 4700 50  0001 C CNN "Manufacturer Part Number"
+	1    8350 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 4950 8350 4950
+Wire Wire Line
+	8350 4850 8350 4950
+Connection ~ 8350 4950
+Wire Wire Line
+	8350 4950 8650 4950
+$Comp
+L Device:R R24
+U 1 1 5E6297EE
+P 8350 1950
+F 0 "R24" H 8420 1996 50  0000 L CNN
+F 1 "10kR" H 8420 1905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8280 1950 50  0001 C CNN
+F 3 "~" H 8350 1950 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 8350 1950 50  0001 C CNN "Manufacturer Part Number"
+	1    8350 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 2200 8350 2200
+Wire Wire Line
+	8350 2100 8350 2200
+Connection ~ 8350 2200
+Wire Wire Line
+	8350 2200 8650 2200
+Text HLabel 2050 900  0    50   Input ~ 0
+V3_3
+Wire Wire Line
+	2050 900  8350 900 
+Wire Wire Line
+	8350 900  8350 1700
+Wire Wire Line
+	8350 1700 8150 1700
+Wire Wire Line
+	8150 1700 8150 3000
+Wire Wire Line
+	8150 3000 8350 3000
+Wire Wire Line
+	8350 3000 8350 4550
+Connection ~ 8350 1700
+Wire Wire Line
+	8350 1700 8350 1800
 $EndSCHEMATC
