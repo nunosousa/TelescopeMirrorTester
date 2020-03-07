@@ -202,7 +202,7 @@ Wire Wire Line
 	6500 2800 7200 2800
 Wire Wire Line
 	7200 2800 7200 3000
-Text HLabel 5500 3000 0    50   Input ~ 0
+Text HLabel 3350 3000 0    50   Input ~ 0
 ~POWER_SWITCH_ANALOGUE_LOADS
 $Comp
 L Device:R R6
@@ -220,7 +220,7 @@ Wire Wire Line
 	4850 2600 4850 2450
 Text Notes 5400 2150 0    50   ~ 0
 Power switch and current limiter
-Text HLabel 4750 2600 0    50   Output ~ 0
+Text HLabel 3350 2600 0    50   Output ~ 0
 LOAD_OVERCURRENT_MOTOR
 Wire Wire Line
 	1300 4850 5300 4850
@@ -231,7 +231,7 @@ Wire Wire Line
 	1300 4850 1300 7500
 Wire Wire Line
 	4950 3900 4950 4350
-Text HLabel 5500 3100 0    50   Input ~ 0
+Text HLabel 3350 3100 0    50   Input ~ 0
 ~POWER_SWITCH_DIGITAL_LOGIC
 $Comp
 L Device:R R23
@@ -249,10 +249,8 @@ Wire Wire Line
 	5500 2700 5200 2700
 Wire Wire Line
 	5200 2700 5200 2450
-Wire Wire Line
-	5200 2700 4750 2700
 Connection ~ 5200 2700
-Text HLabel 4750 2700 0    50   Output ~ 0
+Text HLabel 3350 2700 0    50   Output ~ 0
 LOAD_OVERCURRENT_DIGITAL_LOGIC
 Connection ~ 7200 2800
 Wire Wire Line
@@ -277,8 +275,6 @@ Wire Wire Line
 	7750 3650 7200 3650
 Connection ~ 7200 3650
 Connection ~ 4850 2600
-Wire Wire Line
-	4850 2600 4750 2600
 Wire Wire Line
 	4850 2600 5500 2600
 $Comp
@@ -352,4 +348,56 @@ Wire Wire Line
 Connection ~ 5200 1800
 Wire Wire Line
 	5200 1800 4850 1800
+$Comp
+L Device:R R31
+U 1 1 5E6464A0
+P 4050 2300
+F 0 "R31" H 4120 2346 50  0000 L CNN
+F 1 "10kR" H 4120 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3980 2300 50  0001 C CNN
+F 3 "~" H 4050 2300 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 4050 2300 50  0001 C CNN "Manufacturer Part Number"
+	1    4050 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R32
+U 1 1 5E64669F
+P 4450 2300
+F 0 "R32" H 4520 2346 50  0000 L CNN
+F 1 "10kR" H 4520 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4380 2300 50  0001 C CNN
+F 3 "~" H 4450 2300 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 4450 2300 50  0001 C CNN "Manufacturer Part Number"
+	1    4450 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2600 4850 2600
+Wire Wire Line
+	3350 2700 5200 2700
+Wire Wire Line
+	5500 3000 4050 3000
+Wire Wire Line
+	5500 3100 4450 3100
+Wire Wire Line
+	4450 2450 4450 3100
+Connection ~ 4450 3100
+Wire Wire Line
+	4450 3100 3350 3100
+Wire Wire Line
+	4050 2450 4050 3000
+Connection ~ 4050 3000
+Wire Wire Line
+	4050 3000 3350 3000
+Wire Wire Line
+	4050 2150 4050 1800
+Wire Wire Line
+	4050 1800 4450 1800
+Connection ~ 4850 1800
+Wire Wire Line
+	4450 2150 4450 1800
+Connection ~ 4450 1800
+Wire Wire Line
+	4450 1800 4850 1800
 $EndSCHEMATC

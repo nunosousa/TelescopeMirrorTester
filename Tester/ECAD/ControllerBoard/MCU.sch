@@ -248,9 +248,9 @@ F 4 "CC0805ZRY5V8BB104" H 1050 2000 50  0001 C CNN "Manufacturer Part Number"
 $EndComp
 Wire Wire Line
 	4750 3000 4650 3000
-Text HLabel 2250 3700 0    50   BiDi ~ 0
+Text HLabel 6350 4500 2    50   BiDi ~ 0
 USB_D+
-Text HLabel 2250 3950 0    50   BiDi ~ 0
+Text HLabel 6350 4400 2    50   BiDi ~ 0
 USB_D-
 Text HLabel 1400 3650 0    50   Input ~ 0
 OC_ALOADS
