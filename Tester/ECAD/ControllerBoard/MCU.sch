@@ -13,29 +13,29 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 3500 3300 2    50   Output ~ 0
+Text HLabel 3950 6100 2    50   Output ~ 0
 MOTOR_CTRL_1A
-Text HLabel 3500 3400 2    50   Output ~ 0
+Text HLabel 3950 6200 2    50   Output ~ 0
 MOTOR_CTRL_1B
-Text HLabel 3500 3550 2    50   Output ~ 0
+Text HLabel 3950 6350 2    50   Output ~ 0
 MOTOR_CTRL_2A
-Text HLabel 3500 3650 2    50   Output ~ 0
+Text HLabel 3950 6450 2    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 3500 3800 2    50   Output ~ 0
+Text HLabel 3950 6600 2    50   Output ~ 0
 MOTOR_CTRL_3A
-Text HLabel 3500 3900 2    50   Output ~ 0
+Text HLabel 3950 6700 2    50   Output ~ 0
 MOTOR_CTRL_3B
-Text HLabel 3500 4050 2    50   Output ~ 0
+Text HLabel 3950 6850 2    50   Output ~ 0
 MOTOR_CTRL_4A
-Text HLabel 3500 4150 2    50   Output ~ 0
+Text HLabel 3950 6950 2    50   Output ~ 0
 MOTOR_CTRL_4B
-Text HLabel 1800 5750 2    50   Input ~ 0
+Text HLabel 1800 6000 2    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 1800 5850 2    50   Input ~ 0
+Text HLabel 1800 6100 2    50   Input ~ 0
 MOTOR_FAULT_34
-Text HLabel 3000 5550 2    50   Output ~ 0
+Text HLabel 3000 5800 2    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 3000 5650 2    50   Output ~ 0
+Text HLabel 3000 5900 2    50   Output ~ 0
 MOTOR_SLEEP_34
 Text HLabel 1000 7150 0    50   Input ~ 0
 GND
@@ -113,57 +113,57 @@ F 4 "CC0805MRX5R6BB106" H 6400 1550 50  0001 C CNN "Manufacturer Part Number"
 	1    6400 1550
 	1    0    0    -1  
 $EndComp
-Text HLabel 2500 3250 2    50   Input ~ 0
+Text HLabel 3300 3950 2    50   Input ~ 0
 POSX_MISO
-Text HLabel 2500 3350 2    50   Output ~ 0
+Text HLabel 3300 4050 2    50   Output ~ 0
 POSX_MOSI
-Text HLabel 2500 3450 2    50   Output ~ 0
+Text HLabel 3300 4150 2    50   Output ~ 0
 POSX_SCLK
-Text HLabel 2500 4600 2    50   Output ~ 0
+Text HLabel 2500 4850 2    50   Output ~ 0
 ~POSX_NCS
-Text HLabel 2500 4700 2    50   Output ~ 0
+Text HLabel 2500 4950 2    50   Output ~ 0
 ~POSY_NCS
-Text HLabel 2500 4800 2    50   Output ~ 0
+Text HLabel 2500 5050 2    50   Output ~ 0
 ~POSZ_NCS
-Text HLabel 1850 5400 2    50   Input ~ 0
+Text HLabel 1850 5650 2    50   Input ~ 0
 POSX_MOTION
-Text HLabel 1850 5500 2    50   Input ~ 0
+Text HLabel 1850 5750 2    50   Input ~ 0
 POSY_MOTION
-Text HLabel 1850 5600 2    50   Input ~ 0
+Text HLabel 1850 5850 2    50   Input ~ 0
 POSZ_MOTION
-Text HLabel 2450 5050 2    50   Output ~ 0
+Text HLabel 2450 5300 2    50   Output ~ 0
 ~POSX_NRESET
-Text HLabel 2450 5150 2    50   Output ~ 0
+Text HLabel 2450 5400 2    50   Output ~ 0
 ~POSY_NRESET
-Text HLabel 2450 5250 2    50   Output ~ 0
+Text HLabel 2450 5500 2    50   Output ~ 0
 ~POSZ_NRESET
-Text HLabel 1950 6050 2    50   Input ~ 0
+Text HLabel 1950 6300 2    50   Input ~ 0
 END_STOP_X+
-Text HLabel 1950 6200 2    50   Input ~ 0
+Text HLabel 1950 6450 2    50   Input ~ 0
 END_STOP_Y+
-Text HLabel 3200 6100 2    50   Input ~ 0
+Text HLabel 3200 6350 2    50   Input ~ 0
 END_STOP_Z+
-Text HLabel 3200 6300 2    50   Input ~ 0
+Text HLabel 3200 6550 2    50   Input ~ 0
 END_STOP_X-
-Text HLabel 3200 6450 2    50   Input ~ 0
+Text HLabel 3200 6700 2    50   Input ~ 0
 END_STOP_Y-
-Text HLabel 3200 6650 2    50   Input ~ 0
+Text HLabel 3200 6900 2    50   Input ~ 0
 END_STOP_Z-
-Text HLabel 3450 4450 2    50   BiDi ~ 0
+Text HLabel 1800 4050 2    50   BiDi ~ 0
 LASER_SDA
-Text HLabel 3500 4650 2    50   Output ~ 0
+Text HLabel 1850 4250 2    50   Output ~ 0
 LASER_SCL
-Text HLabel 2800 3700 2    50   Input ~ 0
+Text HLabel 2500 4250 2    50   Input ~ 0
 POSY_MISO
-Text HLabel 2800 3800 2    50   Output ~ 0
+Text HLabel 2500 4350 2    50   Output ~ 0
 POSY_MOSI
-Text HLabel 2800 3900 2    50   Output ~ 0
+Text HLabel 2500 4450 2    50   Output ~ 0
 POSY_SCLK
-Text HLabel 2500 4100 2    50   Input ~ 0
+Text HLabel 2600 3900 2    50   Input ~ 0
 POSZ_MISO
-Text HLabel 2500 4200 2    50   Output ~ 0
+Text HLabel 2600 4000 2    50   Output ~ 0
 POSZ_MOSI
-Text HLabel 2500 4300 2    50   Output ~ 0
+Text HLabel 2600 4100 2    50   Output ~ 0
 POSZ_SCLK
 Wire Wire Line
 	5100 6300 5100 7150
@@ -252,13 +252,13 @@ Text HLabel 6350 4500 2    50   BiDi ~ 0
 USB_D+
 Text HLabel 6350 4400 2    50   BiDi ~ 0
 USB_D-
-Text HLabel 1400 3650 0    50   Input ~ 0
+Text HLabel 4100 4900 0    50   Input ~ 0
 OC_ALOADS
-Text HLabel 1400 3950 0    50   Input ~ 0
+Text HLabel 4050 5050 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 1350 4200 0    50   Output ~ 0
+Text HLabel 4000 5200 0    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 1350 4450 0    50   Output ~ 0
+Text HLabel 4000 5350 0    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_20 J16
@@ -353,7 +353,7 @@ F 0 "R30" V 7050 5200 50  0000 L CNN
 F 1 "22R" V 7150 5200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7180 5300 50  0001 C CNN
 F 3 "~" H 7250 5300 50  0001 C CNN
-F 4 "" H 7250 5300 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805JR-0722RL" H 7250 5300 50  0001 C CNN "Manufacturer Part Number"
 	1    7250 5300
 	0    -1   -1   0   
 $EndComp
@@ -382,8 +382,6 @@ Wire Wire Line
 Wire Wire Line
 	2150 2100 2150 1550
 Connection ~ 4650 2100
-Wire Wire Line
-	1650 2500 1650 2750
 Wire Wire Line
 	1000 7150 1650 7150
 Wire Wire Line
@@ -460,13 +458,8 @@ Wire Wire Line
 Wire Wire Line
 	3600 1700 4200 1700
 Wire Wire Line
-	3600 1700 3600 2750
-Wire Wire Line
-	3600 2750 1650 2750
+	3600 1700 3600 2600
 Connection ~ 3600 1700
-Connection ~ 1650 2750
-Wire Wire Line
-	1650 2750 1650 7150
 Wire Wire Line
 	1650 1550 2150 1550
 Wire Wire Line
@@ -487,4 +480,88 @@ Wire Wire Line
 Connection ~ 1650 1500
 Wire Wire Line
 	1650 1500 1650 1550
+$Comp
+L Device:Crystal_GND3 Y1
+U 1 1 5E64392E
+P 2700 3050
+F 0 "Y1" H 2700 3318 50  0000 C CNN
+F 1 "Crystal_GND3" H 2700 3227 50  0000 C CNN
+F 2 "" H 2700 3050 50  0001 C CNN
+F 3 "https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/MS1V-T1K.pdf" H 2700 3050 50  0001 C CNN
+F 4 "MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 2700 3050 50  0001 C CNN "Manufacturer Part Number"
+	1    2700 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C24
+U 1 1 5E644FBE
+P 2400 3300
+F 0 "C24" H 2100 3350 50  0000 L CNN
+F 1 "6.8pC" H 2100 3250 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 3150 50  0001 C CNN
+F 3 "~" H 2400 3300 50  0001 C CNN
+F 4 "C0805C689J5GACTU" H 2400 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    2400 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C25
+U 1 1 5E645661
+P 3000 3300
+F 0 "C25" H 3115 3346 50  0000 L CNN
+F 1 "6.8pC" H 3115 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 3150 50  0001 C CNN
+F 3 "~" H 3000 3300 50  0001 C CNN
+F 4 "C0805C689J5GACTU" H 3000 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    3000 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 2500 1650 2600
+Wire Wire Line
+	1650 2600 3600 2600
+Connection ~ 1650 2600
+Wire Wire Line
+	1650 2600 1650 3550
+Wire Wire Line
+	4750 3200 3900 3200
+Wire Wire Line
+	3900 3200 3900 2700
+Wire Wire Line
+	3900 2700 2400 2700
+Wire Wire Line
+	2400 2700 2400 3050
+Wire Wire Line
+	4750 3300 3700 3300
+Wire Wire Line
+	3700 3300 3700 3050
+Wire Wire Line
+	3700 3050 3000 3050
+Wire Wire Line
+	2550 3050 2400 3050
+Connection ~ 2400 3050
+Wire Wire Line
+	2400 3050 2400 3150
+Wire Wire Line
+	3000 3150 3000 3050
+Connection ~ 3000 3050
+Wire Wire Line
+	3000 3050 2850 3050
+Wire Wire Line
+	3000 3550 3000 3450
+Wire Wire Line
+	3000 3550 2700 3550
+Wire Wire Line
+	2400 3550 2400 3450
+Wire Wire Line
+	2700 3250 2700 3550
+Connection ~ 2700 3550
+Wire Wire Line
+	2700 3550 2400 3550
+Wire Wire Line
+	2400 3550 1650 3550
+Connection ~ 2400 3550
+Connection ~ 1650 3550
+Wire Wire Line
+	1650 3550 1650 7150
 $EndSCHEMATC
