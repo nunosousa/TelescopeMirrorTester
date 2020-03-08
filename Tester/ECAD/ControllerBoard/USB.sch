@@ -174,4 +174,12 @@ $EndComp
 Connection ~ 5750 2600
 Wire Wire Line
 	5750 2600 6050 2600
+Text Label 4450 2800 0    50   ~ 0
+D+
+Text Label 4450 2900 0    50   ~ 0
+D-
+Text Label 3700 3650 1    50   ~ 0
+SHIELD
+Text Label 4300 2600 0    50   ~ 0
+VBUS
 $EndSCHEMATC

@@ -690,4 +690,24 @@ Red
 Text Notes 7950 2050 0    50   ~ 0
 Green
 NoConn ~ 6350 4300
+Text Label 5700 2050 1    50   ~ 0
+VDDANA
+Text Label 5900 2200 0    50   ~ 0
+VDDCORE
+Text Label 2900 2100 0    50   ~ 0
+~RESET
+Text Label 3650 2700 0    50   ~ 0
+XIN32
+Text Label 3400 3050 0    50   ~ 0
+XOUT32
+Text Label 8150 4000 0    50   ~ 0
+SWDCLK
+Text Label 8300 4100 0    50   ~ 0
+SWDIO
+Text Label 7000 5100 0    50   ~ 0
+SWDIO_MCU
+Text Label 7900 2750 1    50   ~ 0
+GREEN_LED_MCU
+Text Label 7550 2650 1    50   ~ 0
+RED_LED_MCU
 $EndSCHEMATC
