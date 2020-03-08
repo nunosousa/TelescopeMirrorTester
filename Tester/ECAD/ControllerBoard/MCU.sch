@@ -13,29 +13,29 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 3950 6100 2    50   Output ~ 0
+Text HLabel 4750 4100 0    50   Output ~ 0
 MOTOR_CTRL_1A
-Text HLabel 3950 6200 2    50   Output ~ 0
+Text HLabel 4750 4000 0    50   Output ~ 0
 MOTOR_CTRL_1B
-Text HLabel 3950 6350 2    50   Output ~ 0
+Text HLabel 4750 4900 0    50   Output ~ 0
 MOTOR_CTRL_2A
-Text HLabel 3950 6450 2    50   Output ~ 0
+Text HLabel 4750 4800 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 3950 6600 2    50   Output ~ 0
+Text HLabel 6350 5200 2    50   Output ~ 0
 MOTOR_CTRL_3A
-Text HLabel 3950 6700 2    50   Output ~ 0
+Text HLabel 6350 5300 2    50   Output ~ 0
 MOTOR_CTRL_3B
-Text HLabel 3950 6850 2    50   Output ~ 0
+Text HLabel 4750 5100 0    50   Output ~ 0
 MOTOR_CTRL_4A
-Text HLabel 3950 6950 2    50   Output ~ 0
+Text HLabel 4750 5000 0    50   Output ~ 0
 MOTOR_CTRL_4B
-Text HLabel 1800 6000 2    50   Input ~ 0
+Text HLabel 4750 3800 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 1800 6100 2    50   Input ~ 0
+Text HLabel 4750 3900 0    50   Input ~ 0
 MOTOR_FAULT_34
-Text HLabel 1750 5000 2    50   Output ~ 0
+Text HLabel 6350 4600 2    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 1750 5100 2    50   Output ~ 0
+Text HLabel 6350 4700 2    50   Output ~ 0
 MOTOR_SLEEP_34
 Text HLabel 1000 7150 0    50   Input ~ 0
 GND
@@ -125,21 +125,21 @@ Text HLabel 4750 5500 0    50   Output ~ 0
 ~POSY_NCS
 Text HLabel 6350 3300 2    50   Output ~ 0
 ~POSZ_NCS
-Text HLabel 1850 5650 2    50   Input ~ 0
+Text HLabel 4750 4400 0    50   Input ~ 0
 POSX_MOTION
-Text HLabel 1850 5750 2    50   Input ~ 0
+Text HLabel 4750 4300 0    50   Input ~ 0
 POSY_MOTION
-Text HLabel 1850 5850 2    50   Input ~ 0
+Text HLabel 4750 4200 0    50   Input ~ 0
 POSZ_MOTION
-Text HLabel 2450 5300 2    50   Output ~ 0
+Text HLabel 6350 4000 2    50   Output ~ 0
 ~POSX_NRESET
-Text HLabel 2450 5400 2    50   Output ~ 0
+Text HLabel 6350 4100 2    50   Output ~ 0
 ~POSY_NRESET
-Text HLabel 2450 5500 2    50   Output ~ 0
+Text HLabel 6350 4200 2    50   Output ~ 0
 ~POSZ_NRESET
-Text HLabel 1950 6300 2    50   Input ~ 0
+Text HLabel 6350 3900 2    50   Input ~ 0
 END_STOP_X+
-Text HLabel 1950 6450 2    50   Input ~ 0
+Text HLabel 4750 3400 0    50   Input ~ 0
 END_STOP_Y+
 Text HLabel 4750 4600 0    50   BiDi ~ 0
 LASER_SDA
@@ -244,13 +244,13 @@ Text HLabel 6350 4500 2    50   BiDi ~ 0
 USB_D+
 Text HLabel 6350 4400 2    50   BiDi ~ 0
 USB_D-
-Text HLabel 3000 4100 0    50   Input ~ 0
+Text HLabel 6350 4800 2    50   Input ~ 0
 OC_ALOADS
-Text HLabel 2950 4250 0    50   Input ~ 0
+Text HLabel 6350 4900 2    50   Input ~ 0
 OC_DLOADS
-Text HLabel 2900 4400 0    50   Output ~ 0
+Text HLabel 6350 5500 2    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 2900 4550 0    50   Output ~ 0
+Text HLabel 6350 5400 2    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_20 J16
@@ -280,15 +280,9 @@ NoConn ~ 9450 3900
 NoConn ~ 9450 4200
 NoConn ~ 9450 4600
 Wire Wire Line
-	8150 4000 8150 5200
-Wire Wire Line
-	8150 5200 6350 5200
+	8150 4000 8150 5000
 Wire Wire Line
 	9450 4100 8550 4100
-Wire Wire Line
-	8250 4100 8250 5300
-Wire Wire Line
-	8250 5300 7400 5300
 Wire Wire Line
 	8950 2950 10150 2950
 Wire Wire Line
@@ -337,20 +331,6 @@ Wire Wire Line
 Wire Wire Line
 	8550 2950 8950 2950
 Connection ~ 8950 2950
-$Comp
-L Device:R R30
-U 1 1 5E68E598
-P 7250 5300
-F 0 "R30" V 7050 5200 50  0000 L CNN
-F 1 "22R" V 7150 5200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7180 5300 50  0001 C CNN
-F 3 "~" H 7250 5300 50  0001 C CNN
-F 4 "RC0805JR-0722RL" H 7250 5300 50  0001 C CNN "Manufacturer Part Number"
-	1    7250 5300
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	7100 5300 6350 5300
 $Comp
 L Switch:SW_SPST SW1
 U 1 1 5E5F8021
@@ -566,12 +546,60 @@ Text Notes 3900 5650 0    50   ~ 0
 SERCOM2
 Text Notes 3900 5250 0    50   ~ 0
 SERCOM4
-Text HLabel 2650 6400 2    50   Input ~ 0
+Text HLabel 4750 3600 0    50   Input ~ 0
 END_STOP_Z+
-Text HLabel 2650 6600 2    50   Input ~ 0
+Text HLabel 6350 3800 2    50   Input ~ 0
 END_STOP_X-
-Text HLabel 2650 6750 2    50   Input ~ 0
+Text HLabel 4750 3500 0    50   Input ~ 0
 END_STOP_Y-
-Text HLabel 2650 6950 2    50   Input ~ 0
+Text HLabel 4750 3700 0    50   Input ~ 0
 END_STOP_Z-
+Text Notes 3800 4050 0    50   ~ 0
+TCC3
+Text Notes 3800 4850 0    50   ~ 0
+TCC0
+Wire Wire Line
+	6350 5000 8150 5000
+Wire Wire Line
+	6350 5100 8250 5100
+$Comp
+L Device:R R30
+U 1 1 5E68E598
+P 8250 4650
+F 0 "R30" V 8050 4550 50  0000 L CNN
+F 1 "22R" V 8150 4550 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8180 4650 50  0001 C CNN
+F 3 "~" H 8250 4650 50  0001 C CNN
+F 4 "RC0805JR-0722RL" H 8250 4650 50  0001 C CNN "Manufacturer Part Number"
+	1    8250 4650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8250 4800 8250 5100
+Wire Wire Line
+	8250 4100 8250 4500
+Text Notes 7100 5250 0    50   ~ 0
+TCC1
+Text Notes 3850 5050 0    50   ~ 0
+TC5
+Text Notes 6950 3800 0    50   ~ 0
+EXTINT[0]
+Text Notes 6950 3900 0    50   ~ 0
+EXTINT[1]
+Text Notes 3800 3400 0    50   ~ 0
+EXTINT[2]
+Text Notes 3800 3500 0    50   ~ 0
+EXTINT[3]
+Text Notes 3800 3600 0    50   ~ 0
+EXTINT[4]
+Text Notes 3800 3700 0    50   ~ 0
+EXTINT[5]
+Text Notes 3650 3800 0    50   ~ 0
+EXTINT[6]
+Text Notes 3650 3900 0    50   ~ 0
+EXTINT[7]
+Text Notes 6850 4800 0    50   ~ 0
+EXTINT[15]
+Text Notes 6850 4900 0    50   ~ 0
+EXTINT[8]
 $EndSCHEMATC
