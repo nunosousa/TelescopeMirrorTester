@@ -424,7 +424,7 @@ Wire Wire Line
 	3600 1150 3600 900 
 Connection ~ 3600 900 
 Wire Wire Line
-	3600 900  5700 900 
+	3600 900  5200 900 
 Wire Wire Line
 	3600 1450 3600 1700
 Wire Wire Line
@@ -602,4 +602,16 @@ Text Notes 6850 4800 0    50   ~ 0
 EXTINT[15]
 Text Notes 6850 4900 0    50   ~ 0
 EXTINT[8]
+Wire Wire Line
+	5200 1350 5200 900 
+Connection ~ 5200 1350
+Connection ~ 5200 900 
+Wire Wire Line
+	5200 900  5550 900 
+Wire Wire Line
+	5550 1250 5550 900 
+Connection ~ 5550 1250
+Connection ~ 5550 900 
+Wire Wire Line
+	5550 900  5700 900 
 $EndSCHEMATC
