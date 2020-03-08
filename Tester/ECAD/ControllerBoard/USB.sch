@@ -95,55 +95,8 @@ Text HLabel 8150 2800 2    50   BiDi ~ 0
 USB_D+
 Text HLabel 8150 2900 2    50   BiDi ~ 0
 USB_D-
-$Comp
-L Power_Protection:USBLC6-2SC6 U2
-U 1 1 5E62B9EB
-P 6050 3400
-F 0 "U2" H 6450 2950 50  0000 C CNN
-F 1 "USBLC6-2SC6" H 6650 3050 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5300 3800 50  0001 C CNN
-F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 6250 3750 50  0001 C CNN
-F 4 "USBLC6-2SC6" H 6050 3400 50  0001 C CNN "Manufacturer Part Number"
-	1    6050 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8150 2600 6050 2600
-Connection ~ 6050 2600
 Wire Wire Line
 	4550 4800 6050 4800
-Wire Wire Line
-	6050 3900 6050 4800
-Wire Wire Line
-	6050 2600 6050 2900
-Wire Wire Line
-	4100 2800 6650 2800
-Wire Wire Line
-	6650 2800 6650 3300
-Wire Wire Line
-	6650 3300 6550 3300
-Wire Wire Line
-	6550 3500 6800 3500
-Wire Wire Line
-	6800 3500 6800 2800
-Wire Wire Line
-	6800 2800 8150 2800
-Wire Wire Line
-	4100 2900 5450 2900
-Wire Wire Line
-	5450 2900 5450 3300
-Wire Wire Line
-	5450 3300 5550 3300
-Wire Wire Line
-	5550 3500 5450 3500
-Wire Wire Line
-	5450 3500 5450 3950
-Wire Wire Line
-	5450 3950 7150 3950
-Wire Wire Line
-	7150 3950 7150 2900
-Wire Wire Line
-	7150 2900 8150 2900
 $Comp
 L Device:Ferrite_Bead FB1
 U 1 1 5E60ECFA
@@ -172,8 +125,6 @@ F 3 "~" H 5750 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5750 2600
-Wire Wire Line
-	5750 2600 6050 2600
 Text Label 4450 2800 0    50   ~ 0
 D+
 Text Label 4450 2900 0    50   ~ 0
@@ -182,4 +133,49 @@ Text Label 3700 3650 1    50   ~ 0
 SHIELD
 Text Label 4300 2600 0    50   ~ 0
 VBUS
+$Comp
+L Power_Protection:USBLC6-2SC6 U2
+U 1 1 5E62B9EB
+P 6050 3600
+F 0 "U2" H 6450 3150 50  0000 C CNN
+F 1 "USBLC6-2SC6" H 6650 3250 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5300 4000 50  0001 C CNN
+F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 6250 3950 50  0001 C CNN
+F 4 "USBLC6-2SC6" H 6050 3600 50  0001 C CNN "Manufacturer Part Number"
+	1    6050 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2600 6050 2600
+Wire Wire Line
+	6050 3100 6050 2600
+Connection ~ 6050 2600
+Wire Wire Line
+	6050 2600 8150 2600
+Wire Wire Line
+	6050 4100 6050 4800
+Wire Wire Line
+	6800 2800 6800 3700
+Wire Wire Line
+	6800 3700 6550 3700
+Wire Wire Line
+	4100 2800 6800 2800
+Wire Wire Line
+	6550 3500 6950 3500
+Wire Wire Line
+	6950 3500 6950 2800
+Wire Wire Line
+	6950 2800 8150 2800
+Wire Wire Line
+	4100 2900 5150 2900
+Wire Wire Line
+	5150 2900 5150 3700
+Wire Wire Line
+	5150 3700 5550 3700
+Wire Wire Line
+	5550 3500 5350 3500
+Wire Wire Line
+	5350 3500 5350 2900
+Wire Wire Line
+	5350 2900 8150 2900
 $EndSCHEMATC
