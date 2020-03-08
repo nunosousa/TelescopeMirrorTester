@@ -33,9 +33,9 @@ Text HLabel 1800 6000 2    50   Input ~ 0
 MOTOR_FAULT_12
 Text HLabel 1800 6100 2    50   Input ~ 0
 MOTOR_FAULT_34
-Text HLabel 3000 5800 2    50   Output ~ 0
+Text HLabel 1750 5000 2    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 3000 5900 2    50   Output ~ 0
+Text HLabel 1750 5100 2    50   Output ~ 0
 MOTOR_SLEEP_34
 Text HLabel 1000 7150 0    50   Input ~ 0
 GND
@@ -113,17 +113,17 @@ F 4 "CC0805MRX5R6BB106" H 6400 1550 50  0001 C CNN "Manufacturer Part Number"
 	1    6400 1550
 	1    0    0    -1  
 $EndComp
-Text HLabel 3300 3950 2    50   Input ~ 0
+Text HLabel 6350 3400 2    50   Input ~ 0
 POSX_MISO
-Text HLabel 3300 4050 2    50   Output ~ 0
+Text HLabel 6350 3500 2    50   Output ~ 0
 POSX_MOSI
-Text HLabel 3300 4150 2    50   Output ~ 0
+Text HLabel 6350 3600 2    50   Output ~ 0
 POSX_SCLK
-Text HLabel 2500 4850 2    50   Output ~ 0
+Text HLabel 6350 3700 2    50   Output ~ 0
 ~POSX_NCS
-Text HLabel 2500 4950 2    50   Output ~ 0
+Text HLabel 4750 5500 0    50   Output ~ 0
 ~POSY_NCS
-Text HLabel 2500 5050 2    50   Output ~ 0
+Text HLabel 6350 3300 2    50   Output ~ 0
 ~POSZ_NCS
 Text HLabel 1850 5650 2    50   Input ~ 0
 POSX_MOTION
@@ -141,29 +141,21 @@ Text HLabel 1950 6300 2    50   Input ~ 0
 END_STOP_X+
 Text HLabel 1950 6450 2    50   Input ~ 0
 END_STOP_Y+
-Text HLabel 3200 6350 2    50   Input ~ 0
-END_STOP_Z+
-Text HLabel 3200 6550 2    50   Input ~ 0
-END_STOP_X-
-Text HLabel 3200 6700 2    50   Input ~ 0
-END_STOP_Y-
-Text HLabel 3200 6900 2    50   Input ~ 0
-END_STOP_Z-
-Text HLabel 1800 4050 2    50   BiDi ~ 0
+Text HLabel 4750 4600 0    50   BiDi ~ 0
 LASER_SDA
-Text HLabel 1850 4250 2    50   Output ~ 0
+Text HLabel 4750 4700 0    50   Output ~ 0
 LASER_SCL
-Text HLabel 2500 4250 2    50   Input ~ 0
+Text HLabel 4750 5400 0    50   Input ~ 0
 POSY_MISO
-Text HLabel 2500 4350 2    50   Output ~ 0
+Text HLabel 4750 5300 0    50   Output ~ 0
 POSY_MOSI
-Text HLabel 2500 4450 2    50   Output ~ 0
+Text HLabel 4750 5200 0    50   Output ~ 0
 POSY_SCLK
-Text HLabel 2600 3900 2    50   Input ~ 0
+Text HLabel 6350 3200 2    50   Input ~ 0
 POSZ_MISO
-Text HLabel 2600 4000 2    50   Output ~ 0
+Text HLabel 4750 5700 0    50   Output ~ 0
 POSZ_MOSI
-Text HLabel 2600 4100 2    50   Output ~ 0
+Text HLabel 4750 5600 0    50   Output ~ 0
 POSZ_SCLK
 Wire Wire Line
 	5100 6300 5100 7150
@@ -252,13 +244,13 @@ Text HLabel 6350 4500 2    50   BiDi ~ 0
 USB_D+
 Text HLabel 6350 4400 2    50   BiDi ~ 0
 USB_D-
-Text HLabel 4100 4900 0    50   Input ~ 0
+Text HLabel 3000 4100 0    50   Input ~ 0
 OC_ALOADS
-Text HLabel 4050 5050 0    50   Input ~ 0
+Text HLabel 2950 4250 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 4000 5200 0    50   Output ~ 0
+Text HLabel 2900 4400 0    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 4000 5350 0    50   Output ~ 0
+Text HLabel 2900 4550 0    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_20 J16
@@ -564,4 +556,22 @@ Connection ~ 2400 3550
 Connection ~ 1650 3550
 Wire Wire Line
 	1650 3550 1650 7150
+Text Notes 3900 4650 0    50   ~ 0
+SERCOM0
+Text Notes 6900 3450 0    50   ~ 0
+SERCOM1
+Text Notes 6900 3250 0    50   ~ 0
+SERCOM2
+Text Notes 3900 5650 0    50   ~ 0
+SERCOM2
+Text Notes 3900 5250 0    50   ~ 0
+SERCOM4
+Text HLabel 2650 6400 2    50   Input ~ 0
+END_STOP_Z+
+Text HLabel 2650 6600 2    50   Input ~ 0
+END_STOP_X-
+Text HLabel 2650 6750 2    50   Input ~ 0
+END_STOP_Y-
+Text HLabel 2650 6950 2    50   Input ~ 0
+END_STOP_Z-
 $EndSCHEMATC
