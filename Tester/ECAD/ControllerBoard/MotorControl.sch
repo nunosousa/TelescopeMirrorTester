@@ -450,4 +450,36 @@ Wire Wire Line
 Connection ~ 8350 1700
 Wire Wire Line
 	8350 1700 8350 1800
+Text Label 6650 2400 0    50   ~ 0
+MOTOR_1A
+Text Label 6650 2500 0    50   ~ 0
+MOTOR_1B
+Text Label 6650 2600 0    50   ~ 0
+MOTOR_2A
+Text Label 6650 2700 0    50   ~ 0
+MOTOR_2B
+Text Label 6700 5150 0    50   ~ 0
+MOTOR_3A
+Text Label 6700 5250 0    50   ~ 0
+MOTOR_3B
+Text Label 6700 5350 0    50   ~ 0
+MOTOR_4A
+Text Label 6700 5450 0    50   ~ 0
+MOTOR_4B
+Text Label 4100 2950 1    50   ~ 0
+MOTOR_1_CUR_SENS
+Text Label 4450 2950 1    50   ~ 0
+MOTOR_2_CUR_SENS
+Text Label 4150 5700 1    50   ~ 0
+MOTOR_3_CUR_SENS
+Text Label 4500 5700 1    50   ~ 0
+MOTOR_4_CUR_SENS
+Text Label 6050 1550 1    50   ~ 0
+VINT_1
+Text Label 6050 4250 1    50   ~ 0
+VINT_2
+Text Label 4600 4550 0    50   ~ 0
+VCP_2
+Text Label 4550 1750 0    50   ~ 0
+VCP_1
 $EndSCHEMATC
