@@ -269,7 +269,7 @@ Wire Wire Line
 Connection ~ 5750 6300
 NoConn ~ 9450 4500
 Wire Wire Line
-	5700 900  10150 900 
+	5700 900  7550 900 
 Wire Wire Line
 	5700 1000 5700 900 
 Connection ~ 5700 900 
@@ -614,4 +614,80 @@ Connection ~ 5550 1250
 Connection ~ 5550 900 
 Wire Wire Line
 	5550 900  5700 900 
+NoConn ~ 4750 4500
+$Comp
+L Device:LED D1
+U 1 1 5E650701
+P 7550 1750
+F 0 "D1" V 7589 1633 50  0000 R CNN
+F 1 "LED" V 7498 1633 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7550 1750 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LSECK-J3-PRV.pdf" H 7550 1750 50  0001 C CNN
+F 4 "APT2012LSECK/J3-PRV" H 7550 1750 50  0001 C CNN "Manufacturer Part Number"
+	1    7550 1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R33
+U 1 1 5E655D81
+P 7550 1300
+F 0 "R33" H 7620 1346 50  0000 L CNN
+F 1 "750R" H 7620 1255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7480 1300 50  0001 C CNN
+F 3 "" H 7550 1300 50  0001 C CNN
+F 4 "RC0805FR-07750RL" H 7550 1300 50  0001 C CNN "Manufacturer Part Number"
+	1    7550 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5E657C08
+P 7900 1750
+F 0 "D2" V 7939 1633 50  0000 R CNN
+F 1 "LED" V 7848 1633 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7900 1750 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LZGCK.pdf" H 7900 1750 50  0001 C CNN
+F 4 "APT2012LZGCK" H 7900 1750 50  0001 C CNN "Manufacturer Part Number"
+	1    7900 1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R34
+U 1 1 5E657C0E
+P 7900 1300
+F 0 "R34" H 7970 1346 50  0000 L CNN
+F 1 "330R" H 7970 1255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7830 1300 50  0001 C CNN
+F 3 "~" H 7900 1300 50  0001 C CNN
+F 4 "RC0805FR-07330RL" H 7900 1300 50  0001 C CNN "Manufacturer Part Number"
+	1    7900 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 1150 7550 900 
+Connection ~ 7550 900 
+Wire Wire Line
+	7550 900  7900 900 
+Wire Wire Line
+	7900 1150 7900 900 
+Wire Wire Line
+	7550 1450 7550 1600
+Wire Wire Line
+	7900 1450 7900 1600
+Wire Wire Line
+	7550 1900 7550 5600
+Wire Wire Line
+	7550 5600 6350 5600
+Connection ~ 7900 900 
+Wire Wire Line
+	7900 900  10150 900 
+Wire Wire Line
+	7900 1900 7900 5700
+Wire Wire Line
+	7900 5700 6350 5700
+Text Notes 7600 2050 0    50   ~ 0
+Red
+Text Notes 7950 2050 0    50   ~ 0
+Green
+NoConn ~ 6350 4300
 $EndSCHEMATC
