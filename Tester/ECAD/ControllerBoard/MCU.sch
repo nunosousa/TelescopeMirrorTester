@@ -462,7 +462,7 @@ F 2 "Crystal_Custom:MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 2700 3050 50  0001 
 F 3 "https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/MS1V-T1K.pdf" H 2700 3050 50  0001 C CNN
 F 4 "MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 2700 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    2700 3050
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:C C24
