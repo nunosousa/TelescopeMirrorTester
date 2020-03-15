@@ -264,8 +264,6 @@ F 4 "5103308-5" H 10050 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    10050 4100
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	5750 6300 10150 6300
 Connection ~ 5750 6300
 NoConn ~ 9450 4500
 Wire Wire Line
@@ -689,7 +687,6 @@ Text Notes 7600 2050 0    50   ~ 0
 Red
 Text Notes 7950 2050 0    50   ~ 0
 Green
-NoConn ~ 6350 4300
 Text Label 5700 2050 1    50   ~ 0
 VDDANA
 Text Label 5900 2200 0    50   ~ 0
@@ -710,4 +707,7 @@ Text Label 7900 2750 1    50   ~ 0
 GREEN_LED_MCU
 Text Label 7550 2650 1    50   ~ 0
 RED_LED_MCU
+Wire Wire Line
+	5750 6300 10150 6300
+NoConn ~ 6350 4300
 $EndSCHEMATC
