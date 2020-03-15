@@ -264,7 +264,6 @@ F 4 "5103308-5" H 10050 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    10050 4100
 	-1   0    0    -1  
 $EndComp
-Connection ~ 5750 6300
 NoConn ~ 9450 4500
 Wire Wire Line
 	5700 900  7550 900 
@@ -369,8 +368,6 @@ F 4 "BLM21SP471SH1D" H 5700 1150 50  0001 C CNN "Manufacturer Part Number"
 	1    5700 1150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10150 6300 10150 4900
 Wire Wire Line
 	6400 1400 5950 1400
 Wire Wire Line
@@ -492,8 +489,6 @@ Wire Wire Line
 	1650 2600 3600 2600
 Connection ~ 1650 2600
 Wire Wire Line
-	1650 2600 1650 3550
-Wire Wire Line
 	4750 3200 3900 3200
 Wire Wire Line
 	3900 3200 3900 2700
@@ -527,13 +522,7 @@ Wire Wire Line
 	2700 3250 2700 3550
 Connection ~ 2700 3550
 Wire Wire Line
-	2700 3550 2400 3550
-Wire Wire Line
-	2400 3550 1650 3550
-Connection ~ 2400 3550
-Connection ~ 1650 3550
-Wire Wire Line
-	1650 3550 1650 7150
+	2700 3550 2600 3550
 Text Notes 3900 4650 0    50   ~ 0
 SERCOM0
 Text Notes 6900 3450 0    50   ~ 0
@@ -707,7 +696,49 @@ Text Label 7900 2750 1    50   ~ 0
 GREEN_LED_MCU
 Text Label 7550 2650 1    50   ~ 0
 RED_LED_MCU
+NoConn ~ 6350 4300
+Wire Wire Line
+	1650 2600 1650 3850
+$Comp
+L power:GNDA #PWR0101
+U 1 1 5E6FF8A7
+P 2600 3950
+F 0 "#PWR0101" H 2600 3700 50  0001 C CNN
+F 1 "GNDA" H 2605 3777 50  0000 C CNN
+F 2 "" H 2600 3950 50  0001 C CNN
+F 3 "" H 2600 3950 50  0001 C CNN
+	1    2600 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT1
+U 1 1 5E700592
+P 2050 3850
+F 0 "NT1" H 2050 4031 50  0000 C CNN
+F 1 "Net-Tie_2" H 2050 3940 50  0000 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 2050 3850 50  0001 C CNN
+F 3 "~" H 2050 3850 50  0001 C CNN
+	1    2050 3850
+	1    0    0    -1  
+$EndComp
+Connection ~ 5750 6300
+Wire Wire Line
+	10150 4900 10150 6300
 Wire Wire Line
 	5750 6300 10150 6300
-NoConn ~ 6350 4300
+Connection ~ 2600 3550
+Wire Wire Line
+	2600 3550 2400 3550
+Wire Wire Line
+	1950 3850 1650 3850
+Connection ~ 1650 3850
+Wire Wire Line
+	1650 3850 1650 7150
+Wire Wire Line
+	2600 3550 2600 3850
+Wire Wire Line
+	2150 3850 2600 3850
+Connection ~ 2600 3850
+Wire Wire Line
+	2600 3850 2600 3950
 $EndSCHEMATC
