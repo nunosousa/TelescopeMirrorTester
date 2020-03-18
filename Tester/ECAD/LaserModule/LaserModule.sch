@@ -279,57 +279,29 @@ Wire Wire Line
 Connection ~ 6850 3050
 Wire Wire Line
 	6850 3050 8750 3050
-NoConn ~ 9250 4100
-$Comp
-L Transistor_FET_Custom:ZXMP6A17G Q1
-U 1 1 5E4DF28A
-P 9150 3050
-F 0 "Q1" H 9354 3096 50  0000 L CNN
-F 1 "ZXMP6A17G" H 9354 3005 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 9350 2975 50  0001 L CIN
-F 3 "" H 9150 3050 50  0001 L CNN
-F 4 "tbd" H 9150 3050 50  0001 C CNN "Manufacturer Part Number"
-	1    9150 3050
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	9050 2550 9050 2850
 $Comp
 L Diode_Laser_Custom:SLD3134VL LD1
 U 1 1 5E4E7513
-P 9150 4400
-F 0 "LD1" V 9246 4200 50  0000 R CNN
-F 1 "SLD3134VL" V 9155 4200 50  0000 R CNN
-F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9150 4100 50  0001 C CNN
-F 3 "" H 9180 4200 50  0001 C CNN
-F 4 "tbd" H 9150 4400 50  0001 C CNN "Manufacturer Part Number"
-	1    9150 4400
+P 9950 4350
+F 0 "LD1" V 10046 4150 50  0000 R CNN
+F 1 "SLD3134VL" V 9955 4150 50  0000 R CNN
+F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9950 4050 50  0001 C CNN
+F 3 "" H 9980 4150 50  0001 C CNN
+F 4 "tbd" H 9950 4350 50  0001 C CNN "Manufacturer Part Number"
+	1    9950 4350
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6750 5400 9150 5400
-Wire Wire Line
-	9050 3250 9050 4100
-Wire Wire Line
-	9150 4600 9150 5400
-Connection ~ 9150 5400
-Wire Wire Line
-	9150 5400 10600 5400
 Text Label 5600 3150 0    50   ~ 0
 V-
 Text Label 5650 2950 0    50   ~ 0
 V+
-Wire Wire Line
-	8750 3050 8750 3500
-Wire Wire Line
-	8750 3500 9350 3500
-Wire Wire Line
-	9350 3500 9350 3050
-Text Label 7500 3050 0    50   ~ 0
+Text Label 8700 3050 0    50   ~ 0
 G
-Text Label 9050 2750 0    50   ~ 0
+Text Label 9050 2850 0    50   ~ 0
 S
-Text Label 9050 3750 0    50   ~ 0
+Text Label 9050 3300 0    50   ~ 0
 D
 Text Label 4250 2950 0    50   ~ 0
 VOUT
@@ -349,4 +321,142 @@ F 4 "tbd" H 3650 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    3650 3050
 	1    0    0    -1  
 $EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP1
+U 1 1 5E737829
+P 8750 3550
+F 0 "JP1" V 8750 3462 50  0000 R CNN
+F 1 "SolderJumper_2_Open" H 8750 3664 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8750 3550 50  0001 C CNN
+F 3 "~" H 8750 3550 50  0001 C CNN
+	1    8750 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Transistor_FET_Custom:ZXMP6A17G Q1
+U 1 1 5E4DF28A
+P 8950 3050
+F 0 "Q1" H 9154 3096 50  0000 L CNN
+F 1 "ZXMP6A17G" H 9154 3005 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 9150 2975 50  0001 L CIN
+F 3 "" H 8950 3050 50  0001 L CNN
+F 4 "tbd" H 8950 3050 50  0001 C CNN "Manufacturer Part Number"
+	1    8950 3050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6750 5400 8750 5400
+$Comp
+L Jumper:SolderJumper_2_Open JP2
+U 1 1 5E7419CA
+P 9050 3550
+F 0 "JP2" V 9050 3462 50  0000 R CNN
+F 1 "SolderJumper_2_Open" H 9050 3664 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9050 3550 50  0001 C CNN
+F 3 "~" H 9050 3550 50  0001 C CNN
+	1    9050 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP3
+U 1 1 5E741ED9
+P 9350 3550
+F 0 "JP3" V 9350 3462 50  0000 R CNN
+F 1 "SolderJumper_2_Open" H 9350 3664 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9350 3550 50  0001 C CNN
+F 3 "~" H 9350 3550 50  0001 C CNN
+	1    9350 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP4
+U 1 1 5E74AD77
+P 8750 5050
+F 0 "JP4" V 8750 4962 50  0000 R CNN
+F 1 "SolderJumper_2_Open" H 8750 5164 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8750 5050 50  0001 C CNN
+F 3 "~" H 8750 5050 50  0001 C CNN
+	1    8750 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP5
+U 1 1 5E74B32C
+P 9050 5050
+F 0 "JP5" V 9050 4962 50  0000 R CNN
+F 1 "SolderJumper_2_Open" H 9050 5164 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9050 5050 50  0001 C CNN
+F 3 "~" H 9050 5050 50  0001 C CNN
+	1    9050 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP6
+U 1 1 5E74B585
+P 9350 5050
+F 0 "JP6" V 9350 4962 50  0000 R CNN
+F 1 "SolderJumper_2_Open" H 9350 5164 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9350 5050 50  0001 C CNN
+F 3 "~" H 9350 5050 50  0001 C CNN
+	1    9350 5050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8750 3400 8750 3350
+Wire Wire Line
+	8750 3350 9050 3350
+Wire Wire Line
+	9050 3350 9050 3300
+Wire Wire Line
+	9050 3400 9050 3350
+Connection ~ 9050 3350
+Wire Wire Line
+	9350 3400 9350 3300
+Wire Wire Line
+	9350 3300 9050 3300
+Connection ~ 9050 3300
+Wire Wire Line
+	9050 3300 9050 3250
+Wire Wire Line
+	8750 5200 8750 5400
+Connection ~ 8750 5400
+Wire Wire Line
+	8750 5400 9050 5400
+Wire Wire Line
+	9050 5200 9050 5400
+Connection ~ 9050 5400
+Wire Wire Line
+	9050 5400 9350 5400
+Wire Wire Line
+	9350 5200 9350 5400
+Connection ~ 9350 5400
+Wire Wire Line
+	9350 5400 10600 5400
+Wire Wire Line
+	8750 4900 8750 3900
+Wire Wire Line
+	9050 4900 9050 4000
+Wire Wire Line
+	9350 4900 9350 4750
+Wire Wire Line
+	9950 4550 9950 4750
+Wire Wire Line
+	9950 4750 9350 4750
+Connection ~ 9350 4750
+Wire Wire Line
+	9350 4750 9350 3700
+Wire Wire Line
+	9850 4050 9850 4000
+Wire Wire Line
+	9850 4000 9050 4000
+Connection ~ 9050 4000
+Wire Wire Line
+	9050 4000 9050 3700
+Wire Wire Line
+	10050 4050 10050 3900
+Wire Wire Line
+	10050 3900 8750 3900
+Connection ~ 8750 3900
+Wire Wire Line
+	8750 3900 8750 3700
 $EndSCHEMATC
