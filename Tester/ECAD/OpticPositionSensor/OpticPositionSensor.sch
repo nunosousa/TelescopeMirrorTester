@@ -21,7 +21,7 @@ F 0 "U2" H 1850 4800 50  0000 C CNN
 F 1 "PMW3360DM-T2QU" H 2150 3850 50  0000 C CNN
 F 2 "PixArt:PMW3360DM-T2QU" H 2150 4200 50  0001 C CNN
 F 3 "" H 2150 4200 50  0001 C CNN
-F 4 "tbd" H 2150 4200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 2150 4200 50  0001 C CNN "Manufacturer Part Number"
 	1    2150 4200
 	1    0    0    -1  
 $EndComp
@@ -636,7 +636,7 @@ F 0 "J1" H 8472 3582 50  0000 R CNN
 F 1 "Conn_01x08_Male" H 8472 3673 50  0000 R CNN
 F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8500 3700 50  0001 C CNN
 F 3 "~" H 8500 3700 50  0001 C CNN
-F 4 "tbd" H 8500 3700 50  0001 C CNN "Manufacturer Part Number"
+F 4 "0530480810" H 8500 3700 50  0001 C CNN "Manufacturer Part Number"
 	1    8500 3700
 	-1   0    0    1   
 $EndComp

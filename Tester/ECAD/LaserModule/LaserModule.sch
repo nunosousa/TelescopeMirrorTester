@@ -190,7 +190,7 @@ F 0 "J1" H 1308 3531 50  0000 C CNN
 F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
 F 2 "Connector_Molex:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 1200 3250 50  0001 C CNN
 F 3 "~" H 1200 3250 50  0001 C CNN
-F 4 "tbd" H 1200 3250 50  0001 C CNN "Manufacturer Part Number"
+F 4 "0530480410" H 1200 3250 50  0001 C CNN "Manufacturer Part Number"
 	1    1200 3250
 	1    0    0    -1  
 $EndComp
@@ -253,8 +253,8 @@ P 6000 3050
 F 0 "U2" H 6344 3096 50  0000 L CNN
 F 1 "AD8601" H 6344 3005 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6000 3050 50  0001 C CNN
-F 3 "" H 6000 3250 50  0001 C CNN
-F 4 "tbd" H 6000 3050 50  0001 C CNN "Manufacturer Part Number"
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8601_8602_8604.pdf" H 6000 3250 50  0001 C CNN
+F 4 "AD8601WDRTZ-REEL7" H 6000 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    6000 3050
 	1    0    0    -1  
 $EndComp
@@ -289,7 +289,7 @@ F 0 "LD1" V 10046 4150 50  0000 R CNN
 F 1 "SLD3134VL" V 9955 4150 50  0000 R CNN
 F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 9950 4050 50  0001 C CNN
 F 3 "" H 9980 4150 50  0001 C CNN
-F 4 "tbd" H 9950 4350 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9950 4350 50  0001 C CNN "Manufacturer Part Number"
 	1    9950 4350
 	0    -1   -1   0   
 $EndComp
@@ -317,7 +317,7 @@ F 0 "U1" H 4294 3046 50  0000 L CNN
 F 1 "MCP4716" H 4294 2955 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3650 2450 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22272C.pdf" H 3650 3300 50  0001 C CNN
-F 4 "tbd" H 3650 3050 50  0001 C CNN "Manufacturer Part Number"
+F 4 "MCP4716A3T-E/CH" H 3650 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    3650 3050
 	1    0    0    -1  
 $EndComp
@@ -339,8 +339,8 @@ P 8950 3050
 F 0 "Q1" H 9154 3096 50  0000 L CNN
 F 1 "ZXMP6A17G" H 9154 3005 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 9150 2975 50  0001 L CIN
-F 3 "" H 8950 3050 50  0001 L CNN
-F 4 "tbd" H 8950 3050 50  0001 C CNN "Manufacturer Part Number"
+F 3 "https://www.diodes.com/assets/Datasheets/ZXMP6A17G.pdf" H 8950 3050 50  0001 L CNN
+F 4 "ZXMP6A17GTA" H 8950 3050 50  0001 C CNN "Manufacturer Part Number"
 	1    8950 3050
 	1    0    0    1   
 $EndComp
