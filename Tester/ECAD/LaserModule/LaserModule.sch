@@ -188,7 +188,7 @@ U 1 1 5E4950DC
 P 1200 3250
 F 0 "J1" H 1308 3531 50  0000 C CNN
 F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
-F 2 "Connector_Molex:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 1200 3250 50  0001 C CNN
+F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 1200 3250 50  0001 C CNN
 F 3 "~" H 1200 3250 50  0001 C CNN
 F 4 "0530480410" H 1200 3250 50  0001 C CNN "Manufacturer Part Number"
 	1    1200 3250

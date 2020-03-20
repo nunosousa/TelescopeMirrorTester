@@ -155,7 +155,7 @@
     (add_net GND)
   )
 
-  (module Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal (layer F.Cu) (tedit 5B783024) (tstamp 5E48D659)
+  (module Connector_Molex_Custom:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal (layer F.Cu) (tedit 5E754969) (tstamp 5E48D659)
     (at 116.84 90.932 270)
     (descr "Molex PicoBlade Connector System, 53048-0810, 8 Pins per row (http://www.molex.com/pdm_docs/sd/530480210_sd.pdf), generated with kicad-footprint-generator")
     (tags "connector Molex PicoBlade top entry")
@@ -223,6 +223,11 @@
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
+    )
+    (model ${KIPRJMOD}/Connector_Molex_Custom.pretty/530480810.wrl
+      (offset (xyz 4.39 -3.48 1.9))
+      (scale (xyz 0.393701 0.393701 0.393701))
+      (rotate (xyz 0 0 180))
     )
   )
 

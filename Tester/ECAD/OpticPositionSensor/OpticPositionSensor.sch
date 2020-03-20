@@ -634,7 +634,7 @@ U 1 1 5E497C0D
 P 8500 3700
 F 0 "J1" H 8472 3582 50  0000 R CNN
 F 1 "Conn_01x08_Male" H 8472 3673 50  0000 R CNN
-F 2 "Connector_Molex:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8500 3700 50  0001 C CNN
+F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8500 3700 50  0001 C CNN
 F 3 "~" H 8500 3700 50  0001 C CNN
 F 4 "0530480810" H 8500 3700 50  0001 C CNN "Manufacturer Part Number"
 	1    8500 3700
