@@ -19,7 +19,7 @@ U 1 1 5E61B76D
 P 3800 2800
 F 0 "J1" H 3857 3267 50  0000 C CNN
 F 1 "USB_B" H 3857 3176 50  0000 C CNN
-F 2 "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal" H 3950 2750 50  0001 C CNN
+F 2 "Connector_USB_Custom:USB_B_OST_USB-B1HSxx_Horizontal" H 3950 2750 50  0001 C CNN
 F 3 "http://www.on-shore.com/wp-content/uploads/USB-B1HSXX.pdf" H 3950 2750 50  0001 C CNN
 F 4 "USB-B1HSB6" H 3800 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    3800 2800
