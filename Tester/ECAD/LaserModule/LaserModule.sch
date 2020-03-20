@@ -33,7 +33,7 @@ F 0 "R4" V 7093 2550 50  0000 C CNN
 F 1 "10kR" V 7184 2550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7230 2550 50  0001 C CNN
 F 3 "~" H 7300 2550 50  0001 C CNN
-F 4 "tbd" H 7300 2550 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-0710KL" H 7300 2550 50  0001 C CNN "Manufacturer Part Number"
 	1    7300 2550
 	0    1    1    0   
 $EndComp
@@ -228,7 +228,7 @@ F 0 "H1" H 1650 6496 50  0000 L CNN
 F 1 "MountingHole" H 1650 6405 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6450 50  0001 C CNN
 F 3 "~" H 1550 6450 50  0001 C CNN
-F 4 "tbd" H 1550 6450 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 1550 6450 50  0001 C CNN "Manufacturer Part Number"
 	1    1550 6450
 	1    0    0    -1  
 $EndComp
@@ -240,7 +240,7 @@ F 0 "H2" H 1650 6746 50  0000 L CNN
 F 1 "MountingHole" H 1650 6655 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 1550 6700 50  0001 C CNN
 F 3 "~" H 1550 6700 50  0001 C CNN
-F 4 "tbd" H 1550 6700 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 1550 6700 50  0001 C CNN "Manufacturer Part Number"
 	1    1550 6700
 	1    0    0    -1  
 $EndComp

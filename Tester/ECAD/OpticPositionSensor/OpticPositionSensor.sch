@@ -33,7 +33,7 @@ F 0 "C1" H 1315 6196 50  0000 L CNN
 F 1 "4.7uC" H 1315 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1238 6000 50  0001 C CNN
 F 3 "~" H 1200 6150 50  0001 C CNN
-F 4 "tbd" H 1200 6150 50  0001 C CNN "Manufacturer Part Number"
+F 4 "C0805C475K9PACTU" H 1200 6150 50  0001 C CNN "Manufacturer Part Number"
 	1    1200 6150
 	1    0    0    -1  
 $EndComp
@@ -45,7 +45,7 @@ F 0 "C3" H 1765 6196 50  0000 L CNN
 F 1 "100nC" H 1765 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1688 6000 50  0001 C CNN
 F 3 "~" H 1650 6150 50  0001 C CNN
-F 4 "tbd" H 1650 6150 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805ZRY5V8BB104" H 1650 6150 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 6150
 	1    0    0    -1  
 $EndComp
@@ -371,7 +371,7 @@ F 0 "C4" H 2665 1896 50  0000 L CNN
 F 1 "1uC" H 2665 1805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2588 1700 50  0001 C CNN
 F 3 "~" H 2550 1850 50  0001 C CNN
-F 4 "tbd" H 2550 1850 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805MKX7R7BB105" H 2550 1850 50  0001 C CNN "Manufacturer Part Number"
 	1    2550 1850
 	1    0    0    -1  
 $EndComp
@@ -383,7 +383,7 @@ F 0 "C2" H 1415 1896 50  0000 L CNN
 F 1 "1uC" H 1415 1805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1338 1700 50  0001 C CNN
 F 3 "~" H 1300 1850 50  0001 C CNN
-F 4 "tbd" H 1300 1850 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CC0805MKX7R7BB105" H 1300 1850 50  0001 C CNN "Manufacturer Part Number"
 	1    1300 1850
 	1    0    0    -1  
 $EndComp
@@ -418,7 +418,7 @@ F 0 "R1" H 2970 3446 50  0000 L CNN
 F 1 "39R" H 2970 3355 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2830 3400 50  0001 C CNN
 F 3 "~" H 2900 3400 50  0001 C CNN
-F 4 "tbd" H 2900 3400 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-0739RL" H 2900 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    2900 3400
 	1    0    0    -1  
 $EndComp
@@ -576,7 +576,7 @@ F 0 "H1" H 9800 1696 50  0000 L CNN
 F 1 "MountingHole" H 9800 1605 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 1650 50  0001 C CNN
 F 3 "~" H 9700 1650 50  0001 C CNN
-F 4 "tbd" H 9700 1650 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9700 1650 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 1650
 	1    0    0    -1  
 $EndComp
@@ -588,7 +588,7 @@ F 0 "H2" H 9800 1996 50  0000 L CNN
 F 1 "MountingHole" H 9800 1905 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 1950 50  0001 C CNN
 F 3 "~" H 9700 1950 50  0001 C CNN
-F 4 "tbd" H 9700 1950 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9700 1950 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 1950
 	1    0    0    -1  
 $EndComp
@@ -600,7 +600,7 @@ F 0 "H3" H 9800 2296 50  0000 L CNN
 F 1 "MountingHole" H 9800 2205 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 2250 50  0001 C CNN
 F 3 "~" H 9700 2250 50  0001 C CNN
-F 4 "tbd" H 9700 2250 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9700 2250 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 2250
 	1    0    0    -1  
 $EndComp
@@ -612,7 +612,7 @@ F 0 "H4" H 9800 2546 50  0000 L CNN
 F 1 "MountingHole" H 9800 2455 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9700 2500 50  0001 C CNN
 F 3 "~" H 9700 2500 50  0001 C CNN
-F 4 "tbd" H 9700 2500 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9700 2500 50  0001 C CNN "Manufacturer Part Number"
 	1    9700 2500
 	1    0    0    -1  
 $EndComp
