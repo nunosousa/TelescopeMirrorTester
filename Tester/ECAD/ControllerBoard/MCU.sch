@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 6
+Sheet 6 7
 Title ""
 Date ""
 Rev ""
@@ -260,7 +260,7 @@ F 0 "J16" H 10550 4900 50  0000 R CNN
 F 1 "Conn_ARM_JTAG_SWD_20" H 11050 3250 50  0000 R CNN
 F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 10500 3050 50  0001 L TNN
 F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.dui0499b/DUI0499B_system_design_reference.pdf" V 9700 2850 50  0001 C CNN
-F 4 "5103308-5" H 10050 4100 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 10050 4100 50  0001 C CNN "Manufacturer Part Number"
 	1    10050 4100
 	-1   0    0    -1  
 $EndComp
@@ -741,4 +741,15 @@ Wire Wire Line
 Connection ~ 2600 3850
 Wire Wire Line
 	2600 3850 2600 3950
+$Comp
+L Connector:Conn_ARM_JTAG_SWD_10 J6
+U 1 1 5EA3EDDE
+P 11500 4050
+F 0 "J6" H 11056 4096 50  0000 R CNN
+F 1 "Conn_ARM_JTAG_SWD_10" H 11056 4005 50  0000 R CNN
+F 2 "" H 11500 4050 50  0001 C CNN
+F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 11150 2800 50  0001 C CNN
+	1    11500 4050
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

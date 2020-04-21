@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
+Sheet 5 7
 Title ""
 Date ""
 Rev ""
@@ -13,57 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Connector:Conn_01x08_Male J?
-U 1 1 5E62062E
-P 8700 4750
-AR Path="/5E5070AC/5E62062E" Ref="J?"  Part="1" 
-AR Path="/5E55806E/5E62062E" Ref="J14"  Part="1" 
-AR Path="/5E62062E" Ref="J?"  Part="1" 
-F 0 "J14" H 8350 4700 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 8350 4800 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8700 4750 50  0001 C CNN
-F 3 "~" H 8700 4750 50  0001 C CNN
-F 4 "0530480810" H 8700 4750 50  0001 C CNN "Manufacturer Part Number"
-	1    8700 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x08_Male J?
-U 1 1 5E620635
-P 8700 3700
-AR Path="/5E5070AC/5E620635" Ref="J?"  Part="1" 
-AR Path="/5E55806E/5E620635" Ref="J13"  Part="1" 
-AR Path="/5E620635" Ref="J?"  Part="1" 
-F 0 "J13" H 8350 3650 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 8350 3750 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8700 3700 50  0001 C CNN
-F 3 "~" H 8700 3700 50  0001 C CNN
-F 4 "0530480810" H 8700 3700 50  0001 C CNN "Manufacturer Part Number"
-	1    8700 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x08_Male J?
-U 1 1 5E62063C
-P 8700 2650
-AR Path="/5E5070AC/5E62063C" Ref="J?"  Part="1" 
-AR Path="/5E55806E/5E62063C" Ref="J12"  Part="1" 
-AR Path="/5E62063C" Ref="J?"  Part="1" 
-F 0 "J12" H 8350 2600 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 8350 2700 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0810_1x08_P1.25mm_Horizontal" H 8700 2650 50  0001 C CNN
-F 3 "~" H 8700 2650 50  0001 C CNN
-F 4 "0530480810" H 8700 2650 50  0001 C CNN "Manufacturer Part Number"
-	1    8700 2650
-	1    0    0    -1  
-$EndComp
-Text Notes 8050 2500 0    50   ~ 0
-Position\nSensor\nX
-Text Notes 8050 3600 0    50   ~ 0
-Position\nSensor\nY
-Text Notes 8050 4650 0    50   ~ 0
-Position\nSensor\nZ
 Text Notes 5000 1500 0    50   ~ 0
 Laser\nModule
 $Comp
@@ -75,9 +24,9 @@ AR Path="/5E55806E/5E62064B" Ref="J15"  Part="1"
 AR Path="/5E62064B" Ref="J?"  Part="1" 
 F 0 "J15" H 5100 1600 50  0000 C CNN
 F 1 "Conn_01x04_Male" H 5100 1700 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 5450 1650 50  0001 C CNN
+F 2 "" H 5450 1650 50  0001 C CNN
 F 3 "~" H 5450 1650 50  0001 C CNN
-F 4 "0530480410" H 5450 1650 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 5450 1650 50  0001 C CNN "Manufacturer Part Number"
 	1    5450 1650
 	1    0    0    1   
 $EndComp
@@ -90,9 +39,9 @@ AR Path="/5E55806E/5E62327E" Ref="J11"  Part="1"
 AR Path="/5E62327E" Ref="J?"  Part="1" 
 F 0 "J11" H 1250 5650 50  0000 C CNN
 F 1 "Conn_01x02_Male" H 1250 5550 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 1650 5650 50  0001 C CNN
+F 2 "" H 1650 5650 50  0001 C CNN
 F 3 "~" H 1650 5650 50  0001 C CNN
-F 4 "0530480210" H 1650 5650 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 1650 5650 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 5650
 	1    0    0    1   
 $EndComp
@@ -105,9 +54,9 @@ AR Path="/5E55806E/5E623285" Ref="J10"  Part="1"
 AR Path="/5E623285" Ref="J?"  Part="1" 
 F 0 "J10" H 1250 4850 50  0000 C CNN
 F 1 "Conn_01x02_Male" H 1250 4750 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 1650 4850 50  0001 C CNN
+F 2 "" H 1650 4850 50  0001 C CNN
 F 3 "~" H 1650 4850 50  0001 C CNN
-F 4 "0530480210" H 1650 4850 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 1650 4850 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 4850
 	1    0    0    1   
 $EndComp
@@ -120,9 +69,9 @@ AR Path="/5E55806E/5E62328C" Ref="J9"  Part="1"
 AR Path="/5E62328C" Ref="J?"  Part="1" 
 F 0 "J9" H 1250 4050 50  0000 C CNN
 F 1 "Conn_01x02_Male" H 1250 3950 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 1650 4050 50  0001 C CNN
+F 2 "" H 1650 4050 50  0001 C CNN
 F 3 "~" H 1650 4050 50  0001 C CNN
-F 4 "0530480210" H 1650 4050 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 1650 4050 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 4050
 	1    0    0    1   
 $EndComp
@@ -135,40 +84,10 @@ AR Path="/5E55806E/5E623293" Ref="J8"  Part="1"
 AR Path="/5E623293" Ref="J?"  Part="1" 
 F 0 "J8" H 1250 3250 50  0000 C CNN
 F 1 "Conn_01x02_Male" H 1250 3150 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 1650 3250 50  0001 C CNN
+F 2 "" H 1650 3250 50  0001 C CNN
 F 3 "~" H 1650 3250 50  0001 C CNN
-F 4 "0530480210" H 1650 3250 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 1650 3250 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 3250
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J?
-U 1 1 5E62329A
-P 1650 2450
-AR Path="/5E5070AC/5E62329A" Ref="J?"  Part="1" 
-AR Path="/5E55806E/5E62329A" Ref="J7"  Part="1" 
-AR Path="/5E62329A" Ref="J?"  Part="1" 
-F 0 "J7" H 1250 2450 50  0000 C CNN
-F 1 "Conn_01x02_Male" H 1250 2350 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 1650 2450 50  0001 C CNN
-F 3 "~" H 1650 2450 50  0001 C CNN
-F 4 "0530480210" H 1650 2450 50  0001 C CNN "Manufacturer Part Number"
-	1    1650 2450
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J?
-U 1 1 5E6232A1
-P 1650 1650
-AR Path="/5E5070AC/5E6232A1" Ref="J?"  Part="1" 
-AR Path="/5E55806E/5E6232A1" Ref="J6"  Part="1" 
-AR Path="/5E6232A1" Ref="J?"  Part="1" 
-F 0 "J6" H 1250 1650 50  0000 C CNN
-F 1 "Conn_01x02_Male" H 1250 1550 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 1650 1650 50  0001 C CNN
-F 3 "~" H 1650 1650 50  0001 C CNN
-F 4 "0530480210" H 1650 1650 50  0001 C CNN "Manufacturer Part Number"
-	1    1650 1650
 	1    0    0    1   
 $EndComp
 Text Notes 1400 1500 2    50   ~ 0
@@ -177,30 +96,6 @@ Text Notes 1400 3100 2    50   ~ 0
 End Stop Y+
 Text Notes 1400 4700 2    50   ~ 0
 End Stop Z+
-Text HLabel 8900 2550 2    50   Output ~ 0
-POSX_MISO
-Text HLabel 8900 2650 2    50   Input ~ 0
-POSX_MOSI
-Text HLabel 8900 2750 2    50   Input ~ 0
-POSX_SCLK
-Text HLabel 8900 2450 2    50   Input ~ 0
-~POSX_NCS
-Text HLabel 8900 3500 2    50   Input ~ 0
-~POSY_NCS
-Text HLabel 8900 4550 2    50   Input ~ 0
-~POSZ_NCS
-Text HLabel 8900 2850 2    50   Output ~ 0
-POSX_MOTION
-Text HLabel 8900 3900 2    50   Output ~ 0
-POSY_MOTION
-Text HLabel 8900 4950 2    50   Output ~ 0
-POSZ_MOTION
-Text HLabel 8900 2950 2    50   Input ~ 0
-~POSX_NRESET
-Text HLabel 8900 4000 2    50   Input ~ 0
-~POSY_NRESET
-Text HLabel 8900 5050 2    50   Input ~ 0
-~POSZ_NRESET
 Text HLabel 3900 1550 2    50   Output ~ 0
 END_STOP_X+
 Text HLabel 3900 3150 2    50   Output ~ 0
@@ -874,56 +769,28 @@ Wire Wire Line
 	6550 1200 6900 1200
 Wire Wire Line
 	6550 1850 6900 1850
-Wire Wire Line
-	6350 7450 5750 7450
-Connection ~ 5750 7450
-Wire Wire Line
-	6350 6350 6350 7450
-Text HLabel 8900 3600 2    50   Output ~ 0
-POSY_MISO
-Text HLabel 8900 3700 2    50   Input ~ 0
-POSY_MOSI
-Text HLabel 8900 3800 2    50   Input ~ 0
-POSY_SCLK
-Text HLabel 8900 4650 2    50   Output ~ 0
-POSZ_MISO
-Text HLabel 8900 4750 2    50   Input ~ 0
-POSZ_MOSI
-Text HLabel 8900 4850 2    50   Input ~ 0
-POSZ_SCLK
-Wire Wire Line
-	8900 3050 9800 3050
-Wire Wire Line
-	9800 3050 9800 4100
-Wire Wire Line
-	9800 4100 8900 4100
-Wire Wire Line
-	9800 4100 9800 5150
-Wire Wire Line
-	9800 5150 8900 5150
-Connection ~ 9800 4100
-Wire Wire Line
-	6350 6350 9800 6350
-Wire Wire Line
-	9800 6350 9800 5150
-Connection ~ 9800 5150
-Wire Wire Line
-	9950 2350 8900 2350
-Wire Wire Line
-	9950 2350 9950 3400
-Wire Wire Line
-	9950 3400 8900 3400
-Wire Wire Line
-	9950 3400 9950 4450
-Wire Wire Line
-	9950 4450 8900 4450
-Connection ~ 9950 3400
-Connection ~ 9950 2350
-Wire Wire Line
-	9950 800  9950 2350
-Connection ~ 6800 800 
-Wire Wire Line
-	6800 800  9950 800 
 Text Notes 6000 700  0    50   ~ 0
 Level shifting logic
+$Comp
+L Switch:SW_SPDT SW3
+U 1 1 5EA10605
+P 1500 1750
+F 0 "SW3" H 1500 2035 50  0000 C CNN
+F 1 "SW_SPDT" H 1500 1944 50  0000 C CNN
+F 2 "" H 1500 1750 50  0001 C CNN
+F 3 "~" H 1500 1750 50  0001 C CNN
+	1    1500 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPDT SW2
+U 1 1 5EA108B1
+P 1450 2600
+F 0 "SW2" H 1450 2885 50  0000 C CNN
+F 1 "SW_SPDT" H 1450 2794 50  0000 C CNN
+F 2 "" H 1450 2600 50  0001 C CNN
+F 3 "~" H 1450 2600 50  0001 C CNN
+	1    1450 2600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

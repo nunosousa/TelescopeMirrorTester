@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 7
 Title ""
 Date ""
 Rev ""
@@ -331,9 +331,9 @@ AR Path="/5E507163/5E623A42" Ref="J2"  Part="1"
 AR Path="/5E623A42" Ref="J?"  Part="1" 
 F 0 "J2" H 9072 2382 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 9072 2473 50  0000 R CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9100 2500 50  0001 C CNN
+F 2 "" H 9100 2500 50  0001 C CNN
 F 3 "~" H 9100 2500 50  0001 C CNN
-F 4 "0530480210" H 9100 2500 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9100 2500 50  0001 C CNN "Manufacturer Part Number"
 	1    9100 2500
 	-1   0    0    1   
 $EndComp
@@ -345,9 +345,9 @@ AR Path="/5E507163/5E623A49" Ref="J3"  Part="1"
 AR Path="/5E623A49" Ref="J?"  Part="1" 
 F 0 "J3" H 9072 2582 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 9072 2673 50  0000 R CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9100 2700 50  0001 C CNN
+F 2 "" H 9100 2700 50  0001 C CNN
 F 3 "~" H 9100 2700 50  0001 C CNN
-F 4 "0530480210" H 9100 2700 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9100 2700 50  0001 C CNN "Manufacturer Part Number"
 	1    9100 2700
 	-1   0    0    1   
 $EndComp
@@ -359,9 +359,9 @@ AR Path="/5E507163/5E623A50" Ref="J4"  Part="1"
 AR Path="/5E623A50" Ref="J?"  Part="1" 
 F 0 "J4" H 9122 5132 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 9122 5223 50  0000 R CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9150 5250 50  0001 C CNN
+F 2 "" H 9150 5250 50  0001 C CNN
 F 3 "~" H 9150 5250 50  0001 C CNN
-F 4 "0530480210" H 9150 5250 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9150 5250 50  0001 C CNN "Manufacturer Part Number"
 	1    9150 5250
 	-1   0    0    1   
 $EndComp
@@ -373,9 +373,9 @@ AR Path="/5E507163/5E623A57" Ref="J5"  Part="1"
 AR Path="/5E623A57" Ref="J?"  Part="1" 
 F 0 "J5" H 9122 5332 50  0000 R CNN
 F 1 "Conn_01x02_Male" H 9122 5423 50  0000 R CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0210_1x02_P1.25mm_Horizontal" H 9150 5450 50  0001 C CNN
+F 2 "" H 9150 5450 50  0001 C CNN
 F 3 "~" H 9150 5450 50  0001 C CNN
-F 4 "0530480210" H 9150 5450 50  0001 C CNN "Manufacturer Part Number"
+F 4 "" H 9150 5450 50  0001 C CNN "Manufacturer Part Number"
 	1    9150 5450
 	-1   0    0    1   
 $EndComp
