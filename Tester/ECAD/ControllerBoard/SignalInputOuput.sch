@@ -629,7 +629,8 @@ P 1500 1450
 F 0 "SW3" H 1500 1735 50  0000 C CNN
 F 1 "SW_SPDT" H 1500 1644 50  0000 C CNN
 F 2 "" H 1500 1450 50  0001 C CNN
-F 3 "~" H 1500 1450 50  0001 C CNN
+F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/125/SS.pdf" H 1500 1450 50  0001 C CNN
+F 4 "SS075Q102F035V2A" H 1500 1450 50  0001 C CNN "Manufacturer Part Number"
 	1    1500 1450
 	1    0    0    -1  
 $EndComp
@@ -640,7 +641,8 @@ P 1500 2250
 F 0 "SW2" H 1500 2535 50  0000 C CNN
 F 1 "SW_SPDT" H 1500 2444 50  0000 C CNN
 F 2 "" H 1500 2250 50  0001 C CNN
-F 3 "~" H 1500 2250 50  0001 C CNN
+F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/125/SS.pdf" H 1500 2250 50  0001 C CNN
+F 4 "SS075Q102F035V2A" H 1500 2250 50  0001 C CNN "Manufacturer Part Number"
 	1    1500 2250
 	1    0    0    -1  
 $EndComp
