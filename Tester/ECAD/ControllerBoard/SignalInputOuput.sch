@@ -13,21 +13,21 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 5000 1500 0    50   ~ 0
+Text Notes 6000 1950 0    50   ~ 0
 Laser\nModule
 $Comp
 L Connector:Conn_01x04_Male J?
 U 1 1 5E62064B
-P 5450 1650
+P 6450 2100
 AR Path="/5E5070AC/5E62064B" Ref="J?"  Part="1" 
 AR Path="/5E55806E/5E62064B" Ref="J15"  Part="1" 
 AR Path="/5E62064B" Ref="J?"  Part="1" 
-F 0 "J15" H 5100 1600 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 5100 1700 50  0000 C CNN
-F 2 "" H 5450 1650 50  0001 C CNN
-F 3 "~" H 5450 1650 50  0001 C CNN
-F 4 "" H 5450 1650 50  0001 C CNN "Manufacturer Part Number"
-	1    5450 1650
+F 0 "J15" H 6100 2050 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 6100 2150 50  0000 C CNN
+F 2 "" H 6450 2100 50  0001 C CNN
+F 3 "~" H 6450 2100 50  0001 C CNN
+F 4 "" H 6450 2100 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 2100
 	1    0    0    1   
 $EndComp
 $Comp
@@ -90,7 +90,7 @@ F 4 "" H 1650 3250 50  0001 C CNN "Manufacturer Part Number"
 	1    1650 3250
 	1    0    0    1   
 $EndComp
-Text Notes 1400 1500 2    50   ~ 0
+Text Notes 1050 1500 2    50   ~ 0
 End Stop X+
 Text Notes 1400 3100 2    50   ~ 0
 End Stop Y+
@@ -102,15 +102,13 @@ Text HLabel 3900 3150 2    50   Output ~ 0
 END_STOP_Y+
 Text HLabel 3900 4750 2    50   Output ~ 0
 END_STOP_Z+
-Text HLabel 1250 700  0    50   Input ~ 0
-V5_0
 Text HLabel 1200 7450 0    50   Input ~ 0
 GND
 Text Notes 1400 5500 2    50   ~ 0
 End Stop Z-
 Text Notes 1400 3900 2    50   ~ 0
 End Stop Y-
-Text Notes 1400 2300 2    50   ~ 0
+Text Notes 1050 2300 2    50   ~ 0
 End Stop X-
 Text HLabel 3900 2350 2    50   Output ~ 0
 END_STOP_X-
@@ -195,13 +193,13 @@ $EndComp
 $Comp
 L 74xx:74HC14 U5
 U 7 1 5E58466A
-P 2350 6650
-F 0 "U5" H 2580 6696 50  0000 L CNN
-F 1 "74HC14" H 2580 6605 50  0000 L CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 2350 6650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 2350 6650 50  0001 C CNN
-F 4 "SN74HC14DR" H 2350 6650 50  0001 C CNN "Manufacturer Part Number"
-	7    2350 6650
+P 2350 6850
+F 0 "U5" H 2580 6896 50  0000 L CNN
+F 1 "74HC14" H 2580 6805 50  0000 L CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 2350 6850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 2350 6850 50  0001 C CNN
+F 4 "SN74HC14DR" H 2350 6850 50  0001 C CNN "Manufacturer Part Number"
+	7    2350 6850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -256,8 +254,6 @@ Connection ~ 2350 1150
 Wire Wire Line
 	2350 1150 2350 800 
 Wire Wire Line
-	1850 2350 2350 2350
-Wire Wire Line
 	2350 2350 2350 2300
 $Comp
 L Device:R R14
@@ -286,8 +282,6 @@ F 4 "CC0805ZRY5V8BB104" H 3000 2500 50  0001 C CNN "Manufacturer Part Number"
 	1    3000 2500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1850 2450 1900 2450
 Connection ~ 1900 2450
 $Comp
 L Device:R R10
@@ -375,10 +369,6 @@ Wire Wire Line
 Connection ~ 2350 1550
 Wire Wire Line
 	2350 1550 2600 1550
-Wire Wire Line
-	1850 1550 2350 1550
-Wire Wire Line
-	1850 1650 1900 1650
 Wire Wire Line
 	1900 1650 1900 1850
 Connection ~ 1900 1850
@@ -615,7 +605,7 @@ Connection ~ 1900 5850
 Wire Wire Line
 	1900 7450 2350 7450
 Wire Wire Line
-	2350 7450 2350 7150
+	2350 7450 2350 7350
 Connection ~ 1900 7450
 Wire Wire Line
 	2350 5150 2250 5150
@@ -624,69 +614,262 @@ Wire Wire Line
 Wire Wire Line
 	2250 5650 2350 5650
 Wire Wire Line
-	2350 5650 2350 6150
+	2350 5650 2350 6050
 Connection ~ 2350 5150
 Wire Wire Line
 	2350 5150 2350 5200
 Text Notes 2550 950  0    50   ~ 0
 Switch debouncing logic.
-Wire Wire Line
-	5650 1750 5750 1750
-Wire Wire Line
-	5750 7450 2350 7450
-Connection ~ 2350 7450
-Wire Wire Line
-	1250 700  5750 700 
-Wire Wire Line
-	5750 700  5750 1450
-Wire Wire Line
-	5750 1450 5650 1450
-Wire Wire Line
-	5750 1750 5750 7450
-Wire Wire Line
-	2350 800  6400 800 
-Connection ~ 2350 800 
-Text Notes 6000 650  0    50   ~ 0
+Text Notes 8500 800  0    50   ~ 0
 Level shifting logic
 $Comp
 L Switch:SW_SPDT SW3
 U 1 1 5EA10605
-P 1500 1750
-F 0 "SW3" H 1500 2035 50  0000 C CNN
-F 1 "SW_SPDT" H 1500 1944 50  0000 C CNN
-F 2 "" H 1500 1750 50  0001 C CNN
-F 3 "~" H 1500 1750 50  0001 C CNN
-	1    1500 1750
+P 1500 1450
+F 0 "SW3" H 1500 1735 50  0000 C CNN
+F 1 "SW_SPDT" H 1500 1644 50  0000 C CNN
+F 2 "" H 1500 1450 50  0001 C CNN
+F 3 "~" H 1500 1450 50  0001 C CNN
+	1    1500 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_SPDT SW2
 U 1 1 5EA108B1
-P 1450 2600
-F 0 "SW2" H 1450 2885 50  0000 C CNN
-F 1 "SW_SPDT" H 1450 2794 50  0000 C CNN
-F 2 "" H 1450 2600 50  0001 C CNN
-F 3 "~" H 1450 2600 50  0001 C CNN
-	1    1450 2600
+P 1500 2250
+F 0 "SW2" H 1500 2535 50  0000 C CNN
+F 1 "SW_SPDT" H 1500 2444 50  0000 C CNN
+F 2 "" H 1500 2250 50  0001 C CNN
+F 3 "~" H 1500 2250 50  0001 C CNN
+	1    1500 2250
+	1    0    0    -1  
+$EndComp
+Text HLabel 10150 2100 2    50   BiDi ~ 0
+LASER_SDA
+Text HLabel 10150 2000 2    50   Input ~ 0
+LASER_SCL
+$Comp
+L Interface:PCA9306 U10
+U 1 1 5E9FDBA1
+P 8800 2000
+F 0 "U10" H 8450 1400 50  0000 C CNN
+F 1 "PCA9306" H 8350 1300 50  0000 C CNN
+F 2 "Package_SO:SO-8_3.9x4.9mm_P1.27mm" H 8400 2350 50  0001 C CNN
+F 3 "https://www.nxp.com/docs/en/data-sheet/PCA9306.pdf" H 8500 2450 50  0001 C CNN
+F 4 "PCA9306D,118" H 8800 2000 50  0001 C CNN "Manufacturer Part Number"
+	1    8800 2000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 2000 9850 2000
+Wire Wire Line
+	9200 2100 9450 2100
+Text HLabel 6650 2200 2    50   Input ~ 0
+GND
+Text HLabel 6650 1900 2    50   Input ~ 0
+V5_0
+Text HLabel 8900 1300 1    50   Input ~ 0
+V3_3
+Text HLabel 7900 1000 1    50   Input ~ 0
+V5_0
+$Comp
+L Device:R R22
+U 1 1 5EA28C5E
+P 9450 1700
+F 0 "R22" H 9520 1746 50  0000 L CNN
+F 1 "4.7kR" H 9520 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9380 1700 50  0001 C CNN
+F 3 "~" H 9450 1700 50  0001 C CNN
+	1    9450 1700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Interface:PCA9306 U10
-U 1 1 5EA48B4A
-P 6300 1550
-F 0 "U10" H 6500 1000 50  0000 C CNN
-F 1 "PCA9306" H 6600 850 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5900 1900 50  0001 C CNN
-F 3 "https://www.nxp.com/docs/en/data-sheet/PCA9306.pdf" H 6000 2000 50  0001 C CNN
-F 4 "PCA9306D,118" H 6300 1550 50  0001 C CNN "Manufacturer Part Number"
-	1    6300 1550
+L Device:R R35
+U 1 1 5EA29243
+P 9850 1700
+F 0 "R35" H 9920 1746 50  0000 L CNN
+F 1 "4.7kR" H 9920 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9780 1700 50  0001 C CNN
+F 3 "~" H 9850 1700 50  0001 C CNN
+	1    9850 1700
 	1    0    0    -1  
 $EndComp
-Text HLabel 6850 1650 2    50   BiDi ~ 0
-LASER_SDA
-Text HLabel 6850 1550 2    50   Input ~ 0
-LASER_SCL
+$Comp
+L Device:R R19
+U 1 1 5EA2938F
+P 7250 1700
+F 0 "R19" H 7320 1746 50  0000 L CNN
+F 1 "4.7kR" H 7320 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7180 1700 50  0001 C CNN
+F 3 "~" H 7250 1700 50  0001 C CNN
+	1    7250 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R20
+U 1 1 5EA29587
+P 7600 1700
+F 0 "R20" H 7670 1746 50  0000 L CNN
+F 1 "4.7kR" H 7670 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7530 1700 50  0001 C CNN
+F 3 "~" H 7600 1700 50  0001 C CNN
+	1    7600 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R21
+U 1 1 5EA2972B
+P 8200 1250
+F 0 "R21" H 8270 1296 50  0000 L CNN
+F 1 "200kR" H 8270 1205 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8130 1250 50  0001 C CNN
+F 3 "~" H 8200 1250 50  0001 C CNN
+	1    8200 1250
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	6200 700  5750 700 
-Connection ~ 5750 700 
+	7250 1850 7250 2100
+Wire Wire Line
+	7600 1850 7600 2000
+Wire Wire Line
+	9450 1850 9450 2100
+Connection ~ 9450 2100
+Wire Wire Line
+	9450 2100 10150 2100
+Wire Wire Line
+	9850 1850 9850 2000
+Connection ~ 9850 2000
+Wire Wire Line
+	9850 2000 9200 2000
+Wire Wire Line
+	8400 1900 8350 1900
+Wire Wire Line
+	8350 1900 8350 1450
+Wire Wire Line
+	8350 1450 8700 1450
+Wire Wire Line
+	8700 1450 8700 1500
+Wire Wire Line
+	8350 1450 8200 1450
+Wire Wire Line
+	8200 1450 8200 1400
+Connection ~ 8350 1450
+Wire Wire Line
+	7250 1550 7250 1050
+Wire Wire Line
+	8200 1050 8200 1100
+Wire Wire Line
+	7600 1550 7600 1050
+Wire Wire Line
+	7900 1050 7900 1000
+Connection ~ 7900 1050
+Wire Wire Line
+	7900 1050 8200 1050
+Wire Wire Line
+	9850 1550 9850 1400
+Wire Wire Line
+	9850 1400 9450 1400
+Wire Wire Line
+	8900 1300 8900 1400
+Connection ~ 8900 1400
+Wire Wire Line
+	8900 1400 8900 1500
+Wire Wire Line
+	9450 1550 9450 1400
+Connection ~ 9450 1400
+Wire Wire Line
+	9450 1400 8900 1400
+$Comp
+L Device:C C26
+U 1 1 5EA5C72A
+P 8000 1700
+F 0 "C26" H 8115 1746 50  0000 L CNN
+F 1 "0.1uC" H 8115 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8038 1550 50  0001 C CNN
+F 3 "~" H 8000 1700 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 8000 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    8000 1700
+	1    0    0    -1  
+$EndComp
+Connection ~ 7600 1050
+Wire Wire Line
+	7600 1050 7900 1050
+Wire Wire Line
+	6650 2000 7600 2000
+Connection ~ 7600 2000
+Wire Wire Line
+	7600 2000 8400 2000
+Wire Wire Line
+	6650 2100 7250 2100
+Connection ~ 7250 2100
+Wire Wire Line
+	7250 2100 8400 2100
+Wire Wire Line
+	8000 1550 8000 1450
+Wire Wire Line
+	8000 1450 8200 1450
+Connection ~ 8200 1450
+Wire Wire Line
+	7250 1050 7600 1050
+Wire Wire Line
+	8000 1850 8000 2250
+Text HLabel 8000 2250 3    50   Input ~ 0
+GND
+Text HLabel 8800 2500 3    50   Input ~ 0
+GND
+$Comp
+L Device:C C27
+U 1 1 5EA89062
+P 3100 6650
+F 0 "C27" H 3215 6696 50  0000 L CNN
+F 1 "0.1uC" H 3215 6605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3138 6500 50  0001 C CNN
+F 3 "~" H 3100 6650 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 3100 6650 50  0001 C CNN "Manufacturer Part Number"
+	1    3100 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT3
+U 1 1 5EA8C4B3
+P 2350 6150
+F 0 "NT3" V 2304 6194 50  0000 L CNN
+F 1 "Net-Tie_2" V 2395 6194 50  0000 L CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 2350 6150 50  0001 C CNN
+F 3 "~" H 2350 6150 50  0001 C CNN
+	1    2350 6150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3100 6800 3100 7450
+Wire Wire Line
+	3100 7450 2350 7450
+Connection ~ 2350 7450
+Wire Wire Line
+	2350 6250 2350 6300
+Wire Wire Line
+	2350 6300 3100 6300
+Connection ~ 2350 6300
+Wire Wire Line
+	2350 6300 2350 6350
+Wire Wire Line
+	3100 6300 3100 6500
+Wire Wire Line
+	1250 1650 1250 1450
+Wire Wire Line
+	1250 1450 1300 1450
+Wire Wire Line
+	1250 1650 1900 1650
+Wire Wire Line
+	1250 2450 1250 2250
+Wire Wire Line
+	1250 2250 1300 2250
+Wire Wire Line
+	1250 2450 1900 2450
+Wire Wire Line
+	1700 2350 2350 2350
+Wire Wire Line
+	1700 1550 2350 1550
+NoConn ~ 1700 1350
+NoConn ~ 1700 2150
 $EndSCHEMATC
