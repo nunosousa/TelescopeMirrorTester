@@ -113,30 +113,18 @@ F 4 "CC0805MRX5R6BB106" H 6400 1550 50  0001 C CNN "Manufacturer Part Number"
 	1    6400 1550
 	1    0    0    -1  
 $EndComp
-Text HLabel 6350 3400 2    50   Input ~ 0
-POSX_MISO
-Text HLabel 6350 3500 2    50   Output ~ 0
-POSX_MOSI
-Text HLabel 6350 3600 2    50   Output ~ 0
-POSX_SCLK
-Text HLabel 6350 3700 2    50   Output ~ 0
-~POSX_NCS
-Text HLabel 4750 5500 0    50   Output ~ 0
-~POSY_NCS
-Text HLabel 6350 3300 2    50   Output ~ 0
-~POSZ_NCS
-Text HLabel 4750 4400 0    50   Input ~ 0
-POSX_MOTION
-Text HLabel 4750 4300 0    50   Input ~ 0
-POSY_MOTION
-Text HLabel 4750 4200 0    50   Input ~ 0
-POSZ_MOTION
-Text HLabel 6350 4000 2    50   Output ~ 0
-~POSX_NRESET
-Text HLabel 6350 4100 2    50   Output ~ 0
-~POSY_NRESET
-Text HLabel 6350 4200 2    50   Output ~ 0
-~POSZ_NRESET
+Text HLabel 8700 4850 2    50   Input ~ 0
+POS_MISO
+Text HLabel 8650 5000 2    50   Output ~ 0
+POS_MOSI
+Text HLabel 8650 5100 2    50   Output ~ 0
+POS_SCLK
+Text HLabel 8600 5300 2    50   Output ~ 0
+~POS_NCS
+Text HLabel 9000 5650 0    50   Input ~ 0
+POS_MOTION
+Text HLabel 8550 5500 2    50   Output ~ 0
+~POS_NRESET
 Text HLabel 6350 3900 2    50   Input ~ 0
 END_STOP_X+
 Text HLabel 4750 3400 0    50   Input ~ 0
@@ -145,18 +133,6 @@ Text HLabel 4750 4600 0    50   BiDi ~ 0
 LASER_SDA
 Text HLabel 4750 4700 0    50   Output ~ 0
 LASER_SCL
-Text HLabel 4750 5400 0    50   Input ~ 0
-POSY_MISO
-Text HLabel 4750 5300 0    50   Output ~ 0
-POSY_MOSI
-Text HLabel 4750 5200 0    50   Output ~ 0
-POSY_SCLK
-Text HLabel 6350 3200 2    50   Input ~ 0
-POSZ_MISO
-Text HLabel 4750 5700 0    50   Output ~ 0
-POSZ_MOSI
-Text HLabel 4750 5600 0    50   Output ~ 0
-POSZ_SCLK
 Wire Wire Line
 	5100 6300 5100 7150
 Wire Wire Line
@@ -252,49 +228,22 @@ Text HLabel 6350 5500 2    50   Output ~ 0
 ~PS_ALOADS
 Text HLabel 6350 5400 2    50   Output ~ 0
 ~PS_DLOADS
-$Comp
-L Connector:Conn_ARM_JTAG_SWD_20 J16
-U 1 1 5E63A4FC
-P 10050 4100
-F 0 "J16" H 10550 4900 50  0000 R CNN
-F 1 "Conn_ARM_JTAG_SWD_20" H 11050 3250 50  0000 R CNN
-F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 10500 3050 50  0001 L TNN
-F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.dui0499b/DUI0499B_system_design_reference.pdf" V 9700 2850 50  0001 C CNN
-F 4 "" H 10050 4100 50  0001 C CNN "Manufacturer Part Number"
-	1    10050 4100
-	-1   0    0    -1  
-$EndComp
-NoConn ~ 9450 4500
 Wire Wire Line
 	5700 900  7550 900 
 Wire Wire Line
 	5700 1000 5700 900 
 Connection ~ 5700 900 
-NoConn ~ 10050 3300
-NoConn ~ 9450 3600
-NoConn ~ 9450 4300
-NoConn ~ 9450 3900
-NoConn ~ 9450 4200
-NoConn ~ 9450 4600
 Wire Wire Line
 	8150 4000 8150 5000
-Wire Wire Line
-	9450 4100 8550 4100
 Wire Wire Line
 	8950 2950 10150 2950
 Wire Wire Line
 	10150 900  10150 2950
-Wire Wire Line
-	10150 2950 10150 3300
 Connection ~ 10150 2950
 Wire Wire Line
 	4650 3000 4650 2100
 Wire Wire Line
 	4650 2100 9300 2100
-Wire Wire Line
-	9300 2100 9300 3700
-Wire Wire Line
-	9300 3700 9450 3700
 Wire Wire Line
 	1100 900  1650 900 
 Wire Wire Line
@@ -304,8 +253,6 @@ Wire Wire Line
 Wire Wire Line
 	8950 3800 8950 4000
 Connection ~ 8950 4000
-Wire Wire Line
-	8950 4000 9450 4000
 $Comp
 L Device:R R26
 U 1 1 5E68B768
@@ -525,14 +472,6 @@ Wire Wire Line
 	2700 3550 2600 3550
 Text Notes 3900 4650 0    50   ~ 0
 SERCOM0
-Text Notes 6900 3450 0    50   ~ 0
-SERCOM1
-Text Notes 6900 3250 0    50   ~ 0
-SERCOM2
-Text Notes 3900 5650 0    50   ~ 0
-SERCOM2
-Text Notes 3900 5250 0    50   ~ 0
-SERCOM4
 Text HLabel 4750 3600 0    50   Input ~ 0
 END_STOP_Z+
 Text HLabel 6350 3800 2    50   Input ~ 0
@@ -723,8 +662,6 @@ F 3 "~" H 2050 3850 50  0001 C CNN
 $EndComp
 Connection ~ 5750 6300
 Wire Wire Line
-	10150 4900 10150 6300
-Wire Wire Line
 	5750 6300 10150 6300
 Connection ~ 2600 3550
 Wire Wire Line
@@ -744,12 +681,27 @@ Wire Wire Line
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_10 J6
 U 1 1 5EA3EDDE
-P 11500 4050
-F 0 "J6" H 11056 4096 50  0000 R CNN
-F 1 "Conn_ARM_JTAG_SWD_10" H 11056 4005 50  0000 R CNN
-F 2 "" H 11500 4050 50  0001 C CNN
-F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 11150 2800 50  0001 C CNN
-	1    11500 4050
+P 10150 4100
+F 0 "J6" H 9706 4146 50  0000 R CNN
+F 1 "Conn_ARM_JTAG_SWD_10" H 9706 4055 50  0000 R CNN
+F 2 "" H 10150 4100 50  0001 C CNN
+F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 9800 2850 50  0001 C CNN
+	1    10150 4100
 	-1   0    0    -1  
 $EndComp
+Wire Wire Line
+	8950 4000 9650 4000
+Wire Wire Line
+	8550 4100 9650 4100
+Wire Wire Line
+	9650 3800 9300 3800
+Wire Wire Line
+	9300 2100 9300 3800
+Wire Wire Line
+	10150 2950 10150 3500
+Wire Wire Line
+	10150 4700 10150 6300
+NoConn ~ 10250 4700
+NoConn ~ 9650 4300
+NoConn ~ 9650 4200
 $EndSCHEMATC

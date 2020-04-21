@@ -641,135 +641,12 @@ Wire Wire Line
 	5750 700  5750 1450
 Wire Wire Line
 	5750 1450 5650 1450
-Text HLabel 6900 1850 2    50   BiDi ~ 0
-LASER_SDA
-Text HLabel 6900 1200 2    50   Input ~ 0
-LASER_SCL
-$Comp
-L Transistor_FET:BSS138 Q1
-U 1 1 5E5993CA
-P 6350 1300
-F 0 "Q1" V 6692 1300 50  0000 C CNN
-F 1 "BSS138" V 6601 1300 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 6550 1225 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 6350 1300 50  0001 L CNN
-F 4 "BSS138" H 6350 1300 50  0001 C CNN "Manufacturer Part Number"
-	1    6350 1300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Transistor_FET:BSS138 Q2
-U 1 1 5E59E66A
-P 6350 1950
-F 0 "Q2" V 6692 1950 50  0000 C CNN
-F 1 "BSS138" V 6601 1950 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 6550 1875 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 6350 1950 50  0001 L CNN
-F 4 "BSS138" H 6350 1950 50  0001 C CNN "Manufacturer Part Number"
-	1    6350 1950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R21
-U 1 1 5E59FB6E
-P 6550 1350
-F 0 "R21" V 6343 1350 50  0000 C CNN
-F 1 "10kR" V 6434 1350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6480 1350 50  0001 C CNN
-F 3 "~" H 6550 1350 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 6550 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    6550 1350
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R19
-U 1 1 5E5A00FF
-P 6150 1350
-F 0 "R19" V 5943 1350 50  0000 C CNN
-F 1 "10kR" V 6034 1350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6080 1350 50  0001 C CNN
-F 3 "~" H 6150 1350 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 6150 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    6150 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R22
-U 1 1 5E5A053C
-P 6550 2000
-F 0 "R22" V 6343 2000 50  0000 C CNN
-F 1 "10kR" V 6434 2000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6480 2000 50  0001 C CNN
-F 3 "~" H 6550 2000 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 6550 2000 50  0001 C CNN "Manufacturer Part Number"
-	1    6550 2000
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6350 1500 6550 1500
-Wire Wire Line
-	6350 2150 6550 2150
-Wire Wire Line
-	5850 1650 5650 1650
-Connection ~ 6550 1200
-Connection ~ 6550 1850
-Wire Wire Line
-	6150 1200 5850 1200
-Wire Wire Line
-	5850 1200 5850 1550
-Wire Wire Line
-	5850 1550 5650 1550
-Connection ~ 6150 1200
-Wire Wire Line
-	6150 1850 5850 1850
-Wire Wire Line
-	5850 1850 5850 1650
-Connection ~ 6150 1850
 Wire Wire Line
 	5750 1750 5750 7450
 Wire Wire Line
-	5750 1450 6000 1450
-Wire Wire Line
-	6000 1450 6000 1500
-Wire Wire Line
-	6000 2150 6150 2150
-Connection ~ 5750 1450
-Wire Wire Line
-	6150 1500 6000 1500
-Connection ~ 6000 1500
-Wire Wire Line
-	6000 1500 6000 2150
-$Comp
-L Device:R R20
-U 1 1 5E5A0381
-P 6150 2000
-F 0 "R20" V 5943 2000 50  0000 C CNN
-F 1 "10kR" V 6034 2000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6080 2000 50  0001 C CNN
-F 3 "~" H 6150 2000 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 6150 2000 50  0001 C CNN "Manufacturer Part Number"
-	1    6150 2000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2350 800  6800 800 
-Wire Wire Line
-	6800 800  6800 1500
-Wire Wire Line
-	6800 1500 6550 1500
+	2350 800  6400 800 
 Connection ~ 2350 800 
-Connection ~ 6550 1500
-Wire Wire Line
-	6800 1500 6800 2150
-Wire Wire Line
-	6800 2150 6550 2150
-Connection ~ 6800 1500
-Connection ~ 6550 2150
-Wire Wire Line
-	6550 1200 6900 1200
-Wire Wire Line
-	6550 1850 6900 1850
-Text Notes 6000 700  0    50   ~ 0
+Text Notes 6000 650  0    50   ~ 0
 Level shifting logic
 $Comp
 L Switch:SW_SPDT SW3
@@ -793,4 +670,23 @@ F 3 "~" H 1450 2600 50  0001 C CNN
 	1    1450 2600
 	1    0    0    -1  
 $EndComp
+$Comp
+L Interface:PCA9306 U10
+U 1 1 5EA48B4A
+P 6300 1550
+F 0 "U10" H 6500 1000 50  0000 C CNN
+F 1 "PCA9306" H 6600 850 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5900 1900 50  0001 C CNN
+F 3 "https://www.nxp.com/docs/en/data-sheet/PCA9306.pdf" H 6000 2000 50  0001 C CNN
+F 4 "PCA9306D,118" H 6300 1550 50  0001 C CNN "Manufacturer Part Number"
+	1    6300 1550
+	1    0    0    -1  
+$EndComp
+Text HLabel 6850 1650 2    50   BiDi ~ 0
+LASER_SDA
+Text HLabel 6850 1550 2    50   Input ~ 0
+LASER_SCL
+Wire Wire Line
+	6200 700  5750 700 
+Connection ~ 5750 700 
 $EndSCHEMATC
