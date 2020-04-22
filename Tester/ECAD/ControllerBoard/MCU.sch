@@ -21,22 +21,10 @@ Text HLabel 4750 4900 0    50   Output ~ 0
 MOTOR_CTRL_2A
 Text HLabel 4750 4800 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 6350 5200 2    50   Output ~ 0
-MOTOR_CTRL_3A
-Text HLabel 6350 5300 2    50   Output ~ 0
-MOTOR_CTRL_3B
-Text HLabel 4750 5100 0    50   Output ~ 0
-MOTOR_CTRL_4A
-Text HLabel 4750 5000 0    50   Output ~ 0
-MOTOR_CTRL_4B
 Text HLabel 4750 3800 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 4750 3900 0    50   Input ~ 0
-MOTOR_FAULT_34
 Text HLabel 6350 4600 2    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 6350 4700 2    50   Output ~ 0
-MOTOR_SLEEP_34
 Text HLabel 1000 7150 0    50   Input ~ 0
 GND
 Text HLabel 1100 900  0    50   Input ~ 0
@@ -472,14 +460,10 @@ Wire Wire Line
 	2700 3550 2600 3550
 Text Notes 3900 4650 0    50   ~ 0
 SERCOM0
-Text HLabel 4750 3600 0    50   Input ~ 0
-END_STOP_Z+
 Text HLabel 6350 3800 2    50   Input ~ 0
 END_STOP_X-
 Text HLabel 4750 3500 0    50   Input ~ 0
 END_STOP_Y-
-Text HLabel 4750 3700 0    50   Input ~ 0
-END_STOP_Z-
 Text Notes 3800 4050 0    50   ~ 0
 TCC3
 Text Notes 3800 4850 0    50   ~ 0
@@ -504,10 +488,6 @@ Wire Wire Line
 	8250 4800 8250 5100
 Wire Wire Line
 	8250 4100 8250 4500
-Text Notes 7100 5250 0    50   ~ 0
-TCC1
-Text Notes 3850 5050 0    50   ~ 0
-TC5
 Text Notes 6950 3800 0    50   ~ 0
 EXTINT[0]
 Text Notes 6950 3900 0    50   ~ 0
@@ -516,10 +496,6 @@ Text Notes 3800 3400 0    50   ~ 0
 EXTINT[2]
 Text Notes 3800 3500 0    50   ~ 0
 EXTINT[3]
-Text Notes 3800 3600 0    50   ~ 0
-EXTINT[4]
-Text Notes 3800 3700 0    50   ~ 0
-EXTINT[5]
 Text Notes 3650 3800 0    50   ~ 0
 EXTINT[6]
 Text Notes 3650 3900 0    50   ~ 0
@@ -660,9 +636,6 @@ F 3 "~" H 2050 3850 50  0001 C CNN
 	1    2050 3850
 	1    0    0    -1  
 $EndComp
-Connection ~ 5750 6300
-Wire Wire Line
-	5750 6300 10150 6300
 Connection ~ 2600 3550
 Wire Wire Line
 	2600 3550 2400 3550
@@ -699,9 +672,9 @@ Wire Wire Line
 	9300 2100 9300 3800
 Wire Wire Line
 	10150 2950 10150 3500
-Wire Wire Line
-	10150 4700 10150 6300
 NoConn ~ 10250 4700
 NoConn ~ 9650 4300
 NoConn ~ 9650 4200
+Text HLabel 10150 4700 3    50   Input ~ 0
+GND
 $EndSCHEMATC

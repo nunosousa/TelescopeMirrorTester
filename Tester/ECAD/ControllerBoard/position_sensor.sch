@@ -13,31 +13,249 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 3250 1550 0    50   Input ~ 0
-V3_3
-Text HLabel 3250 1850 0    50   Input ~ 0
+Text HLabel 9350 2650 0    50   Input ~ 0
 GND
-Text HLabel 3250 2100 0    50   Output ~ 0
+Text HLabel 9350 2900 0    50   Output ~ 0
 POS_MISO
-Text HLabel 3250 2300 0    50   Input ~ 0
+Text HLabel 9350 3100 0    50   Input ~ 0
 POS_MOSI
-Text HLabel 3200 2600 0    50   Input ~ 0
+Text HLabel 9300 3400 0    50   Input ~ 0
 POS_SCLK
-Text HLabel 3200 2850 0    50   Input ~ 0
-~POS_NCS
-Text HLabel 3200 3100 0    50   Input ~ 0
-~POS_NRESET
-Text HLabel 3200 3350 0    50   Output ~ 0
-POS_MOTION
+Text HLabel 9300 3650 0    50   Input ~ 0
+~POS1_NCS
+Text HLabel 9300 3900 0    50   Input ~ 0
+~POS1_NRESET
+Text HLabel 9300 4150 0    50   Output ~ 0
+POS1_MOTION
 $Comp
 L PixArt:PMW3360DM-T2QU U9
 U 1 1 5E9F77F4
-P 6650 3300
-F 0 "U9" H 6650 4015 50  0000 C CNN
-F 1 "PMW3360DM-T2QU" H 6650 3924 50  0000 C CNN
-F 2 "PixArt:PMW3360DM-T2QU" H 6650 3300 50  0001 C CNN
-F 3 "" H 6650 3300 50  0001 C CNN
-	1    6650 3300
+P 4100 4100
+F 0 "U9" H 4100 4815 50  0000 C CNN
+F 1 "PMW3360DM-T2QU" H 4100 4724 50  0000 C CNN
+F 2 "PixArt:PMW3360DM-T2QU" H 4100 4100 50  0001 C CNN
+F 3 "" H 4100 4100 50  0001 C CNN
+	1    4100 4100
 	1    0    0    -1  
 $EndComp
+$Comp
+L PixArt:PMW3360DM-T2QU U4
+U 1 1 5EA18837
+P 4100 5450
+F 0 "U4" H 4100 6165 50  0000 C CNN
+F 1 "PMW3360DM-T2QU" H 4100 6074 50  0000 C CNN
+F 2 "PixArt:PMW3360DM-T2QU" H 4100 5450 50  0001 C CNN
+F 3 "" H 4100 5450 50  0001 C CNN
+	1    4100 5450
+	1    0    0    -1  
+$EndComp
+Text HLabel 9900 3650 0    50   Input ~ 0
+~POS2_NCS
+Text HLabel 9950 3900 0    50   Input ~ 0
+~POS2_NRESET
+Text HLabel 9950 4150 0    50   Output ~ 0
+POS2_MOTION
+$Comp
+L Device:C C2
+U 1 1 5EA0E058
+P 3850 2100
+F 0 "C2" H 3965 2146 50  0000 L CNN
+F 1 "1uC" H 3965 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3888 1950 50  0001 C CNN
+F 3 "~" H 3850 2100 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 3850 2100 50  0001 C CNN "Manufacturer Part Number"
+	1    3850 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5EA0E1BC
+P 4700 3450
+F 0 "R2" H 4770 3496 50  0000 L CNN
+F 1 "39R" H 4770 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4630 3450 50  0001 C CNN
+F 3 "~" H 4700 3450 50  0001 C CNN
+F 4 "RC0805FR-0739RL" H 4700 3450 50  0001 C CNN "Manufacturer Part Number"
+	1    4700 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:TLV70019_SOT23-5 U11
+U 1 1 5EA0E463
+P 3400 2000
+F 0 "U11" H 3400 2342 50  0000 C CNN
+F 1 "TLV70019_SOT23-5" H 3400 2251 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3400 2325 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv700.pdf" H 3400 2050 50  0001 C CNN
+F 4 "TLV70019DDCT" H 3400 2000 50  0001 C CNN "Manufacturer Part Number"
+	1    3400 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5EA0F758
+P 2750 2100
+F 0 "C4" H 2865 2146 50  0000 L CNN
+F 1 "1uC" H 2865 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2788 1950 50  0001 C CNN
+F 3 "~" H 2750 2100 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 2750 2100 50  0001 C CNN "Manufacturer Part Number"
+	1    2750 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5EA1166C
+P 2400 4100
+F 0 "C6" H 2515 4146 50  0000 L CNN
+F 1 "4.7uC" H 2515 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 3950 50  0001 C CNN
+F 3 "~" H 2400 4100 50  0001 C CNN
+F 4 "C0805C475K9PACTU" H 2400 4100 50  0001 C CNN "Manufacturer Part Number"
+	1    2400 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C22
+U 1 1 5EA12771
+P 2900 4100
+F 0 "C22" H 3015 4146 50  0000 L CNN
+F 1 "0.1uC" H 3015 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2938 3950 50  0001 C CNN
+F 3 "~" H 2900 4100 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2900 4100 50  0001 C CNN "Manufacturer Part Number"
+	1    2900 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5EA148DB
+P 4700 4800
+F 0 "R4" H 4770 4846 50  0000 L CNN
+F 1 "39R" H 4770 4755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4630 4800 50  0001 C CNN
+F 3 "~" H 4700 4800 50  0001 C CNN
+F 4 "RC0805FR-0739RL" H 4700 4800 50  0001 C CNN "Manufacturer Part Number"
+	1    4700 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C23
+U 1 1 5EA148E2
+P 2400 5450
+F 0 "C23" H 2515 5496 50  0000 L CNN
+F 1 "4.7uC" H 2515 5405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 5300 50  0001 C CNN
+F 3 "~" H 2400 5450 50  0001 C CNN
+F 4 "C0805C475K9PACTU" H 2400 5450 50  0001 C CNN "Manufacturer Part Number"
+	1    2400 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C28
+U 1 1 5EA148E9
+P 2900 5450
+F 0 "C28" H 3015 5496 50  0000 L CNN
+F 1 "0.1uC" H 3015 5405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2938 5300 50  0001 C CNN
+F 3 "~" H 2900 5450 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2900 5450 50  0001 C CNN "Manufacturer Part Number"
+	1    2900 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 1900 3050 1900
+Wire Wire Line
+	3050 1900 3050 2000
+Wire Wire Line
+	3050 2000 3100 2000
+Wire Wire Line
+	3700 1900 3850 1900
+Wire Wire Line
+	3850 1900 3850 1950
+Wire Wire Line
+	2750 1950 2750 1900
+Wire Wire Line
+	2750 1900 3050 1900
+Connection ~ 3050 1900
+Text HLabel 3850 2250 3    50   Input ~ 0
+GND
+Text HLabel 2750 2250 3    50   Input ~ 0
+GND
+Text HLabel 3400 2300 3    50   Input ~ 0
+GND
+Text HLabel 2500 1900 0    50   Input ~ 0
+V5_0
+Connection ~ 2750 1900
+Wire Wire Line
+	3850 1900 4200 1900
+Connection ~ 3850 1900
+Text Label 4200 1900 0    50   ~ 0
+V1_9
+Wire Wire Line
+	2500 1900 2750 1900
+Wire Wire Line
+	3650 3850 2900 3850
+Wire Wire Line
+	2400 3850 2400 3950
+Wire Wire Line
+	2900 3950 2900 3850
+Connection ~ 2900 3850
+Wire Wire Line
+	2900 3850 2400 3850
+Text HLabel 2400 4250 3    50   Input ~ 0
+GND
+Text HLabel 2900 4250 3    50   Input ~ 0
+GND
+Text HLabel 3650 4350 0    50   Input ~ 0
+GND
+Wire Wire Line
+	3650 4050 3600 4050
+Wire Wire Line
+	3600 4050 3600 3950
+Wire Wire Line
+	3600 3950 3650 3950
+Wire Wire Line
+	3600 3950 3550 3950
+Connection ~ 3600 3950
+Text Label 3550 3950 2    50   ~ 0
+V1_9
+Wire Wire Line
+	4550 3750 4700 3750
+Wire Wire Line
+	4700 3750 4700 3600
+Text Label 4700 3300 1    50   ~ 0
+V1_9
+Wire Wire Line
+	2400 5300 2400 5200
+Wire Wire Line
+	2400 5200 2900 5200
+Wire Wire Line
+	2900 5300 2900 5200
+Connection ~ 2900 5200
+Wire Wire Line
+	2900 5200 3650 5200
+Wire Wire Line
+	3650 5400 3600 5400
+Wire Wire Line
+	3600 5400 3600 5300
+Wire Wire Line
+	3600 5300 3650 5300
+Wire Wire Line
+	3600 5300 3550 5300
+Connection ~ 3600 5300
+Text HLabel 2400 5600 3    50   Input ~ 0
+GND
+Text HLabel 2900 5600 3    50   Input ~ 0
+GND
+Wire Wire Line
+	4700 4950 4700 5100
+Wire Wire Line
+	4700 5100 4550 5100
+Text Label 3550 5300 2    50   ~ 0
+V1_9
+Text Label 4700 4650 1    50   ~ 0
+V1_9
+Text HLabel 3650 5700 0    50   Input ~ 0
+GND
 $EndSCHEMATC
