@@ -57,45 +57,45 @@ $EndSheet
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5E5E084B
-P 10300 5550
-F 0 "H1" H 10400 5596 50  0000 L CNN
-F 1 "MountingHole" H 10400 5505 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10300 5550 50  0001 C CNN
-F 3 "~" H 10300 5550 50  0001 C CNN
-	1    10300 5550
+P 9650 5550
+F 0 "H1" H 9750 5596 50  0000 L CNN
+F 1 "MountingHole" H 9750 5505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 5550 50  0001 C CNN
+F 3 "~" H 9650 5550 50  0001 C CNN
+	1    9650 5550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5E5E0C61
-P 10300 5750
-F 0 "H2" H 10400 5796 50  0000 L CNN
-F 1 "MountingHole" H 10400 5705 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10300 5750 50  0001 C CNN
-F 3 "~" H 10300 5750 50  0001 C CNN
-	1    10300 5750
+P 9650 5750
+F 0 "H2" H 9750 5796 50  0000 L CNN
+F 1 "MountingHole" H 9750 5705 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 5750 50  0001 C CNN
+F 3 "~" H 9650 5750 50  0001 C CNN
+	1    9650 5750
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 5E5E107E
-P 10300 5950
-F 0 "H3" H 10400 5996 50  0000 L CNN
-F 1 "MountingHole" H 10400 5905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10300 5950 50  0001 C CNN
-F 3 "~" H 10300 5950 50  0001 C CNN
-	1    10300 5950
+P 9650 5950
+F 0 "H3" H 9750 5996 50  0000 L CNN
+F 1 "MountingHole" H 9750 5905 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 5950 50  0001 C CNN
+F 3 "~" H 9650 5950 50  0001 C CNN
+	1    9650 5950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 5E5E12C4
-P 10300 6150
-F 0 "H4" H 10400 6196 50  0000 L CNN
-F 1 "MountingHole" H 10400 6105 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10300 6150 50  0001 C CNN
-F 3 "~" H 10300 6150 50  0001 C CNN
-	1    10300 6150
+P 9650 6150
+F 0 "H4" H 9750 6196 50  0000 L CNN
+F 1 "MountingHole" H 9750 6105 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 6150 50  0001 C CNN
+F 3 "~" H 9650 6150 50  0001 C CNN
+	1    9650 6150
 	1    0    0    -1  
 $EndComp
 $Sheet
@@ -329,4 +329,48 @@ Wire Wire Line
 	5450 3750 6050 3750
 Wire Wire Line
 	6050 3850 5450 3850
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 5EA3A2C2
+P 10400 5550
+F 0 "H5" H 10500 5596 50  0000 L CNN
+F 1 "MountingHole" H 10500 5505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 5550 50  0001 C CNN
+F 3 "~" H 10400 5550 50  0001 C CNN
+	1    10400 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H6
+U 1 1 5EA3A2C8
+P 10400 5750
+F 0 "H6" H 10500 5796 50  0000 L CNN
+F 1 "MountingHole" H 10500 5705 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 5750 50  0001 C CNN
+F 3 "~" H 10400 5750 50  0001 C CNN
+	1    10400 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H7
+U 1 1 5EA3A2CE
+P 10400 5950
+F 0 "H7" H 10500 5996 50  0000 L CNN
+F 1 "MountingHole" H 10500 5905 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 5950 50  0001 C CNN
+F 3 "~" H 10400 5950 50  0001 C CNN
+	1    10400 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H8
+U 1 1 5EA3A2D4
+P 10400 6150
+F 0 "H8" H 10500 6196 50  0000 L CNN
+F 1 "MountingHole" H 10500 6105 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 6150 50  0001 C CNN
+F 3 "~" H 10400 6150 50  0001 C CNN
+	1    10400 6150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

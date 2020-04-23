@@ -13,17 +13,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 13650 5500 0    50   Output ~ 0
+Text HLabel 2750 3850 0    50   Output ~ 0
 MOTOR_CTRL_1A
-Text HLabel 13650 5400 0    50   Output ~ 0
+Text HLabel 2750 3750 0    50   Output ~ 0
 MOTOR_CTRL_1B
-Text HLabel 13650 6300 0    50   Output ~ 0
+Text HLabel 2750 4050 0    50   Output ~ 0
 MOTOR_CTRL_2A
-Text HLabel 13650 6200 0    50   Output ~ 0
+Text HLabel 2750 3950 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 13650 5200 0    50   Input ~ 0
+Text HLabel 2550 5850 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 13000 3300 2    50   Output ~ 0
+Text HLabel 1900 4350 2    50   Output ~ 0
 MOTOR_SLEEP_12
 Text HLabel 5550 5800 3    50   Input ~ 0
 GND
@@ -99,25 +99,25 @@ F 4 "CC0805MRX5R6BB106" H 3250 1350 50  0001 C CNN "Manufacturer Part Number"
 	1    3250 1350
 	1    0    0    -1  
 $EndComp
-Text HLabel 12800 6800 2    50   Input ~ 0
+Text HLabel 4650 2700 0    50   Input ~ 0
 POS_MISO
-Text HLabel 12750 6950 2    50   Output ~ 0
+Text HLabel 4650 2900 0    50   Output ~ 0
 POS_MOSI
-Text HLabel 12750 7050 2    50   Output ~ 0
+Text HLabel 4650 3000 0    50   Output ~ 0
 POS_SCLK
-Text HLabel 12700 7250 2    50   Output ~ 0
+Text HLabel 4650 2800 0    50   Output ~ 0
 ~POS1_NCS
-Text HLabel 13100 7600 0    50   Input ~ 0
+Text HLabel 4650 2500 0    50   Input ~ 0
 POS_MOTION
-Text HLabel 12650 7450 2    50   Output ~ 0
+Text HLabel 6650 2600 2    50   Output ~ 0
 ~POS1_NRESET
-Text HLabel 13050 4300 2    50   Input ~ 0
+Text HLabel 1950 5350 2    50   Input ~ 0
 END_STOP_X+
-Text HLabel 13650 4800 0    50   Input ~ 0
+Text HLabel 2500 5550 0    50   Input ~ 0
 END_STOP_Y+
-Text HLabel 13650 6000 0    50   BiDi ~ 0
+Text HLabel 4650 3100 0    50   BiDi ~ 0
 LASER_SDA
-Text HLabel 13650 6100 0    50   Output ~ 0
+Text HLabel 4650 3200 0    50   Output ~ 0
 LASER_SCL
 $Comp
 L Device:R R25
@@ -147,24 +147,24 @@ Text HLabel 4650 4800 0    50   BiDi ~ 0
 USB_D+
 Text HLabel 4650 4700 0    50   BiDi ~ 0
 USB_D-
-Text HLabel 13000 3500 2    50   Input ~ 0
+Text HLabel 1900 4550 2    50   Input ~ 0
 OC_ALOADS
-Text HLabel 13000 3600 2    50   Input ~ 0
+Text HLabel 1900 4650 2    50   Input ~ 0
 OC_DLOADS
-Text HLabel 13050 3950 2    50   Output ~ 0
+Text HLabel 1950 5000 2    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 13050 3850 2    50   Output ~ 0
+Text HLabel 1950 4900 2    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Device:L L2
 U 1 1 5E58F693
-P 2350 900
-F 0 "L2" H 2450 800 50  0000 C CNN
-F 1 "L" H 2450 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2350 900 50  0001 C CNN
-F 3 "~" H 2350 900 50  0001 C CNN
-F 4 "BLM21SP471SH1D" H 2350 900 50  0001 C CNN "Manufacturer Part Number"
-	1    2350 900 
+P 2400 900
+F 0 "L2" H 2500 800 50  0000 C CNN
+F 1 "L" H 2500 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2400 900 50  0001 C CNN
+F 3 "~" H 2400 900 50  0001 C CNN
+F 4 "BLM21SP471SH1D" H 2400 900 50  0001 C CNN "Manufacturer Part Number"
+	1    2400 900 
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -220,9 +220,9 @@ Wire Wire Line
 Wire Wire Line
 	1400 3350 1400 3650
 Connection ~ 1400 3650
-Text HLabel 13050 4200 2    50   Input ~ 0
+Text HLabel 1950 5250 2    50   Input ~ 0
 END_STOP_X-
-Text HLabel 13650 4900 0    50   Input ~ 0
+Text HLabel 2500 5650 0    50   Input ~ 0
 END_STOP_Y-
 $Comp
 L Device:LED D1
@@ -304,9 +304,9 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAMD21-Family-DataSheet-DS4
 	1    5650 3900
 	1    0    0    -1  
 $EndComp
-Text HLabel 13300 7250 2    50   Output ~ 0
+Text HLabel 4650 2600 0    50   Output ~ 0
 ~POS2_NCS
-Text HLabel 13300 7450 2    50   Output ~ 0
+Text HLabel 6650 2500 2    50   Output ~ 0
 ~POS2_NRESET
 Wire Wire Line
 	1100 3650 1300 3650
@@ -334,9 +334,9 @@ Wire Wire Line
 	8550 3700 9100 3700
 Text HLabel 3750 1500 3    50   Input ~ 0
 GND
-Text Label 3750 1200 1    50   ~ 0
+Text Label 3750 850  3    50   ~ 0
 VDDCORE
-Text Label 5850 2000 1    50   ~ 0
+Text Label 5850 1650 3    50   ~ 0
 VDDCORE
 Text Label 1600 1200 1    50   ~ 0
 VDDIN
@@ -344,7 +344,7 @@ Text HLabel 1600 1500 3    50   Input ~ 0
 GND
 Text HLabel 950  900  0    50   Input ~ 0
 V3_3
-Text Label 5550 2000 1    50   ~ 0
+Text Label 5550 1750 3    50   ~ 0
 VDDIN
 $Comp
 L Device:Net-Tie_2 NT1
@@ -379,15 +379,11 @@ Wire Wire Line
 Connection ~ 1600 900 
 Text Label 2150 1200 1    50   ~ 0
 VDDIO
-Text Label 5450 2000 1    50   ~ 0
+Text Label 5450 1750 3    50   ~ 0
 VDDIO
-Wire Wire Line
-	2200 900  2150 900 
 Connection ~ 2150 900 
 Wire Wire Line
 	2700 1200 2700 900 
-Wire Wire Line
-	2700 900  2500 900 
 Wire Wire Line
 	2700 900  3250 900 
 Wire Wire Line
@@ -397,7 +393,7 @@ Text HLabel 2700 1900 3    50   Input ~ 0
 GND
 Text Label 2850 900  0    50   ~ 0
 VDDANA
-Text Label 5750 2000 1    50   ~ 0
+Text Label 5750 1700 3    50   ~ 0
 VDDANA
 $Comp
 L Device:Net-Tie_2 NT6
@@ -416,7 +412,7 @@ Wire Wire Line
 	2700 1550 3250 1550
 Text Label 2850 1550 0    50   ~ 0
 GNDANA
-Text Label 5750 5800 3    50   ~ 0
+Text Label 5750 6100 1    50   ~ 0
 GNDANA
 Wire Wire Line
 	3250 1550 3250 1500
@@ -425,15 +421,15 @@ Wire Wire Line
 Connection ~ 2700 1550
 Text Label 8550 3700 0    50   ~ 0
 ~RESET
-Text Label 4650 5400 2    50   ~ 0
+Text Label 4400 5400 0    50   ~ 0
 ~RESET
 Text Label 8550 3900 0    50   ~ 0
 SWCLK
-Text Label 4650 5100 2    50   ~ 0
+Text Label 4400 5100 0    50   ~ 0
 SWCLK
 Text Label 8550 4000 0    50   ~ 0
 SWDIO
-Text Label 4650 5200 2    50   ~ 0
+Text Label 4400 5200 0    50   ~ 0
 SWDIO
 Text Label 2000 2550 2    50   ~ 0
 XIN32
@@ -452,10 +448,10 @@ Connection ~ 1100 3150
 Text HLabel 1300 3950 3    50   Input ~ 0
 GND
 $Comp
-L Device:Net-Tie_2 NT?
+L Device:Net-Tie_2 NT7
 U 1 1 5EA8DE4C
 P 1300 3850
-F 0 "NT?" H 1300 4031 50  0000 C CNN
+F 0 "NT7" H 1300 4031 50  0000 C CNN
 F 1 "Net-Tie_2" H 1300 3940 50  0000 C CNN
 F 2 "" H 1300 3850 50  0001 C CNN
 F 3 "~" H 1300 3850 50  0001 C CNN
@@ -467,8 +463,34 @@ Wire Wire Line
 Connection ~ 1300 3650
 Wire Wire Line
 	1300 3650 1400 3650
-Text Label 4650 2300 2    50   ~ 0
+Text Label 4350 2300 0    50   ~ 0
 XIN32
-Text Label 4650 2400 2    50   ~ 0
+Text Label 4350 2400 0    50   ~ 0
 XOUT32
+Wire Wire Line
+	3750 1200 3750 850 
+Wire Wire Line
+	2150 900  2250 900 
+Wire Wire Line
+	2550 900  2700 900 
+Wire Wire Line
+	4400 5400 4650 5400
+Wire Wire Line
+	4650 5200 4400 5200
+Wire Wire Line
+	4650 5100 4400 5100
+Wire Wire Line
+	4650 2400 4350 2400
+Wire Wire Line
+	4650 2300 4350 2300
+Wire Wire Line
+	5550 2000 5550 1750
+Wire Wire Line
+	5450 1750 5450 2000
+Wire Wire Line
+	5750 2000 5750 1700
+Wire Wire Line
+	5850 2000 5850 1650
+Wire Wire Line
+	5750 5800 5750 6100
 $EndSCHEMATC
