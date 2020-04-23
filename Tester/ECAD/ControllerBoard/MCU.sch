@@ -13,668 +13,462 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 4750 4100 0    50   Output ~ 0
+Text HLabel 13650 5500 0    50   Output ~ 0
 MOTOR_CTRL_1A
-Text HLabel 4750 4000 0    50   Output ~ 0
+Text HLabel 13650 5400 0    50   Output ~ 0
 MOTOR_CTRL_1B
-Text HLabel 4750 4900 0    50   Output ~ 0
+Text HLabel 13650 6300 0    50   Output ~ 0
 MOTOR_CTRL_2A
-Text HLabel 4750 4800 0    50   Output ~ 0
+Text HLabel 13650 6200 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 4750 3800 0    50   Input ~ 0
+Text HLabel 13650 5200 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 6350 4600 2    50   Output ~ 0
+Text HLabel 13000 3300 2    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 1000 7150 0    50   Input ~ 0
+Text HLabel 5550 5800 3    50   Input ~ 0
 GND
-Text HLabel 1100 900  0    50   Input ~ 0
-V3_3
 $Comp
 L Device:C C15
 U 1 1 5E5846F6
-P 6600 2550
-F 0 "C15" H 6715 2596 50  0000 L CNN
-F 1 "1uC" H 6715 2505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6638 2400 50  0001 C CNN
-F 3 "~" H 6600 2550 50  0001 C CNN
-F 4 "CC0805MKX7R7BB105" H 6600 2550 50  0001 C CNN "Manufacturer Part Number"
-	1    6600 2550
+P 3750 1350
+F 0 "C15" H 3865 1396 50  0000 L CNN
+F 1 "1uC" H 3865 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3788 1200 50  0001 C CNN
+F 3 "~" H 3750 1350 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 3750 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    3750 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C12
 U 1 1 5E58564D
-P 3600 1300
-F 0 "C12" H 3715 1346 50  0000 L CNN
-F 1 "10uC" H 3715 1255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3638 1150 50  0001 C CNN
-F 3 "~" H 3600 1300 50  0001 C CNN
-F 4 "CC0805MRX5R6BB106" H 3600 1300 50  0001 C CNN "Manufacturer Part Number"
-	1    3600 1300
+P 1100 1350
+F 0 "C12" H 1215 1396 50  0000 L CNN
+F 1 "10uC" H 1215 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1138 1200 50  0001 C CNN
+F 3 "~" H 1100 1350 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 1100 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    1100 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C14
 U 1 1 5E586DB7
-P 4800 1550
-F 0 "C14" H 4915 1596 50  0000 L CNN
-F 1 "0.1uC" H 4915 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4838 1400 50  0001 C CNN
-F 3 "~" H 4800 1550 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 4800 1550 50  0001 C CNN "Manufacturer Part Number"
-	1    4800 1550
+P 1600 1350
+F 0 "C14" H 1715 1396 50  0000 L CNN
+F 1 "0.1uC" H 1715 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1638 1200 50  0001 C CNN
+F 3 "~" H 1600 1350 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 1600 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    1600 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C13
 U 1 1 5E588280
-P 4200 1550
-F 0 "C13" H 4315 1596 50  0000 L CNN
-F 1 "0.1uC" H 4315 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4238 1400 50  0001 C CNN
-F 3 "~" H 4200 1550 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 4200 1550 50  0001 C CNN "Manufacturer Part Number"
-	1    4200 1550
+P 2150 1350
+F 0 "C13" H 2265 1396 50  0000 L CNN
+F 1 "0.1uC" H 2265 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2188 1200 50  0001 C CNN
+F 3 "~" H 2150 1350 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2150 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    2150 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C16
 U 1 1 5E58C2F2
-P 5950 1550
-F 0 "C16" H 6065 1596 50  0000 L CNN
-F 1 "0.1uC" H 6065 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5988 1400 50  0001 C CNN
-F 3 "~" H 5950 1550 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 5950 1550 50  0001 C CNN "Manufacturer Part Number"
-	1    5950 1550
+P 2700 1350
+F 0 "C16" H 2815 1396 50  0000 L CNN
+F 1 "0.1uC" H 2815 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2738 1200 50  0001 C CNN
+F 3 "~" H 2700 1350 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2700 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    2700 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C17
 U 1 1 5E58C960
-P 6400 1550
-F 0 "C17" H 6515 1596 50  0000 L CNN
-F 1 "10uC" H 6515 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6438 1400 50  0001 C CNN
-F 3 "~" H 6400 1550 50  0001 C CNN
-F 4 "CC0805MRX5R6BB106" H 6400 1550 50  0001 C CNN "Manufacturer Part Number"
-	1    6400 1550
+P 3250 1350
+F 0 "C17" H 3365 1396 50  0000 L CNN
+F 1 "10uC" H 3365 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3288 1200 50  0001 C CNN
+F 3 "~" H 3250 1350 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 3250 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    3250 1350
 	1    0    0    -1  
 $EndComp
-Text HLabel 8700 4850 2    50   Input ~ 0
+Text HLabel 12800 6800 2    50   Input ~ 0
 POS_MISO
-Text HLabel 8650 5000 2    50   Output ~ 0
+Text HLabel 12750 6950 2    50   Output ~ 0
 POS_MOSI
-Text HLabel 8650 5100 2    50   Output ~ 0
+Text HLabel 12750 7050 2    50   Output ~ 0
 POS_SCLK
-Text HLabel 8600 5300 2    50   Output ~ 0
-~POS_NCS
-Text HLabel 9000 5650 0    50   Input ~ 0
+Text HLabel 12700 7250 2    50   Output ~ 0
+~POS1_NCS
+Text HLabel 13100 7600 0    50   Input ~ 0
 POS_MOTION
-Text HLabel 8550 5500 2    50   Output ~ 0
-~POS_NRESET
-Text HLabel 6350 3900 2    50   Input ~ 0
+Text HLabel 12650 7450 2    50   Output ~ 0
+~POS1_NRESET
+Text HLabel 13050 4300 2    50   Input ~ 0
 END_STOP_X+
-Text HLabel 4750 3400 0    50   Input ~ 0
+Text HLabel 13650 4800 0    50   Input ~ 0
 END_STOP_Y+
-Text HLabel 4750 4600 0    50   BiDi ~ 0
+Text HLabel 13650 6000 0    50   BiDi ~ 0
 LASER_SDA
-Text HLabel 4750 4700 0    50   Output ~ 0
+Text HLabel 13650 6100 0    50   Output ~ 0
 LASER_SCL
-Wire Wire Line
-	5100 6300 5100 7150
-Wire Wire Line
-	5600 6300 5750 6300
-Connection ~ 5600 6300
-Wire Wire Line
-	5500 6300 5600 6300
-Connection ~ 5500 6300
-Wire Wire Line
-	5400 6300 5500 6300
-Connection ~ 5400 6300
-Wire Wire Line
-	5300 6300 5100 6300
-Wire Wire Line
-	5300 6300 5400 6300
-Connection ~ 5300 6300
-Wire Wire Line
-	5300 2200 5400 2200
-Wire Wire Line
-	5200 2200 5300 2200
-Connection ~ 5300 2200
-$Comp
-L MCU_Microchip_SAMD_Custom:ATSAMD21J18A-AU U1
-U 1 1 5E5C7565
-P 5550 4200
-F 0 "U1" H 5550 2011 50  0000 C CNN
-F 1 "ATSAMD21J18A-AU" H 5550 1920 50  0000 C CNN
-F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5100 1550 50  0001 L BNN
-F 3 "" H 5550 4200 50  0001 L BNN
-F 4 "ATSAMD21J18A-AUT" H 5550 4200 50  0001 C CNN "Manufacturer Part Number"
-	1    5550 4200
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R25
 U 1 1 5E5EDE05
-P 8950 3650
-F 0 "R25" H 9020 3696 50  0000 L CNN
-F 1 "10kR" H 9020 3605 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8880 3650 50  0001 C CNN
-F 3 "~" H 8950 3650 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 8950 3650 50  0001 C CNN "Manufacturer Part Number"
-	1    8950 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R27
-U 1 1 5E5F27BD
-P 1650 1800
-F 0 "R27" H 1720 1846 50  0000 L CNN
-F 1 "330R" H 1720 1755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1580 1800 50  0001 C CNN
-F 3 "~" H 1650 1800 50  0001 C CNN
-F 4 "RC0805FR-07330RL" H 1650 1800 50  0001 C CNN "Manufacturer Part Number"
-	1    1650 1800
+P 9500 3400
+F 0 "R25" H 9570 3446 50  0000 L CNN
+F 1 "1kR" H 9570 3355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9430 3400 50  0001 C CNN
+F 3 "~" H 9500 3400 50  0001 C CNN
+F 4 "" H 9500 3400 50  0001 C CNN "Manufacturer Part Number"
+	1    9500 3400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R28
 U 1 1 5E5F34E6
-P 1650 1250
-F 0 "R28" H 1720 1296 50  0000 L CNN
-F 1 "10kR" H 1720 1205 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1580 1250 50  0001 C CNN
-F 3 "~" H 1650 1250 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 1650 1250 50  0001 C CNN "Manufacturer Part Number"
-	1    1650 1250
+P 9100 3400
+F 0 "R28" H 9170 3446 50  0000 L CNN
+F 1 "10kR" H 9170 3355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9030 3400 50  0001 C CNN
+F 3 "~" H 9100 3400 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 9100 3400 50  0001 C CNN "Manufacturer Part Number"
+	1    9100 3400
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C33
-U 1 1 5E5F699E
-P 1050 2000
-F 0 "C33" H 1165 2046 50  0000 L CNN
-F 1 "0.1uC" H 1165 1955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1088 1850 50  0001 C CNN
-F 3 "~" H 1050 2000 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 1050 2000 50  0001 C CNN "Manufacturer Part Number"
-	1    1050 2000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4750 3000 4650 3000
-Text HLabel 6350 4500 2    50   BiDi ~ 0
+Text HLabel 4650 4800 0    50   BiDi ~ 0
 USB_D+
-Text HLabel 6350 4400 2    50   BiDi ~ 0
+Text HLabel 4650 4700 0    50   BiDi ~ 0
 USB_D-
-Text HLabel 6350 4800 2    50   Input ~ 0
+Text HLabel 13000 3500 2    50   Input ~ 0
 OC_ALOADS
-Text HLabel 6350 4900 2    50   Input ~ 0
+Text HLabel 13000 3600 2    50   Input ~ 0
 OC_DLOADS
-Text HLabel 6350 5500 2    50   Output ~ 0
+Text HLabel 13050 3950 2    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 6350 5400 2    50   Output ~ 0
+Text HLabel 13050 3850 2    50   Output ~ 0
 ~PS_DLOADS
-Wire Wire Line
-	5700 900  7550 900 
-Wire Wire Line
-	5700 1000 5700 900 
-Connection ~ 5700 900 
-Wire Wire Line
-	8150 4000 8150 5000
-Wire Wire Line
-	8950 2950 10150 2950
-Wire Wire Line
-	10150 900  10150 2950
-Connection ~ 10150 2950
-Wire Wire Line
-	4650 3000 4650 2100
-Wire Wire Line
-	4650 2100 9300 2100
-Wire Wire Line
-	1100 900  1650 900 
-Wire Wire Line
-	8950 3500 8950 2950
-Wire Wire Line
-	8150 4000 8950 4000
-Wire Wire Line
-	8950 3800 8950 4000
-Connection ~ 8950 4000
-$Comp
-L Device:R R26
-U 1 1 5E68B768
-P 8550 3650
-F 0 "R26" H 8620 3696 50  0000 L CNN
-F 1 "10kR" H 8620 3605 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8480 3650 50  0001 C CNN
-F 3 "~" H 8550 3650 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 8550 3650 50  0001 C CNN "Manufacturer Part Number"
-	1    8550 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8550 3800 8550 4100
-Connection ~ 8550 4100
-Wire Wire Line
-	8550 4100 8250 4100
-Wire Wire Line
-	8550 3500 8550 2950
-Wire Wire Line
-	8550 2950 8950 2950
-Connection ~ 8950 2950
-$Comp
-L Switch:SW_SPST SW1
-U 1 1 5E5F8021
-P 1650 2200
-F 0 "SW1" V 1604 2298 50  0000 L CNN
-F 1 "SW_SPST" V 1695 2298 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_Straight_KSA0Axx1LFTR" H 1650 2200 50  0001 C CNN
-F 3 "~" H 1650 2200 50  0001 C CNN
-F 4 "KSA0A311 LFTR" H 1650 2200 50  0001 C CNN "Manufacturer Part Number"
-	1    1650 2200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1650 1400 1650 1500
-Connection ~ 1650 1550
-Wire Wire Line
-	1650 1100 1650 900 
-Connection ~ 1650 900 
-Wire Wire Line
-	4650 2100 2150 2100
-Wire Wire Line
-	2150 2100 2150 1550
-Connection ~ 4650 2100
-Wire Wire Line
-	1000 7150 1650 7150
-Wire Wire Line
-	1650 7150 5100 7150
-Connection ~ 1650 7150
 $Comp
 L Device:L L2
 U 1 1 5E58F693
-P 5700 1150
-F 0 "L2" H 5800 1050 50  0000 C CNN
-F 1 "L" H 5800 1150 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5700 1150 50  0001 C CNN
-F 3 "~" H 5700 1150 50  0001 C CNN
-F 4 "BLM21SP471SH1D" H 5700 1150 50  0001 C CNN "Manufacturer Part Number"
-	1    5700 1150
-	1    0    0    -1  
+P 2350 900
+F 0 "L2" H 2450 800 50  0000 C CNN
+F 1 "L" H 2450 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2350 900 50  0001 C CNN
+F 3 "~" H 2350 900 50  0001 C CNN
+F 4 "BLM21SP471SH1D" H 2350 900 50  0001 C CNN "Manufacturer Part Number"
+	1    2350 900 
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6400 1400 5950 1400
-Wire Wire Line
-	5950 1400 5700 1400
-Connection ~ 5950 1400
-Connection ~ 5700 1400
-Wire Wire Line
-	5700 1400 5700 1300
-Wire Wire Line
-	6400 1700 5950 1700
-Wire Wire Line
-	5700 2200 5700 1400
-Wire Wire Line
-	1650 900  3600 900 
-Connection ~ 5950 1700
-Wire Wire Line
-	5850 2200 6350 2200
-Wire Wire Line
-	6350 2200 6350 2800
-Wire Wire Line
-	6350 2800 6600 2800
-Wire Wire Line
-	6600 2800 6600 2700
-Wire Wire Line
-	6600 2400 6600 1700
-Wire Wire Line
-	6600 1700 6400 1700
-Connection ~ 6400 1700
-Connection ~ 4800 1700
-Connection ~ 4200 1700
-Wire Wire Line
-	4200 1700 4800 1700
-Wire Wire Line
-	4800 1700 5950 1700
-Wire Wire Line
-	5200 2200 5200 1350
-Wire Wire Line
-	5200 1350 4800 1350
-Wire Wire Line
-	4800 1350 4800 1400
-Connection ~ 5200 2200
-Wire Wire Line
-	5550 2200 5550 1250
-Wire Wire Line
-	5550 1250 4200 1250
-Wire Wire Line
-	4200 1250 4200 1400
-Wire Wire Line
-	3600 1150 3600 900 
-Connection ~ 3600 900 
-Wire Wire Line
-	3600 900  5200 900 
-Wire Wire Line
-	3600 1450 3600 1700
-Wire Wire Line
-	3600 1700 4200 1700
-Wire Wire Line
-	3600 1700 3600 2600
-Connection ~ 3600 1700
-Wire Wire Line
-	1650 1550 2150 1550
-Wire Wire Line
-	1650 2000 1650 1950
-Wire Wire Line
-	1650 2400 1650 2500
-Connection ~ 1650 2500
-Wire Wire Line
-	1650 1650 1650 1550
-Wire Wire Line
-	1050 2500 1050 2150
-Wire Wire Line
-	1050 2500 1650 2500
-Wire Wire Line
-	1050 1500 1650 1500
-Wire Wire Line
-	1050 1500 1050 1850
-Connection ~ 1650 1500
-Wire Wire Line
-	1650 1500 1650 1550
 $Comp
 L Device:Crystal_GND3 Y1
 U 1 1 5E64392E
-P 2700 3050
-F 0 "Y1" H 2700 3318 50  0000 C CNN
-F 1 "Crystal_GND3" H 2700 3227 50  0000 C CNN
-F 2 "Crystal_Custom:MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 2700 3050 50  0001 C CNN
-F 3 "https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/MS1V-T1K.pdf" H 2700 3050 50  0001 C CNN
-F 4 "MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 2700 3050 50  0001 C CNN "Manufacturer Part Number"
-	1    2700 3050
+P 1400 3150
+F 0 "Y1" H 1400 3418 50  0000 C CNN
+F 1 "Crystal_GND3" H 1400 3327 50  0000 C CNN
+F 2 "Crystal_Custom:MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 1400 3150 50  0001 C CNN
+F 3 "https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/MS1V-T1K.pdf" H 1400 3150 50  0001 C CNN
+F 4 "MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 1400 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    1400 3150
 	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:C C24
 U 1 1 5E644FBE
-P 2400 3300
-F 0 "C24" H 2100 3350 50  0000 L CNN
-F 1 "6.8pC" H 2100 3250 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 3150 50  0001 C CNN
-F 3 "~" H 2400 3300 50  0001 C CNN
-F 4 "C0805C689J5GACTU" H 2400 3300 50  0001 C CNN "Manufacturer Part Number"
-	1    2400 3300
+P 1100 3400
+F 0 "C24" H 800 3450 50  0000 L CNN
+F 1 "6.8pC" H 800 3350 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1138 3250 50  0001 C CNN
+F 3 "~" H 1100 3400 50  0001 C CNN
+F 4 "C0805C689J5GACTU" H 1100 3400 50  0001 C CNN "Manufacturer Part Number"
+	1    1100 3400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C25
 U 1 1 5E645661
-P 3000 3300
-F 0 "C25" H 3115 3346 50  0000 L CNN
-F 1 "6.8pC" H 3115 3255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 3150 50  0001 C CNN
-F 3 "~" H 3000 3300 50  0001 C CNN
-F 4 "C0805C689J5GACTU" H 3000 3300 50  0001 C CNN "Manufacturer Part Number"
-	1    3000 3300
+P 1700 3400
+F 0 "C25" H 1815 3446 50  0000 L CNN
+F 1 "6.8pC" H 1815 3355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1738 3250 50  0001 C CNN
+F 3 "~" H 1700 3400 50  0001 C CNN
+F 4 "C0805C689J5GACTU" H 1700 3400 50  0001 C CNN "Manufacturer Part Number"
+	1    1700 3400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1650 2500 1650 2600
+	1250 3150 1100 3150
 Wire Wire Line
-	1650 2600 3600 2600
-Connection ~ 1650 2600
+	1100 3150 1100 3250
 Wire Wire Line
-	4750 3200 3900 3200
+	1700 3250 1700 3150
 Wire Wire Line
-	3900 3200 3900 2700
+	1700 3150 1550 3150
 Wire Wire Line
-	3900 2700 2400 2700
+	1700 3650 1700 3550
 Wire Wire Line
-	2400 2700 2400 3050
+	1700 3650 1400 3650
 Wire Wire Line
-	4750 3300 3700 3300
+	1100 3650 1100 3550
 Wire Wire Line
-	3700 3300 3700 3050
-Wire Wire Line
-	3700 3050 3000 3050
-Wire Wire Line
-	2550 3050 2400 3050
-Connection ~ 2400 3050
-Wire Wire Line
-	2400 3050 2400 3150
-Wire Wire Line
-	3000 3150 3000 3050
-Connection ~ 3000 3050
-Wire Wire Line
-	3000 3050 2850 3050
-Wire Wire Line
-	3000 3550 3000 3450
-Wire Wire Line
-	3000 3550 2700 3550
-Wire Wire Line
-	2400 3550 2400 3450
-Wire Wire Line
-	2700 3250 2700 3550
-Connection ~ 2700 3550
-Wire Wire Line
-	2700 3550 2600 3550
-Text Notes 3900 4650 0    50   ~ 0
-SERCOM0
-Text HLabel 6350 3800 2    50   Input ~ 0
+	1400 3350 1400 3650
+Connection ~ 1400 3650
+Text HLabel 13050 4200 2    50   Input ~ 0
 END_STOP_X-
-Text HLabel 4750 3500 0    50   Input ~ 0
+Text HLabel 13650 4900 0    50   Input ~ 0
 END_STOP_Y-
-Text Notes 3800 4050 0    50   ~ 0
-TCC3
-Text Notes 3800 4850 0    50   ~ 0
-TCC0
-Wire Wire Line
-	6350 5000 8150 5000
-Wire Wire Line
-	6350 5100 8250 5100
-$Comp
-L Device:R R30
-U 1 1 5E68E598
-P 8250 4650
-F 0 "R30" V 8050 4550 50  0000 L CNN
-F 1 "22R" V 8150 4550 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8180 4650 50  0001 C CNN
-F 3 "~" H 8250 4650 50  0001 C CNN
-F 4 "RC0805JR-0722RL" H 8250 4650 50  0001 C CNN "Manufacturer Part Number"
-	1    8250 4650
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	8250 4800 8250 5100
-Wire Wire Line
-	8250 4100 8250 4500
-Text Notes 6950 3800 0    50   ~ 0
-EXTINT[0]
-Text Notes 6950 3900 0    50   ~ 0
-EXTINT[1]
-Text Notes 3800 3400 0    50   ~ 0
-EXTINT[2]
-Text Notes 3800 3500 0    50   ~ 0
-EXTINT[3]
-Text Notes 3650 3800 0    50   ~ 0
-EXTINT[6]
-Text Notes 3650 3900 0    50   ~ 0
-EXTINT[7]
-Text Notes 6850 4800 0    50   ~ 0
-EXTINT[15]
-Text Notes 6850 4900 0    50   ~ 0
-EXTINT[8]
-Wire Wire Line
-	5200 1350 5200 900 
-Connection ~ 5200 1350
-Connection ~ 5200 900 
-Wire Wire Line
-	5200 900  5550 900 
-Wire Wire Line
-	5550 1250 5550 900 
-Connection ~ 5550 1250
-Connection ~ 5550 900 
-Wire Wire Line
-	5550 900  5700 900 
-NoConn ~ 4750 4500
 $Comp
 L Device:LED D1
 U 1 1 5E650701
-P 7550 1750
-F 0 "D1" V 7589 1633 50  0000 R CNN
-F 1 "LED" V 7498 1633 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7550 1750 50  0001 C CNN
-F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LSECK-J3-PRV.pdf" H 7550 1750 50  0001 C CNN
-F 4 "APT2012LSECK/J3-PRV" H 7550 1750 50  0001 C CNN "Manufacturer Part Number"
-	1    7550 1750
+P 9800 1800
+F 0 "D1" V 9839 1683 50  0000 R CNN
+F 1 "LED" V 9748 1683 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9800 1800 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LSECK-J3-PRV.pdf" H 9800 1800 50  0001 C CNN
+F 4 "APT2012LSECK/J3-PRV" H 9800 1800 50  0001 C CNN "Manufacturer Part Number"
+	1    9800 1800
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R33
 U 1 1 5E655D81
-P 7550 1300
-F 0 "R33" H 7620 1346 50  0000 L CNN
-F 1 "750R" H 7620 1255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7480 1300 50  0001 C CNN
-F 3 "" H 7550 1300 50  0001 C CNN
-F 4 "RC0805FR-07750RL" H 7550 1300 50  0001 C CNN "Manufacturer Part Number"
-	1    7550 1300
+P 9800 1350
+F 0 "R33" H 9870 1396 50  0000 L CNN
+F 1 "750R" H 9870 1305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9730 1350 50  0001 C CNN
+F 3 "" H 9800 1350 50  0001 C CNN
+F 4 "RC0805FR-07750RL" H 9800 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    9800 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:LED D2
 U 1 1 5E657C08
-P 7900 1750
-F 0 "D2" V 7939 1633 50  0000 R CNN
-F 1 "LED" V 7848 1633 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7900 1750 50  0001 C CNN
-F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LZGCK.pdf" H 7900 1750 50  0001 C CNN
-F 4 "APT2012LZGCK" H 7900 1750 50  0001 C CNN "Manufacturer Part Number"
-	1    7900 1750
+P 10150 1800
+F 0 "D2" V 10189 1683 50  0000 R CNN
+F 1 "LED" V 10098 1683 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10150 1800 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LZGCK.pdf" H 10150 1800 50  0001 C CNN
+F 4 "APT2012LZGCK" H 10150 1800 50  0001 C CNN "Manufacturer Part Number"
+	1    10150 1800
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R34
 U 1 1 5E657C0E
-P 7900 1300
-F 0 "R34" H 7970 1346 50  0000 L CNN
-F 1 "330R" H 7970 1255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7830 1300 50  0001 C CNN
-F 3 "~" H 7900 1300 50  0001 C CNN
-F 4 "RC0805FR-07330RL" H 7900 1300 50  0001 C CNN "Manufacturer Part Number"
-	1    7900 1300
+P 10150 1350
+F 0 "R34" H 10220 1396 50  0000 L CNN
+F 1 "330R" H 10220 1305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10080 1350 50  0001 C CNN
+F 3 "~" H 10150 1350 50  0001 C CNN
+F 4 "RC0805FR-07330RL" H 10150 1350 50  0001 C CNN "Manufacturer Part Number"
+	1    10150 1350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7550 1150 7550 900 
-Connection ~ 7550 900 
-Wire Wire Line
-	7550 900  7900 900 
-Wire Wire Line
-	7900 1150 7900 900 
-Wire Wire Line
-	7550 1450 7550 1600
-Wire Wire Line
-	7900 1450 7900 1600
-Wire Wire Line
-	7550 1900 7550 5600
-Wire Wire Line
-	7550 5600 6350 5600
-Connection ~ 7900 900 
-Wire Wire Line
-	7900 900  10150 900 
-Wire Wire Line
-	7900 1900 7900 5700
-Wire Wire Line
-	7900 5700 6350 5700
-Text Notes 7600 2050 0    50   ~ 0
+Text Notes 9850 2100 0    50   ~ 0
 Red
-Text Notes 7950 2050 0    50   ~ 0
+Text Notes 10200 2100 0    50   ~ 0
 Green
-Text Label 5700 2050 1    50   ~ 0
-VDDANA
-Text Label 5900 2200 0    50   ~ 0
-VDDCORE
-Text Label 2900 2100 0    50   ~ 0
-~RESET
-Text Label 3650 2700 0    50   ~ 0
-XIN32
-Text Label 3400 3050 0    50   ~ 0
-XOUT32
-Text Label 8150 4000 0    50   ~ 0
-SWDCLK
-Text Label 8300 4100 0    50   ~ 0
-SWDIO
-Text Label 7000 5100 0    50   ~ 0
-SWDIO_MCU
-Text Label 7900 2750 1    50   ~ 0
-GREEN_LED_MCU
-Text Label 7550 2650 1    50   ~ 0
-RED_LED_MCU
-NoConn ~ 6350 4300
-Wire Wire Line
-	1650 2600 1650 3850
-$Comp
-L power:GNDA #PWR0101
-U 1 1 5E6FF8A7
-P 2600 3950
-F 0 "#PWR0101" H 2600 3700 50  0001 C CNN
-F 1 "GNDA" H 2605 3777 50  0000 C CNN
-F 2 "" H 2600 3950 50  0001 C CNN
-F 3 "" H 2600 3950 50  0001 C CNN
-	1    2600 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Net-Tie_2 NT1
-U 1 1 5E700592
-P 2050 3850
-F 0 "NT1" H 2050 4031 50  0000 C CNN
-F 1 "Net-Tie_2" H 2050 3940 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 2050 3850 50  0001 C CNN
-F 3 "~" H 2050 3850 50  0001 C CNN
-	1    2050 3850
-	1    0    0    -1  
-$EndComp
-Connection ~ 2600 3550
-Wire Wire Line
-	2600 3550 2400 3550
-Wire Wire Line
-	1950 3850 1650 3850
-Connection ~ 1650 3850
-Wire Wire Line
-	1650 3850 1650 7150
-Wire Wire Line
-	2600 3550 2600 3850
-Wire Wire Line
-	2150 3850 2600 3850
-Connection ~ 2600 3850
-Wire Wire Line
-	2600 3850 2600 3950
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_10 J6
 U 1 1 5EA3EDDE
-P 10150 4100
-F 0 "J6" H 9706 4146 50  0000 R CNN
-F 1 "Conn_ARM_JTAG_SWD_10" H 9706 4055 50  0000 R CNN
-F 2 "" H 10150 4100 50  0001 C CNN
-F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 9800 2850 50  0001 C CNN
-	1    10150 4100
+P 10300 4000
+F 0 "J6" H 11050 3400 50  0000 R CNN
+F 1 "Conn_ARM_JTAG_SWD_10" H 11400 3250 50  0000 R CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical" H 10300 4000 50  0001 C CNN
+F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 9950 2750 50  0001 C CNN
+F 4 "3220-10-0100-00" H 10300 4000 50  0001 C CNN "Manufacturer Part Number"
+	1    10300 4000
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	8950 4000 9650 4000
-Wire Wire Line
-	8550 4100 9650 4100
-Wire Wire Line
-	9650 3800 9300 3800
-Wire Wire Line
-	9300 2100 9300 3800
-Wire Wire Line
-	10150 2950 10150 3500
-NoConn ~ 10250 4700
-NoConn ~ 9650 4300
-NoConn ~ 9650 4200
-Text HLabel 10150 4700 3    50   Input ~ 0
+NoConn ~ 10400 4600
+NoConn ~ 9800 4200
+NoConn ~ 9800 4100
+Text HLabel 10300 4600 3    50   Input ~ 0
 GND
+$Comp
+L MCU_Microchip_SAMD:ATSAMD21G18A-AUT U1
+U 1 1 5EA25A36
+P 5650 3900
+F 0 "U1" H 6250 2100 50  0000 C CNN
+F 1 "ATSAMD21G18A-AUT" H 6350 2000 50  0000 C CNN
+F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 4700 2150 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAMD21-Family-DataSheet-DS40001882D.pdf" H 5650 4900 50  0001 C CNN
+	1    5650 3900
+	1    0    0    -1  
+$EndComp
+Text HLabel 13300 7250 2    50   Output ~ 0
+~POS2_NCS
+Text HLabel 13300 7450 2    50   Output ~ 0
+~POS2_NRESET
+Wire Wire Line
+	1100 3650 1300 3650
+Text HLabel 10300 3400 1    50   Input ~ 0
+V3_3
+Wire Wire Line
+	9500 3550 9500 3900
+Text HLabel 9500 3250 1    50   Input ~ 0
+V3_3
+Connection ~ 9500 3900
+Wire Wire Line
+	9500 3900 9800 3900
+Wire Wire Line
+	9100 3700 9100 3550
+Text HLabel 9100 3250 1    50   Input ~ 0
+V3_3
+Wire Wire Line
+	8550 3900 9500 3900
+Wire Wire Line
+	8550 4000 9800 4000
+Connection ~ 9100 3700
+Wire Wire Line
+	9100 3700 9800 3700
+Wire Wire Line
+	8550 3700 9100 3700
+Text HLabel 3750 1500 3    50   Input ~ 0
+GND
+Text Label 3750 1200 1    50   ~ 0
+VDDCORE
+Text Label 5850 2000 1    50   ~ 0
+VDDCORE
+Text Label 1600 1200 1    50   ~ 0
+VDDIN
+Text HLabel 1600 1500 3    50   Input ~ 0
+GND
+Text HLabel 950  900  0    50   Input ~ 0
+V3_3
+Text Label 5550 2000 1    50   ~ 0
+VDDIN
+$Comp
+L Device:Net-Tie_2 NT1
+U 1 1 5EA796ED
+P 1300 900
+F 0 "NT1" H 1300 1081 50  0000 C CNN
+F 1 "Net-Tie_2" H 1300 990 50  0000 C CNN
+F 2 "" H 1300 900 50  0001 C CNN
+F 3 "~" H 1300 900 50  0001 C CNN
+	1    1300 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 900  1600 900 
+Wire Wire Line
+	1600 900  1600 1200
+Text HLabel 1100 1500 3    50   Input ~ 0
+GND
+Wire Wire Line
+	1200 900  1100 900 
+Wire Wire Line
+	1100 1200 1100 900 
+Connection ~ 1100 900 
+Wire Wire Line
+	1100 900  950  900 
+Text HLabel 2150 1500 3    50   Input ~ 0
+GND
+Wire Wire Line
+	2150 1200 2150 900 
+Wire Wire Line
+	2150 900  1600 900 
+Connection ~ 1600 900 
+Text Label 2150 1200 1    50   ~ 0
+VDDIO
+Text Label 5450 2000 1    50   ~ 0
+VDDIO
+Wire Wire Line
+	2200 900  2150 900 
+Connection ~ 2150 900 
+Wire Wire Line
+	2700 1200 2700 900 
+Wire Wire Line
+	2700 900  2500 900 
+Wire Wire Line
+	2700 900  3250 900 
+Wire Wire Line
+	3250 900  3250 1200
+Connection ~ 2700 900 
+Text HLabel 2700 1900 3    50   Input ~ 0
+GND
+Text Label 2850 900  0    50   ~ 0
+VDDANA
+Text Label 5750 2000 1    50   ~ 0
+VDDANA
+$Comp
+L Device:Net-Tie_2 NT6
+U 1 1 5EA8474B
+P 2700 1800
+F 0 "NT6" H 2700 1981 50  0000 C CNN
+F 1 "Net-Tie_2" H 2700 1890 50  0000 C CNN
+F 2 "" H 2700 1800 50  0001 C CNN
+F 3 "~" H 2700 1800 50  0001 C CNN
+	1    2700 1800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2700 1700 2700 1550
+Wire Wire Line
+	2700 1550 3250 1550
+Text Label 2850 1550 0    50   ~ 0
+GNDANA
+Text Label 5750 5800 3    50   ~ 0
+GNDANA
+Wire Wire Line
+	3250 1550 3250 1500
+Wire Wire Line
+	2700 1500 2700 1550
+Connection ~ 2700 1550
+Text Label 8550 3700 0    50   ~ 0
+~RESET
+Text Label 4650 5400 2    50   ~ 0
+~RESET
+Text Label 8550 3900 0    50   ~ 0
+SWCLK
+Text Label 4650 5100 2    50   ~ 0
+SWCLK
+Text Label 8550 4000 0    50   ~ 0
+SWDIO
+Text Label 4650 5200 2    50   ~ 0
+SWDIO
+Text Label 2000 2550 2    50   ~ 0
+XIN32
+Text Label 2000 2700 2    50   ~ 0
+XOUT32
+Wire Wire Line
+	1700 3150 1700 2700
+Wire Wire Line
+	1700 2700 2000 2700
+Connection ~ 1700 3150
+Wire Wire Line
+	1100 3150 1100 2550
+Wire Wire Line
+	1100 2550 2000 2550
+Connection ~ 1100 3150
+Text HLabel 1300 3950 3    50   Input ~ 0
+GND
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5EA8DE4C
+P 1300 3850
+F 0 "NT?" H 1300 4031 50  0000 C CNN
+F 1 "Net-Tie_2" H 1300 3940 50  0000 C CNN
+F 2 "" H 1300 3850 50  0001 C CNN
+F 3 "~" H 1300 3850 50  0001 C CNN
+	1    1300 3850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1300 3750 1300 3650
+Connection ~ 1300 3650
+Wire Wire Line
+	1300 3650 1400 3650
+Text Label 4650 2300 2    50   ~ 0
+XIN32
+Text Label 4650 2400 2    50   ~ 0
+XOUT32
 $EndSCHEMATC

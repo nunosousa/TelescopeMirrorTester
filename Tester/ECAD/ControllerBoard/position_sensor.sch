@@ -26,7 +26,7 @@ Text HLabel 9300 3650 0    50   Input ~ 0
 Text HLabel 9300 3900 0    50   Input ~ 0
 ~POS1_NRESET
 Text HLabel 9300 4150 0    50   Output ~ 0
-POS1_MOTION
+POS_MOTION
 $Comp
 L PixArt:PMW3360DM-T2QU U9
 U 1 1 5E9F77F4
@@ -53,8 +53,6 @@ Text HLabel 9900 3650 0    50   Input ~ 0
 ~POS2_NCS
 Text HLabel 9950 3900 0    50   Input ~ 0
 ~POS2_NRESET
-Text HLabel 9950 4150 0    50   Output ~ 0
-POS2_MOTION
 $Comp
 L Device:C C2
 U 1 1 5EA0E058
