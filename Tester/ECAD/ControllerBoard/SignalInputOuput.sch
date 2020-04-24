@@ -172,7 +172,7 @@ U 1 1 5EA10605
 P 1300 2250
 F 0 "SW3" H 1300 2535 50  0000 C CNN
 F 1 "SW_SPDT" H 1300 2444 50  0000 C CNN
-F 2 "" H 1300 2250 50  0001 C CNN
+F 2 "Limit_Switch:SPDT_Switch" H 1300 2250 50  0001 C CNN
 F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/125/SS.pdf" H 1300 2250 50  0001 C CNN
 F 4 "SS075Q102F035V2A" H 1300 2250 50  0001 C CNN "Manufacturer Part Number"
 	1    1300 2250
@@ -369,7 +369,7 @@ U 1 1 5EA108B1
 P 1300 3400
 F 0 "SW2" H 1300 3685 50  0000 C CNN
 F 1 "SW_SPDT" H 1300 3594 50  0000 C CNN
-F 2 "" H 1300 3400 50  0001 C CNN
+F 2 "Limit_Switch:SPDT_Switch" H 1300 3400 50  0001 C CNN
 F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/125/SS.pdf" H 1300 3400 50  0001 C CNN
 F 4 "SS075Q102F035V2A" H 1300 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    1300 3400
@@ -381,7 +381,7 @@ U 1 1 5EA5C106
 P 1300 4750
 F 0 "SW4" H 1300 5035 50  0000 C CNN
 F 1 "SW_SPDT" H 1300 4944 50  0000 C CNN
-F 2 "" H 1300 4750 50  0001 C CNN
+F 2 "Limit_Switch:SPDT_Switch" H 1300 4750 50  0001 C CNN
 F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/125/SS.pdf" H 1300 4750 50  0001 C CNN
 F 4 "SS075Q102F035V2A" H 1300 4750 50  0001 C CNN "Manufacturer Part Number"
 	1    1300 4750
@@ -393,7 +393,7 @@ U 1 1 5EA5C31D
 P 1300 6000
 F 0 "SW5" H 1300 6285 50  0000 C CNN
 F 1 "SW_SPDT" H 1300 6194 50  0000 C CNN
-F 2 "" H 1300 6000 50  0001 C CNN
+F 2 "Limit_Switch:SPDT_Switch" H 1300 6000 50  0001 C CNN
 F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/125/SS.pdf" H 1300 6000 50  0001 C CNN
 F 4 "SS075Q102F035V2A" H 1300 6000 50  0001 C CNN "Manufacturer Part Number"
 	1    1300 6000
@@ -549,7 +549,7 @@ U 1 1 5EA6E0F0
 P 4650 3050
 F 0 "NT4" V 4604 3094 50  0000 L CNN
 F 1 "Net-Tie_2" V 4695 3094 50  0000 L CNN
-F 2 "" H 4650 3050 50  0001 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 4650 3050 50  0001 C CNN
 F 3 "~" H 4650 3050 50  0001 C CNN
 	1    4650 3050
 	0    1    1    0   
