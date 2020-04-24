@@ -13,17 +13,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 2750 3850 0    50   Output ~ 0
+Text HLabel 4650 3600 0    50   Output ~ 0
 MOTOR_CTRL_1A
-Text HLabel 2750 3750 0    50   Output ~ 0
+Text HLabel 4650 3500 0    50   Output ~ 0
 MOTOR_CTRL_1B
-Text HLabel 2750 4050 0    50   Output ~ 0
+Text HLabel 4650 3800 0    50   Output ~ 0
 MOTOR_CTRL_2A
-Text HLabel 2750 3950 0    50   Output ~ 0
+Text HLabel 4650 3700 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 2550 5850 0    50   Input ~ 0
+Text HLabel 3450 3650 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 1900 4350 2    50   Output ~ 0
+Text HLabel 3300 3500 0    50   Output ~ 0
 MOTOR_SLEEP_12
 Text HLabel 5550 5800 3    50   Input ~ 0
 GND
@@ -111,9 +111,9 @@ Text HLabel 4650 2500 0    50   Input ~ 0
 POS_MOTION
 Text HLabel 6650 2600 2    50   Output ~ 0
 ~POS1_NRESET
-Text HLabel 1950 5350 2    50   Input ~ 0
+Text HLabel 3500 5500 0    50   Input ~ 0
 END_STOP_X+
-Text HLabel 2500 5550 0    50   Input ~ 0
+Text HLabel 3500 5750 0    50   Input ~ 0
 END_STOP_Y+
 Text HLabel 4650 3100 0    50   BiDi ~ 0
 LASER_SDA
@@ -147,13 +147,13 @@ Text HLabel 4650 4800 0    50   BiDi ~ 0
 USB_D+
 Text HLabel 4650 4700 0    50   BiDi ~ 0
 USB_D-
-Text HLabel 1900 4550 2    50   Input ~ 0
+Text HLabel 3450 4900 0    50   Input ~ 0
 OC_ALOADS
-Text HLabel 1900 4650 2    50   Input ~ 0
+Text HLabel 3450 4800 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 1950 5000 2    50   Output ~ 0
+Text HLabel 1850 5000 0    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 1950 4900 2    50   Output ~ 0
+Text HLabel 1850 5100 0    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Device:L L2
@@ -220,9 +220,9 @@ Wire Wire Line
 Wire Wire Line
 	1400 3350 1400 3650
 Connection ~ 1400 3650
-Text HLabel 1950 5250 2    50   Input ~ 0
+Text HLabel 3500 5600 0    50   Input ~ 0
 END_STOP_X-
-Text HLabel 2500 5650 0    50   Input ~ 0
+Text HLabel 3500 5850 0    50   Input ~ 0
 END_STOP_Y-
 $Comp
 L Device:LED D1
