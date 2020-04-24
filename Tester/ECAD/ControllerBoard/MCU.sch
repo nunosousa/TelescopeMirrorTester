@@ -21,9 +21,9 @@ Text HLabel 4650 3800 0    50   Output ~ 0
 MOTOR_CTRL_2A
 Text HLabel 4650 3700 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 3450 3650 0    50   Input ~ 0
+Text HLabel 4650 3400 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 3300 3500 0    50   Output ~ 0
+Text HLabel 4650 3300 0    50   Output ~ 0
 MOTOR_SLEEP_12
 Text HLabel 5550 5800 3    50   Input ~ 0
 GND
@@ -111,9 +111,9 @@ Text HLabel 4650 2500 0    50   Input ~ 0
 POS_MOTION
 Text HLabel 6650 2600 2    50   Output ~ 0
 ~POS1_NRESET
-Text HLabel 3500 5500 0    50   Input ~ 0
+Text HLabel 4650 3900 0    50   Input ~ 0
 END_STOP_X+
-Text HLabel 3500 5750 0    50   Input ~ 0
+Text HLabel 4650 4100 0    50   Input ~ 0
 END_STOP_Y+
 Text HLabel 4650 3100 0    50   BiDi ~ 0
 LASER_SDA
@@ -147,13 +147,13 @@ Text HLabel 4650 4800 0    50   BiDi ~ 0
 USB_D+
 Text HLabel 4650 4700 0    50   BiDi ~ 0
 USB_D-
-Text HLabel 3450 4900 0    50   Input ~ 0
+Text HLabel 4650 4400 0    50   Input ~ 0
 OC_ALOADS
-Text HLabel 3450 4800 0    50   Input ~ 0
+Text HLabel 4650 4300 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 1850 5000 0    50   Output ~ 0
+Text HLabel 4650 4500 0    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 1850 5100 0    50   Output ~ 0
+Text HLabel 4650 4600 0    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Device:L L2
@@ -220,62 +220,10 @@ Wire Wire Line
 Wire Wire Line
 	1400 3350 1400 3650
 Connection ~ 1400 3650
-Text HLabel 3500 5600 0    50   Input ~ 0
+Text HLabel 4650 4000 0    50   Input ~ 0
 END_STOP_X-
-Text HLabel 3500 5850 0    50   Input ~ 0
+Text HLabel 4650 4200 0    50   Input ~ 0
 END_STOP_Y-
-$Comp
-L Device:LED D1
-U 1 1 5E650701
-P 9800 1800
-F 0 "D1" V 9839 1683 50  0000 R CNN
-F 1 "LED" V 9748 1683 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9800 1800 50  0001 C CNN
-F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LSECK-J3-PRV.pdf" H 9800 1800 50  0001 C CNN
-F 4 "APT2012LSECK/J3-PRV" H 9800 1800 50  0001 C CNN "Manufacturer Part Number"
-	1    9800 1800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R33
-U 1 1 5E655D81
-P 9800 1350
-F 0 "R33" H 9870 1396 50  0000 L CNN
-F 1 "750R" H 9870 1305 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9730 1350 50  0001 C CNN
-F 3 "" H 9800 1350 50  0001 C CNN
-F 4 "RC0805FR-07750RL" H 9800 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    9800 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED D2
-U 1 1 5E657C08
-P 10150 1800
-F 0 "D2" V 10189 1683 50  0000 R CNN
-F 1 "LED" V 10098 1683 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10150 1800 50  0001 C CNN
-F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/APT2012LZGCK.pdf" H 10150 1800 50  0001 C CNN
-F 4 "APT2012LZGCK" H 10150 1800 50  0001 C CNN "Manufacturer Part Number"
-	1    10150 1800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R34
-U 1 1 5E657C0E
-P 10150 1350
-F 0 "R34" H 10220 1396 50  0000 L CNN
-F 1 "330R" H 10220 1305 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10080 1350 50  0001 C CNN
-F 3 "~" H 10150 1350 50  0001 C CNN
-F 4 "RC0805FR-07330RL" H 10150 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    10150 1350
-	1    0    0    -1  
-$EndComp
-Text Notes 9850 2100 0    50   ~ 0
-Red
-Text Notes 10200 2100 0    50   ~ 0
-Green
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_10 J6
 U 1 1 5EA3EDDE
@@ -493,4 +441,12 @@ Wire Wire Line
 	5850 2000 5850 1650
 Wire Wire Line
 	5750 5800 5750 6100
+NoConn ~ 6650 2700
+NoConn ~ 6650 2800
+NoConn ~ 4650 4900
+NoConn ~ 4650 5000
+NoConn ~ 6650 3000
+NoConn ~ 6650 2900
+NoConn ~ 6650 2400
+NoConn ~ 6650 2300
 $EndSCHEMATC
