@@ -105,9 +105,9 @@ Text HLabel 4650 2900 0    50   Output ~ 0
 POS_MOSI
 Text HLabel 4650 3000 0    50   Output ~ 0
 POS_SCLK
-Text HLabel 4650 2800 0    50   Output ~ 0
+Text HLabel 4650 2500 0    50   Output ~ 0
 ~POS1_NCS
-Text HLabel 4650 2500 0    50   Input ~ 0
+Text HLabel 4650 2800 0    50   Input ~ 0
 POS_MOTION
 Text HLabel 6650 2600 2    50   Output ~ 0
 ~POS1_NRESET
@@ -173,7 +173,7 @@ U 1 1 5E64392E
 P 1400 3150
 F 0 "Y1" H 1400 3418 50  0000 C CNN
 F 1 "Crystal_GND3" H 1400 3327 50  0000 C CNN
-F 2 "Crystal_Custom:MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 1400 3150 50  0001 C CNN
+F 2 "Crystal:Crystal_SMD_MicroCrystal_MS1V-T1K" H 1400 3150 50  0001 C CNN
 F 3 "https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/MS1V-T1K.pdf" H 1400 3150 50  0001 C CNN
 F 4 "MS1V-T1K-32.768KHZ-7PF-20PPM-TA-QC-AU" H 1400 3150 50  0001 C CNN "Manufacturer Part Number"
 	1    1400 3150

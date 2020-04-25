@@ -15,13 +15,13 @@ Comment4 ""
 $EndDescr
 Text HLabel 9050 1950 2    50   Input ~ 0
 GND
-Text HLabel 9050 2750 2    50   Input ~ 0
+Text HLabel 9050 2550 2    50   Input ~ 0
 POS_MOSI
-Text HLabel 9050 2650 2    50   Input ~ 0
+Text HLabel 9050 2450 2    50   Input ~ 0
 POS_SCLK
-Text HLabel 9050 5000 2    50   Input ~ 0
+Text HLabel 9050 5300 2    50   Input ~ 0
 ~POS1_NCS
-Text HLabel 9050 5100 2    50   Input ~ 0
+Text HLabel 9050 5000 2    50   Input ~ 0
 ~POS1_NRESET
 $Comp
 L PixArt:PMW3360DM-T2QU U9
@@ -47,7 +47,7 @@ F 3 "" H 4350 4700 50  0001 C CNN
 $EndComp
 Text HLabel 9050 5200 2    50   Input ~ 0
 ~POS2_NCS
-Text HLabel 9050 5300 2    50   Input ~ 0
+Text HLabel 9050 5100 2    50   Input ~ 0
 ~POS2_NRESET
 $Comp
 L Device:C C2
@@ -270,13 +270,13 @@ F 4 "SN74AVC4T245DR" H 8550 2350 50  0001 C CNN "Manufacturer Part Number"
 $EndComp
 Text HLabel 9050 2050 2    50   Input ~ 0
 GND
-Text HLabel 9050 2450 2    50   Output ~ 0
+Text HLabel 9050 2650 2    50   Output ~ 0
 POS_MOTION
-Text HLabel 9050 2550 2    50   Output ~ 0
+Text HLabel 9050 2750 2    50   Output ~ 0
 POS_MISO
-Text HLabel 9050 2150 2    50   Input ~ 0
-GND
 Text HLabel 9050 2250 2    50   Input ~ 0
+GND
+Text HLabel 9050 2150 2    50   Input ~ 0
 V3_3
 $Comp
 L Device:C C31
@@ -395,44 +395,25 @@ V3_3
 Wire Wire Line
 	4800 3000 6400 3000
 Wire Wire Line
-	6400 3000 6400 2550
-Wire Wire Line
-	6400 2550 8050 2550
-Wire Wire Line
 	6400 3000 6400 4650
 Wire Wire Line
 	6400 4650 4800 4650
-Connection ~ 6400 3000
 Wire Wire Line
 	6600 4750 6600 3100
-Wire Wire Line
-	6600 2750 8050 2750
-Connection ~ 6600 3100
-Wire Wire Line
-	6600 3100 6600 2750
 Wire Wire Line
 	4800 4750 6600 4750
 Wire Wire Line
 	4800 3100 6600 3100
-Wire Wire Line
-	6500 3200 6500 2650
-Wire Wire Line
-	6500 2650 8050 2650
 Wire Wire Line
 	4800 3200 6500 3200
 Wire Wire Line
 	6500 3200 6500 4850
 Wire Wire Line
 	6500 4850 4800 4850
-Connection ~ 6500 3200
 Wire Wire Line
 	4800 4950 6300 4950
 Wire Wire Line
 	4800 3300 6200 3300
-Wire Wire Line
-	7350 2900 7350 5000
-Wire Wire Line
-	7350 5000 8050 5000
 Wire Wire Line
 	4800 2900 7350 2900
 Wire Wire Line
@@ -442,37 +423,9 @@ Wire Wire Line
 Wire Wire Line
 	3600 3450 7250 3450
 Wire Wire Line
-	7250 3450 7250 5100
-Wire Wire Line
-	7250 5100 8050 5100
-Wire Wire Line
-	4800 4550 7150 4550
-Wire Wire Line
-	7150 4550 7150 5200
-Wire Wire Line
-	7150 5200 8050 5200
-Wire Wire Line
 	3900 4850 3600 4850
 Wire Wire Line
 	3600 4850 3600 5100
-Wire Wire Line
-	3600 5100 7050 5100
-Wire Wire Line
-	7050 5100 7050 5300
-Wire Wire Line
-	7050 5300 8050 5300
-$Comp
-L 74xGxx:74LVC1G32 U13
-U 1 1 5EA7EBB4
-P 6850 2100
-F 0 "U13" H 7100 2400 50  0000 C CNN
-F 1 "74LVC1G32" H 7100 2300 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5_Handsoldering" H 6850 2100 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/74LVC1G32.pdf" H 6850 2100 50  0001 C CNN
-F 4 "74LVC1G32GW,125" H 6850 2100 50  0001 C CNN "Manufacturer Part Number"
-	1    6850 2100
-	1    0    0    -1  
-$EndComp
 Text HLabel 6850 2250 3    50   Input ~ 0
 GND
 Text Label 6850 1800 3    50   ~ 0
@@ -489,14 +442,57 @@ Wire Wire Line
 	6200 2050 6550 2050
 Wire Wire Line
 	6200 2050 6200 3300
-Wire Wire Line
-	7100 2100 7600 2100
-Wire Wire Line
-	7600 2100 7600 2450
-Wire Wire Line
-	7600 2450 8050 2450
 Text HLabel 8550 5500 3    50   Input ~ 0
 GND
 Text HLabel 8550 2950 3    50   Input ~ 0
 GND
+$Comp
+L 74xGxx:74LVC1G08 U13
+U 1 1 5EA5CA4B
+P 6850 2100
+F 0 "U13" H 6450 2400 50  0000 C CNN
+F 1 "74LVC1G08" H 6450 2300 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5_Handsoldering" H 6850 2100 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74LVC1G08.pdf" H 6850 2100 50  0001 C CNN
+F 4 "	74LVC1G08GW,125" H 6850 2100 50  0001 C CNN "Manufacturer Part Number"
+	1    6850 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3200 6500 2450
+Wire Wire Line
+	6500 2450 8050 2450
+Connection ~ 6500 3200
+Wire Wire Line
+	8050 2550 6600 2550
+Wire Wire Line
+	6600 2550 6600 3100
+Connection ~ 6600 3100
+Wire Wire Line
+	8050 2650 7250 2650
+Wire Wire Line
+	7250 2650 7250 2100
+Wire Wire Line
+	7250 2100 7100 2100
+Wire Wire Line
+	8050 2750 6400 2750
+Wire Wire Line
+	6400 2750 6400 3000
+Connection ~ 6400 3000
+Wire Wire Line
+	4800 4550 7150 4550
+Wire Wire Line
+	8050 5000 7250 5000
+Wire Wire Line
+	7250 5000 7250 3450
+Wire Wire Line
+	3600 5100 8050 5100
+Wire Wire Line
+	8050 5200 7150 5200
+Wire Wire Line
+	7150 5200 7150 4550
+Wire Wire Line
+	8050 5300 7350 5300
+Wire Wire Line
+	7350 5300 7350 2900
 $EndSCHEMATC
