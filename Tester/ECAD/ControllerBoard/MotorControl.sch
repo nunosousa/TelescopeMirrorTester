@@ -16,223 +16,401 @@ $EndDescr
 $Comp
 L Device:R R3
 U 1 1 5E52A923
-P 4750 4850
-F 0 "R3" H 4820 4896 50  0000 L CNN
-F 1 "1R" H 4820 4805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4680 4850 50  0001 C CNN
-F 3 "~" H 4750 4850 50  0001 C CNN
-F 4 "RC0805FR-071RL" H 4750 4850 50  0001 C CNN "Manufacturer Part Number"
-	1    4750 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 5E529A2C
-P 4400 4850
-F 0 "R1" H 4470 4896 50  0000 L CNN
-F 1 "1R" H 4470 4805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4330 4850 50  0001 C CNN
-F 3 "~" H 4400 4850 50  0001 C CNN
-F 4 "RC0805FR-071RL" H 4400 4850 50  0001 C CNN "Manufacturer Part Number"
-	1    4400 4850
+P 4250 3200
+F 0 "R3" H 4320 3246 50  0000 L CNN
+F 1 "1R" H 4320 3155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 3200 50  0001 C CNN
+F 3 "~" H 4250 3200 50  0001 C CNN
+F 4 "RC0805FR-071RL" H 4250 3200 50  0001 C CNN "Manufacturer Part Number"
+	1    4250 3200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4750 4700 4750 3900
+	4250 3050 4250 2250
 Wire Wire Line
-	4400 4700 4400 3800
-Text Notes 3600 4900 0    50   ~ 0
+	3900 3050 3900 2150
+Text Notes 3100 3250 0    50   ~ 0
 Rated for 200mA
-Text HLabel 5550 4100 0    50   Input ~ 0
+Text HLabel 5050 2450 0    50   Input ~ 0
 MOTOR_CTRL_1A
-Text HLabel 5550 4200 0    50   Input ~ 0
+Text HLabel 5050 2550 0    50   Input ~ 0
 MOTOR_CTRL_1B
-Text HLabel 5550 4300 0    50   Input ~ 0
+Text HLabel 5050 2650 0    50   Input ~ 0
 MOTOR_CTRL_2A
-Text HLabel 5550 4400 0    50   Input ~ 0
+Text HLabel 5050 2750 0    50   Input ~ 0
 MOTOR_CTRL_2B
 Wire Wire Line
-	4400 3800 5550 3800
+	3900 2150 5050 2150
 Wire Wire Line
-	4750 3900 5550 3900
-Text Notes 7750 3150 0    50   ~ 0
+	4250 2250 5050 2250
+Text Notes 7250 1500 0    50   ~ 0
 Low-ESR (ceramic)\nbypass capacitor
 $Comp
 L Device:C C1
 U 1 1 5E554940
-P 4850 3200
-F 0 "C1" H 4965 3246 50  0000 L CNN
-F 1 "0.01uC" H 4965 3155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4888 3050 50  0001 C CNN
-F 3 "~" H 4850 3200 50  0001 C CNN
-F 4 "CC0805KRX7R9BB103" H 4850 3200 50  0001 C CNN "Manufacturer Part Number"
-	1    4850 3200
+P 4250 1550
+F 0 "C1" H 4365 1596 50  0000 L CNN
+F 1 "0.01uC" H 4365 1505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4288 1400 50  0001 C CNN
+F 3 "~" H 4250 1550 50  0001 C CNN
+F 4 "CC0805KRX7R9BB103" H 4250 1550 50  0001 C CNN "Manufacturer Part Number"
+	1    4250 1550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4850 2900 4850 3050
-Wire Wire Line
-	4850 3350 4850 3700
-Wire Wire Line
-	4850 3700 5550 3700
-Text Notes 3700 3250 0    50   ~ 0
+	4250 1250 4250 1400
+Text Notes 3100 1600 0    50   ~ 0
 Low-ESR ceramic\ncapacitor rated for 16 V.
 $Comp
 L Device:C C3
 U 1 1 5E5579B2
-P 6800 3350
-F 0 "C3" H 6915 3396 50  0000 L CNN
-F 1 "2.2uC" H 6915 3305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6838 3200 50  0001 C CNN
-F 3 "~" H 6800 3350 50  0001 C CNN
-F 4 "CC0805KRX5R7BB225" H 6800 3350 50  0001 C CNN "Manufacturer Part Number"
-	1    6800 3350
+P 6300 1700
+F 0 "C3" H 6415 1746 50  0000 L CNN
+F 1 "2.2uC" H 6415 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6338 1550 50  0001 C CNN
+F 3 "~" H 6300 1700 50  0001 C CNN
+F 4 "CC0805KRX5R7BB225" H 6300 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    6300 1700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6350 3300 6350 3000
-Text Notes 6850 3150 0    50   ~ 0
+	5850 1650 5850 1350
+Text Notes 6350 1500 0    50   ~ 0
 Ceramic capacitor\nrated 6.3 V.
-Text HLabel 8950 3900 2    50   Output ~ 0
+Text HLabel 8450 2250 2    50   Output ~ 0
 MOTOR_FAULT_12
-Text HLabel 5550 3600 0    50   Input ~ 0
+Text HLabel 5050 1950 0    50   Input ~ 0
 MOTOR_SLEEP_12
 $Comp
 L Device:C C5
 U 1 1 5E5466EF
-P 7700 3350
-F 0 "C5" H 7815 3396 50  0000 L CNN
-F 1 "10uC" H 7815 3305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7738 3200 50  0001 C CNN
-F 3 "~" H 7700 3350 50  0001 C CNN
-F 4 "CC0805MRX5R6BB106" H 7700 3350 50  0001 C CNN "Manufacturer Part Number"
-	1    7700 3350
+P 7200 1700
+F 0 "C5" H 7315 1746 50  0000 L CNN
+F 1 "10uC" H 7315 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7238 1550 50  0001 C CNN
+F 3 "~" H 7200 1700 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 7200 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    7200 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Driver_Motor:DRV8833PW U3
 U 1 1 5E51B362
-P 6150 4000
-F 0 "U3" H 6400 3400 50  0000 C CNN
-F 1 "DRV8833PW" H 6500 3300 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 6600 4450 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 6000 4550 50  0001 C CNN
-F 4 "DRV8833PWR" H 6150 4000 50  0001 C CNN "Manufacturer Part Number"
-	1    6150 4000
+P 5650 2350
+F 0 "U3" H 5900 1750 50  0000 C CNN
+F 1 "DRV8833PW" H 6000 1650 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 6100 2800 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 5500 2900 50  0001 C CNN
+F 4 "DRV8833PWR" H 5650 2350 50  0001 C CNN "Manufacturer Part Number"
+	1    5650 2350
 	1    0    0    -1  
 $EndComp
-Connection ~ 4850 2900
 Wire Wire Line
-	7700 3200 7700 2900
+	7200 1550 7200 1250
 Wire Wire Line
-	7700 2900 6450 2900
+	7200 1250 5950 1250
 Wire Wire Line
-	6450 2900 6450 3300
-Connection ~ 6450 2900
+	5950 1250 5950 1650
+Connection ~ 5950 1250
 Wire Wire Line
-	4850 2900 6450 2900
+	6300 1350 5850 1350
 Wire Wire Line
-	6800 3000 6350 3000
-Wire Wire Line
-	6800 3000 6800 3200
-Text HLabel 2350 2900 0    50   Input ~ 0
+	6300 1350 6300 1550
+Text HLabel 3550 1250 0    50   Input ~ 0
 V5_0
-Text HLabel 4400 5000 3    50   Input ~ 0
-GND
 $Comp
 L Connector:Conn_01x02_Male J2
 U 1 1 5E623A42
-P 9400 4200
+P 6450 2550
 AR Path="/5E507163/5E623A42" Ref="J2"  Part="1" 
 AR Path="/5E623A42" Ref="J?"  Part="1" 
-F 0 "J2" H 9372 4082 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 9372 4173 50  0000 R CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 9400 4200 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 9400 4200 50  0001 C CNN
-F 4 "B2B-XH-A(LF)(SN)" H 9400 4200 50  0001 C CNN "Manufacturer Part Number"
-	1    9400 4200
+F 0 "J2" H 6422 2432 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 6422 2523 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 2550 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 2550 50  0001 C CNN
+F 4 "B2B-XH-A(LF)(SN)" H 6450 2550 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 2550
 	-1   0    0    1   
 $EndComp
 $Comp
 L Connector:Conn_01x02_Male J3
 U 1 1 5E623A49
-P 9400 4400
+P 6450 2750
 AR Path="/5E507163/5E623A49" Ref="J3"  Part="1" 
 AR Path="/5E623A49" Ref="J?"  Part="1" 
-F 0 "J3" H 9372 4282 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 9372 4373 50  0000 R CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 9400 4400 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 9400 4400 50  0001 C CNN
-F 4 "B2B-XH-A(LF)(SN)" H 9400 4400 50  0001 C CNN "Manufacturer Part Number"
-	1    9400 4400
+F 0 "J3" H 6422 2632 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 6422 2723 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 2750 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 2750 50  0001 C CNN
+F 4 "B2B-XH-A(LF)(SN)" H 6450 2750 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 2750
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	6750 4100 9200 4100
-Wire Wire Line
-	6750 4200 9200 4200
-Wire Wire Line
-	6750 4300 9200 4300
-Wire Wire Line
-	6750 4400 9200 4400
 $Comp
 L Device:R R24
 U 1 1 5E6297EE
-P 8650 3650
-F 0 "R24" H 8720 3696 50  0000 L CNN
-F 1 "10kR" H 8720 3605 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8580 3650 50  0001 C CNN
-F 3 "~" H 8650 3650 50  0001 C CNN
-F 4 "RC0805FR-0710KL" H 8650 3650 50  0001 C CNN "Manufacturer Part Number"
-	1    8650 3650
+P 8150 2000
+F 0 "R24" H 8220 2046 50  0000 L CNN
+F 1 "10kR" H 8220 1955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8080 2000 50  0001 C CNN
+F 3 "~" H 8150 2000 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 8150 2000 50  0001 C CNN "Manufacturer Part Number"
+	1    8150 2000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6750 3900 8650 3900
+	6250 2250 8150 2250
 Wire Wire Line
-	8650 3800 8650 3900
-Connection ~ 8650 3900
+	8150 2150 8150 2250
+Connection ~ 8150 2250
 Wire Wire Line
-	8650 3900 8950 3900
-Text HLabel 8650 3500 1    50   Input ~ 0
+	8150 2250 8450 2250
+Text HLabel 8150 1850 1    50   Input ~ 0
 V3_3
-Text Label 6950 4100 0    50   ~ 0
-MOTOR_1A
-Text Label 6950 4200 0    50   ~ 0
-MOTOR_1B
-Text Label 6950 4300 0    50   ~ 0
-MOTOR_2A
-Text Label 6950 4400 0    50   ~ 0
-MOTOR_2B
-Text Label 4400 4650 1    50   ~ 0
-MOTOR_1_CUR_SENS
-Text Label 4750 4650 1    50   ~ 0
-MOTOR_2_CUR_SENS
-Text Label 6350 3250 1    50   ~ 0
+Text Label 5850 1600 1    50   ~ 0
 VINT_1
-Text Label 4850 3450 0    50   ~ 0
-VCP_1
-Wire Wire Line
-	2350 2900 3300 2900
 $Comp
 L Device:Net-Tie_2 NT3
 U 1 1 5EA0FF05
-P 3400 2900
-F 0 "NT3" H 3400 3081 50  0000 C CNN
-F 1 "Net-Tie_2" H 3400 2990 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 3400 2900 50  0001 C CNN
-F 3 "~" H 3400 2900 50  0001 C CNN
-	1    3400 2900
+P 3900 1250
+F 0 "NT3" H 3900 1431 50  0000 C CNN
+F 1 "Net-Tie_2" H 3900 1340 50  0000 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 3900 1250 50  0001 C CNN
+F 3 "~" H 3900 1250 50  0001 C CNN
+	1    3900 1250
+	1    0    0    -1  
+$EndComp
+Text HLabel 4250 3350 3    50   Input ~ 0
+GND
+Text HLabel 5650 3050 3    50   Input ~ 0
+GND
+Text HLabel 6300 1850 3    50   Input ~ 0
+GND
+Text HLabel 7200 1850 3    50   Input ~ 0
+GND
+Connection ~ 4250 1250
+Wire Wire Line
+	4250 1250 5950 1250
+Wire Wire Line
+	4250 2050 4250 1700
+Wire Wire Line
+	4250 2050 5050 2050
+Wire Wire Line
+	4000 1250 4250 1250
+Wire Wire Line
+	3800 1250 3550 1250
+Text HLabel 3900 3350 3    50   Input ~ 0
+GND
+$Comp
+L Device:R R1
+U 1 1 5E529A2C
+P 3900 3200
+F 0 "R1" H 3970 3246 50  0000 L CNN
+F 1 "1R" H 3970 3155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3830 3200 50  0001 C CNN
+F 3 "~" H 3900 3200 50  0001 C CNN
+F 4 "RC0805FR-071RL" H 3900 3200 50  0001 C CNN "Manufacturer Part Number"
+	1    3900 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 5EA9157C
+P 4250 6200
+F 0 "R13" H 4320 6246 50  0000 L CNN
+F 1 "1R" H 4320 6155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 6200 50  0001 C CNN
+F 3 "~" H 4250 6200 50  0001 C CNN
+F 4 "RC0805FR-071RL" H 4250 6200 50  0001 C CNN "Manufacturer Part Number"
+	1    4250 6200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3500 2900 4850 2900
-Text HLabel 4750 5000 3    50   Input ~ 0
+	4250 6050 4250 5250
+Wire Wire Line
+	3900 6050 3900 5150
+Text Notes 3100 6250 0    50   ~ 0
+Rated for 200mA
+Text HLabel 5050 5450 0    50   Input ~ 0
+MOTOR_CTRL_3A
+Text HLabel 5050 5550 0    50   Input ~ 0
+MOTOR_CTRL_3B
+Text HLabel 5050 5650 0    50   Input ~ 0
+MOTOR_CTRL_4A
+Text HLabel 5050 5750 0    50   Input ~ 0
+MOTOR_CTRL_4B
+Wire Wire Line
+	3900 5150 5050 5150
+Wire Wire Line
+	4250 5250 5050 5250
+Text Notes 7250 4500 0    50   ~ 0
+Low-ESR (ceramic)\nbypass capacitor
+$Comp
+L Device:C C35
+U 1 1 5EA9158D
+P 4250 4550
+F 0 "C35" H 4365 4596 50  0000 L CNN
+F 1 "0.01uC" H 4365 4505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4288 4400 50  0001 C CNN
+F 3 "~" H 4250 4550 50  0001 C CNN
+F 4 "CC0805KRX7R9BB103" H 4250 4550 50  0001 C CNN "Manufacturer Part Number"
+	1    4250 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 4250 4250 4400
+Text Notes 3100 4600 0    50   ~ 0
+Low-ESR ceramic\ncapacitor rated for 16 V.
+$Comp
+L Device:C C36
+U 1 1 5EA91596
+P 6300 4700
+F 0 "C36" H 6415 4746 50  0000 L CNN
+F 1 "2.2uC" H 6415 4655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6338 4550 50  0001 C CNN
+F 3 "~" H 6300 4700 50  0001 C CNN
+F 4 "CC0805KRX5R7BB225" H 6300 4700 50  0001 C CNN "Manufacturer Part Number"
+	1    6300 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 4650 5850 4350
+Text Notes 6350 4500 0    50   ~ 0
+Ceramic capacitor\nrated 6.3 V.
+Text HLabel 8450 5250 2    50   Output ~ 0
+MOTOR_FAULT_34
+Text HLabel 5050 4950 0    50   Input ~ 0
+MOTOR_SLEEP_34
+$Comp
+L Device:C C37
+U 1 1 5EA915A1
+P 7200 4700
+F 0 "C37" H 7315 4746 50  0000 L CNN
+F 1 "10uC" H 7315 4655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7238 4550 50  0001 C CNN
+F 3 "~" H 7200 4700 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 7200 4700 50  0001 C CNN "Manufacturer Part Number"
+	1    7200 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Driver_Motor:DRV8833PW U14
+U 1 1 5EA915A8
+P 5650 5350
+F 0 "U14" H 5900 4750 50  0000 C CNN
+F 1 "DRV8833PW" H 6000 4650 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 6100 5800 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/drv8833.pdf" H 5500 5900 50  0001 C CNN
+F 4 "DRV8833PWR" H 5650 5350 50  0001 C CNN "Manufacturer Part Number"
+	1    5650 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 4550 7200 4250
+Wire Wire Line
+	7200 4250 5950 4250
+Wire Wire Line
+	5950 4250 5950 4650
+Connection ~ 5950 4250
+Wire Wire Line
+	6300 4350 5850 4350
+Wire Wire Line
+	6300 4350 6300 4550
+Text HLabel 3550 4250 0    50   Input ~ 0
+V5_0
+$Comp
+L Connector:Conn_01x02_Male J4
+U 1 1 5EA915B6
+P 6450 5550
+AR Path="/5E507163/5EA915B6" Ref="J4"  Part="1" 
+AR Path="/5EA915B6" Ref="J?"  Part="1" 
+F 0 "J4" H 6422 5432 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 6422 5523 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 5550 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 5550 50  0001 C CNN
+F 4 "B2B-XH-A(LF)(SN)" H 6450 5550 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 5550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J5
+U 1 1 5EA915BD
+P 6450 5750
+AR Path="/5E507163/5EA915BD" Ref="J5"  Part="1" 
+AR Path="/5EA915BD" Ref="J?"  Part="1" 
+F 0 "J5" H 6422 5632 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 6422 5723 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 5750 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 5750 50  0001 C CNN
+F 4 "B2B-XH-A(LF)(SN)" H 6450 5750 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 5750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 5EA915C4
+P 8150 5000
+F 0 "R17" H 8220 5046 50  0000 L CNN
+F 1 "10kR" H 8220 4955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8080 5000 50  0001 C CNN
+F 3 "~" H 8150 5000 50  0001 C CNN
+F 4 "RC0805FR-0710KL" H 8150 5000 50  0001 C CNN "Manufacturer Part Number"
+	1    8150 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 5250 8150 5250
+Wire Wire Line
+	8150 5150 8150 5250
+Connection ~ 8150 5250
+Wire Wire Line
+	8150 5250 8450 5250
+Text HLabel 8150 4850 1    50   Input ~ 0
+V3_3
+Text Label 5850 4600 1    50   ~ 0
+VINT_1
+$Comp
+L Device:Net-Tie_2 NT8
+U 1 1 5EA915D0
+P 3900 4250
+F 0 "NT8" H 3900 4431 50  0000 C CNN
+F 1 "Net-Tie_2" H 3900 4340 50  0000 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 3900 4250 50  0001 C CNN
+F 3 "~" H 3900 4250 50  0001 C CNN
+	1    3900 4250
+	1    0    0    -1  
+$EndComp
+Text HLabel 4250 6350 3    50   Input ~ 0
 GND
-Text HLabel 6150 4700 3    50   Input ~ 0
+Text HLabel 5650 6050 3    50   Input ~ 0
 GND
-Text HLabel 6800 3500 3    50   Input ~ 0
+Text HLabel 6300 4850 3    50   Input ~ 0
 GND
-Text HLabel 7700 3500 3    50   Input ~ 0
+Text HLabel 7200 4850 3    50   Input ~ 0
 GND
+Connection ~ 4250 4250
+Wire Wire Line
+	4250 4250 5950 4250
+Wire Wire Line
+	4250 5050 4250 4700
+Wire Wire Line
+	4250 5050 5050 5050
+Wire Wire Line
+	4000 4250 4250 4250
+Wire Wire Line
+	3800 4250 3550 4250
+Text HLabel 3900 6350 3    50   Input ~ 0
+GND
+$Comp
+L Device:R R12
+U 1 1 5EA915E2
+P 3900 6200
+F 0 "R12" H 3970 6246 50  0000 L CNN
+F 1 "1R" H 3970 6155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3830 6200 50  0001 C CNN
+F 3 "~" H 3900 6200 50  0001 C CNN
+F 4 "RC0805FR-071RL" H 3900 6200 50  0001 C CNN "Manufacturer Part Number"
+	1    3900 6200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

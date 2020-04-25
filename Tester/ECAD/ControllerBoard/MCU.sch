@@ -442,12 +442,24 @@ Wire Wire Line
 	5850 2000 5850 1650
 Wire Wire Line
 	5750 5800 5750 6100
-NoConn ~ 6650 2700
-NoConn ~ 6650 2800
-NoConn ~ 4650 4900
-NoConn ~ 4650 5000
-NoConn ~ 6650 3000
-NoConn ~ 6650 2900
-NoConn ~ 6650 2400
-NoConn ~ 6650 2300
+Text HLabel 6650 3000 2    50   Output ~ 0
+MOTOR_CTRL_3A
+Text HLabel 6650 2900 2    50   Output ~ 0
+MOTOR_CTRL_3B
+Text HLabel 4650 5000 0    50   Output ~ 0
+MOTOR_CTRL_4A
+Text HLabel 4650 4900 0    50   Output ~ 0
+MOTOR_CTRL_4B
+Text HLabel 6650 2700 2    50   Input ~ 0
+MOTOR_FAULT_34
+Text HLabel 6650 2800 2    50   Output ~ 0
+MOTOR_SLEEP_34
+Text Label 7150 2300 2    50   ~ 0
+LED_YELLOW
+Text Label 7150 2400 2    50   ~ 0
+LED_GREEN
+Wire Wire Line
+	7150 2300 6650 2300
+Wire Wire Line
+	6650 2400 7150 2400
 $EndSCHEMATC
