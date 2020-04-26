@@ -205,4 +205,5 @@ F 4 "629105150521" H 3800 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    3800 2800
 	1    0    0    -1  
 $EndComp
+NoConn ~ 4100 3000
 $EndSCHEMATC

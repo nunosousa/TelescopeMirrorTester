@@ -380,9 +380,9 @@ Text Label 8550 4000 0    50   ~ 0
 SWDIO
 Text Label 4400 5200 0    50   ~ 0
 SWDIO
-Text Label 2000 2550 2    50   ~ 0
-XIN32
 Text Label 2000 2700 2    50   ~ 0
+XIN32
+Text Label 2000 2550 2    50   ~ 0
 XOUT32
 Wire Wire Line
 	1700 3150 1700 2700
