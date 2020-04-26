@@ -183,8 +183,8 @@ $Comp
 L Device:C C24
 U 1 1 5E644FBE
 P 1100 3400
-F 0 "C24" H 800 3450 50  0000 L CNN
-F 1 "6.8pC" H 800 3350 50  0000 L CNN
+F 0 "C24" H 750 3450 50  0000 L CNN
+F 1 "6.8pC" H 750 3350 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1138 3250 50  0001 C CNN
 F 3 "~" H 1100 3400 50  0001 C CNN
 F 4 "C0805C689J5GACTU" H 1100 3400 50  0001 C CNN "Manufacturer Part Number"
@@ -394,21 +394,6 @@ Wire Wire Line
 Wire Wire Line
 	1100 2550 2000 2550
 Connection ~ 1100 3150
-Text HLabel 1300 3950 3    50   Input ~ 0
-GND
-$Comp
-L Device:Net-Tie_2 NT7
-U 1 1 5EA8DE4C
-P 1300 3850
-F 0 "NT7" H 1300 4031 50  0000 C CNN
-F 1 "Net-Tie_2" H 1300 3940 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 1300 3850 50  0001 C CNN
-F 3 "~" H 1300 3850 50  0001 C CNN
-	1    1300 3850
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	1300 3750 1300 3650
 Connection ~ 1300 3650
 Wire Wire Line
 	1300 3650 1400 3650
@@ -458,4 +443,8 @@ Text HLabel 4650 4400 0    50   Input ~ 0
 END_STOP_Z-
 Text HLabel 4650 4300 0    50   Input ~ 0
 END_STOP_Z+
+Wire Wire Line
+	1300 3650 1300 4000
+Text Label 1300 4000 1    50   ~ 0
+GNDANA
 $EndSCHEMATC
