@@ -147,13 +147,13 @@ Text HLabel 4650 4800 0    50   BiDi ~ 0
 USB_D+
 Text HLabel 4650 4700 0    50   BiDi ~ 0
 USB_D-
-Text HLabel 4650 4400 0    50   Input ~ 0
+Text HLabel 4650 4600 0    50   Input ~ 0
 OC_ALOADS
-Text HLabel 4650 4300 0    50   Input ~ 0
+Text HLabel 4650 4500 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 4650 4500 0    50   Output ~ 0
+Text HLabel 6650 2300 2    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 4650 4600 0    50   Output ~ 0
+Text HLabel 6650 2400 2    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Device:L L2
@@ -454,12 +454,8 @@ Text HLabel 6650 2700 2    50   Input ~ 0
 MOTOR_FAULT_34
 Text HLabel 6650 2800 2    50   Output ~ 0
 MOTOR_SLEEP_34
-Text Label 7150 2300 2    50   ~ 0
-LED_YELLOW
-Text Label 7150 2400 2    50   ~ 0
-LED_GREEN
-Wire Wire Line
-	7150 2300 6650 2300
-Wire Wire Line
-	6650 2400 7150 2400
+Text HLabel 4650 4400 0    50   Input ~ 0
+END_STOP_Z-
+Text HLabel 4650 4300 0    50   Input ~ 0
+END_STOP_Z+
 $EndSCHEMATC

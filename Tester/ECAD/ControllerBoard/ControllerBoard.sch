@@ -60,50 +60,6 @@ F8 "LOAD_OVERCURRENT_DIGITAL_LOGIC" O R 2900 2250 50
 F9 "V5_0_MOTOR" O R 2900 1550 50 
 F10 "V5_0" O R 2900 1650 50 
 $EndSheet
-$Comp
-L Mechanical:MountingHole H1
-U 1 1 5E5E084B
-P 9650 5550
-F 0 "H1" H 9750 5596 50  0000 L CNN
-F 1 "MountingHole" H 9750 5505 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 5550 50  0001 C CNN
-F 3 "~" H 9650 5550 50  0001 C CNN
-	1    9650 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H2
-U 1 1 5E5E0C61
-P 9650 5750
-F 0 "H2" H 9750 5796 50  0000 L CNN
-F 1 "MountingHole" H 9750 5705 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 5750 50  0001 C CNN
-F 3 "~" H 9650 5750 50  0001 C CNN
-	1    9650 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H3
-U 1 1 5E5E107E
-P 9650 5950
-F 0 "H3" H 9750 5996 50  0000 L CNN
-F 1 "MountingHole" H 9750 5905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 5950 50  0001 C CNN
-F 3 "~" H 9650 5950 50  0001 C CNN
-	1    9650 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H4
-U 1 1 5E5E12C4
-P 9650 6150
-F 0 "H4" H 9750 6196 50  0000 L CNN
-F 1 "MountingHole" H 9750 6105 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9650 6150 50  0001 C CNN
-F 3 "~" H 9650 6150 50  0001 C CNN
-	1    9650 6150
-	1    0    0    -1  
-$EndComp
 $Sheet
 S 4000 5100 1450 1200
 U 5E5E989B
@@ -199,6 +155,14 @@ F26 "~POS1_NCS" O L 6050 3450 50
 F27 "~POS1_NRESET" O L 6050 3550 50 
 F28 "~POS2_NCS" O L 6050 3650 50 
 F29 "~POS2_NRESET" O L 6050 3750 50 
+F30 "MOTOR_CTRL_3A" O R 8100 2350 50 
+F31 "MOTOR_CTRL_3B" O R 8100 2450 50 
+F32 "MOTOR_CTRL_4A" O R 8100 2600 50 
+F33 "MOTOR_CTRL_4B" O R 8100 2700 50 
+F34 "MOTOR_FAULT_34" I R 8100 2850 50 
+F35 "MOTOR_SLEEP_34" O R 8100 2950 50 
+F36 "END_STOP_Z-" I L 6050 2050 50 
+F37 "END_STOP_Z+" I L 6050 1950 50 
 $EndSheet
 Wire Wire Line
 	5450 3150 6050 3150
@@ -235,50 +199,6 @@ Wire Wire Line
 	5450 3750 6050 3750
 Wire Wire Line
 	6050 3850 5450 3850
-$Comp
-L Mechanical:MountingHole H5
-U 1 1 5EA3A2C2
-P 10400 5550
-F 0 "H5" H 10500 5596 50  0000 L CNN
-F 1 "MountingHole" H 10500 5505 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 5550 50  0001 C CNN
-F 3 "~" H 10400 5550 50  0001 C CNN
-	1    10400 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H6
-U 1 1 5EA3A2C8
-P 10400 5750
-F 0 "H6" H 10500 5796 50  0000 L CNN
-F 1 "MountingHole" H 10500 5705 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 5750 50  0001 C CNN
-F 3 "~" H 10400 5750 50  0001 C CNN
-	1    10400 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H7
-U 1 1 5EA3A2CE
-P 10400 5950
-F 0 "H7" H 10500 5996 50  0000 L CNN
-F 1 "MountingHole" H 10500 5905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 5950 50  0001 C CNN
-F 3 "~" H 10400 5950 50  0001 C CNN
-	1    10400 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H8
-U 1 1 5EA3A2D4
-P 10400 6150
-F 0 "H8" H 10500 6196 50  0000 L CNN
-F 1 "MountingHole" H 10500 6105 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 10400 6150 50  0001 C CNN
-F 3 "~" H 10400 6150 50  0001 C CNN
-	1    10400 6150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2900 1450 3150 1450
 Wire Wire Line
@@ -316,6 +236,8 @@ F7 "LASER_SDA" B R 5450 2200 50
 F8 "LASER_SCL" I R 5450 2300 50 
 F9 "V3_3" I L 4000 1550 50 
 F10 "V5_0" I L 4000 1650 50 
+F11 "END_STOP_Z+" O R 5450 1950 50 
+F12 "END_STOP_Z-" O R 5450 2050 50 
 $EndSheet
 Wire Wire Line
 	2900 1650 3700 1650
@@ -385,4 +307,20 @@ Wire Wire Line
 	8650 3100 8450 3100
 Wire Wire Line
 	8450 3100 8450 6400
+Wire Wire Line
+	5450 1950 6050 1950
+Wire Wire Line
+	6050 2050 5450 2050
+Wire Wire Line
+	8100 2350 8650 2350
+Wire Wire Line
+	8650 2450 8100 2450
+Wire Wire Line
+	8100 2600 8650 2600
+Wire Wire Line
+	8650 2700 8100 2700
+Wire Wire Line
+	8100 2850 8650 2850
+Wire Wire Line
+	8650 2950 8100 2950
 $EndSCHEMATC

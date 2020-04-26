@@ -14,18 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:USB_B J1
-U 1 1 5E61B76D
-P 3800 2800
-F 0 "J1" H 3857 3267 50  0000 C CNN
-F 1 "USB_B" H 3857 3176 50  0000 C CNN
-F 2 "Connector_USB_Custom:USB_B_OST_USB-B1HSxx_Horizontal" H 3950 2750 50  0001 C CNN
-F 3 "http://www.on-shore.com/wp-content/uploads/USB-B1HSXX.pdf" H 3950 2750 50  0001 C CNN
-F 4 "USB-B1HSB6" H 3800 2800 50  0001 C CNN "Manufacturer Part Number"
-	1    3800 2800
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R5
 U 1 1 5E621F8B
 P 4000 4200
@@ -205,4 +193,16 @@ Connection ~ 5200 5100
 Connection ~ 5200 4800
 Wire Wire Line
 	5200 4800 6050 4800
+$Comp
+L Connector:USB_B_Micro J9
+U 1 1 5EAE8B91
+P 3800 2800
+F 0 "J9" H 3857 3267 50  0000 C CNN
+F 1 "USB_B_Micro" H 3857 3176 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Wuerth_629105150521" H 3950 2750 50  0001 C CNN
+F 3 "https://www.we-online.de/katalog/datasheet/629105150521.pdf" H 3950 2750 50  0001 C CNN
+F 4 "629105150521" H 3800 2800 50  0001 C CNN "Manufacturer Part Number"
+	1    3800 2800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -119,34 +119,6 @@ Wire Wire Line
 Text HLabel 3550 1250 0    50   Input ~ 0
 V5_0
 $Comp
-L Connector:Conn_01x02_Male J2
-U 1 1 5E623A42
-P 6450 2550
-AR Path="/5E507163/5E623A42" Ref="J2"  Part="1" 
-AR Path="/5E623A42" Ref="J?"  Part="1" 
-F 0 "J2" H 6422 2432 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 6422 2523 50  0000 R CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 2550 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 2550 50  0001 C CNN
-F 4 "B2B-XH-A(LF)(SN)" H 6450 2550 50  0001 C CNN "Manufacturer Part Number"
-	1    6450 2550
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J3
-U 1 1 5E623A49
-P 6450 2750
-AR Path="/5E507163/5E623A49" Ref="J3"  Part="1" 
-AR Path="/5E623A49" Ref="J?"  Part="1" 
-F 0 "J3" H 6422 2632 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 6422 2723 50  0000 R CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 2750 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 2750 50  0001 C CNN
-F 4 "B2B-XH-A(LF)(SN)" H 6450 2750 50  0001 C CNN "Manufacturer Part Number"
-	1    6450 2750
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:R R24
 U 1 1 5E6297EE
 P 8150 2000
@@ -319,34 +291,6 @@ Wire Wire Line
 Text HLabel 3550 4250 0    50   Input ~ 0
 V5_0
 $Comp
-L Connector:Conn_01x02_Male J4
-U 1 1 5EA915B6
-P 6450 5550
-AR Path="/5E507163/5EA915B6" Ref="J4"  Part="1" 
-AR Path="/5EA915B6" Ref="J?"  Part="1" 
-F 0 "J4" H 6422 5432 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 6422 5523 50  0000 R CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 5550 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 5550 50  0001 C CNN
-F 4 "B2B-XH-A(LF)(SN)" H 6450 5550 50  0001 C CNN "Manufacturer Part Number"
-	1    6450 5550
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J5
-U 1 1 5EA915BD
-P 6450 5750
-AR Path="/5E507163/5EA915BD" Ref="J5"  Part="1" 
-AR Path="/5EA915BD" Ref="J?"  Part="1" 
-F 0 "J5" H 6422 5632 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 6422 5723 50  0000 R CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 6450 5750 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/eXH.pdf" H 6450 5750 50  0001 C CNN
-F 4 "B2B-XH-A(LF)(SN)" H 6450 5750 50  0001 C CNN "Manufacturer Part Number"
-	1    6450 5750
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:R R17
 U 1 1 5EA915C4
 P 8150 5000
@@ -411,6 +355,62 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3830 6200 50  0
 F 3 "~" H 3900 6200 50  0001 C CNN
 F 4 "RC0805FR-071RL" H 3900 6200 50  0001 C CNN "Manufacturer Part Number"
 	1    3900 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5EA639A2
+P 6450 2450
+AR Path="/5E55806E/5EA639A2" Ref="J?"  Part="1" 
+AR Path="/5E507163/5EA639A2" Ref="J2"  Part="1" 
+F 0 "J2" H 6600 2350 50  0000 C CNN
+F 1 "Conn_01x02" H 6750 2450 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6450 2450 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 6450 2450 50  0001 C CNN
+F 4 "S2B-PH-K-S(LF)(SN)" H 6450 2450 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5EA650C3
+P 6450 2650
+AR Path="/5E55806E/5EA650C3" Ref="J?"  Part="1" 
+AR Path="/5E507163/5EA650C3" Ref="J3"  Part="1" 
+F 0 "J3" H 6600 2550 50  0000 C CNN
+F 1 "Conn_01x02" H 6750 2650 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6450 2650 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 6450 2650 50  0001 C CNN
+F 4 "S2B-PH-K-S(LF)(SN)" H 6450 2650 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5EA66B65
+P 6450 5450
+AR Path="/5E55806E/5EA66B65" Ref="J?"  Part="1" 
+AR Path="/5E507163/5EA66B65" Ref="J4"  Part="1" 
+F 0 "J4" H 6600 5350 50  0000 C CNN
+F 1 "Conn_01x02" H 6750 5450 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6450 5450 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 6450 5450 50  0001 C CNN
+F 4 "S2B-PH-K-S(LF)(SN)" H 6450 5450 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5EA66B6B
+P 6450 5650
+AR Path="/5E55806E/5EA66B6B" Ref="J?"  Part="1" 
+AR Path="/5E507163/5EA66B6B" Ref="J5"  Part="1" 
+F 0 "J5" H 6600 5550 50  0000 C CNN
+F 1 "Conn_01x02" H 6750 5650 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6450 5650 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 6450 5650 50  0001 C CNN
+F 4 "S2B-PH-K-S(LF)(SN)" H 6450 5650 50  0001 C CNN "Manufacturer Part Number"
+	1    6450 5650
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
