@@ -66,18 +66,14 @@ Connection ~ 4550 4800
 Connection ~ 3700 4500
 Wire Wire Line
 	3700 4500 4000 4500
-Text HLabel 3300 5100 0    50   Output ~ 0
+Text HLabel 3600 4800 0    50   Output ~ 0
 GND
-Wire Wire Line
-	3300 5100 4200 5100
 Text HLabel 8150 2600 2    50   Output ~ 0
 V_USB
 Text HLabel 8150 2800 2    50   BiDi ~ 0
 USB_D+
 Text HLabel 8150 2900 2    50   BiDi ~ 0
 USB_D-
-Wire Wire Line
-	4550 4800 5200 4800
 $Comp
 L Device:Ferrite_Bead FB1
 U 1 1 5E60ECFA
@@ -162,38 +158,6 @@ Wire Wire Line
 Wire Wire Line
 	3700 4800 4550 4800
 $Comp
-L power:GNDS #PWR01
-U 1 1 5E744774
-P 5200 5200
-F 0 "#PWR01" H 5200 4950 50  0001 C CNN
-F 1 "GNDS" H 5205 5027 50  0000 C CNN
-F 2 "" H 5200 5200 50  0001 C CNN
-F 3 "" H 5200 5200 50  0001 C CNN
-	1    5200 5200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Net-Tie_2 NT2
-U 1 1 5E7451C6
-P 4300 5100
-F 0 "NT2" H 4300 5281 50  0000 C CNN
-F 1 "Net-Tie_2" H 4300 5190 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 4300 5100 50  0001 C CNN
-F 3 "~" H 4300 5100 50  0001 C CNN
-	1    4300 5100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4400 5100 5200 5100
-Wire Wire Line
-	5200 5100 5200 5200
-Wire Wire Line
-	5200 5100 5200 4800
-Connection ~ 5200 5100
-Connection ~ 5200 4800
-Wire Wire Line
-	5200 4800 6050 4800
-$Comp
 L Connector:USB_B_Micro J9
 U 1 1 5EAE8B91
 P 3800 2800
@@ -206,4 +170,9 @@ F 4 "629105150521" H 3800 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    0    0    -1  
 $EndComp
 NoConn ~ 4100 3000
+Wire Wire Line
+	4550 4800 6050 4800
+Wire Wire Line
+	3700 4800 3600 4800
+Connection ~ 3700 4800
 $EndSCHEMATC
