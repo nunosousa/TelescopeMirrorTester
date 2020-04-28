@@ -13,9 +13,9 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 4650 3600 0    50   Output ~ 0
-MOTOR_CTRL_1A
 Text HLabel 4650 3500 0    50   Output ~ 0
+MOTOR_CTRL_1A
+Text HLabel 4650 3600 0    50   Output ~ 0
 MOTOR_CTRL_1B
 Text HLabel 4650 3800 0    50   Output ~ 0
 MOTOR_CTRL_2A
