@@ -139,8 +139,6 @@ Wire Wire Line
 	8150 2250 8450 2250
 Text HLabel 8150 1850 1    50   Input ~ 0
 V3_3
-Text Label 5850 1600 1    50   ~ 0
-VINT_1
 $Comp
 L Device:Net-Tie_2 NT3
 U 1 1 5EA0FF05
@@ -311,8 +309,6 @@ Wire Wire Line
 	8150 5250 8450 5250
 Text HLabel 8150 4850 1    50   Input ~ 0
 V3_3
-Text Label 5850 4600 1    50   ~ 0
-VINT_1
 $Comp
 L Device:Net-Tie_2 NT8
 U 1 1 5EA915D0
