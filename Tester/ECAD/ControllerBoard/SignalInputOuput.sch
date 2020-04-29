@@ -590,61 +590,9 @@ Text HLabel 4950 3250 2    50   Output ~ 0
 END_STOP_Z+
 Text HLabel 4950 3350 2    50   Output ~ 0
 END_STOP_Z-
-$Comp
-L Connector_Generic:Conn_01x02 J1
-U 1 1 5EA5EC76
-P 1100 1300
-F 0 "J1" H 1018 975 50  0000 C CNN
-F 1 "Conn_01x02" H 1018 1066 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 1100 1300 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 1100 1300 50  0001 C CNN
-F 4 "S2B-PH-K-S(LF)(SN)" H 1100 1300 50  0001 C CNN "Manufacturer Part Number"
-	1    1100 1300
-	-1   0    0    1   
-$EndComp
-Text HLabel 1300 1300 2    50   Input ~ 0
+Text HLabel 800  1700 0    50   Input ~ 0
 GND
-$Comp
-L Connector_Generic:Conn_01x02 J7
-U 1 1 5EA61E3D
-P 1100 2450
-F 0 "J7" H 1018 2125 50  0000 C CNN
-F 1 "Conn_01x02" H 1018 2216 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 1100 2450 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 1100 2450 50  0001 C CNN
-F 4 "S2B-PH-K-S(LF)(SN)" H 1100 2450 50  0001 C CNN "Manufacturer Part Number"
-	1    1100 2450
-	-1   0    0    1   
-$EndComp
-Text HLabel 1300 2450 2    50   Input ~ 0
-GND
-$Comp
-L Connector_Generic:Conn_01x02 J8
-U 1 1 5EA64137
-P 1100 3800
-F 0 "J8" H 1018 3475 50  0000 C CNN
-F 1 "Conn_01x02" H 1018 3566 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 1100 3800 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 1100 3800 50  0001 C CNN
-F 4 "S2B-PH-K-S(LF)(SN)" H 1100 3800 50  0001 C CNN "Manufacturer Part Number"
-	1    1100 3800
-	-1   0    0    1   
-$EndComp
-Text HLabel 1300 3800 2    50   Input ~ 0
-GND
-$Comp
-L Connector_Generic:Conn_01x02 J10
-U 1 1 5EA6646D
-P 1100 5050
-F 0 "J10" H 1018 4725 50  0000 C CNN
-F 1 "Conn_01x02" H 1018 4816 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 1100 5050 50  0001 C CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 1100 5050 50  0001 C CNN
-F 4 "S2B-PH-K-S(LF)(SN)" H 1100 5050 50  0001 C CNN "Manufacturer Part Number"
-	1    1100 5050
-	-1   0    0    1   
-$EndComp
-Text HLabel 1300 5050 2    50   Input ~ 0
+Text HLabel 800  4300 0    50   Input ~ 0
 GND
 $Comp
 L Connector_Generic:Conn_01x02 J11
@@ -704,4 +652,44 @@ F 4 "S4B-PH-K-S(LF)(SN)" H 6600 2400 50  0001 C CNN "Manufacturer Part Number"
 	1    6600 2400
 	-1   0    0    1   
 $EndComp
+$Comp
+L Switch:SW_SPDT_MSM SW3
+U 1 1 5EA9DA10
+P 1000 1700
+F 0 "SW3" H 1000 1985 50  0000 C CNN
+F 1 "SW_SPDT_MSM" H 1000 1894 50  0000 C CNN
+F 2 "Switch_Custom:ESE24SH1" H 1000 1700 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/ATB0000/ATB0000C18.pdf" H 1000 1700 50  0001 C CNN
+F 4 "ESE-24SH1" H 1000 1700 50  0001 C CNN "Manufacturer Part Number"
+	1    1000 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1600 1300 1600
+Wire Wire Line
+	1300 1600 1300 1200
+Wire Wire Line
+	1200 1800 1300 1800
+Wire Wire Line
+	1300 1800 1300 2350
+$Comp
+L Switch:SW_SPDT_MSM SW4
+U 1 1 5EAA782B
+P 1000 4300
+F 0 "SW4" H 1000 4585 50  0000 C CNN
+F 1 "SW_SPDT_MSM" H 1000 4494 50  0000 C CNN
+F 2 "Switch_Custom:ESE24SH1" H 1000 4300 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/ATB0000/ATB0000C18.pdf" H 1000 4300 50  0001 C CNN
+F 4 "ESE-24SH1" H 1000 4300 50  0001 C CNN "Manufacturer Part Number"
+	1    1000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 4200 1300 4200
+Wire Wire Line
+	1300 4200 1300 3700
+Wire Wire Line
+	1200 4400 1300 4400
+Wire Wire Line
+	1300 4400 1300 4950
 $EndSCHEMATC
