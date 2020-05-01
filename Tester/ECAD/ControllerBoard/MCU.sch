@@ -13,19 +13,19 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 4650 3500 0    50   Output ~ 0
+Text HLabel -3800 10000 0    50   Output ~ 0
 MOTOR_CTRL_1A
-Text HLabel 4650 3600 0    50   Output ~ 0
+Text HLabel -3800 10100 0    50   Output ~ 0
 MOTOR_CTRL_1B
-Text HLabel 4650 3800 0    50   Output ~ 0
+Text HLabel -3800 10300 0    50   Output ~ 0
 MOTOR_CTRL_2A
-Text HLabel 4650 3700 0    50   Output ~ 0
+Text HLabel -3800 10200 0    50   Output ~ 0
 MOTOR_CTRL_2B
-Text HLabel 4650 3400 0    50   Input ~ 0
+Text HLabel -3800 9900 0    50   Input ~ 0
 MOTOR_FAULT_12
-Text HLabel 4650 3300 0    50   Output ~ 0
+Text HLabel -3800 9800 0    50   Output ~ 0
 MOTOR_SLEEP_12
-Text HLabel 5550 5800 3    50   Input ~ 0
+Text HLabel -2900 12300 3    50   Input ~ 0
 GND
 $Comp
 L Device:C C15
@@ -99,25 +99,25 @@ F 4 "CC0805MRX5R6BB106" H 3250 1350 50  0001 C CNN "Manufacturer Part Number"
 	1    3250 1350
 	1    0    0    -1  
 $EndComp
-Text HLabel 4650 2700 0    50   Input ~ 0
+Text HLabel -3800 9200 0    50   Input ~ 0
 POS_MISO
-Text HLabel 4650 2900 0    50   Output ~ 0
+Text HLabel -3800 9400 0    50   Output ~ 0
 POS_MOSI
-Text HLabel 4650 3000 0    50   Output ~ 0
+Text HLabel -3800 9500 0    50   Output ~ 0
 POS_SCLK
-Text HLabel 4650 2500 0    50   Output ~ 0
+Text HLabel -3800 9000 0    50   Output ~ 0
 ~POS1_NCS
-Text HLabel 4650 2800 0    50   Input ~ 0
+Text HLabel -3800 9300 0    50   Input ~ 0
 POS_MOTION
-Text HLabel 6650 2600 2    50   Output ~ 0
+Text HLabel -1800 9100 2    50   Output ~ 0
 ~POS1_NRESET
-Text HLabel 4650 3900 0    50   Input ~ 0
+Text HLabel -3800 10400 0    50   Input ~ 0
 END_STOP_X+
-Text HLabel 4650 4100 0    50   Input ~ 0
+Text HLabel -3800 10600 0    50   Input ~ 0
 END_STOP_Y+
-Text HLabel 4650 3100 0    50   BiDi ~ 0
+Text HLabel -3800 9600 0    50   BiDi ~ 0
 LASER_SDA
-Text HLabel 4650 3200 0    50   Output ~ 0
+Text HLabel -3800 9700 0    50   Output ~ 0
 LASER_SCL
 $Comp
 L Device:R R25
@@ -143,17 +143,17 @@ F 4 "RC0805FR-0710KL" H 9100 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    9100 3400
 	1    0    0    -1  
 $EndComp
-Text HLabel 4650 4800 0    50   BiDi ~ 0
+Text HLabel -3800 11300 0    50   BiDi ~ 0
 USB_D+
-Text HLabel 4650 4700 0    50   BiDi ~ 0
+Text HLabel -3800 11200 0    50   BiDi ~ 0
 USB_D-
-Text HLabel 4650 4600 0    50   Input ~ 0
+Text HLabel -3800 11100 0    50   Input ~ 0
 OC_ALOADS
-Text HLabel 4650 4500 0    50   Input ~ 0
+Text HLabel -3800 11000 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 6650 2300 2    50   Output ~ 0
+Text HLabel -1800 8800 2    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 6650 2400 2    50   Output ~ 0
+Text HLabel -1800 8900 2    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Device:L L2
@@ -220,9 +220,9 @@ Wire Wire Line
 Wire Wire Line
 	1400 3350 1400 3650
 Connection ~ 1400 3650
-Text HLabel 4650 4000 0    50   Input ~ 0
+Text HLabel -3800 10500 0    50   Input ~ 0
 END_STOP_X-
-Text HLabel 4650 4200 0    50   Input ~ 0
+Text HLabel -3800 10700 0    50   Input ~ 0
 END_STOP_Y-
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_10 J6
@@ -241,21 +241,9 @@ NoConn ~ 9800 4200
 NoConn ~ 9800 4100
 Text HLabel 10300 4600 3    50   Input ~ 0
 GND
-$Comp
-L MCU_Microchip_SAMD:ATSAMD21G18A-AUT U1
-U 1 1 5EA25A36
-P 5650 3900
-F 0 "U1" H 6250 2100 50  0000 C CNN
-F 1 "ATSAMD21G18A-AUT" H 6350 2000 50  0000 C CNN
-F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 4700 2150 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAMD21-Family-DataSheet-DS40001882D.pdf" H 5650 4900 50  0001 C CNN
-F 4 "ATSAMD21G18A-AUT" H 5650 3900 50  0001 C CNN "Manufacturer Part Number"
-	1    5650 3900
-	1    0    0    -1  
-$EndComp
-Text HLabel 4650 2600 0    50   Output ~ 0
+Text HLabel -3800 9100 0    50   Output ~ 0
 ~POS2_NCS
-Text HLabel 6650 2500 2    50   Output ~ 0
+Text HLabel -1800 9000 2    50   Output ~ 0
 ~POS2_NRESET
 Wire Wire Line
 	1100 3650 1300 3650
@@ -285,7 +273,7 @@ Text HLabel 3750 1500 3    50   Input ~ 0
 GND
 Text Label 3750 850  3    50   ~ 0
 VDDCORE
-Text Label 5850 1650 3    50   ~ 0
+Text Label -2600 8150 3    50   ~ 0
 VDDCORE
 Text Label 1600 1200 1    50   ~ 0
 VDDIN
@@ -293,7 +281,7 @@ Text HLabel 1600 1500 3    50   Input ~ 0
 GND
 Text HLabel 950  900  0    50   Input ~ 0
 V3_3
-Text Label 5550 1750 3    50   ~ 0
+Text Label -2900 8250 3    50   ~ 0
 VDDIN
 $Comp
 L Device:Net-Tie_2 NT1
@@ -328,7 +316,7 @@ Wire Wire Line
 Connection ~ 1600 900 
 Text Label 2150 1200 1    50   ~ 0
 VDDIO
-Text Label 5450 1750 3    50   ~ 0
+Text Label -3000 8250 3    50   ~ 0
 VDDIO
 Connection ~ 2150 900 
 Wire Wire Line
@@ -342,7 +330,7 @@ Text HLabel 2700 1900 3    50   Input ~ 0
 GND
 Text Label 2850 900  0    50   ~ 0
 VDDANA
-Text Label 5750 1700 3    50   ~ 0
+Text Label -2700 8200 3    50   ~ 0
 VDDANA
 $Comp
 L Device:Net-Tie_2 NT6
@@ -361,7 +349,7 @@ Wire Wire Line
 	2700 1550 3250 1550
 Text Label 2850 1550 0    50   ~ 0
 GNDANA
-Text Label 5750 6100 1    50   ~ 0
+Text Label -2700 12600 1    50   ~ 0
 GNDANA
 Wire Wire Line
 	3250 1550 3250 1500
@@ -370,15 +358,15 @@ Wire Wire Line
 Connection ~ 2700 1550
 Text Label 8550 3700 0    50   ~ 0
 ~RESET
-Text Label 4400 5400 0    50   ~ 0
+Text Label -4050 11900 0    50   ~ 0
 ~RESET
 Text Label 8550 3900 0    50   ~ 0
 SWCLK
-Text Label 4400 5100 0    50   ~ 0
+Text Label -4050 11600 0    50   ~ 0
 SWCLK
 Text Label 8550 4000 0    50   ~ 0
 SWDIO
-Text Label 4400 5200 0    50   ~ 0
+Text Label -4050 11700 0    50   ~ 0
 SWDIO
 Text Label 2000 2700 2    50   ~ 0
 XIN32
@@ -397,9 +385,9 @@ Connection ~ 1100 3150
 Connection ~ 1300 3650
 Wire Wire Line
 	1300 3650 1400 3650
-Text Label 4350 2300 0    50   ~ 0
+Text Label -4100 8800 0    50   ~ 0
 XIN32
-Text Label 4350 2400 0    50   ~ 0
+Text Label -4100 8900 0    50   ~ 0
 XOUT32
 Wire Wire Line
 	3750 1200 3750 850 
@@ -408,43 +396,55 @@ Wire Wire Line
 Wire Wire Line
 	2550 900  2700 900 
 Wire Wire Line
-	4400 5400 4650 5400
+	-4050 11900 -3800 11900
 Wire Wire Line
-	4650 5200 4400 5200
+	-3800 11700 -4050 11700
 Wire Wire Line
-	4650 5100 4400 5100
+	-3800 11600 -4050 11600
 Wire Wire Line
-	4650 2400 4350 2400
+	-3800 8900 -4100 8900
 Wire Wire Line
-	4650 2300 4350 2300
+	-3800 8800 -4100 8800
 Wire Wire Line
-	5550 2000 5550 1750
+	-2900 8500 -2900 8250
 Wire Wire Line
-	5450 1750 5450 2000
+	-3000 8250 -3000 8500
 Wire Wire Line
-	5750 2000 5750 1700
+	-2700 8500 -2700 8200
 Wire Wire Line
-	5850 2000 5850 1650
+	-2600 8500 -2600 8150
 Wire Wire Line
-	5750 5800 5750 6100
-Text HLabel 6650 3000 2    50   Output ~ 0
+	-2700 12300 -2700 12600
+Text HLabel -1800 9500 2    50   Output ~ 0
 MOTOR_CTRL_3A
-Text HLabel 6650 2900 2    50   Output ~ 0
+Text HLabel -1800 9400 2    50   Output ~ 0
 MOTOR_CTRL_3B
-Text HLabel 4650 5000 0    50   Output ~ 0
+Text HLabel -3800 11500 0    50   Output ~ 0
 MOTOR_CTRL_4A
-Text HLabel 4650 4900 0    50   Output ~ 0
+Text HLabel -3800 11400 0    50   Output ~ 0
 MOTOR_CTRL_4B
-Text HLabel 6650 2700 2    50   Input ~ 0
+Text HLabel -1800 9200 2    50   Input ~ 0
 MOTOR_FAULT_34
-Text HLabel 6650 2800 2    50   Output ~ 0
+Text HLabel -1800 9300 2    50   Output ~ 0
 MOTOR_SLEEP_34
-Text HLabel 4650 4400 0    50   Input ~ 0
+Text HLabel -3800 10900 0    50   Input ~ 0
 END_STOP_Z-
-Text HLabel 4650 4300 0    50   Input ~ 0
+Text HLabel -3800 10800 0    50   Input ~ 0
 END_STOP_Z+
 Wire Wire Line
 	1300 3650 1300 4000
 Text Label 1300 4000 1    50   ~ 0
 GNDANA
+$Comp
+L MCU_Microchip_SAMD:ATSAMD51J18A-A U15
+U 1 1 5EAA3C2C
+P 6050 3600
+F 0 "U15" H 6050 1711 50  0000 C CNN
+F 1 "ATSAMD51J18A-A" H 6050 1620 50  0000 C CNN
+F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 6050 3600 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001507E.pdf" H 6050 3600 50  0001 C CNN
+F 4 "ATSAMD51J18A-AUT" H 6050 3600 50  0001 C CNN "Manufacturer Part Number"
+	1    6050 3600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
