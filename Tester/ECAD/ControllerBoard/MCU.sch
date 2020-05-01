@@ -30,13 +30,13 @@ GND
 $Comp
 L Device:C C15
 U 1 1 5E5846F6
-P 3750 1350
-F 0 "C15" H 3865 1396 50  0000 L CNN
-F 1 "1uC" H 3865 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3788 1200 50  0001 C CNN
-F 3 "~" H 3750 1350 50  0001 C CNN
-F 4 "CC0805MKX7R7BB105" H 3750 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    3750 1350
+P 4500 2700
+F 0 "C15" H 4615 2746 50  0000 L CNN
+F 1 "1uC" H 4615 2655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4538 2550 50  0001 C CNN
+F 3 "~" H 4500 2700 50  0001 C CNN
+F 4 "CC0805MKX7R7BB105" H 4500 2700 50  0001 C CNN "Manufacturer Part Number"
+	1    4500 2700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -78,25 +78,25 @@ $EndComp
 $Comp
 L Device:C C16
 U 1 1 5E58C2F2
-P 2700 1350
-F 0 "C16" H 2815 1396 50  0000 L CNN
-F 1 "0.1uC" H 2815 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2738 1200 50  0001 C CNN
-F 3 "~" H 2700 1350 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 2700 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    2700 1350
+P 900 3300
+F 0 "C16" H 1015 3346 50  0000 L CNN
+F 1 "0.1uC" H 1015 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 938 3150 50  0001 C CNN
+F 3 "~" H 900 3300 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 900 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    900  3300
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C17
 U 1 1 5E58C960
-P 3250 1350
-F 0 "C17" H 3365 1396 50  0000 L CNN
-F 1 "10uC" H 3365 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3288 1200 50  0001 C CNN
-F 3 "~" H 3250 1350 50  0001 C CNN
-F 4 "CC0805MRX5R6BB106" H 3250 1350 50  0001 C CNN "Manufacturer Part Number"
-	1    3250 1350
+P 3650 2050
+F 0 "C17" H 3765 2096 50  0000 L CNN
+F 1 "10uC" H 3765 2005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3688 1900 50  0001 C CNN
+F 3 "~" H 3650 2050 50  0001 C CNN
+F 4 "CC0805MRX5R6BB106" H 3650 2050 50  0001 C CNN "Manufacturer Part Number"
+	1    3650 2050
 	1    0    0    -1  
 $EndComp
 Text HLabel -3800 9200 0    50   Input ~ 0
@@ -146,13 +146,13 @@ Text HLabel -1800 8900 2    50   Output ~ 0
 $Comp
 L Device:L L2
 U 1 1 5E58F693
-P 2400 900
-F 0 "L2" H 2500 800 50  0000 C CNN
-F 1 "L" H 2500 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2400 900 50  0001 C CNN
-F 3 "~" H 2400 900 50  0001 C CNN
-F 4 "BLM21SP471SH1D" H 2400 900 50  0001 C CNN "Manufacturer Part Number"
-	1    2400 900 
+P 3350 1900
+F 0 "L2" H 3450 1800 50  0000 C CNN
+F 1 "L" H 3450 1900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3350 1900 50  0001 C CNN
+F 3 "~" H 3350 1900 50  0001 C CNN
+F 4 "BLM21SP471SH1D" H 3350 1900 50  0001 C CNN "Manufacturer Part Number"
+	1    3350 1900
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -217,9 +217,9 @@ Wire Wire Line
 	8800 5250 9750 5250
 Wire Wire Line
 	8800 5350 10050 5350
-Text HLabel 3750 1500 3    50   Input ~ 0
+Text HLabel 4450 5150 3    50   Input ~ 0
 GND
-Text Label 3750 850  3    50   ~ 0
+Text Label 4450 4500 3    50   ~ 0
 VDDCORE
 Text Label -2600 8150 3    50   ~ 0
 VDDCORE
@@ -262,48 +262,19 @@ Wire Wire Line
 Wire Wire Line
 	2150 900  1600 900 
 Connection ~ 1600 900 
-Text Label 2150 1200 1    50   ~ 0
-VDDIO
+Text Label 6050 1450 3    50   ~ 0
+VDDIO_1
 Text Label -3000 8250 3    50   ~ 0
 VDDIO
 Connection ~ 2150 900 
-Wire Wire Line
-	2700 1200 2700 900 
-Wire Wire Line
-	2700 900  3250 900 
-Wire Wire Line
-	3250 900  3250 1200
-Connection ~ 2700 900 
-Text HLabel 2700 1900 3    50   Input ~ 0
+Text HLabel 2650 1500 3    50   Input ~ 0
 GND
-Text Label 2850 900  0    50   ~ 0
+Text Label 2900 2850 3    50   ~ 0
 VDDANA
 Text Label -2700 8200 3    50   ~ 0
 VDDANA
-$Comp
-L Device:Net-Tie_2 NT6
-U 1 1 5EA8474B
-P 2700 1800
-F 0 "NT6" H 2700 1981 50  0000 C CNN
-F 1 "Net-Tie_2" H 2700 1890 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 2700 1800 50  0001 C CNN
-F 3 "~" H 2700 1800 50  0001 C CNN
-	1    2700 1800
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2700 1700 2700 1550
-Wire Wire Line
-	2700 1550 3250 1550
-Text Label 2850 1550 0    50   ~ 0
-GNDANA
 Text Label -2700 12600 1    50   ~ 0
 GNDANA
-Wire Wire Line
-	3250 1550 3250 1500
-Wire Wire Line
-	2700 1500 2700 1550
-Connection ~ 2700 1550
 Text Label 8800 5050 0    50   ~ 0
 ~RESET
 Text Label -4050 11900 0    50   ~ 0
@@ -325,11 +296,9 @@ XIN32
 Text Label -4100 8900 0    50   ~ 0
 XOUT32
 Wire Wire Line
-	3750 1200 3750 850 
+	4450 4850 4450 4500
 Wire Wire Line
 	2150 900  2250 900 
-Wire Wire Line
-	2550 900  2700 900 
 Wire Wire Line
 	-4050 11900 -3800 11900
 Wire Wire Line
@@ -372,8 +341,8 @@ $Comp
 L MCU_Microchip_SAMD:ATSAMD51J18A-A U15
 U 1 1 5EAA3C2C
 P 6050 3600
-F 0 "U15" H 6050 1711 50  0000 C CNN
-F 1 "ATSAMD51J18A-A" H 6050 1620 50  0000 C CNN
+F 0 "U15" H 6450 1800 50  0000 C CNN
+F 1 "ATSAMD51J18A-A" H 6650 1700 50  0000 C CNN
 F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 6050 3600 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001507E.pdf" H 6050 3600 50  0001 C CNN
 F 4 "ATSAMD51J18A-AUT" H 6050 3600 50  0001 C CNN "Manufacturer Part Number"
@@ -516,4 +485,111 @@ Wire Wire Line
 Connection ~ 7950 5550
 Wire Wire Line
 	7950 5550 7950 5600
+Text Label 6150 1450 3    50   ~ 0
+VDDIO_2
+Text Label 6250 1450 3    50   ~ 0
+VDDIO_3
+Wire Wire Line
+	6250 1450 6250 1800
+Wire Wire Line
+	6150 1450 6150 1800
+Wire Wire Line
+	6050 1450 6050 1800
+Text Label 900  2850 3    50   ~ 0
+VDDIO_1
+Text Label 1400 2850 3    50   ~ 0
+VDDIO_2
+Text Label 1900 2850 3    50   ~ 0
+VDDIO_3
+Text HLabel 900  3450 3    50   Input ~ 0
+GND
+Wire Wire Line
+	900  3150 900  2850
+$Comp
+L Device:C C43
+U 1 1 5EB14A14
+P 1400 3300
+F 0 "C43" H 1515 3346 50  0000 L CNN
+F 1 "0.1uC" H 1515 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1438 3150 50  0001 C CNN
+F 3 "~" H 1400 3300 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 1400 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    1400 3300
+	1    0    0    -1  
+$EndComp
+Text HLabel 1400 3450 3    50   Input ~ 0
+GND
+Wire Wire Line
+	1400 3150 1400 2850
+$Comp
+L Device:C C44
+U 1 1 5EB166B6
+P 1900 3300
+F 0 "C44" H 2015 3346 50  0000 L CNN
+F 1 "0.1uC" H 2015 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1938 3150 50  0001 C CNN
+F 3 "~" H 1900 3300 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 1900 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    1900 3300
+	1    0    0    -1  
+$EndComp
+Text HLabel 1900 3450 3    50   Input ~ 0
+GND
+Wire Wire Line
+	1900 2850 1900 3150
+Text HLabel 6150 5400 3    50   Input ~ 0
+GND
+Text HLabel 6050 5400 3    50   Input ~ 0
+GND
+Text Label 5100 5200 0    50   ~ 0
+~RESET
+Wire Wire Line
+	5350 5200 5100 5200
+$Comp
+L Device:C C45
+U 1 1 5EB1E444
+P 2400 3300
+F 0 "C45" H 2515 3346 50  0000 L CNN
+F 1 "0.1uC" H 2515 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 3150 50  0001 C CNN
+F 3 "~" H 2400 3300 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2400 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    2400 3300
+	1    0    0    -1  
+$EndComp
+Text HLabel 2400 3450 3    50   Input ~ 0
+GND
+Wire Wire Line
+	2400 3150 2400 2850
+Text Label 2400 2850 3    50   ~ 0
+VDDIOB
+$Comp
+L Device:C C46
+U 1 1 5EB24A6F
+P 2900 3300
+F 0 "C46" H 3015 3346 50  0000 L CNN
+F 1 "0.1uC" H 3015 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2938 3150 50  0001 C CNN
+F 3 "~" H 2900 3300 50  0001 C CNN
+F 4 "CC0805ZRY5V8BB104" H 2900 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    2900 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 3150 2900 2850
+Text HLabel 3650 2200 3    50   Input ~ 0
+GND
+Text HLabel 2900 3450 3    50   Input ~ 0
+GND
+Text Label 6450 1500 3    50   ~ 0
+VDDANA
+Wire Wire Line
+	6450 1800 6450 1500
+Text Label 3650 1600 3    50   ~ 0
+VDDANA
+Wire Wire Line
+	3650 1900 3650 1600
+Wire Wire Line
+	3650 1900 3500 1900
+Connection ~ 3650 1900
 $EndSCHEMATC
