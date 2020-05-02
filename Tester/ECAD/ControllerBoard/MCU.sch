@@ -308,9 +308,9 @@ Wire Wire Line
 	2300 4700 2600 4700
 Wire Wire Line
 	2600 4700 2600 4750
-Text Label 2350 4700 0    50   ~ 0
+Text Label 1750 4700 0    50   ~ 0
 XOUT
-Text Label 1800 4700 0    50   ~ 0
+Text Label 2400 4700 0    50   ~ 0
 XIN
 Wire Wire Line
 	2650 5950 2650 6050
