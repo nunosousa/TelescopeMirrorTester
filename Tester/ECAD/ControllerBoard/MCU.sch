@@ -113,9 +113,9 @@ Text HLabel 6750 4100 2    50   Input ~ 0
 OC_ALOADS
 Text HLabel 5350 4800 0    50   Input ~ 0
 OC_DLOADS
-Text HLabel 4100 5900 2    50   Output ~ 0
+Text HLabel 5350 2500 0    50   Output ~ 0
 ~PS_ALOADS
-Text HLabel 4100 6000 2    50   Output ~ 0
+Text HLabel 5350 2400 0    50   Output ~ 0
 ~PS_DLOADS
 $Comp
 L Device:C C24
@@ -586,8 +586,6 @@ Wire Wire Line
 	5100 3600 5350 3600
 Wire Wire Line
 	5350 3700 5100 3700
-NoConn ~ 5350 2400
-NoConn ~ 5350 2500
 NoConn ~ 5350 4400
 NoConn ~ 5350 4500
 NoConn ~ 6750 4200
@@ -599,4 +597,40 @@ NoConn ~ 6750 2600
 NoConn ~ 6750 2500
 NoConn ~ 6750 2400
 NoConn ~ 6750 2300
+$Comp
+L Device:Net-Tie_2 NT1
+U 1 1 5EB51051
+P 2900 5300
+F 0 "NT1" H 2900 5481 50  0000 C CNN
+F 1 "Net-Tie_2" H 2900 5390 50  0000 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 2900 5300 50  0001 C CNN
+F 3 "~" H 2900 5300 50  0001 C CNN
+	1    2900 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT2
+U 1 1 5EB51A99
+P 2950 6700
+F 0 "NT2" H 2950 6881 50  0000 C CNN
+F 1 "Net-Tie_2" H 2950 6790 50  0000 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 2950 6700 50  0001 C CNN
+F 3 "~" H 2950 6700 50  0001 C CNN
+	1    2950 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 5300 2600 5300
+Wire Wire Line
+	2600 5300 2600 5150
+Connection ~ 2600 5150
+Wire Wire Line
+	2850 6700 2650 6700
+Wire Wire Line
+	2650 6700 2650 6450
+Connection ~ 2650 6450
+Text HLabel 3000 5300 2    50   Input ~ 0
+GND
+Text HLabel 3050 6700 2    50   Input ~ 0
+GND
 $EndSCHEMATC
