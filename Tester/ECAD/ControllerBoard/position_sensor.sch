@@ -15,9 +15,9 @@ Comment4 ""
 $EndDescr
 Text HLabel 9050 1950 2    50   Input ~ 0
 GND
-Text HLabel 9050 2550 2    50   Input ~ 0
+Text HLabel 9050 2750 2    50   Input ~ 0
 POS_MOSI
-Text HLabel 9050 2450 2    50   Input ~ 0
+Text HLabel 9050 2650 2    50   Input ~ 0
 POS_SCLK
 Text HLabel 9050 5300 2    50   Input ~ 0
 ~POS1_NCS
@@ -270,13 +270,13 @@ F 4 "SN74AVC4T245DR" H 8550 2350 50  0001 C CNN "Manufacturer Part Number"
 $EndComp
 Text HLabel 9050 2050 2    50   Input ~ 0
 GND
-Text HLabel 9050 2650 2    50   Output ~ 0
+Text HLabel 9050 2450 2    50   Output ~ 0
 POS_MOTION
-Text HLabel 9050 2750 2    50   Output ~ 0
+Text HLabel 9050 2550 2    50   Output ~ 0
 POS_MISO
-Text HLabel 9050 2250 2    50   Input ~ 0
-GND
 Text HLabel 9050 2150 2    50   Input ~ 0
+GND
+Text HLabel 9050 2250 2    50   Input ~ 0
 V3_3
 $Comp
 L Device:C C31
@@ -459,25 +459,7 @@ F 4 "	74LVC1G08GW,125" H 6850 2100 50  0001 C CNN "Manufacturer Part Number"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6500 3200 6500 2450
-Wire Wire Line
-	6500 2450 8050 2450
-Connection ~ 6500 3200
-Wire Wire Line
-	8050 2550 6600 2550
-Wire Wire Line
-	6600 2550 6600 3100
-Connection ~ 6600 3100
-Wire Wire Line
-	8050 2650 7250 2650
-Wire Wire Line
-	7250 2650 7250 2100
-Wire Wire Line
 	7250 2100 7100 2100
-Wire Wire Line
-	8050 2750 6400 2750
-Wire Wire Line
-	6400 2750 6400 3000
 Connection ~ 6400 3000
 Wire Wire Line
 	4800 4550 7150 4550
@@ -495,4 +477,22 @@ Wire Wire Line
 	8050 5300 7350 5300
 Wire Wire Line
 	7350 5300 7350 2900
+Wire Wire Line
+	8050 2450 7250 2450
+Wire Wire Line
+	7250 2450 7250 2100
+Wire Wire Line
+	6400 2550 6400 3000
+Wire Wire Line
+	6400 2550 8050 2550
+Wire Wire Line
+	8050 2650 6500 2650
+Wire Wire Line
+	6500 2650 6500 3200
+Connection ~ 6500 3200
+Wire Wire Line
+	8050 2750 6600 2750
+Wire Wire Line
+	6600 2750 6600 3100
+Connection ~ 6600 3100
 $EndSCHEMATC
