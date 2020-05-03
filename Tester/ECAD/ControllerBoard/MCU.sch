@@ -215,13 +215,13 @@ Wire Wire Line
 	5350 2300 5050 2300
 Wire Wire Line
 	5350 2200 5050 2200
-Text HLabel 6750 3400 2    50   Output ~ 0
-MOTOR_CTRL_3A
 Text HLabel 6750 3300 2    50   Output ~ 0
+MOTOR_CTRL_3A
+Text HLabel 6750 3400 2    50   Output ~ 0
 MOTOR_CTRL_3B
-Text HLabel 6750 3500 2    50   Output ~ 0
-MOTOR_CTRL_4A
 Text HLabel 6750 3600 2    50   Output ~ 0
+MOTOR_CTRL_4A
+Text HLabel 6750 3500 2    50   Output ~ 0
 MOTOR_CTRL_4B
 Text HLabel 6750 3700 2    50   Input ~ 0
 MOTOR_FAULT_34
