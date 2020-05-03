@@ -116,7 +116,7 @@ Wire Wire Line
 	6300 1350 5850 1350
 Wire Wire Line
 	6300 1350 6300 1550
-Text HLabel 3550 1250 0    50   Input ~ 0
+Text HLabel 4000 1250 0    50   Input ~ 0
 V5_0
 $Comp
 L Device:R R24
@@ -139,17 +139,6 @@ Wire Wire Line
 	8150 2250 8450 2250
 Text HLabel 8150 1850 1    50   Input ~ 0
 V3_3
-$Comp
-L Device:Net-Tie_2 NT3
-U 1 1 5EA0FF05
-P 3900 1250
-F 0 "NT3" H 3900 1431 50  0000 C CNN
-F 1 "Net-Tie_2" H 3900 1340 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 3900 1250 50  0001 C CNN
-F 3 "~" H 3900 1250 50  0001 C CNN
-	1    3900 1250
-	1    0    0    -1  
-$EndComp
 Text HLabel 4250 3350 3    50   Input ~ 0
 GND
 Text HLabel 5650 3050 3    50   Input ~ 0
@@ -167,8 +156,6 @@ Wire Wire Line
 	4250 2050 5050 2050
 Wire Wire Line
 	4000 1250 4250 1250
-Wire Wire Line
-	3800 1250 3550 1250
 Text HLabel 3900 3350 3    50   Input ~ 0
 GND
 $Comp
@@ -286,7 +273,7 @@ Wire Wire Line
 	6300 4350 5850 4350
 Wire Wire Line
 	6300 4350 6300 4550
-Text HLabel 3550 4250 0    50   Input ~ 0
+Text HLabel 4000 4250 0    50   Input ~ 0
 V5_0
 $Comp
 L Device:R R17
@@ -309,17 +296,6 @@ Wire Wire Line
 	8150 5250 8450 5250
 Text HLabel 8150 4850 1    50   Input ~ 0
 V3_3
-$Comp
-L Device:Net-Tie_2 NT8
-U 1 1 5EA915D0
-P 3900 4250
-F 0 "NT8" H 3900 4431 50  0000 C CNN
-F 1 "Net-Tie_2" H 3900 4340 50  0000 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 3900 4250 50  0001 C CNN
-F 3 "~" H 3900 4250 50  0001 C CNN
-	1    3900 4250
-	1    0    0    -1  
-$EndComp
 Text HLabel 4250 6350 3    50   Input ~ 0
 GND
 Text HLabel 5650 6050 3    50   Input ~ 0
@@ -337,8 +313,6 @@ Wire Wire Line
 	4250 5050 5050 5050
 Wire Wire Line
 	4000 4250 4250 4250
-Wire Wire Line
-	3800 4250 3550 4250
 Text HLabel 3900 6350 3    50   Input ~ 0
 GND
 $Comp
