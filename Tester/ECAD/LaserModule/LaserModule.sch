@@ -182,18 +182,6 @@ Wire Wire Line
 Wire Wire Line
 	2400 1500 2400 3150
 Connection ~ 3650 1500
-$Comp
-L Connector:Conn_01x04_Male J1
-U 1 1 5E4950DC
-P 1200 3250
-F 0 "J1" H 1308 3531 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 1308 3440 50  0000 C CNN
-F 2 "Connector_Molex_Custom:Molex_PicoBlade_53048-0410_1x04_P1.25mm_Horizontal" H 1200 3250 50  0001 C CNN
-F 3 "~" H 1200 3250 50  0001 C CNN
-F 4 "0530480410" H 1200 3250 50  0001 C CNN "Manufacturer Part Number"
-	1    1200 3250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1400 3150 1900 3150
 Wire Wire Line
@@ -459,4 +447,16 @@ Wire Wire Line
 Connection ~ 8750 3900
 Wire Wire Line
 	8750 3900 8750 3700
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 5EB3CF54
+P 1200 3350
+F 0 "J1" H 1280 3342 50  0000 L CNN
+F 1 "Conn_01x04" H 1280 3251 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_S4B-PH-K_1x04_P2.00mm_Horizontal" H 1200 3350 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 1200 3350 50  0001 C CNN
+F 4 "S4B-PH-K-S(LF)(SN)" H 1200 3350 50  0001 C CNN "Manufacturer Part Number"
+	1    1200 3350
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
