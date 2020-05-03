@@ -231,8 +231,6 @@ Text HLabel 5350 4300 0    50   Input ~ 0
 END_STOP_Z-
 Text HLabel 5350 4200 0    50   Input ~ 0
 END_STOP_Z+
-Text Label 2300 6450 2    50   ~ 0
-GNDANA
 $Comp
 L MCU_Microchip_SAMD:ATSAMD51J18A-A U15
 U 1 1 5EAA3C2C
@@ -350,8 +348,6 @@ Wire Wire Line
 Wire Wire Line
 	1500 5150 1700 5150
 Connection ~ 1700 5150
-Text Label 2550 5150 2    50   ~ 0
-GNDANA
 Wire Wire Line
 	1700 5150 2150 5150
 $Comp
@@ -633,4 +629,8 @@ Text HLabel 3000 5300 2    50   Input ~ 0
 GND
 Text HLabel 3050 6700 2    50   Input ~ 0
 GND
+Text Label 2300 6450 2    50   ~ 0
+GNDANA_2
+Text Label 2550 5150 2    50   ~ 0
+GNDANA_1
 $EndSCHEMATC
