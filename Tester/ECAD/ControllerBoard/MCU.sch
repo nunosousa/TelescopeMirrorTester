@@ -151,7 +151,7 @@ U 1 1 5EA3EDDE
 P 10600 2650
 F 0 "J6" H 11350 2050 50  0000 R CNN
 F 1 "Conn_ARM_JTAG_SWD_10" H 11700 1900 50  0000 R CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical" H 10600 2650 50  0001 C CNN
+F 2 "Connector_IDC_Custom:PinHeader_2x05_P1.27mm_Vertical" H 10600 2650 50  0001 C CNN
 F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 10250 1400 50  0001 C CNN
 F 4 "3220-10-0100-00" H 10600 2650 50  0001 C CNN "Manufacturer Part Number"
 	1    10600 2650
