@@ -82,7 +82,7 @@ F 0 "FB1" V 4776 2600 50  0000 C CNN
 F 1 "Ferrite_Bead" V 4867 2600 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4980 2600 50  0001 C CNN
 F 3 "~" H 5050 2600 50  0001 C CNN
-F 4 "BLM21PG221SN1D" H 5050 2600 50  0001 C CNN "Manufacturer Part Number"
+F 4 "BLM21SP471SH1D" H 5050 2600 50  0001 C CNN "Manufacturer Part Number"
 	1    5050 2600
 	0    1    1    0   
 $EndComp
