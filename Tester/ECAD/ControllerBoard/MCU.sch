@@ -45,7 +45,7 @@ F 0 "C13" H 2515 1196 50  0000 L CNN
 F 1 "0.1uC" H 2515 1105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 1000 50  0001 C CNN
 F 3 "~" H 2400 1150 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 2400 1150 50  0001 C CNN "Manufacturer Part Number"
+F 4 "AC0805KRX7R7BB104" H 2400 1150 50  0001 C CNN "Manufacturer Part Number"
 	1    2400 1150
 	1    0    0    -1  
 $EndComp
@@ -57,7 +57,7 @@ F 0 "C16" H 1015 2246 50  0000 L CNN
 F 1 "0.1uC" H 1015 2155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 938 2050 50  0001 C CNN
 F 3 "~" H 900 2200 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 900 2200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "AC0805KRX7R7BB104" H 900 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    900  2200
 	1    0    0    -1  
 $EndComp
@@ -101,7 +101,7 @@ F 0 "R25" H 9870 2096 50  0000 L CNN
 F 1 "1kR" H 9870 2005 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9730 2050 50  0001 C CNN
 F 3 "~" H 9800 2050 50  0001 C CNN
-F 4 "" H 9800 2050 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-071KL" H 9800 2050 50  0001 C CNN "Manufacturer Part Number"
 	1    9800 2050
 	1    0    0    -1  
 $EndComp
@@ -403,7 +403,7 @@ F 0 "C43" H 1515 2246 50  0000 L CNN
 F 1 "0.1uC" H 1515 2155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1438 2050 50  0001 C CNN
 F 3 "~" H 1400 2200 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 1400 2200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "AC0805KRX7R7BB104" H 1400 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    1400 2200
 	1    0    0    -1  
 $EndComp
@@ -417,7 +417,7 @@ F 0 "C44" H 2015 2246 50  0000 L CNN
 F 1 "0.1uC" H 2015 2155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1938 2050 50  0001 C CNN
 F 3 "~" H 1900 2200 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 1900 2200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "AC0805KRX7R7BB104" H 1900 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    1900 2200
 	1    0    0    -1  
 $EndComp
@@ -439,7 +439,7 @@ F 0 "C45" H 2515 2246 50  0000 L CNN
 F 1 "0.1uC" H 2515 2155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2438 2050 50  0001 C CNN
 F 3 "~" H 2400 2200 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 2400 2200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "AC0805KRX7R7BB104" H 2400 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    2400 2200
 	1    0    0    -1  
 $EndComp
@@ -455,7 +455,7 @@ F 0 "C46" H 3015 2246 50  0000 L CNN
 F 1 "0.1uC" H 3015 2155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2938 2050 50  0001 C CNN
 F 3 "~" H 2900 2200 50  0001 C CNN
-F 4 "CC0805ZRY5V8BB104" H 2900 2200 50  0001 C CNN "Manufacturer Part Number"
+F 4 "AC0805KRX7R7BB104" H 2900 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    2900 2200
 	1    0    0    -1  
 $EndComp
