@@ -101,7 +101,7 @@ F 0 "R25" H 9870 2096 50  0000 L CNN
 F 1 "1kR" H 9870 2005 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9730 2050 50  0001 C CNN
 F 3 "~" H 9800 2050 50  0001 C CNN
-F 4 "" H 9800 2050 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-071KL" H 9800 2050 50  0001 C CNN "Manufacturer Part Number"
 	1    9800 2050
 	1    0    0    -1  
 $EndComp
