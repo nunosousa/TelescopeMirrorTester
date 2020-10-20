@@ -18,10 +18,10 @@ L Device:R R5
 U 1 1 5E479FC2
 P 10600 2900
 F 0 "R5" H 10670 2946 50  0000 L CNN
-F 1 "4kR" H 10670 2855 50  0000 L CNN
+F 1 "4k7R" H 10670 2855 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10530 2900 50  0001 C CNN
 F 3 "~" H 10600 2900 50  0001 C CNN
-F 4 "tbd" H 10600 2900 50  0001 C CNN "Manufacturer Part Number"
+F 4 "RC0805FR-074K7L" H 10600 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    10600 2900
 	1    0    0    -1  
 $EndComp
@@ -81,7 +81,7 @@ F 0 "C2" H 5115 3596 50  0000 L CNN
 F 1 "1nC" H 5115 3505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5038 3400 50  0001 C CNN
 F 3 "~" H 5000 3550 50  0001 C CNN
-F 4 "tbd" H 5000 3550 50  0001 C CNN "Manufacturer Part Number"
+F 4 "CL21B102KBANNNC" H 5000 3550 50  0001 C CNN "Manufacturer Part Number"
 	1    5000 3550
 	1    0    0    -1  
 $EndComp
@@ -93,7 +93,7 @@ F 0 "C1" H 6965 2846 50  0000 L CNN
 F 1 "100pC" H 6965 2755 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6888 2650 50  0001 C CNN
 F 3 "~" H 6850 2800 50  0001 C CNN
-F 4 "tbd" H 6850 2800 50  0001 C CNN "Manufacturer Part Number"
+F 4 "08055C101KAT2A" H 6850 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    6850 2800
 	1    0    0    -1  
 $EndComp
