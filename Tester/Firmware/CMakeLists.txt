@@ -2,8 +2,8 @@
 
 cmake_minimum_required(VERSION 3.13.1)
 
-#set(BOARD <VALUE>)
-#set(BOARD_ROOT <VALUE>)
+set(BOARD BOARD_TELESCOPE_MIRROR_TESTER)
+#set(BOARD_ROOT ~/Git/TelescopeMirrorTester/Tester/Firmware/boards/arm/telescope_mirror_tester)
 #set(ZEPHYR_MODULES <VALUE>)
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
