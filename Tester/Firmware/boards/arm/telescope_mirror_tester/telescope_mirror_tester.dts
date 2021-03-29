@@ -9,7 +9,7 @@
 
 / {
 	model = "Telescope Mirror Tester";
-	compatible = "";
+	compatible = "nunosousa, telescope_mirror_tester";
 
 	chosen {
 		zephyr,console = &sercom3;
@@ -19,44 +19,63 @@
 		zephyr,code-partition = &code_partition;
 	};
 
-	/* These aliases are provided for compatibility with samples */
-	aliases {
-		led0 = &led0;
-		pwm-led0 = &pwm_led0;
-		pwm-0 = &tcc0;
-	};
-
-	leds {
-		compatible = "gpio-leds";
-		led0: led_0 {
-			gpios = <&porta 22 0>;
-			label = "LED";
+	pwm_motors {
+		pwm_motor_1A: pwm_motor_1A {
+			pwms = <&tcc0 0>;
 		};
-	};
 
-	pwmleds {
-		compatible = "pwm-leds";
-		pwm_led0: pwm_led_0 {
+		pwm_motor_1B: pwm_motor_1B {
+			pwms = <&tcc0 1>;
+		};
+
+		pwm_motor_2A: pwm_motor_2A {
+			pwms = <&tcc0 3>;
+		};
+
+		pwm_motor_2B: pwm_motor_2B {
 			pwms = <&tcc0 2>;
 		};
+
+		pwm_motor_3A: pwm_motor_3A {
+			pwms = <&tcc0 4>;
+		};
+
+		pwm_motor_3B: pwm_motor_3B {
+			pwms = <&tcc0 5>;
+		};
+
+		pwm_motor_4A: pwm_motor_4A {
+			pwms = <&tcc3 1>;
+		};
+
+		pwm_motor_4B: pwm_motor_4B {
+			pwms = <&tcc3 0>;
+		};
 	};
+
+	dac_laser {
+		laser_0: laser_0 {
+			
+		}
+	}
+
 };
 
 &cpu0 {
 	clock-frequency = <120000000>;
 };
 
-&sercom3 {
+&sercom0 {
 	status = "okay";
-	compatible = "atmel,sam0-uart";
+	compatible = "atmel,sam0-spi";
 	current-speed = <115200>;
 	rxpo = <1>;
 	txpo = <0>;
 };
 
-&sercom1 {
+&sercom5 {
 	status = "okay";
-	compatible = "atmel,sam0-spi";
+	compatible = "atmel,sam0-i2c";
 	dipo = <3>;
 	dopo = <0>;
 
@@ -72,11 +91,37 @@
 	#pwm-cells = <1>;
 };
 
+&tcc3 {
+	status = "okay";
+	compatible = "atmel,sam0-tcc-pwm";
+	prescaler = <8>;
+
+	#pwm-cells = <1>;
+};
+
+&porta {
+	status = "okay";
+	compatible = "atmel,sam0-gpio";
+	gpio-controller;
+	#gpio-cells = <2>;
+};
+
+&portb {
+	status = "okay";
+	compatible = "atmel,sam0-gpio";
+	gpio-controller;
+	#gpio-cells = <2>;
+};
+
 &usb0 {
 	status = "okay";
 };
 
 &dmac {
+	status = "okay";
+};
+
+&eic {
 	status = "okay";
 };
 
