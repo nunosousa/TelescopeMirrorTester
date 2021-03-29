@@ -12,53 +12,45 @@
 	compatible = "nunosousa, telescope_mirror_tester";
 
 	chosen {
-		zephyr,console = &sercom3;
-		zephyr,shell-uart = &sercom3;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,code-partition = &code_partition;
 	};
 
-	pwm_motors {
-		pwm_motor_1A: pwm_motor_1A {
-			pwms = <&tcc0 0>;
+	motors {
+		motors_1_2: pwm_motors_1_2 {
+			pwm_1a = <&tcc0 0>;
+			pwm_1b = <&tcc0 1>;
+			pwm_2a = <&tcc0 3>;
+			pwm_2b = <&tcc0 2>;
+			fault_flag = <&porta 13>;
+			sleep_command = <&porta 12>;
 		};
 
-		pwm_motor_1B: pwm_motor_1B {
-			pwms = <&tcc0 1>;
-		};
-
-		pwm_motor_2A: pwm_motor_2A {
-			pwms = <&tcc0 3>;
-		};
-
-		pwm_motor_2B: pwm_motor_2B {
-			pwms = <&tcc0 2>;
-		};
-
-		pwm_motor_3A: pwm_motor_3A {
-			pwms = <&tcc0 4>;
-		};
-
-		pwm_motor_3B: pwm_motor_3B {
-			pwms = <&tcc0 5>;
-		};
-
-		pwm_motor_4A: pwm_motor_4A {
-			pwms = <&tcc3 1>;
-		};
-
-		pwm_motor_4B: pwm_motor_4B {
-			pwms = <&tcc3 0>;
+		motors_3_4: pwm_motors_3_4 {
+			pwm_3a = <&tcc0 4>;
+			pwm_3b = <&tcc0 5>;
+			pwm_4a = <&tcc3 1>;
+			pwm_4b = <&tcc3 0>;
+			fault_flag = <&portb 14>;
+			sleep_command = <&portb 15>;
 		};
 	};
 
-	dac_laser {
+	laser {
 		laser_0: laser_0 {
-			
-		}
-	}
+			port = <&sercom5>;
+		};
+	};
 
+	limit_switches {
+		x_start = <&portb 14>;
+		x_end = <&portb 14>;
+		y_start = <&portb 14>;
+		y_end = <&portb 14>;
+		z_start = <&portb 14>;
+		z_end = <&portb 14>;
+	};
 };
 
 &cpu0 {
