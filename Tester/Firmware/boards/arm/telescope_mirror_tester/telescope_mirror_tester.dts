@@ -9,7 +9,6 @@
 
 / {
 	model = "Telescope Mirror Tester";
-	compatible = "nunosousa, telescope_mirror_tester";
 
 	chosen {
 		zephyr,sram = &sram0;
@@ -37,12 +36,6 @@
 		};
 	};
 
-	laser {
-		laser_0: laser_0 {
-			port = <&sercom5>;
-		};
-	};
-
 	limit_switches {
 		x_start = <&portb 14>;
 		x_end = <&portb 14>;
@@ -63,6 +56,18 @@
 	current-speed = <115200>;
 	rxpo = <1>;
 	txpo = <0>;
+
+	x_pos_sensor: pwm3360@0 {
+		compatible = "";
+		label = "PMW3360";
+		reg = <0>;
+	};
+
+	y_pos_sensor: pwm3360@1 {
+		compatible = "";
+		label = "PMW3360";
+		reg = <1>;
+	};
 };
 
 &sercom5 {
@@ -73,6 +78,12 @@
 
 	#address-cells = <1>;
 	#size-cells = <0>;
+
+	laser_dac: mcp4716@63 {
+		compatible = "";
+		label = "MCP4716";
+		reg = <0x63>;
+	};
 };
 
 &tcc0 {
