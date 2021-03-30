@@ -15,7 +15,7 @@
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 	};
-
+/*
 	motor_dual_drive_1 {
 		pwm_1: pwms {
 			pwms = <&tcc0 0>, <&tcc0 1>, <&tcc0 3>, <&tcc0 2>;
@@ -73,6 +73,7 @@
 			label = "SW_Z1";
 		};
 	};
+*/
 };
 
 &cpu0 {
@@ -86,6 +87,7 @@
 	dopo = <1>;
 	#address-cells = <1>;
 	#size-cells = <0>;
+/*
 	cs-gpios = <&portb 6 GPIO_ACTIVE_LOW>, <&portb 7 GPIO_ACTIVE_LOW>;
 
 	x_pos_sensor: pwm3360@0 {
@@ -103,6 +105,7 @@
 		spi-max-frequency = <2000000>;
 		label = "PMW3360_2";
 	};
+*/
 };
 
 &sercom5 {
@@ -111,12 +114,13 @@
 	clock-frequency = <I2C_BITRATE_STANDARD>;
 	#address-cells = <1>;
 	#size-cells = <0>;
-
+/*
 	laser_dac: mcp4716@63 {
 		compatible = "";
 		label = "MCP4716";
 		reg = <0x63>;
 	};
+*/
 };
 
 &tcc0 {
