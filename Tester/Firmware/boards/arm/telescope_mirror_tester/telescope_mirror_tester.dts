@@ -9,40 +9,69 @@
 
 / {
 	model = "Telescope Mirror Tester";
+	compatible = "atmel,samd51j18a";
 
 	chosen {
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-		zephyr,code-partition = &code_partition;
 	};
 
-	motors {
-		motors_1_2: pwm_motors_1_2 {
-			pwm_1a = <&tcc0 0>;
-			pwm_1b = <&tcc0 1>;
-			pwm_2a = <&tcc0 3>;
-			pwm_2b = <&tcc0 2>;
-			fault_flag = <&porta 13>;
-			sleep_command = <&porta 12>;
+	motor_dual_drive_1 {
+		pwm_1: pwms {
+			pwms = <&tcc0 0>, <&tcc0 1>, <&tcc0 3>, <&tcc0 2>;
+			pwm-names = "A11", "A12", "B11", "B12";
 		};
+		pwm_sleep_1: sleep {
+			gpios = <&porta 12 GPIO_ACTIVE_LOW>;
+			label = "nSLEEP1";
+		};
+		pwm_fault_1: fault {
+			gpios = <&porta 13 GPIO_ACTIVE_LOW>;
+			label = "nFAULT1";
+		};
+	};
 
-		motors_3_4: pwm_motors_3_4 {
-			pwm_3a = <&tcc0 4>;
-			pwm_3b = <&tcc0 5>;
-			pwm_4a = <&tcc3 1>;
-			pwm_4b = <&tcc3 0>;
-			fault_flag = <&portb 14>;
-			sleep_command = <&portb 15>;
+	motor_dual_drive_2 {
+		pwm_2: pwms {
+			pwms = <&tcc0 4>, <&tcc0 5>, <&tcc3 1>, <&tcc3 0>;
+			pwm-names = "A21", "A22", "B21", "B22";
+		};
+		pwm_sleep_2: sleep {
+			gpios = <&porta 15 GPIO_ACTIVE_LOW>;
+			label = "nSLEEP2";
+		};
+		pwm_fault_2 {
+			gpios = <&porta 14 GPIO_ACTIVE_LOW>;
+			label = "nFAULT2";
 		};
 	};
 
 	limit_switches {
-		x_start = <&portb 14>;
-		x_end = <&portb 14>;
-		y_start = <&portb 14>;
-		y_end = <&portb 14>;
-		z_start = <&portb 14>;
-		z_end = <&portb 14>;
+		compatible = "gpio-keys";
+		switch_x0: switch_x0 {
+			gpios = <&porta 17 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_X0";
+		};
+		switch_x1: switch_x1 {
+			gpios = <&porta 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_X1";
+		};
+		switch_y0: switch_y0 {
+			gpios = <&porta 19 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_Y0";
+		};
+		switch_y1: switch_y1 {
+			gpios = <&porta 18 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_Y1";
+		};
+		switch_z0: switch_z0 {
+			gpios = <&porta 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_Z0";
+		};
+		switch_z1: switch_z1 {
+			gpios = <&porta 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_Z1";
+		};
 	};
 };
 
@@ -53,29 +82,33 @@
 &sercom0 {
 	status = "okay";
 	compatible = "atmel,sam0-spi";
-	current-speed = <115200>;
-	rxpo = <1>;
-	txpo = <0>;
+	dipo = <0>;
+	dopo = <1>;
+	#address-cells = <1>;
+	#size-cells = <0>;
+	cs-gpios = <&portb 6 GPIO_ACTIVE_LOW>, <&portb 7 GPIO_ACTIVE_LOW>;
 
 	x_pos_sensor: pwm3360@0 {
-		compatible = "";
-		label = "PMW3360";
+		compatible = "pixart,pwm3360";
 		reg = <0>;
+		irq-gpios = <&porta 7 0>;
+		spi-max-frequency = <2000000>;
+		label = "PMW3360_1";
 	};
 
 	y_pos_sensor: pwm3360@1 {
-		compatible = "";
-		label = "PMW3360";
+		compatible = "pixart,pwm3360";
 		reg = <1>;
+		irq-gpios = <&porta 7 0>;
+		spi-max-frequency = <2000000>;
+		label = "PMW3360_2";
 	};
 };
 
 &sercom5 {
 	status = "okay";
 	compatible = "atmel,sam0-i2c";
-	dipo = <3>;
-	dopo = <0>;
-
+	clock-frequency = <I2C_BITRATE_STANDARD>;
 	#address-cells = <1>;
 	#size-cells = <0>;
 
@@ -90,7 +123,6 @@
 	status = "okay";
 	compatible = "atmel,sam0-tcc-pwm";
 	prescaler = <8>;
-
 	#pwm-cells = <1>;
 };
 
@@ -98,7 +130,6 @@
 	status = "okay";
 	compatible = "atmel,sam0-tcc-pwm";
 	prescaler = <8>;
-
 	#pwm-cells = <1>;
 };
 
@@ -126,34 +157,4 @@
 
 &eic {
 	status = "okay";
-};
-
-&flash0 {
-	partitions {
-		compatible = "fixed-partitions";
-		#address-cells = <1>;
-		#size-cells = <1>;
-
-		boot_partition: partition@0 {
-			label = "uf2";
-			reg = <0x00000000 DT_SIZE_K(16)>;
-			read-only;
-		};
-
-		code_partition: partition@4000 {
-			label = "code";
-			reg = <0x4000 DT_SIZE_K(256-16-16)>;
-			read-only;
-		};
-
-		/*
-		 * The final 16 KiB is reserved for the application.
-		 * Storage partition will be used by FCB/LittleFS/NVS
-		 * if enabled.
-		 */
-		storage_partition: partition@7c000 {
-			label = "storage";
-			reg = <0x7c000 DT_SIZE_K(16)>;
-		};
-	};
 };
