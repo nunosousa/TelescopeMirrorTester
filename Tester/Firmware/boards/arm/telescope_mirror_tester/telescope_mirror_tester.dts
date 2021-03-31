@@ -12,8 +12,11 @@
 	compatible = "atmel,samd51j18a";
 
 	chosen {
+		//zephyr,console = &uart0;
+		//zephyr,shell-uart = &uart0;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
+		zephyr,code-partition = &code_partition;
 	};
 /*
 	motor_dual_drive_1 {
@@ -161,4 +164,34 @@
 
 &eic {
 	status = "okay";
+};
+
+&flash0 {
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		boot_partition: partition@0 {
+			label = "uf2";
+			reg = <0x00000000 DT_SIZE_K(16)>;
+			read-only;
+		};
+
+		code_partition: partition@4000 {
+			label = "code";
+			reg = <0x4000 DT_SIZE_K(256-16-16)>;
+			read-only;
+		};
+
+		/*
+		 * The final 16 KiB is reserved for the application.
+		 * Storage partition will be used by FCB/LittleFS/NVS
+		 * if enabled.
+		 */
+		storage_partition: partition@7c000 {
+			label = "storage";
+			reg = <0x3c000 DT_SIZE_K(16)>;
+		};
+	};
 };
