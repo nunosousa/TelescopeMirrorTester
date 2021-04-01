@@ -9,3 +9,6 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(telescope_mirror_tester)
 
 target_sources(app PRIVATE src/main.c)
+target_sources(app PRIVATE src/command_parser/command_parser.c)
+target_sources(app PRIVATE src/motor_control/motor_control.c)
+target_sources(app PRIVATE src/position_sensor/position_sensor.c)
