@@ -10,6 +10,7 @@
 #include <string.h>
 #include <usb/usb_device.h>
 #include <drivers/uart.h>
+#include <console/console.h>
 
 void main(void)
 {
@@ -35,8 +36,14 @@ void main(void)
 		return;
 	}
 
+	console_getline_init();
+
+	printk("Enter a line\n");
+
 	while (1) {
-		printk("Hello World! %s\n", CONFIG_ARCH);
-		k_sleep(K_SECONDS(1));
+		char *s = console_getline();
+
+		printk("line: %s\n", s);
+		printk("last char was: 0x%x\n", s[strlen(s) - 1]);
 	}
 }
