@@ -1,24 +1,9 @@
-/*
- * Copyright (c) 2019 Intel Corporation
- *
- * SPDX-License-Identifier: Apache-2.0
- */
-
-/**
- * @file
- * @brief Sample echo app for CDC ACM class
- *
- * Sample app for USB CDC ACM class driver. The received data is echoed back
- * to the serial port.
- */
-
 #include <stdio.h>
 #include <string.h>
 #include <device.h>
 #include <drivers/uart.h>
 #include <zephyr.h>
 #include <sys/ring_buffer.h>
-
 #include <usb/usb_device.h>
 #include <logging/log.h>
 
@@ -26,12 +11,12 @@
 
 LOG_MODULE_REGISTER(cdc_acm_echo, LOG_LEVEL_INF);
 
-#define SERIAL_THREAD_STACK_SIZE 1024
-#define SERIAL_THREAD_PRIORITY 5
-
 #define RING_BUF_SIZE 1024
 uint8_t ring_buffer[RING_BUF_SIZE];
 struct ring_buf ringbuf;
+
+K_THREAD_STACK_DEFINE(parser_thread_stack, PARSER_THREAD_STACK_SIZE);
+static struct k_thread parser_thread;
 
 static void interrupt_handler(const struct device *dev, void *user_data)
 {
@@ -54,6 +39,7 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 			LOG_DBG("tty fifo -> ringbuf %d bytes", rb_len);
 
 			//uart_irq_tx_enable(dev);
+			//k_thread_resume();
 		}
 
 		if (uart_irq_tx_ready(dev)) {
@@ -77,21 +63,27 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 	}
 }
 
-void command_parser(void)
+void command_parser(void *unused0, void *unused1, void *unused2)
 {
 	const struct device *dev;
-	dev = device_get_binding("CDC_ACM_0");
 
-	ring_buf_put(&ringbuf, "aaaaa\n", 6);
-
-	uart_irq_tx_enable(dev);
-
-	k_sleep(K_SECONDS(1));
+	while(1)
+	{
+		ring_buf_put(&ringbuf, "aaaaa\n", 6);
+		
+		dev = device_get_binding("CDC_ACM_0");
+		uart_irq_tx_enable(dev);
+		
+		//k_thread_suspend();
+	}
 }
 
 void generate_response(void)
 {
-	
+	while(1)
+	{
+		//k_thread_suspend();
+	}
 }
 
 void command_parser_init(void)
@@ -153,8 +145,21 @@ void command_parser_init(void)
 
 	/* Enable rx interrupts */
 	uart_irq_rx_enable(dev);
+
+	/* Start Threads */
+	k_thread_create(&parser_thread,
+					parser_thread_stack,
+					K_THREAD_STACK_SIZEOF(parser_thread_stack),
+					command_parser,
+					NULL, NULL, NULL,
+					PARSER_THREAD_PRIORITY, 0, K_NO_WAIT);
 }
 
-/* Create Thread */
-K_THREAD_DEFINE(command_parser_id, SERIAL_THREAD_STACK_SIZE, command_parser, NULL, NULL, NULL, SERIAL_THREAD_PRIORITY, 0, 0);
 
+
+/*K_THREAD_DEFINE(command_parser_id,
+                PARSER_THREAD_STACK_SIZE,
+                command_parser,
+                NULL, NULL, NULL,
+                PARSER_THREAD_PRIORITY,
+                0, 0);*/
