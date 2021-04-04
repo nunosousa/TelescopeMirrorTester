@@ -15,9 +15,14 @@ LOG_MODULE_REGISTER(cdc_acm_echo, LOG_LEVEL_INF);
 uint8_t ring_buffer[RING_BUF_SIZE];
 struct ring_buf ringbuf;
 
-K_THREAD_STACK_DEFINE(parser_thread_stack, PARSER_THREAD_STACK_SIZE);
-static struct k_thread parser_thread;
-static k_tid_t parser_tid;
+// Define Command Parser Work Queue auxiliary data structures
+K_THREAD_STACK_DEFINE(parser_queue_stack, PARSER_QUEUE_STACK_SIZE);
+static struct k_work_q parser_queue;
+struct command_data {
+	struct k_work work_item;
+	uint8_t command[MAX_COMMAND_SIZE];
+	int size;
+} new_command_data;
 
 static void interrupt_handler(const struct device *dev, void *user_data)
 {
@@ -25,22 +30,14 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 
 	while (uart_irq_update(dev) && uart_irq_is_pending(dev)) {
 		if (uart_irq_rx_ready(dev)) {
-			int recv_len, rb_len;
-			uint8_t buffer[64];
-			size_t len = MIN(ring_buf_space_get(&ringbuf),
-					 sizeof(buffer));
+			int recv_len;
 
-			recv_len = uart_fifo_read(dev, buffer, len);
+			recv_len = uart_fifo_read(dev, new_command_data.command, MAX_COMMAND_SIZE);
+			new_command_data.size = recv_len;
 
-			rb_len = ring_buf_put(&ringbuf, buffer, recv_len);
-			if (rb_len < recv_len) {
-				LOG_ERR("Drop %u bytes", recv_len - rb_len);
+			if (recv_len > 0) {
+				k_work_submit(&new_command_data.work_item);
 			}
-
-			LOG_DBG("tty fifo -> ringbuf %d bytes", rb_len);
-
-			//uart_irq_tx_enable(dev);
-			//k_thread_resume(parser_tid);
 		}
 
 		if (uart_irq_tx_ready(dev)) {
@@ -64,19 +61,19 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 	}
 }
 
-void command_parser(void *unused0, void *unused1, void *unused2)
+void command_parser(struct k_work *new_work)
 {
 	const struct device *dev;
-	
+	struct command_data *new_command;
+
 	dev = device_get_binding("CDC_ACM_0");
+	new_command = CONTAINER_OF(new_work, struct command_data, work_item);
 
 	while(1)
 	{
-		ring_buf_put(&ringbuf, "aaaaa\n", 6);
+		//ring_buf_put(&ringbuf, "aaaaa\n", 6);
 		
 		uart_irq_tx_enable(dev);
-		
-		k_thread_suspend(parser_tid);
 	}
 }
 
@@ -148,12 +145,10 @@ void command_parser_init(void)
 	/* Enable rx interrupts */
 	uart_irq_rx_enable(dev);
 
-	/* Start Threads */
-	parser_tid = k_thread_create(&parser_thread,
-					parser_thread_stack,
-					K_THREAD_STACK_SIZEOF(parser_thread_stack),
-					command_parser,
-					NULL, NULL, NULL,
-					PARSER_THREAD_PRIORITY, 0, K_NO_WAIT);
+	/* Start Work Queues */
+	k_work_queue_start(&parser_queue, parser_queue_stack,
+						K_THREAD_STACK_SIZEOF(parser_queue_stack),
+						PARSER_QUEUE_PRIORITY, NULL);
+	k_work_init(&new_command_data.work_item, command_parser);
 }
 
