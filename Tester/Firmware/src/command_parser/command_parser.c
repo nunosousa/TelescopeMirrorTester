@@ -17,6 +17,7 @@ struct ring_buf ringbuf;
 
 K_THREAD_STACK_DEFINE(parser_thread_stack, PARSER_THREAD_STACK_SIZE);
 static struct k_thread parser_thread;
+static k_tid_t parser_tid;
 
 static void interrupt_handler(const struct device *dev, void *user_data)
 {
@@ -39,7 +40,7 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 			LOG_DBG("tty fifo -> ringbuf %d bytes", rb_len);
 
 			//uart_irq_tx_enable(dev);
-			//k_thread_resume();
+			//k_thread_resume(parser_tid);
 		}
 
 		if (uart_irq_tx_ready(dev)) {
@@ -66,15 +67,16 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 void command_parser(void *unused0, void *unused1, void *unused2)
 {
 	const struct device *dev;
+	
+	dev = device_get_binding("CDC_ACM_0");
 
 	while(1)
 	{
 		ring_buf_put(&ringbuf, "aaaaa\n", 6);
 		
-		dev = device_get_binding("CDC_ACM_0");
 		uart_irq_tx_enable(dev);
 		
-		//k_thread_suspend();
+		k_thread_suspend(parser_tid);
 	}
 }
 
@@ -147,7 +149,7 @@ void command_parser_init(void)
 	uart_irq_rx_enable(dev);
 
 	/* Start Threads */
-	k_thread_create(&parser_thread,
+	parser_tid = k_thread_create(&parser_thread,
 					parser_thread_stack,
 					K_THREAD_STACK_SIZEOF(parser_thread_stack),
 					command_parser,
@@ -155,11 +157,3 @@ void command_parser_init(void)
 					PARSER_THREAD_PRIORITY, 0, K_NO_WAIT);
 }
 
-
-
-/*K_THREAD_DEFINE(command_parser_id,
-                PARSER_THREAD_STACK_SIZE,
-                command_parser,
-                NULL, NULL, NULL,
-                PARSER_THREAD_PRIORITY,
-                0, 0);*/
