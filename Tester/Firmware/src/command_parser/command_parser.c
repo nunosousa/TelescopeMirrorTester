@@ -21,13 +21,16 @@
 
 #include <usb/usb_device.h>
 #include <logging/log.h>
+
 #include "command_parser.h"
 
 LOG_MODULE_REGISTER(cdc_acm_echo, LOG_LEVEL_INF);
 
+#define SERIAL_THREAD_STACK_SIZE 1024
+#define SERIAL_THREAD_PRIORITY 5
+
 #define RING_BUF_SIZE 1024
 uint8_t ring_buffer[RING_BUF_SIZE];
-
 struct ring_buf ringbuf;
 
 static void interrupt_handler(const struct device *dev, void *user_data)
@@ -50,7 +53,7 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 
 			LOG_DBG("tty fifo -> ringbuf %d bytes", rb_len);
 
-			uart_irq_tx_enable(dev);
+			//uart_irq_tx_enable(dev);
 		}
 
 		if (uart_irq_tx_ready(dev)) {
@@ -72,6 +75,23 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 			LOG_DBG("ringbuf -> tty fifo %d bytes", send_len);
 		}
 	}
+}
+
+void command_parser(void)
+{
+	const struct device *dev;
+	dev = device_get_binding("CDC_ACM_0");
+
+	ring_buf_put(&ringbuf, "aaaaa\n", 6);
+
+	uart_irq_tx_enable(dev);
+
+	k_sleep(K_SECONDS(1));
+}
+
+void generate_response(void)
+{
+	
 }
 
 void command_parser_init(void)
@@ -134,3 +154,7 @@ void command_parser_init(void)
 	/* Enable rx interrupts */
 	uart_irq_rx_enable(dev);
 }
+
+/* Create Thread */
+K_THREAD_DEFINE(command_parser_id, SERIAL_THREAD_STACK_SIZE, command_parser, NULL, NULL, NULL, SERIAL_THREAD_PRIORITY, 0, 0);
+
