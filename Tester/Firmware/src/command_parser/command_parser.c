@@ -24,6 +24,11 @@ struct command_data {
 	int size;
 } new_command_data;
 
+// Define Command response auxiliary data strctures
+K_THREAD_STACK_DEFINE(cmd_response_thread_stack, CMD_RESPONSE_THREAD_STACK_SIZE);
+static struct k_thread cmd_response_thread;
+static k_tid_t cmd_response_tid;
+
 static void interrupt_handler(const struct device *dev, void *user_data)
 {
 	ARG_UNUSED(user_data);
@@ -71,16 +76,16 @@ void command_parser(struct k_work *new_work)
 
 	while(1)
 	{
-		//ring_buf_put(&ringbuf, "aaaaa\n", 6);
-		
-		uart_irq_tx_enable(dev);
 	}
 }
 
-void generate_response(void)
+void generate_response(void *unused0, void *unused1, void *unused2)
 {
 	while(1)
 	{
+		//ring_buf_put(&ringbuf, "aaaaa\n", 6);
+		
+		//uart_irq_tx_enable(dev);
 		//k_thread_suspend();
 	}
 }
@@ -150,5 +155,12 @@ void command_parser_init(void)
 						K_THREAD_STACK_SIZEOF(parser_queue_stack),
 						PARSER_QUEUE_PRIORITY, NULL);
 	k_work_init(&new_command_data.work_item, command_parser);
-}
 
+	/* Start Threads */
+	cmd_response_tid = k_thread_create(&cmd_response_thread,
+						cmd_response_thread_stack,
+						K_THREAD_STACK_SIZEOF(cmd_response_thread_stack),
+						generate_response,
+						NULL, NULL, NULL,
+						CMD_RESPONSE_THREAD_PRIORITY, 0, K_NO_WAIT);
+}
