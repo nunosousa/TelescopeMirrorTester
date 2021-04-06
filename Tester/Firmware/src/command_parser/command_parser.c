@@ -17,12 +17,10 @@ struct ring_buf ringbuf;
 
 // Define Command Parser Work Queue auxiliary data structures
 K_THREAD_STACK_DEFINE(parser_queue_stack, PARSER_QUEUE_STACK_SIZE);
-static struct k_work_q parser_queue;
-struct command_data {
-	struct k_work work_item;
-	uint8_t command[MAX_COMMAND_SIZE];
-	int size;
-} new_command_data;
+struct k_work_q parser_queue;
+struct k_work rx_work_item;
+#define RX_CMD_RING_BUF_SIZE 64
+RING_BUF_DECLARE(rx_cmd_ring_buffer, RX_CMD_RING_BUF_SIZE);
 
 // Define Command response auxiliary data strctures
 K_THREAD_STACK_DEFINE(cmd_response_thread_stack, CMD_RESPONSE_THREAD_STACK_SIZE);
@@ -35,13 +33,19 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 
 	while (uart_irq_update(dev) && uart_irq_is_pending(dev)) {
 		if (uart_irq_rx_ready(dev)) {
-			int recv_len;
+			uint32_t rb_len, recv_len, err;
+			uint8_t *data;
+			
+			/* Allocate buffer within a ring buffer memory. */
+			rb_len = ring_buf_put_claim(&rx_cmd_ring_buffer, &data, RX_CMD_RING_BUF_SIZE);
 
-			recv_len = uart_fifo_read(dev, new_command_data.command, MAX_COMMAND_SIZE);
-			new_command_data.size = recv_len;
+			/* Work directly on a ring buffer memory. */
+			recv_len = uart_fifo_read(dev, data, rb_len);
 
-			if (recv_len > 0) {
-				k_work_submit(&new_command_data.work_item);
+			/* Indicate amount of valid data. rx_size can be equal or less than size. */
+			err = ring_buf_put_finish(&rx_cmd_ring_buffer, recv_len);
+			if (err == 0) {
+				k_work_submit(&rx_work_item);
 			}
 		}
 
@@ -72,10 +76,10 @@ void command_parser(struct k_work *new_work)
 	struct command_data *new_command;
 
 	dev = device_get_binding("CDC_ACM_0");
-	new_command = CONTAINER_OF(new_work, struct command_data, work_item);
 
 	while(1)
 	{
+		break;
 	}
 }
 
@@ -154,7 +158,7 @@ void command_parser_init(void)
 	k_work_queue_start(&parser_queue, parser_queue_stack,
 						K_THREAD_STACK_SIZEOF(parser_queue_stack),
 						PARSER_QUEUE_PRIORITY, NULL);
-	k_work_init(&new_command_data.work_item, command_parser);
+	k_work_init(&rx_work_item, command_parser);
 
 	/* Start Threads */
 	cmd_response_tid = k_thread_create(&cmd_response_thread,
