@@ -19,8 +19,10 @@ struct ring_buf ringbuf;
 K_THREAD_STACK_DEFINE(parser_queue_stack, PARSER_QUEUE_STACK_SIZE);
 struct k_work_q parser_queue;
 struct k_work rx_work_item;
-#define RX_CMD_RING_BUF_SIZE 64
+#define RX_CMD_RING_BUF_SIZE 16
 RING_BUF_DECLARE(rx_cmd_ring_buffer, RX_CMD_RING_BUF_SIZE);
+
+#define MAX_CND_SIZE 16
 
 // Define Command response auxiliary data strctures
 K_THREAD_STACK_DEFINE(cmd_response_thread_stack, CMD_RESPONSE_THREAD_STACK_SIZE);
@@ -44,7 +46,7 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 
 			/* Indicate amount of valid data. rx_size can be equal or less than size. */
 			err = ring_buf_put_finish(&rx_cmd_ring_buffer, recv_len);
-			if (err == 0) {
+			if ((err == 0) && (recv_len > 0)) {
 				k_work_submit(&rx_work_item);
 			}
 		}
@@ -72,14 +74,31 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 
 void command_parser(struct k_work *new_work)
 {
-	const struct device *dev;
-	struct command_data *new_command;
+	uint8_t data;
+	static uint8_t count = 0;
+	static uint8_t command[MAX_CND_SIZE];
 
-	dev = device_get_binding("CDC_ACM_0");
-
-	while(1)
+	while(ring_buf_get(&rx_cmd_ring_buffer, &data, 1) == 1)
 	{
-		break;
+		command[count++] = data;
+
+		if(count == MAX_CND_SIZE)
+		{
+			count = 0;
+		}
+
+		if(data == '\r')	// New line detected. Process command.
+		{
+			// Serial commands
+			// PWM1-99, PWM1+99
+			// PWM2-99, PWM1+99
+			// PWM3-99, PWM1+99
+			// PWM4-99, PWM1+99
+			// LSR100, LSR99
+			// OPT1ON, OPT1OFF
+			// OPT2ON, OPT2OFF
+			
+		}
 	}
 }
 
