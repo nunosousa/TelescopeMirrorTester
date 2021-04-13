@@ -11,18 +11,16 @@
 
 LOG_MODULE_REGISTER(cdc_acm_echo, LOG_LEVEL_INF);
 
-#define RING_BUF_SIZE 1024
-uint8_t ring_buffer[RING_BUF_SIZE];
-struct ring_buf ringbuf;
-
 // Define Command Parser Work Queue auxiliary data structures
 K_THREAD_STACK_DEFINE(parser_queue_stack, PARSER_QUEUE_STACK_SIZE);
 struct k_work_q parser_queue;
 struct k_work rx_work_item;
-#define RX_CMD_RING_BUF_SIZE 16
-RING_BUF_DECLARE(rx_cmd_ring_buffer, RX_CMD_RING_BUF_SIZE);
 
-#define MAX_CND_SIZE 16
+#define MAX_CMD_SIZE 16
+#define RX_CMD_RING_BUF_SIZE 16
+#define TX_CMD_RING_BUF_SIZE 64
+RING_BUF_DECLARE(rx_cmd_ring_buffer, RX_CMD_RING_BUF_SIZE);
+RING_BUF_DECLARE(tx_cmd_ring_buffer, TX_CMD_RING_BUF_SIZE);
 
 // Define Command response auxiliary data strctures
 K_THREAD_STACK_DEFINE(cmd_response_thread_stack, CMD_RESPONSE_THREAD_STACK_SIZE);
@@ -35,8 +33,8 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 
 	while (uart_irq_update(dev) && uart_irq_is_pending(dev)) {
 		if (uart_irq_rx_ready(dev)) {
-			uint32_t rb_len, recv_len, err;
 			uint8_t *data;
+			uint32_t rb_len, recv_len, err;
 			
 			/* Allocate buffer within a ring buffer memory. */
 			rb_len = ring_buf_put_claim(&rx_cmd_ring_buffer, &data, RX_CMD_RING_BUF_SIZE);
@@ -49,25 +47,30 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 			if ((err == 0) && (recv_len > 0)) {
 				k_work_submit(&rx_work_item);
 			}
+
+			/* Generate echo for the received characters */
+			err = ring_buf_put(&tx_cmd_ring_buffer, data, recv_len);
+			if ((err > 0) && (recv_len > 0)) {
+				uart_irq_tx_enable(dev);
+			}
 		}
 
 		if (uart_irq_tx_ready(dev)) {
-			uint8_t buffer[64];
-			int rb_len, send_len;
+			uint8_t *data;
+			uint32_t rb_len, send_len;
 
-			rb_len = ring_buf_get(&ringbuf, buffer, sizeof(buffer));
+			/* Get buffer within a ring buffer memory. */
+			rb_len = ring_buf_get_claim(&tx_cmd_ring_buffer, &data, TX_CMD_RING_BUF_SIZE);
 			if (!rb_len) {
-				LOG_DBG("Ring buffer empty, disable TX IRQ");
 				uart_irq_tx_disable(dev);
 				continue;
 			}
 
-			send_len = uart_fifo_fill(dev, buffer, rb_len);
-			if (send_len < rb_len) {
-				LOG_ERR("Drop %d bytes", rb_len - send_len);
-			}
-
-			LOG_DBG("ringbuf -> tty fifo %d bytes", send_len);
+			/* Work directly on a ring buffer memory. */
+			send_len = uart_fifo_fill(dev, data, rb_len);
+			
+			/* Indicate amount of data that can be freed. */
+			ring_buf_get_finish(&tx_cmd_ring_buffer, send_len);
 		}
 	}
 }
@@ -76,13 +79,13 @@ void command_parser(struct k_work *new_work)
 {
 	uint8_t data;
 	static uint8_t count = 0;
-	static uint8_t command[MAX_CND_SIZE];
+	static uint8_t command[MAX_CMD_SIZE];
 
 	while(ring_buf_get(&rx_cmd_ring_buffer, &data, 1) == 1)
 	{
 		command[count++] = data;
 
-		if(count == MAX_CND_SIZE)
+		if(count == MAX_CMD_SIZE)
 		{
 			count = 0;
 		}
