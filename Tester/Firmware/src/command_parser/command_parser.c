@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <device.h>
 #include <drivers/uart.h>
@@ -75,34 +76,98 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 	}
 }
 
-void command_parser(struct k_work *new_work)
+void command_tokenizer(struct k_work *new_work)
 {
-	uint8_t data;
+	uint8_t data, new_cmd;
 	static uint8_t count = 0;
 	static uint8_t command[MAX_CMD_SIZE];
 
-	while(ring_buf_get(&rx_cmd_ring_buffer, &data, 1) == 1)
+	while(1)
 	{
-		command[count++] = data;
-
-		if(count == MAX_CMD_SIZE)
+		while(ring_buf_get(&rx_cmd_ring_buffer, &data, 1) == 1)
 		{
-			count = 0;
-		}
+			command[count] = data;
 
-		if(data == '\r')	// New line detected. Process command.
-		{
-			// Serial commands
-			// PWM1-99, PWM1+99
-			// PWM2-99, PWM1+99
-			// PWM3-99, PWM1+99
-			// PWM4-99, PWM1+99
-			// LSR100, LSR99
-			// OPT1ON, OPT1OFF
-			// OPT2ON, OPT2OFF
-			
+			if(count < (MAX_CMD_SIZE-1))
+			{
+				++count;
+			}
+
+			if(data == '\r')
+			{
+				command_parser(command, count);
+				count = 0;
+				break;
+			}
 		}
 	}
+}
+
+void command_parser(uint8_t *command, uint8_t length)
+{
+	uint8_t terminated_cmd[MAX_CMD_SIZE+1], cmd_value;
+
+	// Serial commands
+	// PWM1-99, PWM1+99
+	// PWM2-99, PWM1+99
+	// PWM3-99, PWM1+99
+	// PWM4-99, PWM1+99
+	// LSR100, LSR199
+	// OPT10, OPT11
+	// OPT20, OPT21
+
+	if(length <= MAX_CMD_SIZE)
+	{
+		memcpy(terminated_cmd, command, length);
+		terminated_cmd[length] = '\0';
+	}
+	else
+	{
+		return;
+	}
+
+	if((length == 7) && (!memcmp(command, "PMW", 3)))
+	{
+		switch(command[3])
+		{
+			case '1':
+				cmd_value = atoi(command[4]);
+				/* set PWM 1 to value */
+				break;
+			case '2':
+				cmd_value = atoi(command[4]);
+				/* set PWM 2 to value */
+				break;
+			case '3':
+				cmd_value = atoi(command[4]);
+				/* set PWM 3 to value */
+				break;
+			case '4':
+				cmd_value = atoi(command[4]);
+				/* set PWM 4 to value */
+				break;
+			default:
+				return;
+		}
+	}
+	else if((length == 6) && (!memcmp(command, "LSR", 3)))
+	{
+		switch(command[3])
+		{
+			case '1':
+				cmd_value = atoi(command[4]);
+				/* set LASER 1 to value */
+				break;
+			default:
+				return;
+		}
+	}
+	else if((length == 6) && (!memcmp(command, "OPT", 3)))
+	{
+		/* code */
+	}
+
+	return;
 }
 
 void generate_response(void *unused0, void *unused1, void *unused2)
