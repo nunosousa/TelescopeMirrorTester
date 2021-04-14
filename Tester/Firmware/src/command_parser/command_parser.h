@@ -5,5 +5,6 @@
 
 
 void command_parser_init(void);
-void command_parser(struct k_work *work_item);
+void command_tokenizer(struct k_work *work_item);
+void command_parser(uint8_t *command, uint8_t length)
 void generate_response(void *unused0, void *unused1, void *unused2);
