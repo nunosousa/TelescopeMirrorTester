@@ -17,9 +17,6 @@ K_THREAD_STACK_DEFINE(parser_queue_stack, PARSER_QUEUE_STACK_SIZE);
 struct k_work_q parser_queue;
 struct k_work rx_work_item;
 
-#define MAX_CMD_SIZE 16
-#define RX_CMD_RING_BUF_SIZE 16
-#define TX_CMD_RING_BUF_SIZE 64
 RING_BUF_DECLARE(rx_cmd_ring_buffer, RX_CMD_RING_BUF_SIZE);
 RING_BUF_DECLARE(tx_cmd_ring_buffer, TX_CMD_RING_BUF_SIZE);
 
@@ -36,7 +33,7 @@ static void interrupt_handler(const struct device *dev, void *user_data)
 		if (uart_irq_rx_ready(dev)) {
 			uint8_t *data;
 			uint32_t rb_len, recv_len, err;
-			
+
 			/* Allocate buffer within a ring buffer memory. */
 			rb_len = ring_buf_put_claim(&rx_cmd_ring_buffer, &data, RX_CMD_RING_BUF_SIZE);
 
@@ -131,19 +128,19 @@ void command_parser(uint8_t *command, uint8_t length)
 		switch(command[3])
 		{
 			case '1':
-				cmd_value = atoi(command[4]);
+				cmd_value = atoi(&command[4]);
 				/* set PWM 1 to value */
 				break;
 			case '2':
-				cmd_value = atoi(command[4]);
+				cmd_value = atoi(&command[4]);
 				/* set PWM 2 to value */
 				break;
 			case '3':
-				cmd_value = atoi(command[4]);
+				cmd_value = atoi(&command[4]);
 				/* set PWM 3 to value */
 				break;
 			case '4':
-				cmd_value = atoi(command[4]);
+				cmd_value = atoi(&command[4]);
 				/* set PWM 4 to value */
 				break;
 			default:
@@ -155,7 +152,7 @@ void command_parser(uint8_t *command, uint8_t length)
 		switch(command[3])
 		{
 			case '1':
-				cmd_value = atoi(command[4]);
+				cmd_value = atoi(&command[4]);
 				/* set LASER 1 to value */
 				break;
 			default:
@@ -245,7 +242,7 @@ void command_parser_init(void)
 	k_work_queue_start(&parser_queue, parser_queue_stack,
 						K_THREAD_STACK_SIZEOF(parser_queue_stack),
 						PARSER_QUEUE_PRIORITY, NULL);
-	k_work_init(&rx_work_item, command_parser);
+	k_work_init(&rx_work_item, command_tokenizer);
 
 	/* Start Threads */
 	cmd_response_tid = k_thread_create(&cmd_response_thread,
