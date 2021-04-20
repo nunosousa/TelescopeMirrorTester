@@ -105,7 +105,7 @@ void command_tokenizer(struct k_work *new_work)
 
 void command_parser(uint8_t *command, uint8_t length)
 {
-	uint8_t terminated_cmd[MAX_CMD_SIZE+1], cmd_value;
+	uint8_t command_string[MAX_CMD_SIZE+1], cmd_value;
 
 	// Serial commands
 	// PWM1-99, PWM1+99
@@ -113,13 +113,13 @@ void command_parser(uint8_t *command, uint8_t length)
 	// PWM3-99, PWM1+99
 	// PWM4-99, PWM1+99
 	// LSR100, LSR199
-	// OPT10, OPT11
-	// OPT20, OPT21
+	// OPT1OFF, OPT1ON
+	// OPT2OFF, OPT2ON
 
 	if(length <= MAX_CMD_SIZE)
 	{
-		memcpy(terminated_cmd, command, length);
-		terminated_cmd[length] = '\0';
+		memcpy(command_string, command, length);
+		command_string[length] = '\0';
 	}
 	else
 	{
@@ -162,7 +162,7 @@ void command_parser(uint8_t *command, uint8_t length)
 				return;
 		}
 	}
-	else if((length == 6) && (!memcmp(command, "OPT", 3)))
+	else if((length == 5) && (!memcmp(command, "OPT", 3)))
 	{
 		/* code */
 	}
@@ -199,7 +199,7 @@ void command_parser_init(void)
 		return;
 	}
 
-	ring_buf_init(&ringbuf, sizeof(ring_buffer), ring_buffer);
+	//ring_buf_init(&ringbuf, sizeof(ring_buffer), ring_buffer);
 
 	LOG_INF("Wait for DTR");
 
