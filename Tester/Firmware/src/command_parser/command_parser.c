@@ -4,11 +4,15 @@
 #include <device.h>
 #include <drivers/uart.h>
 #include <zephyr.h>
+#include <kernel.h>
 #include <sys/ring_buffer.h>
 #include <usb/usb_device.h>
 #include <logging/log.h>
+#include <console/tty.h>
 
 #include "command_parser.h"
+
+static struct tty_serial tty;
 
 LOG_MODULE_REGISTER(cdc_acm_echo, LOG_LEVEL_INF);
 
@@ -195,6 +199,10 @@ void command_parser_init(void)
 		LOG_ERR("Failed to enable USB");
 		return;
 	}
+
+	tty_init(&tty, dev);
+
+	tty_write(&tty, "ccccc", 5);
 
 	//ring_buf_init(&ringbuf, sizeof(ring_buffer), ring_buffer);
 
