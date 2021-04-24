@@ -12,11 +12,38 @@
 	compatible = "atmel,samd51j18a";
 
 	chosen {
-		//zephyr,console = &uart0;
-		//zephyr,shell-uart = &uart0;
+		zephyr,console = &sercom3;
+		zephyr,shell-uart = &sercom3;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-		zephyr,code-partition = &code_partition;
+	};
+
+	limit_switches {
+		compatible = "gpio-keys";
+		switch_positive_x: SW3_1 {
+			gpios = <&porta 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_PX";
+		};
+		switch_negative_x: SW3_3 {
+			gpios = <&porta 17 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_NX";
+		};
+		switch_positive_y: SW4_1 {
+			gpios = <&porta 18 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_PY";
+		};
+		switch_negative_y: SW4_3 {
+			gpios = <&porta 19 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_NY";
+		};
+		switch_positive_z: J11 {
+			gpios = <&porta 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_PZ";
+		};
+		switch_negative_z: J12 {
+			gpios = <&porta 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "SW_NZ";
+		};
 	};
 /*
 	motor_dual_drive_1 {
@@ -46,34 +73,6 @@
 		pwm_fault_2 {
 			gpios = <&porta 14 GPIO_ACTIVE_LOW>;
 			label = "nFAULT2";
-		};
-	};
-
-	limit_switches {
-		compatible = "gpio-keys";
-		switch_x0: switch_x0 {
-			gpios = <&porta 17 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "SW_X0";
-		};
-		switch_x1: switch_x1 {
-			gpios = <&porta 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "SW_X1";
-		};
-		switch_y0: switch_y0 {
-			gpios = <&porta 19 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "SW_Y0";
-		};
-		switch_y1: switch_y1 {
-			gpios = <&porta 18 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "SW_Y1";
-		};
-		switch_z0: switch_z0 {
-			gpios = <&porta 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "SW_Z0";
-		};
-		switch_z1: switch_z1 {
-			gpios = <&porta 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "SW_Z1";
 		};
 	};
 */
@@ -164,34 +163,4 @@
 
 &eic {
 	status = "okay";
-};
-
-&flash0 {
-	partitions {
-		compatible = "fixed-partitions";
-		#address-cells = <1>;
-		#size-cells = <1>;
-
-		boot_partition: partition@0 {
-			label = "uf2";
-			reg = <0x00000000 DT_SIZE_K(16)>;
-			read-only;
-		};
-
-		code_partition: partition@4000 {
-			label = "code";
-			reg = <0x4000 DT_SIZE_K(256-16-16)>;
-			read-only;
-		};
-
-		/*
-		 * The final 16 KiB is reserved for the application.
-		 * Storage partition will be used by FCB/LittleFS/NVS
-		 * if enabled.
-		 */
-		storage_partition: partition@7c000 {
-			label = "storage";
-			reg = <0x3c000 DT_SIZE_K(16)>;
-		};
-	};
 };

@@ -1,6 +1,8 @@
 #include <zephyr.h>
-#include <usb/usb_device.h>
+#include <device.h>
+#include <drivers/gpio.h>
 #include <drivers/uart.h>
+#include <usb/usb_device.h>
 #include <shell/shell.h>
 
 
@@ -16,7 +18,53 @@ static int cmd_demo(const struct shell *shell, size_t argc, char **argv)
 
 SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo);
 
-void main(void)
+void initialize_gpios(void)
+{
+	const struct device *sw_px, *sw_nx, *sw_py, *sw_ny, *sw_pz, *sw_nz;
+	int sw_px_ret, sw_nx_ret, sw_py_ret, sw_ny_ret, sw_pz_ret, sw_nz_ret;
+
+	sw_px = device_get_binding(DT_LABEL(DT_NODELABEL(switch_positive_x)));
+	sw_nx = device_get_binding(DT_LABEL(DT_NODELABEL(switch_negative_x)));
+	sw_py = device_get_binding(DT_LABEL(DT_NODELABEL(switch_positive_y)));
+	sw_ny = device_get_binding(DT_LABEL(DT_NODELABEL(switch_negative_y)));
+	sw_pz = device_get_binding(DT_LABEL(DT_NODELABEL(switch_positive_z)));
+	sw_nz = device_get_binding(DT_LABEL(DT_NODELABEL(switch_negative_z)));
+
+	if ((sw_px == NULL) || (sw_nx == NULL) || (sw_py == NULL)
+	|| (sw_ny == NULL) || (sw_pz == NULL) || (sw_nz == NULL)) {
+		return;
+	}
+
+	sw_px_ret = gpio_pin_configure(sw_px,
+									DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios),
+									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+	sw_nx_ret = gpio_pin_configure(sw_nx,
+									DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios),
+									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+	sw_py_ret = gpio_pin_configure(sw_py,
+									DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios),
+									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+	sw_ny_ret = gpio_pin_configure(sw_ny,
+									DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios),
+									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+	sw_pz_ret = gpio_pin_configure(sw_pz,
+									DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios),
+									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+	sw_nz_ret = gpio_pin_configure(sw_nz,
+									DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios),
+									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+
+	if ((sw_px_ret == NULL) || (sw_nx_ret == NULL) || (sw_py_ret == NULL)
+	|| (sw_ny_ret == NULL) || (sw_pz_ret == NULL) || (sw_nz_ret == NULL)) {
+		return;
+	}
+
+	sw_px_ret = gpio_pin_interrupt_configure(sw_px,
+											DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+}
+
+void initialize_shell_port(void)
 {
 	const struct device *dev;
 	uint32_t dtr = 0;
@@ -30,4 +78,10 @@ void main(void)
 		uart_line_ctrl_get(dev, UART_LINE_CTRL_DTR, &dtr);
 		k_sleep(K_MSEC(100));
 	}
+}
+
+void main(void)
+{
+	initialize_gpios();
+	initialize_shell_port(); // This function will stay in a infinite loop
 }
