@@ -18,6 +18,13 @@ static int cmd_demo(const struct shell *shell, size_t argc, char **argv)
 
 SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo);
 
+static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
+							sw_ny_cb_data, sw_pz_cb_data, sw_nz_cb_data;
+
+void limit_switch_reached(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
+{
+}
+
 void initialize_gpios(void)
 {
 	const struct device *sw_px, *sw_nx, *sw_py, *sw_ny, *sw_pz, *sw_nz;
@@ -37,31 +44,72 @@ void initialize_gpios(void)
 
 	sw_px_ret = gpio_pin_configure(sw_px,
 									DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios),
-									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_positive_x), gpios));
 	sw_nx_ret = gpio_pin_configure(sw_nx,
 									DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios),
-									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_negative_x), gpios));
 	sw_py_ret = gpio_pin_configure(sw_py,
 									DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios),
-									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_positive_y), gpios));
 	sw_ny_ret = gpio_pin_configure(sw_ny,
 									DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios),
-									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_negative_y), gpios));
 	sw_pz_ret = gpio_pin_configure(sw_pz,
 									DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios),
-									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_positive_z), gpios));
 	sw_nz_ret = gpio_pin_configure(sw_nz,
 									DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios),
-									(GPIO_INPUT | GPIO_ACTIVE_LOW));
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_negative_z), gpios));
 
-	if ((sw_px_ret == NULL) || (sw_nx_ret == NULL) || (sw_py_ret == NULL)
-	|| (sw_ny_ret == NULL) || (sw_pz_ret == NULL) || (sw_nz_ret == NULL)) {
+	if ((sw_px_ret == 0) || (sw_nx_ret == 0) || (sw_py_ret == 0)
+	|| (sw_ny_ret == 0) || (sw_pz_ret == 0) || (sw_nz_ret == 0)) {
 		return;
 	}
 
 	sw_px_ret = gpio_pin_interrupt_configure(sw_px,
+											DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	sw_nx_ret = gpio_pin_interrupt_configure(sw_nx,
+											DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	sw_py_ret = gpio_pin_interrupt_configure(sw_py,
 											DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios),
 											GPIO_INT_EDGE_TO_ACTIVE);
+	sw_ny_ret = gpio_pin_interrupt_configure(sw_ny,
+											DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	sw_pz_ret = gpio_pin_interrupt_configure(sw_pz,
+											DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	sw_nz_ret = gpio_pin_interrupt_configure(sw_nz,
+											DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	
+	if ((sw_px_ret == 0) || (sw_nx_ret == 0) || (sw_py_ret == 0)
+	|| (sw_ny_ret == 0) || (sw_pz_ret == 0) || (sw_nz_ret == 0)) {
+		return;
+	}
+
+	gpio_init_callback(&sw_px_cb_data, limit_switch_reached,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)));
+	gpio_init_callback(&sw_nx_cb_data, limit_switch_reached,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)));
+	gpio_init_callback(&sw_py_cb_data, limit_switch_reached,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)));
+	gpio_init_callback(&sw_ny_cb_data, limit_switch_reached,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios)));
+	gpio_init_callback(&sw_pz_cb_data, limit_switch_reached,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios)));
+	gpio_init_callback(&sw_nz_cb_data, limit_switch_reached,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios)));
+
+
+	gpio_add_callback(sw_px, &sw_px_cb_data);
+	gpio_add_callback(sw_nx, &sw_nx_cb_data);
+	gpio_add_callback(sw_py, &sw_py_cb_data);
+	gpio_add_callback(sw_ny, &sw_ny_cb_data);
+	gpio_add_callback(sw_pz, &sw_pz_cb_data);
+	gpio_add_callback(sw_nz, &sw_nz_cb_data);
 }
 
 void initialize_shell_port(void)

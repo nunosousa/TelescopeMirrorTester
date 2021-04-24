@@ -21,27 +21,27 @@
 	limit_switches {
 		compatible = "gpio-keys";
 		switch_positive_x: SW3_1 {
-			gpios = <&porta 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 16 (GPIO_ACTIVE_LOW)>;
 			label = "SW_PX";
 		};
 		switch_negative_x: SW3_3 {
-			gpios = <&porta 17 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 17 (GPIO_ACTIVE_LOW)>;
 			label = "SW_NX";
 		};
 		switch_positive_y: SW4_1 {
-			gpios = <&porta 18 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 18 (GPIO_ACTIVE_LOW)>;
 			label = "SW_PY";
 		};
 		switch_negative_y: SW4_3 {
-			gpios = <&porta 19 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 19 (GPIO_ACTIVE_LOW)>;
 			label = "SW_NY";
 		};
 		switch_positive_z: J11 {
-			gpios = <&porta 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 20 (GPIO_ACTIVE_LOW)>;
 			label = "SW_PZ";
 		};
 		switch_negative_z: J12 {
-			gpios = <&porta 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 21 (GPIO_ACTIVE_LOW)>;
 			label = "SW_NZ";
 		};
 	};
