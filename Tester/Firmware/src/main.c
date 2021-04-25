@@ -6,6 +6,9 @@
 #include <shell/shell.h>
 
 
+enum activated_switch {positive_x, negative_x, positive_y, negative_y, positive_z, negative_z};
+K_MSGQ_DEFINE(switch_msgq, sizeof(enum activated_switch), 10, 4);
+
 static int cmd_demo(const struct shell *shell, size_t argc, char **argv)
 {
 	ARG_UNUSED(argc);
@@ -55,21 +58,28 @@ static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
 
 void limit_switch_reached(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
 {
+	enum activated_switch current_switch;
 	ARG_UNUSED(port);
 	ARG_UNUSED(cb);
 
 	switch(pins) {
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)):
+			current_switch = positive_x;
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
+			current_switch = negative_x
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)):
+			current_switch = positive_y;
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios)):
+			current_switch = negative_y;
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios)):
+			current_switch = positive_z;
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios)):
+			current_switch = negative_z;
 			break;
 		default:
 		return;
