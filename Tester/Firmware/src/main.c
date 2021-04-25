@@ -16,13 +16,64 @@ static int cmd_demo(const struct shell *shell, size_t argc, char **argv)
 	return 0;
 }
 
+static int cmd_switch(const struct shell *shell, size_t argc, char **argv)
+{
+	ARG_UNUSED(argc);
+	ARG_UNUSED(argv);
+
+	switch(pins) {
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)):
+			shell_warn(shell, "+X Limit Switch reached");
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
+			shell_warn(shell, "-X Limit Switch reached");
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)):
+			shell_warn(shell, "+Y Limit Switch reached");
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios)):
+			shell_warn(shell, "-Y Limit Switch reached");
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios)):
+			shell_warn(shell, "+Z Limit Switch reached");
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios)):
+			shell_warn(shell, "-Z Limit Switch reached");
+			break;
+		default:
+		return;
+	}
+
+	return 0;
+}
+
 SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo);
+SHELL_CMD_REGISTER(switches, NULL, "Report end switches state", cmd_switch);
 
 static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
 							sw_ny_cb_data, sw_pz_cb_data, sw_nz_cb_data;
 
 void limit_switch_reached(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
 {
+	ARG_UNUSED(port);
+	ARG_UNUSED(cb);
+
+	switch(pins) {
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)):
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)):
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios)):
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios)):
+			break;
+		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios)):
+			break;
+		default:
+		return;
+	}
 }
 
 void initialize_gpios(void)
@@ -61,8 +112,8 @@ void initialize_gpios(void)
 									DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios),
 									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(switch_negative_z), gpios));
 
-	if ((sw_px_ret == 0) || (sw_nx_ret == 0) || (sw_py_ret == 0)
-	|| (sw_ny_ret == 0) || (sw_pz_ret == 0) || (sw_nz_ret == 0)) {
+	if ((sw_px_ret != 0) || (sw_nx_ret != 0) || (sw_py_ret != 0)
+	|| (sw_ny_ret != 0) || (sw_pz_ret != 0) || (sw_nz_ret != 0)) {
 		return;
 	}
 
@@ -85,8 +136,8 @@ void initialize_gpios(void)
 											DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios),
 											GPIO_INT_EDGE_TO_ACTIVE);
 	
-	if ((sw_px_ret == 0) || (sw_nx_ret == 0) || (sw_py_ret == 0)
-	|| (sw_ny_ret == 0) || (sw_pz_ret == 0) || (sw_nz_ret == 0)) {
+	if ((sw_px_ret != 0) || (sw_nx_ret != 0) || (sw_py_ret != 0)
+	|| (sw_ny_ret != 0) || (sw_pz_ret != 0) || (sw_nz_ret != 0)) {
 		return;
 	}
 
