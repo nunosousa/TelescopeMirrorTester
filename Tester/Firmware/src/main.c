@@ -21,30 +21,38 @@ static int cmd_demo(const struct shell *shell, size_t argc, char **argv)
 
 static int cmd_switch(const struct shell *shell, size_t argc, char **argv)
 {
+	enum activated_switch current_switch;
+
 	ARG_UNUSED(argc);
 	ARG_UNUSED(argv);
 
-	switch(pins) {
-		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)):
+	//k_msgq_get(&switch_msgq, &current_switch, K_FOREVER);
+
+	while(k_msgq_get(&switch_msgq, &current_switch, K_NO_WAIT)) {
+		k_msleep(100);
+	}
+
+	switch(current_switch) {
+		case positive_x:
 			shell_warn(shell, "+X Limit Switch reached");
 			break;
-		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
+		case negative_x:
 			shell_warn(shell, "-X Limit Switch reached");
 			break;
-		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)):
+		case positive_y:
 			shell_warn(shell, "+Y Limit Switch reached");
 			break;
-		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios)):
+		case negative_y:
 			shell_warn(shell, "-Y Limit Switch reached");
 			break;
-		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios)):
+		case positive_z:
 			shell_warn(shell, "+Z Limit Switch reached");
 			break;
-		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios)):
+		case negative_z:
 			shell_warn(shell, "-Z Limit Switch reached");
 			break;
 		default:
-		return;
+		return 0;
 	}
 
 	return 0;
@@ -67,7 +75,7 @@ void limit_switch_reached(const struct device *port, struct gpio_callback *cb, g
 			current_switch = positive_x;
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
-			current_switch = negative_x
+			current_switch = negative_x;
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)):
 			current_switch = positive_y;
@@ -82,7 +90,11 @@ void limit_switch_reached(const struct device *port, struct gpio_callback *cb, g
 			current_switch = negative_z;
 			break;
 		default:
-		return;
+			return;
+	}
+	
+    while (k_msgq_put(&switch_msgq, &current_switch, K_NO_WAIT) != 0) {
+		k_msgq_purge(&switch_msgq);
 	}
 }
 
