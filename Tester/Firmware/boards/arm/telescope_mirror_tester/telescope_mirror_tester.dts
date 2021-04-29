@@ -45,7 +45,27 @@
 			label = "SW_NZ";
 		};
 	};
-/*
+
+	load_switches {
+		compatible = "gpio-keys";
+		motor_drives_switch: EN_1 {
+			gpios = <&porta 3 (GPIO_ACTIVE_LOW)>;
+			label = "MOTOR_DRIVE_PWR_SWITCH";
+		};
+		motor_drives_alert: OC_1 {
+			gpios = <&porta 17 (GPIO_ACTIVE_LOW)>;
+			label = "MOTOR_DRIVE_PWR_ALERT";
+		};
+		laser_drive_switch: EN_2 {
+			gpios = <&porta 2 (GPIO_ACTIVE_LOW)>;
+			label = "LASER_DRIVE_PWR_SWITCH";
+		};
+		laser_drive_alert: OC_2 {
+			gpios = <&portb 22 (GPIO_ACTIVE_LOW)>;
+			label = "LASER_DRIVE_PWR_ALERT";
+		};
+	};
+
 	motor_dual_drive_1 {
 		pwm_1: pwms {
 			pwms = <&tcc0 0>, <&tcc0 1>, <&tcc0 3>, <&tcc0 2>;
@@ -75,7 +95,7 @@
 			label = "nFAULT2";
 		};
 	};
-*/
+
 };
 
 &cpu0 {
