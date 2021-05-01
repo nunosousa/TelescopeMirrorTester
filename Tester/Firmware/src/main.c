@@ -308,7 +308,6 @@ void initialize_motor_drives(void)
 	pwm2_sleep = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_sleep_2), gpios));
 	pwm2_fault = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_fault_2), gpios));
 
-
 	if ((pwm1_sleep == NULL) || (pwm1_fault == NULL) || (pwm2_sleep == NULL) || (pwm2_fault == NULL)) {
 		return;
 	}
@@ -373,8 +372,14 @@ void initialize_motor_drives(void)
 		return;
 	}
 
-	pwm_pin_set_usec(pwm1_a11, DT_PWMS_CHANNEL(DT_NODELABEL(pwm_1_a11)),
+	pwm1_a11_ret = pwm_pin_set_usec(pwm1_a11, DT_PWMS_CHANNEL(DT_NODELABEL(pwm_1_a11)),
 					(20U * USEC_PER_MSEC), (20U * USEC_PER_MSEC)/2, 0);
+	pwm1_a12_ret = pwm_pin_set_usec(pwm1_a12, DT_PWMS_CHANNEL(DT_NODELABEL(pwm_1_a12)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	
+	if ((pwm1_a11_ret != 0)) {
+		return;
+	}	
 }
 
 

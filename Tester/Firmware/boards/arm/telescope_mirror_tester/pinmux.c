@@ -61,14 +61,18 @@ static int board_pinmux_init(const struct device *dev)
 
 #if defined(CONFIG_PWM_SAM0_TCC)
 #if ATMEL_SAM0_DT_TCC_CHECK(0, atmel_sam0_tcc_pwm)
-	/* TCC0/WO[2] on PA22 (LED) */
-	pinmux_pin_set(muxa, 22, PINMUX_FUNC_G);
+	pinmux_pin_set(muxa, 8, PINMUX_FUNC_F); /* TCC0/WO[0] on PA08 (A11) */
+	pinmux_pin_set(muxa, 9, PINMUX_FUNC_F); /* TCC0/WO[1] on PA09 (A12) */
+	pinmux_pin_set(muxa, 10, PINMUX_FUNC_F); /* TCC0/WO[2] on PA10 (B12) */
+	pinmux_pin_set(muxa, 11, PINMUX_FUNC_F); /* TCC0/WO[3] on PA11 (B11) */
+	pinmux_pin_set(muxb, 10, PINMUX_FUNC_F); /* TCC0/WO[4] on PB10 (A21) */
+	pinmux_pin_set(muxb, 11, PINMUX_FUNC_F); /* TCC0/WO[5] on PB11 (A22) */
+	#warning bbbbbbbbbbbbbbbbbbbbb
 #endif
 #if ATMEL_SAM0_DT_TCC_CHECK(1, atmel_sam0_tcc_pwm)
-	/* TCC1/WO[2] on PA18 (D7) */
-	pinmux_pin_set(muxa, 18, PINMUX_FUNC_F);
-	/* TCC1/WO[3] on PA19 (D9) */
-	pinmux_pin_set(muxa, 19, PINMUX_FUNC_F);
+	pinmux_pin_set(muxb, 12, PINMUX_FUNC_F); /* TCC3/WO[0] on PB12 (B22) */
+	pinmux_pin_set(muxb, 13, PINMUX_FUNC_F); /* TCC3/WO[1] on PB13 (B21) */
+	#warning aaaaaaaaaaaaaaaaaaaaaa
 #endif
 #endif
 
