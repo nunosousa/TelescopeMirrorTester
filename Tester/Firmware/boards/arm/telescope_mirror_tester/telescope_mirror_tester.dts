@@ -53,7 +53,7 @@
 			label = "MOTOR_DRIVE_PWR_SWITCH";
 		};
 		motor_drives_alert: OC_1 {
-			gpios = <&porta 17 (GPIO_ACTIVE_LOW)>;
+			gpios = <&portb 22 (GPIO_ACTIVE_LOW)>;
 			label = "MOTOR_DRIVE_PWR_ALERT";
 		};
 		laser_drive_switch: EN_2 {
@@ -61,41 +61,74 @@
 			label = "LASER_DRIVE_PWR_SWITCH";
 		};
 		laser_drive_alert: OC_2 {
-			gpios = <&portb 22 (GPIO_ACTIVE_LOW)>;
+			gpios = <&porta 27 (GPIO_ACTIVE_LOW)>;
 			label = "LASER_DRIVE_PWR_ALERT";
 		};
 	};
 
-	motor_dual_drive_1 {
-		pwm_1: pwms {
-			pwms = <&tcc0 0>, <&tcc0 1>, <&tcc0 3>, <&tcc0 2>;
-			pwm-names = "A11", "A12", "B11", "B12";
+	motor_drive_1_pwm {
+		compatible = "pwm-leds";
+		pwm_1_a11: pwms_a11 {
+			pwms = <&tcc0 0>;
+			label = "PWM_1_A11";
 		};
-		pwm_sleep_1: sleep {
+		pwm_1_a12: pwms_a12 {
+			pwms = <&tcc0 1>;
+			label = "PWM_1_A12";
+		};
+		pwm_1_b11: pwms_b11 {
+			pwms = <&tcc0 3>;
+			label = "PWM_1_B11";
+		};
+		pwm_1_b12: pwms_b12 {
+			pwms = <&tcc0 2>;
+			label = "PWM_1_B12";
+		};
+	};
+
+	motor_drive_1_control {
+		compatible = "gpio-keys";
+		pwm_sleep_1: sleep_pwm1 {
 			gpios = <&porta 12 GPIO_ACTIVE_LOW>;
 			label = "nSLEEP1";
 		};
-		pwm_fault_1: fault {
+		pwm_fault_1: fault_pwm1 {
 			gpios = <&porta 13 GPIO_ACTIVE_LOW>;
 			label = "nFAULT1";
 		};
 	};
 
-	motor_dual_drive_2 {
-		pwm_2: pwms {
-			pwms = <&tcc0 4>, <&tcc0 5>, <&tcc3 1>, <&tcc3 0>;
-			pwm-names = "A21", "A22", "B21", "B22";
+	motor_drive_2_pwm {
+		compatible = "pwm-leds";
+		pwm_2_a21: pwms_a21 {
+			pwms = <&tcc0 4>;
+			label = "PWM_2_A21";
 		};
-		pwm_sleep_2: sleep {
-			gpios = <&porta 15 GPIO_ACTIVE_LOW>;
+		pwm_2_a22: pwms_a22 {
+			pwms = <&tcc0 5>;
+			label = "PWM_2_A22";
+		};
+		pwm_2_b21: pwms_b21 {
+			pwms = <&tcc3 1>;
+			label = "PWM_2_B21";
+		};
+		pwm_2_b22: pwms_b22 {
+			pwms = <&tcc3 0>;
+			label = "PWM_2_B22";
+		};
+	};
+	
+	motor_drive_2_control {
+		compatible = "gpio-keys";
+		pwm_sleep_2: sleep_pwm2 {
+			gpios = <&portb 15 GPIO_ACTIVE_LOW>;
 			label = "nSLEEP2";
 		};
-		pwm_fault_2 {
-			gpios = <&porta 14 GPIO_ACTIVE_LOW>;
+		pwm_fault_2: fault_pwm2 {
+			gpios = <&portb 14 GPIO_ACTIVE_LOW>;
 			label = "nFAULT2";
 		};
 	};
-
 };
 
 &cpu0 {

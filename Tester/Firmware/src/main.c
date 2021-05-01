@@ -2,6 +2,7 @@
 #include <device.h>
 #include <drivers/gpio.h>
 #include <drivers/uart.h>
+#include <drivers/pwm.h>
 #include <usb/usb_device.h>
 #include <shell/shell.h>
 
@@ -61,9 +62,9 @@ static int cmd_switch(const struct shell *shell, size_t argc, char **argv)
 SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo);
 SHELL_CMD_REGISTER(switches, NULL, "Report end switches state", cmd_switch);
 
+
 static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
 							sw_ny_cb_data, sw_pz_cb_data, sw_nz_cb_data;
-static struct gpio_callback motor_alert_cb_data, laser_alert_cb_data;
 
 void limit_switch_reached(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
 {
@@ -186,6 +187,9 @@ void initialize_limit_switches(void)
 	gpio_add_callback(sw_nz, &sw_nz_cb_data);
 }
 
+
+static struct gpio_callback motor_alert_cb_data, laser_alert_cb_data;
+
 void power_switch_alert(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
 {
 
@@ -283,6 +287,97 @@ void laser_switch_control(bool activate)
 	}
 }
 
+
+static struct gpio_callback pwm1_alert_cb_data, pwm2_alert_cb_data;
+
+void pwm_alert(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
+{
+
+	ARG_UNUSED(port);
+	ARG_UNUSED(cb);
+
+}
+
+void initialize_motor_drives(void)
+{
+	const struct device *pwm1_sleep, *pwm1_fault, *pwm2_sleep, *pwm2_fault;
+	int pwm1_sleep_ret, pwm1_fault_ret, pwm2_sleep_ret, pwm2_fault_ret;
+
+	pwm1_sleep = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_sleep_1), gpios));
+	pwm1_fault = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_fault_1), gpios));
+	pwm2_sleep = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_sleep_2), gpios));
+	pwm2_fault = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_fault_2), gpios));
+
+
+	if ((pwm1_sleep == NULL) || (pwm1_fault == NULL) || (pwm2_sleep == NULL) || (pwm2_fault == NULL)) {
+		return;
+	}
+
+	pwm1_sleep_ret = gpio_pin_configure(pwm1_sleep,
+									DT_GPIO_PIN(DT_NODELABEL(pwm_sleep_1), gpios),
+									GPIO_OUTPUT | DT_GPIO_FLAGS(DT_NODELABEL(pwm_sleep_1), gpios));
+	pwm1_fault_ret = gpio_pin_configure(pwm1_fault,
+									DT_GPIO_PIN(DT_NODELABEL(pwm_fault_1), gpios),
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(pwm_fault_1), gpios));
+	pwm2_sleep_ret = gpio_pin_configure(pwm2_sleep,
+									DT_GPIO_PIN(DT_NODELABEL(pwm_sleep_2), gpios),
+									GPIO_OUTPUT | DT_GPIO_FLAGS(DT_NODELABEL(pwm_sleep_2), gpios));
+	pwm2_fault_ret = gpio_pin_configure(pwm2_fault,
+									DT_GPIO_PIN(DT_NODELABEL(pwm_fault_2), gpios),
+									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(pwm_fault_2), gpios));
+
+	if ((pwm1_sleep_ret != 0) || (pwm1_fault_ret != 0) || (pwm2_sleep_ret != 0)
+	|| (pwm2_fault_ret != 0)) {
+		return;
+	}
+
+	gpio_pin_set(pwm1_sleep, DT_GPIO_PIN(DT_NODELABEL(pwm_sleep_1), gpios), 0);
+	gpio_pin_set(pwm2_sleep, DT_GPIO_PIN(DT_NODELABEL(pwm_sleep_2), gpios), 0);
+
+	pwm1_fault_ret = gpio_pin_interrupt_configure(pwm1_fault,
+											DT_GPIO_PIN(DT_NODELABEL(pwm_fault_1), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	pwm2_fault_ret = gpio_pin_interrupt_configure(pwm2_fault,
+											DT_GPIO_PIN(DT_NODELABEL(pwm_fault_2), gpios),
+											GPIO_INT_EDGE_TO_ACTIVE);
+	
+	if ((pwm1_fault_ret != 0) || (pwm2_fault_ret != 0)) {
+		return;
+	}
+
+	gpio_init_callback(&pwm1_alert_cb_data, pwm_alert,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(pwm_fault_1), gpios)));
+	gpio_init_callback(&pwm2_alert_cb_data, pwm_alert,
+						BIT(DT_GPIO_PIN(DT_NODELABEL(pwm_fault_2), gpios)));
+
+	gpio_add_callback(pwm1_fault, &pwm1_alert_cb_data);
+	gpio_add_callback(pwm2_fault, &pwm2_alert_cb_data);
+
+
+	const struct device *pwm1_a11, *pwm1_a12, *pwm1_b11, *pwm1_b12;
+	const struct device *pwm2_a21, *pwm2_a22, *pwm2_b21, *pwm2_b22;
+	int pwm1_a11_ret, pwm1_a12_ret, pwm1_b11_ret, pwm1_b12_ret;
+	int pwm2_a21_ret, pwm2_a22_ret, pwm2_b21_ret, pwm2_b22_ret;
+
+	pwm1_a11 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_a11))));
+	pwm1_a12 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_a12))));
+	pwm1_b11 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_b11))));
+	pwm1_b12 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_b12))));
+	pwm2_a21 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_a21))));
+	pwm2_a22 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_a22))));
+	pwm2_b21 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_b21))));
+	pwm2_b22 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_b22))));
+
+	if ((pwm1_a11 == NULL) || (pwm1_a12 == NULL) || (pwm1_b11 == NULL) || (pwm1_b12 == NULL) ||
+	(pwm2_a21 == NULL) || (pwm2_a22 == NULL) || (pwm2_b21 == NULL) || (pwm2_b22 == NULL)) {
+		return;
+	}
+
+	pwm_pin_set_usec(pwm1_a11, DT_PWMS_CHANNEL(DT_NODELABEL(pwm_1_a11)),
+					(20U * USEC_PER_MSEC), (20U * USEC_PER_MSEC)/2, 0);
+}
+
+
 void initialize_shell_port(void)
 {
 	const struct device *dev;
@@ -305,6 +400,7 @@ void main(void)
 	initialize_limit_switches();
 	initialize_shell_port();
 	initialize_power_switch();
+	initialize_motor_drives();
 	
 	motor_switch_control(true);
 	laser_switch_control(true);
