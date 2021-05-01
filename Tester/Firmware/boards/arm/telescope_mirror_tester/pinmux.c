@@ -67,12 +67,10 @@ static int board_pinmux_init(const struct device *dev)
 	pinmux_pin_set(muxa, 11, PINMUX_FUNC_F); /* TCC0/WO[3] on PA11 (B11) */
 	pinmux_pin_set(muxb, 10, PINMUX_FUNC_F); /* TCC0/WO[4] on PB10 (A21) */
 	pinmux_pin_set(muxb, 11, PINMUX_FUNC_F); /* TCC0/WO[5] on PB11 (A22) */
-	#warning bbbbbbbbbbbbbbbbbbbbb
 #endif
-#if ATMEL_SAM0_DT_TCC_CHECK(1, atmel_sam0_tcc_pwm)
+#if ATMEL_SAM0_DT_TCC_CHECK(3, atmel_sam0_tcc_pwm)
 	pinmux_pin_set(muxb, 12, PINMUX_FUNC_F); /* TCC3/WO[0] on PB12 (B22) */
 	pinmux_pin_set(muxb, 13, PINMUX_FUNC_F); /* TCC3/WO[1] on PB13 (B21) */
-	#warning aaaaaaaaaaaaaaaaaaaaaa
 #endif
 #endif
 
