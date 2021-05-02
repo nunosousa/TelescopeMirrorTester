@@ -63,10 +63,9 @@ static int cmd_switch(const struct shell *shell, size_t argc, char **argv)
 
 static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 {
-	uint32_t pwm_value, pwm_pos_value, pwm_neg_value;
+	int32_t pwm_value;
+	uint32_t pwm_pos_value, pwm_neg_value;
 	const struct device *pwm_pos, *pwm_neg;
-
-	shell_print(shell, "argc = %d", argc);
 
 	if (argc != 3) {
 		return 1; // Expected 3 arguments.
@@ -76,7 +75,7 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 
 	if ((pwm_value >= -100) && (pwm_value < 0)) {
 		pwm_pos_value = 0;
-		pwm_neg_value = ((20U * USEC_PER_MSEC)*pwm_value)/100;
+		pwm_neg_value = ((20U * USEC_PER_MSEC)*(-pwm_value))/100;
 	}
 	else if ((pwm_value >= 0) && (pwm_value <= 100)) {
 		pwm_pos_value = ((20U * USEC_PER_MSEC)*pwm_value)/100;
