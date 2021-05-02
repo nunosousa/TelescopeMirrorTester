@@ -68,19 +68,19 @@
 
 	motor_drive_1_pwm {
 		compatible = "pwm-leds";
-		pwm_1_a11: pwms_a11 {
+		pwm1x_pos: pwms_a11 {
 			pwms = <&tcc0 0>;
 			label = "PWM_1_A11";
 		};
-		pwm_1_a12: pwms_a12 {
+		pwm1x_neg: pwms_a12 {
 			pwms = <&tcc0 1>;
 			label = "PWM_1_A12";
 		};
-		pwm_1_b11: pwms_b11 {
+		pwm1y_pos: pwms_b11 {
 			pwms = <&tcc0 3>;
 			label = "PWM_1_B11";
 		};
-		pwm_1_b12: pwms_b12 {
+		pwm1y_neg: pwms_b12 {
 			pwms = <&tcc0 2>;
 			label = "PWM_1_B12";
 		};
@@ -100,19 +100,19 @@
 
 	motor_drive_2_pwm {
 		compatible = "pwm-leds";
-		pwm_2_a21: pwms_a21 {
+		pwm2z_pos: pwms_a21 {
 			pwms = <&tcc0 4>;
 			label = "PWM_2_A21";
 		};
-		pwm_2_a22: pwms_a22 {
+		pwm2z_neg: pwms_a22 {
 			pwms = <&tcc0 5>;
 			label = "PWM_2_A22";
 		};
-		pwm_2_b21: pwms_b21 {
+		pwm2t_pos: pwms_b21 {
 			pwms = <&tcc3 1>;
 			label = "PWM_2_B21";
 		};
-		pwm_2_b22: pwms_b22 {
+		pwm2t_neg: pwms_b22 {
 			pwms = <&tcc3 0>;
 			label = "PWM_2_B22";
 		};

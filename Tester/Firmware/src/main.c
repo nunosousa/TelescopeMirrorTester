@@ -5,6 +5,8 @@
 #include <drivers/pwm.h>
 #include <usb/usb_device.h>
 #include <shell/shell.h>
+#include <string.h>
+#include <stdlib.h>
 
 
 enum activated_switch {positive_x, negative_x, positive_y, negative_y, positive_z, negative_z};
@@ -59,8 +61,80 @@ static int cmd_switch(const struct shell *shell, size_t argc, char **argv)
 	return 0;
 }
 
-SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo);
-SHELL_CMD_REGISTER(switches, NULL, "Report end switches state", cmd_switch);
+static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
+{
+	uint32_t pwm_value, pwm_pos_value, pwm_neg_value;
+	const struct device *pwm_pos, *pwm_neg;
+
+	shell_print(shell, "argc = %d", argc);
+
+	if (argc != 3) {
+		return 1; // Expected 3 arguments.
+	}
+
+	pwm_value = atoi(argv[2]);
+
+	if ((pwm_value >= -100) && (pwm_value < 0)) {
+		pwm_pos_value = 0;
+		pwm_neg_value = ((20U * USEC_PER_MSEC)*pwm_value)/100;
+	}
+	else if ((pwm_value >= 0) && (pwm_value <= 100)) {
+		pwm_pos_value = ((20U * USEC_PER_MSEC)*pwm_value)/100;
+		pwm_neg_value = 0;
+	}
+	else {
+		return 1; // Setpoint out of range.
+	}
+
+	if (strcmp(argv[1], "x") == 0) {
+		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_pos))));
+		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_neg))));
+
+		pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1x_pos)),
+					(20U * USEC_PER_MSEC), pwm_pos_value, 0);
+		pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1x_neg)),
+					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
+
+	} else if (strcmp(argv[1], "y") == 0) {
+		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_pos))));
+		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_neg))));
+
+		pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1y_pos)),
+					(20U * USEC_PER_MSEC), pwm_pos_value, 0);
+		pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1y_neg)),
+					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
+
+	} else if (strcmp(argv[1], "z") == 0) {
+		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_pos))));
+		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_neg))));
+
+		pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2z_pos)),
+					(20U * USEC_PER_MSEC), pwm_pos_value, 0);
+		pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2z_neg)),
+					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
+
+	} else if (strcmp(argv[1], "t") == 0) {
+		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_pos))));
+		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_neg))));
+
+		pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_pos)),
+					(20U * USEC_PER_MSEC), pwm_pos_value, 0);
+		pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_neg)),
+					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
+
+	} else {
+		return 1; // Expected argument not found.
+	}
+
+	return 0;
+}
+
+SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo); //delete
+SHELL_CMD_REGISTER(switches, NULL, "Report end switches state", cmd_switch); //delete
+SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100).\nUsage syntax: motor [axis] [value]", cmd_motor);
+
+//SHELL_CMD_REGISTER(sensor, NULL, "Report end switches state", cmd_sensor); // sensor y dump
+//SHELL_CMD_REGISTER(laser, NULL, "Report end switches state", cmd_laser); // laser 25
 
 
 static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
@@ -75,7 +149,7 @@ void limit_switch_reached(const struct device *port, struct gpio_callback *cb, g
 
 	switch(pins) {
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)):
-			current_switch = positive_x;
+			current_switch = positive_x; // replace this with direct motor control
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
 			current_switch = negative_x;
@@ -353,33 +427,39 @@ void initialize_motor_drives(void)
 	gpio_add_callback(pwm2_fault, &pwm2_alert_cb_data);
 
 
-	const struct device *pwm1_a11, *pwm1_a12, *pwm1_b11, *pwm1_b12;
-	const struct device *pwm2_a21, *pwm2_a22, *pwm2_b21, *pwm2_b22;
-	int pwm1_a11_ret, pwm1_a12_ret, pwm1_b11_ret, pwm1_b12_ret;
-	int pwm2_a21_ret, pwm2_a22_ret, pwm2_b21_ret, pwm2_b22_ret;
+	const struct device *pwm1_x_pos, *pwm1_x_neg, *pwm1_y_pos, *pwm1_y_neg;
+	const struct device *pwm2_z_pos, *pwm2_z_neg, *pwm2_t_pos, *pwm2_t_neg;
 
-	pwm1_a11 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_a11))));
-	pwm1_a12 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_a12))));
-	pwm1_b11 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_b11))));
-	pwm1_b12 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_1_b12))));
-	pwm2_a21 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_a21))));
-	pwm2_a22 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_a22))));
-	pwm2_b21 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_b21))));
-	pwm2_b22 = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm_2_b22))));
+	pwm1_x_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_pos))));
+	pwm1_x_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_neg))));
+	pwm1_y_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_pos))));
+	pwm1_y_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_neg))));
+	pwm2_z_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_pos))));
+	pwm2_z_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_neg))));
+	pwm2_t_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_pos))));
+	pwm2_t_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_pos))));
 
-	if ((pwm1_a11 == NULL) || (pwm1_a12 == NULL) || (pwm1_b11 == NULL) || (pwm1_b12 == NULL) ||
-	(pwm2_a21 == NULL) || (pwm2_a22 == NULL) || (pwm2_b21 == NULL) || (pwm2_b22 == NULL)) {
+	if ((pwm1_x_pos == NULL) || (pwm1_x_neg == NULL) || (pwm1_y_pos == NULL) || (pwm1_y_neg == NULL) ||
+	(pwm2_z_pos == NULL) || (pwm2_z_neg == NULL) || (pwm2_t_pos == NULL) || (pwm2_t_neg == NULL)) {
 		return;
 	}
 
-	pwm1_a11_ret = pwm_pin_set_usec(pwm1_a11, DT_PWMS_CHANNEL(DT_NODELABEL(pwm_1_a11)),
-					(20U * USEC_PER_MSEC), (20U * USEC_PER_MSEC)/2, 0);
-	pwm1_a12_ret = pwm_pin_set_usec(pwm1_a12, DT_PWMS_CHANNEL(DT_NODELABEL(pwm_1_a12)),
+	pwm_pin_set_usec(pwm1_x_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1x_pos)),
 					(20U * USEC_PER_MSEC), 0, 0);
-	
-	if ((pwm1_a11_ret != 0)) {
-		return;
-	}	
+	pwm_pin_set_usec(pwm1_x_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1x_neg)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	pwm_pin_set_usec(pwm1_y_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1y_pos)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	pwm_pin_set_usec(pwm1_y_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1y_neg)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	pwm_pin_set_usec(pwm2_z_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2z_pos)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	pwm_pin_set_usec(pwm2_z_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2z_neg)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	pwm_pin_set_usec(pwm2_t_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_pos)),
+					(20U * USEC_PER_MSEC), 0, 0);
+	pwm_pin_set_usec(pwm2_t_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_neg)),
+					(20U * USEC_PER_MSEC), 0, 0);
 }
 
 
