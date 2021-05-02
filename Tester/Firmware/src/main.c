@@ -9,63 +9,13 @@
 #include <stdlib.h>
 
 
-enum activated_switch {positive_x, negative_x, positive_y, negative_y, positive_z, negative_z};
-K_MSGQ_DEFINE(switch_msgq, sizeof(enum activated_switch), 10, 4);
-
-static int cmd_demo(const struct shell *shell, size_t argc, char **argv)
-{
-	ARG_UNUSED(argc);
-	ARG_UNUSED(argv);
-
-	shell_print(shell, "Demo command!");
-
-	return 0;
-}
-
-static int cmd_switch(const struct shell *shell, size_t argc, char **argv)
-{
-	enum activated_switch current_switch;
-
-	ARG_UNUSED(argc);
-	ARG_UNUSED(argv);
-
-	//k_msgq_get(&switch_msgq, &current_switch, K_FOREVER);
-
-	while(k_msgq_get(&switch_msgq, &current_switch, K_NO_WAIT)) {
-		k_msleep(100);
-	}
-
-	switch(current_switch) {
-		case positive_x:
-			shell_warn(shell, "+X Limit Switch reached");
-			break;
-		case negative_x:
-			shell_warn(shell, "-X Limit Switch reached");
-			break;
-		case positive_y:
-			shell_warn(shell, "+Y Limit Switch reached");
-			break;
-		case negative_y:
-			shell_warn(shell, "-Y Limit Switch reached");
-			break;
-		case positive_z:
-			shell_warn(shell, "+Z Limit Switch reached");
-			break;
-		case negative_z:
-			shell_warn(shell, "-Z Limit Switch reached");
-			break;
-		default:
-		return 0;
-	}
-
-	return 0;
-}
-
 static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 {
+	bool is_positive_motion;
 	int32_t pwm_value;
-	uint32_t pwm_pos_value, pwm_neg_value;
+	uint32_t pwm_pos_value, pwm_neg_value, pin_value;
 	const struct device *pwm_pos, *pwm_neg;
+	const struct device *swtch;
 
 	if (argc != 3) {
 		return 1; // Expected 3 arguments.
@@ -76,16 +26,34 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 	if ((pwm_value >= -100) && (pwm_value < 0)) {
 		pwm_pos_value = 0;
 		pwm_neg_value = ((20U * USEC_PER_MSEC)*(-pwm_value))/100;
+		is_positive_motion = false;
 	}
 	else if ((pwm_value >= 0) && (pwm_value <= 100)) {
 		pwm_pos_value = ((20U * USEC_PER_MSEC)*pwm_value)/100;
 		pwm_neg_value = 0;
+		is_positive_motion = true;
 	}
 	else {
 		return 1; // Setpoint out of range.
 	}
 
 	if (strcmp(argv[1], "x") == 0) {
+		if (is_positive_motion) {
+			swtch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(switch_positive_x), gpios));
+			pin_value = gpio_pin_get(swtch, DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios));
+
+			if (pin_value == 1) {
+				return 0;
+			}
+		} else {
+			swtch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(switch_negative_x), gpios));
+			pin_value = gpio_pin_get(swtch, DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios));
+
+			if (pin_value == 1) {
+				return 0;
+			}
+		}
+
 		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_pos))));
 		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_neg))));
 
@@ -95,6 +63,22 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
 
 	} else if (strcmp(argv[1], "y") == 0) {
+		if (is_positive_motion) {
+			swtch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(switch_positive_y), gpios));
+			pin_value = gpio_pin_get(swtch, DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios));
+
+			if (pin_value == 1) {
+				return 0;
+			}
+		} else {
+			swtch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(switch_negative_y), gpios));
+			pin_value = gpio_pin_get(swtch, DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios));
+
+			if (pin_value == 1) {
+				return 0;
+			}
+		}
+
 		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_pos))));
 		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_neg))));
 
@@ -104,6 +88,22 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
 
 	} else if (strcmp(argv[1], "z") == 0) {
+		if (is_positive_motion) {
+			swtch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(switch_positive_z), gpios));
+			pin_value = gpio_pin_get(swtch, DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios));
+
+			if (pin_value == 1) {
+				return 0;
+			}
+		} else {
+			swtch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(switch_negative_z), gpios));
+			pin_value = gpio_pin_get(swtch, DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios));
+
+			if (pin_value == 1) {
+				return 0;
+			}
+		}
+
 		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_pos))));
 		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_neg))));
 
@@ -128,10 +128,7 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 	return 0;
 }
 
-SHELL_CMD_REGISTER(demo, NULL, "Demo command", cmd_demo); //delete
-SHELL_CMD_REGISTER(switches, NULL, "Report end switches state", cmd_switch); //delete
-SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100).\nUsage syntax: motor [axis] [value]", cmd_motor);
-
+SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100). Usage syntax: motor [axis] [value]", cmd_motor);
 //SHELL_CMD_REGISTER(sensor, NULL, "Report end switches state", cmd_sensor); // sensor y dump
 //SHELL_CMD_REGISTER(laser, NULL, "Report end switches state", cmd_laser); // laser 25
 
@@ -140,37 +137,45 @@ static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
 							sw_ny_cb_data, sw_pz_cb_data, sw_nz_cb_data;
 
 void limit_switch_reached(const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins)
-{
-	enum activated_switch current_switch;
-	
+{	
+	const struct device *pwm_pos, *pwm_neg;
+
 	ARG_UNUSED(port);
 	ARG_UNUSED(cb);
 
 	switch(pins) {
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_x), gpios)):
-			current_switch = positive_x; // replace this with direct motor control
-			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_x), gpios)):
-			current_switch = negative_x;
+			pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_pos))));
+			pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1x_neg))));
+
+			pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1x_pos)),
+						(20U * USEC_PER_MSEC), 0, 0);
+			pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1x_neg)),
+						(20U * USEC_PER_MSEC), 0, 0);
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_y), gpios)):
-			current_switch = positive_y;
-			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_y), gpios)):
-			current_switch = negative_y;
+			pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_pos))));
+			pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm1y_neg))));
+
+			pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1y_pos)),
+						(20U * USEC_PER_MSEC), 0, 0);
+			pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm1y_neg)),
+						(20U * USEC_PER_MSEC), 0, 0);
 			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_positive_z), gpios)):
-			current_switch = positive_z;
-			break;
 		case BIT(DT_GPIO_PIN(DT_NODELABEL(switch_negative_z), gpios)):
-			current_switch = negative_z;
+			pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_pos))));
+			pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_neg))));
+
+			pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2z_pos)),
+						(20U * USEC_PER_MSEC), 0, 0);
+			pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2z_neg)),
+						(20U * USEC_PER_MSEC), 0, 0);
 			break;
 		default:
 			return;
-	}
-	
-    while (k_msgq_put(&switch_msgq, &current_switch, K_NO_WAIT) != 0) {
-		k_msgq_purge(&switch_msgq);
 	}
 }
 
