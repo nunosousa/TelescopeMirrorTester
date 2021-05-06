@@ -203,19 +203,19 @@ static const struct dac_driver_api mcp4716_driver_api = {
 
 #define INST_DT_MCP4716(inst) DT_INST(inst, microchip_mcp4716)
 
-#define DACX3608_DEVICE(n) \
-	static struct dac_mcp4716_data dac_mcp4716_data_##n; \
-	static const struct dac_mcp4716_config dac_mcp4716_config_##n = { \
+#define DAC_MCP4716_DEVICE(n) \
+	static struct mcp4716_data mcp4716_data_##n; \
+	static const struct mcp4716_config mcp4716_config_##n = { \
 		.i2c_bus = DT_BUS_LABEL(INST_DT_MCP4716(n)), \
 		.i2c_addr = DT_REG_ADDR(INST_DT_MCP4716(n)), \
 		.resolution = 10, \
 	}; \
 	DEVICE_DT_DEFINE(INST_DT_MCP4716(n), \
-				&dac_mcp4716_init, device_pm_control_nop, \
-				&dac_mcp4716_data_##n, \
-				&dac_mcp4716_config_##n, POST_KERNEL, \
+				&mcp4716_init, device_pm_control_nop, \
+				&mcp4716_data_##n, \
+				&mcp4716_config_##n, POST_KERNEL, \
 				CONFIG_DAC_MCP4716_INIT_PRIORITY, \
-				&dac_mcp4716_driver_api)
+				&mcp4716_driver_api)
 
 #define CALL_WITH_ARG(arg, expr) expr(arg)
 
@@ -223,4 +223,4 @@ static const struct dac_driver_api mcp4716_driver_api = {
 	UTIL_LISTIFY(DT_NUM_INST_STATUS_OKAY(microchip_mcp4716), \
 		     CALL_WITH_ARG, inst_expr)
 
-INST_DT_DAC_MCP4716_FOREACH(MCP4716_DEVICE);
+INST_DT_DAC_MCP4716_FOREACH(DAC_MCP4716_DEVICE);
