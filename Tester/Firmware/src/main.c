@@ -116,10 +116,28 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 		pwm_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_pos))));
 		pwm_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_neg))));
 
-		pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_pos)),
+		shell_print(shell, "enter");
+
+		if (pwm_neg == NULL) {
+			shell_print(shell, "NULL neg");
+		}
+
+		if (pwm_pos == NULL) {
+			shell_print(shell, "NULL pos");
+		}
+		int ret1, ret2;
+		ret1 = pwm_pin_set_usec(pwm_pos, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_pos)),
 					(20U * USEC_PER_MSEC), pwm_pos_value, 0);
-		pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_neg)),
+		ret2 = pwm_pin_set_usec(pwm_neg, DT_PWMS_CHANNEL(DT_NODELABEL(pwm2t_neg)),
 					(20U * USEC_PER_MSEC), pwm_neg_value, 0);
+
+		if (ret1 == 0) {
+			shell_print(shell, "ret1 0");
+		}
+
+		if (ret2 == 0) {
+			shell_print(shell, "ret2 0");
+		}
 
 	} else {
 		return 1; // Expected argument not found.
@@ -128,9 +146,23 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 	return 0;
 }
 
+static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
+{
+	int32_t laser_value;
+	const struct device *laser;
+
+	if (argc != 2) {
+		return 1; // Expected 2 arguments.
+	}
+
+	laser_value = atoi(argv[1]);
+
+	return 0;
+}
+
 SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100). Usage syntax: motor [axis] [value]", cmd_motor);
+SHELL_CMD_REGISTER(laser, NULL, "Set laser intensity to % value (range 0 to 100). Usage syntax: laser [value]", cmd_laser);
 //SHELL_CMD_REGISTER(sensor, NULL, "Report end switches state", cmd_sensor); // sensor y dump
-//SHELL_CMD_REGISTER(laser, NULL, "Report end switches state", cmd_laser); // laser 25
 
 
 static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
@@ -441,7 +473,7 @@ void initialize_motor_drives(void)
 	pwm2_z_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_pos))));
 	pwm2_z_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2z_neg))));
 	pwm2_t_pos = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_pos))));
-	pwm2_t_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_pos))));
+	pwm2_t_neg = device_get_binding(DT_LABEL(DT_PWMS_CTLR(DT_NODELABEL(pwm2t_neg))));
 
 	if ((pwm1_x_pos == NULL) || (pwm1_x_neg == NULL) || (pwm1_y_pos == NULL) || (pwm1_y_neg == NULL) ||
 	(pwm2_z_pos == NULL) || (pwm2_z_neg == NULL) || (pwm2_t_pos == NULL) || (pwm2_t_neg == NULL)) {
@@ -466,6 +498,18 @@ void initialize_motor_drives(void)
 					(20U * USEC_PER_MSEC), 0, 0);
 }
 
+void write_laser_driver(uint8_t value)
+{
+	const struct device *laser_driver;
+	int laser_driver_ret;
+
+	laser_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_sleep_1), gpios));
+
+	if (laser_driver == NULL) {
+		return;
+	}
+
+}
 
 void initialize_shell_port(void)
 {
@@ -490,6 +534,7 @@ void main(void)
 	initialize_shell_port();
 	initialize_power_switch();
 	initialize_motor_drives();
+	write_laser_driver(0);
 	
 	motor_switch_control(true);
 	laser_switch_control(true);

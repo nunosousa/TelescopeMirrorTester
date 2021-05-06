@@ -18,11 +18,7 @@ static int board_pinmux_init(const struct device *dev)
 
 	ARG_UNUSED(dev);
 
-#if ATMEL_SAM0_DT_SERCOM_CHECK(3, atmel_sam0_uart) && defined(CONFIG_UART_SAM0)
-	/* SERCOM3 on RX=PA16/pad 1, TX=PA17/pad 0 */
-	pinmux_pin_set(muxa, 16, PINMUX_FUNC_D);
-	pinmux_pin_set(muxa, 17, PINMUX_FUNC_D);
-#endif
+
 #if ATMEL_SAM0_DT_SERCOM_CHECK(0, atmel_sam0_uart) && defined(CONFIG_UART_SAM0)
 #warning Pin mapping may not be configured
 #endif
@@ -32,6 +28,9 @@ static int board_pinmux_init(const struct device *dev)
 #if ATMEL_SAM0_DT_SERCOM_CHECK(2, atmel_sam0_uart) && defined(CONFIG_UART_SAM0)
 #warning Pin mapping may not be configured
 #endif
+#if ATMEL_SAM0_DT_SERCOM_CHECK(3, atmel_sam0_uart) && defined(CONFIG_UART_SAM0)
+#warning Pin mapping may not be configured
+#endif
 #if ATMEL_SAM0_DT_SERCOM_CHECK(4, atmel_sam0_uart) && defined(CONFIG_UART_SAM0)
 #warning Pin mapping may not be configured
 #endif
@@ -39,14 +38,12 @@ static int board_pinmux_init(const struct device *dev)
 #warning Pin mapping may not be configured
 #endif
 
-#if ATMEL_SAM0_DT_SERCOM_CHECK(1, atmel_sam0_spi) && defined(CONFIG_SPI_SAM0)
-	/* SPI SERCOM1 on MISO=PB23/pad 3, MOSI=PA0/pad 0, SCK=PA1/pad 1 */
-	pinmux_pin_set(muxa, 0, PINMUX_FUNC_D);
-	pinmux_pin_set(muxa, 1, PINMUX_FUNC_D);
-	pinmux_pin_set(muxb, 23, PINMUX_FUNC_C);
-#endif
-
 #if ATMEL_SAM0_DT_SERCOM_CHECK(0, atmel_sam0_spi) && defined(CONFIG_SPI_SAM0)
+	pinmux_pin_set(muxa, 4, PINMUX_FUNC_D); /* SERCOM0 PAD[0] on PA04 (MOSI) */
+	pinmux_pin_set(muxa, 5, PINMUX_FUNC_D); /* SERCOM0 PAD[1] on PA05 (SCLK) */
+	pinmux_pin_set(muxa, 6, PINMUX_FUNC_D); /* SERCOM0 PAD[2] on PA06 (MISO) */
+#endif
+#if ATMEL_SAM0_DT_SERCOM_CHECK(1, atmel_sam0_spi) && defined(CONFIG_SPI_SAM0)
 #warning Pin mapping may not be configured
 #endif
 #if ATMEL_SAM0_DT_SERCOM_CHECK(2, atmel_sam0_spi) && defined(CONFIG_SPI_SAM0)
@@ -59,8 +56,24 @@ static int board_pinmux_init(const struct device *dev)
 #warning Pin mapping may not be configured
 #endif
 
-#if defined(CONFIG_PWM_SAM0_TCC)
-#if ATMEL_SAM0_DT_TCC_CHECK(0, atmel_sam0_tcc_pwm)
+#if ATMEL_SAM0_DT_SERCOM_CHECK(0, atmel_sam0_i2c) && defined(CONFIG_I2C_SAM0)
+#warning Pin mapping may not be configured
+#endif
+#if ATMEL_SAM0_DT_SERCOM_CHECK(1, atmel_sam0_i2c) && defined(CONFIG_I2C_SAM0)
+#warning Pin mapping may not be configured
+#endif
+#if ATMEL_SAM0_DT_SERCOM_CHECK(2, atmel_sam0_i2c) && defined(CONFIG_I2C_SAM0)
+#warning Pin mapping may not be configured
+#endif
+#if ATMEL_SAM0_DT_SERCOM_CHECK(4, atmel_sam0_i2c) && defined(CONFIG_I2C_SAM0)
+#warning Pin mapping may not be configured
+#endif
+#if ATMEL_SAM0_DT_SERCOM_CHECK(5, atmel_sam0_i2c) && defined(CONFIG_I2C_SAM0)
+	pinmux_pin_set(muxb, 30, PINMUX_FUNC_D); /* SERCOM5 PAD[1] on PB30 (SCL) */
+	pinmux_pin_set(muxb, 31, PINMUX_FUNC_D); /* SERCOM5 PAD[0] on PB31 (SDA) */
+#endif
+
+#if ATMEL_SAM0_DT_TCC_CHECK(0, atmel_sam0_tcc_pwm) && defined(CONFIG_PWM_SAM0_TCC)
 	pinmux_pin_set(muxa, 8, PINMUX_FUNC_F); /* TCC0/WO[0] on PA08 (A11) */
 	pinmux_pin_set(muxa, 9, PINMUX_FUNC_F); /* TCC0/WO[1] on PA09 (A12) */
 	pinmux_pin_set(muxa, 10, PINMUX_FUNC_F); /* TCC0/WO[2] on PA10 (B12) */
@@ -68,10 +81,9 @@ static int board_pinmux_init(const struct device *dev)
 	pinmux_pin_set(muxb, 10, PINMUX_FUNC_F); /* TCC0/WO[4] on PB10 (A21) */
 	pinmux_pin_set(muxb, 11, PINMUX_FUNC_F); /* TCC0/WO[5] on PB11 (A22) */
 #endif
-#if ATMEL_SAM0_DT_TCC_CHECK(3, atmel_sam0_tcc_pwm)
+#if ATMEL_SAM0_DT_TCC_CHECK(3, atmel_sam0_tcc_pwm) && defined(CONFIG_PWM_SAM0_TCC)
 	pinmux_pin_set(muxb, 12, PINMUX_FUNC_F); /* TCC3/WO[0] on PB12 (B22) */
 	pinmux_pin_set(muxb, 13, PINMUX_FUNC_F); /* TCC3/WO[1] on PB13 (B21) */
-#endif
 #endif
 
 	if (IS_ENABLED(CONFIG_USB_DC_SAM0)) {

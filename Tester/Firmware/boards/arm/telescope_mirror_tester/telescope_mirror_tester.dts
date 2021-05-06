@@ -138,8 +138,8 @@
 &sercom0 {
 	status = "okay";
 	compatible = "atmel,sam0-spi";
-	dipo = <0>;
-	dopo = <1>;
+	dipo = <2>;
+	dopo = <0>;
 	#address-cells = <1>;
 	#size-cells = <0>;
 /*
@@ -150,7 +150,7 @@
 		reg = <0>;
 		irq-gpios = <&porta 7 0>;
 		spi-max-frequency = <2000000>;
-		label = "PMW3360_1";
+		label = "PMW3360_X";
 	};
 
 	y_pos_sensor: pwm3360@1 {
@@ -158,7 +158,7 @@
 		reg = <1>;
 		irq-gpios = <&porta 7 0>;
 		spi-max-frequency = <2000000>;
-		label = "PMW3360_2";
+		label = "PMW3360_Y";
 	};
 */
 };
@@ -169,13 +169,13 @@
 	clock-frequency = <I2C_BITRATE_STANDARD>;
 	#address-cells = <1>;
 	#size-cells = <0>;
-/*
+
 	laser_dac: mcp4716@63 {
-		compatible = "";
+		status = "okay";
+		compatible = "microchip,mcp4716";
 		label = "MCP4716";
 		reg = <0x63>;
 	};
-*/
 };
 
 &tcc0 {
