@@ -7,6 +7,8 @@
 #include <sys/__assert.h>
 #include <logging/log.h>
 
+#define DT_DRV_COMPAT microchip_mcp4716
+
 LOG_MODULE_REGISTER(dac_mcp4716, CONFIG_DAC_LOG_LEVEL);
 
 /* Register addresses */
@@ -15,11 +17,9 @@ LOG_MODULE_REGISTER(dac_mcp4716, CONFIG_DAC_LOG_LEVEL);
 #define MCP4716_REG_BRDCAST        0x03U
 #define MCP4716_REG_DACA_DATA      0x08U
 
-#define MCP4716_DEVICE_ID      0x500	/* STATUS_TRIGGER[DEVICE_ID] */
-#define MCP4716_DEVICE_ID      0x300	/* STATUS_TRIGGER[DEVICE_ID] */
-#define MCP4716_SW_RST         0x0A	/* STATUS_TRIGGER[SW_RST] */
+#define MCP4716_SW_ADDR        0xFF
 #define MCP4716_POR_DELAY      5
-#define MCP4716_MAX_CHANNEL    8
+#define MCP4716_MAX_CHANNEL    1
 
 struct mcp4716_config {
 	const char *i2c_bus;
@@ -159,10 +159,11 @@ static int mcp4716_write_value(const struct device *dev, uint8_t channel,
 
 static int mcp4716_soft_reset(const struct device *dev)
 {
-	uint16_t regval = MCP4716_SW_RST;
+	struct mcp4716_data *data = dev->data;
+	uint16_t addr = MCP4716_SW_ADDR;
 	int ret;
 
-	ret = mcp4716_reg_write(dev, MCP4716_REG_STATUS_TRIGGER, regval);
+	ret = i2c_write(data->i2c, NULL, 0, addr);
 	if (ret) {
 		return -EIO;
 	}
@@ -201,26 +202,21 @@ static const struct dac_driver_api mcp4716_driver_api = {
 	.write_value = mcp4716_write_value,
 };
 
-#define INST_DT_MCP4716(inst) DT_INST(inst, microchip_mcp4716)
+#define CREATE_DAC_MCP4716_DEVICE(inst)                              \
+     static struct mcp4716_data mcp4716_data_##inst;                 \
+     static const struct mcp4716_config mcp4716_config_##inst = {    \
+		.i2c_bus = DT_BUS_LABEL(INST_DT_MCP4716(n)),                 \
+		.i2c_addr = DT_REG_ADDR(INST_DT_MCP4716(n)),                 \
+		.resolution = 10,                                            \
+     };                                                              \
+     DEVICE_DT_INST_DEFINE(inst,                                     \
+                           mcp4716_init,                             \
+                           NULL,                                     \
+                           &mcp4716_data_##inst,                     \
+                           &mcp4716_config_##inst,                   \
+                           POST_KERNEL,                              \
+						   CONFIG_DAC_MCP4716_INIT_PRIORITY,         \
+                           &mcp4716_driver_api);
 
-#define DAC_MCP4716_DEVICE(n) \
-	static struct mcp4716_data mcp4716_data_##n; \
-	static const struct mcp4716_config mcp4716_config_##n = { \
-		.i2c_bus = DT_BUS_LABEL(INST_DT_MCP4716(n)), \
-		.i2c_addr = DT_REG_ADDR(INST_DT_MCP4716(n)), \
-		.resolution = 10, \
-	}; \
-	DEVICE_DT_DEFINE(INST_DT_MCP4716(n), \
-				&mcp4716_init, device_pm_control_nop, \
-				&mcp4716_data_##n, \
-				&mcp4716_config_##n, POST_KERNEL, \
-				CONFIG_DAC_MCP4716_INIT_PRIORITY, \
-				&mcp4716_driver_api)
-
-#define CALL_WITH_ARG(arg, expr) expr(arg)
-
-#define INST_DT_DAC_MCP4716_FOREACH(inst_expr) \
-	UTIL_LISTIFY(DT_NUM_INST_STATUS_OKAY(microchip_mcp4716), \
-		     CALL_WITH_ARG, inst_expr)
-
-INST_DT_DAC_MCP4716_FOREACH(DAC_MCP4716_DEVICE);
+/* Call the device creation macro for each instance: */
+DT_INST_FOREACH_STATUS_OKAY(CREATE_DAC_MCP4716_DEVICE)

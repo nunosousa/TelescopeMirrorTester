@@ -1,28 +1,19 @@
-# Copyright (c) 2020 M2I Corporation
-# SPDX-License-Identifier: Apache-2.0
-
-include: [dac-controller.yaml, i2c-device.yaml]
-
 description: Microchip MCP4716 10-bit 1 channel DAC
 
 compatible: "microchip,mcp4716"
+
+include: [dac-controller.yaml, i2c-device.yaml]
 
 properties:
     voltage-reference:
       type: int
       required: true
-      description: |
-        DAC voltage reference select
-
-        See constants in dt-bindings/dac/dacx0508.h.
+      description: DAC voltage reference select
 
     channel0-gain:
       type: int
       required: true
-      description: |
-        Channel 0 gain select
-
-        See constants in dt-bindings/dac/dacx0508.h.
+      description: Channel 0 gain select
 
     "#io-channel-cells":
       const: 1
