@@ -11,15 +11,12 @@
 
 LOG_MODULE_REGISTER(dac_mcp4716, CONFIG_DAC_LOG_LEVEL);
 
-/* Register addresses */
-#define MCP4716_REG_DEVICE_CONFIG  0x01U
-#define MCP4716_REG_STATUS_TRIGGER 0x02U
-#define MCP4716_REG_BRDCAST        0x03U
-#define MCP4716_REG_DACA_DATA      0x08U
-
-#define MCP4716_SW_ADDR        0xFF
-#define MCP4716_POR_DELAY      5
-#define MCP4716_MAX_CHANNEL    1
+#define MCP4716_PD_BITS_CONFIG   0x00U
+#define MCP4716_VREF_BITS_CONFIG 0x00U
+#define MCP4716_NV_DAC_CONFIG    0x07FFU
+#define MCP4716_SW_ADDR          0xFF
+#define MCP4716_POR_DELAY        5
+#define MCP4716_MAX_CHANNEL      1
 
 struct mcp4716_config {
 	const char *i2c_bus;
@@ -59,28 +56,21 @@ static int mcp4716_reg_write(const struct device *dev, uint8_t reg,
 	return i2c_write(data->i2c, buf, sizeof(buf), cfg->i2c_addr);
 }
 
-int mcp4716_reg_update(const struct device *dev, uint8_t reg,
-			 uint16_t mask, bool setting)
+int mcp4716_all_mem_reg_read(const struct device *dev, uint16_t value,
+			 uint8_t pd, uint8_t vref)
 {
-	uint16_t regval;
-	int ret;
+	return 0;
+}
 
-	ret = mcp4716_reg_read(dev, reg, &regval);
-	if (ret) {
-		return -EIO;
-	}
+int mcp4716_all_mem_reg_update(const struct device *dev, uint16_t value,
+			 uint8_t pd, uint8_t vref)
+{
+	return 0;
+}
 
-	if (setting) {
-		regval |= mask;
-	} else {
-		regval &= ~mask;
-	}
-
-	ret = mcp4716_reg_write(dev, reg, regval);
-	if (ret) {
-		return ret;
-	}
-
+int mcp4716_dac_vol_reg_update(const struct device *dev, uint16_t value,
+			 uint8_t pd)
+{
 	return 0;
 }
 
@@ -107,9 +97,8 @@ static int mcp4716_channel_setup(const struct device *dev,
 		return 0;
 	}
 
-	/* Clear PDNn bit */
-	ret = mcp4716_reg_update(dev, MCP4716_REG_DEVICE_CONFIG,
-				BIT(channel_cfg->channel_id), setting);
+	ret = mcp4716_all_mem_reg_update(dev, MCP4716_NV_DAC_CONFIG,
+			 MCP4716_PD_BITS_CONFIG, MCP4716_VREF_BITS_CONFIG);
 	if (ret) {
 		LOG_ERR("Unable to update DEVICE_CONFIG register");
 		return -EIO;
@@ -127,7 +116,6 @@ static int mcp4716_write_value(const struct device *dev, uint8_t channel,
 {
 	const struct mcp4716_config *config = dev->config;
 	struct mcp4716_data *data = dev->data;
-	uint16_t regval;
 	int ret;
 
 	if (channel > MCP4716_MAX_CHANNEL - 1) {
@@ -145,10 +133,7 @@ static int mcp4716_write_value(const struct device *dev, uint8_t channel,
 		return -EINVAL;
 	}
 
-	regval = value << 2;
-	regval &= 0xFFFF;
-
-	ret = mcp4716_reg_write(dev, MCP4716_REG_DACA_DATA + channel, regval);
+	ret = mcp4716_dac_vol_reg_update(dev, value, MCP4716_PD_BITS_CONFIG);
 	if (ret) {
 		LOG_ERR("Unable to set value %d on channel %d", value, channel);
 		return -EIO;
@@ -205,8 +190,8 @@ static const struct dac_driver_api mcp4716_driver_api = {
 #define CREATE_DAC_MCP4716_DEVICE(inst)                              \
      static struct mcp4716_data mcp4716_data_##inst;                 \
      static const struct mcp4716_config mcp4716_config_##inst = {    \
-		.i2c_bus = DT_BUS_LABEL(INST_DT_MCP4716(n)),                 \
-		.i2c_addr = DT_REG_ADDR(INST_DT_MCP4716(n)),                 \
+		.i2c_bus = DT_BUS_LABEL(DT_INST(inst, microchip_mcp4716)),   \
+		.i2c_addr = DT_REG_ADDR(DT_INST(inst, microchip_mcp4716)),   \
 		.resolution = 10,                                            \
      };                                                              \
      DEVICE_DT_INST_DEFINE(inst,                                     \
