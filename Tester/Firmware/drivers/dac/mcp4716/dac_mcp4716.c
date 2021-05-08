@@ -13,6 +13,7 @@ LOG_MODULE_REGISTER(dac_mcp4716, CONFIG_DAC_LOG_LEVEL);
 
 #define MCP4716_PD_BITS_CONFIG   0x00U
 #define MCP4716_VREF_BITS_CONFIG 0x00U
+#define MCP4716_G_BITS_CONFIG    0x00U
 #define MCP4716_NV_DAC_CONFIG    0x07FFU
 #define MCP4716_SW_ADDR          0xFF
 #define MCP4716_POR_DELAY        5
@@ -29,49 +30,31 @@ struct mcp4716_data {
 	uint8_t configured;
 };
 
-static int mcp4716_reg_read(const struct device *dev, uint8_t reg,
-			      uint16_t *val)
+int mcp4716_all_mem_reg_update(const struct device *dev, uint16_t value,
+			 uint8_t pd, uint8_t vref, uint8_t g)
 {
 	struct mcp4716_data *data = dev->data;
 	const struct mcp4716_config *cfg = dev->config;
-
-	if (i2c_burst_read(data->i2c, cfg->i2c_addr,
-			   reg, (uint8_t *) val, 2) < 0) {
-		LOG_ERR("I2C read failed");
-		return -EIO;
-	}
-
-	*val = sys_be16_to_cpu(*val);
-
-	return 0;
-}
-
-static int mcp4716_reg_write(const struct device *dev, uint8_t reg,
-			       uint16_t val)
-{
-	struct mcp4716_data *data = dev->data;
-	const struct mcp4716_config *cfg = dev->config;
-	uint8_t buf[3] = {reg, val >> 8, val & 0xFF};
+	uint8_t buf[3];
+	
+	buf[0] = 0x60 | ((vref << 3) & 0x18) | ((pd << 1) & 0x06) | (g & 0x01);
+	buf[1] = (value >> 2) & 0xFF;
+	buf[2] = (value << 6) & 0xC0;
 
 	return i2c_write(data->i2c, buf, sizeof(buf), cfg->i2c_addr);
-}
-
-int mcp4716_all_mem_reg_read(const struct device *dev, uint16_t value,
-			 uint8_t pd, uint8_t vref)
-{
-	return 0;
-}
-
-int mcp4716_all_mem_reg_update(const struct device *dev, uint16_t value,
-			 uint8_t pd, uint8_t vref)
-{
-	return 0;
 }
 
 int mcp4716_dac_vol_reg_update(const struct device *dev, uint16_t value,
 			 uint8_t pd)
 {
-	return 0;
+	struct mcp4716_data *data = dev->data;
+	const struct mcp4716_config *cfg = dev->config;
+	uint8_t buf[2];
+	
+	buf[0] = ((value >> 6) | ((pd << 4) & 0x30)) & 0x3F;
+	buf[1] = (value << 2) & 0xFC;
+
+	return i2c_write(data->i2c, buf, sizeof(buf), cfg->i2c_addr);
 }
 
 static int mcp4716_channel_setup(const struct device *dev,
@@ -98,7 +81,7 @@ static int mcp4716_channel_setup(const struct device *dev,
 	}
 
 	ret = mcp4716_all_mem_reg_update(dev, MCP4716_NV_DAC_CONFIG,
-			 MCP4716_PD_BITS_CONFIG, MCP4716_VREF_BITS_CONFIG);
+			 MCP4716_PD_BITS_CONFIG, MCP4716_VREF_BITS_CONFIG, MCP4716_G_BITS_CONFIG);
 	if (ret) {
 		LOG_ERR("Unable to update DEVICE_CONFIG register");
 		return -EIO;
