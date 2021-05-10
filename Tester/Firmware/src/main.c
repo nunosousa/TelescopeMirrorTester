@@ -3,6 +3,7 @@
 #include <drivers/gpio.h>
 #include <drivers/uart.h>
 #include <drivers/pwm.h>
+#include <drivers/dac.h>
 #include <usb/usb_device.h>
 #include <shell/shell.h>
 #include <string.h>
@@ -498,16 +499,22 @@ void initialize_motor_drives(void)
 					(20U * USEC_PER_MSEC), 0, 0);
 }
 
-void write_laser_driver(uint8_t value)
+void initialize_laser_driver(void)
 {
-	const struct device *laser_driver;
 	int laser_driver_ret;
+	const struct device *laser_driver;
+	const struct dac_channel_cfg dac_ch_cfg = {
+		.channel_id  = 0,
+		.resolution  = 10
+	};
 
-	laser_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(pwm_sleep_1), gpios));
+	laser_driver = device_get_binding(DT_LABEL(DT_NODELABEL(laser_dac)));
 
 	if (laser_driver == NULL) {
 		return;
 	}
+
+	dac_channel_setup(laser_driver, &dac_ch_cfg);
 
 }
 
@@ -534,7 +541,7 @@ void main(void)
 	initialize_shell_port();
 	initialize_power_switch();
 	initialize_motor_drives();
-	write_laser_driver(0);
+	initialize_laser_driver();
 	
 	motor_switch_control(true);
 	laser_switch_control(true);

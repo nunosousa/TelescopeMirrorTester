@@ -62,7 +62,6 @@ static int mcp4716_channel_setup(const struct device *dev,
 {
 	const struct mcp4716_config *config = dev->config;
 	struct mcp4716_data *data = dev->data;
-	bool setting = false;
 	int ret;
 
 	if (channel_cfg->channel_id > MCP4716_MAX_CHANNEL - 1) {
