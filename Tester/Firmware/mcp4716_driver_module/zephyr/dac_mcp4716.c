@@ -2,9 +2,6 @@
 #include <kernel.h>
 #include <drivers/i2c.h>
 #include <drivers/dac.h>
-#include <sys/util.h>
-#include <sys/byteorder.h>
-#include <sys/__assert.h>
 #include <logging/log.h>
 
 #define DT_DRV_COMPAT microchip_mcp4716
@@ -145,6 +142,8 @@ static int mcp4716_init(const struct device *dev)
 	struct mcp4716_data *data = dev->data;
 	int ret;
 
+	LOG_INF("%s", config->i2c_bus);
+
 	data->i2c = device_get_binding(config->i2c_bus);
 	if (!data->i2c) {
 		LOG_ERR("Could not find I2C device");
@@ -170,7 +169,7 @@ static const struct dac_driver_api mcp4716_driver_api = {
 };
 
 #define CREATE_DAC_MCP4716_DEVICE(inst)                              \
-     static struct mcp4716_data mcp4716_data_##inst;                 \
+     static struct mcp4716_data mcp4716_data_##inst;           \
      static const struct mcp4716_config mcp4716_config_##inst = {    \
 		.i2c_bus = DT_BUS_LABEL(DT_INST(inst, microchip_mcp4716)),   \
 		.i2c_addr = DT_REG_ADDR(DT_INST(inst, microchip_mcp4716)),   \

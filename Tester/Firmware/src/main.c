@@ -149,14 +149,33 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 
 static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 {
+	int ret;
 	int32_t laser_value;
 	const struct device *laser;
+	const uint32_t dac_max_value = 0x03FF;
 
 	if (argc != 2) {
 		return 1; // Expected 2 arguments.
 	}
 
+	laser = device_get_binding(DT_LABEL(DT_NODELABEL(laser_dac)));
+
 	laser_value = atoi(argv[1]);
+
+	if((laser_value < 0) || (laser_value > 100)) {
+		shell_error(shell, "Laser intensity must be between 0 and 100.");
+		return 1;
+	}
+
+	laser_value = (laser_value * dac_max_value) / 100;
+
+	shell_print(shell, "pre");
+
+	ret = dac_write_value(laser, 0, (uint32_t)laser_value);
+
+	if (ret == 0) {
+		shell_print(shell, "ret 0");
+	}
 
 	return 0;
 }
@@ -505,7 +524,7 @@ void initialize_laser_driver(void)
 	const struct device *laser_driver;
 	const struct dac_channel_cfg dac_ch_cfg = {
 		.channel_id  = 0,
-		.resolution  = 10
+		.resolution  = 12
 	};
 
 	laser_driver = device_get_binding(DT_LABEL(DT_NODELABEL(laser_dac)));
