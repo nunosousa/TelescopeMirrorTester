@@ -1,91 +1,76 @@
+#define DT_DRV_COMPAT microchip_mcp4716
+
 #include <zephyr.h>
-#include <kernel.h>
 #include <drivers/i2c.h>
 #include <drivers/dac.h>
 #include <logging/log.h>
 
-#define DT_DRV_COMPAT microchip_mcp4716
-
 LOG_MODULE_REGISTER(dac_mcp4716, CONFIG_DAC_LOG_LEVEL);
 
-#define MCP4716_PD_BITS_CONFIG   0x00U
-#define MCP4716_VREF_BITS_CONFIG 0x00U
-#define MCP4716_G_BITS_CONFIG    0x00U
-#define MCP4716_NV_DAC_CONFIG    0x07FFU
-#define MCP4716_SW_ADDR          0xFF
-#define MCP4716_POR_DELAY        5
-#define MCP4716_MAX_CHANNEL      1
+/* Information in this file comes from MCP4716 datasheet revision D
+ * found at https://ww1.microchip.com/downloads/en/DeviceDoc/22272C.pdf
+ */
+
+/* Defines for field values in MCP4716 DAC register */
+#define MCP4716_DAC_MAX_VAL						0x7FF
+
+#define MCP4716_FAST_MODE_POWER_DOWN_POS		4U
+#define MCP4716_FAST_MODE_DAC_UPPER_VAL_POS		6U
+#define MCP4716_FAST_MODE_DAC_UPPER_VAL_MASK	0x0F
+#define MCP4716_FAST_MODE_DAC_LOWER_VAL_POS		2U
+#define MCP4716_FAST_MODE_DAC_LOWER_VAL_MASK	0xFC
+
+#define MCP4716_READ_RDY_POS					7U
+#define MCP4716_READ_RDY_MASK					(0x1 << MCP4716_READ_RDY_POS)
+
+/* After writing eeprom, the MCP4716 can be in a busy state for 25 - 50ms
+ * See section 1.0 of MCP4716 datasheet, 'Electrical Characteristics'
+ */
+#define MCP4716_BUSY_TIMEOUT_MS					60U
 
 struct mcp4716_config {
-	const char *i2c_bus;
+	const struct device *i2c_dev;
 	uint16_t i2c_addr;
-	uint8_t resolution;
 };
 
-struct mcp4716_data {
-	const struct device *i2c;
-	uint8_t configured;
-};
-
-int mcp4716_all_mem_reg_update(const struct device *dev, uint16_t value,
-			 uint8_t pd, uint8_t vref, uint8_t g)
+/* Read mcp4716 and check RDY status bit */
+static int mcp4716_wait_until_ready(const struct device *dev, uint16_t i2c_addr)
 {
-	struct mcp4716_data *data = dev->data;
-	const struct mcp4716_config *cfg = dev->config;
-	uint8_t buf[3];
-	
-	buf[0] = 0x60 | ((vref << 3) & 0x18) | ((pd << 1) & 0x06) | (g & 0x01);
-	buf[1] = (value >> 2) & 0xFF;
-	buf[2] = (value << 6) & 0xC0;
+	uint8_t rx_data[6];
+	bool mcp4716_ready = false;
+	int ret;
+	uint32_t timeout = k_uptime_get_32() + MCP4716_BUSY_TIMEOUT_MS;
 
-	return i2c_write(data->i2c, buf, sizeof(buf), cfg->i2c_addr);
+	/* Wait until RDY bit is set or return error if timer exceeds MCP4716_BUSY_TIMEOUT_MS */
+	while (!mcp4716_ready) {
+		ret = i2c_read(dev, rx_data, sizeof(rx_data), i2c_addr);
+
+		if (ret == 0) {
+			mcp4716_ready = rx_data[0] & MCP4716_READ_RDY_MASK;
+		} else {
+			/* I2C error */
+			return ret;
+		}
+
+		if (k_uptime_get_32() > timeout) {
+			return -ETIMEDOUT;
+		}
+	}
+
+	return 0;
 }
 
-int mcp4716_dac_vol_reg_update(const struct device *dev, uint16_t value,
-			 uint8_t pd)
-{
-	struct mcp4716_data *data = dev->data;
-	const struct mcp4716_config *cfg = dev->config;
-	uint8_t buf[2];
-	
-	buf[0] = ((value >> 6) | ((pd << 4) & 0x30)) & 0x3F;
-	buf[1] = (value << 2) & 0xFC;
-
-	return i2c_write(data->i2c, buf, sizeof(buf), cfg->i2c_addr);
-}
-
+/* MCP4716 is a single channel 12 bit DAC */
 static int mcp4716_channel_setup(const struct device *dev,
 				   const struct dac_channel_cfg *channel_cfg)
 {
-	const struct mcp4716_config *config = dev->config;
-	struct mcp4716_data *data = dev->data;
-	int ret;
+	if (channel_cfg->channel_id != 0) {
+		return -EINVAL;
+	}
 
-	if (channel_cfg->channel_id > MCP4716_MAX_CHANNEL - 1) {
-		LOG_ERR("Unsupported channel %d", channel_cfg->channel_id);
+	if (channel_cfg->resolution != 10) {
 		return -ENOTSUP;
 	}
-
-	if (channel_cfg->resolution != config->resolution) {
-		LOG_ERR("Unsupported resolution %d", channel_cfg->resolution);
-		return -ENOTSUP;
-	}
-
-	if (data->configured & BIT(channel_cfg->channel_id)) {
-		LOG_DBG("Channel %d already configured", channel_cfg->channel_id);
-		return 0;
-	}
-
-	ret = mcp4716_all_mem_reg_update(dev, MCP4716_NV_DAC_CONFIG,
-			 MCP4716_PD_BITS_CONFIG, MCP4716_VREF_BITS_CONFIG, MCP4716_G_BITS_CONFIG);
-	if (ret) {
-		LOG_ERR("Unable to update DEVICE_CONFIG register");
-		return -EIO;
-	}
-
-	data->configured |= BIT(channel_cfg->channel_id);
-
-	LOG_DBG("Channel %d initialized", channel_cfg->channel_id);
 
 	return 0;
 }
@@ -93,72 +78,48 @@ static int mcp4716_channel_setup(const struct device *dev,
 static int mcp4716_write_value(const struct device *dev, uint8_t channel,
 				uint32_t value)
 {
-	const struct mcp4716_config *config = dev->config;
-	struct mcp4716_data *data = dev->data;
+	const struct mcp4716_config *config = (struct mcp4716_config *)dev->config;
+	uint8_t tx_data[2];
 	int ret;
 
-	if (channel > MCP4716_MAX_CHANNEL - 1) {
-		LOG_ERR("Unsupported channel %d", channel);
+	if (channel != 0) {
+		return -EINVAL;
+	}
+
+	/* Check value isn't over 12 bits */
+	if (value > MCP4716_DAC_MAX_VAL) {
 		return -ENOTSUP;
 	}
 
-	if (!(data->configured & BIT(channel))) {
-		LOG_ERR("Channel %d not initialized", channel);
-		return -EINVAL;
-	}
+	/* WRITE_MODE_FAST message format (2 bytes):
+	 *
+	 * ||     15 14     |        13 12        |     9 8 7 6     || 5 4 3 2 1 0 x x ||
+	 * || Fast mode (0) | Power-down bits (0) | DAC value[11:8] || DAC value[7:0]  ||
+	 */
+	tx_data[0] = ((value >> MCP4716_FAST_MODE_DAC_UPPER_VAL_POS)
+		& MCP4716_FAST_MODE_DAC_UPPER_VAL_MASK);
+	tx_data[1] = ((value << MCP4716_FAST_MODE_DAC_LOWER_VAL_POS)
+		& MCP4716_FAST_MODE_DAC_LOWER_VAL_MASK);
+	ret = i2c_write(config->i2c_dev, tx_data, sizeof(tx_data),
+		config->i2c_addr);
 
-	if (value >= (1 << (config->resolution))) {
-		LOG_ERR("Value %d out of range", value);
-		return -EINVAL;
-	}
-
-	ret = mcp4716_dac_vol_reg_update(dev, value, MCP4716_PD_BITS_CONFIG);
-	if (ret) {
-		LOG_ERR("Unable to set value %d on channel %d", value, channel);
-		return -EIO;
-	}
-
-	return 0;
+	return ret;
 }
 
-static int mcp4716_soft_reset(const struct device *dev)
-{
-	struct mcp4716_data *data = dev->data;
-	uint16_t addr = MCP4716_SW_ADDR;
-	int ret;
-
-	ret = i2c_write(data->i2c, NULL, 0, addr);
-	if (ret) {
-		return -EIO;
-	}
-	k_msleep(MCP4716_POR_DELAY);
-
-	return 0;
-}
-
-static int mcp4716_init(const struct device *dev)
+static int dac_mcp4716_init(const struct device *dev)
 {
 	const struct mcp4716_config *config = dev->config;
-	struct mcp4716_data *data = dev->data;
-	int ret;
 
-	LOG_INF("%s", config->i2c_bus);
-
-	data->i2c = device_get_binding(config->i2c_bus);
-	if (!data->i2c) {
-		LOG_ERR("Could not find I2C device");
+	if (!device_is_ready(config->i2c_dev)) {
+		LOG_ERR("I2C device not found");
 		return -EINVAL;
 	}
 
-	ret = mcp4716_soft_reset(dev);
-	if (ret) {
-		LOG_ERR("Soft-reset failed");
-		return ret;
+	/* Check we can read a 'RDY' bit from this device */
+	if (mcp4716_wait_until_ready(config->i2c_dev, config->i2c_addr)) {
+		LOG_ERR("I2C device failed init");
+		return -EBUSY;
 	}
-
-	data->configured = 0;
-
-	LOG_DBG("Init complete");
 
 	return 0;
 }
@@ -168,21 +129,17 @@ static const struct dac_driver_api mcp4716_driver_api = {
 	.write_value = mcp4716_write_value,
 };
 
-#define CREATE_DAC_MCP4716_DEVICE(inst)                              \
-     static struct mcp4716_data mcp4716_data_##inst;           \
-     static const struct mcp4716_config mcp4716_config_##inst = {    \
-		.i2c_bus = DT_BUS_LABEL(DT_INST(inst, microchip_mcp4716)),   \
-		.i2c_addr = DT_REG_ADDR(DT_INST(inst, microchip_mcp4716)),   \
-		.resolution = 10,                                            \
-     };                                                              \
-     DEVICE_DT_INST_DEFINE(inst,                                     \
-                           mcp4716_init,                             \
-                           NULL,                                     \
-                           &mcp4716_data_##inst,                     \
-                           &mcp4716_config_##inst,                   \
-                           POST_KERNEL,                              \
-						   CONFIG_DAC_MCP4716_INIT_PRIORITY,         \
-                           &mcp4716_driver_api);
 
-/* Call the device creation macro for each instance: */
-DT_INST_FOREACH_STATUS_OKAY(CREATE_DAC_MCP4716_DEVICE)
+#define INST_DT_MCP4716(index)										\
+	static const struct mcp4716_config mcp4716_config_##index = {	\
+		.i2c_dev = DEVICE_DT_GET(DT_INST_BUS(index)),				\
+		.i2c_addr = DT_INST_REG_ADDR(index)							\
+	};																\
+																	\
+	DEVICE_DT_INST_DEFINE(index, dac_mcp4716_init,					\
+			    NULL, NULL,											\
+			    &mcp4716_config_##index, POST_KERNEL,				\
+			    CONFIG_DAC_MCP4716_INIT_PRIORITY,					\
+			    &mcp4716_driver_api);
+
+DT_INST_FOREACH_STATUS_OKAY(INST_DT_MCP4716);

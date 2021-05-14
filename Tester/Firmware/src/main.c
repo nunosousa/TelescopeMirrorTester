@@ -524,7 +524,7 @@ void initialize_laser_driver(void)
 	const struct device *laser_driver;
 	const struct dac_channel_cfg dac_ch_cfg = {
 		.channel_id  = 0,
-		.resolution  = 12
+		.resolution  = 10,
 	};
 
 	laser_driver = device_get_binding(DT_LABEL(DT_NODELABEL(laser_dac)));
