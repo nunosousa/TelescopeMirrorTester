@@ -151,7 +151,7 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 {
 	int32_t laser_value;
 	const struct device *laser;
-	const uint32_t dac_max_value = 0x03FF;
+	const uint32_t dac_max_value = 0x07FF;
 
 	if (argc != 2) {
 		return 1; // Expected 2 arguments.
@@ -161,12 +161,12 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 
 	laser_value = atoi(argv[1]);
 
-	if((laser_value < 0) || (laser_value > 100)) {
-		shell_error(shell, "Laser intensity must be between 0 and 100.");
+	if((laser_value < 0) || (laser_value > dac_max_value)) {
+		shell_error(shell, "Laser intensity must be between 0 and 2047.");
 		return 1;
 	}
 
-	laser_value = (laser_value * dac_max_value) / 100;
+	laser_value = dac_max_value - laser_value;
 
 	return dac_write_value(laser, 0, (uint32_t)laser_value);
 }
