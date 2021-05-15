@@ -60,7 +60,7 @@ static int mcp4716_wait_until_ready(const struct device *dev, uint16_t i2c_addr)
 	return 0;
 }
 
-/* MCP4716 is a single channel 12 bit DAC */
+/* MCP4716 is a single channel 10 bit DAC */
 static int mcp4716_channel_setup(const struct device *dev,
 				   const struct dac_channel_cfg *channel_cfg)
 {
@@ -86,9 +86,15 @@ static int mcp4716_write_value(const struct device *dev, uint8_t channel,
 		return -EINVAL;
 	}
 
-	/* Check value isn't over 12 bits */
+	/* Check value isn't over 10 bits */
 	if (value > MCP4716_DAC_MAX_VAL) {
 		return -ENOTSUP;
+	}
+
+	/* Check we can read a 'RDY' bit from this device */
+	if (mcp4716_wait_until_ready(config->i2c_dev, config->i2c_addr)) {
+		LOG_ERR("I2C device failed init");
+		return -EBUSY;
 	}
 
 	/* WRITE_MODE_FAST message format (2 bytes):
@@ -113,12 +119,6 @@ static int dac_mcp4716_init(const struct device *dev)
 	if (!device_is_ready(config->i2c_dev)) {
 		LOG_ERR("I2C device not found");
 		return -EINVAL;
-	}
-
-	/* Check we can read a 'RDY' bit from this device */
-	if (mcp4716_wait_until_ready(config->i2c_dev, config->i2c_addr)) {
-		LOG_ERR("I2C device failed init");
-		return -EBUSY;
 	}
 
 	return 0;

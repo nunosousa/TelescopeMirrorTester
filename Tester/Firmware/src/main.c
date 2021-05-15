@@ -149,7 +149,6 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 
 static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 {
-	int ret;
 	int32_t laser_value;
 	const struct device *laser;
 	const uint32_t dac_max_value = 0x03FF;
@@ -169,15 +168,7 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 
 	laser_value = (laser_value * dac_max_value) / 100;
 
-	shell_print(shell, "pre");
-
-	ret = dac_write_value(laser, 0, (uint32_t)laser_value);
-
-	if (ret == 0) {
-		shell_print(shell, "ret 0");
-	}
-
-	return 0;
+	return dac_write_value(laser, 0, (uint32_t)laser_value);
 }
 
 SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100). Usage syntax: motor [axis] [value]", cmd_motor);
@@ -384,7 +375,6 @@ void initialize_power_switch(void)
 void motor_switch_control(bool activate)
 {
 	const struct device *motor_driver;
-	int motor_driver_ret;
 
 	motor_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(motor_drives_switch), gpios));
 	
@@ -402,7 +392,6 @@ void motor_switch_control(bool activate)
 void laser_switch_control(bool activate)
 {
 	const struct device *laser_driver;
-	int laser_driver_ret;
 
 	laser_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(laser_drive_switch), gpios));
 	
@@ -520,7 +509,6 @@ void initialize_motor_drives(void)
 
 void initialize_laser_driver(void)
 {
-	int laser_driver_ret;
 	const struct device *laser_driver;
 	const struct dac_channel_cfg dac_ch_cfg = {
 		.channel_id  = 0,
@@ -534,7 +522,6 @@ void initialize_laser_driver(void)
 	}
 
 	dac_channel_setup(laser_driver, &dac_ch_cfg);
-
 }
 
 void initialize_shell_port(void)
