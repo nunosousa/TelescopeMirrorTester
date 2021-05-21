@@ -19,7 +19,7 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 	const struct device *swtch;
 
 	if (argc != 3) {
-		return 1; // Expected 3 arguments.
+		return -1; // Expected 3 arguments.
 	}
 
 	pwm_value = atoi(argv[2]);
@@ -35,7 +35,7 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 		is_positive_motion = true;
 	}
 	else {
-		return 1; // Setpoint out of range.
+		return -1; // Setpoint out of range.
 	}
 
 	if (strcmp(argv[1], "x") == 0) {
@@ -141,7 +141,7 @@ static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
 		}
 
 	} else {
-		return 1; // Expected argument not found.
+		return -1; // Expected argument not found.
 	}
 
 	return 0;
@@ -154,7 +154,7 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 	const uint32_t dac_max_value = 0x07FF;
 
 	if (argc != 2) {
-		return 1; // Expected 2 arguments.
+		return -1; // Expected 2 arguments.
 	}
 
 	laser = device_get_binding(DT_LABEL(DT_NODELABEL(laser_dac)));
@@ -163,7 +163,7 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 
 	if((laser_value < 0) || (laser_value > dac_max_value)) {
 		shell_error(shell, "Laser intensity must be between 0 and 2047.");
-		return 1;
+		return -1;
 	}
 
 	laser_value = dac_max_value - laser_value;
@@ -171,9 +171,27 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 	return dac_write_value(laser, 0, (uint32_t)laser_value);
 }
 
+static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
+{
+	int32_t laser_value;
+	const struct device *laser;
+	const uint32_t dac_max_value = 0x07FF;
+/*
+	sensor = device_get_binding("SERCOM0");
+
+	DT_SPI_DEV_CS_GPIOS_PIN(DT_NODELABEL(x_pos_sensor))
+	DT_SPI_DEV_CS_GPIOS_PIN(DT_NODELABEL(y_pos_sensor))
+
+	err = gpio_pin_configure(dev_data->cs_gpio_dev, PMW3360_CS_GPIO_PIN,
+				 GPIO_OUTPUT);
+	err = gpio_pin_set_raw(dev_data->cs_gpio_dev, PMW3360_CS_GPIO_PIN, val);
+*/
+	return 0;
+}
+
 SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100). Usage syntax: motor [axis] [value]", cmd_motor);
 SHELL_CMD_REGISTER(laser, NULL, "Set laser intensity to % value (range 0 to 100). Usage syntax: laser [value]", cmd_laser);
-//SHELL_CMD_REGISTER(sensor, NULL, "Report end switches state", cmd_sensor); // sensor y dump
+SHELL_CMD_REGISTER(sensor, NULL, "Report end switches state", cmd_sensor);
 
 
 static struct gpio_callback sw_px_cb_data, sw_nx_cb_data, sw_py_cb_data,
@@ -321,34 +339,34 @@ void power_switch_alert(const struct device *port, struct gpio_callback *cb, gpi
 
 void initialize_power_switch(void)
 {
-	const struct device *motor_driver, *motor_alert, *laser_driver, *laser_alert;
-	int motor_driver_ret, motor_alert_ret, laser_driver_ret, laser_alert_ret;
+	const struct device *motor_pwr_switch, *motor_alert, *laser_driver, *laser_alert;
+	int motor_pwr_switch_ret, motor_alert_ret, laser_driver_ret, laser_alert_ret;
 
-	motor_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(motor_drives_switch), gpios));
+	motor_pwr_switch = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(motor_power_switch), enable_gpios));
 	motor_alert = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(motor_drives_alert), gpios));
-	laser_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(laser_drive_switch), gpios));
 	laser_alert = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(laser_drive_alert), gpios));
 
-	if ((motor_driver == NULL) || (motor_alert == NULL) || (laser_driver == NULL)
-	|| (laser_alert == NULL)) {
+	if ((motor_pwr_switch == NULL) || (motor_alert == NULL)	|| (laser_alert == NULL)) {
 		return;
 	}
 
-	motor_driver_ret = gpio_pin_configure(motor_driver,
-									DT_GPIO_PIN(DT_NODELABEL(motor_drives_switch), gpios),
-									GPIO_OUTPUT | DT_GPIO_FLAGS(DT_NODELABEL(motor_drives_switch), gpios));
+	motor_pwr_switch_ret = gpio_pin_configure(motor_pwr_switch,
+									DT_GPIO_PIN(DT_NODELABEL(motor_power_switch), enable_gpios),
+									GPIO_OUTPUT | DT_GPIO_FLAGS(DT_NODELABEL(motor_power_switch), enable_gpios));
 	motor_alert_ret = gpio_pin_configure(motor_alert,
 									DT_GPIO_PIN(DT_NODELABEL(motor_drives_alert), gpios),
 									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(motor_drives_alert), gpios));
-	laser_driver_ret = gpio_pin_configure(laser_driver,
-									DT_GPIO_PIN(DT_NODELABEL(laser_drive_switch), gpios),
-									GPIO_OUTPUT | DT_GPIO_FLAGS(DT_NODELABEL(laser_drive_switch), gpios));
 	laser_alert_ret = gpio_pin_configure(laser_alert,
 									DT_GPIO_PIN(DT_NODELABEL(laser_drive_alert), gpios),
 									GPIO_INPUT | DT_GPIO_FLAGS(DT_NODELABEL(laser_drive_alert), gpios));
 
-	if ((motor_driver_ret != 0) || (motor_alert_ret != 0) || (laser_driver_ret != 0)
-	|| (laser_alert_ret != 0)) {
+	if ((motor_pwr_switch_ret != 0) || (motor_alert_ret != 0) || (laser_alert_ret != 0)) {
+		return;
+	}
+
+	motor_pwr_switch_ret = gpio_pin_set(motor_pwr_switch, DT_GPIO_PIN(DT_NODELABEL(motor_power_switch), enable_gpios), 1);
+
+	if (motor_pwr_switch_ret != 0) {
 		return;
 	}
 
@@ -370,40 +388,6 @@ void initialize_power_switch(void)
 
 	gpio_add_callback(motor_alert, &motor_alert_cb_data);
 	gpio_add_callback(laser_alert, &laser_alert_cb_data);
-}
-
-void motor_switch_control(bool activate)
-{
-	const struct device *motor_driver;
-
-	motor_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(motor_drives_switch), gpios));
-	
-	if (motor_driver == NULL) {
-		return;
-	}
-
-	if (activate) {
-		gpio_pin_set(motor_driver, DT_GPIO_PIN(DT_NODELABEL(motor_drives_switch), gpios), 1);
-	} else {
-		gpio_pin_set(motor_driver, DT_GPIO_PIN(DT_NODELABEL(motor_drives_switch), gpios), 0);
-	}
-}
-
-void laser_switch_control(bool activate)
-{
-	const struct device *laser_driver;
-
-	laser_driver = device_get_binding(DT_GPIO_LABEL(DT_NODELABEL(laser_drive_switch), gpios));
-	
-	if (laser_driver == NULL) {
-		return;
-	}
-
-	if (activate) {
-		gpio_pin_set(laser_driver, DT_GPIO_PIN(DT_NODELABEL(laser_drive_switch), gpios), 1);
-	} else {
-		gpio_pin_set(laser_driver, DT_GPIO_PIN(DT_NODELABEL(laser_drive_switch), gpios), 0);
-	}
 }
 
 
@@ -516,7 +500,6 @@ void initialize_laser_driver(void)
 	};
 
 	laser_driver = device_get_binding(DT_LABEL(DT_NODELABEL(laser_dac)));
-
 	if (laser_driver == NULL) {
 		return;
 	}
@@ -548,9 +531,6 @@ void main(void)
 	initialize_power_switch();
 	initialize_motor_drives();
 	initialize_laser_driver();
-	
-	motor_switch_control(true);
-	laser_switch_control(true);
 
 	dev = device_get_binding(CONFIG_UART_SHELL_ON_DEV_NAME);
 	if (dev == NULL) {

@@ -91,12 +91,6 @@ static int mcp4716_write_value(const struct device *dev, uint8_t channel,
 		return -ENOTSUP;
 	}
 
-	/* Check we can read a 'RDY' bit from this device */
-	if (mcp4716_wait_until_ready(config->i2c_dev, config->i2c_addr)) {
-		LOG_ERR("I2C device failed init");
-		return -EBUSY;
-	}
-
 	/* WRITE_MODE_FAST message format (2 bytes):
 	 *
 	 * ||     15 14     |        13 12        |     9 8 7 6     || 5 4 3 2 1 0 x x ||
@@ -119,6 +113,12 @@ static int dac_mcp4716_init(const struct device *dev)
 	if (!device_is_ready(config->i2c_dev)) {
 		LOG_ERR("I2C device not found");
 		return -EINVAL;
+	}
+
+	/* Check we can read a 'RDY' bit from this device */
+	if (mcp4716_wait_until_ready(config->i2c_dev, config->i2c_addr)) {
+		LOG_ERR("I2C device failed init");
+		return -EBUSY;
 	}
 
 	return 0;

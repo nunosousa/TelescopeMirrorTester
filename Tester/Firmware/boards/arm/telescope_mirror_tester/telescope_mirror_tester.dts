@@ -46,23 +46,32 @@
 		};
 	};
 
-	load_switches {
+	power_monitor_flags {
 		compatible = "gpio-keys";
-		motor_drives_switch: EN_1 {
-			gpios = <&porta 3 (GPIO_ACTIVE_LOW)>;
-			label = "MOTOR_DRIVE_PWR_SWITCH";
-		};
 		motor_drives_alert: OC_1 {
 			gpios = <&portb 22 (GPIO_ACTIVE_LOW)>;
-			label = "MOTOR_DRIVE_PWR_ALERT";
-		};
-		laser_drive_switch: EN_2 {
-			gpios = <&porta 2 (GPIO_ACTIVE_LOW)>;
-			label = "LASER_DRIVE_PWR_SWITCH";
+			label = "5V_MOTORS_PWR_ALERT";
 		};
 		laser_drive_alert: OC_2 {
 			gpios = <&porta 27 (GPIO_ACTIVE_LOW)>;
-			label = "LASER_DRIVE_PWR_ALERT";
+			label = "5V_PWR_ALERT";
+		};
+	};
+
+	power_switches {
+		motor_power_switch: EN_1 {
+			compatible = "regulator-fixed";
+			enable-gpios = <&porta 3 (GPIO_ACTIVE_LOW)>;
+			label = "5V_MOTORS_PWR_SWITCH";
+			regulator-name = "5V_MOTORS_PWR_SWITCH";
+		};
+		digital_power_switch: EN_2 {
+			compatible = "regulator-fixed-sync", "regulator-fixed";
+			enable-gpios = <&porta 2 (GPIO_ACTIVE_LOW)>;
+			label = "5V_PWR_SWITCH";
+			regulator-name = "5V_PWR_SWITCH";
+			regulator-boot-on;
+			startup-delay-us = <10000>;
 		};
 	};
 
@@ -142,10 +151,11 @@
 	dopo = <0>;
 	#address-cells = <1>;
 	#size-cells = <0>;
-/*
+
 	cs-gpios = <&portb 6 GPIO_ACTIVE_LOW>, <&portb 7 GPIO_ACTIVE_LOW>;
 
 	x_pos_sensor: pwm3360@0 {
+		vin-supply = <&digital_power_switch>;
 		compatible = "pixart,pwm3360";
 		reg = <0>;
 		irq-gpios = <&porta 7 0>;
@@ -154,13 +164,13 @@
 	};
 
 	y_pos_sensor: pwm3360@1 {
+		vin-supply = <&digital_power_switch>;
 		compatible = "pixart,pwm3360";
 		reg = <1>;
 		irq-gpios = <&porta 7 0>;
 		spi-max-frequency = <2000000>;
 		label = "PMW3360_Y";
 	};
-*/
 };
 
 &sercom5 {
@@ -171,6 +181,7 @@
 	#size-cells = <0>;
 
 	laser_dac: mcp4716@63 {
+		vin-supply = <&digital_power_switch>;
 		status = "okay";
 		compatible = "microchip,mcp4716";
 		label = "MCP4716";
