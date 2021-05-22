@@ -1,22 +1,19 @@
-/*
- * Copyright (c) 2019 Nordic Semiconductor ASA
- *
- * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
- */
+#define DT_DRV_COMPAT pixart_pmw3360
 
 #include <zephyr.h>
-#include <kernel.h>
-#include <drivers/sensor.h>
 #include <device.h>
-#include <drivers/spi.h>
-#include <drivers/gpio.h>
+
 #include <sys/byteorder.h>
-#include <sensor/pmw3360.h>
+
+#include <drivers/video.h>
+#include <drivers/i2c.h>
+#include <drivers/gpio.h>
 
 #include <logging/log.h>
 LOG_MODULE_REGISTER(pmw3360, CONFIG_PMW3360_LOG_LEVEL);
 
-#define DT_DRV_COMPAT pixart_pmw3360
+#include "pmw3360.h"
+
 
 #define PMW3360_SPI_DEV_NAME DT_BUS_LABEL(DT_DRV_INST(0))
 
@@ -301,76 +298,6 @@ static int reg_write(struct pmw3360_data *dev_data, uint8_t reg, uint8_t val)
 	return 0;
 }
 
-static int motion_burst_read(struct pmw3360_data *dev_data, uint8_t *data,
-			     size_t burst_size)
-{
-	int err;
-
-	__ASSERT_NO_MSG(burst_size <= PMW3360_MAX_BURST_SIZE);
-
-	/* Write any value to motion burst register only if there have been
-	 * other SPI transmissions with sensor since last burst read.
-	 */
-	if (!dev_data->last_read_burst) {
-		err = reg_write(dev_data, PMW3360_REG_MOTION_BURST, 0x00);
-		if (err) {
-			return err;
-		}
-	}
-
-	err = spi_cs_ctrl(dev_data, true);
-	if (err) {
-		return err;
-	}
-
-	/* Send motion burst address */
-	uint8_t reg_buf[] = {
-		PMW3360_REG_MOTION_BURST
-	};
-	const struct spi_buf tx_buf = {
-		.buf = reg_buf,
-		.len = ARRAY_SIZE(reg_buf)
-	};
-	const struct spi_buf_set tx = {
-		.buffers = &tx_buf,
-		.count = 1
-	};
-
-	err = spi_write(dev_data->spi_dev, &spi_cfg, &tx);
-	if (err) {
-		LOG_ERR("Motion burst failed on SPI write");
-		return err;
-	}
-
-	k_busy_wait(T_SRAD_MOTBR);
-
-	const struct spi_buf rx_buf = {
-		.buf = data,
-		.len = burst_size,
-	};
-	const struct spi_buf_set rx = {
-		.buffers = &rx_buf,
-		.count = 1
-	};
-
-	err = spi_read(dev_data->spi_dev, &spi_cfg, &rx);
-	if (err) {
-		LOG_ERR("Motion burst failed on SPI read");
-		return err;
-	}
-
-	/* Terminate burst */
-	err = spi_cs_ctrl(dev_data, false);
-	if (err) {
-		return err;
-	}
-	k_busy_wait(T_BEXIT);
-
-	dev_data->last_read_burst = true;
-
-	return 0;
-}
-
 static int burst_write(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t *buf,
 		       size_t size)
 {
@@ -422,156 +349,6 @@ static int burst_write(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t
 	dev_data->last_read_burst = false;
 
 	return 0;
-}
-
-static int update_cpi(struct pmw3360_data *dev_data, uint32_t cpi)
-{
-	/* Set resolution with CPI step of 100 cpi
-	 * 0x00: 100 cpi (minimum cpi)
-	 * 0x01: 200 cpi
-	 * :
-	 * 0x31: 5000 cpi (default cpi)
-	 * :
-	 * 0x77: 12000 cpi (maximum cpi)
-	 */
-
-	if ((cpi > PMW3360_MAX_CPI) || (cpi < PMW3360_MIN_CPI)) {
-		LOG_ERR("CPI value %u out of range", cpi);
-		return -EINVAL;
-	}
-
-	/* Convert CPI to register value */
-	uint8_t value = (cpi / 100) - 1;
-
-	LOG_INF("Setting CPI to %u (reg value 0x%x)", cpi, value);
-
-	int err = reg_write(dev_data, PMW3360_REG_CONFIG1, value);
-	if (err) {
-		LOG_ERR("Failed to change CPI");
-	}
-
-	return err;
-}
-
-static int update_downshift_time(struct pmw3360_data *dev_data, uint8_t reg_addr,
-				 uint32_t time)
-{
-	/* Set downshift time:
-	 * - Run downshift time (from Run to Rest1 mode)
-	 * - Rest 1 downshift time (from Rest1 to Rest2 mode)
-	 * - Rest 2 downshift time (from Rest2 to Rest3 mode)
-	 */
-	uint32_t maxtime;
-	uint32_t mintime;
-
-	switch (reg_addr) {
-	case PMW3360_REG_RUN_DOWNSHIFT:
-		/*
-		 * Run downshift time = PMW3360_REG_RUN_DOWNSHIFT * 10 ms
-		 */
-		maxtime = 2550;
-		mintime = 10;
-		break;
-
-	case PMW3360_REG_REST1_DOWNSHIFT:
-		/*
-		 * Rest1 downshift time = PMW3360_REG_RUN_DOWNSHIFT
-		 *                        * 320 * Rest1 rate (default 1 ms)
-		 */
-		maxtime = 81600;
-		mintime = 320;
-		break;
-
-	case PMW3360_REG_REST2_DOWNSHIFT:
-		/*
-		 * Rest2 downshift time = PMW3360_REG_REST2_DOWNSHIFT
-		 *                        * 32 * Rest2 rate (default 100 ms)
-		 */
-		maxtime = 816000;
-		mintime = 3200;
-		break;
-
-	default:
-		LOG_ERR("Not supported");
-		return -ENOTSUP;
-	}
-
-	if ((time > maxtime) || (time < mintime)) {
-		LOG_WRN("Downshift time %u out of range", time);
-		return -EINVAL;
-	}
-
-	__ASSERT_NO_MSG((mintime > 0) && (maxtime/mintime <= UINT8_MAX));
-
-	/* Convert time to register value */
-	uint8_t value = time / mintime;
-
-	LOG_INF("Set downshift time to %u ms (reg value 0x%x)", time, value);
-
-	int err = reg_write(dev_data, reg_addr, value);
-	if (err) {
-		LOG_ERR("Failed to change downshift time");
-	}
-
-	return err;
-}
-
-static int update_sample_time(struct pmw3360_data *dev_data,
-			      uint8_t reg_addr_lower,
-			      uint8_t reg_addr_upper,
-			      uint32_t sample_time)
-{
-	/* Set sample time for the Rest1-Rest3 modes.
-	 * Values above 0x09B0 will trigger internal watchdog reset.
-	 */
-	uint32_t maxtime = 0x9B0;
-	uint32_t mintime = 1;
-
-	if ((sample_time > maxtime) || (sample_time < mintime)) {
-		LOG_WRN("Sample time %u out of range", sample_time);
-		return -EINVAL;
-	}
-
-	LOG_INF("Set sample time to %u ms", sample_time);
-
-	/* The sample time is (reg_value + 1) ms. */
-	sample_time--;
-	uint8_t buf[2];
-
-	sys_put_le16((uint16_t)sample_time, buf);
-
-	int err = reg_write(dev_data, reg_addr_lower, buf[0]);
-
-	if (!err) {
-		err = reg_write(dev_data, reg_addr_upper, buf[1]);
-	} else {
-		LOG_ERR("Failed to change sample time");
-	}
-
-	return err;
-}
-
-static int toggle_rest_modes(struct pmw3360_data *dev_data, uint8_t reg_addr,
-			     bool enable)
-{
-	uint8_t value;
-	int err = reg_read(dev_data, reg_addr, &value);
-
-	if (err) {
-		LOG_ERR("Failed to read Config2 register");
-		return err;
-	}
-
-	WRITE_BIT(value, PMW3360_REST_EN_POS, enable);
-
-	LOG_INF("%sable rest modes", (enable) ? ("En") : ("Dis"));
-	err = reg_write(dev_data, reg_addr, value);
-
-	if (err) {
-		LOG_ERR("Failed to set rest mode");
-	}
-
-	return err;
 }
 
 static int pmw3360_async_init_fw_load_start(struct pmw3360_data *dev_data)
@@ -675,56 +452,6 @@ static int pmw3360_async_init_fw_load_verify(struct pmw3360_data *dev_data)
 	return err;
 }
 
-static void irq_handler(const struct device *gpiob, struct gpio_callback *cb,
-			uint32_t pins)
-{
-	int err;
-
-	err = gpio_pin_interrupt_configure(pmw3360_data.irq_gpio_dev,
-					   PMW3360_IRQ_GPIO_PIN,
-					   GPIO_INT_DISABLE);
-	if (unlikely(err)) {
-		LOG_ERR("Cannot disable IRQ");
-		k_panic();
-	}
-
-	k_work_submit(&pmw3360_data.trigger_handler_work);
-}
-
-static void trigger_handler(struct k_work *work)
-{
-	sensor_trigger_handler_t handler;
-	int err = 0;
-
-	k_spinlock_key_t key = k_spin_lock(&pmw3360_data.lock);
-	handler = pmw3360_data.data_ready_handler;
-	k_spin_unlock(&pmw3360_data.lock, key);
-
-	if (!handler) {
-		return;
-	}
-
-	struct sensor_trigger trig = {
-		.type = SENSOR_TRIG_DATA_READY,
-		.chan = SENSOR_CHAN_ALL,
-	};
-
-	handler(DEVICE_DT_INST_GET(0), &trig);
-
-	key = k_spin_lock(&pmw3360_data.lock);
-	if (pmw3360_data.data_ready_handler) {
-		err = gpio_pin_interrupt_configure(pmw3360_data.irq_gpio_dev,
-						   PMW3360_IRQ_GPIO_PIN,
-						   GPIO_INT_LEVEL_LOW);
-	}
-	k_spin_unlock(&pmw3360_data.lock, key);
-
-	if (unlikely(err)) {
-		LOG_ERR("Cannot re-enable IRQ");
-		k_panic();
-	}
-}
-
 static int pmw3360_async_init_power_up(struct pmw3360_data *dev_data)
 {
 	/* Reset sensor */
@@ -806,36 +533,6 @@ static int pmw3360_init_cs(struct pmw3360_data *dev_data)
 	return err;
 }
 
-static int pmw3360_init_irq(struct pmw3360_data *dev_data)
-{
-	int err;
-
-	dev_data->irq_gpio_dev =
-		device_get_binding(PMW3360_IRQ_GPIO_DEV_NAME);
-	if (!dev_data->irq_gpio_dev) {
-		LOG_ERR("Cannot get IRQ GPIO device");
-		return -ENXIO;
-	}
-
-	err = gpio_pin_configure(dev_data->irq_gpio_dev,
-				 PMW3360_IRQ_GPIO_PIN,
-				 GPIO_INPUT | GPIO_PULL_UP);
-	if (err) {
-		LOG_ERR("Cannot configure IRQ GPIO");
-		return err;
-	}
-
-	gpio_init_callback(&dev_data->irq_gpio_cb, irq_handler,
-			   BIT(PMW3360_IRQ_GPIO_PIN));
-
-	err = gpio_add_callback(dev_data->irq_gpio_dev, &dev_data->irq_gpio_cb);
-	if (err) {
-		LOG_ERR("Cannot add IRQ GPIO callback");
-	}
-
-	return err;
-}
-
 static int pmw3360_init_spi(struct pmw3360_data *dev_data)
 {
 	dev_data->spi_dev = device_get_binding(PMW3360_SPI_DEV_NAME);
@@ -847,21 +544,100 @@ static int pmw3360_init_spi(struct pmw3360_data *dev_data)
 	return 0;
 }
 
+static int pmw3360_set_fmt(const struct device *dev,
+			   enum video_endpoint_id ep,
+			   struct video_format *fmt)
+{
+	struct mt9m114_data *drv_data = dev->data;
+	uint16_t output_format;
+	int ret;
+
+	/* we only support one format for now (VGA RGB565) */
+	if (fmt->pixelformat != VIDEO_PIX_FMT_RGB565 || fmt->height != 480 ||
+	    fmt->width != 640) {
+		return -ENOTSUP;
+	}
+
+	if (!memcmp(&drv_data->fmt, fmt, sizeof(drv_data->fmt))) {
+		/* nothing to do */
+		return 0;
+	}
+
+	drv_data->fmt = *fmt;
+
+	/* Configure Sensor */
+	ret = mt9m114_write_all(dev, mt9m114_vga_24mhz_pll);
+	if (ret) {
+		LOG_ERR("Unable to write mt9m114 config");
+		return ret;
+	}
+
+	/* Set output format */
+	output_format = ((1U << 8U) | (1U << 1U)); /* RGB565 */
+	ret = mt9m114_write_reg(dev, MT9M114_CAM_OUTPUT_FORMAT,
+				sizeof(output_format), &output_format);
+	if (ret) {
+		LOG_ERR("Unable to set output format");
+		return ret;
+	}
+
+	/* Apply Config */
+	mt9m114_set_state(dev, MT9M114_SYS_STATE_ENTER_CONFIG_CHANGE);
+
+	return 0;
+}
+
+static int pmw3360_get_fmt(const struct device *dev,
+			   enum video_endpoint_id ep,
+			   struct video_format *fmt)
+{
+	struct mt9m114_data *drv_data = dev->data;
+
+	*fmt = drv_data->fmt;
+
+	return 0;
+}
+
+static int pmw3360_stream_start(const struct device *dev)
+{
+	return pmw3360_set_state(dev, MT9M114_SYS_STATE_START_STREAMING);
+}
+
+static int pmw3360_stream_stop(const struct device *dev)
+{
+	return pmw3360_set_state(dev, MT9M114_SYS_STATE_ENTER_SUSPEND);
+}
+
+static const struct video_format_cap fmts[] = {
+	{
+		.pixelformat = VIDEO_PIX_FMT_RGB565,
+		.width_min = 640,
+		.width_max = 640,
+		.height_min = 480,
+		.height_max = 480,
+		.width_step = 0,
+		.height_step = 0,
+	},
+	{ 0 }
+};
+
+static int pmw3360_get_caps(const struct device *dev,
+			    enum video_endpoint_id ep,
+			    struct video_caps *caps)
+{
+	caps->format_caps = fmts;
+	return 0;
+}
+
 static int pmw3360_init(const struct device *dev)
 {
+	struct video_format fmt;
 	struct pmw3360_data *dev_data = &pmw3360_data;
 	int err;
 
 	ARG_UNUSED(dev);
 
-	k_work_init(&dev_data->trigger_handler_work, trigger_handler);
-
 	err = pmw3360_init_cs(dev_data);
-	if (err) {
-		return err;
-	}
-
-	err = pmw3360_init_irq(dev_data);
 	if (err) {
 		return err;
 	}
@@ -869,6 +645,18 @@ static int pmw3360_init(const struct device *dev)
 	err = pmw3360_init_spi(dev_data);
 	if (err) {
 		return err;
+	}
+	
+	/* set default/init format VGA RGB565 */
+	fmt.pixelformat = VIDEO_PIX_FMT_RGB565;
+	fmt.width = 640;
+	fmt.height = 480;
+	fmt.pitch = 640 * 2;
+
+	ret = pmw3360_set_fmt(dev, VIDEO_EP_OUT, &fmt);
+	if (ret) {
+		LOG_ERR("Unable to configure default format");
+		return -EIO;
 	}
 
 	k_delayed_work_init(&dev_data->init_work, pmw3360_async_init);
@@ -880,198 +668,22 @@ static int pmw3360_init(const struct device *dev)
 	return err;
 }
 
-static int pmw3360_sample_fetch(const struct device *dev, enum sensor_channel chan)
-{
-	struct pmw3360_data *dev_data = &pmw3360_data;
-	uint8_t data[PMW3360_BURST_SIZE];
-
-	ARG_UNUSED(dev);
-
-	if (unlikely(!dev_data->ready)) {
-		LOG_DBG("Device is not initialized yet");
-		return -EBUSY;
-	}
-
-	int err = motion_burst_read(dev_data, data, sizeof(data));
-
-	if (!err) {
-		int16_t x = sys_get_le16(&data[PMW3360_DX_POS]);
-		int16_t y = sys_get_le16(&data[PMW3360_DY_POS]);
-
-		if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_0)) {
-			dev_data->x = -x;
-			dev_data->y = y;
-		} else if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_90)) {
-			dev_data->x = y;
-			dev_data->y = x;
-		} else if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_180)) {
-			dev_data->x = x;
-			dev_data->y = -y;
-		} else if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_270)) {
-			dev_data->x = -y;
-			dev_data->y = -x;
-		}
-	}
-
-	return err;
-}
-
-static int pmw3360_channel_get(const struct device *dev, enum sensor_channel chan,
-			       struct sensor_value *val)
-{
-	struct pmw3360_data *dev_data = &pmw3360_data;
-
-	ARG_UNUSED(dev);
-
-	if (unlikely(!dev_data->ready)) {
-		LOG_DBG("Device is not initialized yet");
-		return -EBUSY;
-	}
-
-	switch (chan) {
-	case SENSOR_CHAN_POS_DX:
-		val->val1 = dev_data->x;
-		val->val2 = 0;
-		break;
-
-	case SENSOR_CHAN_POS_DY:
-		val->val1 = dev_data->y;
-		val->val2 = 0;
-		break;
-
-	default:
-		return -ENOTSUP;
-	}
-
-	return 0;
-}
-
-static int pmw3360_trigger_set(const struct device *dev,
-			       const struct sensor_trigger *trig,
-			       sensor_trigger_handler_t handler)
-{
-	struct pmw3360_data *dev_data = &pmw3360_data;
-	int err;
-
-	ARG_UNUSED(dev);
-
-	if (unlikely(trig->type != SENSOR_TRIG_DATA_READY)) {
-		return -ENOTSUP;
-	}
-
-	if (unlikely(trig->chan != SENSOR_CHAN_ALL)) {
-		return -ENOTSUP;
-	}
-
-	if (unlikely(!dev_data->ready)) {
-		LOG_DBG("Device is not initialized yet");
-		return -EBUSY;
-	}
-
-	k_spinlock_key_t key = k_spin_lock(&dev_data->lock);
-
-	if (handler) {
-		err = gpio_pin_interrupt_configure(dev_data->irq_gpio_dev,
-						   PMW3360_IRQ_GPIO_PIN,
-						   GPIO_INT_LEVEL_LOW);
-	} else {
-		err = gpio_pin_interrupt_configure(dev_data->irq_gpio_dev,
-						   PMW3360_IRQ_GPIO_PIN,
-						   GPIO_INT_DISABLE);
-	}
-
-	if (!err) {
-		dev_data->data_ready_handler = handler;
-	}
-
-	k_spin_unlock(&dev_data->lock, key);
-
-	return err;
-}
-
-static int pmw3360_attr_set(const struct device *dev, enum sensor_channel chan,
-			    enum sensor_attribute attr,
-			    const struct sensor_value *val)
-{
-	struct pmw3360_data *dev_data = &pmw3360_data;
-	int err;
-
-	ARG_UNUSED(dev);
-
-	if (unlikely(chan != SENSOR_CHAN_ALL)) {
-		return -ENOTSUP;
-	}
-
-	if (unlikely(!dev_data->ready)) {
-		LOG_DBG("Device is not initialized yet");
-		return -EBUSY;
-	}
-
-	switch ((uint32_t)attr) {
-	case PMW3360_ATTR_CPI:
-		err = update_cpi(dev_data, PMW3360_SVALUE_TO_CPI(*val));
-		break;
-
-	case PMW3360_ATTR_REST_ENABLE:
-		err = toggle_rest_modes(dev_data,
-					PMW3360_REG_CONFIG2,
-					PMW3360_SVALUE_TO_BOOL(*val));
-		break;
-
-	case PMW3360_ATTR_RUN_DOWNSHIFT_TIME:
-		err = update_downshift_time(dev_data,
-					    PMW3360_REG_RUN_DOWNSHIFT,
-					    PMW3360_SVALUE_TO_TIME(*val));
-		break;
-
-	case PMW3360_ATTR_REST1_DOWNSHIFT_TIME:
-		err = update_downshift_time(dev_data,
-					    PMW3360_REG_REST1_DOWNSHIFT,
-					    PMW3360_SVALUE_TO_TIME(*val));
-		break;
-
-	case PMW3360_ATTR_REST2_DOWNSHIFT_TIME:
-		err = update_downshift_time(dev_data,
-					    PMW3360_REG_REST2_DOWNSHIFT,
-					    PMW3360_SVALUE_TO_TIME(*val));
-		break;
-
-	case PMW3360_ATTR_REST1_SAMPLE_TIME:
-		err = update_sample_time(dev_data,
-					 PMW3360_REG_REST1_RATE_LOWER,
-					 PMW3360_REG_REST1_RATE_UPPER,
-					 PMW3360_SVALUE_TO_TIME(*val));
-		break;
-
-	case PMW3360_ATTR_REST2_SAMPLE_TIME:
-		err = update_sample_time(dev_data,
-					 PMW3360_REG_REST2_RATE_LOWER,
-					 PMW3360_REG_REST2_RATE_UPPER,
-					 PMW3360_SVALUE_TO_TIME(*val));
-		break;
-
-	case PMW3360_ATTR_REST3_SAMPLE_TIME:
-		err = update_sample_time(dev_data,
-					 PMW3360_REG_REST3_RATE_LOWER,
-					 PMW3360_REG_REST3_RATE_UPPER,
-					 PMW3360_SVALUE_TO_TIME(*val));
-		break;
-
-	default:
-		LOG_ERR("Unknown attribute");
-		return -ENOTSUP;
-	}
-
-	return err;
-}
-
-static const struct sensor_driver_api pmw3360_driver_api = {
-	.sample_fetch = pmw3360_sample_fetch,
-	.channel_get  = pmw3360_channel_get,
-	.trigger_set  = pmw3360_trigger_set,
-	.attr_set     = pmw3360_attr_set,
+static const struct video_driver_api pmw3360_driver_api = {
+	.set_format = pmw3360_set_fmt,
+	.get_format = pmw3360_get_fmt,
+	.get_caps = pmw3360_get_caps,
+	.stream_start = pmw3360_stream_start,
+	.stream_stop = pmw3360_stream_stop,
 };
 
-DEVICE_DT_INST_DEFINE(0, pmw3360_init, device_pm_control_nop,
-		      NULL, NULL, POST_KERNEL, CONFIG_SENSOR_INIT_PRIORITY,
-		      &pmw3360_driver_api);
+#define INST_DT_PMW3360(index)										\
+	static const struct pmw3360_config pmw3360_config_##index = {	\
+	};																\
+																	\
+	DEVICE_DT_INST_DEFINE(index, pmw3360_init,				    	\
+			    NULL, NULL,											\
+			    &pmw3360_config_##index, POST_KERNEL,				\
+			    CONFIG_PMW3360_INIT_PRIORITY,				     	\
+			    &pmw3360_driver_api);
+
+DT_INST_FOREACH_STATUS_OKAY(INST_DT_PMW3360);

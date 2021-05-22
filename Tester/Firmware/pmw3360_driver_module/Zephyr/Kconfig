@@ -1,0 +1,12 @@
+config PMW3360
+	bool "PMW3360 mouse optical sensor"
+	depends on SPI
+	help
+	  Enable PMW3360 mouse optical sensor.
+
+config PMW3360_INIT_PRIORITY
+	int "Init priority"
+	depends on PMW3360
+	default 80
+	help
+	  PMW3360 mouse optical sensor device driver initialization priority.
