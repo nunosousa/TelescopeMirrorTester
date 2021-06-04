@@ -154,18 +154,18 @@
 
 	cs-gpios = <&portb 6 GPIO_ACTIVE_LOW>, <&portb 7 GPIO_ACTIVE_LOW>;
 
-	x_pos_sensor: pwm3360@0 {
+	x_pos_sensor: pmw3360@0 {
 		vin-supply = <&digital_power_switch>;
-		compatible = "pixart,pwm3360";
+		compatible = "pixart,pmw3360";
 		reg = <0>;
 		irq-gpios = <&porta 7 0>;
 		spi-max-frequency = <2000000>;
 		label = "PMW3360_X";
 	};
 
-	y_pos_sensor: pwm3360@1 {
+	y_pos_sensor: pmw3360@1 {
 		vin-supply = <&digital_power_switch>;
-		compatible = "pixart,pwm3360";
+		compatible = "pixart,pmw3360";
 		reg = <1>;
 		irq-gpios = <&porta 7 0>;
 		spi-max-frequency = <2000000>;

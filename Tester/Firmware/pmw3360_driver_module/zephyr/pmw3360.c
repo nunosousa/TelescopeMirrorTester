@@ -307,6 +307,52 @@ static int burst_write(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t
 static int burst_read(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t *buf,
 		       size_t size)
 {
+	int err;
+
+	err = spi_cs_ctrl(dev_data, true);
+	if (err) {
+		return err;
+	}
+
+	/* Write address of burst register */
+	uint8_t write_buf = reg;
+	struct spi_buf tx_buf = {
+		.buf = &write_buf,
+		.len = 1
+	};
+	const struct spi_buf_set tx = {
+		.buffers = &tx_buf,
+		.count = 1
+	};
+
+	err = spi_write(dev_data->spi_dev, &dev_data->spi_cfg, &tx);
+	if (err) {
+		LOG_ERR("Burst write failed on SPI write");
+		return err;
+	}
+
+	/* Read data */
+	for (size_t i = 0; i < size; i++) {
+		write_buf = buf[i];
+
+		err = spi_read(dev_data->spi_dev, &dev_data->spi_cfg, &tx);
+		if (err) {
+			LOG_ERR("Burst read failed on SPI read (data)");
+			return err;
+		}
+
+		k_busy_wait(T_BRSEP);
+	}
+
+	/* Terminate burst mode. */
+	err = spi_cs_ctrl(dev_data, false);
+	if (err) {
+		return err;
+	}
+
+	k_busy_wait(T_BEXIT);
+
+	return 0;
 }
 
 static int pmw3360_async_init_fw_load_start(struct pmw3360_data *dev_data)
@@ -485,7 +531,6 @@ static int pmw3360_set_fmt(const struct device *dev,
 			   struct video_format *fmt)
 {
 	struct pmw3360_data *drv_data = dev->data;
-	int ret;
 
 	/* we only support one format */
 	if (fmt->pixelformat != 0 || fmt->height != 32 ||
@@ -509,11 +554,13 @@ static int pmw3360_get_fmt(const struct device *dev,
 
 static int pmw3360_stream_start(const struct device *dev)
 {
+	// start periodic frame capure work job
 	return 0;
 }
 
 static int pmw3360_stream_stop(const struct device *dev)
 {
+	// stop periodic frame capure work job
 	return 0;
 }
 
