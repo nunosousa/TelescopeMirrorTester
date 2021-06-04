@@ -634,14 +634,14 @@ static const struct video_driver_api pmw3360_driver_api = {
 	static struct pmw3360_data pmw3360_data_##index = {				\
 	.cs_gpio_dev = DEVICE_DT_GET(DT_INST_SPI_DEV_CS_GPIOS_CTLR(index)),\
 	.cs_gpio_pin = DT_INST_SPI_DEV_CS_GPIOS_PIN(index),				\
-	.spi_dev = DT_BUS_LABEL(DT_DRV_INST(index)),					\
+	.spi_dev = DEVICE_DT_GET(DT_INST_BUS(index)),					\
 	.spi_cfg.operation = SPI_WORD_SET(8) | SPI_TRANSFER_MSB | SPI_MODE_CPOL | SPI_MODE_CPHA,\
 	.spi_cfg.frequency = DT_PROP(DT_DRV_INST(index), spi_max_frequency),\
 	.spi_cfg.slave = DT_REG_ADDR(DT_DRV_INST(index)),				\
 	};																\
 																	\
 	DEVICE_DT_INST_DEFINE(index, pmw3360_init,				    	\
-			    NULL, pmw3360_data_##index,							\
+			    NULL, &pmw3360_data_##index,						\
 			    NULL, POST_KERNEL,									\
 			    CONFIG_PMW3360_INIT_PRIORITY,				     	\
 			    &pmw3360_driver_api);
