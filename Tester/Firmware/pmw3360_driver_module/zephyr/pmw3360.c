@@ -96,7 +96,7 @@ enum async_init_step {
 };
 
 struct pmw3360_data {
-	struct k_delayed_work		init_work;
+	struct k_work_delayable		init_work;
 	struct video_format			fmt;
 	const struct device			*cs_gpio_dev;
 	const gpio_pin_t			cs_gpio_pin;
@@ -486,7 +486,7 @@ static void pmw3360_async_init(struct k_work *work)
 			dev_data->ready = true;
 			LOG_INF("PMW3360 initialized");
 		} else {
-			k_delayed_work_submit(&dev_data->init_work,
+			k_work_reschedule(&dev_data->init_work,
 					      K_MSEC(async_init_delay[dev_data->async_init_step]));
 		}
 	}
@@ -526,8 +526,6 @@ static int pmw3360_set_fmt(const struct device *dev,
 			   enum video_endpoint_id ep,
 			   struct video_format *fmt)
 {
-	struct pmw3360_data *drv_data = dev->data;
-
 	/* we only support one format */
 	if (fmt->pixelformat != 0 || fmt->height != 36 ||
 	    fmt->width != 36) {
@@ -612,9 +610,9 @@ static int pmw3360_init(const struct device *dev)
 
 	dev_data->async_init_step = ASYNC_INIT_STEP_POWER_UP;
 
-	k_delayed_work_init(&dev_data->init_work, pmw3360_async_init);
+	k_work_init_delayable(&dev_data->init_work, pmw3360_async_init);
 
-	k_delayed_work_submit(&dev_data->init_work,
+	k_work_reschedule(&dev_data->init_work,
 			      K_MSEC(async_init_delay[dev_data->async_init_step]));
 
 	return err;
