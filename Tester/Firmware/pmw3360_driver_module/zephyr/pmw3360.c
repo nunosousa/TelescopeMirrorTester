@@ -3,8 +3,6 @@
 #include <zephyr.h>
 #include <device.h>
 
-#include <sys/byteorder.h>
-
 #include <drivers/video.h>
 #include <drivers/spi.h>
 #include <drivers/gpio.h>
@@ -531,8 +529,8 @@ static int pmw3360_set_fmt(const struct device *dev,
 	struct pmw3360_data *drv_data = dev->data;
 
 	/* we only support one format */
-	if (fmt->pixelformat != 0 || fmt->height != 32 ||
-	    fmt->width != 32) {
+	if (fmt->pixelformat != 0 || fmt->height != 36 ||
+	    fmt->width != 36) {
 		return -ENOTSUP;
 	}
 
