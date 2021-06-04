@@ -10,9 +10,8 @@
 #include <drivers/gpio.h>
 
 #include <logging/log.h>
-LOG_MODULE_REGISTER(pmw3360, CONFIG_PMW3360_LOG_LEVEL);
 
-#include "pmw3360.h"
+LOG_MODULE_REGISTER(pmw3360, CONFIG_LOG_DEFAULT_LEVEL);
 
 
 /* Timings defined by spec */
@@ -89,6 +88,14 @@ LOG_MODULE_REGISTER(pmw3360, CONFIG_PMW3360_LOG_LEVEL);
 extern const size_t pmw3360_firmware_length;
 extern const uint8_t pmw3360_firmware_data[];
 
+enum async_init_step {
+	ASYNC_INIT_STEP_POWER_UP,
+	ASYNC_INIT_STEP_FW_LOAD_START,
+	ASYNC_INIT_STEP_FW_LOAD_CONTINUE,
+	ASYNC_INIT_STEP_FW_LOAD_VERIFY,
+	ASYNC_INIT_STEP_CONFIGURE,
+	ASYNC_INIT_STEP_COUNT
+};
 
 struct pmw3360_data {
 	struct k_delayed_work		init_work;
@@ -100,15 +107,6 @@ struct pmw3360_data {
 	enum async_init_step		async_init_step;
 	int							err;
 	bool						ready;
-};
-
-enum async_init_step {
-	ASYNC_INIT_STEP_POWER_UP,
-	ASYNC_INIT_STEP_FW_LOAD_START,
-	ASYNC_INIT_STEP_FW_LOAD_CONTINUE,
-	ASYNC_INIT_STEP_FW_LOAD_VERIFY,
-	ASYNC_INIT_STEP_CONFIGURE,
-	ASYNC_INIT_STEP_COUNT
 };
 
 static const int32_t async_init_delay[ASYNC_INIT_STEP_COUNT] = {
@@ -634,17 +632,17 @@ static const struct video_driver_api pmw3360_driver_api = {
 
 #define INST_DT_PMW3360(index)										\
 	static struct pmw3360_data pmw3360_data_##index = {				\
-	.cs_gpio_dev = DT_INST_SPI_DEV_CS_GPIOS_LABEL(index),			\
+	.cs_gpio_dev = DEVICE_DT_GET(DT_INST_SPI_DEV_CS_GPIOS_CTLR(index)),\
 	.cs_gpio_pin = DT_INST_SPI_DEV_CS_GPIOS_PIN(index),				\
 	.spi_dev = DT_BUS_LABEL(DT_DRV_INST(index)),					\
 	.spi_cfg.operation = SPI_WORD_SET(8) | SPI_TRANSFER_MSB | SPI_MODE_CPOL | SPI_MODE_CPHA,\
 	.spi_cfg.frequency = DT_PROP(DT_DRV_INST(index), spi_max_frequency),\
-	.spi_cfg.slave = DT_REG_ADDR(DT_DRV_INST(index)),					\
+	.spi_cfg.slave = DT_REG_ADDR(DT_DRV_INST(index)),				\
 	};																\
 																	\
 	DEVICE_DT_INST_DEFINE(index, pmw3360_init,				    	\
 			    NULL, pmw3360_data_##index,							\
-			    NULL, POST_KERNEL,				\
+			    NULL, POST_KERNEL,									\
 			    CONFIG_PMW3360_INIT_PRIORITY,				     	\
 			    &pmw3360_driver_api);
 
