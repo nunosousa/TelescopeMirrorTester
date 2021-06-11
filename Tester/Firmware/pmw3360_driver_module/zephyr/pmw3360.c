@@ -24,6 +24,9 @@ LOG_MODULE_REGISTER(pmw3360, CONFIG_LOG_DEFAULT_LEVEL);
 /* Timing defined on SROM download burst mode figure */
 #define T_BRSEP		15			/* 15 us */
 
+/* Timing defined on frame capture download burst mode figure */
+#define T_LOAD		15			/* 15 us */
+
 
 /* Sensor registers */
 #define PMW3360_REG_PRODUCT_ID			0x00
@@ -95,18 +98,6 @@ enum async_init_step {
 	ASYNC_INIT_STEP_COUNT
 };
 
-struct pmw3360_data {
-	struct k_work_delayable		init_work;
-	struct video_format			fmt;
-	const struct device			*cs_gpio_dev;
-	const gpio_pin_t			cs_gpio_pin;
-	const struct device			*spi_dev;
-	const struct spi_config		spi_cfg;
-	enum async_init_step		async_init_step;
-	int							err;
-	bool						ready;
-};
-
 static const int32_t async_init_delay[ASYNC_INIT_STEP_COUNT] = {
 	[ASYNC_INIT_STEP_POWER_UP]         = 1,
 	[ASYNC_INIT_STEP_FW_LOAD_START]    = 50,
@@ -127,6 +118,31 @@ static int (* const async_init_fn[ASYNC_INIT_STEP_COUNT])(struct pmw3360_data *d
 	[ASYNC_INIT_STEP_FW_LOAD_CONTINUE] = pmw3360_async_init_fw_load_continue,
 	[ASYNC_INIT_STEP_FW_LOAD_VERIFY] = pmw3360_async_init_fw_load_verify,
 	[ASYNC_INIT_STEP_CONFIGURE] = pmw3360_async_init_configure,
+};
+
+struct pmw3360_data {
+	struct k_work_delayable		init_work;
+	struct video_format			fmt;
+	const struct device			*cs_gpio_dev;
+	const gpio_pin_t			cs_gpio_pin;
+	const struct device			*spi_dev;
+	const struct spi_config		spi_cfg;
+	enum async_init_step		async_init_step;
+	int							err;
+	bool						ready;
+};
+
+static const struct video_format_cap fmts[] = {
+	{
+		.pixelformat = 0,
+		.width_min = 36,
+		.width_max = 36,
+		.height_min = 36,
+		.height_max = 36,
+		.width_step = 0,
+		.height_step = 0,
+	},
+	{ 0 }
 };
 
 
@@ -280,14 +296,16 @@ static int burst_write(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t
 	for (size_t i = 0; i < size; i++) {
 		write_buf = buf[i];
 
+		k_busy_wait(T_BRSEP);
+
 		err = spi_write(dev_data->spi_dev, &dev_data->spi_cfg, &tx);
 		if (err) {
 			LOG_ERR("Burst write failed on SPI write (data)");
 			return err;
 		}
-
-		k_busy_wait(T_BRSEP);
 	}
+	
+	k_busy_wait(T_BRSEP);
 
 	/* Terminate burst mode. */
 	err = spi_cs_ctrl(dev_data, false);
@@ -300,7 +318,7 @@ static int burst_write(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t
 	return 0;
 }
 
-static int burst_read(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t *buf,
+static int burst_read(struct pmw3360_data *dev_data, uint8_t reg, uint8_t *buf,
 		       size_t size)
 {
 	int err;
@@ -311,9 +329,8 @@ static int burst_read(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t 
 	}
 
 	/* Write address of burst register */
-	uint8_t write_buf = reg;
-	struct spi_buf tx_buf = {
-		.buf = &write_buf,
+	const struct spi_buf tx_buf = {
+		.buf = &reg,
 		.len = 1
 	};
 	const struct spi_buf_set tx = {
@@ -327,17 +344,30 @@ static int burst_read(struct pmw3360_data *dev_data, uint8_t reg, const uint8_t 
 		return err;
 	}
 
-	/* Read data */
-	for (size_t i = 0; i < size; i++) {
-		write_buf = buf[i];
+	k_busy_wait(T_SRAD);
 
-		err = spi_read(dev_data->spi_dev, &dev_data->spi_cfg, &tx);
+	/* Burst read data */
+	uint8_t read_buf;
+	struct spi_buf rx_buf = {
+		.buf = read_buf,
+		.len = 1,
+	};
+	const struct spi_buf_set rx = {
+		.buffers = &rx_buf,
+		.count = 1,
+	};
+
+	for (size_t i = 0; i < size; i++) {
+
+		err = spi_read(dev_data->spi_dev, &dev_data->spi_cfg, &rx);
 		if (err) {
 			LOG_ERR("Burst read failed on SPI read (data)");
 			return err;
-		}
 
-		k_busy_wait(T_BRSEP);
+		}
+		buf[i] = read_buf;
+
+		k_busy_wait(T_LOAD);
 	}
 
 	/* Terminate burst mode. */
@@ -558,19 +588,6 @@ static int pmw3360_stream_stop(const struct device *dev)
 	return 0;
 }
 
-static const struct video_format_cap fmts[] = {
-	{
-		.pixelformat = 0,
-		.width_min = 36,
-		.width_max = 36,
-		.height_min = 36,
-		.height_max = 36,
-		.width_step = 0,
-		.height_step = 0,
-	},
-	{ 0 }
-};
-
 static int pmw3360_get_caps(const struct device *dev,
 			    enum video_endpoint_id ep,
 			    struct video_caps *caps)
@@ -585,7 +602,6 @@ static int pmw3360_init(const struct device *dev)
 	struct pmw3360_data *dev_data = dev->data;
 	int err;
 
-	ARG_UNUSED(dev);
 
 	err = pmw3360_init_cs(dev_data);
 	if (err) {
