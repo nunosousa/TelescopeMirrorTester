@@ -149,6 +149,7 @@ struct pmw3360_data {
 	const struct spi_config		spi_cfg;
 	enum async_init_step		async_init_step;
 	enum frame_capture_step		frame_capture_step;
+	struct k_fifo				frame_fifo;
 	int							err;
 	bool						ready;
 };
@@ -545,7 +546,7 @@ static void pmw3360_async_init(struct k_work *work)
 
 static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data)
 {
-	int err = 0;
+	int err;
 	
 	/* Set frame capture */
 	err = reg_write(dev_data, PMW3360_REG_FRAME_CAPTURE, 0x83);
@@ -571,7 +572,7 @@ static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data)
 	return err;
 }
 
-static void pmw3360_frame_capture_init(struct k_work *work)
+static void pmw3360_frame_capture(struct k_work *work)
 {
 	struct pmw3360_data *dev_data;
 
@@ -580,17 +581,17 @@ static void pmw3360_frame_capture_init(struct k_work *work)
 
 	ARG_UNUSED(work);
 
-	LOG_DBG("PMW3360 async init step %d", dev_data->frame_capture_step);
+	LOG_DBG("PMW3360 frame capture step %d", dev_data->frame_capture_step);
 
-	dev_data->err = async_init_fn[dev_data->frame_capture_step](dev_data);
+	dev_data->err = frame_capture_fn[dev_data->frame_capture_step](dev_data);
 	if (dev_data->err) {
-		LOG_ERR("PMW3360 initialization failed");
+		LOG_ERR("PMW3360 frame capture failed");
 	} else {
 		dev_data->frame_capture_step++;
 
-		if (dev_data->frame_capture_step == ASYNC_INIT_STEP_COUNT) {
+		if (dev_data->frame_capture_step == FRAME_CAPTURE_STEP_COUNT) {
 			dev_data->ready = true;
-			LOG_INF("PMW3360 initialized");
+			LOG_INF("PMW3360 frame captured successfully");
 		} else {
 			k_work_reschedule(&dev_data->frame_capture_work,
 					      K_MSEC(frame_capture_delay[dev_data->frame_capture_step]));
@@ -656,14 +657,16 @@ static int pmw3360_stream_start(const struct device *dev)
 {
 	struct pmw3360_data *dev_data = dev->data;
 
-	return k_work_schedule(&dev_data->buf_work, K_MSEC(33));
+	/* Wait 250 ms for first capture as to spec. */
+	return k_work_reschedule(&dev_data->frame_capture_work,
+			      K_MSEC(250));
 }
 
 static int pmw3360_stream_stop(const struct device *dev)
 {
 	struct pmw3360_data *dev_data = dev->data;
 
-	k_work_cancel_delayable_sync(&dev_data->buf_work, &dev_data->work_sync);
+	k_work_cancel_delayable(&dev_data->frame_capture_work);
 
 	return 0;
 }
@@ -762,6 +765,11 @@ static int pmw3360_init(const struct device *dev)
 		LOG_ERR("Unable to configure default format");
 		return -EIO;
 	}
+
+	dev_data->frame_capture_step = FRAME_CAPTURE_STEP_SETUP;
+
+	k_work_init_delayable(&dev_data->frame_capture_work, pmw3360_frame_capture);
+
 
 	dev_data->async_init_step = ASYNC_INIT_STEP_POWER_UP;
 
