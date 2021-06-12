@@ -107,10 +107,10 @@ static const int32_t async_init_delay[ASYNC_INIT_STEP_COUNT] = {
 };
 
 static int pmw3360_async_init_power_up(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_configure(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_fw_load_verify(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_fw_load_continue(struct pmw3360_data *dev_data);
 static int pmw3360_async_init_fw_load_start(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_fw_load_continue(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_fw_load_verify(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_configure(struct pmw3360_data *dev_data);
 
 static int (* const async_init_fn[ASYNC_INIT_STEP_COUNT])(struct pmw3360_data *dev_data) = {
 	[ASYNC_INIT_STEP_POWER_UP] = pmw3360_async_init_power_up,
@@ -120,14 +120,35 @@ static int (* const async_init_fn[ASYNC_INIT_STEP_COUNT])(struct pmw3360_data *d
 	[ASYNC_INIT_STEP_CONFIGURE] = pmw3360_async_init_configure,
 };
 
+enum frame_capture_step {
+	FRAME_CAPTURE_STEP_SETUP,
+	FRAME_CAPTURE_STEP_BURST_READ,
+	FRAME_CAPTURE_STEP_COUNT
+};
+
+static const int32_t frame_capture_delay[FRAME_CAPTURE_STEP_COUNT] = {
+	[FRAME_CAPTURE_STEP_SETUP]         = 0,
+	[FRAME_CAPTURE_STEP_BURST_READ]    = 20,
+};
+
+static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data);
+static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data);
+
+static int (* const frame_capture_fn[FRAME_CAPTURE_STEP_COUNT])(struct pmw3360_data *dev_data) = {
+	[FRAME_CAPTURE_STEP_SETUP] = pmw3360_frame_capture_setup,
+	[FRAME_CAPTURE_STEP_BURST_READ] = pmw3360_frame_capture_burst_read,
+};
+
 struct pmw3360_data {
 	struct k_work_delayable		init_work;
+	struct k_work_delayable		frame_capture_work;
 	struct video_format			fmt;
 	const struct device			*cs_gpio_dev;
 	const gpio_pin_t			cs_gpio_pin;
 	const struct device			*spi_dev;
 	const struct spi_config		spi_cfg;
 	enum async_init_step		async_init_step;
+	enum frame_capture_step		frame_capture_step;
 	int							err;
 	bool						ready;
 };
@@ -522,6 +543,61 @@ static void pmw3360_async_init(struct k_work *work)
 	}
 }
 
+static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data)
+{
+	int err = 0;
+	
+	/* Set frame capture */
+	err = reg_write(dev_data, PMW3360_REG_FRAME_CAPTURE, 0x83);
+	if (err) {
+		LOG_ERR("Cannot configure Frame_Capture register");
+		return err;
+	}
+
+	/* Set frame capture */
+	err = reg_write(dev_data, PMW3360_REG_FRAME_CAPTURE, 0xC5);
+	if (err) {
+		LOG_ERR("Cannot configure Frame_Capture register");
+		return err;
+	}
+
+	return err;
+}
+
+static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data)
+{
+	int err = 0;
+
+	return err;
+}
+
+static void pmw3360_frame_capture_init(struct k_work *work)
+{
+	struct pmw3360_data *dev_data;
+
+
+	dev_data = CONTAINER_OF(work, struct pmw3360_data, frame_capture_work);
+
+	ARG_UNUSED(work);
+
+	LOG_DBG("PMW3360 async init step %d", dev_data->frame_capture_step);
+
+	dev_data->err = async_init_fn[dev_data->frame_capture_step](dev_data);
+	if (dev_data->err) {
+		LOG_ERR("PMW3360 initialization failed");
+	} else {
+		dev_data->frame_capture_step++;
+
+		if (dev_data->frame_capture_step == ASYNC_INIT_STEP_COUNT) {
+			dev_data->ready = true;
+			LOG_INF("PMW3360 initialized");
+		} else {
+			k_work_reschedule(&dev_data->frame_capture_work,
+					      K_MSEC(frame_capture_delay[dev_data->frame_capture_step]));
+		}
+	}
+}
+
 static int pmw3360_init_cs(struct pmw3360_data *dev_data)
 {
 	int err;
@@ -569,22 +645,85 @@ static int pmw3360_get_fmt(const struct device *dev,
 			   enum video_endpoint_id ep,
 			   struct video_format *fmt)
 {
-	struct pmw3360_data *drv_data = dev->data;
+	struct pmw3360_data *dev_data = dev->data;
 
-	*fmt = drv_data->fmt;
+	*fmt = dev_data->fmt;
 
 	return 0;
 }
 
 static int pmw3360_stream_start(const struct device *dev)
 {
-	// start periodic frame capure work job
-	return 0;
+	struct pmw3360_data *dev_data = dev->data;
+
+	return k_work_schedule(&dev_data->buf_work, K_MSEC(33));
 }
 
 static int pmw3360_stream_stop(const struct device *dev)
 {
-	// stop periodic frame capure work job
+	struct pmw3360_data *dev_data = dev->data;
+
+	k_work_cancel_delayable_sync(&dev_data->buf_work, &dev_data->work_sync);
+
+	return 0;
+}
+
+static int pmw3360_enqueue(const struct device *dev,
+				      enum video_endpoint_id ep,
+				      struct video_buffer *vbuf)
+{
+	struct pmw3360_data *dev_data = dev->data;
+
+	if (ep != VIDEO_EP_OUT) {
+		return -EINVAL;
+	}
+
+	k_fifo_put(&dev_data->fifo_in, vbuf);
+
+	return 0;
+}
+
+static int pmw3360_dequeue(const struct device *dev,
+				      enum video_endpoint_id ep,
+				      struct video_buffer **vbuf,
+				      k_timeout_t timeout)
+{
+	struct pmw3360_data *dev_data = dev->data;
+
+	if (ep != VIDEO_EP_OUT) {
+		return -EINVAL;
+	}
+
+	*vbuf = k_fifo_get(&dev_data->fifo_out, timeout);
+	if (*vbuf == NULL) {
+		return -EAGAIN;
+	}
+
+	return 0;
+}
+
+static int pmw3360_flush(const struct device *dev,
+				    enum video_endpoint_id ep,
+				    bool cancel)
+{
+	struct pmw3360_data *dev_data = dev->data;
+	struct video_buffer *vbuf;
+
+	if (!cancel) {
+		/* wait for all buffer to be processed */
+		do {
+			k_sleep(K_MSEC(1));
+		} while (!k_fifo_is_empty(&dev_data->fifo_in));
+	} else {
+		while ((vbuf = k_fifo_get(&data->fifo_in, K_NO_WAIT))) {
+			k_fifo_put(&dev_data->fifo_out, vbuf);
+			if (IS_ENABLED(CONFIG_POLL) && dev_data->signal) {
+				k_poll_signal_raise(dev_data->signal,
+						    VIDEO_BUF_ABORTED);
+			}
+		}
+	}
+
 	return 0;
 }
 
@@ -640,6 +779,9 @@ static const struct video_driver_api pmw3360_driver_api = {
 	.get_caps = pmw3360_get_caps,
 	.stream_start = pmw3360_stream_start,
 	.stream_stop = pmw3360_stream_stop,
+	.flush = pmw3360_flush,
+	.enqueue = pmw3360_enqueue,
+	.dequeue = pmw3360_dequeue,
 };
 
 #define INST_DT_PMW3360(index)										\
