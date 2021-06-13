@@ -83,6 +83,9 @@ LOG_MODULE_REGISTER(pmw3360, CONFIG_LOG_DEFAULT_LEVEL);
 #define PMW3360_PRODUCT_ID			0x42
 #define PMW3360_FIRMWARE_ID			0x04
 
+/* Raw Frame size */
+#define PMW3360_RAW_DATA_SIZE		1296
+
 #define SPI_WRITE_BIT				BIT(7)
 
 
@@ -149,7 +152,8 @@ struct pmw3360_data {
 	const struct spi_config		spi_cfg;
 	enum async_init_step		async_init_step;
 	enum frame_capture_step		frame_capture_step;
-	struct k_fifo				frame_fifo;
+	struct k_fifo				fifo_in;
+	struct k_fifo				fifo_out;
 	int							err;
 	bool						ready;
 };
@@ -568,6 +572,17 @@ static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data)
 static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data)
 {
 	int err = 0;
+	struct video_buffer *vbuf;
+
+
+	vbuf = k_fifo_get(&dev_data->fifo_in, K_NO_WAIT);
+	if (vbuf == NULL) {
+		return;
+	}
+
+	err = burst_read(dev_data, PMW3360_REG_RAW_DATA_BURST, vbuf, PMW3360_RAW_DATA_SIZE);
+
+	k_fifo_put(&dev_data->fifo_out, vbuf);
 
 	return err;
 }
@@ -656,6 +671,9 @@ static int pmw3360_get_fmt(const struct device *dev,
 static int pmw3360_stream_start(const struct device *dev)
 {
 	struct pmw3360_data *dev_data = dev->data;
+
+	k_fifo_init(&dev_data->fifo_in);
+	k_fifo_init(&dev_data->fifo_out);
 
 	/* Wait 250 ms for first capture as to spec. */
 	return k_work_reschedule(&dev_data->frame_capture_work,
