@@ -109,20 +109,6 @@ static const int32_t async_init_delay[ASYNC_INIT_STEP_COUNT] = {
 	[ASYNC_INIT_STEP_CONFIGURE]        = 0,
 };
 
-static int pmw3360_async_init_power_up(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_fw_load_start(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_fw_load_continue(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_fw_load_verify(struct pmw3360_data *dev_data);
-static int pmw3360_async_init_configure(struct pmw3360_data *dev_data);
-
-static int (* const async_init_fn[ASYNC_INIT_STEP_COUNT])(struct pmw3360_data *dev_data) = {
-	[ASYNC_INIT_STEP_POWER_UP] = pmw3360_async_init_power_up,
-	[ASYNC_INIT_STEP_FW_LOAD_START] = pmw3360_async_init_fw_load_start,
-	[ASYNC_INIT_STEP_FW_LOAD_CONTINUE] = pmw3360_async_init_fw_load_continue,
-	[ASYNC_INIT_STEP_FW_LOAD_VERIFY] = pmw3360_async_init_fw_load_verify,
-	[ASYNC_INIT_STEP_CONFIGURE] = pmw3360_async_init_configure,
-};
-
 enum frame_capture_step {
 	FRAME_CAPTURE_STEP_SETUP,
 	FRAME_CAPTURE_STEP_BURST_READ,
@@ -132,14 +118,6 @@ enum frame_capture_step {
 static const int32_t frame_capture_delay[FRAME_CAPTURE_STEP_COUNT] = {
 	[FRAME_CAPTURE_STEP_SETUP]         = 0,
 	[FRAME_CAPTURE_STEP_BURST_READ]    = 20,
-};
-
-static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data);
-static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data);
-
-static int (* const frame_capture_fn[FRAME_CAPTURE_STEP_COUNT])(struct pmw3360_data *dev_data) = {
-	[FRAME_CAPTURE_STEP_SETUP] = pmw3360_frame_capture_setup,
-	[FRAME_CAPTURE_STEP_BURST_READ] = pmw3360_frame_capture_burst_read,
 };
 
 struct pmw3360_data {
@@ -156,6 +134,28 @@ struct pmw3360_data {
 	struct k_fifo				fifo_out;
 	int							err;
 	bool						ready;
+};
+
+static int pmw3360_async_init_power_up(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_fw_load_start(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_fw_load_continue(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_fw_load_verify(struct pmw3360_data *dev_data);
+static int pmw3360_async_init_configure(struct pmw3360_data *dev_data);
+
+static int (* const async_init_fn[ASYNC_INIT_STEP_COUNT])(struct pmw3360_data *dev_data) = {
+	[ASYNC_INIT_STEP_POWER_UP] = pmw3360_async_init_power_up,
+	[ASYNC_INIT_STEP_FW_LOAD_START] = pmw3360_async_init_fw_load_start,
+	[ASYNC_INIT_STEP_FW_LOAD_CONTINUE] = pmw3360_async_init_fw_load_continue,
+	[ASYNC_INIT_STEP_FW_LOAD_VERIFY] = pmw3360_async_init_fw_load_verify,
+	[ASYNC_INIT_STEP_CONFIGURE] = pmw3360_async_init_configure,
+};
+
+static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data);
+static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data);
+
+static int (* const frame_capture_fn[FRAME_CAPTURE_STEP_COUNT])(struct pmw3360_data *dev_data) = {
+	[FRAME_CAPTURE_STEP_SETUP] = pmw3360_frame_capture_setup,
+	[FRAME_CAPTURE_STEP_BURST_READ] = pmw3360_frame_capture_burst_read,
 };
 
 static const struct video_format_cap fmts[] = {
@@ -375,7 +375,7 @@ static int burst_read(struct pmw3360_data *dev_data, uint8_t reg, uint8_t *buf,
 	/* Burst read data */
 	uint8_t read_buf;
 	struct spi_buf rx_buf = {
-		.buf = read_buf,
+		.buf = &read_buf,
 		.len = 1,
 	};
 	const struct spi_buf_set rx = {
@@ -577,10 +577,16 @@ static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data)
 
 	vbuf = k_fifo_get(&dev_data->fifo_in, K_NO_WAIT);
 	if (vbuf == NULL) {
-		return;
+		return ENXIO;
 	}
 
-	err = burst_read(dev_data, PMW3360_REG_RAW_DATA_BURST, vbuf, PMW3360_RAW_DATA_SIZE);
+	err = burst_read(dev_data, PMW3360_REG_RAW_DATA_BURST, vbuf->buffer, PMW3360_RAW_DATA_SIZE);
+	if (err) {
+		LOG_ERR("Failed to perform burst read.");
+		return err;
+	}
+	vbuf->timestamp = k_uptime_get_32();
+	vbuf->bytesused = PMW3360_RAW_DATA_SIZE;
 
 	k_fifo_put(&dev_data->fifo_out, vbuf);
 
