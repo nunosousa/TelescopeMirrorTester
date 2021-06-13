@@ -605,12 +605,12 @@ static void pmw3360_frame_capture(struct k_work *work)
 		dev_data->frame_capture_step++;
 
 		if (dev_data->frame_capture_step == FRAME_CAPTURE_STEP_COUNT) {
-			dev_data->ready = true;
+			dev_data->frame_capture_step = FRAME_CAPTURE_STEP_SETUP;
 			LOG_INF("PMW3360 frame captured successfully");
-		} else {
-			k_work_reschedule(&dev_data->frame_capture_work,
-					      K_MSEC(frame_capture_delay[dev_data->frame_capture_step]));
 		}
+		
+		k_work_reschedule(&dev_data->frame_capture_work,
+					      K_MSEC(frame_capture_delay[dev_data->frame_capture_step]));
 	}
 }
 
@@ -736,12 +736,8 @@ static int pmw3360_flush(const struct device *dev,
 			k_sleep(K_MSEC(1));
 		} while (!k_fifo_is_empty(&dev_data->fifo_in));
 	} else {
-		while ((vbuf = k_fifo_get(&data->fifo_in, K_NO_WAIT))) {
+		while ((vbuf = k_fifo_get(&dev_data->fifo_in, K_NO_WAIT))) {
 			k_fifo_put(&dev_data->fifo_out, vbuf);
-			if (IS_ENABLED(CONFIG_POLL) && dev_data->signal) {
-				k_poll_signal_raise(dev_data->signal,
-						    VIDEO_BUF_ABORTED);
-			}
 		}
 	}
 
