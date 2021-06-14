@@ -4,10 +4,13 @@
 #include <drivers/uart.h>
 #include <drivers/pwm.h>
 #include <drivers/dac.h>
+#include <drivers/video.h>
 #include <usb/usb_device.h>
 #include <shell/shell.h>
 #include <string.h>
 #include <stdlib.h>
+
+LOG_MODULE_REGISTER(main, CONFIG_LOG_DEFAULT_LEVEL);
 
 
 static int cmd_motor(const struct shell *shell, size_t argc, char **argv)
@@ -171,7 +174,7 @@ static int cmd_laser(const struct shell *shell, size_t argc, char **argv)
 	return dac_write_value(laser, 0, (uint32_t)laser_value);
 }
 
-static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
+static int cmd_switches(const struct shell *shell, size_t argc, char **argv)
 {
 	int32_t laser_value;
 	const struct device *laser;
@@ -189,8 +192,76 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 	return 0;
 }
 
+static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
+{
+	struct video_buffer *buffer, *vbuf;
+	struct video_format fmt;
+	struct video_caps caps;
+	const struct device *video;
+	unsigned int frame = 0;
+	size_t bsize;
+	int i = 0;
+
+	/* Default to software video pattern generator */
+	video = device_get_binding(DT_LABEL(DT_NODELABEL(x_pos_sensor)));
+	if (video == NULL) {
+		LOG_ERR("Video device not found");
+		return -1;
+	}
+
+	/* Get capabilities */
+	if (video_get_caps(video, VIDEO_EP_OUT, &caps)) {
+		LOG_ERR("Unable to retrieve video capabilities");
+		return -1;
+	}
+
+	/* Get default/native format */
+	if (video_get_format(video, VIDEO_EP_OUT, &fmt)) {
+		LOG_ERR("Unable to retrieve video format");
+		return -1;
+	}
+
+	/* Size to allocate for each buffer */
+	bsize = fmt.pitch * fmt.height;
+
+	/* Alloc video buffers and enqueue for capture */
+	buffer = video_buffer_alloc(bsize);
+	if (buffer == NULL) {
+		LOG_ERR("Unable to alloc video buffer of %d", bsize);
+		return -1;
+	}
+
+	video_enqueue(video, VIDEO_EP_OUT, buffer);
+
+	/* Start video capture */
+	if (video_stream_start(video)) {
+		LOG_ERR("Unable to start capture (interface)");
+		return -1;
+	}
+
+	/* Grab video frame */
+	int err;
+
+	err = video_dequeue(video, VIDEO_EP_OUT, &vbuf, K_FOREVER);
+	if (err) {
+		LOG_ERR("Unable to dequeue video buf");
+		return -1;
+	}
+
+	/* Stop video capture */
+	if (video_stream_stop(video)) {
+		LOG_ERR("Unable to stop capture (interface)");
+		return -1;
+	}
+
+	shell_hexdump(shell, vbuf->buffer, bsize);
+
+	return 0;
+}
+
 SHELL_CMD_REGISTER(motor, NULL, "Set motor pwm duty cycle in {x, y, z or t} axis to % value (range -100 to 100). Usage syntax: motor [axis] [value]", cmd_motor);
 SHELL_CMD_REGISTER(laser, NULL, "Set laser intensity to % value (range 0 to 100). Usage syntax: laser [value]", cmd_laser);
+SHELL_CMD_REGISTER(switches, NULL, "Report end switches state", cmd_switches);
 SHELL_CMD_REGISTER(sensor, NULL, "Report end switches state", cmd_sensor);
 
 
