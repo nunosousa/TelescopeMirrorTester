@@ -681,9 +681,6 @@ static int pmw3360_stream_start(const struct device *dev)
 {
 	struct pmw3360_data *dev_data = dev->data;
 
-	k_fifo_init(&dev_data->fifo_in);
-	k_fifo_init(&dev_data->fifo_out);
-
 	/* Wait 250 ms for first capture as to spec. */
 	return k_work_reschedule(&dev_data->frame_capture_work,
 			      K_MSEC(250));
@@ -777,6 +774,9 @@ static int pmw3360_init(const struct device *dev)
 	if (err) {
 		return err;
 	}
+
+	k_fifo_init(&dev_data->fifo_in);
+	k_fifo_init(&dev_data->fifo_out);
 	
 	fmt.pixelformat = 0;
 	fmt.width = 36;

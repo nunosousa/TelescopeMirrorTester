@@ -236,6 +236,7 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 	/* Start video capture */
 	if (video_stream_start(video)) {
 		LOG_ERR("Unable to start capture (interface)");
+		video_buffer_release(buffer);
 		return -1;
 	}
 
@@ -245,16 +246,20 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 	err = video_dequeue(video, VIDEO_EP_OUT, &vbuf, K_FOREVER);
 	if (err) {
 		LOG_ERR("Unable to dequeue video buf");
+		video_buffer_release(buffer);
 		return -1;
 	}
 
 	/* Stop video capture */
 	if (video_stream_stop(video)) {
 		LOG_ERR("Unable to stop capture (interface)");
+		video_buffer_release(buffer);
 		return -1;
 	}
 
 	shell_hexdump(shell, vbuf->buffer, bsize);
+
+	video_buffer_release(buffer);
 
 	return 0;
 }
