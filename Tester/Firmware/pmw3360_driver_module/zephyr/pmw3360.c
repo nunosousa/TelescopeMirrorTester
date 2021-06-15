@@ -654,11 +654,14 @@ static int pmw3360_set_fmt(const struct device *dev,
 			   enum video_endpoint_id ep,
 			   struct video_format *fmt)
 {
-	/* we only support one format */
-	if (fmt->pixelformat != 0 || fmt->height != 36 ||
+	struct pmw3360_data *dev_data = dev->data;
+
+	if (ep != VIDEO_EP_OUT || fmt->height != 36 ||
 	    fmt->width != 36) {
-		return -ENOTSUP;
+		return -EINVAL;
 	}
+
+	dev_data->fmt = *fmt;
 
 	return 0;
 }
