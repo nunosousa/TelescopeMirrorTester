@@ -606,7 +606,8 @@ static void pmw3360_frame_capture(struct k_work *work)
 
 	dev_data->err = frame_capture_fn[dev_data->frame_capture_step](dev_data);
 	if (dev_data->err) {
-		LOG_ERR("PMW3360 frame capture failed");
+		dev_data->frame_capture_step = FRAME_CAPTURE_STEP_SETUP;
+		LOG_ERR("PMW3360 frame capture failed at step %d", dev_data->frame_capture_step);
 	} else {
 		dev_data->frame_capture_step++;
 
@@ -680,10 +681,16 @@ static int pmw3360_get_fmt(const struct device *dev,
 static int pmw3360_stream_start(const struct device *dev)
 {
 	struct pmw3360_data *dev_data = dev->data;
+	int err;
 
 	/* Wait 250 ms for first capture as to spec. */
-	return k_work_reschedule(&dev_data->frame_capture_work,
-			      K_MSEC(250));
+	err = k_work_reschedule(&dev_data->frame_capture_work, K_MSEC(250));
+
+	if (err != 1) {
+		return -EINVAL;
+	}
+
+	return 0;
 }
 
 static int pmw3360_stream_stop(const struct device *dev)

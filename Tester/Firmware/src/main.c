@@ -196,7 +196,6 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 {
 	struct video_buffer *buffer, *vbuf;
 	struct video_format fmt;
-	struct video_caps caps;
 	const struct device *video;
 	unsigned int frame = 0;
 	size_t bsize;
@@ -206,12 +205,6 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 	video = device_get_binding(DT_LABEL(DT_NODELABEL(x_pos_sensor)));
 	if (video == NULL) {
 		LOG_ERR("Video device not found");
-		return -1;
-	}
-
-	/* Get capabilities */
-	if (video_get_caps(video, VIDEO_EP_OUT, &caps)) {
-		LOG_ERR("Unable to retrieve video capabilities");
 		return -1;
 	}
 
@@ -239,6 +232,8 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 		video_buffer_release(buffer);
 		return -1;
 	}
+
+	return 0;
 
 	/* Grab video frame */
 	int err;
