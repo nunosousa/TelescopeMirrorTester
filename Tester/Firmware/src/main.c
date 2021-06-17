@@ -199,12 +199,26 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 	const struct device *video;
 	unsigned int frame = 0;
 	size_t bsize;
-	int i = 0;
+	int err, i = 0;
 
-	/* Default to software video pattern generator */
-	video = device_get_binding(DT_LABEL(DT_NODELABEL(x_pos_sensor)));
-	if (video == NULL) {
-		LOG_ERR("Video device not found");
+	if (argc != 2) {
+		return -1; // Expected 2 arguments.
+	}
+
+	if (strcmp(argv[1], "x") == 0) {
+		video = device_get_binding(DT_LABEL(DT_NODELABEL(x_pos_sensor)));
+		if (video == NULL) {
+			LOG_ERR("Video device not found");
+			return -1;
+		}
+	} else if (strcmp(argv[1], "y") == 0) {
+		video = device_get_binding(DT_LABEL(DT_NODELABEL(y_pos_sensor)));
+		if (video == NULL) {
+			LOG_ERR("Video device not found");
+			return -1;
+		}
+	}
+	else {
 		return -1;
 	}
 
@@ -234,8 +248,6 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 	}
 
 	/* Grab video frame */
-	int err;
-
 	err = video_dequeue(video, VIDEO_EP_OUT, &vbuf, K_FOREVER);
 	if (err) {
 		LOG_ERR("Unable to dequeue video buf");
