@@ -116,7 +116,7 @@ enum frame_capture_step {
 };
 
 static const int32_t frame_capture_delay[FRAME_CAPTURE_STEP_COUNT] = {
-	[FRAME_CAPTURE_STEP_SETUP]         = 0,
+	[FRAME_CAPTURE_STEP_SETUP]         = 1,
 	[FRAME_CAPTURE_STEP_BURST_READ]    = 20,
 };
 
@@ -551,7 +551,8 @@ static void pmw3360_async_init(struct k_work *work)
 static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data)
 {
 	int err;
-	
+
+
 	/* Set frame capture */
 	err = reg_write(dev_data, PMW3360_REG_FRAME_CAPTURE, 0x83);
 	if (err) {
@@ -565,7 +566,7 @@ static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data)
 		LOG_ERR("Cannot configure Frame_Capture register");
 		return err;
 	}
-
+	
 	return err;
 }
 
@@ -573,13 +574,13 @@ static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data)
 {
 	int err = 0;
 	struct video_buffer *vbuf;
-
+	
 
 	vbuf = k_fifo_get(&dev_data->fifo_in, K_NO_WAIT);
 	if (vbuf == NULL) {
 		return ENXIO;
 	}
-
+	
 	err = burst_read(dev_data, PMW3360_REG_RAW_DATA_BURST, vbuf->buffer, PMW3360_RAW_DATA_SIZE);
 	if (err) {
 		LOG_ERR("Failed to perform burst read.");
@@ -589,13 +590,14 @@ static int pmw3360_frame_capture_burst_read(struct pmw3360_data *dev_data)
 	vbuf->bytesused = PMW3360_RAW_DATA_SIZE;
 
 	k_fifo_put(&dev_data->fifo_out, vbuf);
-
+	
 	return err;
 }
 
 static void pmw3360_frame_capture(struct k_work *work)
 {
 	struct pmw3360_data *dev_data;
+	int err;
 
 
 	dev_data = CONTAINER_OF(work, struct pmw3360_data, frame_capture_work);
@@ -604,10 +606,10 @@ static void pmw3360_frame_capture(struct k_work *work)
 
 	LOG_DBG("PMW3360 frame capture step %d", dev_data->frame_capture_step);
 
-	dev_data->err = frame_capture_fn[dev_data->frame_capture_step](dev_data);
-	if (dev_data->err) {
-		dev_data->frame_capture_step = FRAME_CAPTURE_STEP_SETUP;
+	err = frame_capture_fn[dev_data->frame_capture_step](dev_data);
+	if (err) {
 		LOG_ERR("PMW3360 frame capture failed at step %d", dev_data->frame_capture_step);
+		dev_data->frame_capture_step = FRAME_CAPTURE_STEP_SETUP;
 	} else {
 		dev_data->frame_capture_step++;
 

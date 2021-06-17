@@ -233,8 +233,6 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv)
 		return -1;
 	}
 
-	return 0;
-
 	/* Grab video frame */
 	int err;
 
