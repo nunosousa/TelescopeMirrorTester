@@ -553,6 +553,12 @@ static int pmw3360_frame_capture_setup(struct pmw3360_data *dev_data)
 	int err;
 
 
+	/* This enables entering rest modes */
+	err = reg_write(dev_data, PMW3360_REG_CONFIG2, 0x00);
+	if (err) {
+		LOG_ERR("Cannot enable REST modes");
+	}
+
 	/* Set frame capture */
 	err = reg_write(dev_data, PMW3360_REG_FRAME_CAPTURE, 0x83);
 	if (err) {
