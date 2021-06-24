@@ -111,7 +111,7 @@ SHIELD
 Text Label 4300 2600 0    50   ~ 0
 VBUS
 $Comp
-L Power_Protection:USBLC6-2SC6 U2
+L ControllerBoard-rescue:USBLC6-2SC6-Power_Protection U2
 U 1 1 5E62B9EB
 P 6050 3600
 F 0 "U2" H 6450 3150 50  0000 C CNN
@@ -158,7 +158,7 @@ Wire Wire Line
 Wire Wire Line
 	3700 4800 4550 4800
 $Comp
-L Connector:USB_B_Micro J9
+L ControllerBoard-rescue:USB_B_Micro-Connector J9
 U 1 1 5EAE8B91
 P 3800 2800
 F 0 "J9" H 3857 3267 50  0000 C CNN
