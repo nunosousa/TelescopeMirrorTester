@@ -20,14 +20,14 @@ F0 "Light Sources" 50
 F1 "LightSources.sch" 50
 $EndSheet
 $Comp
-L Device:Battery BT?
-U 1 1 614A5420
-P 3950 3000
-F 0 "BT?" H 4058 3046 50  0000 L CNN
-F 1 "Battery" H 4058 2955 50  0000 L CNN
-F 2 "" V 3950 3060 50  0001 C CNN
-F 3 "~" V 3950 3060 50  0001 C CNN
-	1    3950 3000
+L Device_custom:Battery_Two_Cells BT?
+U 1 1 614F2F4E
+P 4250 3200
+F 0 "BT?" H 4142 3246 50  0000 R CNN
+F 1 "Battery_Two_Cells" H 4142 3155 50  0000 R CNN
+F 2 "Battery_custom:BatteryHolder_Keystone_1012" V 4250 3260 50  0001 C CNN
+F 3 "~" V 4250 3260 50  0001 C CNN
+	1    4250 3200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
