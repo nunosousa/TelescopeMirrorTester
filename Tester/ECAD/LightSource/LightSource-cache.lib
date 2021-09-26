@@ -1,31 +1,6 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Device_Battery
-#
-DEF Device_Battery BT 0 0 N N 1 F N
-F0 "BT" 100 100 50 H V L CNN
-F1 "Device_Battery" 100 0 50 H V L CNN
-F2 "" 0 60 50 V I C CNN
-F3 "" 0 60 50 V I C CNN
-DRAW
-S -80 -55 80 -65 0 1 0 F
-S -80 70 80 60 0 1 0 F
-S -52 -78 50 -98 0 1 0 F
-S -52 47 50 27 0 1 0 F
-P 2 0 1 0 0 -60 0 -50 N
-P 2 0 1 0 0 -40 0 -30 N
-P 2 0 1 0 0 -20 0 -10 N
-P 2 0 1 0 0 0 0 10 N
-P 2 0 1 0 0 20 0 30 N
-P 2 0 1 0 0 70 0 100 N
-P 2 0 1 10 10 105 50 105 N
-P 2 0 1 10 30 125 30 85 N
-X + 1 0 200 100 D 50 50 1 1 P
-X - 2 0 -200 100 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # Device_LED_RGB
 #
 DEF Device_LED_RGB D 0 0 Y N 1 F N
@@ -107,6 +82,29 @@ P 4 0 1 8 40 50 40 -50 -60 0 40 50 N
 P 5 0 1 0 -60 60 0 120 0 100 0 120 -20 120 N
 X A 1 200 0 100 L 50 50 1 1 P
 X K 3 -300 0 100 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_custom_Battery_Two_Cells
+#
+DEF Device_custom_Battery_Two_Cells BT 0 0 N N 1 F N
+F0 "BT" 100 100 50 H V L CNN
+F1 "Device_custom_Battery_Two_Cells" 125 -95 50 H V L CNN
+F2 "" 0 60 50 V I C CNN
+F3 "" 0 60 50 V I C CNN
+DRAW
+C 0 -10 5 0 1 0 N
+S -80 -55 80 -65 0 1 0 F
+S -80 70 80 60 0 1 0 F
+S -52 -78 50 -98 0 1 0 F
+S -52 47 50 27 0 1 0 F
+P 2 0 1 0 0 70 0 100 N
+P 2 0 1 10 10 105 50 105 N
+P 2 0 1 10 30 125 30 85 N
+P 3 0 1 0 0 30 0 -60 0 -55 N
+X - 1 0 -200 100 U 50 50 1 1 P
+X Center 2 100 -10 100 L 50 50 1 1 P
+X + 3 0 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
