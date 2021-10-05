@@ -86,17 +86,6 @@ F 3 "https://datasheet.lcsc.com/lcsc/1811141742_Diodes-Incorporated-FMMT619TA_C1
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R3
-U 1 1 6153CB1A
-P 10050 2200
-F 0 "R3" V 9843 2200 50  0000 C CNN
-F 1 "R" V 9934 2200 50  0000 C CNN
-F 2 "" V 9980 2200 50  0001 C CNN
-F 3 "~" H 10050 2200 50  0001 C CNN
-	1    10050 2200
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:R R4
 U 1 1 6153C25B
 P 10500 2400
@@ -368,10 +357,6 @@ F 3 "" H 8000 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10200 2200 10500 2200
-Wire Wire Line
-	9900 2200 9700 2200
-Wire Wire Line
 	8800 1550 8800 2200
 Wire Wire Line
 	9700 1950 9700 2200
@@ -389,8 +374,6 @@ Wire Wire Line
 Wire Wire Line
 	7750 2200 8000 2200
 Connection ~ 8000 2200
-Wire Wire Line
-	8000 2200 8000 1350
 Wire Wire Line
 	7050 1500 7050 2050
 Wire Wire Line
@@ -420,10 +403,14 @@ F 3 "" H 8500 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8500 2250 8500 1350
+	8500 2250 8500 2200
 Wire Wire Line
 	8500 1350 8800 1350
 Wire Wire Line
-	8000 1350 8500 1350
-Connection ~ 8500 1350
+	8000 2200 8500 2200
+Connection ~ 8500 2200
+Wire Wire Line
+	8500 2200 8500 1350
+Wire Wire Line
+	9700 2200 10500 2200
 $EndSCHEMATC
