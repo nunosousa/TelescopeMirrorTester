@@ -14,61 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L power:GND #PWR011
-U 1 1 6153E145
-P 7500 5700
-F 0 "#PWR011" H 7500 5450 50  0001 C CNN
-F 1 "GND" H 7505 5527 50  0000 C CNN
-F 2 "" H 7500 5700 50  0001 C CNN
-F 3 "" H 7500 5700 50  0001 C CNN
-	1    7500 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 61545D9D
-P 6850 4950
-F 0 "C2" H 6965 4996 50  0000 L CNN
-F 1 "100pC" H 6965 4905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 6888 4800 50  0001 C CNN
-F 3 "~" H 6850 4950 50  0001 C CNN
-	1    6850 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:BC817 Q1
-U 1 1 615432B2
-P 7400 4600
-F 0 "Q1" H 7591 4646 50  0000 L CNN
-F 1 "FMMT619TA" H 7591 4555 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7600 4525 50  0001 L CIN
-F 3 "https://datasheet.lcsc.com/lcsc/1811141742_Diodes-Incorporated-FMMT619TA_C15331.pdf" H 7400 4600 50  0001 L CNN
-	1    7400 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 6153C25B
-P 7500 5550
-F 0 "R6" H 7570 5596 50  0000 L CNN
-F 1 "120R" H 7570 5505 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 7430 5550 50  0001 C CNN
-F 3 "~" H 7500 5550 50  0001 C CNN
-	1    7500 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR08
-U 1 1 6155C48B
-P 6300 4300
-F 0 "#PWR08" H 6300 4150 50  0001 C CNN
-F 1 "VCC" H 6315 4473 50  0000 C CNN
-F 2 "" H 6300 4300 50  0001 C CNN
-F 3 "" H 6300 4300 50  0001 C CNN
-	1    6300 4300
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:VCC #PWR03
 U 1 1 6155BA18
 P 3950 4300
@@ -104,36 +49,6 @@ F 3 "~" H 3950 4450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR09
-U 1 1 6153E7CC
-P 6300 5700
-F 0 "#PWR09" H 6300 5450 50  0001 C CNN
-F 1 "GND" H 6305 5527 50  0000 C CNN
-F 2 "" H 6300 5700 50  0001 C CNN
-F 3 "" H 6300 5700 50  0001 C CNN
-	1    6300 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Amplifier_Operational:LM321 U2
-U 1 1 615937E5
-P 6400 4600
-F 0 "U2" H 6500 4500 50  0000 L CNN
-F 1 "LM321" H 6400 4400 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6400 4600 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lm321.pdf" H 6400 4600 50  0001 C CNN
-	1    6400 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6100 4700 6100 5350
-Wire Wire Line
-	6850 5100 6850 5350
-Wire Wire Line
-	6850 4600 6850 4800
-Wire Wire Line
-	7500 4300 7500 4400
-$Comp
 L Device:CP C1
 U 1 1 615B5D7C
 P 5800 5550
@@ -155,34 +70,6 @@ F 3 "" H 5800 5700 50  0001 C CNN
 	1    5800 5700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5800 4500 6100 4500
-Wire Wire Line
-	6100 5350 6850 5350
-Connection ~ 7500 5350
-Wire Wire Line
-	7500 5350 7500 5400
-Connection ~ 6850 5350
-Wire Wire Line
-	6850 5350 7200 5350
-Wire Wire Line
-	6700 4600 6850 4600
-Connection ~ 6850 4600
-Wire Wire Line
-	6850 4600 6950 4600
-$Comp
-L power:VCC #PWR010
-U 1 1 615D5D4B
-P 7500 4300
-F 0 "#PWR010" H 7500 4150 50  0001 C CNN
-F 1 "VCC" H 7515 4473 50  0000 C CNN
-F 2 "" H 7500 4300 50  0001 C CNN
-F 3 "" H 7500 4300 50  0001 C CNN
-	1    7500 4300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6300 4900 6300 5700
 $Comp
 L Reference_Voltage:TL432DBZ U1
 U 1 1 615CF6C8
@@ -353,22 +240,6 @@ F 3 "~" H 6000 4350 50  0001 C CNN
 	1    5800 4350
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP5
-U 1 1 61622F73
-P 6950 4350
-F 0 "TP5" H 7008 4468 50  0000 L CNN
-F 1 "TestPoint" H 7008 4377 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7150 4350 50  0001 C CNN
-F 3 "~" H 7150 4350 50  0001 C CNN
-	1    6950 4350
-	1    0    0    -1  
-$EndComp
-Connection ~ 6950 4600
-Wire Wire Line
-	6950 4600 7200 4600
-Wire Wire Line
-	6950 4350 6950 4600
 Wire Wire Line
 	5800 4350 5800 4500
 Connection ~ 5800 4500
@@ -385,22 +256,6 @@ F 3 "~" H 4900 4350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4700 4650 4700 4350
-$Comp
-L Connector:TestPoint TP6
-U 1 1 61626D09
-P 7200 5650
-F 0 "TP6" H 7143 5676 50  0000 R CNN
-F 1 "TestPoint" H 7143 5767 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7400 5650 50  0001 C CNN
-F 3 "~" H 7400 5650 50  0001 C CNN
-	1    7200 5650
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	7200 5650 7200 5350
-Connection ~ 7200 5350
-Wire Wire Line
-	7200 5350 7500 5350
 Connection ~ 3950 4650
 Wire Wire Line
 	4300 4650 4700 4650
@@ -465,6 +320,18 @@ Text Notes 900  4050 0    50   ~ 0
 LED/Laser Diode constant current circuit
 Text Notes 800  700  0    50   ~ 0
 DC-DC boost converter
+Wire Wire Line
+	5800 4500 6100 4500
+Wire Wire Line
+	6100 4700 6100 5350
+Wire Wire Line
+	7500 5150 7500 5350
+Wire Wire Line
+	7650 5150 7500 5150
+Wire Wire Line
+	7500 4900 7500 4800
+Wire Wire Line
+	7650 4900 7500 4900
 $Sheet
 S 7650 4850 850  350 
 U 61674AA7
@@ -474,11 +341,181 @@ F2 "Anode" U L 7650 4900 50
 F3 "Cathode" U L 7650 5150 50 
 $EndSheet
 Wire Wire Line
-	7650 4900 7500 4900
+	7200 5350 7500 5350
+Connection ~ 7200 5350
 Wire Wire Line
-	7500 4900 7500 4800
+	7200 5650 7200 5350
+$Comp
+L Connector:TestPoint TP6
+U 1 1 61626D09
+P 7200 5650
+F 0 "TP6" H 7143 5676 50  0000 R CNN
+F 1 "TestPoint" H 7143 5767 50  0000 R CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7400 5650 50  0001 C CNN
+F 3 "~" H 7400 5650 50  0001 C CNN
+	1    7200 5650
+	1    0    0    1   
+$EndComp
 Wire Wire Line
-	7650 5150 7500 5150
+	6950 4350 6950 4600
 Wire Wire Line
-	7500 5150 7500 5350
+	6950 4600 7200 4600
+Connection ~ 6950 4600
+$Comp
+L Connector:TestPoint TP5
+U 1 1 61622F73
+P 6950 4350
+F 0 "TP5" H 7008 4468 50  0000 L CNN
+F 1 "TestPoint" H 7008 4377 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7150 4350 50  0001 C CNN
+F 3 "~" H 7150 4350 50  0001 C CNN
+	1    6950 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 4900 6300 5700
+$Comp
+L power:VCC #PWR010
+U 1 1 615D5D4B
+P 7500 4300
+F 0 "#PWR010" H 7500 4150 50  0001 C CNN
+F 1 "VCC" H 7515 4473 50  0000 C CNN
+F 2 "" H 7500 4300 50  0001 C CNN
+F 3 "" H 7500 4300 50  0001 C CNN
+	1    7500 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 4600 6950 4600
+Connection ~ 6850 4600
+Wire Wire Line
+	6700 4600 6850 4600
+Wire Wire Line
+	6850 5350 7200 5350
+Connection ~ 6850 5350
+Wire Wire Line
+	7500 5350 7500 5400
+Connection ~ 7500 5350
+Wire Wire Line
+	6100 5350 6850 5350
+Wire Wire Line
+	7500 4300 7500 4400
+Wire Wire Line
+	6850 4600 6850 4800
+Wire Wire Line
+	6850 5100 6850 5350
+$Comp
+L Amplifier_Operational:LM321 U2
+U 1 1 615937E5
+P 6400 4600
+F 0 "U2" H 6500 4500 50  0000 L CNN
+F 1 "LM321" H 6400 4400 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6400 4600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm321.pdf" H 6400 4600 50  0001 C CNN
+	1    6400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 6153E7CC
+P 6300 5700
+F 0 "#PWR09" H 6300 5450 50  0001 C CNN
+F 1 "GND" H 6305 5527 50  0000 C CNN
+F 2 "" H 6300 5700 50  0001 C CNN
+F 3 "" H 6300 5700 50  0001 C CNN
+	1    6300 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR08
+U 1 1 6155C48B
+P 6300 4300
+F 0 "#PWR08" H 6300 4150 50  0001 C CNN
+F 1 "VCC" H 6315 4473 50  0000 C CNN
+F 2 "" H 6300 4300 50  0001 C CNN
+F 3 "" H 6300 4300 50  0001 C CNN
+	1    6300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 6153C25B
+P 7500 5550
+F 0 "R6" H 7570 5596 50  0000 L CNN
+F 1 "120R" H 7570 5505 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 7430 5550 50  0001 C CNN
+F 3 "~" H 7500 5550 50  0001 C CNN
+	1    7500 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:BC817 Q1
+U 1 1 615432B2
+P 7400 4600
+F 0 "Q1" H 7591 4646 50  0000 L CNN
+F 1 "FMMT619TA" H 7591 4555 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7600 4525 50  0001 L CIN
+F 3 "https://datasheet.lcsc.com/lcsc/1811141742_Diodes-Incorporated-FMMT619TA_C15331.pdf" H 7400 4600 50  0001 L CNN
+	1    7400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 61545D9D
+P 6850 4950
+F 0 "C2" H 6965 4996 50  0000 L CNN
+F 1 "100pC" H 6965 4905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 6888 4800 50  0001 C CNN
+F 3 "~" H 6850 4950 50  0001 C CNN
+	1    6850 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 6153E145
+P 7500 5700
+F 0 "#PWR011" H 7500 5450 50  0001 C CNN
+F 1 "GND" H 7505 5527 50  0000 C CNN
+F 2 "" H 7500 5700 50  0001 C CNN
+F 3 "" H 7500 5700 50  0001 C CNN
+	1    7500 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 6168B1C0
+P 2400 4950
+F 0 "C3" H 2515 4996 50  0000 L CNN
+F 1 "0.1uC" H 2515 4905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 2438 4800 50  0001 C CNN
+F 3 "~" H 2400 4950 50  0001 C CNN
+	1    2400 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 6168BBD6
+P 2400 5700
+F 0 "#PWR013" H 2400 5450 50  0001 C CNN
+F 1 "GND" H 2405 5527 50  0000 C CNN
+F 2 "" H 2400 5700 50  0001 C CNN
+F 3 "" H 2400 5700 50  0001 C CNN
+	1    2400 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR012
+U 1 1 6168C43A
+P 2400 4300
+F 0 "#PWR012" H 2400 4150 50  0001 C CNN
+F 1 "VCC" H 2415 4473 50  0000 C CNN
+F 2 "" H 2400 4300 50  0001 C CNN
+F 3 "" H 2400 4300 50  0001 C CNN
+	1    2400 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 5700 2400 5100
+Wire Wire Line
+	2400 4800 2400 4300
 $EndSCHEMATC
