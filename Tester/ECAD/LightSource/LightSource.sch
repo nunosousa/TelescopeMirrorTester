@@ -49,17 +49,6 @@ F 3 "~" H 4250 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP C1
-U 1 1 615B5D7C
-P 6100 5850
-F 0 "C1" H 6218 5896 50  0000 L CNN
-F 1 "10uCP" H 6218 5805 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm" H 6138 5700 50  0001 C CNN
-F 3 "~" H 6100 5850 50  0001 C CNN
-	1    6100 5850
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR07
 U 1 1 615B6266
 P 6100 6000
@@ -575,4 +564,15 @@ Wire Wire Line
 	7400 5650 7900 5650
 Wire Wire Line
 	7450 5250 7650 5250
+$Comp
+L Device:C C1
+U 1 1 616BED58
+P 6100 5850
+F 0 "C1" H 6215 5896 50  0000 L CNN
+F 1 "10uC" H 6215 5805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 6138 5700 50  0001 C CNN
+F 3 "~" H 6100 5850 50  0001 C CNN
+	1    6100 5850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
