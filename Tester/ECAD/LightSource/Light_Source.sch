@@ -21,6 +21,7 @@ F 0 "D1" V 7039 3582 50  0000 R CNN
 F 1 "LED" V 6948 3582 50  0000 R CNN
 F 2 "LED_THT:LED_Rectangular_W5.0mm_H2.0mm" H 7000 3700 50  0001 C CNN
 F 3 "~" H 7000 3700 50  0001 C CNN
+F 4 "Varies" H 7000 3700 50  0001 C CNN "Manufacturer Part Number"
 	1    7000 3700
 	0    -1   -1   0   
 $EndComp
@@ -31,7 +32,8 @@ P 4500 3800
 F 0 "LD1" V 4596 3600 50  0000 R CNN
 F 1 "LD" V 4505 3600 50  0000 R CNN
 F 2 "OptoDevice:LaserDiode_TO18-D5.6-3" H 4540 3875 50  0001 C CNN
-F 3 "http://www.egismos.disonhu.com/laser/diode-package.htm" H 4590 3700 50  0001 C CNN
+F 3 "" H 4590 3700 50  0001 C CNN
+F 4 "Varies" H 4500 3800 50  0001 C CNN "Manufacturer Part Number"
 	1    4500 3800
 	0    -1   -1   0   
 $EndComp
