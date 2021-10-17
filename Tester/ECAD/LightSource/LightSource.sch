@@ -49,17 +49,6 @@ F 3 "" H 6050 3550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Reference_Voltage:TL432DBZ U1
-U 1 1 615CF6C8
-P 4550 2900
-F 0 "U1" V 4596 2830 50  0000 R CNN
-F 1 "TL432" V 4505 2830 50  0000 R CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4550 2750 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/tl431.pdf" H 4550 2900 50  0001 C CIN
-	1    4550 2900
-	0    -1   -1   0   
-$EndComp
-$Comp
 L power:GND #PWR06
 U 1 1 6154CFA4
 P 5350 3550
@@ -81,7 +70,8 @@ P 4200 2700
 F 0 "R2" H 4270 2746 50  0000 L CNN
 F 1 "0R" H 4270 2655 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4130 2700 50  0001 C CNN
-F 3 "~" H 4200 2700 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811071517_YAGEO-RC0805JR-070RL_C96345.pdf" H 4200 2700 50  0001 C CNN
+F 4 "RC0805JR-070RL" H 4200 2700 50  0001 C CNN "Manufacturer Part Number"
 	1    4200 2700
 	1    0    0    -1  
 $EndComp
@@ -330,7 +320,8 @@ P 7050 2800
 F 0 "U2" H 7150 2700 50  0000 L CNN
 F 1 "LM321" H 7050 2600 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 7050 2800 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lm321.pdf" H 7050 2800 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1810122210_Texas-Instruments-LM321MFX-NOPB-_C9405.pdf" H 7050 2800 50  0001 C CNN
+F 4 "LM321MFX/NOPB" H 7050 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    7050 2800
 	1    0    0    -1  
 $EndComp
@@ -353,6 +344,7 @@ F 0 "R6" H 8320 3446 50  0000 L CNN
 F 1 "120R" H 8320 3355 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 8180 3400 50  0001 C CNN
 F 3 "~" H 8250 3400 50  0001 C CNN
+F 4 "Varies" H 8250 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    8250 3400
 	1    0    0    -1  
 $EndComp
@@ -385,7 +377,8 @@ P 2650 2800
 F 0 "C3" H 2765 2846 50  0000 L CNN
 F 1 "0.1uC" H 2765 2755 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 2688 2650 50  0001 C CNN
-F 3 "~" H 2650 2800 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2006111832_YAGEO-CC0805KRX7R8BB104_C519981.pdf" H 2650 2800 50  0001 C CNN
+F 4 "CC0805KRX7R8BB104" H 2650 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    2650 2800
 	1    0    0    -1  
 $EndComp
@@ -437,7 +430,8 @@ P 7800 2800
 F 0 "R7" V 7593 2800 50  0000 C CNN
 F 1 "0R" V 7684 2800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 7730 2800 50  0001 C CNN
-F 3 "~" H 7800 2800 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811071517_YAGEO-RC0805JR-070RL_C96345.pdf" H 7800 2800 50  0001 C CNN
+F 4 "RC0805JR-070RL" H 7800 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    7800 2800
 	0    1    1    0   
 $EndComp
@@ -493,7 +487,8 @@ P 7200 2450
 F 0 "C2" V 6948 2450 50  0000 C CNN
 F 1 "100pC" V 7039 2450 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7238 2300 50  0001 C CNN
-F 3 "~" H 7200 2450 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1810241824_Samsung-Electro-Mechanics-CL21C101JBANNNC_C1790.pdf" H 7200 2450 50  0001 C CNN
+F 4 "CL21C101JBANNNC" H 7200 2450 50  0001 C CNN "Manufacturer Part Number"
 	1    7200 2450
 	0    1    1    0   
 $EndComp
@@ -518,7 +513,8 @@ P 6050 3400
 F 0 "C1" H 6165 3446 50  0000 L CNN
 F 1 "10uC" H 6165 3355 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 6088 3250 50  0001 C CNN
-F 3 "~" H 6050 3400 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811121310_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf" H 6050 3400 50  0001 C CNN
+F 4 "CL21A106KAYNNNE" H 6050 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    6050 3400
 	1    0    0    -1  
 $EndComp
@@ -661,24 +657,14 @@ $EndComp
 Text Notes 2900 5100 0    50   ~ 0
 Power stage
 $Comp
-L Device:C C4
-U 1 1 616EC9D1
-P 2900 6050
-F 0 "C4" H 3015 6096 50  0000 L CNN
-F 1 "0.33uC" H 3015 6005 50  0000 L CNN
-F 2 "" H 2938 5900 50  0001 C CNN
-F 3 "~" H 2900 6050 50  0001 C CNN
-	1    2900 6050
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C5
 U 1 1 616ED0EB
 P 4200 6050
 F 0 "C5" H 4315 6096 50  0000 L CNN
 F 1 "0.1uC" H 4315 6005 50  0000 L CNN
-F 2 "" H 4238 5900 50  0001 C CNN
-F 3 "~" H 4200 6050 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 4238 5900 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2006111832_YAGEO-CC0805KRX7R8BB104_C519981.pdf" H 4200 6050 50  0001 C CNN
+F 4 "CC0805KRX7R8BB104" H 4200 6050 50  0001 C CNN "Manufacturer Part Number"
 	1    4200 6050
 	1    0    0    -1  
 $EndComp
@@ -763,4 +749,28 @@ Wire Wire Line
 Wire Wire Line
 	2300 6050 2100 6050
 Connection ~ 2300 6150
+$Comp
+L Device:CP C4
+U 1 1 616C6948
+P 2900 6050
+F 0 "C4" H 3018 6096 50  0000 L CNN
+F 1 "0.33uCP" H 3018 6005 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" H 2938 5900 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811071215_AVX-TAJA334K035RNJ_C8014.pdf" H 2900 6050 50  0001 C CNN
+F 4 "TAJA334K035RNJ" H 2900 6050 50  0001 C CNN "Manufacturer Part Number"
+	1    2900 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Reference_Voltage:TL431DBZ U1
+U 1 1 616CDFC8
+P 4550 2900
+F 0 "U1" V 4596 2830 50  0000 R CNN
+F 1 "TL431" V 4505 2830 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4550 2750 50  0001 C CIN
+F 3 "https://datasheet.lcsc.com/lcsc/1810231426_STMicroelectronics-TL431IL3T_C283419.pdf" H 4550 2900 50  0001 C CIN
+F 4 "TL431IL3T" H 4550 2900 50  0001 C CNN "Manufacturer Part Number"
+	1    4550 2900
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
