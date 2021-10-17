@@ -43,6 +43,7 @@ F 0 "JP1" V 3854 4368 50  0000 L CNN
 F 1 "JP" V 3945 4368 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm" H 3900 4300 50  0001 C CNN
 F 3 "~" H 3900 4300 50  0001 C CNN
+F 4 "N/A" H 3900 4300 50  0001 C CNN "Manufacturer Part Number"
 	1    3900 4300
 	0    -1   1    0   
 $EndComp
@@ -54,6 +55,7 @@ F 0 "JP2" V 4004 3267 50  0000 L CNN
 F 1 "JP" V 4095 3267 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm" H 4050 3200 50  0001 C CNN
 F 3 "~" H 4050 3200 50  0001 C CNN
+F 4 "N/A" H 4050 3200 50  0001 C CNN "Manufacturer Part Number"
 	1    4050 3200
 	0    -1   1    0   
 $EndComp
@@ -65,6 +67,7 @@ F 0 "JP3" V 4954 3268 50  0000 L CNN
 F 1 "JP" V 5045 3268 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm" H 5000 3200 50  0001 C CNN
 F 3 "~" H 5000 3200 50  0001 C CNN
+F 4 "N/A" H 5000 3200 50  0001 C CNN "Manufacturer Part Number"
 	1    5000 3200
 	0    1    1    0   
 $EndComp
