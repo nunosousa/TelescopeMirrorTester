@@ -215,6 +215,7 @@ F 0 "TP4" H 6108 2318 50  0000 L CNN
 F 1 "TestPoint" H 6108 2227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 6250 2200 50  0001 C CNN
 F 3 "~" H 6250 2200 50  0001 C CNN
+F 4 "N/A" H 6050 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    6050 2200
 	1    0    0    -1  
 $EndComp
@@ -226,6 +227,7 @@ F 0 "TP3" H 5008 2318 50  0000 L CNN
 F 1 "TestPoint" H 5008 2227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5150 2200 50  0001 C CNN
 F 3 "~" H 5150 2200 50  0001 C CNN
+F 4 "N/A" H 4950 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    4950 2200
 	1    0    0    -1  
 $EndComp
@@ -245,6 +247,7 @@ F 0 "TP2" H 3758 3668 50  0000 L CNN
 F 1 "TestPoint" H 3758 3577 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 3900 3550 50  0001 C CNN
 F 3 "~" H 3900 3550 50  0001 C CNN
+F 4 "N/A" H 3700 3550 50  0001 C CNN "Manufacturer Part Number"
 	1    3700 3550
 	1    0    0    -1  
 $EndComp
@@ -267,6 +270,7 @@ F 0 "TP1" H 3643 2176 50  0000 R CNN
 F 1 "TestPoint" H 3643 2267 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 3900 2150 50  0001 C CNN
 F 3 "~" H 3900 2150 50  0001 C CNN
+F 4 "N/A" H 3700 2150 50  0001 C CNN "Manufacturer Part Number"
 	1    3700 2150
 	1    0    0    1   
 $EndComp
@@ -298,6 +302,7 @@ F 0 "TP6" H 7793 3526 50  0000 R CNN
 F 1 "TestPoint" H 7793 3617 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 8050 3500 50  0001 C CNN
 F 3 "~" H 8050 3500 50  0001 C CNN
+F 4 "N/A" H 7850 3500 50  0001 C CNN "Manufacturer Part Number"
 	1    7850 3500
 	1    0    0    1   
 $EndComp
@@ -312,6 +317,7 @@ F 0 "TP5" H 7658 2318 50  0000 L CNN
 F 1 "TestPoint" H 7658 2227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 7800 2200 50  0001 C CNN
 F 3 "~" H 7800 2200 50  0001 C CNN
+F 4 "N/A" H 7600 2200 50  0001 C CNN "Manufacturer Part Number"
 	1    7600 2200
 	1    0    0    -1  
 $EndComp
@@ -522,7 +528,7 @@ U 1 1 616CB72F
 P 3550 5850
 F 0 "U3" H 3550 6092 50  0000 C CNN
 F 1 "L78M09" H 3550 6001 50  0000 C CNN
-F 2 "" H 3575 5700 50  0001 L CIN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 3575 5700 50  0001 L CIN
 F 3 "https://datasheet.lcsc.com/lcsc/1912111437_STMicroelectronics-L78M09ABDT-TR_C157412.pdf" H 3550 5800 50  0001 C CNN
 F 4 "L78M09ABDT-TR" H 3550 5850 50  0001 C CNN "Manufacturer Part Number"
 	1    3550 5850
@@ -534,8 +540,9 @@ U 1 1 616C043E
 P 9500 5200
 F 0 "H1" H 9600 5246 50  0000 L CNN
 F 1 "MountingHole" H 9600 5155 50  0000 L CNN
-F 2 "" H 9500 5200 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9500 5200 50  0001 C CNN
 F 3 "~" H 9500 5200 50  0001 C CNN
+F 4 "N/A" H 9500 5200 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 5200
 	1    0    0    -1  
 $EndComp
@@ -545,8 +552,9 @@ U 1 1 616C0BF3
 P 9500 5450
 F 0 "H2" H 9600 5496 50  0000 L CNN
 F 1 "MountingHole" H 9600 5405 50  0000 L CNN
-F 2 "" H 9500 5450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9500 5450 50  0001 C CNN
 F 3 "~" H 9500 5450 50  0001 C CNN
+F 4 "N/A" H 9500 5450 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 5450
 	1    0    0    -1  
 $EndComp
@@ -556,8 +564,9 @@ U 1 1 616C0D9E
 P 9500 5700
 F 0 "H3" H 9600 5746 50  0000 L CNN
 F 1 "MountingHole" H 9600 5655 50  0000 L CNN
-F 2 "" H 9500 5700 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9500 5700 50  0001 C CNN
 F 3 "~" H 9500 5700 50  0001 C CNN
+F 4 "N/A" H 9500 5700 50  0001 C CNN "Manufacturer Part Number"
 	1    9500 5700
 	1    0    0    -1  
 $EndComp
@@ -630,63 +639,33 @@ $EndComp
 $Comp
 L power:GND #PWR08
 U 1 1 616CEE79
-P 2300 6400
-F 0 "#PWR08" H 2300 6150 50  0001 C CNN
-F 1 "GND" H 2305 6227 50  0000 C CNN
-F 2 "" H 2300 6400 50  0001 C CNN
-F 3 "" H 2300 6400 50  0001 C CNN
-	1    2300 6400
+P 2300 6200
+F 0 "#PWR08" H 2300 5950 50  0001 C CNN
+F 1 "GND" H 2305 6027 50  0000 C CNN
+F 2 "" H 2300 6200 50  0001 C CNN
+F 3 "" H 2300 6200 50  0001 C CNN
+	1    2300 6200
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR01
 U 1 1 616CF4BA
-P 2300 5750
-F 0 "#PWR01" H 2300 5600 50  0001 C CNN
-F 1 "+12V" H 2315 5923 50  0000 C CNN
-F 2 "" H 2300 5750 50  0001 C CNN
-F 3 "" H 2300 5750 50  0001 C CNN
-	1    2300 5750
+P 2300 5850
+F 0 "#PWR01" H 2300 5700 50  0001 C CNN
+F 1 "+12V" H 2315 6023 50  0000 C CNN
+F 2 "" H 2300 5850 50  0001 C CNN
+F 3 "" H 2300 5850 50  0001 C CNN
+	1    2300 5850
 	1    0    0    -1  
 $EndComp
 Text Notes 2900 5100 0    50   ~ 0
 Power stage
 $Comp
-L Connector_Generic:Conn_01x01 J1
-U 1 1 616E0F43
-P 2000 5850
-F 0 "J1" H 2080 5892 50  0000 L CNN
-F 1 "Conn_01x01" H 2080 5801 50  0000 L CNN
-F 2 "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm_Relief" H 2000 5850 50  0001 C CNN
-F 3 "~" H 2000 5850 50  0001 C CNN
-	1    2000 5850
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x01 J2
-U 1 1 616E2914
-P 2000 6300
-F 0 "J2" H 2080 6342 50  0000 L CNN
-F 1 "Conn_01x01" H 2080 6251 50  0000 L CNN
-F 2 "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm_Relief" H 2000 6300 50  0001 C CNN
-F 3 "~" H 2000 6300 50  0001 C CNN
-	1    2000 6300
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	2200 5850 2300 5850
-Wire Wire Line
-	2300 5850 2300 5750
-Wire Wire Line
-	2200 6300 2300 6300
-Wire Wire Line
-	2300 6300 2300 6400
-$Comp
 L Device:C C4
 U 1 1 616EC9D1
 P 2900 6050
 F 0 "C4" H 3015 6096 50  0000 L CNN
-F 1 "C" H 3015 6005 50  0000 L CNN
+F 1 "0.33uC" H 3015 6005 50  0000 L CNN
 F 2 "" H 2938 5900 50  0001 C CNN
 F 3 "~" H 2900 6050 50  0001 C CNN
 	1    2900 6050
@@ -697,7 +676,7 @@ L Device:C C5
 U 1 1 616ED0EB
 P 4200 6050
 F 0 "C5" H 4315 6096 50  0000 L CNN
-F 1 "C" H 4315 6005 50  0000 L CNN
+F 1 "0.1uC" H 4315 6005 50  0000 L CNN
 F 2 "" H 4238 5900 50  0001 C CNN
 F 3 "~" H 4200 6050 50  0001 C CNN
 	1    4200 6050
@@ -757,4 +736,31 @@ F 3 "" H 2900 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 2900 5850
+Wire Wire Line
+	3550 6150 3550 6200
+Wire Wire Line
+	2100 5950 2300 5950
+Wire Wire Line
+	2100 6150 2300 6150
+Wire Wire Line
+	2300 6150 2300 6200
+Wire Wire Line
+	2300 5850 2300 5950
+$Comp
+L Connector:Barrel_Jack_Switch J1
+U 1 1 616D162A
+P 1800 6050
+F 0 "J1" H 1857 6367 50  0000 C CNN
+F 1 "Barrel_Jack_Switch" H 1857 6276 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 1850 6010 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2108131530_Korean-Hroparts-Elec-DC-005-20A_C130239.pdf" H 1850 6010 50  0001 C CNN
+F 4 "DC-005-20A" H 1800 6050 50  0001 C CNN "Manufacturer Part Number"
+	1    1800 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 6150 2300 6050
+Wire Wire Line
+	2300 6050 2100 6050
+Connection ~ 2300 6150
 $EndSCHEMATC
