@@ -353,18 +353,6 @@ F 4 "Varies" H 8250 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:BC817 Q1
-U 1 1 615432B2
-P 8150 2800
-F 0 "Q1" H 8341 2846 50  0000 L CNN
-F 1 "FZT694BTA" H 8341 2755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 8350 2725 50  0001 L CIN
-F 3 "https://datasheet.lcsc.com/lcsc/2004291106_Diodes-Incorporated-FZT694BTA_C513221.pdf" H 8150 2800 50  0001 L CNN
-F 4 "FZT694BTA" H 8150 2800 50  0001 C CNN "Manufacturer Part Number"
-	1    8150 2800
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR011
 U 1 1 6153E145
 P 8250 3550
@@ -779,5 +767,17 @@ F 3 "https://datasheet.lcsc.com/lcsc/1810231426_STMicroelectronics-TL431IL3T_C28
 F 4 "TL431IL3T" H 4550 2900 50  0001 C CNN "Manufacturer Part Number"
 	1    4550 2900
 	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Q_NPN_BCE Q1
+U 1 1 61700979
+P 8150 2800
+F 0 "Q1" H 8341 2846 50  0000 L CNN
+F 1 "FZT694BTA" H 8341 2755 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 8350 2900 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2004291106_Diodes-Incorporated-FZT694BTA_C513221.pdf" H 8150 2800 50  0001 C CNN
+F 4 "FZT694BTA" H 8150 2800 50  0001 C CNN "Manufacturer Part Number"
+	1    8150 2800
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
