@@ -357,10 +357,10 @@ L Transistor_BJT:BC817 Q1
 U 1 1 615432B2
 P 8150 2800
 F 0 "Q1" H 8341 2846 50  0000 L CNN
-F 1 "FMMT619TA" H 8341 2755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 8350 2725 50  0001 L CIN
-F 3 "https://datasheet.lcsc.com/lcsc/1811141742_Diodes-Incorporated-FMMT619TA_C15331.pdf" H 8150 2800 50  0001 L CNN
-F 4 "FMMT619TA" H 8150 2800 50  0001 C CNN "Manufacturer Part Number"
+F 1 "FZT694BTA" H 8341 2755 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 8350 2725 50  0001 L CIN
+F 3 "https://datasheet.lcsc.com/lcsc/2004291106_Diodes-Incorporated-FZT694BTA_C513221.pdf" H 8150 2800 50  0001 L CNN
+F 4 "FZT694BTA" H 8150 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    8150 2800
 	1    0    0    -1  
 $EndComp
@@ -448,10 +448,10 @@ L Device:R R8
 U 1 1 616A0445
 P 6600 3400
 F 0 "R8" H 6670 3446 50  0000 L CNN
-F 1 "10kR" H 6670 3355 50  0000 L CNN
+F 1 "15kR" H 6670 3355 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 6530 3400 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/lcsc/1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf" H 6600 3400 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 6600 3400 50  0001 C CNN "Manufacturer Part Number"
+F 3 "" H 6600 3400 50  0001 C CNN
+F 4 "Varies" H 6600 3400 50  0001 C CNN "Manufacturer Part Number"
 	1    6600 3400
 	1    0    0    -1  
 $EndComp
@@ -471,10 +471,10 @@ L Device:R R9
 U 1 1 616A0885
 P 7200 3200
 F 0 "R9" V 6993 3200 50  0000 C CNN
-F 1 "10kR" V 7084 3200 50  0000 C CNN
+F 1 "30kR" V 7084 3200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 7130 3200 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/lcsc/1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf" H 7200 3200 50  0001 C CNN
-F 4 "RC0805JR-0710KL" H 7200 3200 50  0001 C CNN "Manufacturer Part Number"
+F 3 "" H 7200 3200 50  0001 C CNN
+F 4 "Varies" H 7200 3200 50  0001 C CNN "Manufacturer Part Number"
 	1    7200 3200
 	0    1    -1   0   
 $EndComp
