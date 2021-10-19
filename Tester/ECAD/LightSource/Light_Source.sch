@@ -14,18 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:LED D1
-U 1 1 6167978F
-P 7000 3700
-F 0 "D1" V 7039 3582 50  0000 R CNN
-F 1 "LED" V 6948 3582 50  0000 R CNN
-F 2 "LED_THT:LED_Rectangular_W5.0mm_H2.0mm" H 7000 3700 50  0001 C CNN
-F 3 "~" H 7000 3700 50  0001 C CNN
-F 4 "Varies" H 7000 3700 50  0001 C CNN "Manufacturer Part Number"
-	1    7000 3700
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Device:Laserdiode_M_TYPE LD1
 U 1 1 6167A069
 P 4500 3800
@@ -73,10 +61,6 @@ F 4 "N/A" H 5000 3200 50  0001 C CNN "Manufacturer Part Number"
 	1    5000 3200
 	0    1    1    0   
 $EndComp
-Text HLabel 7000 3550 1    50   UnSpc ~ 0
-Anode
-Text HLabel 7000 3850 3    50   UnSpc ~ 0
-Cathode
 Wire Wire Line
 	4400 3500 4400 3200
 Wire Wire Line
