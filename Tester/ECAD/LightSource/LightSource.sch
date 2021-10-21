@@ -114,7 +114,7 @@ U 1 1 615FA352
 P 5450 2800
 F 0 "RV2" H 5650 2900 50  0000 R CNN
 F 1 "500R" H 5700 3000 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_3386F_Vertical" H 5450 2800 50  0001 C CNN
+F 2 "Potentiometer_THT_custom:Potentiometer_Bourns_3362P_Vertical" H 5450 2800 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/lcsc/1811151536_BOURNS-3362P-1-501LF_C81262.pdf" H 5450 2800 50  0001 C CNN
 F 4 "3362P-1-501LF" H 5450 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    5450 2800
@@ -126,7 +126,7 @@ U 1 1 615FA750
 P 5250 2800
 F 0 "RV1" H 5500 2900 50  0000 R CNN
 F 1 "500R" H 5500 3000 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_3386F_Vertical" H 5250 2800 50  0001 C CNN
+F 2 "Potentiometer_THT_custom:Potentiometer_Bourns_3362P_Vertical" H 5250 2800 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/lcsc/1811151536_BOURNS-3362P-1-501LF_C81262.pdf" H 5250 2800 50  0001 C CNN
 F 4 "3362P-1-501LF" H 5250 2800 50  0001 C CNN "Manufacturer Part Number"
 	1    5250 2800
