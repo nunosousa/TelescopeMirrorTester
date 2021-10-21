@@ -1,0 +1,265 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R_POT_TRIM RV1
+U 1 1 615FA750
+P 7250 3600
+F 0 "RV1" H 7500 3700 50  0000 R CNN
+F 1 "20kR" H 7500 3800 50  0000 R CNN
+F 2 "Potentiometer_THT_custom:Potentiometer_Bourns_3362P_Vertical" H 7250 3600 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811151535_BOURNS-3362P-1-203LF_C81263.pdf" H 7250 3600 50  0001 C CNN
+F 4 "3362P-1-203LF" H 7250 3600 50  0001 C CNN "Manufacturer Part Number"
+	1    7250 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 6153C25B
+P 7250 3900
+F 0 "R6" H 7320 3946 50  0000 L CNN
+F 1 "320R" H 7320 3855 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 7180 3900 50  0001 C CNN
+F 3 "~" H 7250 3900 50  0001 C CNN
+F 4 "Varies" H 7250 3900 50  0001 C CNN "Manufacturer Part Number"
+	1    7250 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 6153E145
+P 7250 4050
+F 0 "#PWR011" H 7250 3800 50  0001 C CNN
+F 1 "GND" H 7255 3877 50  0000 C CNN
+F 2 "" H 7250 4050 50  0001 C CNN
+F 3 "" H 7250 4050 50  0001 C CNN
+	1    7250 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:L7809 U3
+U 1 1 616CB72F
+P 4850 3450
+F 0 "U3" H 4850 3692 50  0000 C CNN
+F 1 "L78M09" H 4850 3601 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 4875 3300 50  0001 L CIN
+F 3 "https://datasheet.lcsc.com/lcsc/1912111437_STMicroelectronics-L78M09ABDT-TR_C157412.pdf" H 4850 3400 50  0001 C CNN
+F 4 "L78M09ABDT-TR" H 4850 3450 50  0001 C CNN "Manufacturer Part Number"
+	1    4850 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 616C043E
+P 9500 5200
+F 0 "H1" H 9600 5246 50  0000 L CNN
+F 1 "MountingHole" H 9600 5155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9500 5200 50  0001 C CNN
+F 3 "~" H 9500 5200 50  0001 C CNN
+F 4 "N/A" H 9500 5200 50  0001 C CNN "Manufacturer Part Number"
+	1    9500 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 616C0BF3
+P 9500 5450
+F 0 "H2" H 9600 5496 50  0000 L CNN
+F 1 "MountingHole" H 9600 5405 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9500 5450 50  0001 C CNN
+F 3 "~" H 9500 5450 50  0001 C CNN
+F 4 "N/A" H 9500 5450 50  0001 C CNN "Manufacturer Part Number"
+	1    9500 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 616C0D9E
+P 9500 5700
+F 0 "H3" H 9600 5746 50  0000 L CNN
+F 1 "MountingHole" H 9600 5655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9500 5700 50  0001 C CNN
+F 3 "~" H 9500 5700 50  0001 C CNN
+F 4 "N/A" H 9500 5700 50  0001 C CNN "Manufacturer Part Number"
+	1    9500 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+9V #PWR015
+U 1 1 616CEA71
+P 5500 3450
+F 0 "#PWR015" H 5500 3300 50  0001 C CNN
+F 1 "+9V" H 5515 3623 50  0000 C CNN
+F 2 "" H 5500 3450 50  0001 C CNN
+F 3 "" H 5500 3450 50  0001 C CNN
+	1    5500 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 616CEE79
+P 3600 3800
+F 0 "#PWR08" H 3600 3550 50  0001 C CNN
+F 1 "GND" H 3605 3627 50  0000 C CNN
+F 2 "" H 3600 3800 50  0001 C CNN
+F 3 "" H 3600 3800 50  0001 C CNN
+	1    3600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR01
+U 1 1 616CF4BA
+P 3600 3450
+F 0 "#PWR01" H 3600 3300 50  0001 C CNN
+F 1 "+12V" H 3615 3623 50  0000 C CNN
+F 2 "" H 3600 3450 50  0001 C CNN
+F 3 "" H 3600 3450 50  0001 C CNN
+	1    3600 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 616ED0EB
+P 5500 3650
+F 0 "C5" H 5615 3696 50  0000 L CNN
+F 1 "0.1uC" H 5615 3605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5538 3500 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2006111832_YAGEO-CC0805KRX7R8BB104_C519981.pdf" H 5500 3650 50  0001 C CNN
+F 4 "CC0805KRX7R8BB104" H 5500 3650 50  0001 C CNN "Manufacturer Part Number"
+	1    5500 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 3500 4200 3450
+Wire Wire Line
+	4200 3450 4550 3450
+Wire Wire Line
+	5150 3450 5500 3450
+Wire Wire Line
+	5500 3450 5500 3500
+$Comp
+L power:GND #PWR019
+U 1 1 616F277E
+P 4200 3800
+F 0 "#PWR019" H 4200 3550 50  0001 C CNN
+F 1 "GND" H 4205 3627 50  0000 C CNN
+F 2 "" H 4200 3800 50  0001 C CNN
+F 3 "" H 4200 3800 50  0001 C CNN
+	1    4200 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR020
+U 1 1 616F2B07
+P 4850 3800
+F 0 "#PWR020" H 4850 3550 50  0001 C CNN
+F 1 "GND" H 4855 3627 50  0000 C CNN
+F 2 "" H 4850 3800 50  0001 C CNN
+F 3 "" H 4850 3800 50  0001 C CNN
+	1    4850 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR021
+U 1 1 616F2CC6
+P 5500 3800
+F 0 "#PWR021" H 5500 3550 50  0001 C CNN
+F 1 "GND" H 5505 3627 50  0000 C CNN
+F 2 "" H 5500 3800 50  0001 C CNN
+F 3 "" H 5500 3800 50  0001 C CNN
+	1    5500 3800
+	1    0    0    -1  
+$EndComp
+Connection ~ 5500 3450
+$Comp
+L power:+12V #PWR018
+U 1 1 616F3254
+P 4200 3450
+F 0 "#PWR018" H 4200 3300 50  0001 C CNN
+F 1 "+12V" H 4215 3623 50  0000 C CNN
+F 2 "" H 4200 3450 50  0001 C CNN
+F 3 "" H 4200 3450 50  0001 C CNN
+	1    4200 3450
+	1    0    0    -1  
+$EndComp
+Connection ~ 4200 3450
+Wire Wire Line
+	4850 3750 4850 3800
+Wire Wire Line
+	3400 3550 3600 3550
+Wire Wire Line
+	3400 3750 3600 3750
+Wire Wire Line
+	3600 3750 3600 3800
+Wire Wire Line
+	3600 3450 3600 3550
+$Comp
+L Connector:Barrel_Jack_Switch J1
+U 1 1 616D162A
+P 3100 3650
+F 0 "J1" H 3157 3967 50  0000 C CNN
+F 1 "Barrel_Jack_Switch" H 3157 3876 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 3150 3610 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2108131530_Korean-Hroparts-Elec-DC-005-20A_C130239.pdf" H 3150 3610 50  0001 C CNN
+F 4 "DC-005-20A" H 3100 3650 50  0001 C CNN "Manufacturer Part Number"
+	1    3100 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3750 3600 3650
+Wire Wire Line
+	3600 3650 3400 3650
+Connection ~ 3600 3750
+$Comp
+L Device:CP C4
+U 1 1 616C6948
+P 4200 3650
+F 0 "C4" H 4318 3696 50  0000 L CNN
+F 1 "0.33uCP" H 4318 3605 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" H 4238 3500 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811071215_AVX-TAJA334K035RNJ_C8014.pdf" H 4200 3650 50  0001 C CNN
+F 4 "TAJA334K035RNJ" H 4200 3650 50  0001 C CNN "Manufacturer Part Number"
+	1    4200 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 6171C3DD
+P 7250 3300
+F 0 "D1" V 7289 3182 50  0000 R CNN
+F 1 "LED" V 7198 3182 50  0000 R CNN
+F 2 "LED_THT:LED_D3.0mm" H 7250 3300 50  0001 C CNN
+F 3 "~" H 7250 3300 50  0001 C CNN
+F 4 "Varies" H 7250 3300 50  0001 C CNN "Manufacturer Part Number"
+	1    7250 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+9V #PWR0101
+U 1 1 6171FA01
+P 7250 3150
+F 0 "#PWR0101" H 7250 3000 50  0001 C CNN
+F 1 "+9V" H 7265 3323 50  0000 C CNN
+F 2 "" H 7250 3150 50  0001 C CNN
+F 3 "" H 7250 3150 50  0001 C CNN
+	1    7250 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 3600 7100 3750
+Wire Wire Line
+	7100 3750 7250 3750
+Connection ~ 7250 3750
+$EndSCHEMATC
