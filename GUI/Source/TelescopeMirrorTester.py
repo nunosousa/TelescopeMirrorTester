@@ -1,6 +1,9 @@
 from Mirror import Mirror
 import numpy as np
 import matplotlib.pyplot as pyplot
+import matplotlib
+matplotlib.use('TkAgg')
+
 
 test = 213
 
@@ -71,7 +74,6 @@ best_fit_r_sample_points, integrated_best_fit_z_sample_points = my_telescope_mir
 pyplot.figure(1)
 
 # Plot test measurement data, best fit curve and interpolated data
-pyplot.subplot(1, 2, 1)
 pyplot.title('Foucault/Wire test results')
 pyplot.plot(expected_r_sample_points, expected_f_sample_points, "b-",
             label="Expected curve (d = {:+.3f}, k = {:+.3f}, RoC = {:+.3f})".format(0.0,
@@ -87,15 +89,6 @@ pyplot.scatter(r, f, label="Raw test data")
 pyplot.plot(r_interpolated, f_interpolated, "g-", label="Raw test data (interpolated)")
 pyplot.xlabel('Mirror radius [mm]')
 pyplot.ylabel('Foucault/Wire test offsets [mm]')
-pyplot.legend()
-
-pyplot.subplot(1, 2, 2)
-pyplot.title('Foucault/Wire test error')
-pyplot.plot(best_fit_r_sample_points, np.subtract(f_interpolated, best_fit_f_sample_points), "r-",
-            label="Raw test data - Best fit curve")
-pyplot.plot(best_fit_r_sample_points, np.zeros(f_interpolated.size), "k--")
-pyplot.xlabel('Mirror radius [mm]')
-pyplot.ylabel('Foucault/Wire test offset error [mm]')
 pyplot.legend()
 
 # Display results ------------------------------------------------------------------------------------------------------
