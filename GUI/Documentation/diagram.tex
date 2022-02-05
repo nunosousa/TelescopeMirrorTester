@@ -5,10 +5,14 @@
 
 
 \begin{tikzpicture}
-\draw[thick,->] (-1,0) -- (8,0) node[anchor=north west] {z};
-\draw[thick,->] (0,-4) -- (0,4) node[anchor=south east] {x};
+\draw[thick,->] (-1,0) -- (12,0) node[anchor=north west] {z};
+\draw[thick,->] (0,-5) -- (0,5) node[anchor=south east] {x};
 
 \draw[red,thick,dashed, rotate=-90] (-4,1.5) parabola bend (0,-0.3) (4, 1.5);
+
+\draw[blue] (1.5, 4) .. controls (-1, 0) .. (1.5, -4);
+
+\draw (4.91,0) circle (5);
 
 \end{tikzpicture}
 
