@@ -5,8 +5,8 @@
 
 
 \begin{tikzpicture}
-\draw[thick,->] (-1,0) -- (11,0) node[anchor=north west] {z};
-\draw[thick,->] (0,-5) -- (0,5) node[anchor=south east] {x};
+\draw[thick,->] (-1,0) -- (11,0) node[anchor=north west] {$z$};
+\draw[thick,->] (0,-5) -- (0,5) node[anchor=south east] {$x$};
 
 \draw[red,thick,dashed, rotate=-90] (-4,1.5) parabola bend (0,-0.3) (4, 1.5);
 
@@ -15,15 +15,18 @@
 \draw (4.91,0) circle (5);
 
 \draw[fill] (4.91,0) circle [radius=0.05];
-\node [below] at (4.91,0) {f(x)};
+\node [below] at (4.91,0) {$f(x)$};
 
 \draw[fill] (0.58,2.5) circle [radius=0.05];
 
 \draw[fill] (0.58,0) circle [radius=0.05];
-\node [below] at (0.58,0) {g(x)};
+\node [below] at (0.58,0) {$g(x_n)$};
+
+\draw[fill] (0, 2.5) circle [radius=0.05];
+\node [left] at (0, 2.5) {$x_n$};
 
 \draw[fill] (-0.3, 0) circle [radius=0.05];
-\node [below left] at (-0.3, 0) {d};
+\node [below left] at (-0.3, 0) {$d$};
 
 \draw[dashed] (0,2.5) -- (0.58,2.5);
 
