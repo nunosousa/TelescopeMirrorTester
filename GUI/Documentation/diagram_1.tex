@@ -33,12 +33,17 @@
 \draw[dashed] (0.58,2.5) -- (4.91,0);
 
 %Measurement 2
-\draw (3.195,0) circle (3.5);
+\draw[green] (3.195,0) circle (3.5);
 
-\draw[fill] (3.195,0) circle [radius=0.05];
-\node [below] at (3.195,0) {$f(x_n)$};
+\draw[green, fill] (3.195,0) circle [radius=0.05];
 
-\draw[fill] (0.03,1.5) circle [radius=0.05];
+%Measurement 3
+\begin{scope}
+    %\clip (-1.5,0) rectangle (1.5,1.5);
+    \draw [red] (7.26,0) circle(7);
+    \draw[red, fill] (7.26,0) circle [radius=0.05];
+    %\draw (-1.5,0) -- (1.5,0);
+\end{scope}
 
 \end{tikzpicture}
 
