@@ -6,11 +6,11 @@
 
 \begin{tikzpicture}
 
-\begin{scope}
-\clip (-1.5,-1) rectangle (8.5,6);
-
 \draw[thick,->] (-1,0) -- (8,0) node[anchor=north west] {$z$};
-\draw[thick,->] (-0.375,-5) -- (-0.375,5) node[anchor=south east] {$x$};
+\draw[thick,->] (-0.375,-1) -- (-0.375,5) node[anchor=south east] {$x$};
+
+\begin{scope}
+\clip (-1.5,-1) rectangle (7.5,5);
 
 \draw[ultra thick, gray, dashed] (1.5, 4) .. controls (-1, 0) .. (1.5, -4);
 
