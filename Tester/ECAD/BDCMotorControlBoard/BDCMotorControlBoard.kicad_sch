@@ -194,65 +194,6 @@
         )
       )
     )
-    (symbol "Device:C_Polarized" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (id 0) (at 0.635 2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "C_Polarized" (id 1) (at 0.635 -2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "" (id 2) (at 0.9652 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "cap capacitor" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Polarized capacitor" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "CP_*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "C_Polarized_0_1"
-        (rectangle (start -2.286 0.508) (end 2.286 1.016)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.778 2.286)
-            (xy -0.762 2.286)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.27 2.794)
-            (xy -1.27 1.778)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (rectangle (start 2.286 -0.508) (end -2.286 -1.016)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type outline))
-        )
-      )
-      (symbol "C_Polarized_1_1"
-        (pin passive line (at 0 3.81 270) (length 2.794)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -3.81 90) (length 2.794)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
     (symbol "Device:Crystal_GND24" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "Y" (id 0) (at 3.175 5.08 0)
         (effects (font (size 1.27 1.27)) (justify left))
@@ -1736,32 +1677,10 @@
     (pin "1" (uuid 8862b6a2-f972-4849-8ba5-a9603e191b62))
   )
 
-  (symbol (lib_id "Device:C_Polarized") (at 82.55 53.34 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 0d914613-a529-4621-9f75-252e47cf7eae)
-    (property "Reference" "C5" (id 0) (at 86.36 51.1809 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "0.33uCP" (id 1) (at 86.36 53.7209 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" (id 2) (at 83.5152 57.15 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1811071215_AVX-TAJA334K035RNJ_C8014.pdf" (id 3) (at 82.55 53.34 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer Part Number" "TAJA334K035RNJ" (id 4) (at 82.55 53.34 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid fe697b82-88cb-4e81-9f05-9cbd3eb45b64))
-    (pin "2" (uuid 981546b5-7e0c-4f85-8894-fbc20f70b3ad))
-  )
-
   (symbol (lib_id "power:GND") (at 132.08 110.49 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 1346440b-e657-478b-a0fb-40edd86dc52a)
-    (property "Reference" "#PWR021" (id 0) (at 132.08 116.84 0)
+    (property "Reference" "#PWR022" (id 0) (at 132.08 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 132.0799 114.3 90)
@@ -1823,7 +1742,7 @@
   (symbol (lib_id "power:+12V") (at 207.01 125.73 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 2e3005f1-0143-43d8-805f-a3e11192a8c4)
-    (property "Reference" "#PWR026" (id 0) (at 207.01 129.54 0)
+    (property "Reference" "#PWR031" (id 0) (at 207.01 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (id 1) (at 207.01 120.65 0))
@@ -1916,7 +1835,7 @@
   (symbol (lib_id "Device:R") (at 189.23 44.45 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 46566c16-77a3-4c6f-8a1d-f5414824f3c2)
-    (property "Reference" "R5" (id 0) (at 186.69 43.1799 0)
+    (property "Reference" "R3" (id 0) (at 186.69 43.1799 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10kR" (id 1) (at 186.69 45.7199 0)
@@ -1992,7 +1911,7 @@
   (symbol (lib_id "power:GND") (at 236.22 68.58 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 56751cfd-8d2f-4d45-84ac-c4fb139e6738)
-    (property "Reference" "#PWR025" (id 0) (at 236.22 74.93 0)
+    (property "Reference" "#PWR032" (id 0) (at 236.22 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 236.22 73.66 0))
@@ -2003,6 +1922,28 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 31d779b8-b66f-4066-9cd1-a6b48ce87ecf))
+  )
+
+  (symbol (lib_id "Device:C") (at 63.5 115.57 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 57303927-ad52-4134-951c-a516debc7343)
+    (property "Reference" "C4" (id 0) (at 67.31 114.2999 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "1uC" (id 1) (at 67.31 116.8399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 64.4652 119.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1810201241_Murata-Electronics-GCM21BR71E105KA56L_C85865.pdf" (id 3) (at 63.5 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer Part Number" "GCM21BR71E105KA56L" (id 4) (at 63.5 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid f6658ba4-db68-404a-86b4-a8c34ffc5a3e))
+    (pin "2" (uuid 9c0f80e0-2852-4638-87a2-2ddf1dab8bb2))
   )
 
   (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 41.91 49.53 0) (mirror y) (unit 1)
@@ -2042,7 +1983,7 @@
   (symbol (lib_id "power:GND") (at 189.23 68.58 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 623b3b7b-1eac-49d0-b7a3-4e3cd89c5aa9)
-    (property "Reference" "#PWR032" (id 0) (at 189.23 74.93 0)
+    (property "Reference" "#PWR025" (id 0) (at 189.23 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 189.23 73.66 0))
@@ -2053,6 +1994,28 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 0ed159a3-a7f9-4931-b760-5cee0ae129cf))
+  )
+
+  (symbol (lib_id "Device:C") (at 82.55 53.34 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 634122ba-2377-4ac5-942a-06b14f1d3299)
+    (property "Reference" "C5" (id 0) (at 86.36 52.0699 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "1uC" (id 1) (at 86.36 54.6099 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 83.5152 57.15 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1810201241_Murata-Electronics-GCM21BR71E105KA56L_C85865.pdf" (id 3) (at 82.55 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer Part Number" "GCM21BR71E105KA56L" (id 4) (at 82.55 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 79b07a0d-7194-44d5-91eb-7d17e57016ae))
+    (pin "2" (uuid 944aafa7-7082-408d-9d0c-fa56ac0c9920))
   )
 
   (symbol (lib_id "Regulator_Linear:LM78M05_TO252") (at 102.87 48.26 0) (unit 1)
@@ -2090,28 +2053,6 @@
     (pin "1" (uuid 430b6474-aebc-4a2f-94df-3af4b9eb1d92))
   )
 
-  (symbol (lib_id "Device:C_Polarized") (at 63.5 115.57 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 69764eb2-be83-4ae6-8821-5accf0ef6760)
-    (property "Reference" "C4" (id 0) (at 67.31 114.3 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "1uCP" (id 1) (at 67.31 116.84 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" (id 2) (at 64.4652 119.38 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1811071214_Kyocera-AVX-TAJA105K016RNJ_C7174.pdf" (id 3) (at 63.5 115.57 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer Part Number" "TAJA105K016RNJ" (id 4) (at 63.5 115.57 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 64487807-535f-4fbe-a9e5-6c5959d7fa6b))
-    (pin "2" (uuid ce0b0192-cc66-4e8d-81fc-23c3abea336e))
-  )
-
   (symbol (lib_id "Device:C") (at 31.75 185.42 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 6d4ba42b-4867-4b3e-8bf9-b48f4116c933)
@@ -2137,7 +2078,7 @@
   (symbol (lib_id "power:+5V") (at 189.23 40.64 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6db44421-815a-45fd-a88c-9f73458a1642)
-    (property "Reference" "#PWR031" (id 0) (at 189.23 44.45 0)
+    (property "Reference" "#PWR024" (id 0) (at 189.23 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 189.23 35.56 0))
@@ -2249,7 +2190,7 @@
   (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 266.7 53.34 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 823d84a2-52a9-4f7f-90e4-24be63776560)
-    (property "Reference" "J3" (id 0) (at 266.7 46.99 0))
+    (property "Reference" "J4" (id 0) (at 266.7 46.99 0))
     (property "Value" "RS485 connector" (id 1) (at 266.7 49.53 0))
     (property "Footprint" "Connector_custom:JILN JL301-50002U01" (id 2) (at 266.7 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -2308,10 +2249,32 @@
     (pin "2" (uuid 1473db15-19bb-44b2-93c9-b8a3a6a74e07))
   )
 
+  (symbol (lib_id "Device:C") (at 44.45 185.42 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 923d6aaf-57b7-488e-9740-83dbcde0e614)
+    (property "Reference" "C2" (id 0) (at 48.26 184.1499 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "1uC" (id 1) (at 48.26 186.6899 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 45.4152 189.23 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1810201241_Murata-Electronics-GCM21BR71E105KA56L_C85865.pdf" (id 3) (at 44.45 185.42 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer Part Number" "GCM21BR71E105KA56L" (id 4) (at 44.45 185.42 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 215d4c30-0d64-4f3a-ac45-bea576095fd5))
+    (pin "2" (uuid bee139a3-0af6-4035-bca9-1da34861a035))
+  )
+
   (symbol (lib_id "power:+5V") (at 132.08 97.79 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9c525d5d-7b00-4315-8408-3a1e54cefba0)
-    (property "Reference" "#PWR022" (id 0) (at 132.08 101.6 0)
+    (property "Reference" "#PWR021" (id 0) (at 132.08 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 132.08 92.71 0))
@@ -2425,7 +2388,7 @@
   (symbol (lib_id "power:+5V") (at 201.93 125.73 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid a832bed8-f603-4911-8716-9a39a3d2746a)
-    (property "Reference" "#PWR024" (id 0) (at 201.93 129.54 0)
+    (property "Reference" "#PWR026" (id 0) (at 201.93 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 201.93 120.65 0))
@@ -2509,28 +2472,6 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 6843c460-13d2-45ca-ac09-5b6f3663a160))
-  )
-
-  (symbol (lib_id "Device:C_Polarized") (at 44.45 185.42 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid b14c4555-b28b-4f03-b670-82abb551af06)
-    (property "Reference" "C2" (id 0) (at 36.83 185.42 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "1uCP" (id 1) (at 35.56 187.96 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" (id 2) (at 45.4152 189.23 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1811071214_Kyocera-AVX-TAJA105K016RNJ_C7174.pdf" (id 3) (at 44.45 185.42 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer Part Number" "TAJA105K016RNJ" (id 4) (at 44.45 185.42 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid f21972d8-609f-4625-9500-239d9ff7cfa5))
-    (pin "2" (uuid 56be7b55-caa7-49bb-bcc5-ac33644ff686))
   )
 
   (symbol (lib_id "Device:C") (at 50.8 115.57 0) (unit 1)
@@ -2632,7 +2573,7 @@
   (symbol (lib_id "Device:R") (at 252.73 55.88 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid ce5e45b8-5118-46f3-92fe-99192ba93e28)
-    (property "Reference" "R4" (id 0) (at 252.73 58.42 90))
+    (property "Reference" "R6" (id 0) (at 252.73 58.42 90))
     (property "Value" "10R" (id 1) (at 252.73 60.96 90))
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 252.73 57.658 90)
       (effects (font (size 1.27 1.27)) hide)
@@ -2666,7 +2607,7 @@
   (symbol (lib_id "Device:R") (at 252.73 53.34 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid d70c201a-8d08-459f-9030-1170e7d985a4)
-    (property "Reference" "R3" (id 0) (at 252.73 48.26 90))
+    (property "Reference" "R5" (id 0) (at 252.73 48.26 90))
     (property "Value" "10R" (id 1) (at 252.73 50.8 90))
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 252.73 55.118 90)
       (effects (font (size 1.27 1.27)) hide)
@@ -2684,7 +2625,7 @@
   (symbol (lib_id "Device:R") (at 189.23 64.77 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d72a5e7b-5156-435a-8ee6-3c881dce7ee5)
-    (property "Reference" "R6" (id 0) (at 186.69 63.4999 0)
+    (property "Reference" "R4" (id 0) (at 186.69 63.4999 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10kR" (id 1) (at 186.69 66.0399 0)
@@ -2706,7 +2647,7 @@
   (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 245.11 135.89 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d99bdc06-0bc1-47f0-87a7-377c85e02821)
-    (property "Reference" "J4" (id 0) (at 247.65 135.8899 0)
+    (property "Reference" "J3" (id 0) (at 247.65 135.8899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Motor connector" (id 1) (at 247.65 138.4299 0)
@@ -2943,23 +2884,23 @@
     (path "/7908778b-aa25-4393-ab5f-f9c4be319c21"
       (reference "#PWR020") (unit 1) (value "GND") (footprint "")
     )
-    (path "/1346440b-e657-478b-a0fb-40edd86dc52a"
-      (reference "#PWR021") (unit 1) (value "GND") (footprint "")
-    )
     (path "/9c525d5d-7b00-4315-8408-3a1e54cefba0"
-      (reference "#PWR022") (unit 1) (value "+5V") (footprint "")
+      (reference "#PWR021") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/1346440b-e657-478b-a0fb-40edd86dc52a"
+      (reference "#PWR022") (unit 1) (value "GND") (footprint "")
     )
     (path "/7625c288-62e3-48fe-9306-1a23d60d7ea5"
       (reference "#PWR023") (unit 1) (value "GND") (footprint "")
     )
-    (path "/a832bed8-f603-4911-8716-9a39a3d2746a"
+    (path "/6db44421-815a-45fd-a88c-9f73458a1642"
       (reference "#PWR024") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/56751cfd-8d2f-4d45-84ac-c4fb139e6738"
+    (path "/623b3b7b-1eac-49d0-b7a3-4e3cd89c5aa9"
       (reference "#PWR025") (unit 1) (value "GND") (footprint "")
     )
-    (path "/2e3005f1-0143-43d8-805f-a3e11192a8c4"
-      (reference "#PWR026") (unit 1) (value "+12V") (footprint "")
+    (path "/a832bed8-f603-4911-8716-9a39a3d2746a"
+      (reference "#PWR026") (unit 1) (value "+5V") (footprint "")
     )
     (path "/494fc5cc-cdce-4c22-a777-7c92d71e976c"
       (reference "#PWR027") (unit 1) (value "+5V") (footprint "")
@@ -2973,10 +2914,10 @@
     (path "/d1e8ab12-af22-4138-a804-2e8e74224ea4"
       (reference "#PWR030") (unit 1) (value "GND") (footprint "")
     )
-    (path "/6db44421-815a-45fd-a88c-9f73458a1642"
-      (reference "#PWR031") (unit 1) (value "+5V") (footprint "")
+    (path "/2e3005f1-0143-43d8-805f-a3e11192a8c4"
+      (reference "#PWR031") (unit 1) (value "+12V") (footprint "")
     )
-    (path "/623b3b7b-1eac-49d0-b7a3-4e3cd89c5aa9"
+    (path "/56751cfd-8d2f-4d45-84ac-c4fb139e6738"
       (reference "#PWR032") (unit 1) (value "GND") (footprint "")
     )
     (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/e16f4679-75eb-4c8c-9fc5-ea53d13d8260"
@@ -2985,16 +2926,16 @@
     (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/a734c3b3-465a-4295-ab4e-29d27b60d914"
       (reference "#PWR034") (unit 1) (value "GND") (footprint "")
     )
-    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/0f991afd-f09d-42df-b890-1da27ead2c04"
+    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/ee0489e6-e9d5-4757-b220-d5173914ba6d"
       (reference "#PWR035") (unit 1) (value "GND") (footprint "")
     )
-    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/ee0489e6-e9d5-4757-b220-d5173914ba6d"
+    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/fd6598b3-cb94-4e3d-9bb7-620040d04e4d"
       (reference "#PWR036") (unit 1) (value "GND") (footprint "")
     )
-    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/c4af4bf5-eb76-4cf4-807b-d28b32bf3913"
+    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/0f991afd-f09d-42df-b890-1da27ead2c04"
       (reference "#PWR037") (unit 1) (value "GND") (footprint "")
     )
-    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/fd6598b3-cb94-4e3d-9bb7-620040d04e4d"
+    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/c4af4bf5-eb76-4cf4-807b-d28b32bf3913"
       (reference "#PWR038") (unit 1) (value "GND") (footprint "")
     )
     (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/25db8341-bc87-4c0b-9157-1fbb5244977c"
@@ -3063,17 +3004,17 @@
     (path "/6d4ba42b-4867-4b3e-8bf9-b48f4116c933"
       (reference "C1") (unit 1) (value "0.1uC") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/b14c4555-b28b-4f03-b670-82abb551af06"
-      (reference "C2") (unit 1) (value "1uCP") (footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder")
+    (path "/923d6aaf-57b7-488e-9740-83dbcde0e614"
+      (reference "C2") (unit 1) (value "1uC") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/b1e83822-0d77-4d03-9dbb-b88a7b6d9e74"
       (reference "C3") (unit 1) (value "0.1uC") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/69764eb2-be83-4ae6-8821-5accf0ef6760"
-      (reference "C4") (unit 1) (value "1uCP") (footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder")
+    (path "/57303927-ad52-4134-951c-a516debc7343"
+      (reference "C4") (unit 1) (value "1uC") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/0d914613-a529-4621-9f75-252e47cf7eae"
-      (reference "C5") (unit 1) (value "0.33uCP") (footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder")
+    (path "/634122ba-2377-4ac5-942a-06b14f1d3299"
+      (reference "C5") (unit 1) (value "1uC") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/8ab1a227-b597-406a-9788-27326137b67e"
       (reference "C6") (unit 1) (value "0.1uC") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -3195,11 +3136,11 @@
     (path "/c5e2c00d-448c-4c2f-bf03-986f2168c6be"
       (reference "J2") (unit 1) (value "SWIM connector") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
-    (path "/823d84a2-52a9-4f7f-90e4-24be63776560"
-      (reference "J3") (unit 1) (value "RS485 connector") (footprint "Connector_custom:JILN JL301-50002U01")
-    )
     (path "/d99bdc06-0bc1-47f0-87a7-377c85e02821"
-      (reference "J4") (unit 1) (value "Motor connector") (footprint "Connector_custom:JILN JL301-50002U01")
+      (reference "J3") (unit 1) (value "Motor connector") (footprint "Connector_custom:JILN JL301-50002U01")
+    )
+    (path "/823d84a2-52a9-4f7f-90e4-24be63776560"
+      (reference "J4") (unit 1) (value "RS485 connector") (footprint "Connector_custom:JILN JL301-50002U01")
     )
     (path "/aafade47-f63c-433f-9121-c530d0c9ca70"
       (reference "Q1") (unit 1) (value "BC846") (footprint "Package_TO_SOT_SMD:SOT-23")
@@ -3243,17 +3184,17 @@
     (path "/f815f5bf-7cc0-4ec4-b32d-9fefdbd20104"
       (reference "R2") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
-    (path "/d70c201a-8d08-459f-9030-1170e7d985a4"
-      (reference "R3") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
-    )
-    (path "/ce5e45b8-5118-46f3-92fe-99192ba93e28"
-      (reference "R4") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
-    )
     (path "/46566c16-77a3-4c6f-8a1d-f5414824f3c2"
-      (reference "R5") (unit 1) (value "10kR") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R3") (unit 1) (value "10kR") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/d72a5e7b-5156-435a-8ee6-3c881dce7ee5"
-      (reference "R6") (unit 1) (value "10kR") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R4") (unit 1) (value "10kR") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/d70c201a-8d08-459f-9030-1170e7d985a4"
+      (reference "R5") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/ce5e45b8-5118-46f3-92fe-99192ba93e28"
+      (reference "R6") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/11f2325b-8b5f-470c-a355-ceb89a082900"
       (reference "R7") (unit 1) (value "20mR") (footprint "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder")
@@ -3312,10 +3253,10 @@
     (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/8843f8de-6ffc-45bd-ac50-2452794171f2"
       (reference "TP1") (unit 1) (value "TEST") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
-    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/009cb0e6-dfcc-464f-8722-0236bdfaf0a0"
+    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/05207924-680a-476d-be0a-215e5b810337"
       (reference "TP2") (unit 1) (value "TEST") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
-    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/05207924-680a-476d-be0a-215e5b810337"
+    (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/009cb0e6-dfcc-464f-8722-0236bdfaf0a0"
       (reference "TP3") (unit 1) (value "TEST") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
     (path "/958134a2-18fa-4f11-b53a-5bfa6b6340d1/5e8c030a-32c2-4775-b6a7-4c61bdd92a88"
