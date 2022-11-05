@@ -1140,10 +1140,6 @@
     (uuid fe837306-92d0-4847-ad21-76c47ae932d1)
   )
 
-  (text "EN = ~DIR~SW0 + DIR~SW1" (at 246.38 44.45 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 07b7d39c-a0b0-4c45-bdbe-4311cd53c86f)
-  )
   (text "* Indicates a PWM-capable pin" (at 177.8 180.34 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid c364973a-9a67-4667-8185-a3a5c6c6cbdf)
@@ -2073,7 +2069,7 @@
     (pin "1" (uuid 973e9de4-9ee1-426e-a1e5-333437444fd5))
   )
 
-  (sheet (at 29.21 25.4) (size 44.45 20.32) (fields_autoplaced)
+  (sheet (at 29.21 25.4) (size 29.21 20.32) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 6228c530-cd5f-42d7-ad0c-53bc7f0c8fac)
@@ -2083,9 +2079,29 @@
     (property "Sheet file" "h_bridge.kicad_sch" (id 1) (at 29.21 46.3046 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
+    (pin "PWM_R" input (at 58.42 36.83 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 84cf03fc-ebb2-4770-974f-e7775e2df685)
+    )
+    (pin "PWM_L" input (at 58.42 39.37 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid d7318abf-ab3c-417b-90ca-0ece452ad999)
+    )
+    (pin "12V" input (at 58.42 27.94 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 7244cd53-617d-441e-8854-d2933002b35b)
+    )
+    (pin "5V" input (at 58.42 30.48 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid c4969e0d-393a-449f-b1c6-93f84fd15d4c)
+    )
+    (pin "Motor_A_Sense" output (at 58.42 43.18 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 683a6ac8-80d4-45bf-81ec-a015893f7780)
+    )
   )
 
-  (sheet (at 29.21 59.69) (size 44.45 20.32) (fields_autoplaced)
+  (sheet (at 29.21 59.69) (size 29.21 20.32) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5)
@@ -2094,6 +2110,26 @@
     )
     (property "Sheet file" "h_bridge.kicad_sch" (id 1) (at 29.21 80.5946 0)
       (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (pin "PWM_R" input (at 58.42 71.12 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 42ea68fc-2502-457c-9ef3-0c5eff0ae1ee)
+    )
+    (pin "PWM_L" input (at 58.42 73.66 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid b03e679c-baed-4ac9-b318-52553da6bff4)
+    )
+    (pin "12V" input (at 58.42 62.23 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid efc4ed94-d5e1-4793-ab7d-6eb7fec125c7)
+    )
+    (pin "5V" input (at 58.42 64.77 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 95f3329e-a0f2-4489-b7c8-20cc92b2fe7f)
+    )
+    (pin "Motor_A_Sense" output (at 58.42 77.47 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 2fcf21d6-228c-48de-9a36-76ec06af31da)
     )
   )
 
@@ -2119,14 +2155,8 @@
     (path "/00000000-0000-0000-0000-000056d72a3d"
       (reference "#PWR05") (unit 1) (value "GND") (footprint "")
     )
-    (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/68d3752f-7226-439f-b7d8-09212eb7666a"
-      (reference "#PWR06") (unit 1) (value "+12V") (footprint "")
-    )
     (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/dc0c7e1c-f768-46fb-9414-144503359bd4"
       (reference "#PWR07") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/e769d16c-bfa6-4670-bc5c-31d40ee751eb"
-      (reference "#PWR08") (unit 1) (value "+5V") (footprint "")
     )
     (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/fbd1272d-5a6c-48bc-98d6-03f03e425800"
       (reference "#PWR09") (unit 1) (value "GND") (footprint "")
@@ -2136,12 +2166,6 @@
     )
     (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/8f94e1af-c11e-42d2-944c-b1744d8e1d48"
       (reference "#PWR011") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/3ab929d1-0206-419c-b1a8-e0cba8b35955"
-      (reference "#PWR012") (unit 1) (value "+12V") (footprint "")
-    )
-    (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/9b70de7b-cf67-4a18-b40f-ef2ec546ab96"
-      (reference "#PWR013") (unit 1) (value "+5V") (footprint "")
     )
     (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/c02e101b-dcbb-4fb8-85d3-f64b91630260"
       (reference "#PWR014") (unit 1) (value "GND") (footprint "")
@@ -2182,14 +2206,8 @@
     (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/27d3e49c-6677-4761-b40c-c72415efebcb"
       (reference "#PWR027") (unit 1) (value "GND") (footprint "")
     )
-    (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/68d3752f-7226-439f-b7d8-09212eb7666a"
-      (reference "#PWR028") (unit 1) (value "+12V") (footprint "")
-    )
     (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/dc0c7e1c-f768-46fb-9414-144503359bd4"
       (reference "#PWR029") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/e769d16c-bfa6-4670-bc5c-31d40ee751eb"
-      (reference "#PWR030") (unit 1) (value "+5V") (footprint "")
     )
     (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/fbd1272d-5a6c-48bc-98d6-03f03e425800"
       (reference "#PWR031") (unit 1) (value "GND") (footprint "")
@@ -2200,17 +2218,11 @@
     (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/8f94e1af-c11e-42d2-944c-b1744d8e1d48"
       (reference "#PWR033") (unit 1) (value "GND") (footprint "")
     )
-    (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/3ab929d1-0206-419c-b1a8-e0cba8b35955"
-      (reference "#PWR034") (unit 1) (value "+12V") (footprint "")
-    )
     (path "/e8cd595e-9a2f-4176-b8d8-c749db3f3f2a"
       (reference "#PWR035") (unit 1) (value "+12V") (footprint "")
     )
     (path "/43f77f2f-010e-4ea8-b229-eff9372394e2"
       (reference "#PWR036") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/9b70de7b-cf67-4a18-b40f-ef2ec546ab96"
-      (reference "#PWR037") (unit 1) (value "+5V") (footprint "")
     )
     (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/c02e101b-dcbb-4fb8-85d3-f64b91630260"
       (reference "#PWR038") (unit 1) (value "GND") (footprint "")
@@ -2457,6 +2469,18 @@
     )
     (path "/a41c6893-146d-4668-8f02-ac1095984d36"
       (reference "R18") (unit 1) (value "10kR") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/8b1b1a57-cbee-4cd4-9408-1a6ca51aea66"
+      (reference "R19") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/e2bab1d0-b2d1-4186-bb43-2bc766dff8a6"
+      (reference "R20") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/8b1b1a57-cbee-4cd4-9408-1a6ca51aea66"
+      (reference "R21") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/9788a4d3-acc1-4c99-a3d3-808b7ec6a8b5/e2bab1d0-b2d1-4186-bb43-2bc766dff8a6"
+      (reference "R22") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/6228c530-cd5f-42d7-ad0c-53bc7f0c8fac/472934e7-34a9-4d28-a5b5-522dc62990e9"
       (reference "U1") (unit 1) (value "IR2103") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
