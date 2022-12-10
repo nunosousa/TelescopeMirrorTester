@@ -1,0 +1,45 @@
+Serial interface help
+2022, Nuno Sousa
+
+
+- List of commands
+
+/run command sets motorID {A, B, C} rotation speed to [0, 255].
+	Command: /run motorID speed
+
+/stop command sets motorID {A, B, C} rotation speed to [0].
+	Command: /stop motorID
+
+/getLimitSw gets the swState {0, 1} of both limit switches on directions {0, 1}
+on motorID {A, B, C}.
+	Command: /getLimitSw motorID
+	Response: /limitSw motorID swState direction swState direction
+
+/setMaxCurrent configures motorID {A, B, C} with MaxCurrent [0, 1000].
+	Command: /setMaxCurrent motorID MaxCurrent
+	Response: /MaxCurrent motorID MaxCurrent
+
+/getMaxCurrent gets motorID {A, B, C} MaxCurrent [0, 1000] value.
+	Command: /getMaxCurrent motorID
+	Response: /MaxCurrent motorID MaxCurrent
+
+
+- List of events
+
+/limitSw event reports the change of swState {0, 1} on limit switch
+direction {0, 1} on motorID {A, B, C}. motorID {A, B, C} is stopped.
+	Event: /limitSw motorID swState direction
+
+/overload event reports an overcurrent event on motorID {A, B, C}
+with current [0, 1000]. motorID {A, B, C} is stopped.
+	Event: /overload motorID current
+
+/remote event reports remoteCode from a received IR remote control button press.
+	Event: /remote remoteCode
+
+
+
+
+
+
+
