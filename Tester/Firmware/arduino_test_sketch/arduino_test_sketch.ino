@@ -3,6 +3,20 @@
 // PCA9535 Interrupt pin
 const byte interruptPin = 13;
 
+// H-bridge enable pins
+const byte hBridgeEn1 = 7;
+const byte hBridgeEn2 = 2;
+const byte hBridgeEn3 = 12;
+
+// H-bridge PWM pins
+const byte hBridgePWM1 = 11;
+const byte hBridgePWM2 = 3;
+
+// Current measurement pins
+const byte analogPin1 = A1;
+const byte analogPin2 = A2;
+const byte analogPin3 = A0;
+
 void setup() {
   // Initialize UART
   Serial.begin(9600);  // start serial for output
@@ -26,16 +40,25 @@ void setup() {
   pinMode(interruptPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(interruptPin), printSwitch, FALLING);
 
+  // Initialize h bridge enable pins as outputs and set their initial values
+  pinMode(hBridgeEn1, OUTPUT);
+  digitalWrite(hBridgeEn1, LOW);
+  pinMode(hBridgeEn2, OUTPUT);
+  digitalWrite(hBridgeEn2, LOW);
+  pinMode(hBridgeEn3, OUTPUT);
+  digitalWrite(hBridgeEn3, LOW);
 
-
-    // initialize the LED pin as an output:
-  //pinMode(ledPin, OUTPUT);
-  // initialize the pushbutton pin as an input:
-  //pinMode(buttonPin, INPUT);
+  // Initialize h bridge PWM pins as normal outputs and set their initial values
+  pinMode(hBridgePWM1, OUTPUT);
+  digitalWrite(hBridgePWM1, LOW);
+  pinMode(hBridgePWM2, OUTPUT);
+  digitalWrite(hBridgePWM2, LOW);
 }
 
 void loop() {
-
+  int rawCurrentValue;
+  float CurrentValue;
+  
   // Toggle LEDs one by one
 
   // LED 0 () on
@@ -101,32 +124,122 @@ void loop() {
   Wire.endTransmission();
 
   // Test the motors in both directions, one by one, and measure the current
-  // do stuf
+  // H-bridge 1 direction a
+  digitalWrite(hBridgeEn1, HIGH);
+  digitalWrite(hBridgePWM1, HIGH);
+  digitalWrite(hBridgePWM2, LOW);
 
+  delay(500);
 
+  // Measure current
+  rawCurrentValue = analogRead(analogPin1);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 1, direction a");
+  Serial.println(CurrentValue);
 
+  delay(500);
 
-/*
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
-  float voltage = sensorValue * (5.0 / 1023.0);
-  // print out the value you read:
-  Serial.println(voltage);
-  // read the state of the pushbutton value:
-  buttonState = digitalRead(buttonPin);
+  // H-bridge 1 direction b
+  digitalWrite(hBridgeEn1, HIGH);
+  digitalWrite(hBridgePWM1, LOW);
+  digitalWrite(hBridgePWM2, HIGH);
 
-  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-  if (buttonState == HIGH) {
-    // turn LED on:
-    digitalWrite(ledPin, HIGH);
-  } else {
-    // turn LED off:
-    digitalWrite(ledPin, LOW);
-  }
+  delay(500);
 
-  delay(1);  // delay in between reads for stability
-  */
+  // Measure current
+  rawCurrentValue = analogRead(analogPin1);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 1, direction b");
+  Serial.println(CurrentValue);
+
+  delay(500);
+
+  // H-bridge 1 disable
+  digitalWrite(hBridgeEn1, LOW);
+  digitalWrite(hBridgePWM1, LOW);
+  digitalWrite(hBridgePWM2, LOW);
+
+  delay(500);
+
+  // Measure current
+  rawCurrentValue = analogRead(analogPin2);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 2, direction a");
+  Serial.println(CurrentValue);
+
+  delay(500);
+
+  // H-bridge 2 direction a
+  digitalWrite(hBridgeEn2, HIGH);
+  digitalWrite(hBridgePWM1, HIGH);
+  digitalWrite(hBridgePWM2, LOW);
+
+  delay(500);
+
+  // Measure current
+  rawCurrentValue = analogRead(analogPin2);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 2, direction b");
+  Serial.println(CurrentValue);
+
+  delay(500);
+
+  // H-bridge 2 direction b
+  digitalWrite(hBridgeEn2, HIGH);
+  digitalWrite(hBridgePWM1, LOW);
+  digitalWrite(hBridgePWM2, HIGH);
+
+  delay(500);
+
+  // Measure current
+  rawCurrentValue = analogRead(analogPin2);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 2, direction b");
+  Serial.println(CurrentValue);
+
+  delay(500);
+
+  // H-bridge 2 disable
+  digitalWrite(hBridgeEn2, LOW);
+  digitalWrite(hBridgePWM1, LOW);
+  digitalWrite(hBridgePWM2, LOW);
+  
+  delay(1000);
+
+  // H-bridge 3 direction a
+  digitalWrite(hBridgeEn3, HIGH);
+  digitalWrite(hBridgePWM1, HIGH);
+  digitalWrite(hBridgePWM2, LOW);
+
+  delay(500);
+
+  // Measure current
+  rawCurrentValue = analogRead(analogPin3);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 3, direction a");
+  Serial.println(CurrentValue);
+
+  delay(500);
+
+  // H-bridge 3 direction b
+  digitalWrite(hBridgeEn3, HIGH);
+  digitalWrite(hBridgePWM1, LOW);
+  digitalWrite(hBridgePWM2, HIGH);
+
+  delay(500);
+
+  // Measure current
+  rawCurrentValue = analogRead(analogPin3);
+  CurrentValue = rawCurrentValue * 20.0;
+  Serial.println("Current on H-bridge 3, direction b");
+  Serial.println(CurrentValue);
+
+  delay(500);
+
+  // H-bridge 3 disable
+  digitalWrite(hBridgeEn3, LOW);
+  digitalWrite(hBridgePWM1, LOW);
+  digitalWrite(hBridgePWM2, LOW);
 }
 
 void printSwitch() {
