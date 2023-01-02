@@ -41,6 +41,7 @@ void setup() {
 
   // Initialize interrupt pin
   pinMode(interruptPin, INPUT);
+  digitalWrite(interruptPin, LOW);
   attachInterrupt(digitalPinToInterrupt(interruptPin), printSwitch, FALLING);
 
   // Initialize h bridge enable pins as outputs and set their initial values
@@ -145,7 +146,7 @@ void loop() {
   // Measure current
   rawCurrentValue = analogRead(analogPin1);
   CurrentValue = (rawCurrentValue / 20.0) / 0.25;
-  Serial.println("Current on H-bridge 1, direction a");
+  Serial.print("Current on H-bridge 1, direction a: ");
   Serial.println(CurrentValue);
   delay(1000);
 
@@ -158,7 +159,7 @@ void loop() {
   // Measure current
   rawCurrentValue = analogRead(analogPin1);
   CurrentValue = (rawCurrentValue / 20.0) / 0.25;
-  Serial.println("Current on H-bridge 1, direction b");
+  Serial.print("Current on H-bridge 1, direction b: ");
   Serial.println(CurrentValue);
   delay(1000);
 
@@ -177,7 +178,7 @@ void loop() {
   // Measure current
   rawCurrentValue = analogRead(analogPin2);
   CurrentValue = (rawCurrentValue / 20.0) / 0.25;
-  Serial.println("Current on H-bridge 2, direction a");
+  Serial.print("Current on H-bridge 2, direction a: ");
   Serial.println(CurrentValue);
   delay(1000);
 
@@ -190,7 +191,7 @@ void loop() {
   // Measure current
   rawCurrentValue = analogRead(analogPin2);
   CurrentValue = (rawCurrentValue / 20.0) / 0.25;
-  Serial.println("Current on H-bridge 2, direction b");
+  Serial.print("Current on H-bridge 2, direction b: ");
   Serial.println(CurrentValue);
   delay(1000);
 
@@ -209,7 +210,7 @@ void loop() {
   // Measure current
   rawCurrentValue = analogRead(analogPin3);
   CurrentValue = (rawCurrentValue / 20.0) / 0.25;
-  Serial.println("Current on H-bridge 3, direction a");
+  Serial.print("Current on H-bridge 3, direction a: ");
   Serial.println(CurrentValue);
   delay(1000);
 
@@ -222,7 +223,7 @@ void loop() {
   // Measure current
   rawCurrentValue = analogRead(analogPin3);
   CurrentValue = (rawCurrentValue / 20.0) / 0.25;
-  Serial.println("Current on H-bridge 3, direction b");
+  Serial.print("Current on H-bridge 3, direction b: ");
   Serial.println(CurrentValue);
   delay(1000);
 
@@ -252,21 +253,90 @@ void loop() {
     Serial.println("Interrupt pin low");
   }
 
-  char pinState1 = 0, pinState2 = 0, pinState3 = 0;
+  char registerValue;
 
   // Read IO switch pins
+  Serial.println("Switch input state:");
+
   Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
   Wire.write(0x00);               // Input port 0 address
-  Wire.requestFrom(0x20, 2);
-  pinState1 = Wire.read();
-  pinState2 = Wire.read();
-  pinState3 = Wire.read();
-  Wire.endTransmission();
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Input port 0: ");
+    Serial.println(registerValue, BIN);
+  }
 
-  Serial.println("Switch input state:");
-  Serial.println(pinState1, BIN);
-  Serial.println(pinState2, BIN);
-  Serial.println(pinState3, BIN);
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x01);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Input port 1: ");
+    Serial.println(registerValue, BIN);
+  }
+
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x02);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Output port 0: ");
+    Serial.println(registerValue, BIN);
+  }
+
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x03);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Output port 1: ");
+    Serial.println(registerValue, BIN);
+  }
+
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x04);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Polarity Inversion port 0: ");
+    Serial.println(registerValue, BIN);
+  }
+
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x05);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Polarity Inversion port 1: ");
+    Serial.println(registerValue, BIN);
+  }
+
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x06);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Configuration port 0: ");
+    Serial.println(registerValue, BIN);
+  }
+
+  Wire.beginTransmission(0x20);   // begins a transmission to PCA9535 on address 0x20
+  Wire.write(0x07);               // Input port 0 address
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x20, 1);
+  if (Wire.available() >= 1) {
+    registerValue = Wire.read();
+    Serial.print("Configuration port 1: ");
+    Serial.println(registerValue, BIN);
+  }
 }
 
 void printSwitch() {
