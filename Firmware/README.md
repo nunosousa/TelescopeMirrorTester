@@ -1,5 +1,7 @@
 Install the following packages:
 
+sudo apt-get install cmake
+
 sudo apt-get install gcc-avr
 sudo apt-get install gdb-avr
 sudo apt-get install avr-libc
