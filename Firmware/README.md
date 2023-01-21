@@ -18,3 +18,9 @@ avr-objcopy -O ihex -R .eeprom main main.hex
 
 Program the HEX firmware onto the AVR
 sudo avrdude -F -V -c avrispmkII -p ATmega328 -P usb -U flash:w:main.hex
+
+
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ../source
+cmake --build . --config Release --target MyApp
