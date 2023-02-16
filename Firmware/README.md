@@ -1,7 +1,7 @@
 Install the following packages:
 
 sudo apt-get install cmake
-
+sudo apt-get install git
 sudo apt-get install gcc-avr
 sudo apt-get install gdb-avr
 sudo apt-get install avr-libc
@@ -24,3 +24,10 @@ mkdir build
 cd build
 cmake -G "Unix Makefiles" ../source
 cmake --build . --config Release --target MyApp
+
+mkdir build
+cd build
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ../source
+cmake --build . --config Release
+
+cmake -DCMAKE_TOOLCHAIN_FILE=myToolchain.cmake path/to/source

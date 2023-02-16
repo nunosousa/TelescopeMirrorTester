@@ -1,7 +1,19 @@
-cmake_minimum_required(VERSION 3.11)
+# Preamble
+cmake_minimum_required(VERSION 3.12)
+project(3D_stage_controller_firmware LANGUAGES C VERSION 0.1)
 
-# Project name
-project(3D_stage_controller_firmware LANGUAGES C)
+# Project wide setup
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+set(CMAKE_CXX_EXTENSIONS NO)
+
+# Main targets built by this project
+add_subdirectory(src)
+
+
+
+set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Debug Release Profile)
 
 # Product filename
 set(PRODUCT_NAME my_firmware)
@@ -25,21 +37,18 @@ set(H_FUSE 0xda)
 set(L_FUSE 0xfd)
 set(LOCK_BIT 0xff)
 
-# Use AVR GCC toolchain
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_CXX_COMPILER avr-g++)
-set(CMAKE_C_COMPILER avr-gcc)
-set(CMAKE_ASM_COMPILER avr-gcc)
-
+#add_definitions(-DFOOBAR_VERSION=\"${FooBar_VERSION}\")
 
 # Pass defines to compiler
-add_definitions(
+#-> target_compile_definitions
+add_compile_definitions(
     -DF_CPU=${F_CPU}
     -DBAUD=${BAUD}
 )
 # mmcu MUST be passed to bot the compiler and linker, this handle the linker
 set(CMAKE_EXE_LINKER_FLAGS -mmcu=${MCU})
 
+#-> target_compile_options
 add_compile_options(
     -mmcu=${MCU} # MCU
     -std=gnu99 # C99 standard
@@ -52,8 +61,6 @@ add_compile_options(
     -Werror
     -Wfatal-errors
     -Wl,--relax,--gc-sections
-    -g
-    -gdwarf-2
     -funsigned-char # a few optimizations
     -funsigned-bitfields
     -fpack-struct
@@ -64,13 +71,14 @@ add_compile_options(
     -fno-tree-scev-cprop
 )
 
-file(GLOB SRC_FILES "src/*.c") # Load all files in src folder
+
 
 # Create one target
 add_executable(${PRODUCT_NAME} ${SRC_FILES})
 
 # Rename the output to .elf as we will create multiple files
-set_target_properties(${PRODUCT_NAME} PROPERTIES OUTPUT_NAME ${PRODUCT_NAME}.elf)
+set_target_properties(${PRODUCT_NAME} PROPERTIES
+	OUTPUT_NAME ${PRODUCT_NAME}.elf)
 #set_target_properties(${PRODUCT_NAME} PROPERTIES ADDITIONAL_CLEAN_FILES "${PRODUCT_NAME}.hex;${PRODUCT_NAME}.eeprom;${PRODUCT_NAME}.lst")
 
 # Strip binary for upload
