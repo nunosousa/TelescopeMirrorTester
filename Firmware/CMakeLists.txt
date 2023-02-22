@@ -14,6 +14,13 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED YES)
 set(CMAKE_C_EXTENSIONS NO)
 
+set_property(CACHE
+	CMAKE_BUILD_TYPE
+		PROPERTY
+			STRINGS Debug Release Profile
+)
+
+
 #=============================
 # Main targets built by this project
 #=============================
@@ -24,4 +31,3 @@ add_subdirectory(src)
 
 
 
-set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Debug Release Profile)

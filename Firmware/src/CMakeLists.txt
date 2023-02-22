@@ -8,17 +8,13 @@ set_target_properties(firmware
 		OUTPUT_NAME firmware.elf
 )
 
-configure_file(firmware_version.cpp.in firmware_version.cpp @ONLY)
-add_library(firmware_version
-	STATIC
-		${CMAKE_CURRENT_BINARY_DIR}/firmware_version.cpp
-)
+add_subdirectory(libs)
+
+add_library(firmwareBuildInfo STATIC)
 target_link_libraries(firmware
 	PRIVATE
-		firmware_version
+		firmwareBuildInfo
 )
-
-add_subdirectory(hal)
 
 #=============================
 # Clean extra files
