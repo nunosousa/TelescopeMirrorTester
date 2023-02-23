@@ -20,14 +20,7 @@ set_property(CACHE
 			STRINGS Debug Release Profile
 )
 
-
 #=============================
 # Main targets built by this project
 #=============================
 add_subdirectory(src)
-
-
-
-
-
-

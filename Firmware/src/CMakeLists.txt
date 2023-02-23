@@ -1,6 +1,8 @@
 #=============================
 # Define targets
 #=============================
+add_library(firmwareBuildInfo STATIC)
+
 add_executable(firmware main.c)
 
 set_target_properties(firmware
@@ -8,13 +10,12 @@ set_target_properties(firmware
 		OUTPUT_NAME firmware.elf
 )
 
-add_subdirectory(libs)
-
-add_library(firmwareBuildInfo STATIC)
 target_link_libraries(firmware
 	PRIVATE
 		firmwareBuildInfo
 )
+
+add_subdirectory(libs)
 
 #=============================
 # Clean extra files
