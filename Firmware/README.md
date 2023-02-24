@@ -21,13 +21,6 @@ sudo avrdude -F -V -c avrispmkII -p ATmega328 -P usb -U flash:w:main.hex
 
 
 mkdir build
-cd build
-cmake -G "Unix Makefiles" ../source
+cd build-Release
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/AVRToolchain.cmake ../src
 cmake --build . --config Release --target MyApp
-
-mkdir build
-cd build
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ../source
-cmake --build . --config Release
-
-cmake -DCMAKE_TOOLCHAIN_FILE=myToolchain.cmake path/to/source

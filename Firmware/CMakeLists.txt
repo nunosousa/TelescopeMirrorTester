@@ -1,7 +1,7 @@
 #=============================
 # Preamble
 #=============================
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.13)
 project(controller_board
 	LANGUAGES C
 	VERSION 0.1
@@ -13,12 +13,6 @@ project(controller_board
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED YES)
 set(CMAKE_C_EXTENSIONS NO)
-
-set_property(CACHE
-	CMAKE_BUILD_TYPE
-		PROPERTY
-			STRINGS Debug Release Profile
-)
 
 #=============================
 # Main targets built by this project
