@@ -20,7 +20,7 @@ Program the HEX firmware onto the AVR
 sudo avrdude -F -V -c avrispmkII -p ATmega328 -P usb -U flash:w:main.hex
 
 
-mkdir build
+mkdir build-Release
 cd build-Release
-cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/AVRToolchain.cmake ../src
-cmake --build . --config Release --target MyApp
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/AVRToolchain.cmake ../
+cmake --build . --config Release --target firmware
