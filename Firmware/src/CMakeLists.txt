@@ -29,7 +29,10 @@ set(LOCK_BIT 0xff)
 #=============================
 add_library(firmwareBuildInfo STATIC)
 
-add_executable(firmware main.c)
+target_sources(firmware
+	PRIVATE
+		${CMAKE_CURRENT_LIST_DIR}/main.c
+)
 
 set_target_properties(firmware
 	PROPERTIES
