@@ -1,2 +1,2 @@
 add_subdirectory(hal)
-add_subdirectory(buildInfo)
+add_subdirectory(versionInfo)
