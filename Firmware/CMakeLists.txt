@@ -17,9 +17,4 @@ set(CMAKE_C_EXTENSIONS NO)
 #=============================
 # Main targets built by this project
 #=============================
-add_executable(firmware)
-
-#=============================
-# Add sources
-#=============================
 add_subdirectory(src)
