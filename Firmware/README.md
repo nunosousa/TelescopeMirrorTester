@@ -32,3 +32,6 @@ cd build-Release
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/AVRToolchain.cmake ../
 cmake --build . --config Release --target firmware
 ```
+
+On VSCode, just open the editor on the root repository folder, and configure cmake as shown:
+![](./img/vscode_config.PNG)
