@@ -41,34 +41,37 @@ target_link_libraries(firmware
 		firmwareBuildInfo
 )
 
-add_compile_definitions(
-    F_CPU=${F_CPU}
-    BAUD=${BAUD}
+target_compile_definitions(firmware
+	PRIVATE
+		F_CPU=${F_CPU}
+    	BAUD=${BAUD}
 )
 
-add_compile_options(
-	-mmcu=${MCU}
-	-Os
-	-Wall
-	-Wno-main
-	-Wundef
-	-pedantic
-	-Wstrict-prototypes
-	-Werror
-	-Wfatal-errors
-	-Wl--relax,--gc-sections
-	-funsigned-char
-	-funsigned-bitfields
-	-fpack-struct
-	-fshort-enums
-	-ffunction-sections
-	-fdata-sections
-	-fno-split-wide-types
-	-fno-tree-scev-cprop
+target_compile_options(firmware
+	PRIVATE
+		-mmcu=${MCU}
+		-Os
+		-Wall
+		-Wno-main
+		-Wundef
+		-pedantic
+		-Wstrict-prototypes
+		-Werror
+		-Wfatal-errors
+		#-Wl--relax,--gc-sections
+		-funsigned-char
+		-funsigned-bitfields
+		-fpack-struct
+		-fshort-enums
+		-ffunction-sections
+		-fdata-sections
+		-fno-split-wide-types
+		-fno-tree-scev-cprop
 )
 
-add_link_options(
-	-mmcu=${MCU}
+target_link_options(firmware
+	PRIVATE
+		-mmcu=${MCU}
 )
 
 add_subdirectory(libs)
