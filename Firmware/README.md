@@ -34,4 +34,4 @@ cmake --build . --config Release --target firmware
 ```
 
 On VSCode, just open the editor on the root repository folder, and configure cmake as shown:
-![](./img/vscode_config.PNG)
+![](./doc/img/vscode_config.PNG)

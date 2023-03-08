@@ -20,11 +20,12 @@ set(L_FUSE 0xfd)
 set(LOCK_BIT 0xff)
 
 #=============================
-# Define targets
+# Configure main target
 #=============================
-add_library(firmwareBuildInfo STATIC)
-
-add_executable(firmware main.c)
+target_sources(firmware
+	PRIVATE
+		${CMAKE_CURRENT_LIST_DIR}/main.c
+)
 
 set_target_properties(firmware
 	PROPERTIES
@@ -58,9 +59,6 @@ target_link_options(firmware
 	PRIVATE
 		-mmcu=${MCU}
 )
-
-add_subdirectory(libs)
-#add_subdirectory(code...)
 
 #=============================
 # Clean extra files
