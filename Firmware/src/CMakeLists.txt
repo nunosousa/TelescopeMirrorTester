@@ -1,18 +1,13 @@
 #=============================
 # Define variables
 #=============================
-#set(CMAKE_C_FLAGS_RELEASE "-p -g -O2" CACHE STRING "")
-#set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-p -g -O2" CACHE STRING "")
-#set(CMAKE_STATIC_LINKER_FLAGS_RELEASE "-p -g -O2" CACHE STRING "")
-
 ## AVR Chip Configuration
-# 16Mhz, this should match the crystal on your board,
-# I use 8Mhz and 3.3V for the lowest power consumption
+# 16Mhz, this should match the crystal on the board
 set(F_CPU 16000000UL)
-# CPU, you can find the list here:
-# https://gcc.gnu.org/onlinedocs/gcc/AVR-Options.html
+# MCU
 set(MCU atmega328p)
-# Default Baudrate for UART, read avr include/util/setbaud.h for usage
+# Default Baudrate for UART, read avr include/util/setbaud.h for usage:
+# https://www.nongnu.org/avr-libc/user-manual/group__util__setbaud.html
 set(BAUD 9600)
 # The programmer to use, read avrdude manual for list
 set(PROG_TYPE avrispmkII)
@@ -46,27 +41,17 @@ target_compile_definitions(firmware
 		F_CPU=${F_CPU}
     	BAUD=${BAUD}
 )
-
+# Info on configurations:
+# https://gcc.gnu.org/wiki/avr-gcc
+# https://gcc.gnu.org/onlinedocs/gcc/AVR-Options.html
+# https://gcc.gnu.org/onlinedocs/gcc/Option-Index.html
 target_compile_options(firmware
 	PRIVATE
 		-mmcu=${MCU}
-		-Os
 		-Wall
-		-Wno-main
-		-Wundef
-		-pedantic
-		-Wstrict-prototypes
-		-Werror
+		-Wextra
+		-Wpedantic
 		-Wfatal-errors
-		#-Wl--relax,--gc-sections
-		-funsigned-char
-		-funsigned-bitfields
-		-fpack-struct
-		-fshort-enums
-		-ffunction-sections
-		-fdata-sections
-		-fno-split-wide-types
-		-fno-tree-scev-cprop
 )
 
 target_link_options(firmware
