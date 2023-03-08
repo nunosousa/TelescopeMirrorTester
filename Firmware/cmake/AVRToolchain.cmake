@@ -1,4 +1,5 @@
 # Use AVR GCC toolchain
+# https://www.nongnu.org/avr-libc/user-manual/index.html
 find_program(AVR_OBJDUMP avr-objdump REQUIRED)
 find_program(AVR_STRIP avr-strip REQUIRED)
 find_program(AVR_OBJCOPY avr-objcopy REQUIRED)

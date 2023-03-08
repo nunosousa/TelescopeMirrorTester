@@ -2,10 +2,10 @@
 # Define variables
 #=============================
 ## AVR Chip Configuration
-# 16Mhz, this should match the crystal on the board
-set(F_CPU 16000000UL)
 # MCU
 set(MCU atmega328p)
+# 16Mhz, this should match the crystal on the board
+set(F_CPU 16000000UL)
 # Default Baudrate for UART, read avr include/util/setbaud.h for usage:
 # https://www.nongnu.org/avr-libc/user-manual/group__util__setbaud.html
 set(BAUD 9600)
