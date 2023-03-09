@@ -17,10 +17,11 @@ set(CMAKE_C_EXTENSIONS NO)
 #=============================
 # Define targets
 #=============================
-add_library(firmwareBuildInfo
-	STATIC)
+add_library(firmwareBuildInfo STATIC)
 add_subdirectory(libs)
 
 add_executable(firmware)
 add_subdirectory(hal)
 add_subdirectory(src)
+
+include(cmake/CMakeLists.txt)
