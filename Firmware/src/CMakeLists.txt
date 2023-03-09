@@ -3,14 +3,16 @@
 #=============================
 ## AVR Chip Configuration
 # MCU
-set(MCU atmega328p)
+set(MCU atmega328)
+set(MCU_DUDE m328)
 # 16Mhz, this should match the crystal on the board
 set(F_CPU 16000000UL)
 # Default Baudrate for UART, read avr include/util/setbaud.h for usage:
 # https://www.nongnu.org/avr-libc/user-manual/group__util__setbaud.html
 set(BAUD 9600)
-# The programmer to use, read avrdude manual for list
-set(PROG_TYPE avrispmkII)
+# The programmer to use, read avrdude manual 
+# https://avrdudes.github.io/avrdude/
+set(PROG_TYPE usbasp)
 
 # AVR Fuses, must be in concordance with your hardware and F_CPU
 # http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega328p
@@ -55,6 +57,7 @@ target_compile_options(firmware
 		-Wfatal-errors
 )
 
+# https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html
 target_link_options(firmware
 	PRIVATE
 		-mmcu=${MCU}
@@ -97,19 +100,19 @@ add_custom_target(eeprom
 
 # Upload the firmware
 add_custom_target(upload
-	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU} -U flash:w:firmware.hex
+	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU_DUDE} -v -U flash:w:firmware.hex
 	DEPENDS
 		hex
 )
 
 # Upload the eeprom
 add_custom_target(upload_eeprom
-	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU} -U eeprom:w:firmware.eep
+	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU_DUDE} -v -U eeprom:w:firmware.eep
 	DEPENDS
 		eeprom
 )
 
 # Burn fuses
 add_custom_target(fuses
-	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU} -U lfuse:w:${L_FUSE}:m -U hfuse:w:${H_FUSE}:m -U efuse:w:${E_FUSE}:m -U lock:w:${LOCK_BIT}:m
+	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU_DUDE} -v -U lfuse:w:${L_FUSE}:m -U hfuse:w:${H_FUSE}:m -U efuse:w:${E_FUSE}:m -U lock:w:${LOCK_BIT}:m
 )
