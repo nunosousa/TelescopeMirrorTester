@@ -73,7 +73,13 @@ set_directory_properties(
 # Strip binary for upload
 add_custom_target(strip
 	ALL
-		${AVR_STRIP} firmware.elf
+		${AVR_STRIP}
+			-v
+			--strip-all
+			--input-target=elf32-avr
+			--output-target=elf32-avr
+			-o firmware_stripped.elf
+			firmware.elf
 	DEPENDS
 		firmware
 )
@@ -81,7 +87,13 @@ add_custom_target(strip
 # Transform binary into hex file, we ignore the eeprom segments in the step
 add_custom_target(hex
 	ALL
-		${AVR_OBJCOPY} -R .eeprom -O ihex firmware.elf firmware.hex
+		${AVR_OBJCOPY}
+			-v
+			--input-target=elf32-avr
+			--output-target=ihex
+			--remove-section=.eeprom
+			firmware_stripped.elf
+			firmware.hex
 	DEPENDS
 		strip
 )
@@ -89,26 +101,49 @@ add_custom_target(hex
 # Transform binary into hex file, this is the eeprom part (empty if you don't
 # use eeprom static variables)
 add_custom_target(eeprom
-	${AVR_OBJCOPY} -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0 -O ihex firmware.elf firmware.eep
+	${AVR_OBJCOPY}
+		-v
+		--input-target=elf32-avr
+		--output-target=ihex
+		--only-section=.eeprom
+		--set-section-flags .eeprom="alloc,load"
+		--change-section-lma .eeprom=0
+		firmware_stripped.elf
+		firmware.eep
 	DEPENDS
 		strip
 )
 
 # Upload the firmware
 add_custom_target(upload
-	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU_DUDE} -v -U flash:w:firmware.hex
+	${AVR_DUDE}
+		-v
+		-c ${PROG_TYPE}
+		-p ${MCU_DUDE}
+		-U flash:w:firmware.hex
 	DEPENDS
 		hex
 )
 
 # Upload the eeprom
 add_custom_target(upload_eeprom
-	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU_DUDE} -v -U eeprom:w:firmware.eep
+	${AVR_DUDE}
+		-v
+		-c ${PROG_TYPE}
+		-p ${MCU_DUDE}
+		-U eeprom:w:firmware.eep
 	DEPENDS
 		eeprom
 )
 
 # Burn fuses
 add_custom_target(fuses
-	${AVR_DUDE} -c ${PROG_TYPE} -p ${MCU_DUDE} -v -U lfuse:w:${L_FUSE}:m -U hfuse:w:${H_FUSE}:m -U efuse:w:${E_FUSE}:m -U lock:w:${LOCK_BIT}:m
+	${AVR_DUDE}
+		-v
+		-c ${PROG_TYPE}
+		-p ${MCU_DUDE}
+		-U lfuse:w:${L_FUSE}:m
+		-U hfuse:w:${H_FUSE}:m
+		-U efuse:w:${E_FUSE}:m
+		-U lock:w:${LOCK_BIT}:m
 )
