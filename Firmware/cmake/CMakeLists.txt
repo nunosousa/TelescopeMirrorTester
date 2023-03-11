@@ -3,8 +3,8 @@
 #=============================
 ## AVR Chip Configuration
 # MCU
-set(MCU atmega328)
-set(MCU_DUDE m328)
+set(MCU atmega328p)
+set(MCU_DUDE m328p)
 # 16Mhz, this should match the crystal on the board
 set(F_CPU 16000000UL)
 # Default Baudrate for UART, read avr include/util/setbaud.h for usage:
@@ -13,7 +13,6 @@ set(BAUD 9600)
 # The programmer to use, read avrdude manual 
 # https://avrdudes.github.io/avrdude/
 set(PROG_TYPE usbasp)
-
 # AVR Fuses, must be in concordance with your hardware and F_CPU
 # http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega328p
 set(E_FUSE 0xfd)
