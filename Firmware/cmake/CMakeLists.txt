@@ -57,6 +57,7 @@ target_compile_options(firmware
 target_link_options(firmware
 	PRIVATE
 		-mmcu=${MCU}
+		-Wl,-Map,firmware.map
 )
 
 #=============================
@@ -70,6 +71,21 @@ set_directory_properties(
 #=============================
 # Define custom targets
 #=============================
+# Display information from the build object file
+add_custom_target(dump
+	ALL
+		${AVR_OBJDUMP}
+			--source
+			--line-numbers
+			--full-contents
+			--section-headers
+			--target=elf32-avr
+			firmware.elf
+			> firmware.lst
+		DEPENDS
+			firmware
+)
+
 # Strip binary for upload
 add_custom_target(strip
 	ALL
