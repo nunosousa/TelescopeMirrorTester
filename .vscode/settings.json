@@ -2,5 +2,10 @@
     "cmake.sourceDirectory": "${workspaceFolder}/Firmware",
     "cmake.buildDirectory": "${workspaceFolder}/Firmware/build-${buildType}",
     "cmake.configureArgs": ["-DCMAKE_TOOLCHAIN_FILE=../cmake/AVRToolchain.cmake"],
-    "cmake.generator": "Unix Makefiles"
+    "cmake.generator": "Unix Makefiles",
+    "files.associations": {
+        "io.h": "c",
+        "iom328p.h": "c",
+        "stddef.h": "c"
+    }
 }

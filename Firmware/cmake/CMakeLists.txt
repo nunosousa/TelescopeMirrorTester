@@ -28,11 +28,6 @@ set_target_properties(firmware
 		OUTPUT_NAME firmware.elf
 )
 
-target_link_libraries(firmware
-	PRIVATE
-		firmwareBuildInfo
-)
-
 target_compile_definitions(firmware
 	PRIVATE
 		F_CPU=${F_CPU}
