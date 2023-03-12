@@ -1,7 +1,10 @@
+#include <stdbool.h>
+#include <stdio.h>
+
 #include <avr/io.h>
 #include <util/delay.h>
-#include <stdbool.h>
-#include "uart.h"
+
+#include "../hal/uart.h"
 
 // timeMilliseconds is written to by the timer interrupt, nothing else.
 // Any of the event handlers can read from it to get the current time.
@@ -14,6 +17,8 @@ bool event3 = false;
 bool event4 = false;
 bool event5 = false;
 // etc...
+
+FILE uart_str = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
 
 void timerInterrupt(void) {
 	
@@ -33,8 +38,6 @@ static void ioinit(void) {
 	stdin = &uart_str;
 	stderr = &uart_str;
 }
-
-FILE uart_str = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
 
 int main(void) {
 

@@ -19,7 +19,7 @@ void uart_init(void);
 /*
  * Send one character to the UART.
  */
-int uart_putchar(uint8_t c, FILE *stream);
+uint16_t uart_putchar(uint8_t c, FILE *stream);
 
 /*
  * Size of internal line buffer used by uart_getchar().
@@ -31,4 +31,4 @@ int uart_putchar(uint8_t c, FILE *stream);
  * line-buffered, and one character is returned from the buffer at
  * each invokation.
  */
-int uart_getchar(FILE *stream);
+uint16_t uart_getchar(FILE *stream);

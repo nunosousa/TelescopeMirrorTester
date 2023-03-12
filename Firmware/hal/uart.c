@@ -23,18 +23,18 @@
  */
 void uart_init(void)
 {
-	//UCSRA = _BV(U2X);             /* improve baud rate error by using 2x clk */
-	//UBRRL = (F_CPU / (8UL * BAUD)) - 1;
+	// UCSRA = _BV(U2X);             /* improve baud rate error by using 2x clk */
+	// UBRRL = (F_CPU / (8UL * BAUD)) - 1;
 
-	uint16_t ubrr = (F_CPU / (8UL * BAUD)) - 1;//F_CPU/16/BAUD-1;
+	uint16_t ubrr = (F_CPU / (8UL * BAUD)) - 1; // F_CPU/16/BAUD-1;
 
 	/*Set baud rate */
-	UBRR0H = (uint8_t)(ubrr>>8);
+	UBRR0H = (uint8_t)(ubrr >> 8);
 	UBRR0L = (uint8_t)ubrr;
 	/* Enable receiver and transmitter */
-	UCSR0B = (1<<RXEN0)|(1<<TXEN0);
+	UCSR0B = (1 << RXEN0) | (1 << TXEN0);
 	/* Set frame format: 8data, 2stop bit */
-	UCSR0C = (1<<USBS0)|(3<<UCSZ00);
+	UCSR0C = (1 << USBS0) | (3 << UCSZ00);
 }
 
 /*
@@ -51,7 +51,7 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
 
 	if (c == '\n')
 		uart_putchar('\r', stream);
-	
+
 	loop_until_bit_is_set(UCSRA, UDRE);
 	UDR = c;
 
@@ -67,10 +67,7 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
  *
  * Editing characters:
  *
- * . \b (BS) or \177 (DEL) delete the previous character
- * . ^u kills the entire input buffer
- * . ^w deletes the previous word
- * . ^r sends a CR, and then reprints the buffer
+ * . \b (BS) delete the previous character
  * . \t will be replaced by a single space
  *
  * All other control characters will be ignored.
@@ -91,7 +88,7 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
  * Successive calls to uart_getchar() will be satisfied from the
  * internal buffer until that buffer is emptied again.
  */
-int uart_getchar(FILE *stream)
+uint16_t uart_getchar(FILE *stream)
 {
 	uint8_t c;
 	uint8_t *cp, *cp2;
@@ -102,14 +99,19 @@ int uart_getchar(FILE *stream)
 		for (cp = b;;)
 		{
 			loop_until_bit_is_set(UCSRA, RXC);
+
 			if (UCSRA & _BV(FE))
 				return _FDEV_EOF;
+
 			if (UCSRA & _BV(DOR))
 				return _FDEV_ERR;
+
 			c = UDR;
+
 			/* behaviour similar to Unix stty ICRNL */
 			if (c == '\r')
 				c = '\n';
+
 			if (c == '\n')
 			{
 				*cp = c;
@@ -120,8 +122,7 @@ int uart_getchar(FILE *stream)
 			else if (c == '\t')
 				c = ' ';
 
-			if ((c >= (uint8_t)' ' && c <= (uint8_t)'\x7e') ||
-				c >= (uint8_t)'\xa0')
+			if ((c >= (uint8_t)' ' && c <= (uint8_t)'\x7e') || c >= (uint8_t)'\xa0')
 			{
 				if (cp == b + RX_BUFSIZE - 1)
 					uart_putchar('\a', stream);
@@ -135,49 +136,23 @@ int uart_getchar(FILE *stream)
 
 			switch (c)
 			{
-				case 'c' & 0x1f:
-					return -1;
+			case 'c' & 0x1f:
+				return -1;
 
-				case '\b':
-				case '\x7f':
-					if (cp > b)
-					{
-						uart_putchar('\b', stream);
-						uart_putchar(' ', stream);
-						uart_putchar('\b', stream);
-						cp--;
-					}
-					break;
-
-				case 'r' & 0x1f:
-					uart_putchar('\r', stream);
-					for (cp2 = b; cp2 < cp; cp2++)
-						uart_putchar(*cp2, stream);
-					break;
-
-				case 'u' & 0x1f:
-					while (cp > b)
-					{
-						uart_putchar('\b', stream);
-						uart_putchar(' ', stream);
-						uart_putchar('\b', stream);
-						cp--;
-					}
-					break;
-
-				case 'w' & 0x1f:
-					while (cp > b && cp[-1] != ' ')
-					{
-						uart_putchar('\b', stream);
-						uart_putchar(' ', stream);
-						uart_putchar('\b', stream);
-						cp--;
-					}
-					break;
+			case '\b':
+				if (cp > b)
+				{
+					uart_putchar('\b', stream);
+					uart_putchar(' ', stream);
+					uart_putchar('\b', stream);
+					cp--;
+				}
+				break;
 			}
 		}
 
 	c = *rxp++;
+
 	if (c == '\n')
 		rxp = 0;
 
