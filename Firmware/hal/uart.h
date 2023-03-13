@@ -12,6 +12,11 @@
  */
 
 /*
+ * Received character event
+ */
+bool usart_rx_event;
+
+/*
  * Perform UART startup initialization.
  */
 void uart_init(void);

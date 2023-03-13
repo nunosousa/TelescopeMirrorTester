@@ -32,8 +32,11 @@ void initializeClock(void) {
 /*
  * Do all the startup-time peripheral initializations.
  */
-static void ioinit(void) {
+static void hwInit(void) {
+
 	uart_init();
+	// init perif a
+
 	stdout = &uart_str;
 	stdin = &uart_str;
 	stderr = &uart_str;
@@ -42,7 +45,7 @@ static void ioinit(void) {
 int main(void) {
 
 	initializeClock();
-	ioinit();
+	hwInit();
 	// etc...
 	
 	// This is an example of the "Super Loop" pattern.

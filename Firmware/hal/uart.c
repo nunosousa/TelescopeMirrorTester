@@ -10,31 +10,54 @@
  *
  * $Id: uart.c 1008 2005-12-28 21:38:59Z joerg_wunsch $
  */
-#include <stdint.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 #include <avr/io.h>
-#include <avr/sfr_defs.h>
 
 #include "uart.h"
+
+ISR(USART_RX_vect)
+{
+	usart_rx_event = true;
+
+	// errors must be checked before reading received char
+	if (UCSR0A & _BV(FE0)) /* Frame Error */
+		return _FDEV_EOF;
+
+	if (UCSR0A & _BV(DOR0)) /* Data OverRun */
+		return _FDEV_ERR;
+
+	if (UCSR0A & _BV(UPE0)) /* Parity Error */
+		return _FDEV_ERR;
+	
+	//if error condition, also read the UDRn I/O location until the RXC0 Flag is cleared
+	// while ( UCSRnA & (1<<RXCn) ) dummy = UDRn;
+
+	c = UDR0; /* read char to clean interrupt */
+}
 
 /*
  * Initialize the UART to 9600 Bd, tx/rx, 8N1.
  */
 void uart_init(void)
 {
-	// UCSRA = _BV(U2X);             /* improve baud rate error by using 2x clk */
-	// UBRRL = (F_CPU / (8UL * BAUD)) - 1;
+	uint16_t ubrr;
 
-	uint16_t ubrr = (F_CPU / (8UL * BAUD)) - 1; // F_CPU/16/BAUD-1;
+	usart_rx_event = false;
 
-	/*Set baud rate */
+	ubrr = (F_CPU / (16UL * BAUD)) - 1;
+	/* disable general interrupts during setup */
+	/* Set baud rate */
 	UBRR0H = (uint8_t)(ubrr >> 8);
 	UBRR0L = (uint8_t)ubrr;
-	/* Enable receiver and transmitter */
-	UCSR0B = (1 << RXEN0) | (1 << TXEN0);
-	/* Set frame format: 8data, 2stop bit */
-	UCSR0C = (1 << USBS0) | (3 << UCSZ00);
+	/* Disable  */
+	UCSR0A = 0;
+	/* Enable receiver, transmitter and interrupt on received character */
+	UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
+	/* Set frame format: 8data, 2stop bit, odd parity */
+	UCSR0C = (3 << UPM00) | (1 << USBS0) | (3 << UCSZ00);
 }
 
 /*
@@ -52,8 +75,8 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
 	if (c == '\n')
 		uart_putchar('\r', stream);
 
-	loop_until_bit_is_set(UCSRA, UDRE);
-	UDR = c;
+	loop_until_bit_is_set(UCSR0A, UDRE0);
+	UDR0 = c;
 
 	return 0;
 }
@@ -98,15 +121,19 @@ uint16_t uart_getchar(FILE *stream)
 	if (rxp == 0)
 		for (cp = b;;)
 		{
-			loop_until_bit_is_set(UCSRA, RXC);
+			loop_until_bit_is_set(UCSR0A, RXC0);
 
-			if (UCSRA & _BV(FE))
+			if (UCSR0A & _BV(FE0)) /* Frame Error */
 				return _FDEV_EOF;
 
-			if (UCSRA & _BV(DOR))
+			if (UCSR0A & _BV(DOR0)) /* Data OverRun */
 				return _FDEV_ERR;
 
-			c = UDR;
+			if (UCSR0A & _BV(UPE0)) /* Parity Error */
+				return _FDEV_ERR;
+			//if error condition, also read the UDRn I/O location until the RXC0 Flag is cleared
+			// while ( UCSRnA & (1<<RXCn) ) dummy = UDRn;
+			c = UDR0;
 
 			/* behaviour similar to Unix stty ICRNL */
 			if (c == '\r')
