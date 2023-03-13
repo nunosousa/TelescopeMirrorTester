@@ -10,11 +10,17 @@
  *
  * $Id: uart.h 1008 2005-12-28 21:38:59Z joerg_wunsch $
  */
+#ifndef _UART_H_
+#define _UART_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 /*
  * Received character event
  */
-bool usart_rx_event;
+extern bool usart_rx_event;
 
 /*
  * Perform UART startup initialization.
@@ -37,3 +43,5 @@ uint16_t uart_putchar(uint8_t c, FILE *stream);
  * each invokation.
  */
 uint16_t uart_getchar(FILE *stream);
+
+#endif /* _UART_H_ */

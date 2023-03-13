@@ -10,32 +10,39 @@
  *
  * $Id: uart.c 1008 2005-12-28 21:38:59Z joerg_wunsch $
  */
+#include "uart.h"
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
-#include "uart.h"
+bool uart_rx_event = false;
 
+static uint8_t new_char;
+
+/*
+ * New received character interrrupt handler
+ */
 ISR(USART_RX_vect)
 {
-	usart_rx_event = true;
+	/* Check for errors before reading received char */
+	if (UCSR0A & (_BV(FE0) | _BV(DOR0) | _BV(UPE0)))
+	{
+		/* If error, read UDR0 until the RXC0 Flag is cleared */
+		while (UCSR0A & _BV(RXC0))
+			new_char = UDR0;
 
-	// errors must be checked before reading received char
-	if (UCSR0A & _BV(FE0)) /* Frame Error */
-		return _FDEV_EOF;
+		return;
+	}
 
-	if (UCSR0A & _BV(DOR0)) /* Data OverRun */
-		return _FDEV_ERR;
+	/* Read new char to clear interrupt and flag event */
+	new_char = UDR0;
+	uart_rx_event = true;
 
-	if (UCSR0A & _BV(UPE0)) /* Parity Error */
-		return _FDEV_ERR;
-	
-	//if error condition, also read the UDRn I/O location until the RXC0 Flag is cleared
-	// while ( UCSRnA & (1<<RXCn) ) dummy = UDRn;
-
-	c = UDR0; /* read char to clean interrupt */
+	return;
 }
 
 /*
@@ -45,19 +52,28 @@ void uart_init(void)
 {
 	uint16_t ubrr;
 
-	usart_rx_event = false;
+	uart_rx_event = false;
 
 	ubrr = (F_CPU / (16UL * BAUD)) - 1;
-	/* disable general interrupts during setup */
+
+	/* Disable general interrupts during setup */
+	cli();
+
 	/* Set baud rate */
 	UBRR0H = (uint8_t)(ubrr >> 8);
 	UBRR0L = (uint8_t)ubrr;
-	/* Disable  */
+
+	/* USART normal speed */
 	UCSR0A = 0;
+
 	/* Enable receiver, transmitter and interrupt on received character */
 	UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
+
 	/* Set frame format: 8data, 2stop bit, odd parity */
 	UCSR0C = (3 << UPM00) | (1 << USBS0) | (3 << UCSZ00);
+
+	/* Enable general interrupts during setup */
+	sei();
 }
 
 /*
@@ -66,12 +82,6 @@ void uart_init(void)
  */
 uint16_t uart_putchar(uint8_t c, FILE *stream)
 {
-	if (c == '\a')
-	{
-		fputs("*ring*\n", stderr);
-		return 0;
-	}
-
 	if (c == '\n')
 		uart_putchar('\r', stream);
 
@@ -114,11 +124,12 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
 uint16_t uart_getchar(FILE *stream)
 {
 	uint8_t c;
-	uint8_t *cp, *cp2;
-	static uint8_t b[RX_BUFSIZE];
+	uint8_t *cp;
+	static uint8_t rx_buffer[RX_BUFSIZE];
 	static uint8_t *rxp;
 
 	if (rxp == 0)
+	{
 		for (cp = b;;)
 		{
 			loop_until_bit_is_set(UCSR0A, RXC0);
@@ -131,8 +142,8 @@ uint16_t uart_getchar(FILE *stream)
 
 			if (UCSR0A & _BV(UPE0)) /* Parity Error */
 				return _FDEV_ERR;
-			//if error condition, also read the UDRn I/O location until the RXC0 Flag is cleared
-			// while ( UCSRnA & (1<<RXCn) ) dummy = UDRn;
+			// if error condition, also read the UDRn I/O location until the RXC0 Flag is cleared
+			//  while ( UCSRnA & (1<<RXCn) ) dummy = UDRn;
 			c = UDR0;
 
 			/* behaviour similar to Unix stty ICRNL */
@@ -143,15 +154,13 @@ uint16_t uart_getchar(FILE *stream)
 			{
 				*cp = c;
 				uart_putchar(c, stream);
-				rxp = b;
+				rxp = rx_buffer;
 				break;
 			}
-			else if (c == '\t')
-				c = ' ';
 
 			if ((c >= (uint8_t)' ' && c <= (uint8_t)'\x7e') || c >= (uint8_t)'\xa0')
 			{
-				if (cp == b + RX_BUFSIZE - 1)
+				if (cp == rx_buffer + RX_BUFSIZE - 1)
 					uart_putchar('\a', stream);
 				else
 				{
@@ -161,22 +170,18 @@ uint16_t uart_getchar(FILE *stream)
 				continue;
 			}
 
-			switch (c)
+			if (c == '\b')
 			{
-			case 'c' & 0x1f:
-				return -1;
-
-			case '\b':
-				if (cp > b)
+				if (cp > rx_buffer)
 				{
 					uart_putchar('\b', stream);
 					uart_putchar(' ', stream);
 					uart_putchar('\b', stream);
 					cp--;
 				}
-				break;
 			}
 		}
+	}
 
 	c = *rxp++;
 
