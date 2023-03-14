@@ -21,6 +21,8 @@
 
 bool uart_rx_event = false;
 
+bool new_line_event = false;
+
 static uint8_t new_char;
 
 /*
@@ -38,7 +40,7 @@ ISR(USART_RX_vect)
 		return;
 	}
 
-	/* Read new char to clear interrupt and flag event */
+	/* Read new char to clear interrupt flag RXC0 and flag event */
 	new_char = UDR0;
 	uart_rx_event = true;
 
@@ -53,6 +55,7 @@ void uart_init(void)
 	uint16_t ubrr;
 
 	uart_rx_event = false;
+	new_line_event = false;
 
 	ubrr = (F_CPU / (16UL * BAUD)) - 1;
 
@@ -88,7 +91,7 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
 	loop_until_bit_is_set(UCSR0A, UDRE0);
 	UDR0 = c;
 
-	return 0;
+	return 0; /* success */
 }
 
 /*
@@ -121,72 +124,63 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
  * Successive calls to uart_getchar() will be satisfied from the
  * internal buffer until that buffer is emptied again.
  */
-uint16_t uart_getchar(FILE *stream)
+void uart_process_char(FILE *stream)
 {
 	uint8_t c;
 	uint8_t *cp;
 	static uint8_t rx_buffer[RX_BUFSIZE];
 	static uint8_t *rxp;
 
-	if (rxp == 0)
+	for (cp = rx_buffer;;)
 	{
-		for (cp = b;;)
+
+		c = UDR0;
+
+		/* behaviour similar to Unix stty ICRNL */
+		if (c == '\r')
+			c = '\n';
+
+		if (c == '\n')
 		{
-			loop_until_bit_is_set(UCSR0A, RXC0);
+			*cp = c;
+			uart_putchar(c, stream);
+			rxp = rx_buffer;
+			break;
+		}
 
-			if (UCSR0A & _BV(FE0)) /* Frame Error */
-				return _FDEV_EOF;
+		if ((c >= (uint8_t)' ') && (c <= (uint8_t)'~'))
+		{
+			if (cp < rx_buffer + RX_BUFSIZE - 1)
+				*cp++ = c;
+			uart_putchar(c, stream);
+		}
+		continue;
 
-			if (UCSR0A & _BV(DOR0)) /* Data OverRun */
-				return _FDEV_ERR;
-
-			if (UCSR0A & _BV(UPE0)) /* Parity Error */
-				return _FDEV_ERR;
-			// if error condition, also read the UDRn I/O location until the RXC0 Flag is cleared
-			//  while ( UCSRnA & (1<<RXCn) ) dummy = UDRn;
-			c = UDR0;
-
-			/* behaviour similar to Unix stty ICRNL */
-			if (c == '\r')
-				c = '\n';
-
-			if (c == '\n')
+		if (c == '\b')
+		{
+			if (cp > rx_buffer)
 			{
-				*cp = c;
-				uart_putchar(c, stream);
-				rxp = rx_buffer;
-				break;
-			}
-
-			if ((c >= (uint8_t)' ' && c <= (uint8_t)'\x7e') || c >= (uint8_t)'\xa0')
-			{
-				if (cp == rx_buffer + RX_BUFSIZE - 1)
-					uart_putchar('\a', stream);
-				else
-				{
-					*cp++ = c;
-					uart_putchar(c, stream);
-				}
-				continue;
-			}
-
-			if (c == '\b')
-			{
-				if (cp > rx_buffer)
-				{
-					uart_putchar('\b', stream);
-					uart_putchar(' ', stream);
-					uart_putchar('\b', stream);
-					cp--;
-				}
+				uart_putchar('\b', stream);
+				uart_putchar(' ', stream);
+				uart_putchar('\b', stream);
+				cp--;
 			}
 		}
 	}
 
-	c = *rxp++;
+	return;
+}
 
-	if (c == '\n')
-		rxp = 0;
+/*
+ * Successive calls to uart_getchar() will be satisfied from the
+ * internal buffer until that buffer is emptied.
+ */
+uint16_t uart_getchar(FILE *stream)
+{
+	uint8_t c;
+
+	// get char from internal circular buffer
+	// if no more characters, send _FDEV_EOF
 
 	return c;
 }

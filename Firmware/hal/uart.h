@@ -23,6 +23,11 @@
 extern bool usart_rx_event;
 
 /*
+ * Received full line event
+ */
+extern bool new_line_event;
+
+/*
  * Perform UART startup initialization.
  */
 void uart_init(void);
