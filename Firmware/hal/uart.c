@@ -18,12 +18,13 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/setbaud.h>
 
 bool uart_rx_event = false;
 
 bool new_line_event = false;
 
-static uint8_t new_char;
+static uint8_t incoming_char;
 
 /*
  * New received character interrrupt handler
@@ -34,14 +35,15 @@ ISR(USART_RX_vect)
 	if (UCSR0A & (_BV(FE0) | _BV(DOR0) | _BV(UPE0)))
 	{
 		/* If error, read UDR0 until the RXC0 Flag is cleared */
+		uint8_t c;
 		while (UCSR0A & _BV(RXC0))
-			new_char = UDR0;
+			c = UDR0;
 
 		return;
 	}
 
 	/* Read new char to clear interrupt flag RXC0 and flag event */
-	new_char = UDR0;
+	incoming_char = UDR0;
 	uart_rx_event = true;
 
 	return;
@@ -52,22 +54,22 @@ ISR(USART_RX_vect)
  */
 void uart_init(void)
 {
-	uint16_t ubrr;
-
 	uart_rx_event = false;
 	new_line_event = false;
-
-	ubrr = (F_CPU / (16UL * BAUD)) - 1;
 
 	/* Disable general interrupts during setup */
 	cli();
 
 	/* Set baud rate */
-	UBRR0H = (uint8_t)(ubrr >> 8);
-	UBRR0L = (uint8_t)ubrr;
+	UBRR0H = UBRRH_VALUE;
+	UBRR0L = UBRRL_VALUE;
 
-	/* USART normal speed */
+	/* USART speed */
+#if USE_2X
+	UCSR0A = _BV(U2X0);
+#else
 	UCSR0A = 0;
+#endif
 
 	/* Enable receiver, transmitter and interrupt on received character */
 	UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
