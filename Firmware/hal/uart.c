@@ -92,7 +92,7 @@ void uart_init(void)
  * Send character c down the UART Tx, wait until tx holding register
  * is empty.
  */
-uint16_t uart_putchar(uint8_t c, FILE *stream)
+int16_t uart_putchar(uint8_t c, FILE *stream)
 {
 	if (c == '\n')
 		uart_putchar('\r', stream);
@@ -182,7 +182,7 @@ void uart_process_char(FILE *stream)
  * Successive calls to uart_getchar() will be satisfied from the
  * internal buffer until that buffer is emptied.
  */
-uint16_t uart_getchar(FILE *stream)
+int16_t uart_getchar(FILE *stream)
 {
 	uint8_t c;
 
