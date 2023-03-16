@@ -2,6 +2,7 @@
 
 #include <stddef.h>
 #include <string.h>
+#include <assert.h>
 
 /*
  * Successive calls to uart_getchar() will be satisfied from the
@@ -10,9 +11,8 @@
 void cb_init(cbuffer *cb, size_t capacity, size_t item_size, void *buffer)
 {
     cb->buffer = buffer;
-    if (cb->buffer == NULL)
-        // handle error
-        cb->buffer_end = (char *)cb->buffer + capacity * item_size;
+    assert(cb->buffer != NULL);
+    cb->buffer_end = (char *)cb->buffer + (capacity - 1) * item_size;
     cb->capacity = capacity;
     cb->count = 0;
     cb->item_size = item_size;
@@ -27,12 +27,10 @@ void cb_init(cbuffer *cb, size_t capacity, size_t item_size, void *buffer)
 void cb_push(cbuffer *cb, const void *item)
 {
     if (cb->count == cb->capacity)
-    {
-        // handle error
-    }
+        return;
     memcpy(cb->head, item, cb->item_size);
     cb->head = (char *)cb->head + cb->item_size;
-    if (cb->head == cb->buffer_end)
+    if (cb->head > cb->buffer_end)
         cb->head = cb->buffer;
     cb->count++;
 }
@@ -44,11 +42,9 @@ void cb_push(cbuffer *cb, const void *item)
 void cb_undo_push(cbuffer *cb, void *item)
 {
     if (cb->count == 0)
-    {
-        // handle error
-    }
+        return;
     cb->head = (char *)cb->head - cb->item_size;
-    if (cb->head == cb->buffer)
+    if (cb->head < cb->buffer)
         cb->head = cb->buffer_end;
     memcpy(item, cb->head, cb->item_size);
     cb->count--;
@@ -61,12 +57,10 @@ void cb_undo_push(cbuffer *cb, void *item)
 void cb_pop(cbuffer *cb, void *item)
 {
     if (cb->count == 0)
-    {
-        // handle error
-    }
+        return;
     memcpy(item, cb->tail, cb->item_size);
     cb->tail = (char *)cb->tail + cb->item_size;
-    if (cb->tail == cb->buffer_end)
+    if (cb->tail > cb->buffer_end)
         cb->tail = cb->buffer;
     cb->count--;
 }
