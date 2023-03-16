@@ -20,6 +20,9 @@ set(H_FUSE 0xda)
 set(L_FUSE 0xfd)
 set(LOCK_BIT 0xff)
 
+# Serial port receive buffer size
+set(RX_BUFSIZE 80)
+
 #=============================
 # Configure main target
 #=============================
@@ -32,6 +35,7 @@ target_compile_definitions(firmware
 	PRIVATE
 		F_CPU=${F_CPU}
     	BAUD=${BAUD}
+		RX_BUFSIZE=${RX_BUFSIZE}
 )
 
 # Info on configurations:

@@ -72,13 +72,13 @@ int main(void) {
 		// Since event2 doesn't require a timerEvent, it could be run as frequently as the processor runs through the main loop. 
 		// This could be useful if you want to respond to events that come in more often than the timerEvent occurs, or if
 		// you want to respond to something with lower latency than it would take to wait for the next timerEvent.
-		if (event2) {
-			event2 = false;
-			//handleEvent2();
+		if (uart_rx_event) {
+			uart_rx_event = false;
+			uart_process_char(stdout);
 		}
 		
-		if (event3) {
-			event3 = false;
+		if (uart_new_line_event) {
+			uart_new_line_event = false;
 			//handleEvent3();
 		}
 		

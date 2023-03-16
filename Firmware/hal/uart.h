@@ -20,12 +20,12 @@
 /*
  * Received character event
  */
-extern bool usart_rx_event;
+extern bool uart_rx_event;
 
 /*
  * Received full line event
  */
-extern bool new_line_event;
+extern bool uart_new_line_event;
 
 /*
  * Perform UART startup initialization.
@@ -36,6 +36,11 @@ void uart_init(void);
  * Send one character to the UART.
  */
 uint16_t uart_putchar(uint8_t c, FILE *stream);
+
+/*
+ * Send one character to the UART.
+ */
+void uart_process_char(FILE *stream);
 
 /*
  * Receive one character from the UART.  The actual reception is

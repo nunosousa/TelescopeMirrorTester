@@ -11,27 +11,25 @@
  * $Id: uart.c 1008 2005-12-28 21:38:59Z joerg_wunsch $
  */
 #include "uart.h"
-#include "circ_buffer.h"
+#include "cbuffer.h"
 
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/setbaud.h>
 #include <util/atomic.h>
 
-/*
- * Size of internal line buffer.
- */
-#define RX_BUFSIZE 80
-
 bool uart_rx_event = false;
 
-bool new_line_event = false;
+bool uart_new_line_event = false;
 
 static volatile uint8_t rx_char;
+static cbuffer rx_cbuffer;
+static uint8_t rx_buffer[RX_BUFSIZE];
 
 /*
  * New received character interrrupt handler
@@ -61,7 +59,7 @@ ISR(USART_RX_vect)
 void uart_init(void)
 {
 	uart_rx_event = false;
-	new_line_event = false;
+	uart_new_line_event = false;
 
 	/* Disable general interrupts during setup */
 	cli();
@@ -85,6 +83,9 @@ void uart_init(void)
 
 	/* Enable general interrupts during setup */
 	sei();
+
+	/* Setup circular buffer for the received characters */
+	cb_init(&rx_cbuffer, (size_t)RX_BUFSIZE, sizeof(uint8_t), rx_buffer);
 }
 
 /*
@@ -147,16 +148,16 @@ void uart_process_char(FILE *stream)
 
 	if (rx_char_copy == '\n')
 	{
-		cb_push(&rx_cbuffer, rx_char_copy);
+		cb_push(&rx_cbuffer, &rx_char_copy);
 		uart_putchar(rx_char_copy, stream);
-		new_line_event = true;
+		uart_new_line_event = true;
 		return;
 	}
 
 	/* Printable character */
 	if ((rx_char_copy >= (uint8_t)' ') && (rx_char_copy <= (uint8_t)'~'))
 	{
-		cb_push(&rx_cbuffer, rx_char_copy);
+		cb_push(&rx_cbuffer, &rx_char_copy);
 		uart_putchar(rx_char_copy, stream);
 		return;
 	}
@@ -184,6 +185,8 @@ void uart_process_char(FILE *stream)
 uint16_t uart_getchar(FILE *stream)
 {
 	uint8_t c;
+
+	(void)stream; /* Keeping the compiler happy with this unused variable */
 
 	/* Get char from internal circular buffer.
 	If no more characters, send _FDEV_EOF.*/
