@@ -22,13 +22,7 @@ void cb_init(circular_buffer *cb, size_t capacity, size_t sz)
     cb->tail = cb->buffer;
 }
 
-void cb_free(circular_buffer *cb)
-{
-    free(cb->buffer);
-    // clear out other fields too, just to be safe
-}
-
-void cb_push_back(circular_buffer *cb, const void *item)
+void cb_push(circular_buffer *cb, const void *item)
 {
     if(cb->count == cb->capacity){
         // handle error
@@ -40,7 +34,7 @@ void cb_push_back(circular_buffer *cb, const void *item)
     cb->count++;
 }
 
-void cb_pop_front(circular_buffer *cb, void *item)
+void cb_pop(circular_buffer *cb, void *item)
 {
     if(cb->count == 0){
         // handle error

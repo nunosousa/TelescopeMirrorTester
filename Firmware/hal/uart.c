@@ -19,12 +19,18 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/setbaud.h>
+#include <util/atomic.h>
+
+/*
+ * Size of internal line buffer.
+ */
+#define RX_BUFSIZE 80
 
 bool uart_rx_event = false;
 
 bool new_line_event = false;
 
-static uint8_t incoming_char;
+static volatile uint8_t rx_char;
 
 /*
  * New received character interrrupt handler
@@ -35,15 +41,14 @@ ISR(USART_RX_vect)
 	if (UCSR0A & (_BV(FE0) | _BV(DOR0) | _BV(UPE0)))
 	{
 		/* If error, read UDR0 until the RXC0 Flag is cleared */
-		uint8_t c;
 		while (UCSR0A & _BV(RXC0))
-			c = UDR0;
+			rx_char = UDR0;
 
 		return;
 	}
 
 	/* Read new char to clear interrupt flag RXC0 and flag event */
-	incoming_char = UDR0;
+	rx_char = UDR0;
 	uart_rx_event = true;
 
 	return;
@@ -128,46 +133,43 @@ uint16_t uart_putchar(uint8_t c, FILE *stream)
  */
 void uart_process_char(FILE *stream)
 {
-	uint8_t c;
-	uint8_t *cp;
-	static uint8_t rx_buffer[RX_BUFSIZE];
-	static uint8_t *rxp;
+	uint8_t rx_char_copy;
 
-	for (cp = rx_buffer;;)
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 	{
+		rx_char_copy = rx_char;
+	}
 
-		c = UDR0;
+	/* Behaviour similar to Unix stty ICRNL */
+	if (rx_char_copy == '\r')
+		rx_char_copy = '\n';
 
-		/* behaviour similar to Unix stty ICRNL */
-		if (c == '\r')
-			c = '\n';
+	if (rx_char_copy == '\n')
+	{
+		cb_push(&rx_cbuffer, rx_char_copy);
+		uart_putchar(rx_char_copy, stream);
+		return;
+	}
 
-		if (c == '\n')
+	/* Printable character */
+	if ((rx_char_copy >= (uint8_t)' ') && (rx_char_copy <= (uint8_t)'~'))
+	{
+		cb_push(&rx_cbuffer, rx_char_copy);
+		uart_putchar(rx_char_copy, stream);
+		return;
+	}
+
+	/* Backspace */
+	if (rx_char_copy == '\b')
+	{
+		if (cb_count(&rx_cbuffer) > 0)
 		{
-			*cp = c;
-			uart_putchar(c, stream);
-			rxp = rx_buffer;
-			break;
+			uart_putchar('\b', stream);
+			uart_putchar(' ', stream);
+			uart_putchar('\b', stream);
+			cb_undo_push(&rx_cbuffer, &rx_char_copy);
 		}
-
-		if ((c >= (uint8_t)' ') && (c <= (uint8_t)'~'))
-		{
-			if (cp < rx_buffer + RX_BUFSIZE - 1)
-				*cp++ = c;
-			uart_putchar(c, stream);
-		}
-		continue;
-
-		if (c == '\b')
-		{
-			if (cp > rx_buffer)
-			{
-				uart_putchar('\b', stream);
-				uart_putchar(' ', stream);
-				uart_putchar('\b', stream);
-				cp--;
-			}
-		}
+		return;
 	}
 
 	return;
@@ -181,8 +183,12 @@ uint16_t uart_getchar(FILE *stream)
 {
 	uint8_t c;
 
-	// get char from internal circular buffer
-	// if no more characters, send _FDEV_EOF
+	/* Get char from internal circular buffer.
+	If no more characters, send _FDEV_EOF.*/
+	if (cb_count(&rx_cbuffer) > 0)
+		cb_pop(&rx_cbuffer, &c);
+	else
+		c = _FDEV_EOF;
 
 	return c;
 }
