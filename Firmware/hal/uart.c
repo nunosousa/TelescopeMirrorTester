@@ -148,6 +148,7 @@ void uart_process_char(FILE *stream)
 	{
 		cb_push(&rx_cbuffer, rx_char_copy);
 		uart_putchar(rx_char_copy, stream);
+		new_line_event = true;
 		return;
 	}
 
