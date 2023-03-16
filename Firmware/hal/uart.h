@@ -35,7 +35,7 @@ void uart_init(void);
 /*
  * Send one character to the UART.
  */
-int16_t uart_putchar(uint8_t c, FILE *stream);
+int uart_putchar(char c, FILE *stream);
 
 /*
  * Send one character to the UART.
@@ -47,6 +47,6 @@ void uart_process_char(FILE *stream);
  * line-buffered, and one character is returned from the buffer at
  * each invokation.
  */
-int16_t uart_getchar(FILE *stream);
+int uart_getchar(FILE *stream);
 
 #endif /* UART_H */

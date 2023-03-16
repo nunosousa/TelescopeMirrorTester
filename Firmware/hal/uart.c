@@ -27,9 +27,9 @@ bool uart_rx_event = false;
 
 bool uart_new_line_event = false;
 
-static volatile uint8_t rx_char;
+static volatile char rx_char;
 static cbuffer rx_cbuffer;
-static uint8_t rx_buffer[RX_BUFSIZE];
+static char rx_buffer[RX_BUFSIZE];
 
 /*
  * New received character interrrupt handler
@@ -85,14 +85,14 @@ void uart_init(void)
 	sei();
 
 	/* Setup circular buffer for the received characters */
-	cb_init(&rx_cbuffer, (size_t)RX_BUFSIZE, sizeof(uint8_t), rx_buffer);
+	cb_init(&rx_cbuffer, (size_t)RX_BUFSIZE, sizeof(char), rx_buffer);
 }
 
 /*
  * Send character c down the UART Tx, wait until tx holding register
  * is empty.
  */
-int16_t uart_putchar(uint8_t c, FILE *stream)
+int uart_putchar(char c, FILE *stream)
 {
 	if (c == '\n')
 		uart_putchar('\r', stream);
@@ -135,7 +135,7 @@ int16_t uart_putchar(uint8_t c, FILE *stream)
  */
 void uart_process_char(FILE *stream)
 {
-	uint8_t rx_char_copy;
+	char rx_char_copy;
 
 	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 	{
@@ -155,7 +155,7 @@ void uart_process_char(FILE *stream)
 	}
 
 	/* Printable character */
-	if ((rx_char_copy >= (uint8_t)' ') && (rx_char_copy <= (uint8_t)'~'))
+	if ((rx_char_copy >= (char)' ') && (rx_char_copy <= (char)'~'))
 	{
 		cb_push(&rx_cbuffer, &rx_char_copy);
 		uart_putchar(rx_char_copy, stream);
@@ -184,7 +184,7 @@ void uart_process_char(FILE *stream)
  */
 int16_t uart_getchar(FILE *stream)
 {
-	uint8_t c;
+	char c;
 
 	(void)stream; /* Keeping the compiler happy with this unused variable */
 
