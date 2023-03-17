@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-#define MAX_BUF_SIZE 128    /* Maximum size of CLI Rx buffer */
+#define MAX_BUF_SIZE 40    /* Maximum size of CLI Rx buffer */
 
 typedef enum
 {

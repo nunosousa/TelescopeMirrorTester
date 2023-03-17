@@ -12,7 +12,7 @@ static void init(void);
 static cli_status_t help_func(int argc, char **argv);
 static cli_status_t version_func(int argc, char **argv);
 
-FILE uart_str = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
+FILE uart_stream = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
 cli_t cli;
 
 cmd_t cmd_tbl[] = {
@@ -26,22 +26,25 @@ cmd_t cmd_tbl[] = {
  */
 static void init(void)
 {
+	stdout = &uart_stream;
+	stdin = &uart_stream;
+	stderr = &uart_stream;
+
 	uart_init();
-	// init perif a
-
-	stdout = &uart_str;
-	stdin = &uart_str;
-	stderr = &uart_str;
-
-	cli.cmd_tbl = cmd_tbl;
-	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
-	cli_init(&cli);
+	cli_init(&cli, cmd_tbl);
 }
 
 static cli_status_t help_func(int argc, char **argv)
 {
-	(void)argc;
+
 	(void)argv;
+	if (argc == 1)
+	{
+		fputs("\r\nFor help on a command on the following list, type help command-name:\r\n", stdout);
+		fputs("cmd1   Gets something...\r\n", stdout);
+		fputs("cmd2   Sets something...\r\n", stdout);
+	}
+
 	return CLI_OK;
 }
 
@@ -49,6 +52,9 @@ static cli_status_t version_func(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
+
+	fputs("\r\nPosition controler [Version ]", stdout);
+
 	return CLI_OK;
 }
 

@@ -37,7 +37,6 @@
 #include <stdio.h>
 
 static uint8_t cmd_buf[MAX_BUF_SIZE]; /* CLI command buffer */
-static volatile uint8_t cmd_pending;
 
 const char cli_prompt[] = ">> "; /* CLI prompt displayed to the user */
 const char cli_unrecog[] = "CMD: Command not recognised\r\n";
@@ -45,9 +44,10 @@ const char cli_unrecog[] = "CMD: Command not recognised\r\n";
 /*!
  * @brief This API initialises the command-line interface.
  */
-cli_status_t cli_init(cli_t *cli)
+cli_status_t cli_init(cli_t *cli, cmd_t *cmd_tbl)
 {
-    cmd_pending = 0;
+    cli->cmd_tbl = cmd_tbl;
+	cli->cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
 
     /* Print the CLI prompt. */
     fputs(cli_prompt, stdout);
@@ -63,7 +63,8 @@ cli_status_t cli_process(cli_t *cli)
     uint8_t argc = 0;
     char *argv[30];
 
-    cmd_pending = 0;
+    /* Copy string to command buffer for processing. */
+    fgets(cmd_buf, MAX_BUF_SIZE, stdin);       
 
     /* Get the first token (cmd name) */
     argv[argc] = strtok(cmd_buf, " ");
