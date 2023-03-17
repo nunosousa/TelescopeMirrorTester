@@ -5,84 +5,73 @@
 #include <util/delay.h>
 
 #include "../hal/uart.h"
+#include "../libs/versionInfo/firmwareBuildInfo.h"
+#include "../libs/cli/cli.h"
 
-// timeMilliseconds is written to by the timer interrupt, nothing else.
-// Any of the event handlers can read from it to get the current time.
-uint32_t timeMilliseconds = 0;
-
-// Events
-bool timerEvent = false;
-bool event2 = false;
-bool event3 = false;
-bool event4 = false;
-bool event5 = false;
-// etc...
+static void init(void);
+static cli_status_t help_func(int argc, char **argv);
+static cli_status_t version_func(int argc, char **argv);
 
 FILE uart_str = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
+cli_t cli;
 
-void timerInterrupt(void) {
-	
-	timeMilliseconds++;
-	timerEvent = true;
-}
+cmd_t cmd_tbl[] = {
+	{.cmd = "help",
+	 .func = help_func},
+	{.cmd = "version",
+	 .func = version_func}};
 
-void initializeClock(void) {
-	// configure timer peripheral to call the timerInterrupt every 1ms.
-}
 /*
  * Do all the startup-time peripheral initializations.
  */
-static void hwInit(void) {
-
+static void init(void)
+{
 	uart_init();
 	// init perif a
 
 	stdout = &uart_str;
 	stdin = &uart_str;
 	stderr = &uart_str;
+
+	cli.cmd_tbl = cmd_tbl;
+	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
+	cli_init(&cli);
 }
 
-int main(void) {
+static cli_status_t help_func(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+	return CLI_OK;
+}
 
-	initializeClock();
-	hwInit();
-	// etc...
-	
-	// This is an example of the "Super Loop" pattern.
-	while (1) {
-	
-		// If you want to limit how often an event can occur, put it within this block.
-		if (timerEvent) {
-			timerEvent = false;
-			
-			// since there must be a timerEvent for this condition to be checked, handleEvent4() will not be called more than once per millisecond.
-			if (event4) {
-				event4 = false;
-				//handleEvent4();
-			}
-			
-			// This is an example of how you can have time-based events.
-			// e.g. event5 will only be checked once every 10 ms.
-			if (event5 && (timeMilliseconds % 10 == 0)) {
-				event5 = false;
-				//handleEvent5();
-			}
-		}
-		
-		if (uart_rx_event) {
+static cli_status_t version_func(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+	return CLI_OK;
+}
+
+int main(void)
+{
+	init();
+
+	while (1)
+	{
+		if (uart_rx_event)
+		{
 			uart_rx_event = false;
-			uart_process_char(stdout);
+			uart_process(stdout);
 		}
-		
-		if (uart_new_line_event) {
+
+		if (uart_new_line_event)
+		{
 			uart_new_line_event = false;
-			//handleEvent3();
+			cli_process(&cli);
 		}
-		
-		// Pause the processor to save power. Configure it so that it will wake up again when any interrupt occurs.
-		// If there's no other activity, it will be woken up by the next timer interrupt less than 1ms from now.
-		//sleep(); 
+
+		// kick_wd();
 	}
-	
+
 	return 0; // will never return
 }

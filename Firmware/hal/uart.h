@@ -40,7 +40,7 @@ int uart_putchar(char c, FILE *stream);
 /*
  * Send one character to the UART.
  */
-void uart_process_char(FILE *stream);
+void uart_process(FILE *stream);
 
 /*
  * Receive one character from the UART.  The actual reception is

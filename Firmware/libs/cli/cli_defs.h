@@ -1,10 +1,9 @@
-#ifndef _CLI_DEFS_H_
-#define _CLI_DEFS_H_
+#ifndef CLI_DEFS_H
+#define CLI_DEFS_H
 
 #include <stddef.h>
 
 #define MAX_BUF_SIZE 128    /* Maximum size of CLI Rx buffer */
-#define CMD_TERMINATOR '\r' /* Delimiter denoting end of cmd from user */
 
 typedef enum
 {
@@ -18,10 +17,9 @@ typedef enum
 } cli_status_t;
 
 /*!
- * @brief Function type declarations.
+ * @brief Function type declaration.
  */
 typedef cli_status_t (*cmd_func_ptr_t)(int argc, char **argv);
-typedef void (*println_func_ptr_t)(char *string);
 
 /*!
  * @brief Command structure, consisting of a name and function pointer.
@@ -37,7 +35,6 @@ typedef struct
  */
 typedef struct
 {
-    println_func_ptr_t println; /* Function pointer to user defined println function.      */
     cmd_t *cmd_tbl;             /* Pointer to series of commands which are to be accepted. */
     size_t cmd_cnt;             /* Number of commands in cmd_tbl.                          */
 } cli_t;

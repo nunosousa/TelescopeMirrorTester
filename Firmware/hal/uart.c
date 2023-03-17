@@ -133,7 +133,7 @@ int uart_putchar(char c, FILE *stream)
  * Successive calls to uart_getchar() will be satisfied from the
  * internal buffer until that buffer is emptied again.
  */
-void uart_process_char(FILE *stream)
+void uart_process(FILE *stream)
 {
 	char rx_char_copy;
 
@@ -182,7 +182,7 @@ void uart_process_char(FILE *stream)
  * Successive calls to uart_getchar() will be satisfied from the
  * internal buffer until that buffer is emptied.
  */
-int16_t uart_getchar(FILE *stream)
+int uart_getchar(FILE *stream)
 {
 	char c;
 
