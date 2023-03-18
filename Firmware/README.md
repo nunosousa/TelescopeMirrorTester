@@ -12,7 +12,10 @@ sudo apt-get install binutils-avr
 sudo apt-get install uisp
 sudo apt-get install avrdude
 ```
-
+Note that on Ubuntu it was required to remove the brltty package to get the serial port setup:
+```
+sudo apt remove brltty
+```
 ## Using avr-gcc directly and programming (here just for information)
 Compile the code (generate a HEX file):
 ```

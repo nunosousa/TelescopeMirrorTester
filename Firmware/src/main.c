@@ -31,7 +31,10 @@ static void init(void)
 	stderr = &uart_stream;
 
 	uart_init();
-	cli_init(&cli, cmd_tbl);
+
+    cli.cmd_tbl = cmd_tbl;
+	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
+	cli_init(&cli);
 }
 
 static cli_status_t help_func(int argc, char **argv)

@@ -44,11 +44,8 @@ const char cli_unrecog[] = "CMD: Command not recognised\r\n";
 /*!
  * @brief This API initialises the command-line interface.
  */
-cli_status_t cli_init(cli_t *cli, cmd_t *cmd_tbl)
+cli_status_t cli_init(cli_t *cli)
 {
-    cli->cmd_tbl = cmd_tbl;
-	cli->cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
-
     /* Print the CLI prompt. */
     fputs(cli_prompt, stdout);
 
@@ -67,12 +64,12 @@ cli_status_t cli_process(cli_t *cli)
     fgets(cmd_buf, MAX_BUF_SIZE, stdin);       
 
     /* Get the first token (cmd name) */
-    argv[argc] = strtok(cmd_buf, " ");
+    argv[argc] = strtok(cmd_buf, " \r\n");
 
     /* Walk through the other tokens (parameters) */
     while ((argv[argc] != NULL) && (argc < 30))
     {
-        argv[++argc] = strtok(NULL, " ");
+        argv[++argc] = strtok(NULL, " \r\n");
     }
 
     /* Search the command table for a matching command, using argv[0]

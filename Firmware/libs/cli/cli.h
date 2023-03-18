@@ -46,7 +46,7 @@
  *
  * @return cli_status_t
  */
-cli_status_t cli_init(cli_t *cli, cmd_t *cmd_tbl);
+cli_status_t cli_init(cli_t *cli);
 
 /*!
  * @brief This API must be periodically called by the user to process and execute

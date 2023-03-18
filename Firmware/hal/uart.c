@@ -78,8 +78,8 @@ void uart_init(void)
 	/* Enable receiver, transmitter and interrupt on received character */
 	UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
 
-	/* Set frame format: 8data, 2stop bit, odd parity */
-	UCSR0C = (3 << UPM00) | (1 << USBS0) | (3 << UCSZ00);
+	/* Set frame format: 8data, 1stop bit, odd parity */
+	UCSR0C = (3 << UPM00) | (3 << UCSZ00);
 
 	/* Enable general interrupts during setup */
 	sei();
