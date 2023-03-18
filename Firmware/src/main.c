@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -32,35 +33,9 @@ static void init(void)
 
 	uart_init();
 
-    cli.cmd_tbl = cmd_tbl;
+	cli.cmd_tbl = cmd_tbl;
 	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
 	cli_init(&cli);
-}
-
-static cli_status_t help_func(int argc, char **argv)
-{
-
-	(void)argv;
-	if (argc == 1)
-	{
-		fputs("For help on a command on the following list, type help command-name:\r\n", stdout);
-		fputs("cmd1   Gets something...\r\n", stdout);
-		fputs("cmd2   Sets something...\r\n", stdout);
-	}
-
-	return CLI_OK;
-}
-
-static cli_status_t version_func(int argc, char **argv)
-{
-	(void)argc;
-	(void)argv;
-
-	fputs("Position controler [Author: Nuno Sousa, Firmware version: ", stdout);
-	fputs(getFirmwareVersion(), stdout);
-	fputs("].\r\n", stdout);
-
-	return CLI_OK;
 }
 
 int main(void)
@@ -85,4 +60,40 @@ int main(void)
 	}
 
 	return 0; // will never return
+}
+
+static cli_status_t help_func(int argc, char **argv)
+{
+	/* Check for correct argument's list */
+	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+		fputs("\"help\" command prints a list of the available commands "
+			  "and a brief summary.\r\nTakes no arguments.",
+			  stdout);
+	else if (argc != 1)
+		return CLI_E_INVALID_ARGS;
+
+	/* Print help information*/
+	fputs("For help on a command on the following list, type help "
+		  "command-name:\r\n",
+		  stdout);
+	fputs("cmd1   Gets something...\r\n", stdout);
+	fputs("cmd2   Sets something...\r\n", stdout);
+
+	return CLI_OK;
+}
+
+static cli_status_t version_func(int argc, char **argv)
+{
+	/* Check for correct argument's list */
+	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+		fputs("\"version\" command prints the system info. Takes no arguments.", stdout);
+	else if (argc != 1)
+		return CLI_E_INVALID_ARGS;
+
+	/* Print firmware version info */
+	fputs("Position controler [Author: Nuno Sousa, Firmware version: ", stdout);
+	fputs(getFirmwareVersion(), stdout);
+	fputs("].\r\n", stdout);
+
+	return CLI_OK;
 }

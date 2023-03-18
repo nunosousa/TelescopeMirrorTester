@@ -12,7 +12,7 @@ static uint8_t cmd_buf[MAX_BUF_SIZE]; /* CLI command buffer */
 const char cli_prompt[] = ">> "; /* CLI prompt displayed to the user */
 const char cli_cmd_unrecog[] = "\" is not recognized as a command.\r\n"
                                "Type \"help\" for a list of the available commands.\r\n";
-const char cli_arg_unrecog[] = "Given command argument('s) are not recognized.\r\n"
+const char cli_arg_unrecog[] = "Given command's argument(s) are not recognized.\r\n"
                                "Type \"command help\" for a list of the available command's arguments.\r\n";
 
 /*!
@@ -77,8 +77,6 @@ cli_status_t cli_process(cli_t *cli)
         break;
     case CLI_E_INVALID_ARGS:
         /* Command's argument not recognised, print error message. */
-        fputc('\"', stdout);
-        fputs(argv[0], stdout);
         fputs(cli_arg_unrecog, stdout);
         /* Print the CLI prompt to the user. */
         fputs(cli_prompt, stdout);

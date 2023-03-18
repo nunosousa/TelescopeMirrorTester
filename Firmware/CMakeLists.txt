@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.24)
 project(controller_board
 	LANGUAGES C
-	VERSION 0.1
+	VERSION 0.2
 )
 
 #=============================

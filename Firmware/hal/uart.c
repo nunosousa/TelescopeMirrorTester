@@ -173,7 +173,7 @@ int uart_getchar(FILE *stream)
 {
 	char c;
 
-	(void)stream; /* Keeping the compiler happy with this unused variable */
+	(void)stream; /* Keeping the compiler from flagging this variable as unused */
 
 	/* Get char from internal circular buffer.
 	If no more characters, send _FDEV_EOF.*/
