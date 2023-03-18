@@ -1,20 +1,7 @@
-/*
- * ----------------------------------------------------------------------------
- * "THE BEER-WARE LICENSE" (Revision 42):
- * <joerg@FreeBSD.ORG> wrote this file.  As long as you retain this notice you
- * can do whatever you want with this stuff. If we meet some day, and you think
- * this stuff is worth it, you can buy me a beer in return.        Joerg Wunsch
- * ----------------------------------------------------------------------------
- *
- * Stdio demo, UART implementation
- *
- * $Id: uart.c 1008 2005-12-28 21:38:59Z joerg_wunsch $
- */
 #include "uart.h"
 #include "cbuffer.h"
 
 #include <stdio.h>
-#include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -81,7 +68,7 @@ void uart_init(void)
 	/* Set frame format: 8data, 1stop bit, odd parity */
 	UCSR0C = (3 << UPM00) | (3 << UCSZ00);
 
-	/* Enable general interrupts during setup */
+	/* Enable general interrupts after setup */
 	sei();
 
 	/* Setup circular buffer for the received characters */

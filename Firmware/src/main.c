@@ -43,7 +43,7 @@ static cli_status_t help_func(int argc, char **argv)
 	(void)argv;
 	if (argc == 1)
 	{
-		fputs("\r\nFor help on a command on the following list, type help command-name:\r\n", stdout);
+		fputs("For help on a command on the following list, type help command-name:\r\n", stdout);
 		fputs("cmd1   Gets something...\r\n", stdout);
 		fputs("cmd2   Sets something...\r\n", stdout);
 	}
@@ -56,7 +56,9 @@ static cli_status_t version_func(int argc, char **argv)
 	(void)argc;
 	(void)argv;
 
-	fputs("\r\nPosition controler [Version ]", stdout);
+	fputs("Position controler [Author: Nuno Sousa, Firmware version: ", stdout);
+	fputs(getFirmwareVersion(), stdout);
+	fputs("].\r\n", stdout);
 
 	return CLI_OK;
 }
