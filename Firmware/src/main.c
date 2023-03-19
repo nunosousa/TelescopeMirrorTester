@@ -68,7 +68,7 @@ static cli_status_t help_func(int argc, char **argv)
 	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
 	{
 		fputs("\"help\" command prints a list of the available commands "
-			  "and a brief summary.\r\nTakes no arguments.",
+			  "and a brief summary.\r\nTakes no arguments.\r\n",
 			  stdout);
 		return CLI_OK;
 	}
@@ -90,14 +90,18 @@ static cli_status_t version_func(int argc, char **argv)
 	/* Check for correct argument's list */
 	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
 	{
-		fputs("\"version\" command prints the system info. Takes no arguments.", stdout);
+		fputs("\"version\" command prints the system info. "
+			  "Takes no arguments.\r\n",
+			  stdout);
 		return CLI_OK;
 	}
 	else if (argc != 1)
 		return CLI_E_INVALID_ARGS;
 
 	/* Print firmware version info */
-	fputs("Position controler [Author: Nuno Sousa, Firmware version: ", stdout);
+	fputs("Position controler [Author: Nuno Sousa, "
+		  "Firmware version: ",
+		  stdout);
 	fputs(getFirmwareVersion(), stdout);
 	fputs("].\r\n", stdout);
 
