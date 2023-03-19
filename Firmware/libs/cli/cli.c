@@ -7,7 +7,9 @@
 #include <string.h>
 #include <stdio.h>
 
-static uint8_t cmd_buf[MAX_BUF_SIZE]; /* CLI command buffer */
+#define CMD_BUFSIZE RX_BUFSIZE + 1
+
+static uint8_t cmd_buf[CMD_BUFSIZE]; /* CLI command buffer */
 
 const char cli_prompt[] = ">> "; /* CLI prompt displayed to the user */
 const char cli_cmd_unrecog[] = "\" is not recognized as a command.\r\n"
@@ -36,7 +38,7 @@ cli_status_t cli_process(cli_t *cli)
     cli_status_t return_value = CLI_E_CMD_NOT_FOUND;
 
     /* Copy string to command buffer for processing. */
-    fgets(cmd_buf, MAX_BUF_SIZE, stdin);
+    fgets(cmd_buf, CMD_BUFSIZE, stdin);
 
     /* Get the first token (cmd name) */
     argv[argc] = strtok(cmd_buf, CMD_TOKEN_DELIMITERS);

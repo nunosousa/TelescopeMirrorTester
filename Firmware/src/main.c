@@ -66,9 +66,12 @@ static cli_status_t help_func(int argc, char **argv)
 {
 	/* Check for correct argument's list */
 	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+	{
 		fputs("\"help\" command prints a list of the available commands "
 			  "and a brief summary.\r\nTakes no arguments.",
 			  stdout);
+		return CLI_OK;
+	}
 	else if (argc != 1)
 		return CLI_E_INVALID_ARGS;
 
@@ -86,7 +89,10 @@ static cli_status_t version_func(int argc, char **argv)
 {
 	/* Check for correct argument's list */
 	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+	{
 		fputs("\"version\" command prints the system info. Takes no arguments.", stdout);
+		return CLI_OK;
+	}
 	else if (argc != 1)
 		return CLI_E_INVALID_ARGS;
 

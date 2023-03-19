@@ -11,12 +11,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define MAX_BUF_SIZE 40              /* Maximum size of CLI Rx buffer */
 #define CMD_TOKEN_DELIMITERS " \r\n" /* cli token separator characters */
 
 typedef enum
 {
-    CLI_OK,         /* API execution successful.                */
+    CLI_OK,              /* API execution successful.                */
     CLI_E_CMD_NOT_FOUND, /* Command name not found in command table. */
     CLI_E_INVALID_ARGS,  /* Invalid function parameters/arguments.   */
     CLI_E_BUF_FULL,      /* CLI buffer full.                         */
@@ -42,7 +41,7 @@ typedef struct
  */
 typedef struct
 {
-    cmd_t *cmd_tbl; /* Pointer to series of commands which are to be accepted. */
+    cmd_t *cmd_tbl;  /* Pointer to series of commands which are to be accepted. */
     uint8_t cmd_cnt; /* Number of commands in cmd_tbl.                          */
 } cli_t;
 
