@@ -6,6 +6,7 @@ find_program(AVR_OBJCOPY avr-objcopy REQUIRED)
 find_program(AVR_SIZE_TOOL avr-size REQUIRED)
 find_program(AVR_DUDE avrdude REQUIRED)
 find_program(AVR_OBJDUMP avr-objdump REQUIRED)
+find_program(AVR_SIZE avr-size REQUIRED)
 
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR avr)

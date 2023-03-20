@@ -4,7 +4,6 @@
 
 #include <avr/io.h>
 #include <avr/wdt.h>
-#include <util/delay.h>
 
 #include "../hal/uart.h"
 #include "../libs/versionInfo/firmwareBuildInfo.h"

@@ -103,6 +103,20 @@ add_custom_target(strip
 		firmware
 )
 
+# Size of the produced binary for upload
+add_custom_target(size
+	ALL
+		${AVR_SIZE}
+			--mcu=${MCU}
+			--format=avr
+			--radix=10
+			--target=elf32-avr
+			--common
+			firmware_stripped.elf
+	DEPENDS
+		strip
+)
+
 # Transform binary into hex file, we ignore the eeprom segments in the step
 add_custom_target(hex
 	ALL
