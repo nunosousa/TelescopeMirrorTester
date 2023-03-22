@@ -6,6 +6,7 @@
 #include <avr/wdt.h>
 
 #include "../hal/uart.h"
+#include "../hal/twi_master.h"
 #include "../libs/versionInfo/firmwareBuildInfo.h"
 #include "../libs/cli/cli.h"
 
