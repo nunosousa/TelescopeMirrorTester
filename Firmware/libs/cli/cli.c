@@ -9,7 +9,7 @@
 
 #define CMD_BUFSIZE RX_BUFSIZE + 1
 
-static uint8_t cmd_buf[CMD_BUFSIZE]; /* CLI command buffer */
+static char cmd_buf[CMD_BUFSIZE]; /* CLI command buffer */
 
 const char cli_prompt[] = ">> "; /* CLI prompt displayed to the user */
 const char cli_cmd_unrecog[] = "\" is not recognized as a command.\r\n"
@@ -20,7 +20,7 @@ const char cli_arg_unrecog[] = "Given command's argument(s) are not recognized.\
 /*!
  * @brief This API initialises the command-line interface.
  */
-cli_status_t cli_init(cli_t *cli)
+cli_status_t cli_init(void)
 {
     /* Print the CLI prompt. */
     fputs(cli_prompt, stdout);

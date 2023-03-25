@@ -1,5 +1,5 @@
 #include "uart.h"
-#include "cbuffer.h"
+#include "../libs/cbuffer/cbuffer.h"
 
 #include <stdio.h>
 #include <stdbool.h>

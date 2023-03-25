@@ -41,7 +41,7 @@ static void init(void)
 
 	cli.cmd_tbl = cmd_tbl;
 	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
-	cli_init(&cli);
+	cli_init();
 
 	wdt_enable(WDTO_30MS);
 }

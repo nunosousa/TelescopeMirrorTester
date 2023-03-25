@@ -18,17 +18,15 @@ set(CMAKE_C_EXTENSIONS NO)
 # Define targets and links
 #=============================
 add_library(firmwareBuildInfo STATIC)
-add_library(cli STATIC)
-add_subdirectory(libs)
-
 add_executable(firmware)
+
+add_subdirectory(libs)
 add_subdirectory(hal)
 add_subdirectory(src)
 
 target_link_libraries(firmware
 	PRIVATE
 		firmwareBuildInfo
-		cli
 )
 
 include(cmake/CMakeLists.txt)

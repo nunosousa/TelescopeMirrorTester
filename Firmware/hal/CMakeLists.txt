@@ -7,6 +7,4 @@ target_sources(firmware
 		${CMAKE_CURRENT_LIST_DIR}/twi_master.h
 		${CMAKE_CURRENT_LIST_DIR}/uart.c
 		${CMAKE_CURRENT_LIST_DIR}/uart.h
-		${CMAKE_CURRENT_LIST_DIR}/cbuffer.c
-		${CMAKE_CURRENT_LIST_DIR}/cbuffer.h
 )

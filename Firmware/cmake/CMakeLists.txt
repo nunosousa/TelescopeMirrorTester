@@ -38,11 +38,6 @@ target_compile_definitions(firmware
 		RX_BUFSIZE=${RX_BUFSIZE}
 )
 
-target_compile_definitions(cli
-	PRIVATE
-		RX_BUFSIZE=${RX_BUFSIZE}
-)
-
 # Info on configurations:
 # https://gcc.gnu.org/wiki/avr-gcc
 # https://gcc.gnu.org/onlinedocs/gcc/AVR-Options.html

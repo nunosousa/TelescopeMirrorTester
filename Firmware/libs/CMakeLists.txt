@@ -1,5 +1,6 @@
 #=============================
 # Add libs
 #=============================
-add_subdirectory(versionInfo)
+add_subdirectory(cbuffer)
 add_subdirectory(cli)
+add_subdirectory(versionInfo)

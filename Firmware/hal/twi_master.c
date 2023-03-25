@@ -16,14 +16,14 @@ void twi_init(twi_freq_mode_t twi_freq_mode, bool pullup_en)
     TWCR = 0; /* Disable interrupts */
 
     /* Configure TWI pins */
-    DDRC |= (1 << PORTC4) | (1 << PORTC5);
+    DDRC |= (1 << DDC4) | (1 << DDC5);
 
     if (pullup_en)
         PORTC |= (1 << PORTC4) | (1 << PORTC5);
     else
         PORTC &= ~((1 << PORTC4) | (1 << PORTC5));
 
-    DDRC &= ~((1 << PORTC4) | (1 << PORTC5));
+    DDRC &= ~((1 << DDC4) | (1 << DDC5));
 
     /* Configure bit rate */
 #if (F_CPU == 16000000)

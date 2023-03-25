@@ -3,6 +3,6 @@
 #=============================
 target_sources(firmware
 	PRIVATE
-		${CMAKE_CURRENT_LIST_DIR}/cli.c
-		${CMAKE_CURRENT_LIST_DIR}/cli.h
+		${CMAKE_CURRENT_LIST_DIR}/cbuffer.c
+		${CMAKE_CURRENT_LIST_DIR}/cbuffer.h
 )
