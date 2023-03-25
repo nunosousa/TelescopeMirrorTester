@@ -4,7 +4,7 @@
 
 static twi_status_t tw_start(void);
 static void tw_stop(void);
-static twi_status_t tw_write_sla(uint8_t sla);
+static twi_status_t tw_write_sla(uint8_t slave_addr, uint8_t rw);
 static twi_status_t tw_write(uint8_t data);
 static uint8_t tw_read(bool read_ack);
 
@@ -82,10 +82,10 @@ static void tw_stop(void)
 /*
  * tbd
  */
-static twi_status_t tw_write_sla(uint8_t sla)
+static twi_status_t tw_write_sla(uint8_t slave_addr, uint8_t rw)
 {
     /* Transmit slave address with read/write flag */
-    TWDR = sla;
+    TWDR = (slave_addr << 1) | rw;
     TWCR = (1 << TWINT) | (1 << TWEN);
 
     /* Wait for TWINT flag to set */
@@ -161,7 +161,7 @@ twi_status_t tw_master_transmit(uint8_t slave_addr, uint8_t *p_data,
         return error_code;
 
     /* Send slave address with WRITE flag */
-    error_code = tw_write_sla((slave_addr << 1) | TW_WRITE);
+    error_code = tw_write_sla(slave_addr, TW_WRITE);
 
     if (error_code != TWI_OK)
         return error_code;
@@ -195,7 +195,7 @@ twi_status_t tw_master_receive(uint8_t slave_addr, uint8_t *p_data, uint8_t len)
         return error_code;
 
     /* Write slave address with READ flag */
-    error_code = tw_write_sla((slave_addr << 1) | TW_READ);
+    error_code = tw_write_sla(slave_addr, TW_READ);
 
     if (error_code != TWI_OK)
         return error_code;
