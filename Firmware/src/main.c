@@ -6,9 +6,9 @@
 #include <avr/wdt.h>
 
 #include "../hal/uart.h"
-#include "../libs/versionInfo/firmwareBuildInfo.h"
 #include "../libs/cli/cli.h"
 #include "../libs/pca9535/pca9535.h"
+#include "../libs/versionInfo/firmwareBuildInfo.h"
 
 /* Local function prototypes */
 static void sys_init(void);
@@ -20,7 +20,7 @@ FILE uart_stream = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW)
 cli_t cli;
 
 /*
- * tbd
+ * Available command line commands
  */
 cmd_t cmd_tbl[] = {
 	{.cmd = "help",
@@ -33,7 +33,7 @@ cmd_t cmd_tbl[] = {
  */
 static void sys_init(void)
 {
-	/* Set WDT witl long period for initial setup */
+	/* Set WDT with long period for initial setup */
 	wdt_enable(WDTO_1S);
 
 	/* stdio streams */
@@ -65,7 +65,7 @@ int main(void)
 	sys_init();
 
 	/* Main super loop */
-	while (1)
+	while (true)
 	{
 		/* Process a pin extender pin change event */
 		if (pca9535_event)
@@ -81,7 +81,7 @@ int main(void)
 			uart_process(stdout);
 		}
 
-		/* Process a new received full line evtn */
+		/* Process a new received full line event */
 		if (uart_new_line_event)
 		{
 			uart_new_line_event = false;
@@ -111,12 +111,13 @@ static cli_status_t help_func(int argc, char **argv)
 	else if (argc != 1)
 		return CLI_E_INVALID_ARGS;
 
-	/* Print help information*/
+	/* Print help information */
 	fputs("For help on a command on the following list, type help "
 		  "command-name:\r\n",
 		  stdout);
 	fputs("cmd1   Gets something...\r\n", stdout);
 	fputs("cmd2   Sets something...\r\n", stdout);
+	// call libx help information function
 
 	return CLI_OK;
 }

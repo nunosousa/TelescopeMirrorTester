@@ -5,15 +5,6 @@
 #include <avr/interrupt.h>
 #include <avr/io.h>
 
-#define INPUT_PORT0 0  /**< Port 0 input value */
-#define INPUT_PORT1 1  /**< Port 1 input value */
-#define OUTPUT_PORT0 2 /**< Port 0 output value */
-#define OUTPUT_PORT1 3 /**< Port 1 output value */
-#define POLINV0 4      /**< Port 0 inversion logic register */
-#define POLINV1 5      /**< Port 1 inversion logic register */
-#define CONF_PORT0 6   /**< Direction control register for Port 0 */
-#define CONF_PORT1 7   /**< Direction control register for Port 1 */
-
 bool pca9535_event = false;
 
 /*
@@ -37,6 +28,9 @@ void pca9535_init(void)
     /* Setup up I2C interface */
     twi_init(TWI_FREQ_100K, false);
 
+    /* Disable general interrupts during setup */
+    cli();
+
     /* Set interrupt */
     /* PB5 PCINT5 (Pin Change Interrupt 5) */
     PORTB &= ~(1 << PORTB5); /* Pull-up resistor off on PB5 */
@@ -51,40 +45,61 @@ void pca9535_init(void)
 /*
  * tbd
  */
-void pca9535_setPortDir(uint8_t address, pca_port_t port, uint8_t direction)
+pca9535_status_t pca9535_set_port_dir(uint8_t address,
+                                      pca_port_t port, uint8_t direction)
 {
     uint8_t p_data[2];
+    twi_status_t twi_status;
 
-    p_data[0] = CONF_PORT0 + port;
+    p_data[0] = CONFIGURATION_PORT_0 + port;
     p_data[1] = direction;
 
-    twi_master_transmit(address, p_data, 2, false);
+    if (p_data[0] != CONFIGURATION_PORT_0 && p_data[0] != CONFIGURATION_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return;
+    twi_status = twi_master_transmit(address, p_data, 2, false);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-uint8_t pca9535_getPortDir(uint8_t address, pca_port_t port)
+pca9535_status_t pca9535_get_port_dir(uint8_t address,
+                                      pca_port_t port, uint8_t *direction)
 {
     uint8_t p_data;
+    twi_status_t twi_status;
 
-    p_data = CONF_PORT0 + port;
+    p_data = CONFIGURATION_PORT_0 + port;
 
-    twi_master_transmit(address, &p_data, 1, true);
+    if (p_data != CONFIGURATION_PORT_0 && p_data != CONFIGURATION_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return twi_master_receive(address, &p_data, 1);
+    twi_status = twi_master_transmit(address, &p_data, 1, true);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    twi_status = twi_master_receive(address, &p_data, 1);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-inline void pca9535_setPortOutput(uint8_t address, pca_port_t port, uint8_t value)
+inline void pca9535_set_port_output(uint8_t address, pca_port_t port, uint8_t value)
 {
     uint8_t p_data[2];
 
-    p_data[0] = OUTPUT_PORT0 + port;
+    p_data[0] = OUTPUT_PORT_0 + port;
     p_data[1] = value;
 
     twi_master_transmit(address, p_data, 2, false);
@@ -95,11 +110,11 @@ inline void pca9535_setPortOutput(uint8_t address, pca_port_t port, uint8_t valu
 /*
  * tbd
  */
-uint8_t pca9535_getPortOutput(uint8_t address, pca_port_t port)
+uint8_t pca9535_get_port_output(uint8_t address, pca_port_t port)
 {
     uint8_t p_data;
 
-    p_data = OUTPUT_PORT0 + port;
+    p_data = OUTPUT_PORT_0 + port;
 
     twi_master_transmit(address, &p_data, 1, true);
 
@@ -109,11 +124,11 @@ uint8_t pca9535_getPortOutput(uint8_t address, pca_port_t port)
 /*
  * tbd
  */
-void pca9535_setPortPolarity(uint8_t address, pca_port_t port, uint8_t value)
+void pca9535_set_port_polarity(uint8_t address, pca_port_t port, uint8_t value)
 {
     uint8_t p_data[2];
 
-    p_data[0] = POLINV0 + port;
+    p_data[0] = POLARITY_INVERSION_PORT_0 + port;
     p_data[1] = value;
 
     twi_master_transmit(address, p_data, 2, false);
@@ -124,11 +139,11 @@ void pca9535_setPortPolarity(uint8_t address, pca_port_t port, uint8_t value)
 /*
  * tbd
  */
-uint8_t pca9535_getPortPolarity(uint8_t address, pca_port_t port)
+uint8_t pca9535_get_port_polarity(uint8_t address, pca_port_t port)
 {
     uint8_t p_data;
 
-    p_data = POLINV0 + port;
+    p_data = POLARITY_INVERSION_PORT_0 + port;
 
     twi_master_transmit(address, &p_data, 1, true);
 
@@ -138,11 +153,11 @@ uint8_t pca9535_getPortPolarity(uint8_t address, pca_port_t port)
 /*
  * tbd
  */
-uint8_t pca9535_getPortInput(uint8_t address, pca_port_t port)
+uint8_t pca9535_get_port_input(uint8_t address, pca_port_t port)
 {
     uint8_t p_data;
 
-    p_data = INPUT_PORT0 + port;
+    p_data = INPUT_PORT_0 + port;
 
     twi_master_transmit(address, &p_data, 1, true);
 
