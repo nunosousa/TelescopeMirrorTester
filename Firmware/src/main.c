@@ -6,9 +6,9 @@
 #include <avr/wdt.h>
 
 #include "../hal/uart.h"
-#include "../hal/twi_master.h"
 #include "../libs/versionInfo/firmwareBuildInfo.h"
 #include "../libs/cli/cli.h"
+#include "../libs/pca9535/pca9535.h"
 
 static void init(void);
 static cli_status_t help_func(int argc, char **argv);
@@ -31,18 +31,26 @@ cmd_t cmd_tbl[] = {
  */
 static void init(void)
 {
+	/* Set WDT witl long period for initial setup */
 	wdt_enable(WDTO_1S);
 
+	/* stdio streams */
 	stdout = &uart_stream;
 	stdin = &uart_stream;
 	stderr = &uart_stream;
 
+	/* UART interface setup needed for cmd line interface */
 	uart_init();
 
+	/* Command line interface enable */
 	cli.cmd_tbl = cmd_tbl;
 	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
 	cli_init();
 
+	/* Pin extended setup */
+	pca9535_init();
+
+	/* set WDT with normal period */
 	wdt_enable(WDTO_30MS);
 }
 
@@ -55,6 +63,12 @@ int main(void)
 
 	while (1)
 	{
+		if (pca9535_event)
+		{
+			pca9535_event = false;
+			// do something
+		}
+
 		if (uart_rx_event)
 		{
 			uart_rx_event = false;

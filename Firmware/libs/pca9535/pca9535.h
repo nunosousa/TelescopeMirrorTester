@@ -2,6 +2,13 @@
 #define PCA9535_H
 
 #include <stdint.h>
+#include <stdbool.h>
+
+/*
+ * tbd
+ */
+extern bool pca9535_event;
+
 /*
  * PCA9535 registers definition.
  * The chip contain 16 bidirectional lines divided between two ports. It has
@@ -9,14 +16,6 @@
  * each pin, you can read current state of input pins, set state of output pins
  * or invert logic of given pins.
  */
-#define INPUT_PORT0 0  /**< Port 0 input value */
-#define INPUT_PORT1 1  /**< Port 1 input value */
-#define OUTPUT_PORT0 2 /**< Port 0 output value */
-#define OUTPUT_PORT1 3 /**< Port 1 output value */
-#define POLINV0 4      /**< Port 0 inversion logic register */
-#define POLINV1 5      /**< Port 1 inversion logic register */
-#define CONF_PORT0 6   /**< Direction control register for Port 0 */
-#define CONF_PORT1 7   /**< Direction control register for Port 1 */
 
 typedef enum
 {
