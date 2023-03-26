@@ -52,6 +52,9 @@ static void sys_init(void)
 	/* Pin extended setup */
 	pca9535_init();
 
+	/* Motors PWM setup */
+	//...
+
 	/* set WDT with normal period */
 	wdt_enable(WDTO_30MS);
 }

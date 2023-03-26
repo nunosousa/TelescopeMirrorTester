@@ -3,6 +3,8 @@
 #=============================
 target_sources(firmware
 	PRIVATE
+		${CMAKE_CURRENT_LIST_DIR}/timer2_pwm.c
+		${CMAKE_CURRENT_LIST_DIR}/timer2_pwm.h
 		${CMAKE_CURRENT_LIST_DIR}/twi_master.c
 		${CMAKE_CURRENT_LIST_DIR}/twi_master.h
 		${CMAKE_CURRENT_LIST_DIR}/uart.c

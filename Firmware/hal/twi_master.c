@@ -1,6 +1,9 @@
 #include "twi_master.h"
 
 #include <stdbool.h>
+#include <stdint.h>
+#include <avr/io.h>
+#include <util/twi.h>
 
 static twi_status_t twi_start(void);
 static void twi_stop(void);

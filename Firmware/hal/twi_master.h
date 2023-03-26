@@ -1,9 +1,8 @@
 #ifndef TWI_MASTER_H
 #define TWI_MASTER_H
 
-#include <avr/io.h>
-#include <util/twi.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 typedef enum
 {
