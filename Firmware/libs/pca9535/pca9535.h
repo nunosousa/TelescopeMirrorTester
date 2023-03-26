@@ -68,7 +68,7 @@ typedef enum
     PCA9535_OK,             /* API execution successful. */
     PCA9535_E_INVALID_ARGS, /* Invalid function parameters/arguments. */
     PCA9535_E_COMS          /* TWI communication error. */
-} pca9535_status_t;
+} pca_status_t;
 
 /*
  * tbd
@@ -80,48 +80,48 @@ void pca9535_init(void);
  * give them numbers like 0 and 1. This function excpects 0 for the first
  * port of the chip and 1 for the second one.
  */
-pca9535_status_t pca9535_set_port_dir(uint8_t address,
-                                      pca_port_t port, uint8_t direction);
+pca_status_t pca9535_set_port_dir(uint8_t address,
+                                  pca_port_t port, uint8_t direction);
 
 /*
  * Return current direction register value.
  */
-pca9535_status_t pca9535_get_port_dir(uint8_t address,
-                                      pca_port_t port, uint8_t *direction);
+pca_status_t pca9535_get_port_dir(uint8_t address,
+                                  pca_port_t port, uint8_t *direction);
 
 /*
  * Set output lines of the port to given value. Bits in given value for
  * lines set as input will be ignored.
  */
-pca9535_status_t pca9535_set_port_output(uint8_t address,
-                                         pca_port_t port, uint8_t output);
+pca_status_t pca9535_set_port_output(uint8_t address,
+                                     pca_port_t port, uint8_t output);
 
 /*
  * Return current output register value for given port.
  */
-pca9535_status_t pca9535_get_port_output(uint8_t address,
-                                         pca_port_t port, uint8_t *output);
+pca_status_t pca9535_get_port_output(uint8_t address,
+                                     pca_port_t port, uint8_t *output);
 
 /*
  * Set polarity inversion of given port. All lines set for inverse logic will
  * have reverse polarity, which means 1 write to output will cause the line
  * to go to low state and 1 if 0 is written.
  */
-pca9535_status_t pca9535_set_port_polarity(uint8_t address,
-                                           pca_port_t port, uint8_t polarity);
+pca_status_t pca9535_set_port_polarity(uint8_t address,
+                                       pca_port_t port, uint8_t polarity);
 
 /*
  * Get polarity inversion register value
  */
-pca9535_status_t pca9535_get_port_polarity(uint8_t address,
-                                           pca_port_t port, uint8_t *polarity);
+pca_status_t pca9535_get_port_polarity(uint8_t address,
+                                       pca_port_t port, uint8_t *polarity);
 
 /*
  * Function return current state of lines of port set as input.
  * Lines set as output will be ignored. You should mask those bits
  * in tyour code.
  */
-pca9535_status_t pca9535_get_port_input(uint8_t address,
-                                        pca_port_t port, uint8_t *input);
+pca_status_t pca9535_get_port_input(uint8_t address,
+                                    pca_port_t port, uint8_t *input);
 
 #endif /* PCA9535_H */

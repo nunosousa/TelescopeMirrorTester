@@ -45,8 +45,8 @@ void pca9535_init(void)
 /*
  * tbd
  */
-pca9535_status_t pca9535_set_port_dir(uint8_t address,
-                                      pca_port_t port, uint8_t direction)
+pca_status_t pca9535_set_port_dir(uint8_t address,
+                                  pca_port_t port, uint8_t direction)
 {
     uint8_t p_data[2];
     twi_status_t twi_status;
@@ -68,8 +68,8 @@ pca9535_status_t pca9535_set_port_dir(uint8_t address,
 /*
  * tbd
  */
-pca9535_status_t pca9535_get_port_dir(uint8_t address,
-                                      pca_port_t port, uint8_t *direction)
+pca_status_t pca9535_get_port_dir(uint8_t address,
+                                  pca_port_t port, uint8_t *direction)
 {
     uint8_t p_data;
     twi_status_t twi_status;
@@ -97,8 +97,8 @@ pca9535_status_t pca9535_get_port_dir(uint8_t address,
 /*
  * tbd
  */
-pca9535_status_t pca9535_set_port_output(uint8_t address,
-                                         pca_port_t port, uint8_t output)
+pca_status_t pca9535_set_port_output(uint8_t address,
+                                     pca_port_t port, uint8_t output)
 {
     uint8_t p_data[2];
     twi_status_t twi_status;
@@ -120,8 +120,8 @@ pca9535_status_t pca9535_set_port_output(uint8_t address,
 /*
  * tbd
  */
-pca9535_status_t pca9535_get_port_output(uint8_t address,
-                                         pca_port_t port, uint8_t *output)
+pca_status_t pca9535_get_port_output(uint8_t address,
+                                     pca_port_t port, uint8_t *output)
 {
     uint8_t p_data;
     twi_status_t twi_status;
@@ -149,8 +149,8 @@ pca9535_status_t pca9535_get_port_output(uint8_t address,
 /*
  * tbd
  */
-pca9535_status_t pca9535_set_port_polarity(uint8_t address,
-                                           pca_port_t port, uint8_t polarity)
+pca_status_t pca9535_set_port_polarity(uint8_t address,
+                                       pca_port_t port, uint8_t polarity)
 {
     uint8_t p_data[2];
     twi_status_t twi_status;
@@ -172,8 +172,8 @@ pca9535_status_t pca9535_set_port_polarity(uint8_t address,
 /*
  * tbd
  */
-pca9535_status_t pca9535_get_port_polarity(uint8_t address,
-                                           pca_port_t port, uint8_t *polarity)
+pca_status_t pca9535_get_port_polarity(uint8_t address,
+                                       pca_port_t port, uint8_t *polarity)
 {
     uint8_t p_data;
     twi_status_t twi_status;
@@ -201,8 +201,8 @@ pca9535_status_t pca9535_get_port_polarity(uint8_t address,
 /*
  * tbd
  */
-pca9535_status_t pca9535_get_port_input(uint8_t address,
-                                        pca_port_t port, uint8_t *input)
+pca_status_t pca9535_get_port_input(uint8_t address,
+                                    pca_port_t port, uint8_t *input)
 {
     uint8_t p_data;
     twi_status_t twi_status;
