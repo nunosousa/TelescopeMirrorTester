@@ -94,13 +94,13 @@ pca9535_status_t pca9535_get_port_dir(uint8_t address,
  * lines set as input will be ignored.
  */
 pca9535_status_t pca9535_set_port_output(uint8_t address,
-                                         pca_port_t port, uint8_t value);
+                                         pca_port_t port, uint8_t output);
 
 /*
  * Return current output register value for given port.
  */
 pca9535_status_t pca9535_get_port_output(uint8_t address,
-                                         pca_port_t port, uint8_t *value);
+                                         pca_port_t port, uint8_t *output);
 
 /*
  * Set polarity inversion of given port. All lines set for inverse logic will
@@ -108,13 +108,13 @@ pca9535_status_t pca9535_get_port_output(uint8_t address,
  * to go to low state and 1 if 0 is written.
  */
 pca9535_status_t pca9535_set_port_polarity(uint8_t address,
-                                           pca_port_t port, uint8_t value);
+                                           pca_port_t port, uint8_t polarity);
 
 /*
  * Get polarity inversion register value
  */
 pca9535_status_t pca9535_get_port_polarity(uint8_t address,
-                                           pca_port_t port, uint8_t *value);
+                                           pca_port_t port, uint8_t *polarity);
 
 /*
  * Function return current state of lines of port set as input.
@@ -122,6 +122,6 @@ pca9535_status_t pca9535_get_port_polarity(uint8_t address,
  * in tyour code.
  */
 pca9535_status_t pca9535_get_port_input(uint8_t address,
-                                        pca_port_t port, uint8_t *value);
+                                        pca_port_t port, uint8_t *input);
 
 #endif /* PCA9535_H */

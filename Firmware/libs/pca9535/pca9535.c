@@ -89,77 +89,140 @@ pca9535_status_t pca9535_get_port_dir(uint8_t address,
     if (twi_status != TWI_OK)
         return PCA9535_E_COMS;
 
+    *direction = p_data;
+
     return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-inline void pca9535_set_port_output(uint8_t address, pca_port_t port, uint8_t value)
+pca9535_status_t pca9535_set_port_output(uint8_t address,
+                                         pca_port_t port, uint8_t output)
 {
     uint8_t p_data[2];
+    twi_status_t twi_status;
 
     p_data[0] = OUTPUT_PORT_0 + port;
-    p_data[1] = value;
+    p_data[1] = output;
 
-    twi_master_transmit(address, p_data, 2, false);
+    if (p_data[0] != OUTPUT_PORT_0 && p_data[0] != OUTPUT_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return;
+    twi_status = twi_master_transmit(address, p_data, 2, false);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-uint8_t pca9535_get_port_output(uint8_t address, pca_port_t port)
+pca9535_status_t pca9535_get_port_output(uint8_t address,
+                                         pca_port_t port, uint8_t *output)
 {
     uint8_t p_data;
+    twi_status_t twi_status;
 
     p_data = OUTPUT_PORT_0 + port;
 
-    twi_master_transmit(address, &p_data, 1, true);
+    if (p_data != OUTPUT_PORT_0 && p_data != OUTPUT_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return twi_master_receive(address, &p_data, 1);
+    twi_status = twi_master_transmit(address, &p_data, 1, true);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    twi_status = twi_master_receive(address, &p_data, 1);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    *output = p_data;
+
+    return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-void pca9535_set_port_polarity(uint8_t address, pca_port_t port, uint8_t value)
+pca9535_status_t pca9535_set_port_polarity(uint8_t address,
+                                           pca_port_t port, uint8_t polarity)
 {
     uint8_t p_data[2];
+    twi_status_t twi_status;
 
     p_data[0] = POLARITY_INVERSION_PORT_0 + port;
-    p_data[1] = value;
+    p_data[1] = polarity;
 
-    twi_master_transmit(address, p_data, 2, false);
+    if (p_data[0] != POLARITY_INVERSION_PORT_0 && p_data[0] != POLARITY_INVERSION_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return;
+    twi_status = twi_master_transmit(address, p_data, 2, false);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-uint8_t pca9535_get_port_polarity(uint8_t address, pca_port_t port)
+pca9535_status_t pca9535_get_port_polarity(uint8_t address,
+                                           pca_port_t port, uint8_t *polarity)
 {
     uint8_t p_data;
+    twi_status_t twi_status;
 
     p_data = POLARITY_INVERSION_PORT_0 + port;
 
-    twi_master_transmit(address, &p_data, 1, true);
+    if (p_data != POLARITY_INVERSION_PORT_0 && p_data != POLARITY_INVERSION_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return twi_master_receive(address, &p_data, 1);
+    twi_status = twi_master_transmit(address, &p_data, 1, true);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    twi_status = twi_master_receive(address, &p_data, 1);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    *polarity = p_data;
+
+    return PCA9535_OK;
 }
 
 /*
  * tbd
  */
-uint8_t pca9535_get_port_input(uint8_t address, pca_port_t port)
+pca9535_status_t pca9535_get_port_input(uint8_t address,
+                                        pca_port_t port, uint8_t *input)
 {
     uint8_t p_data;
+    twi_status_t twi_status;
 
     p_data = INPUT_PORT_0 + port;
 
-    twi_master_transmit(address, &p_data, 1, true);
+    if (p_data != INPUT_PORT_0 && p_data != INPUT_PORT_1)
+        return PCA9535_E_INVALID_ARGS;
 
-    return twi_master_receive(address, &p_data, 1);
+    twi_status = twi_master_transmit(address, &p_data, 1, true);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    twi_status = twi_master_receive(address, &p_data, 1);
+
+    if (twi_status != TWI_OK)
+        return PCA9535_E_COMS;
+
+    *input = p_data;
+
+    return PCA9535_OK;
 }
