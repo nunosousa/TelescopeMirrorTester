@@ -22,6 +22,7 @@ bool pca9535_event = false;
 ISR(PCINT0_vect)
 {
     /* Check for low level active pin state */
+    /* PB5 PCINT5 (Pin Change Interrupt 5) */
     if ((PINB & (1 << PINB5)) == 0)
         pca9535_event = true;
 
@@ -37,7 +38,7 @@ void pca9535_init(void)
     twi_init(TWI_FREQ_100K, false);
 
     /* Set interrupt */
-    // PB5 PCINT5 (Pin Change Interrupt 5)
+    /* PB5 PCINT5 (Pin Change Interrupt 5) */
     PORTB &= ~(1 << PORTB5); /* Pull-up resistor off on PB5 */
     DDRB &= ~(1 << DDB5);    /* Configure PB5 as input */
     PCICR |= 1 << PCIE0;     /* Enable PCI0 */

@@ -10,10 +10,12 @@
 #include "../libs/cli/cli.h"
 #include "../libs/pca9535/pca9535.h"
 
-static void init(void);
+/* Local function prototypes */
+static void sys_init(void);
 static cli_status_t help_func(int argc, char **argv);
 static cli_status_t version_func(int argc, char **argv);
 
+/* Data structure */
 FILE uart_stream = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
 cli_t cli;
 
@@ -29,7 +31,7 @@ cmd_t cmd_tbl[] = {
 /*
  * Do all the startup-time peripheral initializations.
  */
-static void init(void)
+static void sys_init(void)
 {
 	/* Set WDT witl long period for initial setup */
 	wdt_enable(WDTO_1S);
@@ -59,32 +61,38 @@ static void init(void)
  */
 int main(void)
 {
-	init();
+	/* Initialize all required peripherals or libraries */
+	sys_init();
 
+	/* Main super loop */
 	while (1)
 	{
+		/* Process a pin extender pin change event */
 		if (pca9535_event)
 		{
 			pca9535_event = false;
 			// do something
 		}
 
+		/* Process a new received character event */
 		if (uart_rx_event)
 		{
 			uart_rx_event = false;
 			uart_process(stdout);
 		}
 
+		/* Process a new received full line evtn */
 		if (uart_new_line_event)
 		{
 			uart_new_line_event = false;
 			cli_process(&cli);
 		}
 
+		/* Keep the watchdog timer on check */
 		wdt_reset();
 	}
 
-	return 0; // will never return
+	return 0; /* Will never return */
 }
 
 /*
