@@ -10,7 +10,7 @@
 #include <util/setbaud.h>
 #include <util/atomic.h>
 
-bool uart_rx_event = false;
+bool volatile uart_rx_event = false;
 
 bool uart_new_line_event = false;
 

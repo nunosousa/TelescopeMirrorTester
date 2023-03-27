@@ -8,7 +8,7 @@
 /*
  * Received character event
  */
-extern bool uart_rx_event;
+extern bool volatile uart_rx_event;
 
 /*
  * Received full line event
