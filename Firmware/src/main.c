@@ -33,8 +33,8 @@ cmd_t cmd_tbl[] = {
  */
 static void sys_init(void)
 {
-	/* Set WDT with long period for initial setup */
-	wdt_enable(WDTO_1S);
+	/* Set WDT */
+	wdt_enable(WDTO_30MS);
 
 	/* stdio streams */
 	stdout = &uart_stream;
@@ -55,8 +55,8 @@ static void sys_init(void)
 	/* Motors PWM setup */
 	//...
 
-	/* set WDT with normal period */
-	wdt_enable(WDTO_30MS);
+	/* Reset WD before jumping to normal operation */
+	wdt_reset();
 }
 
 /*
