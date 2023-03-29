@@ -2,28 +2,37 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
+
+bool volatile timer0_clk_event;
 
 ISR(TIMER0_COMPA_vect)
 {
-    // Your code here
+    timer0_clk_event = true;
 }
 
 void timer0_clk_init(void)
 {
+    timer0_clk_event = false;
+
     /* Disable general interrupts during setup */
     cli();
 
-    TCCR0A = 0x00; // Clear TCCR0A register
-    TCCR0B = 0x00; // Clear TCCR0B register
-    TCNT0 = 0x00;  // Clear counter value
+    /* Set compare match value for 16ms period
+    Formula: Compare Match Value =
+    [(Timer0 Clock Frequency) * (1 / Prescaler) * (1 / Desired Interrupt Frequency)] - 1 */
 
-    OCR0A = 124; // Set compare match value for 50ms period
-                 // Formula: Compare Match Value = [(Desired Interrupt Frequency) * (1 / Prescaler) * (1 / Timer0 Clock Period)] - 1
-                 // For 50ms period: Compare Match Value = (50 * 10^-3 * 16 * 10^6) / (1024 * 0.0625) - 1 = 124
+#if (F_CPU == 16000000)
+    /* For 16ms period (or 62.5Hz frequency) and 16000000Hz Timer0 Clock Frequency:
+    Compare Match Value = (16000000) / (1024 * 62.5) - 1 = 249 */
+    OCR0A = 249;
 
-    TCCR0A |= (1 << WGM01);              // Set CTC mode
-    TCCR0B |= (1 << CS02) | (1 << CS00); // Set prescaler to 1024
-    TIMSK0 |= (1 << OCIE0A);             // Enable Timer0 Compare Match A interrupt
+    TCCR0A |= (1 << WGM01);              /* Set CTC mode */
+    TCCR0B |= (1 << CS02) | (1 << CS00); /* Set prescaler to 1024 */
+    TIMSK0 |= (1 << OCIE0A);             /* Enable Timer0 Compare Match A interrupt */
+#else
+#error "No timer values were calculated for the selected CPU frequency (F_CPU)!"
+#endif
 
     /* Enable general interrupts after setup */
     sei();

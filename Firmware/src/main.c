@@ -5,6 +5,7 @@
 #include <avr/io.h>
 #include <avr/wdt.h>
 
+#include "../hal/timer0_clk.h"
 #include "../hal/uart.h"
 #include "../libs/cli/cli.h"
 #include "../libs/pca9535/pca9535.h"
@@ -70,6 +71,13 @@ int main(void)
 	/* Main super loop */
 	while (true)
 	{
+		/* Process a periodic 16ms timer event */
+		if (timer0_clk_event)
+		{
+			timer0_clk_event = false;
+			// do something
+		}
+
 		/* Process a pin extender pin change event */
 		if (pca9535_event)
 		{

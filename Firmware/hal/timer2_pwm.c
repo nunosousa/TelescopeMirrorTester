@@ -3,9 +3,6 @@
 #include <avr/io.h>
 #include <stdint.h>
 
-// PWM 1 pin 11 PB3 OC2A (Timer/Counter2 Output Compare Match A Output)
-// PWM 2 pin 3  PD3 OC2B (Timer/Counter2 Output Compare Match B Output)
-
 /*
  * tbd
  */
