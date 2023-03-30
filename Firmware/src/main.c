@@ -6,6 +6,7 @@
 #include <avr/wdt.h>
 
 #include "../hal/timer0_clk.h"
+#include "../hal/timer1_rc5.h"
 #include "../hal/uart.h"
 #include "../libs/cli/cli.h"
 #include "../libs/pca9535/pca9535.h"
@@ -53,6 +54,12 @@ static void sys_init(void)
 	/* Pin extended setup */
 	pca9535_init();
 
+	/* Set time keeping clock */
+	timer0_clk_init();
+
+	/* Configure the IR receiver */
+	timer1_rc5_init();
+
 	/* Motors PWM setup */
 	//...
 
@@ -75,6 +82,13 @@ int main(void)
 		if (timer0_clk_event)
 		{
 			timer0_clk_event = false;
+			// do something
+		}
+
+		/* Process the received RC-5 command event */
+		if (rc5_ready_event)
+		{
+			rc5_ready_event = false;
 			// do something
 		}
 

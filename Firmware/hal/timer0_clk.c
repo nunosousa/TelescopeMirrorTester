@@ -4,7 +4,7 @@
 #include <avr/interrupt.h>
 #include <stdbool.h>
 
-bool volatile timer0_clk_event;
+volatile bool timer0_clk_event;
 
 ISR(TIMER0_COMPA_vect)
 {

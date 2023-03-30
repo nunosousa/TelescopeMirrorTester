@@ -6,7 +6,7 @@
 /*
  * Timer event
  */
-extern bool volatile timer0_clk_event;
+extern volatile bool timer0_clk_event;
 
 void timer0_clk_init(void);
 

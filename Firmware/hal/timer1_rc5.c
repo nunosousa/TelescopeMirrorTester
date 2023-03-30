@@ -1,10 +1,11 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
 
 // RC-5 protocol variables
 volatile uint16_t rc5_command = 0;
 volatile uint8_t rc5_toggle_bit = 0;
-volatile uint8_t rc5_ready = 0;
+volatile bool rc5_ready_event = false;
 
 // Timer1 overflow counter
 volatile uint16_t timer1_ovf_count = 0;
@@ -22,10 +23,10 @@ ISR(TIMER1_CAPT_vect)
         uint8_t bit_value = (pulse_duration > 10000);
 
         // Process the RC-5 bit
-        if (rc5_ready)
+        if (rc5_ready_event)
         {
             // Start of a new RC-5 frame
-            rc5_ready = 0;
+            rc5_ready_event = false;
             rc5_command = 0;
             rc5_toggle_bit = 0;
         }
@@ -47,7 +48,7 @@ ISR(TIMER1_CAPT_vect)
         // Check if this is the last RC-5 bit
         if ((timer1_ovf_count % 14) == 13)
         {
-            rc5_ready = 1;
+            rc5_ready_event = true;
         }
     }
 
@@ -69,6 +70,10 @@ void timer1_rc5_init(void)
     cli();
 
     /* PB0 ICP1 (Timer/Counter1 Input Capture Input) */
+    /* Configure ICP1 pin as input with the pull up disabled */
+    DDRB &= ~(1 << DDB0);
+    PORTB &= ~(1 << PORTB0);
+
     /* Initialize Timer1 in Input Capture mode with a prescaler of 8 */
     TCCR1B |= (1 << ICES1) | (1 << CS11);
     TIMSK1 |= (1 << ICIE1) | (1 << TOIE1);
@@ -83,13 +88,13 @@ void timer1_rc5_init(void)
     while (1)
     {
         // Check if an RC-5 command is ready
-        if (rc5_ready)
+        if (rc5_ready_event)
         {
             // Process the RC-5 command
             // ...
 
             // Reset the RC-5 protocol variables
-            rc5_ready = 0;
+            rc5_ready_event = false;
             rc5_command = 0;
             rc5_toggle_bit = 0;
         }
