@@ -10,10 +10,11 @@ volatile bool rc5_ready_event = false;
 // Timer1 overflow counter
 volatile uint16_t timer1_ovf_count = 0;
 
+static volatile uint16_t last_capture = 0;
+
 // Interrupt Service Routine for Timer1 Input Capture
 ISR(TIMER1_CAPT_vect)
 {
-    static uint16_t last_capture = 0;
     uint16_t capture = ICR1;
     uint16_t pulse_duration = capture - last_capture;
 
@@ -74,8 +75,16 @@ void timer1_rc5_init(void)
     DDRB &= ~(1 << DDB0);
     PORTB &= ~(1 << PORTB0);
 
-    /* Initialize Timer1 in Input Capture mode with a prescaler of 8 */
-    TCCR1B |= (1 << ICES1) | (1 << CS11);
+    /* Initialize Timer1 in Input Capture mode */
+#if (F_CPU == 16000000)
+    TCCR1B |= 1 << CS11; /* prescaler of 8 */
+#else
+#error "No timer values were calculated for the selected CPU frequency (F_CPU)!"
+#endif
+
+    TCCR1A = 0;
+    TCCR1B |= 1 << ICES1; /* Capture raising edge */
+    /* Raise interrupt on input capture and on counter overflow */
     TIMSK1 |= (1 << ICIE1) | (1 << TOIE1);
     TCNT1 = 0;
 
