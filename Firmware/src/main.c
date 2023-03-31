@@ -23,6 +23,9 @@ cli_t cli;
 
 /*
  * Available command line commands
+ * The contents of the array should be in ascending sorted order of the cmd field
+ * according to the comparison function strcmp
+ * Use the search function bsearch
  */
 cmd_t cmd_tbl[] = {
 	{.cmd = "help",
