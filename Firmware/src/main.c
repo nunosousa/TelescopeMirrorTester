@@ -9,6 +9,7 @@
 #include "../hal/timer1_rc5.h"
 #include "../hal/uart.h"
 #include "../libs/cli/cli.h"
+#include "../libs/motorControl/motor_control.h"
 #include "../libs/pca9535/pca9535.h"
 #include "../libs/versionInfo/firmwareBuildInfo.h"
 
@@ -64,7 +65,7 @@ static void sys_init(void)
 	timer1_rc5_init();
 
 	/* Motors PWM setup */
-	//...
+	motor_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();
