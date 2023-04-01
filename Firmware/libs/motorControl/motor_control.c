@@ -115,22 +115,17 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 /*
  * Get motor state.
  */
-void get_motor_state(motor_t motorID, motor_parameters_t *motor_state)
+motor_parameters_t *get_motor_state(motor_t motorID)
 {
     switch (motorID)
     {
     case MOTOR_A:
-        motor_state = &motor_parameters[MOTOR_A];
-        break;
+        return &motor_parameters[MOTOR_A];
     case MOTOR_B:
-        motor_state = &motor_parameters[MOTOR_B];
-        break;
+        return &motor_parameters[MOTOR_B];
     case MOTOR_C:
-        motor_state = &motor_parameters[MOTOR_C];
-        break;
+        return &motor_parameters[MOTOR_C];
     default:
-        motor_state = NULL;
-        break;
+        return NULL;
     }
-    return;
 }

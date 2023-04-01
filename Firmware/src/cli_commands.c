@@ -14,8 +14,11 @@ const char help_help[] PROGMEM =
     "\"help\" command prints a list of the available commands\r\n"
     "and a brief summary.\r\nTakes no arguments.\r\n";
 const char version_help[] PROGMEM =
-    "\"version\" command prints the system info. "
+    "\"version\" command prints the system info.\r\n"
     "Takes no arguments.\r\n";
+const char version_response[] PROGMEM =
+    "Position controler [Author: Nuno Sousa, "
+    "Firmware version: ";
 const char setMaxSpeed_help[] PROGMEM =
     "\"setMaxSpeed\" command sets the maximum speed that motorID can reach.\r\n"
     "It expects the following arguments:\r\n"
@@ -59,6 +62,11 @@ const char getSpeed_help[] PROGMEM =
     "    getSpeed motorID\r\n"
     "and will print the following if successful:\r\n"
     "    speed, drive state\r\n";
+
+/*
+ * tbd.
+ */
+static void print_progmem_string(const char *string);
 
 /*
  * tbd.
@@ -151,6 +159,17 @@ void cli_commands_init(cli_t *cli)
 }
 
 /*
+ * tbd.
+ */
+static void print_progmem_string(const char *string)
+{
+    while (pgm_read_byte(string) != '0')
+    {
+        putchar(pgm_read_byte(string));
+    }
+}
+
+/*
  * tbd
  */
 static cli_status_t help_func(int argc, char **argv)
@@ -158,7 +177,7 @@ static cli_status_t help_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(help_help, stdout);
+        print_progmem_string(help_help);
         return CLI_OK;
     }
     else if (argc != 1)
@@ -183,18 +202,14 @@ static cli_status_t version_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs("\"version\" command prints the system info. "
-              "Takes no arguments.\r\n",
-              stdout);
+        print_progmem_string(version_help);
         return CLI_OK;
     }
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
     /* Print firmware version info */
-    fputs("Position controler [Author: Nuno Sousa, "
-          "Firmware version: ",
-          stdout);
+    print_progmem_string(version_response);
     fputs(getFirmwareVersion(), stdout);
     fputs("].\r\n", stdout);
 
@@ -213,7 +228,7 @@ static cli_status_t setMaxSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(setMaxSpeed_help, stdout);
+        print_progmem_string(setMaxSpeed_help);
         return CLI_OK;
     }
     else if (argc != 3)
@@ -235,7 +250,7 @@ static cli_status_t setMaxSpeed_func(int argc, char **argv)
     if (speed < 0 || speed > 100)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
-    get_motor_state(motorID, motor_state);
+    motor_state = get_motor_state(motorID);
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
@@ -256,7 +271,7 @@ static cli_status_t getMaxSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(getMaxSpeed_help, stdout);
+        print_progmem_string(getMaxSpeed_help);
         return CLI_OK;
     }
     else if (argc != 2)
@@ -275,7 +290,7 @@ static cli_status_t getMaxSpeed_func(int argc, char **argv)
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
-    get_motor_state(motorID, motor_state);
+    motor_state = get_motor_state(motorID);
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
@@ -291,7 +306,7 @@ static cli_status_t setMinSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(setMinSpeed_help, stdout);
+        print_progmem_string(setMinSpeed_help);
         return CLI_OK;
     }
     else if (argc != 1)
@@ -309,7 +324,7 @@ static cli_status_t getMinSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(getMinSpeed_help, stdout);
+        print_progmem_string(getMinSpeed_help);
         return CLI_OK;
     }
     else if (argc != 1)
@@ -327,7 +342,7 @@ static cli_status_t setRate_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(setRate_help, stdout);
+        print_progmem_string(setRate_help);
         return CLI_OK;
     }
     else if (argc != 1)
@@ -345,7 +360,7 @@ static cli_status_t getRate_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(getRate_help, stdout);
+        print_progmem_string(getRate_help);
         return CLI_OK;
     }
     else if (argc != 1)
@@ -369,7 +384,7 @@ static cli_status_t setSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(setSpeed_help, stdout);
+        print_progmem_string(setSpeed_help);
         return CLI_OK;
     }
     else if (argc != 3)
@@ -419,7 +434,7 @@ static cli_status_t getSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs(getSpeed_help, stdout);
+        print_progmem_string(getSpeed_help);
         return CLI_OK;
     }
     else if (argc != 2)
@@ -438,7 +453,7 @@ static cli_status_t getSpeed_func(int argc, char **argv)
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
-    get_motor_state(motorID, motor_state);
+    motor_state = get_motor_state(motorID);
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
