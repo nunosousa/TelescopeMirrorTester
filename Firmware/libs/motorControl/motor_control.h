@@ -1,7 +1,9 @@
 #ifndef MOTOR_CONTROL_H
 #define MOTOR_CONTROL_H
 
-#include "../cli/cli.h"
+#include <stdint.h>
+
+#define NUMBER_OF_MOTORS 3
 
 typedef enum
 {
@@ -18,44 +20,17 @@ typedef enum
     COAST
 } motor_drive_t;
 
+typedef struct
+{
+    uint8_t max_speed;   /* Motor max allowed duty cycle in % */
+    uint8_t min_speed;   /* Motor min allowed duty cycle in % */
+    uint8_t max_rate;    /* Motor allowed duty cycle rate of change %/s */
+    uint8_t speed;       /* Motor current duty cycle */
+    motor_drive_t drive; /* Motor current drive status */
+} motor_parameters_t;
+
 void motor_init(void);
-
-/*
- * Command: setMaxSpeed {A, B, C}motorID (int)maxSpeed
- */
-cli_status_t setMaxSpeed_func(int argc, char **argv);
-
-/*
- * Command: getMaxSpeed {A, B, C}motorID
- */
-cli_status_t getMaxSpeed_func(int argc, char **argv);
-
-// setMinSpeed {A, B, C}motorID (int)minSpeed
-cli_status_t setMinSpeed_func(int argc, char **argv);
-
-// getMinSpeed {A, B, C}motorID
-cli_status_t getMinSpeed_func(int argc, char **argv);
-
-// setRate {A, B, C}motorID (int)acc
-cli_status_t setRate_func(int argc, char **argv);
-
-// getRate {A, B, C}motorID
-cli_status_t getRate_func(int argc, char **argv);
-
-/*
- * Command: setSpeed {A, B, C}motorID (int)speed
- */
-cli_status_t setSpeed_func(int argc, char **argv);
-
-/*
- * Command: getSpeed {A, B, C}motorID
- */
-cli_status_t getSpeed_func(int argc, char **argv);
-
-// getLimitSw {A, B, C}motorID
-cli_status_t getLimitSw_func(int argc, char **argv);
-
-// limitSw {A, B, C}motorID (bool)swState (bool)direction
-cli_status_t limitSw_func(int argc, char **argv);
+void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed);
+void get_motor_state(motor_t motorID, motor_parameters_t *motor_state);
 
 #endif /* MOTOR_CONTROL_H */

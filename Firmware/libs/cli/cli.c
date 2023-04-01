@@ -60,7 +60,7 @@ cli_status_t cli_process(cli_t *cli)
      * which is the command name. */
     for (uint8_t i = 0; i < cli->cmd_cnt; i++)
     {
-        if (strcmp(argv[0], cli->cmd_tbl[i].cmd) == 0)
+        if (strncmp(argv[0], cli->cmd_tbl[i].cmd, MAXIMUM_TOKEN_SIZE) == 0)
         {
             /* Found a match, execute the associated function. */
             return_value = cli->cmd_tbl[i].func(argc, argv);

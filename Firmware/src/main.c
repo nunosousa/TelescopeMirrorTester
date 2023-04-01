@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include <string.h>
 
 #include <avr/io.h>
 #include <avr/wdt.h>
@@ -11,28 +10,15 @@
 #include "../libs/cli/cli.h"
 #include "../libs/motorControl/motor_control.h"
 #include "../libs/pca9535/pca9535.h"
-#include "../libs/versionInfo/firmwareBuildInfo.h"
 
 /* Local function prototypes */
 static void sys_init(void);
-static cli_status_t help_func(int argc, char **argv);
-static cli_status_t version_func(int argc, char **argv);
 
-/* Data structure */
+/* Set up default io streams */
 FILE uart_stream = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
-cli_t cli;
 
-/*
- * Available command line commands
- * The contents of the array should be in ascending sorted order of the cmd field
- * according to the comparison function strcmp
- * Use the search function bsearch
- */
-cmd_t cmd_tbl[] = {
-	{.cmd = "help",
-	 .func = help_func},
-	{.cmd = "version",
-	 .func = version_func}};
+/* Command line structure */
+cli_t cli;
 
 /*
  * Do all the startup-time peripheral initializations.
@@ -50,9 +36,7 @@ static void sys_init(void)
 	/* UART interface setup needed for cmd line interface */
 	uart_init();
 
-	/* Command line interface enable */
-	cli.cmd_tbl = cmd_tbl;
-	cli.cmd_cnt = sizeof(cmd_tbl) / sizeof(cmd_t);
+	/* Enable the cli interface */
 	cli_init();
 
 	/* Pin extended setup */
@@ -122,57 +106,4 @@ int main(void)
 	}
 
 	return 0; /* Will never return */
-}
-
-/*
- * tbd
- */
-static cli_status_t help_func(int argc, char **argv)
-{
-	/* Check for correct argument's list */
-	if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
-	{
-		fputs("\"help\" command prints a list of the available commands "
-			  "and a brief summary.\r\nTakes no arguments.\r\n",
-			  stdout);
-		return CLI_OK;
-	}
-	else if (argc != 1)
-		return CLI_E_INVALID_ARGS;
-
-	/* Print help information */
-	fputs("For help on a command on the following list, type help "
-		  "command-name:\r\n",
-		  stdout);
-	fputs("cmd1   Gets something...\r\n", stdout);
-	fputs("cmd2   Sets something...\r\n", stdout);
-	// call libx help information function
-
-	return CLI_OK;
-}
-
-/*
- * tbd
- */
-static cli_status_t version_func(int argc, char **argv)
-{
-	/* Check for correct argument's list */
-	if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
-	{
-		fputs("\"version\" command prints the system info. "
-			  "Takes no arguments.\r\n",
-			  stdout);
-		return CLI_OK;
-	}
-	else if (argc != 1)
-		return CLI_E_INVALID_ARGS;
-
-	/* Print firmware version info */
-	fputs("Position controler [Author: Nuno Sousa, "
-		  "Firmware version: ",
-		  stdout);
-	fputs(getFirmwareVersion(), stdout);
-	fputs("].\r\n", stdout);
-
-	return CLI_OK;
 }
