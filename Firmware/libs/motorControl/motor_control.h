@@ -20,10 +20,14 @@ typedef enum
 
 void motor_init(void);
 
-// setMaxSpeed {A, B, C}motorID (int)maxSpeed
+/*
+ * Command: setMaxSpeed {A, B, C}motorID (int)maxSpeed
+ */
 cli_status_t setMaxSpeed_func(int argc, char **argv);
 
-// getMaxSpeed {A, B, C}motorID
+/*
+ * Command: getMaxSpeed {A, B, C}motorID
+ */
 cli_status_t getMaxSpeed_func(int argc, char **argv);
 
 // setMinSpeed {A, B, C}motorID (int)minSpeed
@@ -38,10 +42,14 @@ cli_status_t setRate_func(int argc, char **argv);
 // getRate {A, B, C}motorID
 cli_status_t getRate_func(int argc, char **argv);
 
-// setSpeed {A, B, C}motorID (int)speed
+/*
+ * Command: setSpeed {A, B, C}motorID (int)speed
+ */
 cli_status_t setSpeed_func(int argc, char **argv);
 
-// getSpeed {A, B, C}motorID
+/*
+ * Command: getSpeed {A, B, C}motorID
+ */
 cli_status_t getSpeed_func(int argc, char **argv);
 
 // getLimitSw {A, B, C}motorID

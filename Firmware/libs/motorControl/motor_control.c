@@ -123,9 +123,14 @@ static void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     return;
 }
 
-// setMaxSpeed {A, B, C}motorID (int)maxSpeed
+/*
+ * Command: setMaxSpeed {A, B, C}motorID (int)maxSpeed
+ */
 cli_status_t setMaxSpeed_func(int argc, char **argv)
 {
+    motor_t motorID;
+    int speed;
+
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
@@ -141,15 +146,35 @@ cli_status_t setMaxSpeed_func(int argc, char **argv)
     else if (argc != 3)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
-    // motor_drive(motorID, drive, speed);
+    /* Perform commands actions */
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    /* Identify selected speed */
+    speed = atoi(argv[2]);
+
+    if (speed < 0 || speed > 100)
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    motor_parameters[motorID].max_speed = speed;
 
     return CLI_OK;
 }
 
-// getMaxSpeed {A, B, C}motorID
+/*
+ * Command: getMaxSpeed {A, B, C}motorID
+ */
 cli_status_t getMaxSpeed_func(int argc, char **argv)
 {
+    char speed_string[10];
+    motor_t motorID;
+
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
@@ -158,15 +183,29 @@ cli_status_t getMaxSpeed_func(int argc, char **argv)
               "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
               "It showld be called as follows:\r\n"
               "    getMaxSpeed motorID maxSpeed\r\n"
-              "and will print the following if successful.",
+              "and will print the following if successful:\r\n"
+              "    maxSpeed\r\n",
               stdout);
         return CLI_OK;
     }
-    else if (argc != 1)
+    else if (argc != 2)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
-    // motor_drive(motorID, drive, speed);
+    /* Perform commands actions */
+    /* Identify motorID and print its speed value */
+    memset(speed_string, 0x00, 10);
+
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    itoa(motor_parameters[motorID].max_speed, speed_string, 10);
+    fputs(speed_string, stdout);
 
     return CLI_OK;
 }
@@ -185,7 +224,7 @@ cli_status_t setMinSpeed_func(int argc, char **argv)
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
@@ -205,7 +244,7 @@ cli_status_t getMinSpeed_func(int argc, char **argv)
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
@@ -225,7 +264,7 @@ cli_status_t setRate_func(int argc, char **argv)
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
@@ -245,7 +284,7 @@ cli_status_t getRate_func(int argc, char **argv)
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
@@ -292,13 +331,15 @@ cli_status_t setSpeed_func(int argc, char **argv)
 
     if (speed == 0)
         drive = BRAKE;
-    else if (speed > 0)
+    else if (speed > 0 && speed <= 100)
         drive = FORWARD_DRIVE;
-    else
+    else if (speed >= -100 && speed < 0)
     {
         speed = -speed;
         drive = REVERSE_DRIVE;
     }
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
 
     /* Drive motor */
     motor_drive(motorID, drive, speed);
@@ -381,7 +422,7 @@ cli_status_t getLimitSw_func(int argc, char **argv)
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
@@ -401,7 +442,7 @@ cli_status_t limitSw_func(int argc, char **argv)
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
