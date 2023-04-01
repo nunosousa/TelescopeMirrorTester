@@ -32,17 +32,11 @@ cli_status_t setMinSpeed_func(int argc, char **argv);
 // getMinSpeed {A, B, C}motorID
 cli_status_t getMinSpeed_func(int argc, char **argv);
 
-// setAcc {A, B, C}motorID (int)acc
-cli_status_t setAcc_func(int argc, char **argv);
+// setRate {A, B, C}motorID (int)acc
+cli_status_t setRate_func(int argc, char **argv);
 
-// getAcc {A, B, C}motorID
-cli_status_t getAcc_func(int argc, char **argv);
-
-// setDec {A, B, C}motorID (int)dec
-cli_status_t setDec_func(int argc, char **argv);
-
-// getDec {A, B, C}motorID
-cli_status_t getDec_func(int argc, char **argv);
+// getRate {A, B, C}motorID
+cli_status_t getRate_func(int argc, char **argv);
 
 // setSpeed {A, B, C}motorID (int)speed
 cli_status_t setSpeed_func(int argc, char **argv);

@@ -8,6 +8,13 @@
 #include <stdint.h>
 #include <string.h>
 
+typedef struct
+{
+    uint8_t max_speed; /* Motor max allowed duty cycle in % */
+    uint8_t min_speed; /* Motor min allowed duty cycle in % */
+    uint8_t max_rate;  /* Motor allowed duty cycle rate of change % */
+} motor_parameters_t;
+
 static void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed);
 
 void motor_init(void)
@@ -113,8 +120,12 @@ cli_status_t getMaxSpeed_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strcmp(argv[1], "help") == 0))
     {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
+        fputs("\"getMaxSpeed\" command gets the maximum speed that motorID can reach.\r\n"
+              "It expects the following arguments:\r\n"
+              "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+              "It showld be called as follows:\r\n"
+              "    getMaxSpeed motorID maxSpeed\r\n"
+              "and will print the following if successful.",
               stdout);
         return CLI_OK;
     }
@@ -167,8 +178,8 @@ cli_status_t getMinSpeed_func(int argc, char **argv)
     return CLI_OK;
 }
 
-// setAcc {A, B, C}motorID (int)acc
-cli_status_t setAcc_func(int argc, char **argv)
+// setRate {A, B, C}motorID (int)acc
+cli_status_t setRate_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
     if ((argc == 2) && (strcmp(argv[1], "help") == 0))
@@ -187,48 +198,8 @@ cli_status_t setAcc_func(int argc, char **argv)
     return CLI_OK;
 }
 
-// getAcc {A, B, C}motorID
-cli_status_t getAcc_func(int argc, char **argv)
-{
-    /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
-    {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
-              stdout);
-        return CLI_OK;
-    }
-    else if (argc != 1)
-        return CLI_E_INVALID_ARGS;
-
-    /* Perform commads actions */
-    // motor_drive(motorID, drive, speed);
-
-    return CLI_OK;
-}
-
-// setDec {A, B, C}motorID (int)dec
-cli_status_t setDec_func(int argc, char **argv)
-{
-    /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
-    {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
-              stdout);
-        return CLI_OK;
-    }
-    else if (argc != 1)
-        return CLI_E_INVALID_ARGS;
-
-    /* Perform commads actions */
-    // motor_drive(motorID, drive, speed);
-
-    return CLI_OK;
-}
-
-// getDec {A, B, C}motorID
-cli_status_t getDec_func(int argc, char **argv)
+// getRate {A, B, C}motorID
+cli_status_t getRate_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
     if ((argc == 2) && (strcmp(argv[1], "help") == 0))
@@ -250,6 +221,10 @@ cli_status_t getDec_func(int argc, char **argv)
 // setSpeed {A, B, C}motorID (int)speed
 cli_status_t setSpeed_func(int argc, char **argv)
 {
+    motor_t motorID;
+    uint8_t speed;
+    motor_drive_t drive;
+
     /* Check for correct argument's list */
     if ((argc == 2) && (strcmp(argv[1], "help") == 0))
     {
@@ -262,7 +237,23 @@ cli_status_t setSpeed_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commads actions */
-    // motor_drive(motorID, drive, speed);
+    /* Identify motorID */
+    if (strcmp(argv[1], "A"))
+        motorID = MOTOR_A;
+    else if (strcmp(argv[1], "B"))
+        motorID = MOTOR_B;
+    else if (strcmp(argv[1], "C"))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS;
+
+    /* Identify selected speed */
+    speed = atoi(argv[2]);
+
+    if (speed == 0)
+        drive = BRAKE;
+
+    motor_drive(motorID, drive, speed);
 
     return CLI_OK;
 }
@@ -280,9 +271,6 @@ cli_status_t getSpeed_func(int argc, char **argv)
     }
     else if (argc != 1)
         return CLI_E_INVALID_ARGS;
-
-    /* Perform commads actions */
-    // motor_drive(motorID, drive, speed);
 
     return CLI_OK;
 }
