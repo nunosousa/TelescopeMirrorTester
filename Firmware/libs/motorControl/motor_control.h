@@ -5,9 +5,9 @@
 
 typedef enum
 {
-    MOTOR_A,
-    MOTOR_B,
-    MOTOR_C
+    MOTOR_A = 0,
+    MOTOR_B = 1,
+    MOTOR_C = 2
 } motor_t;
 
 typedef enum

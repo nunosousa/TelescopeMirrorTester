@@ -130,7 +130,7 @@ int main(void)
 static cli_status_t help_func(int argc, char **argv)
 {
 	/* Check for correct argument's list */
-	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+	if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
 	{
 		fputs("\"help\" command prints a list of the available commands "
 			  "and a brief summary.\r\nTakes no arguments.\r\n",
@@ -157,7 +157,7 @@ static cli_status_t help_func(int argc, char **argv)
 static cli_status_t version_func(int argc, char **argv)
 {
 	/* Check for correct argument's list */
-	if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+	if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
 	{
 		fputs("\"version\" command prints the system info. "
 			  "Takes no arguments.\r\n",

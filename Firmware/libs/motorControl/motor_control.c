@@ -7,13 +7,24 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdlib.h>
+
+#define NUMBER_OF_MOTORS 3
 
 typedef struct
 {
-    uint8_t max_speed; /* Motor max allowed duty cycle in % */
-    uint8_t min_speed; /* Motor min allowed duty cycle in % */
-    uint8_t max_rate;  /* Motor allowed duty cycle rate of change % */
+    uint8_t max_speed;   /* Motor max allowed duty cycle in % */
+    uint8_t min_speed;   /* Motor min allowed duty cycle in % */
+    uint8_t max_rate;    /* Motor allowed duty cycle rate of change %/s */
+    uint8_t speed;       /* Motor current duty cycle */
+    motor_drive_t drive; /* Motor current drive status */
+
 } motor_parameters_t;
+
+static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
+    {{100, 0, 100, 0, COAST},
+     {100, 0, 100, 0, COAST},
+     {100, 0, 100, 0, COAST}};
 
 static void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed);
 
@@ -65,36 +76,58 @@ static void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 
     timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
-    /* Activate motor enable lines */
+    /* Activate motor enable lines and update motor status */
     switch (motorID)
     {
     case MOTOR_A:
         PORTB |= 1 << PORTB4;    /* PB4 (Motor A) set to high */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
+
+        motor_parameters[MOTOR_A].drive = drive;
+        motor_parameters[MOTOR_A].speed = speed;
+
         break;
+
     case MOTOR_B:
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD |= 1 << PORTD7;    /* PD7 (Motor B) set to high */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
+
+        motor_parameters[MOTOR_B].drive = drive;
+        motor_parameters[MOTOR_B].speed = speed;
+
         break;
+
     case MOTOR_C:
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD |= 1 << PORTD2;    /* PD2 (Motor C) set to high */
+
+        motor_parameters[MOTOR_C].drive = drive;
+        motor_parameters[MOTOR_C].speed = speed;
+
         break;
+
     default:                     /* invalid option */
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
+
+        motor_parameters[MOTOR_C].drive = COAST;
+        motor_parameters[MOTOR_C].speed = 0;
+
+        timer2_pwm_set_duty_cycle(0, 0);
     }
+
+    return;
 }
 
 // setMaxSpeed {A, B, C}motorID (int)maxSpeed
 cli_status_t setMaxSpeed_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"setMaxSpeed\" command sets the maximum speed that motorID can reach.\r\n"
               "It expects the following arguments:\r\n"
@@ -118,7 +151,7 @@ cli_status_t setMaxSpeed_func(int argc, char **argv)
 cli_status_t getMaxSpeed_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"getMaxSpeed\" command gets the maximum speed that motorID can reach.\r\n"
               "It expects the following arguments:\r\n"
@@ -142,7 +175,7 @@ cli_status_t getMaxSpeed_func(int argc, char **argv)
 cli_status_t setMinSpeed_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"help\" command prints a list of the available commands "
               "and a brief summary.\r\nTakes no arguments.\r\n",
@@ -162,7 +195,7 @@ cli_status_t setMinSpeed_func(int argc, char **argv)
 cli_status_t getMinSpeed_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"help\" command prints a list of the available commands "
               "and a brief summary.\r\nTakes no arguments.\r\n",
@@ -182,7 +215,7 @@ cli_status_t getMinSpeed_func(int argc, char **argv)
 cli_status_t setRate_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"help\" command prints a list of the available commands "
               "and a brief summary.\r\nTakes no arguments.\r\n",
@@ -202,7 +235,7 @@ cli_status_t setRate_func(int argc, char **argv)
 cli_status_t getRate_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"help\" command prints a list of the available commands "
               "and a brief summary.\r\nTakes no arguments.\r\n",
@@ -218,59 +251,118 @@ cli_status_t getRate_func(int argc, char **argv)
     return CLI_OK;
 }
 
-// setSpeed {A, B, C}motorID (int)speed
+/*
+ * Command: setSpeed {A, B, C}motorID (int)speed
+ */
 cli_status_t setSpeed_func(int argc, char **argv)
 {
     motor_t motorID;
-    uint8_t speed;
+    int speed;
     motor_drive_t drive;
 
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
+        fputs("\"setSpeed\" command sets motorID current speed.\r\n"
+              "It expects the following arguments:\r\n"
+              "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+              "    speed - Must be an integer value in the range [-100%, 100%] representing\r\n"
+              "        the motor speed.\r\n"
+              "It showld be called as follows:\r\n"
+              "    setSpeed motorID speed\r\n",
               stdout);
         return CLI_OK;
     }
-    else if (argc != 1)
-        return CLI_E_INVALID_ARGS;
+    else if (argc != 3)
+        return CLI_E_INVALID_ARGS; /* Invalid number of arguments */
 
-    /* Perform commads actions */
+    /* Perform commands actions */
     /* Identify motorID */
-    if (strcmp(argv[1], "A"))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
         motorID = MOTOR_A;
-    else if (strcmp(argv[1], "B"))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
         motorID = MOTOR_B;
-    else if (strcmp(argv[1], "C"))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
         motorID = MOTOR_C;
     else
-        return CLI_E_INVALID_ARGS;
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
 
     /* Identify selected speed */
     speed = atoi(argv[2]);
 
     if (speed == 0)
         drive = BRAKE;
+    else if (speed > 0)
+        drive = FORWARD_DRIVE;
+    else
+    {
+        speed = -speed;
+        drive = REVERSE_DRIVE;
+    }
 
+    /* Drive motor */
     motor_drive(motorID, drive, speed);
 
     return CLI_OK;
 }
 
-// getSpeed {A, B, C}motorID
+/*
+ * Command: getSpeed {A, B, C}motorID
+ */
 cli_status_t getSpeed_func(int argc, char **argv)
 {
+    char speed_string[10];
+    motor_t motorID;
+
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
+        fputs("\"setSpeed\" command gets motorID current speed.\r\n"
+              "It expects the following arguments:\r\n"
+              "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+              "It showld be called as follows:\r\n"
+              "    setSpeed motorID\r\n"
+              "and will print the following if successful:\r\n"
+              "    speed, drive state\r\n",
               stdout);
         return CLI_OK;
     }
-    else if (argc != 1)
+    else if (argc != 2)
         return CLI_E_INVALID_ARGS;
+
+    /* Perform commands actions */
+    /* Identify motorID and print its speed value */
+    memset(speed_string, 0x00, 10);
+
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    itoa(motor_parameters[motorID].speed, speed_string, 10);
+    fputs(speed_string, stdout);
+
+    switch (motor_parameters[motorID].drive)
+    {
+    case FORWARD_DRIVE:
+        fputs("%, forward drive\r\n", stdout);
+        break;
+    case REVERSE_DRIVE:
+        fputs("%, reverse drive\r\n", stdout);
+        break;
+    case BRAKE:
+        fputs("%, brake\r\n", stdout);
+        break;
+    case COAST:
+        fputs("%, coast\r\n", stdout);
+        break;
+    default:
+        break;
+    }
 
     return CLI_OK;
 }
@@ -279,7 +371,7 @@ cli_status_t getSpeed_func(int argc, char **argv)
 cli_status_t getLimitSw_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"help\" command prints a list of the available commands "
               "and a brief summary.\r\nTakes no arguments.\r\n",
@@ -299,7 +391,7 @@ cli_status_t getLimitSw_func(int argc, char **argv)
 cli_status_t limitSw_func(int argc, char **argv)
 {
     /* Check for correct argument's list */
-    if ((argc == 2) && (strcmp(argv[1], "help") == 0))
+    if ((argc == 2) && (strncmp(argv[1], "help", MAXIMUM_TOKEN_SIZE) == 0))
     {
         fputs("\"help\" command prints a list of the available commands "
               "and a brief summary.\r\nTakes no arguments.\r\n",

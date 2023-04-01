@@ -12,6 +12,7 @@
 #include <stdint.h>
 
 #define CMD_TOKEN_DELIMITERS " \r\n" /* cli token separator characters */
+#define MAXIMUM_TOKEN_SIZE 20        /* maximum individual token size */
 
 typedef enum
 {
