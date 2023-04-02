@@ -43,12 +43,6 @@ const char setMinSpeed_help[] PROGMEM =
 const char getMinSpeed_help[] PROGMEM =
     "\"getMinSpeed\" command prints a list of the available commands "
     "and a brief summary.\r\nTakes no arguments.\r\n";
-const char setRate_help[] PROGMEM =
-    "\"setRate\" command prints a list of the available commands "
-    "and a brief summary.\r\nTakes no arguments.\r\n";
-const char getRate_help[] PROGMEM =
-    "\"getRate\" command prints a list of the available commands "
-    "and a brief summary.\r\nTakes no arguments.\r\n";
 const char setSpeed_help[] PROGMEM =
     "\"setSpeed\" command sets motorID current speed.\r\n"
     "It expects the following arguments:\r\n"
@@ -103,12 +97,6 @@ static cli_status_t setMinSpeed_func(int argc, char **argv);
 // getMinSpeed {A, B, C}motorID
 static cli_status_t getMinSpeed_func(int argc, char **argv);
 
-// setRate {A, B, C}motorID (int)acc
-static cli_status_t setRate_func(int argc, char **argv);
-
-// getRate {A, B, C}motorID
-static cli_status_t getRate_func(int argc, char **argv);
-
 /*
  * Command: setSpeed {A, B, C}motorID (int)speed
  */
@@ -144,10 +132,6 @@ cmd_t cmd_tbl[] = {
      .func = setMinSpeed_func},
     {.cmd = "getMinSpeed",
      .func = getMinSpeed_func},
-    {.cmd = "setRate",
-     .func = setRate_func},
-    {.cmd = "getRate",
-     .func = getRate_func},
     {.cmd = "setSpeed",
      .func = setSpeed_func},
     {.cmd = "getSpeed",
@@ -337,42 +321,6 @@ static cli_status_t getMinSpeed_func(int argc, char **argv)
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
         print_progmem_string(getMinSpeed_help);
-        return CLI_OK;
-    }
-    else if (argc != 1)
-        return CLI_E_INVALID_ARGS;
-
-    /* Perform commands actions */
-    // motor_drive(motorID, drive, speed);
-
-    return CLI_OK;
-}
-
-// setRate {A, B, C}motorID (int)acc
-static cli_status_t setRate_func(int argc, char **argv)
-{
-    /* Check for correct argument's list */
-    if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
-    {
-        print_progmem_string(setRate_help);
-        return CLI_OK;
-    }
-    else if (argc != 1)
-        return CLI_E_INVALID_ARGS;
-
-    /* Perform commands actions */
-    // motor_drive(motorID, drive, speed);
-
-    return CLI_OK;
-}
-
-// getRate {A, B, C}motorID
-static cli_status_t getRate_func(int argc, char **argv)
-{
-    /* Check for correct argument's list */
-    if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
-    {
-        print_progmem_string(getRate_help);
         return CLI_OK;
     }
     else if (argc != 1)

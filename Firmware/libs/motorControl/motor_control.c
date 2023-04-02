@@ -7,9 +7,9 @@
 
 /* Initial conditions */
 static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
-    {{100, 0, 100, 0, COAST},
-     {100, 0, 100, 0, COAST},
-     {100, 0, 100, 0, COAST}};
+    {{100, 0, 0, COAST},
+     {100, 0, 0, COAST},
+     {100, 0, 0, COAST}};
 
 /*
  * Perform motor interface initializations.

@@ -24,7 +24,6 @@ typedef struct
 {
     uint8_t max_speed;   /* Motor max allowed duty cycle in % */
     uint8_t min_speed;   /* Motor min allowed duty cycle in % */
-    uint8_t max_rate;    /* Motor allowed duty cycle rate of change %/s */
     uint8_t speed;       /* Motor current duty cycle */
     motor_drive_t drive; /* Motor current drive status */
 } motor_parameters_t;
