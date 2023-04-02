@@ -10,6 +10,7 @@
 #include "../libs/cli/cli.h"
 #include "../libs/motorControl/motor_control.h"
 #include "../libs/pca9535/pca9535.h"
+#include "cli_commands.h"
 
 /* Local function prototypes */
 static void sys_init(void);
@@ -38,6 +39,9 @@ static void sys_init(void)
 
 	/* Enable the cli interface */
 	cli_init();
+
+	/* Create cli commands */
+	cli_commands_init(&cli);
 
 	/* Pin extended setup */
 	pca9535_init();
