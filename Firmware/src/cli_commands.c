@@ -171,7 +171,7 @@ static void print_progmem_string(const char *string)
 {
     char symbol;
 
-    for (uint8_t i = 0; (symbol = pgm_read_byte(string + i)) != '0'; i++)
+    for (uint8_t i = 0; (symbol = pgm_read_byte(string + i)) != '\0'; i++)
         putchar(symbol);
 }
 
