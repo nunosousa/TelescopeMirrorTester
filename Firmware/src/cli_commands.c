@@ -12,10 +12,13 @@ const char help_command[] =
     "help";
 const char help_help[] PROGMEM =
     "\"help\" command prints a list of the available commands\r\n"
-    "and a brief summary.\r\nTakes no arguments.\r\n";
+    "and a brief summary.\r\n"
+    "It showld be called as follows:\r\n"
+    "    help\r\n";
 const char version_help[] PROGMEM =
     "\"version\" command prints the system info.\r\n"
-    "Takes no arguments.\r\n";
+    "It showld be called as follows:\r\n"
+    "    version\r\n";
 const char version_response[] PROGMEM =
     "Position controler [Author: Nuno Sousa, "
     "Firmware version: ";
@@ -169,10 +172,13 @@ void cli_commands_init(cli_t *cli)
  */
 static void print_progmem_string(const char *string)
 {
-    char symbol;
+    char c;
 
-    for (uint8_t i = 0; (symbol = pgm_read_byte(string + i)) != '\0'; i++)
-        putchar(symbol);
+    for (uint8_t i = 0; i < strlen_P(string); i++)
+    {
+        c = pgm_read_byte_near(string + i);
+        putchar(c);
+    }
 }
 
 /*
