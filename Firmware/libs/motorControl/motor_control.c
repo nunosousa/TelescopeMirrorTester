@@ -76,6 +76,12 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_A].drive = drive;
         motor_parameters[MOTOR_A].speed = speed;
 
+        /* Update the state for the other motors */
+        motor_parameters[MOTOR_B].drive = COAST;
+        motor_parameters[MOTOR_B].speed = 0;
+        motor_parameters[MOTOR_C].drive = COAST;
+        motor_parameters[MOTOR_C].speed = 0;
+
         break;
 
     case MOTOR_B:
@@ -85,6 +91,12 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 
         motor_parameters[MOTOR_B].drive = drive;
         motor_parameters[MOTOR_B].speed = speed;
+
+        /* Update the state for the other motors */
+        motor_parameters[MOTOR_A].drive = COAST;
+        motor_parameters[MOTOR_A].speed = 0;
+        motor_parameters[MOTOR_C].drive = COAST;
+        motor_parameters[MOTOR_C].speed = 0;
 
         break;
 
@@ -96,6 +108,12 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_C].drive = drive;
         motor_parameters[MOTOR_C].speed = speed;
 
+        /* Update the state for the other motors */
+        motor_parameters[MOTOR_A].drive = COAST;
+        motor_parameters[MOTOR_A].speed = 0;
+        motor_parameters[MOTOR_B].drive = COAST;
+        motor_parameters[MOTOR_B].speed = 0;
+
         break;
 
     default:                     /* invalid option */
@@ -103,6 +121,10 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
 
+        motor_parameters[MOTOR_A].drive = COAST;
+        motor_parameters[MOTOR_A].speed = 0;
+        motor_parameters[MOTOR_B].drive = COAST;
+        motor_parameters[MOTOR_B].speed = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
 
