@@ -29,8 +29,19 @@ typedef struct
     motor_drive_t drive; /* Motor current drive status */
 } motor_parameters_t;
 
+/*
+ * tbd
+ */
 void motor_init(void);
+
+/*
+ * tbd
+ */
 void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed);
+
+/*
+ * tbd
+ */
 motor_parameters_t *get_motor_state(motor_t motorID);
 
 #endif /* MOTOR_CONTROL_H */

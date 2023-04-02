@@ -63,6 +63,7 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         return;
     }
 
+    /* Prepare motor PWM signals */
     timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
     /* Activate motor enable lines and update motor status */

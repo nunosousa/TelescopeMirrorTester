@@ -30,6 +30,9 @@ void timer2_pwm_init(void)
     TCCR2A |= (1 << COM2A1) | (1 << COM2B1);
 }
 
+/*
+ * tbd
+ */
 void timer2_pwm_set_duty_cycle(uint16_t duty_cycle_a, uint16_t duty_cycle_b)
 {
     uint8_t ocr2a_value;

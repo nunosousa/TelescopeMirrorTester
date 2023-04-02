@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-/* Define help strings */
+/* Define help strings and store them in program memory */
 const char help_command[] =
     "help";
 const char help_help[] PROGMEM =
@@ -62,6 +62,12 @@ const char getSpeed_help[] PROGMEM =
     "    getSpeed motorID\r\n"
     "and will print the following if successful:\r\n"
     "    speed, drive state\r\n";
+const char getLimitSw_help[] PROGMEM =
+    "\"getLimitSw\" command prints a list of the available commands "
+    "and a brief summary.\r\nTakes no arguments.\r\n";
+const char limitSw_help[] PROGMEM =
+    "\"limitSw\" command prints a list of the available commands "
+    "and a brief summary.\r\nTakes no arguments.\r\n";
 
 /*
  * tbd.
@@ -163,10 +169,10 @@ void cli_commands_init(cli_t *cli)
  */
 static void print_progmem_string(const char *string)
 {
-    while (pgm_read_byte(string) != '0')
-    {
-        putchar(pgm_read_byte(string));
-    }
+    char symbol;
+
+    for (uint8_t i = 0; (symbol = pgm_read_byte(string + i)) != '0'; i++)
+        putchar(symbol);
 }
 
 /*
@@ -487,9 +493,7 @@ static cli_status_t getLimitSw_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
-              stdout);
+        print_progmem_string(getLimitSw_help);
         return CLI_OK;
     }
     else if (argc != 1)
@@ -507,9 +511,7 @@ static cli_status_t limitSw_func(int argc, char **argv)
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        fputs("\"help\" command prints a list of the available commands "
-              "and a brief summary.\r\nTakes no arguments.\r\n",
-              stdout);
+        print_progmem_string(limitSw_help);
         return CLI_OK;
     }
     else if (argc != 1)
