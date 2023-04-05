@@ -3,6 +3,8 @@
 #=============================
 target_sources(firmware
 	PRIVATE
+		${CMAKE_CURRENT_LIST_DIR}/adc.c
+		${CMAKE_CURRENT_LIST_DIR}/adc.h
 		${CMAKE_CURRENT_LIST_DIR}/timer0_clk.c
 		${CMAKE_CURRENT_LIST_DIR}/timer0_clk.h
 		${CMAKE_CURRENT_LIST_DIR}/timer1_rc5.c

@@ -4,6 +4,7 @@
 #include <avr/io.h>
 #include <avr/wdt.h>
 
+#include "../hal/adc.h"
 #include "../hal/timer0_clk.h"
 #include "../hal/timer1_rc5.h"
 #include "../hal/uart.h"
@@ -33,6 +34,9 @@ static void sys_init(void)
 	stdout = &uart_stream;
 	stdin = &uart_stream;
 	stderr = &uart_stream;
+
+	/* Configure ADC */
+	adc_init();
 
 	/* UART interface setup needed for cmd line interface */
 	uart_init();
