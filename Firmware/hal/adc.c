@@ -26,10 +26,16 @@ void adc_init(void)
     cli();
 
     // Set up ADC
-    ADMUX |= (1 << REFS0);                                // Set reference voltage to AVcc
-    ADMUX |= (1 << MUX0);                                 // Set input channel to ADC0
+    ADMUX |= (1 << REFS0); // Set reference voltage to AVcc
+    ADMUX |= (1 << MUX0);  // Set input channel to ADC0
+
+#if (F_CPU == 16000000)
     ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0); // Set ADC prescaler to 128
-    ADCSRA |= (1 << ADIE);                                // Enable ADC interrupt
+#else
+#error "No prescaler values were calculated for the selected CPU frequency (F_CPU)!"
+#endif
+
+    ADCSRA |= (1 << ADIE); // Enable ADC interrupt
 
     /* Enable general interrupts after setup */
     sei();
@@ -73,12 +79,23 @@ void adc_select_analog_input(adc_input_t input)
 }
 
 /*
-// Main loop
-while (1)
+ * tbd
+ */
+void adc_start_capture(void)
 {
     ADCSRA |= (1 << ADSC); // Start ADC conversion
-    // Wait for conversion to complete
-    while (ADCSRA & (1 << ADSC))
-        ;
+
+    return;
 }
-*/
+
+/*
+ * tbd
+ */
+uint16_t adc_get_capture(void)
+{
+    uint16_t adc_val;
+
+    adc_val = ADC; // Read ADC value
+
+    return adc_val;
+}

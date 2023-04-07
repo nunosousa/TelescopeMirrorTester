@@ -21,4 +21,9 @@ void adc_init(void);
  */
 void adc_select_analog_input(adc_input_t input);
 
+/*
+ * tbd
+ */
+uint16_t adc_get_capture(void);
+
 #endif /* ADC_H */
