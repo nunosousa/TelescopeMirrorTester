@@ -1,6 +1,12 @@
 #ifndef ADC_H
 #define ADC_H
 
+#include <stdbool.h>
+#include <stdint.h>
+
+/*
+ * tbd
+ */
 typedef enum
 {
     ADC0,
@@ -10,6 +16,11 @@ typedef enum
     BG_1V1,
     GND
 } adc_input_t;
+
+/*
+ * tbd
+ */
+extern volatile bool adc_event;
 
 /*
  * tbd

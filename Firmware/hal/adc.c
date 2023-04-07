@@ -2,19 +2,26 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
+#include <stdint.h>
 
-#define THRESHOLD 512 // set threshold to 2.5V (assuming Vref=5V)
+/*
+ * tbd
+ */
+volatile bool adc_event = false;
+
+/*
+ * tbd
+ */
+static volatile uint16_t adc_val;
 
 /*
  * tbd
  */
 ISR(ADC_vect)
 {
-    uint16_t adc_val = ADC; // Read ADC value
-    if (adc_val > THRESHOLD)
-    {
-        // Do something when voltage exceeds threshold
-    }
+    adc_val = ADC; // Read ADC value
+    adc_event = true;
 }
 
 /*
@@ -93,9 +100,5 @@ void adc_start_capture(void)
  */
 uint16_t adc_get_capture(void)
 {
-    uint16_t adc_val;
-
-    adc_val = ADC; // Read ADC value
-
     return adc_val;
 }
