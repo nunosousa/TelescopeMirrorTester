@@ -41,6 +41,9 @@ void motor_init(void)
     motor_parameters[MOTOR_A].position = LIMIT_SW_OFF; // tbd
     motor_parameters[MOTOR_B].position = LIMIT_SW_OFF; // tbd
     motor_parameters[MOTOR_C].position = LIMIT_SW_OFF; // tbd
+
+    /* Identify current motor */
+    active_motor = NONE;
 }
 
 /*
@@ -97,6 +100,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
 
+        /* Identify current motor */
+        active_motor = MOTOR_A;
+
         break;
 
     case MOTOR_B:
@@ -119,6 +125,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_A].speed = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
+
+        /* Identify current motor */
+        active_motor = MOTOR_B;
 
         break;
 
@@ -143,6 +152,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_B].drive = COAST;
         motor_parameters[MOTOR_B].speed = 0;
 
+        /* Identify current motor */
+        active_motor = MOTOR_C;
+
         break;
 
     default: /* invalid option */
@@ -158,6 +170,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_B].speed = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
+
+        /* Identify current motor */
+        active_motor = NONE;
     }
 
     return;
@@ -176,6 +191,11 @@ motor_parameters_t *get_motor_state(motor_t motorID)
         return &motor_parameters[MOTOR_B];
     case MOTOR_C:
         return &motor_parameters[MOTOR_C];
+    case CURRENT_MOTOR:
+        if (active_motor == MOTOR_A || active_motor == MOTOR_B || active_motor == MOTOR_C)
+            return &motor_parameters[active_motor];
+        else
+            return NULL;
     default:
         return NULL;
     }

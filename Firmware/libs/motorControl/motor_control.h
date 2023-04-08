@@ -10,7 +10,8 @@ typedef enum
     MOTOR_A = 0,
     MOTOR_B = 1,
     MOTOR_C = 2,
-    NONE = 3
+    CURRENT_MOTOR = 3,
+    NONE = 4
 } motor_t;
 
 typedef enum
