@@ -12,8 +12,6 @@ typedef enum
     ADC0,
     ADC1,
     ADC2,
-    TEMP,
-    BG_1V1,
     GND
 } adc_input_t;
 

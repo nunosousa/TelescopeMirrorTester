@@ -35,9 +35,6 @@ static void sys_init(void)
 	stdin = &uart_stream;
 	stderr = &uart_stream;
 
-	/* Configure ADC */
-	adc_init();
-
 	/* UART interface setup needed for cmd line interface */
 	uart_init();
 
@@ -58,6 +55,9 @@ static void sys_init(void)
 
 	/* Motors PWM setup */
 	motor_init();
+
+	/* Configure ADC */
+	adc_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();

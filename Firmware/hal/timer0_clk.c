@@ -26,13 +26,13 @@ void timer0_clk_init(void)
     /* For 16ms period (or 62.5Hz frequency) and 16000000Hz Timer0 Clock Frequency:
     Compare Match Value = (16000000) / (1024 * 62.5) - 1 = 249 */
     OCR0A = 249;
-    TCCR0B |= (1 << CS02) | (1 << CS00); /* Set prescaler to 1024 */
+    TCCR0B |= _BV(CS02) | _BV(CS00); /* Set prescaler to 1024 */
 #else
 #error "No timer values were calculated for the selected CPU frequency (F_CPU)!"
 #endif
 
-    TCCR0A |= (1 << WGM01);  /* Set CTC mode */
-    TIMSK0 |= (1 << OCIE0A); /* Enable Timer0 Compare Match A interrupt */
+    TCCR0A |= _BV(WGM01);  /* Set CTC mode */
+    TIMSK0 |= _BV(OCIE0A); /* Enable Timer0 Compare Match A interrupt */
 
     /* Enable general interrupts after setup */
     sei();
