@@ -13,6 +13,7 @@
 #define I4 4
 #define I5 5
 #define I6 6
+#define I7 6
 
 #define OUTPUT_PORT_0 0x02 /* Port 0 output value */
 #define OUTPUT_PORT_1 0x03 /* Port 1 output value */
@@ -23,6 +24,7 @@
 #define O4 4
 #define O5 5
 #define O6 6
+#define O7 6
 
 #define POLARITY_INVERSION_PORT_0 0x04 /* Port 0 inversion logic register */
 #define POLARITY_INVERSION_PORT_1 0x05 /* Port 1 inversion logic register */
@@ -33,6 +35,7 @@
 #define N4 4
 #define N5 5
 #define N6 6
+#define N7 6
 
 #define CONFIGURATION_PORT_0 0x06 /* Direction control register for Port 0 */
 #define CONFIGURATION_PORT_1 0x07 /* Direction control register for Port 1 */
@@ -43,6 +46,7 @@
 #define C4 4
 #define C5 5
 #define C6 6
+#define C7 6
 
 /*
  * tbd

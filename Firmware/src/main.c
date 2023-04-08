@@ -92,7 +92,7 @@ int main(void)
 		if (pca9535_event)
 		{
 			pca9535_event = false;
-			// do something motor control
+			// do something motor
 		}
 
 		/* Process a new received character event */
