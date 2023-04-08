@@ -1,5 +1,6 @@
 #include "motor_control.h"
 #include "../../hal/timer2_pwm.h"
+#include "../limitSwitch/limit_switch.h"
 
 #include <avr/io.h>
 #include <stdint.h>
@@ -21,6 +22,8 @@ static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
  */
 void motor_init(void)
 {
+    uint8_t lim_sw_inputs;
+
     /* Initialize PWM */
     timer2_pwm_init();
 
@@ -37,10 +40,36 @@ void motor_init(void)
     DDRD |= 1 << DDD2;       /* Configure PD2 as output */
     PORTD &= ~(1 << PORTD2); /* PD2 set to low */
 
+    /* Configure limit switch inputs */
+    limit_switch_init();
+
     /* Get current limit switches state */
-    motor_parameters[MOTOR_A].position = LIMIT_SW_OFF; // tbd
-    motor_parameters[MOTOR_B].position = LIMIT_SW_OFF; // tbd
-    motor_parameters[MOTOR_C].position = LIMIT_SW_OFF; // tbd
+    limit_switch_get_state(&lim_sw_inputs);
+
+    /* Update limit switch status for each motor */
+    /* Motor A */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_A].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_A].position = LIMIT_SW_OFF;
+
+    /* Motor B */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0)
+        motor_parameters[MOTOR_B].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0)
+        motor_parameters[MOTOR_B].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
+
+    /* Motor C */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0)
+        motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0)
+        motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
 
     /* Identify current motor */
     active_motor = NONE;
@@ -176,6 +205,56 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     }
 
     return;
+}
+
+/*
+ * tbd
+ */
+void motor_process(void)
+{
+    uint8_t lim_sw_inputs;
+
+    /* If no motor is active, no further action is required */
+    if (active_motor != MOTOR_A && active_motor != MOTOR_B && active_motor != MOTOR_C)
+        return;
+
+    /* Get current limit switches state */
+    limit_switch_get_state(&lim_sw_inputs);
+
+    /* Take appropriate action if motor direction and limit switch coincide */
+    switch (active_motor)
+    {
+    case MOTOR_A:
+        if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0) &&
+             (motor_parameters[MOTOR_A].drive = FORWARD_DRIVE)) ||
+            (((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0) &&
+             (motor_parameters[MOTOR_A].drive = REVERSE_DRIVE)))
+        {
+            motor_drive(MOTOR_A, BRAKE, 0);
+        }
+        break;
+    case MOTOR_B:
+        if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0) &&
+             (motor_parameters[MOTOR_B].drive = FORWARD_DRIVE)) ||
+            (((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0) &&
+             (motor_parameters[MOTOR_B].drive = REVERSE_DRIVE)))
+        {
+            motor_drive(MOTOR_B, BRAKE, 0);
+        }
+        break;
+    case MOTOR_C:
+        if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0) &&
+             (motor_parameters[MOTOR_C].drive = FORWARD_DRIVE)) ||
+            (((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0) &&
+             (motor_parameters[MOTOR_C].drive = REVERSE_DRIVE)))
+        {
+            motor_drive(MOTOR_C, BRAKE, 0);
+        }
+        break;
+
+    default:
+        return;
+    }
 }
 
 /*

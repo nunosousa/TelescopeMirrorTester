@@ -52,6 +52,11 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed);
 /*
  * tbd
  */
+void motor_process(void);
+
+/*
+ * tbd
+ */
 motor_parameters_t *get_motor_state(motor_t motorID);
 
 #endif /* MOTOR_CONTROL_H */
