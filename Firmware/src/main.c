@@ -11,6 +11,7 @@
 #include "../libs/cli/cli.h"
 #include "../libs/motorControl/motor_control.h"
 #include "../libs/pca9535/pca9535.h"
+#include "../libs/indicatorLED/indicator_led.h"
 #include "cli_commands.h"
 
 /* Local function prototypes */
@@ -58,6 +59,9 @@ static void sys_init(void)
 
 	/* Configure ADC */
 	adc_init();
+
+	/* Configure LEDs */
+	indicator_led_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();

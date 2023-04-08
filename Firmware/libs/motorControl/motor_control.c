@@ -233,6 +233,7 @@ void motor_process(void)
             motor_drive(MOTOR_A, BRAKE, 0);
         }
         break;
+
     case MOTOR_B:
         if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0) &&
              (motor_parameters[MOTOR_B].drive = FORWARD_DRIVE)) ||
@@ -242,6 +243,7 @@ void motor_process(void)
             motor_drive(MOTOR_B, BRAKE, 0);
         }
         break;
+
     case MOTOR_C:
         if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0) &&
              (motor_parameters[MOTOR_C].drive = FORWARD_DRIVE)) ||

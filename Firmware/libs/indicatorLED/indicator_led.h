@@ -1,11 +1,28 @@
 #ifndef INDICATOR_LED_H
 #define INDICATOR_LED_H
 
-//#include "../libs/cli/cli.h"
+typedef enum
+{
+    REMOTE,
+    MOTOR,
+    MOTOR_OLERLOAD,
+    MOTOR_LIMIT_SWITCH
+} indicator_led_t;
+
+typedef enum
+{
+    LED_ON,
+    LED_OFF
+} led_state_t;
 
 /*
  * tbd.
  */
-//void cli_commands_init(cli_t *cli);
+void indicator_led_init(void);
+
+/*
+ * tbd.
+ */
+void indicator_led_set_state(indicator_led_t indicator_led, led_state_t state);
 
 #endif /* INDICATOR_LED_H */
