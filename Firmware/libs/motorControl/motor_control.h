@@ -9,7 +9,8 @@ typedef enum
 {
     MOTOR_A = 0,
     MOTOR_B = 1,
-    MOTOR_C = 2
+    MOTOR_C = 2,
+    NONE = 3
 } motor_t;
 
 typedef enum
@@ -20,12 +21,21 @@ typedef enum
     COAST
 } motor_drive_t;
 
+typedef enum
+{
+    FORWARD_LIMIT_SW,
+    REVERSE_LIMIT_SW,
+    LIMIT_SW_OFF
+} limit_switch_t;
+
 typedef struct
 {
-    uint8_t max_speed;   /* Motor max allowed duty cycle in % */
-    uint8_t min_speed;   /* Motor min allowed duty cycle in % */
-    uint8_t speed;       /* Motor current duty cycle */
-    motor_drive_t drive; /* Motor current drive status */
+    uint8_t max_speed;       /* Motor max allowed duty cycle in % */
+    uint8_t min_speed;       /* Motor min allowed duty cycle in % */
+    uint8_t speed;           /* Motor current duty cycle */
+    motor_drive_t drive;     /* Motor current drive status */
+    uint16_t current;        /* Motor current */
+    limit_switch_t position; /* Limit switches state */
 } motor_parameters_t;
 
 /*

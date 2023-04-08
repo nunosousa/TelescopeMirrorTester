@@ -5,11 +5,16 @@
 #include <stdint.h>
 #include <stddef.h>
 
+/*
+ * Current operating motor
+ */
+static motor_t active_motor = NONE;
+
 /* Initial conditions */
 static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
-    {{100, 0, 0, COAST},
-     {100, 0, 0, COAST},
-     {100, 0, 0, COAST}};
+    {{100, 0, 0, COAST, 0, LIMIT_SW_OFF},
+     {100, 0, 0, COAST, 0, LIMIT_SW_OFF},
+     {100, 0, 0, COAST, 0, LIMIT_SW_OFF}};
 
 /*
  * Perform motor interface initializations.
@@ -31,6 +36,11 @@ void motor_init(void)
     /* Motor C */
     DDRD |= 1 << DDD2;       /* Configure PD2 as output */
     PORTD &= ~(1 << PORTD2); /* PD2 set to low */
+
+    /* Get current limit switches state */
+    motor_parameters[MOTOR_A].position = LIMIT_SW_OFF; // tbd
+    motor_parameters[MOTOR_B].position = LIMIT_SW_OFF; // tbd
+    motor_parameters[MOTOR_C].position = LIMIT_SW_OFF; // tbd
 }
 
 /*
@@ -63,13 +73,17 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         return;
     }
 
-    /* Prepare motor PWM signals */
-    timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
-
-    /* Activate motor enable lines and update motor status */
+    /* Activate motor enable lines, PWM signals and update motor status */
     switch (motorID)
     {
     case MOTOR_A:
+        /* Abort if the appropriate limit switch is activated */
+        if (motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW)
+            return;
+
+        /* Prepare motor PWM signals */
+        timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
+
         PORTB |= 1 << PORTB4;    /* PB4 (Motor A) set to high */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
@@ -86,6 +100,13 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         break;
 
     case MOTOR_B:
+        /* Abort if the appropriate limit switch is activated */
+        if (motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW)
+            return;
+
+        /* Prepare motor PWM signals */
+        timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
+
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD |= 1 << PORTD7;    /* PD7 (Motor B) set to high */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
@@ -102,6 +123,13 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         break;
 
     case MOTOR_C:
+        /* Abort if the appropriate limit switch is activated */
+        if (motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW)
+            return;
+
+        /* Prepare motor PWM signals */
+        timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
+
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD |= 1 << PORTD2;    /* PD2 (Motor C) set to high */
@@ -117,7 +145,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 
         break;
 
-    default:                     /* invalid option */
+    default: /* invalid option */
+        timer2_pwm_set_duty_cycle(0, 0);
+
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
@@ -128,8 +158,6 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         motor_parameters[MOTOR_B].speed = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
-
-        timer2_pwm_set_duty_cycle(0, 0);
     }
 
     return;
