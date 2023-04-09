@@ -1,4 +1,5 @@
 #include "motor_control.h"
+#include "../../hal/adc.h"
 #include "../../hal/timer2_pwm.h"
 #include "../limitSwitch/limit_switch.h"
 
@@ -113,6 +114,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         if (motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW)
             return;
 
+        /* Start ADC capture */
+        adc_select_analog_input(ADC0);
+
         /* Prepare motor PWM signals */
         timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
@@ -138,6 +142,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         /* Abort if the appropriate limit switch is activated */
         if (motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW)
             return;
+
+        /* Start ADC capture */
+        adc_select_analog_input(ADC1);
 
         /* Prepare motor PWM signals */
         timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
@@ -165,6 +172,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         if (motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW)
             return;
 
+        /* Start ADC capture */
+        adc_select_analog_input(ADC2);
+
         /* Prepare motor PWM signals */
         timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
@@ -189,6 +199,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     default: /* invalid option */
         timer2_pwm_set_duty_cycle(0, 0);
 
+        /* Change ADC capture source to GND */
+        adc_select_analog_input(GND);
+
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
@@ -210,7 +223,7 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 /*
  * tbd
  */
-void motor_process(void)
+void motor_lim_sw_process(void)
 {
     uint8_t lim_sw_inputs;
 
@@ -231,6 +244,9 @@ void motor_process(void)
              (motor_parameters[MOTOR_A].drive = REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_A, BRAKE, 0);
+
+            /* Change ADC capture source to GND */
+            adc_select_analog_input(GND);
         }
         break;
 
@@ -241,6 +257,9 @@ void motor_process(void)
              (motor_parameters[MOTOR_B].drive = REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_B, BRAKE, 0);
+
+            /* Change ADC capture source to GND */
+            adc_select_analog_input(GND);
         }
         break;
 
@@ -251,12 +270,38 @@ void motor_process(void)
              (motor_parameters[MOTOR_C].drive = REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_C, BRAKE, 0);
+
+            /* Change ADC capture source to GND */
+            adc_select_analog_input(GND);
         }
         break;
 
     default:
         return;
     }
+    return;
+}
+
+/*
+ * tbd
+ */
+void motor_current_process(void)
+{
+    uint16_t adc_reading;
+
+    adc_reading = adc_get_capture();
+
+    switch (active_motor)
+    {
+    case MOTOR_A:
+    case MOTOR_B:
+    case MOTOR_C:
+        motor_parameters[active_motor].current = adc_reading;
+    default:
+        return;
+    }
+
+    return;
 }
 
 /*

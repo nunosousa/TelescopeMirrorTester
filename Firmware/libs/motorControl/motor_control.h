@@ -52,7 +52,12 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed);
 /*
  * tbd
  */
-void motor_process(void);
+void motor_lim_sw_process(void);
+
+/*
+ * tbd
+ */
+void motor_current_process(void);
 
 /*
  * tbd

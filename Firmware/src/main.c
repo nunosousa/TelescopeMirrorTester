@@ -92,11 +92,18 @@ int main(void)
 			// do something
 		}
 
+		/* Process the ADC reading event */
+		if (adc_event)
+		{
+			adc_event = false;
+			motor_current_process();
+		}
+
 		/* Process a pin extender pin change event */
 		if (pca9535_event)
 		{
 			pca9535_event = false;
-			motor_process();
+			motor_lim_sw_process();
 		}
 
 		/* Process a new received character event */
