@@ -7,6 +7,10 @@
 #include <stdint.h>
 #include <stddef.h>
 
+/* Current low pass filter constants */
+/* Calculated assuming a 16ms sampling period and a 0.5s time constant */
+#define FILT_CONST_1 1
+#define FILT_CONST_2 2
 /*
  * Current operating motor
  */
@@ -287,17 +291,22 @@ void motor_lim_sw_process(void)
  */
 void motor_current_process(void)
 {
-    uint16_t adc_reading;
+    uint16_t adc_reading, prev_adc_reading;
 
+    /* Get an ADC reading of the current channel */
     adc_reading = adc_get_capture();
 
+    /* Update the active motor status */
     switch (active_motor)
     {
     case MOTOR_A:
     case MOTOR_B:
     case MOTOR_C:
-        motor_parameters[active_motor].current = adc_reading;
-    default:
+        /* Low pass filter current readings */
+        prev_adc_reading = motor_parameters[active_motor].current;
+        motor_parameters[active_motor].current =
+            prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+    default: /* No active motor */
         return;
     }
 
