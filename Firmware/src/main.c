@@ -36,9 +36,6 @@ static void sys_init(void)
 	stdin = &uart_stream;
 	stderr = &uart_stream;
 
-	/* UART interface setup needed for cmd line interface */
-	uart_init();
-
 	/* Enable the cli interface */
 	cli_init();
 
@@ -48,20 +45,14 @@ static void sys_init(void)
 	/* Pin extended setup */
 	pca9535_init();
 
-	/* Set time keeping clock */
-	timer0_clk_init();
+	/* Configure LEDs - depends on pca9535_init */
+	indicator_led_init();
+
+	/* Motors PWM setup - depends on pca9535_init */
+	motor_init();
 
 	/* Configure the IR receiver */
 	timer1_rc5_init();
-
-	/* Motors PWM setup */
-	motor_init();
-
-	/* Configure ADC */
-	adc_init();
-
-	/* Configure LEDs */
-	indicator_led_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();

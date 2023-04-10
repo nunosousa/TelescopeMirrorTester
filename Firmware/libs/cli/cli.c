@@ -2,6 +2,7 @@
  * @brief Implementation of command-line interface.
  */
 #include "cli.h"
+#include "../../hal/uart.h"
 
 #include <stdint.h>
 #include <string.h>
@@ -22,6 +23,9 @@ const char cli_arg_unrecog[] = "Given command's argument(s) are not recognized.\
  */
 cli_status_t cli_init(void)
 {
+    /* UART interface setup */
+    uart_init();
+
     /* Print the CLI prompt. */
     fputs(cli_prompt, stdout);
 

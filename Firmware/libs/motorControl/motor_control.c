@@ -32,6 +32,9 @@ void motor_init(void)
     /* Initialize PWM */
     timer2_pwm_init();
 
+    /* Configure ADC */
+    adc_init();
+
     /* Configure motor select pins */
     /* Motor A */
     DDRB |= 1 << DDB4;       /* Configure PB4 as output */

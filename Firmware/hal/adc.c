@@ -1,4 +1,5 @@
 #include "adc.h"
+#include "timer0_clk.h"
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -60,6 +61,9 @@ void adc_init(void)
 
     /* Default option - set source to Temperature sensor */
     adc_select_analog_input(GND);
+
+    /* Set time keeping clock */
+    timer0_clk_init();
 }
 
 /*
