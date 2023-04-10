@@ -2,6 +2,7 @@
 #include "../../hal/adc.h"
 #include "../../hal/timer2_pwm.h"
 #include "../limitSwitch/limit_switch.h"
+#include "../indicatorLED/indicator_led.h"
 
 #include <avr/io.h>
 #include <stdint.h>
@@ -118,88 +119,138 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     {
     case MOTOR_A:
         /* Abort if the appropriate limit switch is activated */
-        if (motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW)
+        if (((motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW) &&
+             (motor_parameters[MOTOR_A].drive = FORWARD_DRIVE)) ||
+            ((motor_parameters[MOTOR_A].position == REVERSE_LIMIT_SW) &&
+             (motor_parameters[MOTOR_A].drive = REVERSE_DRIVE)))
             return;
-
-        /* Start ADC capture */
-        adc_select_analog_input(ADC0);
 
         /* Prepare motor PWM signals */
         timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
-        PORTB |= 1 << PORTB4;    /* PB4 (Motor A) set to high */
+        /* Set enable pins accordingly */
+        if (drive == COAST)
+            PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
+        else
+            PORTB |= 1 << PORTB4; /* PB4 (Motor A) set to high */
+
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
 
+        /* Conditional updates */
+        if (drive == BRAKE || drive == COAST)
+        {
+            adc_select_analog_input(GND); /* ADC capture source */
+            motor_parameters[MOTOR_A].current = 0;
+            motor_parameters[MOTOR_A].speed = speed;
+            active_motor = NONE;
+        }
+        else
+        {
+            adc_select_analog_input(ADC0); /* ADC capture source */
+            motor_parameters[MOTOR_A].speed = speed;
+            active_motor = MOTOR_A;
+        }
+
         motor_parameters[MOTOR_A].drive = drive;
-        motor_parameters[MOTOR_A].speed = speed;
 
         /* Update the state for the other motors */
         motor_parameters[MOTOR_B].drive = COAST;
         motor_parameters[MOTOR_B].speed = 0;
+        motor_parameters[MOTOR_B].current = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
-
-        /* Identify current motor */
-        active_motor = MOTOR_A;
+        motor_parameters[MOTOR_C].current = 0;
 
         break;
 
     case MOTOR_B:
         /* Abort if the appropriate limit switch is activated */
-        if (motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW)
+        if (((motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW) &&
+             (motor_parameters[MOTOR_B].drive = FORWARD_DRIVE)) ||
+            ((motor_parameters[MOTOR_B].position == REVERSE_LIMIT_SW) &&
+             (motor_parameters[MOTOR_B].drive = REVERSE_DRIVE)))
             return;
-
-        /* Start ADC capture */
-        adc_select_analog_input(ADC1);
 
         /* Prepare motor PWM signals */
         timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
+        /* Set enable pins accordingly */
+        if (drive == COAST)
+            PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
+        else
+            PORTD |= 1 << PORTD7; /* PD7 (Motor B) set to high */
+
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
-        PORTD |= 1 << PORTD7;    /* PD7 (Motor B) set to high */
         PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
 
-        motor_parameters[MOTOR_B].drive = drive;
-        motor_parameters[MOTOR_B].speed = speed;
+        /* Conditional updates */
+        if (drive == BRAKE || drive == COAST)
+        {
+            adc_select_analog_input(GND); /* ADC capture source */
+            motor_parameters[MOTOR_B].current = 0;
+            motor_parameters[MOTOR_B].speed = speed;
+            active_motor = NONE;
+        }
+        else
+        {
+            adc_select_analog_input(ADC1); /* ADC capture source */
+            motor_parameters[MOTOR_B].speed = speed;
+            active_motor = MOTOR_B;
+        }
 
         /* Update the state for the other motors */
         motor_parameters[MOTOR_A].drive = COAST;
         motor_parameters[MOTOR_A].speed = 0;
+        motor_parameters[MOTOR_A].current = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
-
-        /* Identify current motor */
-        active_motor = MOTOR_B;
+        motor_parameters[MOTOR_C].current = 0;
 
         break;
 
     case MOTOR_C:
         /* Abort if the appropriate limit switch is activated */
-        if (motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW)
+        if (((motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW) &&
+             (motor_parameters[MOTOR_C].drive = FORWARD_DRIVE)) ||
+            ((motor_parameters[MOTOR_C].position == REVERSE_LIMIT_SW) &&
+             (motor_parameters[MOTOR_C].drive = REVERSE_DRIVE)))
             return;
-
-        /* Start ADC capture */
-        adc_select_analog_input(ADC2);
 
         /* Prepare motor PWM signals */
         timer2_pwm_set_duty_cycle(duty_cycle_a, duty_cycle_b);
 
+        /* Set enable pins accordingly */
+        if (drive == COAST)
+            PORTD &= ~(1 << PORTD2); /* PD2 (Motor C) set to low */
+        else
+            PORTD |= 1 << PORTD2; /* PD2 (Motor C) set to high */
+
         PORTB &= ~(1 << PORTB4); /* PB4 (Motor A) set to low */
         PORTD &= ~(1 << PORTD7); /* PD7 (Motor B) set to low */
-        PORTD |= 1 << PORTD2;    /* PD2 (Motor C) set to high */
 
-        motor_parameters[MOTOR_C].drive = drive;
-        motor_parameters[MOTOR_C].speed = speed;
+        /* Conditional updates */
+        if (drive == BRAKE || drive == COAST)
+        {
+            adc_select_analog_input(GND); /* ADC capture source */
+            motor_parameters[MOTOR_C].current = 0;
+            motor_parameters[MOTOR_C].speed = speed;
+            active_motor = NONE;
+        }
+        else
+        {
+            adc_select_analog_input(ADC2); /* ADC capture source */
+            motor_parameters[MOTOR_C].speed = speed;
+            active_motor = MOTOR_C;
+        }
 
         /* Update the state for the other motors */
         motor_parameters[MOTOR_A].drive = COAST;
         motor_parameters[MOTOR_A].speed = 0;
+        motor_parameters[MOTOR_A].current = 0;
         motor_parameters[MOTOR_B].drive = COAST;
         motor_parameters[MOTOR_B].speed = 0;
-
-        /* Identify current motor */
-        active_motor = MOTOR_C;
+        motor_parameters[MOTOR_B].current = 0;
 
         break;
 
@@ -215,14 +266,23 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 
         motor_parameters[MOTOR_A].drive = COAST;
         motor_parameters[MOTOR_A].speed = 0;
+        motor_parameters[MOTOR_A].current = 0;
         motor_parameters[MOTOR_B].drive = COAST;
         motor_parameters[MOTOR_B].speed = 0;
+        motor_parameters[MOTOR_B].current = 0;
         motor_parameters[MOTOR_C].drive = COAST;
         motor_parameters[MOTOR_C].speed = 0;
+        motor_parameters[MOTOR_C].current = 0;
 
         /* Identify current motor */
         active_motor = NONE;
     }
+
+    /* Enable indicator LED */
+    if (active_motor != NONE)
+        indicator_led_set_state(MOTOR, LED_ON);
+    else
+        indicator_led_set_state(MOTOR, LED_OFF);
 
     return;
 }
@@ -251,9 +311,6 @@ void motor_lim_sw_process(void)
              (motor_parameters[MOTOR_A].drive = REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_A, BRAKE, 0);
-
-            /* Change ADC capture source to GND */
-            adc_select_analog_input(GND);
         }
         break;
 
@@ -264,9 +321,6 @@ void motor_lim_sw_process(void)
              (motor_parameters[MOTOR_B].drive = REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_B, BRAKE, 0);
-
-            /* Change ADC capture source to GND */
-            adc_select_analog_input(GND);
         }
         break;
 
@@ -277,9 +331,6 @@ void motor_lim_sw_process(void)
              (motor_parameters[MOTOR_C].drive = REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_C, BRAKE, 0);
-
-            /* Change ADC capture source to GND */
-            adc_select_analog_input(GND);
         }
         break;
 

@@ -39,7 +39,7 @@ static void sys_init(void)
 	/* Enable the cli interface */
 	cli_init();
 
-	/* Create cli commands */
+	/* Create cli commands - depends on cli_init */
 	cli_commands_init(&cli);
 
 	/* Pin extended setup */
