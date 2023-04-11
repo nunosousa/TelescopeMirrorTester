@@ -3,6 +3,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/atomic.h>
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -97,5 +98,12 @@ void adc_select_analog_input(adc_input_t input)
  */
 uint16_t adc_get_capture(void)
 {
-    return adc_val;
+    uint16_t return_adc_val;
+
+    ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+    {
+        return_adc_val = adc_val;
+    }
+
+    return return_adc_val;
 }

@@ -10,9 +10,11 @@
 #include <stdbool.h>
 
 /* Current low pass filter constants */
-/* Calculated assuming a 16ms sampling period and a 0.5s time constant */
-#define FILT_CONST_1 1
-#define FILT_CONST_2 2
+/* Simple averaging filter quocients */
+#define MUL_CONST_1 1 /* y[-1] * MUL_CONST_1 */
+#define MUL_CONST_2 1 /* x[0] * MUL_CONST_2 */
+#define DIV_CONST 1   /* (y[-1] * MUL_CONST_1 + x[0] * MUL_CONST_2) << DIV_CONST */
+
 /*
  * Current operating motor
  */
@@ -322,10 +324,6 @@ void motor_lim_sw_process(void)
 {
     uint8_t lim_sw_inputs;
 
-    /* If no motor is active, no further action is required */
-    if (active_motor != MOTOR_A && active_motor != MOTOR_B && active_motor != MOTOR_C)
-        return;
-
     /* Get current limit switches state */
     limit_switch_get_state(&lim_sw_inputs);
 
@@ -399,7 +397,7 @@ void motor_current_process(void)
         /* Low pass filter current readings */
         prev_adc_reading = motor_parameters[MOTOR_A].current;
         motor_parameters[MOTOR_A].current =
-            prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) << DIV_CONST;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_A].current > motor_parameters[MOTOR_A].max_current)
@@ -413,7 +411,7 @@ void motor_current_process(void)
         /* Low pass filter current readings */
         prev_adc_reading = motor_parameters[MOTOR_B].current;
         motor_parameters[MOTOR_B].current =
-            prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) << DIV_CONST;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_B].current > motor_parameters[MOTOR_B].max_current)
@@ -427,7 +425,7 @@ void motor_current_process(void)
         /* Low pass filter current readings */
         prev_adc_reading = motor_parameters[MOTOR_C].current;
         motor_parameters[MOTOR_C].current =
-            prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) << DIV_CONST;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_C].current > motor_parameters[MOTOR_C].max_current)
