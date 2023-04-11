@@ -36,6 +36,7 @@ typedef struct
     uint8_t speed;           /* Motor current duty cycle */
     motor_drive_t drive;     /* Motor current drive status */
     uint16_t current;        /* Motor current */
+    uint16_t max_current;    /* Motor maximum allowed current */
     limit_switch_t position; /* Limit switches state */
 } motor_parameters_t;
 

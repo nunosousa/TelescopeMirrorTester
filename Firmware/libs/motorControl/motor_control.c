@@ -7,6 +7,7 @@
 #include <avr/io.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 
 /* Current low pass filter constants */
 /* Calculated assuming a 16ms sampling period and a 0.5s time constant */
@@ -19,9 +20,9 @@ static motor_t active_motor = NONE;
 
 /* Initial conditions */
 static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
-    {{100, 0, 0, COAST, 0, LIMIT_SW_OFF},
-     {100, 0, 0, COAST, 0, LIMIT_SW_OFF},
-     {100, 0, 0, COAST, 0, LIMIT_SW_OFF}};
+    {{100, 0, 0, COAST, 0, UINT16_MAX, LIMIT_SW_OFF},
+     {100, 0, 0, COAST, 0, UINT16_MAX, LIMIT_SW_OFF},
+     {100, 0, 0, COAST, 0, UINT16_MAX, LIMIT_SW_OFF}};
 
 /*
  * Perform motor interface initializations.
@@ -29,6 +30,7 @@ static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
 void motor_init(void)
 {
     uint8_t lim_sw_inputs;
+    bool lim_sw_active = false;
 
     /* Initialize PWM */
     timer2_pwm_init();
@@ -58,27 +60,49 @@ void motor_init(void)
     /* Update limit switch status for each motor */
     /* Motor A */
     if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+    {
         motor_parameters[MOTOR_A].position = FORWARD_LIMIT_SW;
+        lim_sw_active = true;
+    }
     else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+    {
         motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW;
+        lim_sw_active = true;
+    }
     else
         motor_parameters[MOTOR_A].position = LIMIT_SW_OFF;
 
     /* Motor B */
     if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0)
+    {
         motor_parameters[MOTOR_B].position = FORWARD_LIMIT_SW;
+        lim_sw_active = true;
+    }
     else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0)
+    {
         motor_parameters[MOTOR_B].position = REVERSE_LIMIT_SW;
+        lim_sw_active = true;
+    }
     else
         motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
 
     /* Motor C */
     if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0)
+    {
         motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
+        lim_sw_active = true;
+    }
     else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0)
+    {
         motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
+        lim_sw_active = true;
+    }
     else
         motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
+
+    /* Update limit switch LED if needed */
+    if (lim_sw_active == true)
+        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_ON);
 
     /* Identify current motor */
     active_motor = NONE;
@@ -120,9 +144,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     case MOTOR_A:
         /* Abort if the appropriate limit switch is activated */
         if (((motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW) &&
-             (motor_parameters[MOTOR_A].drive = FORWARD_DRIVE)) ||
+             (drive = FORWARD_DRIVE)) ||
             ((motor_parameters[MOTOR_A].position == REVERSE_LIMIT_SW) &&
-             (motor_parameters[MOTOR_A].drive = REVERSE_DRIVE)))
+             (drive = REVERSE_DRIVE)))
             return;
 
         /* Prepare motor PWM signals */
@@ -142,7 +166,7 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         {
             adc_select_analog_input(GND); /* ADC capture source */
             motor_parameters[MOTOR_A].current = 0;
-            motor_parameters[MOTOR_A].speed = speed;
+            motor_parameters[MOTOR_A].speed = 0;
             active_motor = NONE;
         }
         else
@@ -167,9 +191,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     case MOTOR_B:
         /* Abort if the appropriate limit switch is activated */
         if (((motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW) &&
-             (motor_parameters[MOTOR_B].drive = FORWARD_DRIVE)) ||
+             (drive = FORWARD_DRIVE)) ||
             ((motor_parameters[MOTOR_B].position == REVERSE_LIMIT_SW) &&
-             (motor_parameters[MOTOR_B].drive = REVERSE_DRIVE)))
+             (drive = REVERSE_DRIVE)))
             return;
 
         /* Prepare motor PWM signals */
@@ -189,7 +213,7 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         {
             adc_select_analog_input(GND); /* ADC capture source */
             motor_parameters[MOTOR_B].current = 0;
-            motor_parameters[MOTOR_B].speed = speed;
+            motor_parameters[MOTOR_B].speed = 0;
             active_motor = NONE;
         }
         else
@@ -198,6 +222,8 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
             motor_parameters[MOTOR_B].speed = speed;
             active_motor = MOTOR_B;
         }
+
+        motor_parameters[MOTOR_B].drive = drive;
 
         /* Update the state for the other motors */
         motor_parameters[MOTOR_A].drive = COAST;
@@ -212,9 +238,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     case MOTOR_C:
         /* Abort if the appropriate limit switch is activated */
         if (((motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW) &&
-             (motor_parameters[MOTOR_C].drive = FORWARD_DRIVE)) ||
+             (drive = FORWARD_DRIVE)) ||
             ((motor_parameters[MOTOR_C].position == REVERSE_LIMIT_SW) &&
-             (motor_parameters[MOTOR_C].drive = REVERSE_DRIVE)))
+             (drive = REVERSE_DRIVE)))
             return;
 
         /* Prepare motor PWM signals */
@@ -234,7 +260,7 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
         {
             adc_select_analog_input(GND); /* ADC capture source */
             motor_parameters[MOTOR_C].current = 0;
-            motor_parameters[MOTOR_C].speed = speed;
+            motor_parameters[MOTOR_C].speed = 0;
             active_motor = NONE;
         }
         else
@@ -243,6 +269,8 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
             motor_parameters[MOTOR_C].speed = speed;
             active_motor = MOTOR_C;
         }
+
+        motor_parameters[MOTOR_C].drive = drive;
 
         /* Update the state for the other motors */
         motor_parameters[MOTOR_A].drive = COAST;
@@ -337,6 +365,20 @@ void motor_lim_sw_process(void)
     default:
         return;
     }
+
+    /* Update LED status */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0 ||
+        (lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0 ||
+        (lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0 ||
+        (lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0 ||
+        (lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0 ||
+        (lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0)
+    {
+        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_ON);
+    }
+    else
+        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_OFF);
+
     return;
 }
 
@@ -354,12 +396,47 @@ void motor_current_process(void)
     switch (active_motor)
     {
     case MOTOR_A:
+        /* Low pass filter current readings */
+        prev_adc_reading = motor_parameters[MOTOR_A].current;
+        motor_parameters[MOTOR_A].current =
+            prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+
+        /* Check for current overload */
+        if (motor_parameters[MOTOR_A].current > motor_parameters[MOTOR_A].max_current)
+        {
+            motor_drive(MOTOR_A, BRAKE, 0);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE);
+        }
+        break;
+
     case MOTOR_B:
+        /* Low pass filter current readings */
+        prev_adc_reading = motor_parameters[MOTOR_B].current;
+        motor_parameters[MOTOR_B].current =
+            prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+
+        /* Check for current overload */
+        if (motor_parameters[MOTOR_B].current > motor_parameters[MOTOR_B].max_current)
+        {
+            motor_drive(MOTOR_B, BRAKE, 0);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE);
+        }
+        break;
+
     case MOTOR_C:
         /* Low pass filter current readings */
-        prev_adc_reading = motor_parameters[active_motor].current;
-        motor_parameters[active_motor].current =
+        prev_adc_reading = motor_parameters[MOTOR_C].current;
+        motor_parameters[MOTOR_C].current =
             prev_adc_reading * FILT_CONST_1 + adc_reading * FILT_CONST_2;
+
+        /* Check for current overload */
+        if (motor_parameters[MOTOR_C].current > motor_parameters[MOTOR_C].max_current)
+        {
+            motor_drive(MOTOR_C, BRAKE, 0);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE);
+        }
+        break;
+
     default: /* No active motor */
         return;
     }
