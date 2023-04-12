@@ -403,7 +403,7 @@ void motor_current_process(void)
         if (motor_parameters[MOTOR_A].current > motor_parameters[MOTOR_A].max_current)
         {
             motor_drive(MOTOR_A, BRAKE, 0);
-            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
         }
         break;
 
@@ -417,7 +417,7 @@ void motor_current_process(void)
         if (motor_parameters[MOTOR_B].current > motor_parameters[MOTOR_B].max_current)
         {
             motor_drive(MOTOR_B, BRAKE, 0);
-            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
         }
         break;
 
@@ -431,7 +431,7 @@ void motor_current_process(void)
         if (motor_parameters[MOTOR_C].current > motor_parameters[MOTOR_C].max_current)
         {
             motor_drive(MOTOR_C, BRAKE, 0);
-            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
         }
         break;
 
