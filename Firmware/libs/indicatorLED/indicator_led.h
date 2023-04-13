@@ -7,10 +7,10 @@
 
 typedef enum
 {
-    REMOTE,
-    MOTOR,
-    MOTOR_OLERLOAD,
-    MOTOR_LIMIT_SWITCH
+    REMOTE = 0,
+    MOTOR = 1,
+    MOTOR_OLERLOAD = 2,
+    MOTOR_LIMIT_SWITCH = 3
 } indicator_led_t;
 
 typedef enum
