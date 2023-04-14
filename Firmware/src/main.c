@@ -14,6 +14,9 @@
 #include "../libs/indicatorLED/indicator_led.h"
 #include "cli_commands.h"
 
+/* Number of 16ms clock0 periods to give a period of ~500ms */
+#define LED_PROCESS_PERIOD 31
+
 /* Local function prototypes */
 static void sys_init(void);
 
@@ -22,6 +25,9 @@ FILE uart_stream = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW)
 
 /* Command line structure */
 cli_t cli;
+
+/* Time counter for LED blink logic */
+uint8_t timeLed = 0;
 
 /*
  * Do all the startup-time peripheral initializations.
@@ -73,7 +79,14 @@ int main(void)
 		if (timer0_clk_event)
 		{
 			timer0_clk_event = false;
-			// do something
+
+			/* Process LED */
+			++timeLed;
+			if (timeLed == LED_PROCESS_PERIOD)
+			{
+				timeLed = 0;
+				indicator_led_process();
+			}
 		}
 
 		/* Process the received RC-5 command event */

@@ -18,10 +18,10 @@
 
 /* Initial conditions */
 static led_parameters_t led_parameters[NUMBER_OF_LEDS] =
-    {{REMOTE, LED_OFF, 0},
-     {MOTOR, LED_OFF, 0},
-     {MOTOR_OLERLOAD, LED_OFF, 0},
-     {MOTOR_LIMIT_SWITCH, LED_OFF, 0}};
+    {{LED_OFF, 0},
+     {LED_OFF, 0},
+     {LED_OFF, 0},
+     {LED_OFF, 0}};
 
 /*
  * tbd.

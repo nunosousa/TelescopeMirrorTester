@@ -23,7 +23,6 @@ typedef enum
 
 typedef struct
 {
-    indicator_led_t name; /* Motor max allowed duty cycle in % */
     led_state_t state;    /* Motor min allowed duty cycle in % */
     uint8_t pulse_count;  /* Motor current duty cycle */
 } led_parameters_t;
