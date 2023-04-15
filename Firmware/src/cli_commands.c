@@ -27,7 +27,8 @@ const char help_response[] PROGMEM =
     "  getSpeed        Gets motor current speed.\r\n"
     "  getLimitSw      Gets limit switches current state.\r\n"
     "  setMaxCurrent   Sets motor max limiting current.\r\n"
-    "  getMaxCurrent   Gets motor max limiting current.\r\n";
+    "  getMaxCurrent   Gets motor max limiting current.\r\n"
+    "  getCurrent      Gets motor current.\r\n";
 
 const char version_help[] PROGMEM =
     "\"version\" command prints the system info.\r\n"
@@ -102,9 +103,17 @@ const char getMaxCurrent_help[] PROGMEM =
     "It expects the following arguments:\r\n"
     "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
     "It showld be called as follows:\r\n"
-    "    getMaxCurrent motorID maxCurrent\r\n"
+    "    getMaxCurrent motorID\r\n"
     "and will print the following if successful:\r\n"
     "    maxCurrent\r\n";
+const char getCurrent_help[] PROGMEM =
+    "\"getCurrent\" command gets the current on motorID.\r\n"
+    "It expects the following arguments:\r\n"
+    "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+    "It showld be called as follows:\r\n"
+    "    getCurrent motorID\r\n"
+    "and will print the following if successful:\r\n"
+    "    Current\r\n";
 
 /*
  * tbd.
@@ -165,6 +174,11 @@ static cli_status_t setMaxCurrent_func(int argc, char **argv);
 static cli_status_t getMaxCurrent_func(int argc, char **argv);
 
 /*
+ * Command: getCurrent {A, B, C}motorID
+ */
+static cli_status_t getCurrent_func(int argc, char **argv);
+
+/*
  * Available command line commands
  * The contents of the array should be in ascending sorted order of the cmd field
  * according to the comparison function strcmp
@@ -192,7 +206,9 @@ cmd_t cmd_tbl[] = {
     {.cmd = "setMaxCurrent",
      .func = setMaxCurrent_func},
     {.cmd = "getMaxCurrent",
-     .func = getMaxCurrent_func}};
+     .func = getMaxCurrent_func},
+    {.cmd = "getCurrent",
+     .func = getCurrent_func}};
 
 /*
  * tbd
@@ -634,6 +650,47 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
     itoa(motor_state->max_current, current_string, 10);
+    fputs(current_string, stdout);
+
+    return CLI_OK;
+}
+
+/*
+ * Command: getCurrent {A, B, C}motorID
+ */
+static cli_status_t getCurrent_func(int argc, char **argv)
+{
+    char current_string[10];
+    motor_t motorID;
+    motor_parameters_t *motor_state = NULL;
+
+    /* Check for correct argument's list */
+    if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
+    {
+        print_progmem_string(getCurrent_help);
+        return CLI_OK;
+    }
+    else if (argc != 2)
+        return CLI_E_INVALID_ARGS;
+
+    /* Perform commands actions */
+    /* Identify motorID and print its speed value */
+    memset(current_string, 0x00, 10);
+
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    motor_state = get_motor_state(motorID);
+    if (motor_state == NULL)
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    itoa(motor_state->current, current_string, 10);
     fputs(current_string, stdout);
 
     return CLI_OK;
