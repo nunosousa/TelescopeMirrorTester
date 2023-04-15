@@ -70,17 +70,21 @@ void motor_init(void)
  */
 void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
 {
+    uint8_t speed_pwm;
     uint16_t duty_cycle_a, duty_cycle_b;
+
+    /* Adjust from percentage to PWM duty cycle */
+    speed_pwm = 100 - speed;
 
     /* Select motor drive parameters */
     switch (drive)
     {
     case FORWARD_DRIVE:
-        duty_cycle_a = 100;   // IN2
-        duty_cycle_b = speed; // IN1
+        duty_cycle_a = 100;       // IN2
+        duty_cycle_b = speed_pwm; // IN1
         break;
     case REVERSE_DRIVE:
-        duty_cycle_a = speed;
+        duty_cycle_a = speed_pwm;
         duty_cycle_b = 100;
         break;
     case BRAKE:
