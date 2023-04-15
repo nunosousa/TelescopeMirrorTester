@@ -7,10 +7,10 @@
 #include <stdbool.h>
 
 /* LED bit value */
-#define REMOTE_LED 5
-#define MOTOR_LED 4
-#define MOTOR_OLERLOAD_LED 0
-#define MOTOR_LIMIT_SWITCH_LED 1
+#define REMOTE_LED 0
+#define MOTOR_LED 1
+#define MOTOR_OLERLOAD_LED 2
+#define MOTOR_LIMIT_SWITCH_LED 3
 
 /*  */
 #define WARNING_LED_PULSES 5
@@ -38,12 +38,13 @@ static bool indicator_led_get(indicator_led_t indicator_led);
  */
 void indicator_led_init(void)
 {
+    uint8_t led_state;
+
+    led_state = _BV(REMOTE_LED) | _BV(MOTOR_LED) | _BV(MOTOR_OLERLOAD_LED) |
+                _BV(MOTOR_LIMIT_SWITCH_LED);
+
     /* Configure all led pins to high */
-    pca9535_set_port_output(PIN_EXPANDER_ADDRESS, PORT_1,
-                            _BV(REMOTE_LED) |
-                                _BV(MOTOR_LED) |
-                                _BV(MOTOR_OLERLOAD_LED) |
-                                _BV(MOTOR_LIMIT_SWITCH_LED));
+    pca9535_set_port_output(PIN_EXPANDER_ADDRESS, PORT_1, led_state);
 
     /* Configure all pins as outputs */
     pca9535_set_port_dir(PIN_EXPANDER_ADDRESS, PORT_1, 0x00);
