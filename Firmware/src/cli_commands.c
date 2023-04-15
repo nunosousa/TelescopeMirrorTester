@@ -15,6 +15,20 @@ const char help_help[] PROGMEM =
     "and a brief summary.\r\n"
     "It showld be called as follows:\r\n"
     "    help\r\n";
+const char help_response[] PROGMEM =
+    "For help on a command on the following list, type help command-name:\r\n"
+    "  help            This command.\r\n"
+    "  version         Prints firmware version info.\r\n"
+    "  setMaxSpeed     Sets motor max speed.\r\n"
+    "  getMaxSpeed     Gets motor max speed.\r\n"
+    "  setMinSpeed     Sets motor min speed.\r\n"
+    "  getMinSpeed     Gets motor min speed.\r\n"
+    "  setSpeed        Command motor speed.\r\n"
+    "  getSpeed        Gets motor current speed.\r\n"
+    "  getLimitSw      Gets limit switches current state.\r\n"
+    "  setMaxCurrent   Sets motor max limiting current.\r\n"
+    "  getMaxCurrent   Gets motor max limiting current.\r\n";
+
 const char version_help[] PROGMEM =
     "\"version\" command prints the system info.\r\n"
     "It showld be called as follows:\r\n"
@@ -26,7 +40,7 @@ const char setMaxSpeed_help[] PROGMEM =
     "\"setMaxSpeed\" command sets the maximum speed that motorID can reach.\r\n"
     "It expects the following arguments:\r\n"
     "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
-    "    maxSpeed - Has range [0, 100] and represents the speed maximum absolute value.\r\n"
+    "    maxSpeed - Has range [0%, 100%] and represents the speed maximum absolute value.\r\n"
     "It showld be called as follows:\r\n"
     "    setMaxSpeed motorID maxSpeed\r\n";
 const char getMaxSpeed_help[] PROGMEM =
@@ -41,7 +55,7 @@ const char setMinSpeed_help[] PROGMEM =
     "\"setMinSpeed\" command sets the minimum speed that motorID can reach.\r\n"
     "It expects the following arguments:\r\n"
     "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
-    "    minSpeed - Has range [0, 100] and represents the speed minimum absolute value.\r\n"
+    "    minSpeed - Has range [0%, 100%] and represents the speed minimum absolute value.\r\n"
     "It showld be called as follows:\r\n"
     "    setMinSpeed motorID minSpeed\r\n";
 const char getMinSpeed_help[] PROGMEM =
@@ -69,8 +83,28 @@ const char getSpeed_help[] PROGMEM =
     "and will print the following if successful:\r\n"
     "    speed, drive state\r\n";
 const char getLimitSw_help[] PROGMEM =
-    "\"getLimitSw\" command prints a list of the available commands "
-    "and a brief summary.\r\nTakes no arguments.\r\n";
+    "\"getLimitSw\" command gets motorID current speed.\r\n"
+    "It expects the following arguments:\r\n"
+    "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+    "It showld be called as follows:\r\n"
+    "    getSpeed motorID\r\n"
+    "and will print the following if successful:\r\n"
+    "    speed, drive state\r\n";
+const char setMaxCurrent_help[] PROGMEM =
+    "\"setMaxCurrent\" command sets the maximum current that motorID can reach.\r\n"
+    "It expects the following arguments:\r\n"
+    "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+    "    maxCurrent - Has range [0mA, 1000mA] and represents the current maximum value.\r\n"
+    "It showld be called as follows:\r\n"
+    "    setMaxCurrent motorID maxCurrent\r\n";
+const char getMaxCurrent_help[] PROGMEM =
+    "\"getMaxCurrent\" command gets the maximum current that motorID can reach.\r\n"
+    "It expects the following arguments:\r\n"
+    "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
+    "It showld be called as follows:\r\n"
+    "    getMaxCurrent motorID maxCurrent\r\n"
+    "and will print the following if successful:\r\n"
+    "    maxCurrent\r\n";
 
 /*
  * tbd.
@@ -97,10 +131,14 @@ static cli_status_t setMaxSpeed_func(int argc, char **argv);
  */
 static cli_status_t getMaxSpeed_func(int argc, char **argv);
 
-// setMinSpeed {A, B, C}motorID (int)minSpeed
+/*
+ * Command: setMinSpeed {A, B, C}motorID (int)maxSpeed
+ */
 static cli_status_t setMinSpeed_func(int argc, char **argv);
 
-// getMinSpeed {A, B, C}motorID
+/*
+ * Command: getMinSpeed {A, B, C}motorID
+ */
 static cli_status_t getMinSpeed_func(int argc, char **argv);
 
 /*
@@ -116,8 +154,15 @@ static cli_status_t getSpeed_func(int argc, char **argv);
 // getLimitSw {A, B, C}motorID
 static cli_status_t getLimitSw_func(int argc, char **argv);
 
-// limitSw {A, B, C}motorID (bool)swState (bool)direction
-static cli_status_t limitSw_func(int argc, char **argv);
+/*
+ * Command: setMaxCurrent {A, B, C}motorID (int)maxCurrent
+ */
+static cli_status_t setMaxCurrent_func(int argc, char **argv);
+
+/*
+ * Command: getMaxCurrent {A, B, C}motorID
+ */
+static cli_status_t getMaxCurrent_func(int argc, char **argv);
 
 /*
  * Available command line commands
@@ -144,8 +189,10 @@ cmd_t cmd_tbl[] = {
      .func = getSpeed_func},
     {.cmd = "getLimitSw",
      .func = getLimitSw_func},
-    {.cmd = "limitSw",
-     .func = limitSw_func}};
+    {.cmd = "setMaxCurrent",
+     .func = setMaxCurrent_func},
+    {.cmd = "getMaxCurrent",
+     .func = getMaxCurrent_func}};
 
 /*
  * tbd
@@ -186,12 +233,7 @@ static cli_status_t help_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Print help information */
-    fputs("For help on a command on the following list, type help "
-          "command-name:\r\n",
-          stdout);
-    fputs("cmd1   Gets something...\r\n", stdout);
-    fputs("cmd2   Sets something...\r\n", stdout);
-    // call libx help information function
+    print_progmem_string(help_response);
 
     return CLI_OK;
 }
@@ -513,20 +555,86 @@ static cli_status_t getLimitSw_func(int argc, char **argv)
     return CLI_OK;
 }
 
-// limitSw {A, B, C}motorID (bool)swState (bool)direction
-static cli_status_t limitSw_func(int argc, char **argv)
+/*
+ * Command: setMaxCurrent {A, B, C}motorID (int)maxCurrent
+ */
+static cli_status_t setMaxCurrent_func(int argc, char **argv)
 {
+    motor_t motorID;
+    motor_parameters_t *motor_state = NULL;
+    int current;
+
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
-        // print_progmem_string(limitSw_help);
+        print_progmem_string(setMaxCurrent_help);
         return CLI_OK;
     }
-    else if (argc != 1)
+    else if (argc != 3)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    // motor_drive(motorID, drive, speed);
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    /* Identify selected speed */
+    current = atoi(argv[2]);
+
+    if (current < 0 || current > 1000)
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    motor_state = get_motor_state(motorID);
+    if (motor_state == NULL)
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    motor_state->max_current = current;
+
+    return CLI_OK;
+}
+
+/*
+ * Command: getMaxCurrent {A, B, C}motorID
+ */
+static cli_status_t getMaxCurrent_func(int argc, char **argv)
+{
+    char current_string[10];
+    motor_t motorID;
+    motor_parameters_t *motor_state = NULL;
+
+    /* Check for correct argument's list */
+    if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
+    {
+        print_progmem_string(getMaxCurrent_help);
+        return CLI_OK;
+    }
+    else if (argc != 2)
+        return CLI_E_INVALID_ARGS;
+
+    /* Perform commands actions */
+    /* Identify motorID and print its speed value */
+    memset(current_string, 0x00, 10);
+
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    motor_state = get_motor_state(motorID);
+    if (motor_state == NULL)
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    itoa(motor_state->max_current, current_string, 10);
+    fputs(current_string, stdout);
 
     return CLI_OK;
 }
