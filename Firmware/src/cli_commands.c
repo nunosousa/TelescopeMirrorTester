@@ -84,13 +84,15 @@ const char getSpeed_help[] PROGMEM =
     "and will print the following if successful:\r\n"
     "    speed, drive state\r\n";
 const char getLimitSw_help[] PROGMEM =
-    "\"getLimitSw\" command gets motorID current speed.\r\n"
+    "\"getLimitSw\" command gets motorID current limit switch status.\r\n"
     "It expects the following arguments:\r\n"
     "    motorID - Must be one of {A, B, C} and represents which motor to select.\r\n"
     "It showld be called as follows:\r\n"
-    "    getSpeed motorID\r\n"
-    "and will print the following if successful:\r\n"
-    "    speed, drive state\r\n";
+    "    getLimitSw motorID\r\n"
+    "and will print one the following if successful:\r\n"
+    "    Forward limit\r\n"
+    "    Reverse limit\r\n"
+    "    Free\r\n";
 const char setMaxCurrent_help[] PROGMEM =
     "\"setMaxCurrent\" command sets the maximum current that motorID can reach.\r\n"
     "It expects the following arguments:\r\n"
@@ -556,17 +558,48 @@ static cli_status_t getSpeed_func(int argc, char **argv)
 // getLimitSw {A, B, C}motorID
 static cli_status_t getLimitSw_func(int argc, char **argv)
 {
+    motor_t motorID;
+    motor_parameters_t *motor_state = NULL;
+
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
     {
         print_progmem_string(getLimitSw_help);
         return CLI_OK;
     }
-    else if (argc != 1)
+    else if (argc != 2)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    // motor_drive(motorID, drive, speed);
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_A;
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_B;
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+        motorID = MOTOR_C;
+    else
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    motor_state = get_motor_state(motorID);
+    if (motor_state == NULL)
+        return CLI_E_INVALID_ARGS; /* Invalid argument */
+
+    /* Get limit switch status */
+    switch (motor_state->position)
+    {
+    case FORWARD_LIMIT_SW:
+        fputs("Forward limit", stdout);
+        break;
+    case REVERSE_LIMIT_SW:
+        fputs("Reverse limit", stdout);
+        break;
+    case LIMIT_SW_OFF:
+        fputs("Free", stdout);
+        break;
+
+    default:
+        break;
+    }
 
     return CLI_OK;
 }
@@ -633,7 +666,6 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    /* Identify motorID and print its speed value */
     memset(current_string, 0x00, 10);
 
     if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
@@ -674,7 +706,6 @@ static cli_status_t getCurrent_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    /* Identify motorID and print its speed value */
     memset(current_string, 0x00, 10);
 
     if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
