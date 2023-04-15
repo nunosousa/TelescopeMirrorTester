@@ -229,7 +229,7 @@ static void print_progmem_string(const char *string)
 {
     char c;
 
-    for (uint8_t i = 0; i < strlen_P(string); i++)
+    for (size_t i = 0; i < strlen_P(string); i++)
     {
         c = pgm_read_byte_near(string + i);
         putchar(c);
@@ -297,11 +297,11 @@ static cli_status_t setMaxSpeed_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -343,11 +343,11 @@ static cli_status_t getMaxSpeed_func(int argc, char **argv)
     /* Identify motorID and print its speed value */
     memset(speed_string, 0x00, 10);
 
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -358,6 +358,7 @@ static cli_status_t getMaxSpeed_func(int argc, char **argv)
 
     itoa(motor_state->max_speed, speed_string, 10);
     fputs(speed_string, stdout);
+    fputs("\r\n", stdout);
 
     return CLI_OK;
 }
@@ -381,11 +382,11 @@ static cli_status_t setMinSpeed_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -427,11 +428,11 @@ static cli_status_t getMinSpeed_func(int argc, char **argv)
     /* Identify motorID and print its speed value */
     memset(speed_string, 0x00, 10);
 
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -442,6 +443,7 @@ static cli_status_t getMinSpeed_func(int argc, char **argv)
 
     itoa(motor_state->min_speed, speed_string, 10);
     fputs(speed_string, stdout);
+    fputs("\r\n", stdout);
 
     return CLI_OK;
 }
@@ -466,11 +468,11 @@ static cli_status_t setSpeed_func(int argc, char **argv)
 
     /* Perform commands actions */
     /* Identify motorID */
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -518,11 +520,11 @@ static cli_status_t getSpeed_func(int argc, char **argv)
     /* Identify motorID and print its speed value */
     memset(speed_string, 0x00, 10);
 
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -549,6 +551,7 @@ static cli_status_t getSpeed_func(int argc, char **argv)
         fputs("%, coast\r\n", stdout);
         break;
     default:
+        fputs("\r\n", stdout);
         break;
     }
 
@@ -571,11 +574,11 @@ static cli_status_t getLimitSw_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -588,13 +591,13 @@ static cli_status_t getLimitSw_func(int argc, char **argv)
     switch (motor_state->position)
     {
     case FORWARD_LIMIT_SW:
-        fputs("Forward limit", stdout);
+        fputs("Forward limit\r\n", stdout);
         break;
     case REVERSE_LIMIT_SW:
-        fputs("Reverse limit", stdout);
+        fputs("Reverse limit\r\n", stdout);
         break;
     case LIMIT_SW_OFF:
-        fputs("Free", stdout);
+        fputs("Free\r\n", stdout);
         break;
 
     default:
@@ -623,11 +626,11 @@ static cli_status_t setMaxCurrent_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -668,11 +671,11 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
     /* Perform commands actions */
     memset(current_string, 0x00, 10);
 
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -683,6 +686,7 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
 
     itoa(motor_state->max_current, current_string, 10);
     fputs(current_string, stdout);
+    fputs("\r\n", stdout);
 
     return CLI_OK;
 }
@@ -708,11 +712,11 @@ static cli_status_t getCurrent_func(int argc, char **argv)
     /* Perform commands actions */
     memset(current_string, 0x00, 10);
 
-    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE))
+    if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
-    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_B;
-    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE))
+    else if (strncmp(argv[1], "C", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_C;
     else
         return CLI_E_INVALID_ARGS; /* Invalid argument */
@@ -723,6 +727,7 @@ static cli_status_t getCurrent_func(int argc, char **argv)
 
     itoa(motor_state->current, current_string, 10);
     fputs(current_string, stdout);
+    fputs("\r\n", stdout);
 
     return CLI_OK;
 }
