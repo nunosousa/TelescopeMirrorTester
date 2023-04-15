@@ -29,11 +29,13 @@ static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
 /*
  * Perform motor interface initializations.
  */
+static void motor_update_position(void);
+
+/*
+ * Perform motor interface initializations.
+ */
 void motor_init(void)
 {
-    uint8_t lim_sw_inputs;
-    bool lim_sw_active = false;
-
     /* Initialize PWM */
     timer2_pwm_init();
 
@@ -56,55 +58,8 @@ void motor_init(void)
     /* Configure limit switch inputs */
     limit_switch_init();
 
-    /* Get current limit switches state */
-    limit_switch_get_state(&lim_sw_inputs);
-
-    /* Update limit switch status for each motor */
-    /* Motor A */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
-    {
-        motor_parameters[MOTOR_A].position = FORWARD_LIMIT_SW;
-        lim_sw_active = true;
-    }
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
-    {
-        motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW;
-        lim_sw_active = true;
-    }
-    else
-        motor_parameters[MOTOR_A].position = LIMIT_SW_OFF;
-
-    /* Motor B */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0)
-    {
-        motor_parameters[MOTOR_B].position = FORWARD_LIMIT_SW;
-        lim_sw_active = true;
-    }
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0)
-    {
-        motor_parameters[MOTOR_B].position = REVERSE_LIMIT_SW;
-        lim_sw_active = true;
-    }
-    else
-        motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
-
-    /* Motor C */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0)
-    {
-        motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
-        lim_sw_active = true;
-    }
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0)
-    {
-        motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
-        lim_sw_active = true;
-    }
-    else
-        motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
-
-    /* Update limit switch LED if needed */
-    if (lim_sw_active == true)
-        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_ON);
+    /* Update motor position */
+    motor_update_position();
 
     /* Identify current motor */
     active_motor = NONE;
@@ -322,34 +277,8 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
  */
 void motor_lim_sw_process(void)
 {
-    uint8_t lim_sw_inputs;
-
-    /* Get current limit switches state */
-    limit_switch_get_state(&lim_sw_inputs);
-
-    /* Update limit switch status for motor A */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
-        motor_parameters[MOTOR_A].position = FORWARD_LIMIT_SW;
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
-        motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW;
-    else
-        motor_parameters[MOTOR_A].position = LIMIT_SW_OFF;
-
-    /* Update limit switch status for motor B */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0)
-        motor_parameters[MOTOR_B].position = FORWARD_LIMIT_SW;
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0)
-        motor_parameters[MOTOR_B].position = REVERSE_LIMIT_SW;
-    else
-        motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
-
-    /* Update limit switch status for motor C */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
-        motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
-        motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
-    else
-        motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
+    /* Update motor position */
+    motor_update_position();
 
     /* Take appropriate action if motor direction and limit switch coincide */
     switch (active_motor)
@@ -390,16 +319,6 @@ void motor_lim_sw_process(void)
     default:
         break;
     }
-
-    /* Update LED status */
-    if (motor_parameters[MOTOR_A].position != LIMIT_SW_OFF ||
-        motor_parameters[MOTOR_B].position != LIMIT_SW_OFF ||
-        motor_parameters[MOTOR_C].position != LIMIT_SW_OFF)
-    {
-        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_ON);
-    }
-    else
-        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_OFF);
 
     return;
 }
@@ -487,4 +406,51 @@ motor_parameters_t *get_motor_state(motor_t motorID)
     default:
         return NULL;
     }
+}
+
+/*
+ * Perform motor interface initializations.
+ */
+static void motor_update_position(void)
+{
+    uint8_t lim_sw_inputs;
+
+    /* Get current limit switches state */
+    limit_switch_get_state(&lim_sw_inputs);
+
+    /* Update limit switch status for motor A */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_A].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_A].position = LIMIT_SW_OFF;
+
+    /* Update limit switch status for motor B */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0)
+        motor_parameters[MOTOR_B].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0)
+        motor_parameters[MOTOR_B].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
+
+    /* Update limit switch status for motor C */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
+
+    /* Update LED status */
+    if (motor_parameters[MOTOR_A].position != LIMIT_SW_OFF ||
+        motor_parameters[MOTOR_B].position != LIMIT_SW_OFF ||
+        motor_parameters[MOTOR_C].position != LIMIT_SW_OFF)
+    {
+        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_ON);
+    }
+    else
+        indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_OFF);
+
+    return;
 }
