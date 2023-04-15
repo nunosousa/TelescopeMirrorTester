@@ -85,9 +85,9 @@ static void indicator_led_set(indicator_led_t indicator_led, bool led_on)
 
     /* Change LED state accordingly */
     if (led_on == true)
-        led_state |= led_to_change;
-    else
         led_state &= ~led_to_change;
+    else
+        led_state |= led_to_change;
 
     /* Update LED status */
     pca9535_set_port_output(PIN_EXPANDER_ADDRESS, PORT_1, led_state);

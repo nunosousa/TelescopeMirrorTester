@@ -361,7 +361,7 @@ void motor_lim_sw_process(void)
         break;
 
     default:
-        return;
+        break;
     }
 
     /* Update LED status */
