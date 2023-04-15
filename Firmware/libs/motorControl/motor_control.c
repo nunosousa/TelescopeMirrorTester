@@ -121,12 +121,12 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     switch (drive)
     {
     case FORWARD_DRIVE:
-        duty_cycle_a = speed; // IN2
-        duty_cycle_b = 100;   // IN1
+        duty_cycle_a = 100;   // IN2
+        duty_cycle_b = speed; // IN1
         break;
     case REVERSE_DRIVE:
-        duty_cycle_a = 100;
-        duty_cycle_b = speed;
+        duty_cycle_a = speed;
+        duty_cycle_b = 100;
         break;
     case BRAKE:
         duty_cycle_a = 100;
@@ -146,9 +146,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     case MOTOR_A:
         /* Abort if the appropriate limit switch is activated */
         if (((motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW) &&
-             (drive = FORWARD_DRIVE)) ||
+             (drive == FORWARD_DRIVE)) ||
             ((motor_parameters[MOTOR_A].position == REVERSE_LIMIT_SW) &&
-             (drive = REVERSE_DRIVE)))
+             (drive == REVERSE_DRIVE)))
             return;
 
         /* Prepare motor PWM signals */
@@ -193,9 +193,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     case MOTOR_B:
         /* Abort if the appropriate limit switch is activated */
         if (((motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW) &&
-             (drive = FORWARD_DRIVE)) ||
+             (drive == FORWARD_DRIVE)) ||
             ((motor_parameters[MOTOR_B].position == REVERSE_LIMIT_SW) &&
-             (drive = REVERSE_DRIVE)))
+             (drive == REVERSE_DRIVE)))
             return;
 
         /* Prepare motor PWM signals */
@@ -240,9 +240,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     case MOTOR_C:
         /* Abort if the appropriate limit switch is activated */
         if (((motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW) &&
-             (drive = FORWARD_DRIVE)) ||
+             (drive == FORWARD_DRIVE)) ||
             ((motor_parameters[MOTOR_C].position == REVERSE_LIMIT_SW) &&
-             (drive = REVERSE_DRIVE)))
+             (drive == REVERSE_DRIVE)))
             return;
 
         /* Prepare motor PWM signals */
@@ -327,34 +327,61 @@ void motor_lim_sw_process(void)
     /* Get current limit switches state */
     limit_switch_get_state(&lim_sw_inputs);
 
+    /* Update limit switch status for motor A */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_A].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_A].position = LIMIT_SW_OFF;
+
+    /* Update limit switch status for motor B */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0)
+        motor_parameters[MOTOR_B].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0)
+        motor_parameters[MOTOR_B].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
+
+    /* Update limit switch status for motor C */
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+        motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
+    else
+        motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
+
     /* Take appropriate action if motor direction and limit switch coincide */
     switch (active_motor)
     {
     case MOTOR_A:
-        if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0) &&
-             (motor_parameters[MOTOR_A].drive = FORWARD_DRIVE)) ||
-            (((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0) &&
-             (motor_parameters[MOTOR_A].drive = REVERSE_DRIVE)))
+        /* stop motor if limit is reached */
+        if (((motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW) &&
+             (motor_parameters[MOTOR_A].drive == FORWARD_DRIVE)) ||
+            ((motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW) &&
+             (motor_parameters[MOTOR_A].drive == REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_A, BRAKE, 0);
         }
         break;
 
     case MOTOR_B:
-        if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0) &&
-             (motor_parameters[MOTOR_B].drive = FORWARD_DRIVE)) ||
-            (((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0) &&
-             (motor_parameters[MOTOR_B].drive = REVERSE_DRIVE)))
+        /* stop motor if limit is reached */
+        if (((motor_parameters[MOTOR_B].position == FORWARD_LIMIT_SW) &&
+             (motor_parameters[MOTOR_B].drive == FORWARD_DRIVE)) ||
+            ((motor_parameters[MOTOR_B].position == REVERSE_LIMIT_SW) &&
+             (motor_parameters[MOTOR_B].drive == REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_B, BRAKE, 0);
         }
         break;
 
     case MOTOR_C:
-        if ((((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0) &&
-             (motor_parameters[MOTOR_C].drive = FORWARD_DRIVE)) ||
-            (((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0) &&
-             (motor_parameters[MOTOR_C].drive = REVERSE_DRIVE)))
+        /* stop motor if limit is reached */
+        if (((motor_parameters[MOTOR_C].position == FORWARD_LIMIT_SW) &&
+             (motor_parameters[MOTOR_C].drive == FORWARD_DRIVE)) ||
+            ((motor_parameters[MOTOR_C].position == REVERSE_LIMIT_SW) &&
+             (motor_parameters[MOTOR_C].drive == REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_C, BRAKE, 0);
         }
@@ -365,12 +392,9 @@ void motor_lim_sw_process(void)
     }
 
     /* Update LED status */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0 ||
-        (lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0 ||
-        (lim_sw_inputs & _BV(FORWARD_LIMIT_SW_B)) != 0 ||
-        (lim_sw_inputs & _BV(REVERSE_LIMIT_SW_B)) != 0 ||
-        (lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0 ||
-        (lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0)
+    if (motor_parameters[MOTOR_A].position != LIMIT_SW_OFF ||
+        motor_parameters[MOTOR_B].position != LIMIT_SW_OFF ||
+        motor_parameters[MOTOR_C].position != LIMIT_SW_OFF)
     {
         indicator_led_set_state(MOTOR_LIMIT_SWITCH, LED_ON);
     }
