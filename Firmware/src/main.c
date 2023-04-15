@@ -35,7 +35,7 @@ uint8_t timeLed = 0;
 static void sys_init(void)
 {
 	/* Set WDT */
-	wdt_enable(WDTO_30MS);
+	wdt_enable(WDTO_2S);
 
 	/* stdio streams */
 	stdout = &uart_stream;
@@ -58,7 +58,7 @@ static void sys_init(void)
 	motor_init();
 
 	/* Configure the IR receiver */
-	timer1_rc5_init();
+	// timer1_rc5_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();

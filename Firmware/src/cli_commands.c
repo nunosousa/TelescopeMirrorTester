@@ -162,7 +162,9 @@ static cli_status_t setSpeed_func(int argc, char **argv);
  */
 static cli_status_t getSpeed_func(int argc, char **argv);
 
-// getLimitSw {A, B, C}motorID
+/*
+ * Command: getLimitSw {A, B, C}motorID
+ */
 static cli_status_t getLimitSw_func(int argc, char **argv);
 
 /*
@@ -558,7 +560,9 @@ static cli_status_t getSpeed_func(int argc, char **argv)
     return CLI_OK;
 }
 
-// getLimitSw {A, B, C}motorID
+/*
+ * Command: getLimitSw {A, B, C}motorID
+ */
 static cli_status_t getLimitSw_func(int argc, char **argv)
 {
     motor_t motorID;
