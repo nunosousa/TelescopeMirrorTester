@@ -439,9 +439,9 @@ static void motor_update_position(void)
         motor_parameters[MOTOR_B].position = LIMIT_SW_OFF;
 
     /* Update limit switch status for motor C */
-    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_A)) != 0)
+    if ((lim_sw_inputs & _BV(FORWARD_LIMIT_SW_C)) != 0)
         motor_parameters[MOTOR_C].position = FORWARD_LIMIT_SW;
-    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_A)) != 0)
+    else if ((lim_sw_inputs & _BV(REVERSE_LIMIT_SW_C)) != 0)
         motor_parameters[MOTOR_C].position = REVERSE_LIMIT_SW;
     else
         motor_parameters[MOTOR_C].position = LIMIT_SW_OFF;
