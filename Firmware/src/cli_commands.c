@@ -727,8 +727,9 @@ static cli_status_t getCurrent_func(int argc, char **argv)
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
+    /* Convert ADC value to floating point number in units of mA */
     current_float = ((float)motor_state->current / 1024.0) * 1000.0;
-    printf("%f [mA]\r\n", current_float);
+    printf("%.3f [mA]\r\n", current_float);
 
     return CLI_OK;
 }
