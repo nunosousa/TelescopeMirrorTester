@@ -23,9 +23,7 @@ static volatile uint16_t adc_val;
 ISR(ADC_vect)
 {
     /* Read ADC value */
-    adc_val = 0;
-    adc_val = ADCL;
-    adc_val |= ADCH << 8;
+    adc_val = ADC;
 
     adc_event = true;
 }
@@ -35,6 +33,9 @@ ISR(ADC_vect)
  */
 void adc_init(void)
 {
+    /* Set time keeping clock */
+    timer0_clk_init();
+
     /* Disable general interrupts during setup */
     cli();
 
@@ -42,7 +43,7 @@ void adc_init(void)
     ADMUX |= _BV(REFS0);
 
     /* Set input channel to 0V (GND) */
-    ADMUX |= _BV(MUX0) | _BV(MUX1) | _BV(MUX2) | _BV(MUX3);
+    adc_select_analog_input(GND);
 
 #if (F_CPU == 16000000)
     /* Set ADC prescaler to 128 */
@@ -54,17 +55,14 @@ void adc_init(void)
     /* Enable auto trigger source to Timer/Counter0 Compare Match A */
     ADCSRB |= _BV(ADTS1) | _BV(ADTS0);
 
-    /* Enable ADC and ADC interrupt, and start capture */
-    ADCSRA |= _BV(ADEN) | _BV(ADIE) | _BV(ADSC);
+    /* Enable ADC and ADC interrupt, activate auto trigger */
+    ADCSRA |= _BV(ADEN) | _BV(ADIE) | _BV(ADATE);
+
+    /* Start capture */
+    ADCSRA |= _BV(ADSC);
 
     /* Enable general interrupts after setup */
     sei();
-
-    /* Default option - set source to Temperature sensor */
-    adc_select_analog_input(GND);
-
-    /* Set time keeping clock */
-    timer0_clk_init();
 }
 
 /*
