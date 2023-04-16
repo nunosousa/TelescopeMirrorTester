@@ -291,7 +291,7 @@ void motor_lim_sw_process(void)
         /* stop motor if limit is reached */
         if (((motor_parameters[MOTOR_A].position == FORWARD_LIMIT_SW) &&
              (motor_parameters[MOTOR_A].drive == FORWARD_DRIVE)) ||
-            ((motor_parameters[MOTOR_A].position = REVERSE_LIMIT_SW) &&
+            ((motor_parameters[MOTOR_A].position == REVERSE_LIMIT_SW) &&
              (motor_parameters[MOTOR_A].drive == REVERSE_DRIVE)))
         {
             motor_drive(MOTOR_A, BRAKE, 0);
