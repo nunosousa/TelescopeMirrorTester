@@ -55,6 +55,7 @@ target_compile_options(firmware
 target_link_options(firmware
 	PRIVATE
 		-mmcu=${MCU}
+		-Wl,-u,vfprintf -lprintf_flt -lm
 		-Wl,-Map,firmware.map
 )
 

@@ -700,9 +700,9 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
  */
 static cli_status_t getCurrent_func(int argc, char **argv)
 {
-    char current_string[10];
     motor_t motorID;
     motor_parameters_t *motor_state = NULL;
+    float current_float;
 
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
@@ -714,8 +714,6 @@ static cli_status_t getCurrent_func(int argc, char **argv)
         return CLI_E_INVALID_ARGS;
 
     /* Perform commands actions */
-    memset(current_string, 0x00, 10);
-
     if (strncmp(argv[1], "A", MAXIMUM_TOKEN_SIZE) == 0)
         motorID = MOTOR_A;
     else if (strncmp(argv[1], "B", MAXIMUM_TOKEN_SIZE) == 0)
@@ -729,9 +727,8 @@ static cli_status_t getCurrent_func(int argc, char **argv)
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
-    itoa(motor_state->current, current_string, 10);
-    fputs(current_string, stdout);
-    fputs("\r\n", stdout);
+    current_float = (float)motor_state->current / 1024.0;
+    printf("%f [mA]\r\n", current_float);
 
     return CLI_OK;
 }
