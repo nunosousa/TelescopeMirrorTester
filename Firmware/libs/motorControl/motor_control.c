@@ -344,7 +344,7 @@ void motor_current_process(void)
         /* Low pass filter current readings */
         prev_adc_reading = motor_parameters[MOTOR_A].current;
         motor_parameters[MOTOR_A].current =
-            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) << DIV_CONST;
+            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) >> DIV_CONST;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_A].current > motor_parameters[MOTOR_A].max_current)
@@ -358,7 +358,7 @@ void motor_current_process(void)
         /* Low pass filter current readings */
         prev_adc_reading = motor_parameters[MOTOR_B].current;
         motor_parameters[MOTOR_B].current =
-            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) << DIV_CONST;
+            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) >> DIV_CONST;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_B].current > motor_parameters[MOTOR_B].max_current)
@@ -372,7 +372,7 @@ void motor_current_process(void)
         /* Low pass filter current readings */
         prev_adc_reading = motor_parameters[MOTOR_C].current;
         motor_parameters[MOTOR_C].current =
-            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) << DIV_CONST;
+            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) >> DIV_CONST;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_C].current > motor_parameters[MOTOR_C].max_current)
