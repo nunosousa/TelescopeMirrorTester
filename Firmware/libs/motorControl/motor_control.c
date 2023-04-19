@@ -1,5 +1,6 @@
 #include "motor_control.h"
 #include "../../hal/adc.h"
+#include "../../hal/timer0_clk.h"
 #include "../../hal/timer2_pwm.h"
 #include "../limitSwitch/limit_switch.h"
 #include "../indicatorLED/indicator_led.h"
@@ -8,12 +9,6 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-
-/* Current low pass filter constants */
-/* Simple averaging filter quocients */
-#define MUL_CONST_1 1 /* y[-1] * MUL_CONST_1 */
-#define MUL_CONST_2 1 /* x[0] * MUL_CONST_2 */
-#define DIV_CONST 1   /* (y[-1] * MUL_CONST_1 + x[0] * MUL_CONST_2) << DIV_CONST */
 
 /*
  * Current operating motor
@@ -38,6 +33,9 @@ void motor_init(void)
 {
     /* Initialize PWM */
     timer2_pwm_init();
+
+    /* Set time keeping clock for ADC measurements */
+    timer0_clk_init();
 
     /* Configure ADC */
     adc_init();
@@ -332,7 +330,7 @@ void motor_lim_sw_process(void)
  */
 void motor_current_process(void)
 {
-    uint16_t adc_reading, prev_adc_reading;
+    uint16_t adc_reading;
 
     /* Get an ADC reading of the current channel */
     adc_reading = adc_get_capture();
@@ -341,10 +339,8 @@ void motor_current_process(void)
     switch (active_motor)
     {
     case MOTOR_A:
-        /* Low pass filter current readings */
-        prev_adc_reading = motor_parameters[MOTOR_A].current;
-        motor_parameters[MOTOR_A].current =
-            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) >> DIV_CONST;
+        /* Get current reading */
+        motor_parameters[MOTOR_A].current = adc_reading;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_A].current > motor_parameters[MOTOR_A].max_current)
@@ -355,10 +351,8 @@ void motor_current_process(void)
         break;
 
     case MOTOR_B:
-        /* Low pass filter current readings */
-        prev_adc_reading = motor_parameters[MOTOR_B].current;
-        motor_parameters[MOTOR_B].current =
-            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) >> DIV_CONST;
+        /* Get current reading */
+        motor_parameters[MOTOR_B].current = adc_reading;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_B].current > motor_parameters[MOTOR_B].max_current)
@@ -369,10 +363,8 @@ void motor_current_process(void)
         break;
 
     case MOTOR_C:
-        /* Low pass filter current readings */
-        prev_adc_reading = motor_parameters[MOTOR_C].current;
-        motor_parameters[MOTOR_C].current =
-            (prev_adc_reading * MUL_CONST_1 + adc_reading * MUL_CONST_2) >> DIV_CONST;
+        /* Get current reading */
+        motor_parameters[MOTOR_C].current = adc_reading;
 
         /* Check for current overload */
         if (motor_parameters[MOTOR_C].current > motor_parameters[MOTOR_C].max_current)

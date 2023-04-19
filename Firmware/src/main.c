@@ -80,6 +80,9 @@ int main(void)
 		{
 			timer0_clk_event = false;
 
+			/* Start ADC capture */
+			adc_start_capture();
+
 			/* Process LED */
 			++timeLed;
 			if (timeLed == LED_PROCESS_PERIOD)
@@ -87,13 +90,6 @@ int main(void)
 				timeLed = 0;
 				indicator_led_process();
 			}
-		}
-
-		/* Process the received RC-5 command event */
-		if (rc5_ready_event)
-		{
-			rc5_ready_event = false;
-			// do something
 		}
 
 		/* Process the ADC reading event */
@@ -122,6 +118,13 @@ int main(void)
 		{
 			uart_new_line_event = false;
 			cli_process(&cli);
+		}
+
+		/* Process the received RC-5 command event */
+		if (rc5_ready_event)
+		{
+			rc5_ready_event = false;
+			// do something
 		}
 
 		/* Keep the watchdog timer on check */

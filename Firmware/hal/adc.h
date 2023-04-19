@@ -33,6 +33,11 @@ void adc_select_analog_input(adc_input_t input);
 /*
  * tbd
  */
+void adc_start_capture(void);
+
+/*
+ * tbd
+ */
 uint16_t adc_get_capture(void);
 
 #endif /* ADC_H */
