@@ -17,9 +17,9 @@ static motor_t active_motor = NONE;
 
 /* Initial conditions */
 static motor_parameters_t motor_parameters[NUMBER_OF_MOTORS] =
-    {{100, 0, 0, COAST, 0, UINT16_MAX, LIMIT_SW_OFF},
-     {100, 0, 0, COAST, 0, UINT16_MAX, LIMIT_SW_OFF},
-     {100, 0, 0, COAST, 0, UINT16_MAX, LIMIT_SW_OFF}};
+    {{100, 0, 0, COAST, 0, 1024, LIMIT_SW_OFF},
+     {100, 0, 0, COAST, 0, 1024, LIMIT_SW_OFF},
+     {100, 0, 0, COAST, 0, 1024, LIMIT_SW_OFF}};
 
 /*
  * Perform motor interface initializations.
@@ -339,15 +339,15 @@ void motor_current_process(void)
     switch (active_motor)
     {
     case MOTOR_A:
-        /* Get current reading */
-        motor_parameters[MOTOR_A].current = adc_reading;
-
         /* Check for current overload */
-        if (motor_parameters[MOTOR_A].current > motor_parameters[MOTOR_A].max_current)
+        if (adc_reading > motor_parameters[MOTOR_A].max_current)
         {
             motor_drive(MOTOR_A, BRAKE, 0);
             indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
+            motor_parameters[MOTOR_A].current = 0;
         }
+        else
+            motor_parameters[MOTOR_A].current = adc_reading; /* Update current reading */
         break;
 
     case MOTOR_B:
@@ -359,6 +359,7 @@ void motor_current_process(void)
         {
             motor_drive(MOTOR_B, BRAKE, 0);
             indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
+            motor_parameters[MOTOR_B].current = 0;
         }
         break;
 
@@ -371,6 +372,7 @@ void motor_current_process(void)
         {
             motor_drive(MOTOR_C, BRAKE, 0);
             indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
+            motor_parameters[MOTOR_C].current = 0;
         }
         break;
 

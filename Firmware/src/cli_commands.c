@@ -649,7 +649,8 @@ static cli_status_t setMaxCurrent_func(int argc, char **argv)
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
-    motor_state->max_current = current;
+    /* Convert floating point number in units of mA to ADC value  */
+    motor_state->max_current = (uint16_t)((((float)current) / 1000.0) * 1024.0);
 
     return CLI_OK;
 }
@@ -662,6 +663,7 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
     char current_string[10];
     motor_t motorID;
     motor_parameters_t *motor_state = NULL;
+    float current_float;
 
     /* Check for correct argument's list */
     if ((argc == 2) && (strncmp(argv[1], help_command, MAXIMUM_TOKEN_SIZE) == 0))
@@ -688,9 +690,9 @@ static cli_status_t getMaxCurrent_func(int argc, char **argv)
     if (motor_state == NULL)
         return CLI_E_INVALID_ARGS; /* Invalid argument */
 
-    itoa(motor_state->max_current, current_string, 10);
-    fputs(current_string, stdout);
-    fputs("\r\n", stdout);
+    /* Convert ADC value to floating point number in units of mA */
+    current_float = ((float)motor_state->max_current / 1024.0) * 1000.0;
+    printf("%.3f [mA]\r\n", current_float);
 
     return CLI_OK;
 }
