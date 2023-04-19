@@ -6,7 +6,27 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define ADC_BUFFER_SIZE 10
+/*
+The current PWM configuration has
+7812,5 Hz PWM frequency - 128 us PWM period
+
+For ADC is
+500000 Hz ADC frequency - 2 us ADC clock period
+ADC needs 13 clocks to generate a sample, so
+2 us * 13 = 26 us ADC sample period
+
+For True RMS current calculations, we need current samples
+for an integer number of PWM periods, so considering both
+configurations, the minimum number of PWM cycle periods and
+ADC sample periods is 13 and 64 respectively resulting in a
+total of 1664 us or 1,664 ms of sample collecting time.
+*/
+#define ADC_BUFFER_SIZE 64
+
+/* Given that the ADC buffer size is 64 (power of 2), to determine
+the divition result in the average operation, a simple right shift of 6
+is equivalent to a divion by 64 */
+#define ADC_AVERAGE_SHIFT 6
 
 /*
  * tbd
@@ -128,11 +148,12 @@ uint16_t adc_get_capture(void)
     uint16_t adc_val = 0;
     uint16_t sum = 0;
 
-    // calculate true RMS
+    /* Sum all the sample values */
     for (uint8_t i = 0; i < ADC_BUFFER_SIZE; i++)
         sum += adc_buffer[i];
 
-    adc_val = sum / ADC_BUFFER_SIZE;
+    /* Determine average current value */
+    adc_val = sum >> ADC_AVERAGE_SHIFT;
 
     return adc_val;
 }
