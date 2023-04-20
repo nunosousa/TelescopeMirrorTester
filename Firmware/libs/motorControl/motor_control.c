@@ -343,7 +343,7 @@ void motor_current_process(void)
         if (adc_reading > motor_parameters[MOTOR_A].max_current)
         {
             motor_drive(MOTOR_A, BRAKE, 0);
-            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_ON);
             motor_parameters[MOTOR_A].current = 0;
         }
         else
@@ -351,29 +351,27 @@ void motor_current_process(void)
         break;
 
     case MOTOR_B:
-        /* Get current reading */
-        motor_parameters[MOTOR_B].current = adc_reading;
-
         /* Check for current overload */
-        if (motor_parameters[MOTOR_B].current > motor_parameters[MOTOR_B].max_current)
+        if (adc_reading > motor_parameters[MOTOR_B].max_current)
         {
             motor_drive(MOTOR_B, BRAKE, 0);
-            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_ON);
             motor_parameters[MOTOR_B].current = 0;
         }
+        else
+            motor_parameters[MOTOR_B].current = adc_reading; /* Update current reading */
         break;
 
     case MOTOR_C:
-        /* Get current reading */
-        motor_parameters[MOTOR_C].current = adc_reading;
-
         /* Check for current overload */
-        if (motor_parameters[MOTOR_C].current > motor_parameters[MOTOR_C].max_current)
+        if (adc_reading > motor_parameters[MOTOR_C].max_current)
         {
             motor_drive(MOTOR_C, BRAKE, 0);
-            indicator_led_set_state(MOTOR_OLERLOAD, LED_PULSE_ONCE);
+            indicator_led_set_state(MOTOR_OLERLOAD, LED_ON);
             motor_parameters[MOTOR_C].current = 0;
         }
+        else
+            motor_parameters[MOTOR_C].current = adc_reading; /* Update current reading */
         break;
 
     default: /* No active motor */
