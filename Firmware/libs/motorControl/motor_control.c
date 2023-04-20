@@ -71,6 +71,9 @@ void motor_drive(motor_t motorID, motor_drive_t drive, uint8_t speed)
     uint8_t speed_pwm;
     uint16_t duty_cycle_a, duty_cycle_b;
 
+    /* Clear motor overload LED if needed */
+    indicator_led_set_state(MOTOR_OLERLOAD, LED_OFF);
+
     /* Adjust from percentage to PWM duty cycle */
     speed_pwm = 100 - speed;
 
