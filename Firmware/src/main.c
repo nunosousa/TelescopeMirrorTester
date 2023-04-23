@@ -10,6 +10,7 @@
 #include "../hal/uart.h"
 #include "../libs/cli/cli.h"
 #include "../libs/motorControl/motor_control.h"
+#include "../libs/necIr/nec_ir.h"
 #include "../libs/pca9535/pca9535.h"
 #include "../libs/indicatorLED/indicator_led.h"
 #include "cli_commands.h"
@@ -120,11 +121,11 @@ int main(void)
 			cli_process(&cli);
 		}
 
-		/* Process the received RC-5 command event */
+		/* Process the received NEC IR command event */
 		if (timer1_nec_event)
 		{
 			timer1_nec_event = false;
-			// do something
+			nec_ir_process();
 		}
 
 		/* Keep the watchdog timer on check */

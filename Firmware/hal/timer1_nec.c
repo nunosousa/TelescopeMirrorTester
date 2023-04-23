@@ -1,13 +1,9 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdbool.h>
+#include <stdint.h>
 
-#define NEC_START_TIME 27000    /* NEC burst start - 13.5 ms */
-#define NEC_REPEAT_TIME 22500   /* NEC burst repeat - 11.5 ms */
-#define NEC_BURST_TOLERANCE 200 /* 100 us tolerance */
-#define NEC_HIGH_TIME 4500      /* NEC logical 1 - 2.25 ms */
-#define NEC_LOW_TIME 2240       /* NEC logical 0 - 1.12 ms */
-#define NEC_BIT_TOLERANCE 50    /* 25 us tolerance */
+#define MAX_NEC_CAPTURE_BUFFER 150 /* Note that buffer counters are 8 bit */
 
 /*
  * tbd
@@ -27,53 +23,46 @@ static volatile uint8_t timer_overflow_counter = 0;
 /*
  * tbd
  */
-static volatile bool new_command = false;
-
-/*
- * tbd
- */
-static volatile bool repeat_command = false;
-
-volatile bool edge[100];
-volatile uint32_t edge_time[100];
-volatile uint16_t edge_counter = 0;
+static volatile uint32_t capture_buffer[MAX_NEC_CAPTURE_BUFFER];
+static volatile uint8_t capture_counter = 0;
+static volatile uint8_t capture_in = 0;
+static uint8_t capture_out = 0;
 
 /*
  * Interrupt Service Routine for Timer1 Input Capture
  */
 ISR(TIMER1_CAPT_vect)
 {
-    edge[edge_counter] = (TCCR1B >> ICES1) & 1;
-    edge_time[edge_counter] = ICR1;
-    edge_time[edge_counter] += ((uint32_t)timer_overflow_counter) << 16;
-    edge_counter++;
-    if (edge_counter >= 100)
-        edge_counter = 0;
-
-    // TCCR1B ^= _BV(ICES1);
-
-    //-----------------
     uint16_t capture;
     uint16_t bit_duration;
 
+    /* Get IR capture timer count and apply extra resolution from oveflow counter */
     capture = ICR1;
     capture += ((uint32_t)timer_overflow_counter) << 16;
 
+    /* Adjust for wrap arround in time difference calculation */
     if (capture >= last_capture)
         bit_duration = capture - last_capture;
     else
-        bit_duration = capture - last_capture + 16777215;
+        bit_duration = capture - last_capture + 0x01000000;
 
-    if (bit_duration >= (NEC_START_TIME - NEC_BURST_TOLERANCE) ||
-        bit_duration <= (NEC_START_TIME + NEC_BURST_TOLERANCE))
-        new_command = true;
+    /* Update previous counter value */
+    last_capture = capture;
 
-    if (bit_duration >= (NEC_REPEAT_TIME - NEC_BURST_TOLERANCE) ||
-        bit_duration <= (NEC_REPEAT_TIME + NEC_BURST_TOLERANCE))
-        repeat_command = true;
+    /* Update counter array and buffer counters */
+    if (capture_counter < MAX_NEC_CAPTURE_BUFFER)
+    {
+        capture_buffer[capture_in] = bit_duration;
+        capture_counter++;
 
-    if (new_command == false)
-        return;
+        capture_in++;
+
+        if (capture_in >= MAX_NEC_CAPTURE_BUFFER)
+            capture_in = 0;
+    }
+
+    /* Flag IR receiving activity */
+    timer1_nec_event = true;
 }
 
 /*
@@ -116,4 +105,25 @@ void timer1_nec_init(void)
 
     /* Enable general interrupts after setup */
     sei();
+}
+
+/*
+ * tbd
+ */
+int8_t timer1_nec_get_capture(uint32_t *capture)
+{
+    /* Get counter capture and update buffer counters */
+    if (capture_counter > 0)
+    {
+        *capture = capture_buffer[capture_out];
+        capture_counter--;
+        capture_out++;
+
+        if (capture_out >= MAX_NEC_CAPTURE_BUFFER)
+            capture_out = 0;
+
+        return 0; /* success */
+    }
+
+    return -1; /* no data */
 }
