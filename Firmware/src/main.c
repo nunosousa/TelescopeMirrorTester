@@ -6,7 +6,7 @@
 
 #include "../hal/adc.h"
 #include "../hal/timer0_clk.h"
-#include "../hal/timer1_rc5.h"
+#include "../hal/timer1_nec.h"
 #include "../hal/uart.h"
 #include "../libs/cli/cli.h"
 #include "../libs/motorControl/motor_control.h"
@@ -58,7 +58,7 @@ static void sys_init(void)
 	motor_init();
 
 	/* Configure the IR receiver */
-	// timer1_rc5_init();
+	timer1_nec_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();
@@ -121,9 +121,9 @@ int main(void)
 		}
 
 		/* Process the received RC-5 command event */
-		if (rc5_ready_event)
+		if (timer1_nec_event)
 		{
-			rc5_ready_event = false;
+			timer1_nec_event = false;
 			// do something
 		}
 
