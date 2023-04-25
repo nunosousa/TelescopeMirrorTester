@@ -123,11 +123,18 @@ int main(void)
 			cli_process(&cli);
 		}
 
-		/* Process the received NEC IR command event */
+		/* Process the received NEC IR symbols event */
 		if (timer1_nec_event)
 		{
 			timer1_nec_event = false;
 			nec_ir_process();
+		}
+
+		/* Process the received NEC IR command event */
+		if (nec_ir_cmd_event)
+		{
+			nec_ir_cmd_event = false;
+			// do something
 		}
 
 		/* Keep the watchdog timer on check */
