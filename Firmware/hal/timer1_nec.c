@@ -1,5 +1,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/atomic.h>
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -112,18 +113,23 @@ void timer1_nec_init(void)
  */
 int8_t timer1_nec_get_capture(uint32_t *capture)
 {
+    uint8_t result = -1;
+
     /* Get counter capture and update buffer counters */
-    if (capture_counter > 0)
+    ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
     {
-        *capture = capture_buffer[capture_out];
-        capture_counter--;
-        capture_out++;
+        if (capture_counter > 0)
+        {
+            *capture = capture_buffer[capture_out];
+            capture_counter--;
+            capture_out++;
 
-        if (capture_out >= MAX_NEC_CAPTURE_BUFFER)
-            capture_out = 0;
+            if (capture_out >= MAX_NEC_CAPTURE_BUFFER)
+                capture_out = 0;
 
-        return 0; /* success */
+            result = 0;
+        }
     }
 
-    return -1; /* no data */
+    return result; /* success */
 }

@@ -8,11 +8,13 @@
 #include "../hal/timer0_clk.h"
 #include "../hal/timer1_nec.h"
 #include "../hal/uart.h"
+
 #include "../libs/cli/cli.h"
 #include "../libs/motorControl/motor_control.h"
 #include "../libs/necIr/nec_ir.h"
 #include "../libs/pca9535/pca9535.h"
 #include "../libs/indicatorLED/indicator_led.h"
+
 #include "cli_commands.h"
 
 /* Number of 16ms clock0 periods to give a period of ~500ms */
@@ -59,7 +61,7 @@ static void sys_init(void)
 	motor_init();
 
 	/* Configure the IR receiver */
-	timer1_nec_init();
+	nec_ir_init();
 
 	/* Reset WD before jumping to normal operation */
 	wdt_reset();
