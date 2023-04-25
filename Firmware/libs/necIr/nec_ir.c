@@ -11,7 +11,9 @@ typedef enum
     NEC_PROCESS_ADDR_INV,
     NEC_PROCESS_CMD,
     NEC_PROCESS_CMD_INV,
-    NEC_CMD_END
+    NEC_CMD_END,
+    NEC_REPEAT,
+    NEC_REPEAT_END
 } nec_state_t;
 
 /*
@@ -66,20 +68,17 @@ void nec_ir_process(void)
     {
         switch (state)
         {
-        case NEC_WAIT_FOR_START:
+        case NEC_WAIT_FOR_START: /* Detect NEC start of frame */
             if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
             {
                 state = NEC_PROCESS_ADDR;
                 bit_position = 0;
                 address = 0;
-                address_inv = 0;
-                command = 0;
-                command_inv = 0;
             }
 
             break;
 
-        case NEC_PROCESS_ADDR:
+        case NEC_PROCESS_ADDR: /* Detect and process NEC address byte */
             if (nec_ir_is_inside_range(capture, NEC_ZERO_TIME, NEC_LOW_TOLERANCE))
             {
                 bit_position++;
@@ -89,6 +88,12 @@ void nec_ir_process(void)
                 address |= (1 << bit_position);
                 bit_position++;
             }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                bit_position = 0;
+                address = 0;
+                break;
+            }
             else
             {
                 state = NEC_WAIT_FOR_START;
@@ -96,14 +101,15 @@ void nec_ir_process(void)
             }
 
             if (bit_position >= 8)
-            {
+            { /* Completed the address 8 bits */
                 state = NEC_PROCESS_ADDR_INV;
                 bit_position = 0;
+                address_inv = 0;
             }
 
             break;
 
-        case NEC_PROCESS_ADDR_INV:
+        case NEC_PROCESS_ADDR_INV: /* Detect and process NEC address inverted byte */
             if (nec_ir_is_inside_range(capture, NEC_ZERO_TIME, NEC_LOW_TOLERANCE))
             {
                 bit_position++;
@@ -113,6 +119,13 @@ void nec_ir_process(void)
                 address_inv |= (1 << bit_position);
                 bit_position++;
             }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_PROCESS_ADDR;
+                bit_position = 0;
+                address = 0;
+                break;
+            }
             else
             {
                 state = NEC_WAIT_FOR_START;
@@ -120,14 +133,15 @@ void nec_ir_process(void)
             }
 
             if (bit_position >= 8)
-            {
+            { /* Completed the address inverted 8 bits */
                 state = NEC_PROCESS_CMD;
                 bit_position = 0;
+                command = 0;
             }
 
             break;
 
-        case NEC_PROCESS_CMD:
+        case NEC_PROCESS_CMD: /* Detect and process NEC command byte */
             if (nec_ir_is_inside_range(capture, NEC_ZERO_TIME, NEC_LOW_TOLERANCE))
             {
                 bit_position++;
@@ -137,6 +151,13 @@ void nec_ir_process(void)
                 command |= (1 << bit_position);
                 bit_position++;
             }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_PROCESS_ADDR;
+                bit_position = 0;
+                address = 0;
+                break;
+            }
             else
             {
                 state = NEC_WAIT_FOR_START;
@@ -144,14 +165,15 @@ void nec_ir_process(void)
             }
 
             if (bit_position >= 8)
-            {
+            { /* Completed the command 8 bits */
                 state = NEC_PROCESS_CMD_INV;
                 bit_position = 0;
+                command_inv = 0;
             }
 
             break;
 
-        case NEC_PROCESS_CMD_INV:
+        case NEC_PROCESS_CMD_INV: /* Detect and process NEC command inverted byte */
             if (nec_ir_is_inside_range(capture, NEC_ZERO_TIME, NEC_LOW_TOLERANCE))
             {
                 bit_position++;
@@ -161,6 +183,13 @@ void nec_ir_process(void)
                 command_inv |= (1 << bit_position);
                 bit_position++;
             }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_PROCESS_ADDR;
+                bit_position = 0;
+                address = 0;
+                break;
+            }
             else
             {
                 state = NEC_WAIT_FOR_START;
@@ -168,33 +197,85 @@ void nec_ir_process(void)
             }
 
             if (bit_position >= 8)
-            {
-                state = NEC_CMD_END;
-                bit_position = 0;
+            { /* Completed the command inverted 8 bits */
                 address_inv = ~address_inv;
                 command_inv = ~command_inv;
+
+                /* Check if address and command bytes are coherent */
                 if ((address == address_inv) && (command == command_inv))
                 {
+                    state = NEC_CMD_END;
                     nec_ir_cmd_event = true;
                     nec_ir_cmd.address = address;
                     nec_ir_cmd.command = command;
+                }
+                else
+                {
+                    state = NEC_WAIT_FOR_START;
+                    break;
                 }
             }
 
             break;
 
-        case NEC_CMD_END:
+        case NEC_CMD_END: /* Detect remaing of first NEC frame */
             if (nec_ir_is_inside_range(capture, NEC_START_WAIT_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_REPEAT;
+            }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
             {
                 state = NEC_PROCESS_ADDR;
                 bit_position = 0;
                 address = 0;
-                address_inv = 0;
-                command = 0;
-                command_inv = 0;
+                break;
             }
             else
+            {
                 state = NEC_WAIT_FOR_START;
+                break;
+            }
+
+            break;
+
+        case NEC_REPEAT: /* Detect start of command repeat NEC frame */
+            if (nec_ir_is_inside_range(capture, NEC_REPEAT_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_REPEAT_END;
+                nec_ir_cmd_event = true;
+            }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_PROCESS_ADDR;
+                bit_position = 0;
+                address = 0;
+                break;
+            }
+            else
+            {
+                state = NEC_WAIT_FOR_START;
+                break;
+            }
+
+            break;
+
+        case NEC_REPEAT_END: /* Detect remaining of command repeat NEC frame */
+            if (nec_ir_is_inside_range(capture, NEC_REPEAT_WAIT_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_REPEAT;
+            }
+            else if (nec_ir_is_inside_range(capture, NEC_START_BURST_TIME, NEC_HIGH_TOLERANCE))
+            {
+                state = NEC_PROCESS_ADDR;
+                bit_position = 0;
+                address = 0;
+                break;
+            }
+            else
+            {
+                state = NEC_WAIT_FOR_START;
+                break;
+            }
 
             break;
 
