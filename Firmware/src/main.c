@@ -16,6 +16,7 @@
 #include "../libs/indicatorLED/indicator_led.h"
 
 #include "cli_commands.h"
+#include "ir_remote.h"
 
 /* Number of 16ms clock0 periods to give a period of ~500ms */
 #define LED_PROCESS_PERIOD 31
@@ -134,7 +135,7 @@ int main(void)
 		if (nec_ir_cmd_event)
 		{
 			nec_ir_cmd_event = false;
-			// do something
+			ir_remote_process();
 		}
 
 		/* Keep the watchdog timer on check */

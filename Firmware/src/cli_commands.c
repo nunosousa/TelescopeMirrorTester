@@ -1,3 +1,5 @@
+#include "cli_commands.h"
+
 #include "../libs/cli/cli.h"
 #include "../libs/versionInfo/firmwareBuildInfo.h"
 #include "../libs/motorControl/motor_control.h"

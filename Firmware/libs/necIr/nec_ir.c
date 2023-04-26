@@ -21,7 +21,7 @@ bool nec_ir_cmd_event = false;
 /*
  * tbd
  */
-nec_command_t nec_ir_cmd = {0, 0};
+static nec_command_t nec_ir_cmd = {0, 0};
 
 /*
  * tbd
@@ -218,4 +218,12 @@ void nec_ir_process(void)
     }
 
     return;
+}
+
+/*
+ * tbd.
+ */
+nec_command_t *nec_ir_get_command(void)
+{
+    return &nec_ir_cmd;
 }
