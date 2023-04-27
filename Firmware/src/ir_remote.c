@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-#define MOTOR_SPEED_STEP 20
+#define MOTOR_SPEED_STEP 15
 
 /*
  * tbd.
