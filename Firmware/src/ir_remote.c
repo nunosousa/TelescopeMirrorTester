@@ -95,12 +95,36 @@ void ir_remote_process(void)
         if (motor_state == NULL)
             break;
 
-        if (motor_state->speed < (motor_state->min_speed + MOTOR_SPEED_STEP))
-            speed = motor_state->min_speed;
-        else
-            speed = motor_state->speed - MOTOR_SPEED_STEP;
+        speed = motor_state->speed;
+        drive = motor_state->drive;
 
-        motor_drive(motorID, FORWARD_DRIVE, speed);
+        /* Reflect direction on the speed sign for ease of calculations */
+        if (drive == REVERSE_DRIVE)
+            speed = -speed;
+
+        /* Update speed */
+        speed -= MOTOR_SPEED_STEP;
+
+        /* Avoid abrupt changes in direction */
+        if ((drive == FORWARD_DRIVE) && (speed < 0))
+        {
+            drive = BRAKE;
+            speed = 0;
+        }
+
+        /* Update drive direction and speed signal if required */
+        if (speed > 0)
+            drive = FORWARD_DRIVE;
+        else if (speed < 0)
+        {
+            drive = REVERSE_DRIVE;
+            speed = -speed;
+        }
+
+        if (speed > motor_state->max_speed)
+            speed = motor_state->max_speed;
+
+        motor_drive(motorID, drive, (uint8_t)speed);
 
         break;
 
