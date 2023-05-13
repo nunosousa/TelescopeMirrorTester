@@ -1,16 +1,16 @@
 import serial
 
 
-ser = serial.Serial(port = '/dev/ttyUSB1',
+ser = serial.Serial(port = '/dev/ttyUSB0',
                     baudrate = 9600,
                     bytesize = serial.EIGHTBITS,
-                    parity = serial.PARITY_NONE,
+                    parity = serial.PARITY_ODD,
                     stopbits = serial.STOPBITS_ONE,
                     timeout = 10)
 
-ser.flush()
-x = ser.read(200)          # read one byte
+ser.writelines(b'version\r\n')     # write a string
+line = ser.readline()   # read a '\n' terminated line
 
-print(x)
+print(line)
 
 ser.close()             # close port
