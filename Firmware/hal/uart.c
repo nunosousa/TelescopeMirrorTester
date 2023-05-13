@@ -81,9 +81,6 @@ void uart_init(void)
  */
 int uart_putchar(char c, FILE *stream)
 {
-	if (c == '\n')
-		uart_putchar('\r', stream);
-
 	loop_until_bit_is_set(UCSR0A, UDRE0);
 	UDR0 = c;
 
@@ -94,13 +91,12 @@ int uart_putchar(char c, FILE *stream)
  * Receive a character from the UART Rx.
  *
  * This features a simple line-editor that allows to delete and
- * re-edit the characters entered, until either CR or NL is entered.
+ * re-edit the characters entered, until a CR and NL is entered.
  * Printable characters entered will be echoed using uart_putchar().
  *
  * Editing characters:
  *
  * . \b (BS) delete the previous character
- * . \t will be replaced by a single space
  *
  * All other control characters will be ignored.
  *
@@ -128,10 +124,6 @@ void uart_process(FILE *stream)
 	{
 		rx_char_copy = rx_char;
 	}
-
-	/* Behaviour similar to Unix stty ICRNL */
-	if (rx_char_copy == '\r')
-		rx_char_copy = '\n';
 
 	if (rx_char_copy == '\n')
 	{
