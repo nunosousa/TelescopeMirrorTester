@@ -7,60 +7,80 @@ root = tk.Tk()
 
 root.title("Telescope Mirror Tester")
 
-# Position controls
-frm_pos = tk.LabelFrame(master=root, text="Axis Motor Speed Controls")
+# Manual motor controls
+frm_mtr = tk.LabelFrame(master=root, text="Motor Control")
 
-# X Axis controls
-frm_x = tk.LabelFrame(master=frm_pos, text="X axis, Speed: ")
+# A Axis controls
+frm_a = tk.LabelFrame(master=frm_mtr, text="A axis")
 
-btn_x_mm = ttk.Button(master=frm_x, text="<<", width=3)
-btn_x_m = ttk.Button(master=frm_x, text="<", width=3)
-btn_x_stop = ttk.Button(master=frm_x, text="STOP", width=5)
-btn_x_p = ttk.Button(master=frm_x, text=">", width=3)
-btn_x_pp = ttk.Button(master=frm_x, text=">>", width=3)
+rd_a_man = ttk.Radiobutton(master=frm_a, text="Manual Speed control")
+btn_a_mm = ttk.Button(master=frm_a, text="<<", width=3)
+btn_a_m = ttk.Button(master=frm_a, text="<", width=3)
+lbl_a_spd = ttk.Label(master=frm_a, text="+100%", width=6)
+btn_a_p = ttk.Button(master=frm_a, text=">", width=3)
+btn_a_pp = ttk.Button(master=frm_a, text=">>", width=3)
+btn_a_stop = ttk.Button(master=frm_a, text="STOP", width=5)
 
-btn_x_mm.grid(row=0, column=0, padx=4, pady=4)
-btn_x_m.grid(row=0, column=1, padx=4, pady=4)
-btn_x_stop.grid(row=0, column=2, padx=4, pady=4)
-btn_x_p.grid(row=0, column=3, padx=4, pady=4)
-btn_x_pp.grid(row=0, column=4, padx=4, pady=4)
+rd_a_man.grid(row=0, column=0, columnspan = 6, sticky = tk.W)
+btn_a_mm.grid(row=1, column=0, padx=4, pady=4)
+btn_a_m.grid(row=1, column=1, padx=4, pady=4)
+lbl_a_spd.grid(row=1, column=2, padx=4, pady=4)
+btn_a_p.grid(row=1, column=3, padx=4, pady=4)
+btn_a_pp.grid(row=1, column=4, padx=4, pady=4)
+btn_a_stop.grid(row=1, column=5, padx=4, pady=4)
 
-frm_x.grid(row=0, column=0, padx=4, pady=4)
+rd_a_aut = ttk.Radiobutton(master=frm_a, text="Automatic Position control")
+lbl_a_pos = ttk.Label(master=frm_a, text="Position movement [mm]:", width=24)
+spn_a_pos = ttk.Spinbox(master=frm_a, from_= -25.00, to = 25.00, width=5)
 
-# Y Axis controls
-frm_y = tk.LabelFrame(master=frm_pos, text="Y axis, Speed: ")
+rd_a_aut.grid(row=2, column=0, columnspan = 6, sticky = tk.W)
+lbl_a_pos.grid(row=3, column=0, columnspan = 4, padx=4, pady=4, sticky = tk.W)
+spn_a_pos.grid(row=3, column=4, columnspan = 2, padx=4, pady=4, sticky = tk.W)
 
-btn_y_mm = ttk.Button(master=frm_y, text="<<", width=3)
-btn_y_m = ttk.Button(master=frm_y, text="<", width=3)
-btn_y_stop = ttk.Button(master=frm_y, text="STOP", width=5)
-btn_y_p = ttk.Button(master=frm_y, text=">", width=3)
-btn_y_pp = ttk.Button(master=frm_y, text=">>", width=3)
+frm_a.grid(row=0, column=0, padx=4, pady=4)
 
-btn_y_mm.grid(row=0, column=0, padx=4, pady=4)
-btn_y_m.grid(row=0, column=1, padx=4, pady=4)
-btn_y_stop.grid(row=0, column=2, padx=4, pady=4)
-btn_y_p.grid(row=0, column=3, padx=4, pady=4)
-btn_y_pp.grid(row=0, column=4, padx=4, pady=4)
+# B Axis controls
+frm_b = tk.LabelFrame(master=frm_mtr, text="B axis")
 
-frm_y.grid(row=1, column=0, padx=4, pady=4)
+lbl_b = ttk.Label(master=frm_b, text="Manual Speed control")
+btn_b_mm = ttk.Button(master=frm_b, text="<<", width=3)
+btn_b_m = ttk.Button(master=frm_b, text="<", width=3)
+lbl_b_spd = ttk.Label(master=frm_b, text="+100%", width=6)
+btn_b_p = ttk.Button(master=frm_b, text=">", width=3)
+btn_b_pp = ttk.Button(master=frm_b, text=">>", width=3)
+btn_b_stop = ttk.Button(master=frm_b, text="STOP", width=5)
 
-# Z Axis controls
-frm_z = tk.LabelFrame(master=frm_pos, text="Z axis, Speed: ")
+lbl_b.grid(row=0, column=0, columnspan = 5, sticky = tk.W)
+btn_b_mm.grid(row=1, column=0, padx=4, pady=4)
+btn_b_m.grid(row=1, column=1, padx=4, pady=4)
+lbl_b_spd.grid(row=1, column=2, padx=4, pady=4)
+btn_b_p.grid(row=1, column=3, padx=4, pady=4)
+btn_b_pp.grid(row=1, column=4, padx=4, pady=4)
+btn_b_stop.grid(row=1, column=5, padx=4, pady=4)
 
-btn_z_mm = ttk.Button(master=frm_z, text="<<", width=3)
-btn_z_m = ttk.Button(master=frm_z, text="<", width=3)
-btn_z_stop = ttk.Button(master=frm_z, text="STOP", width=5)
-btn_z_p = ttk.Button(master=frm_z, text=">", width=3)
-btn_z_pp = ttk.Button(master=frm_z, text=">>", width=3)
+frm_b.grid(row=1, column=0, padx=4, pady=4)
 
-btn_z_mm.grid(row=0, column=0, padx=4, pady=4)
-btn_z_m.grid(row=0, column=1, padx=4, pady=4)
-btn_z_stop.grid(row=0, column=2, padx=4, pady=4)
-btn_z_p.grid(row=0, column=3, padx=4, pady=4)
-btn_z_pp.grid(row=0, column=4, padx=4, pady=4)
+# C Axis controls
+frm_c = tk.LabelFrame(master=frm_mtr, text="Z axis")
 
-frm_z.grid(row=2, column=0, padx=4, pady=4)
+lbl_c = ttk.Label(master=frm_c, text="Manual Speed control")
+btn_c_mm = ttk.Button(master=frm_c, text="<<", width=3)
+btn_c_m = ttk.Button(master=frm_c, text="<", width=3)
+lbl_c_spd = ttk.Label(master=frm_c, text="+100%", width=6)
+btn_c_p = ttk.Button(master=frm_c, text=">", width=3)
+btn_c_pp = ttk.Button(master=frm_c, text=">>", width=3)
+btn_c_stop = ttk.Button(master=frm_c, text="STOP", width=5)
 
-frm_pos.pack()
+lbl_c.grid(row=0, column=0, columnspan = 5, sticky = tk.W)
+btn_c_mm.grid(row=1, column=0, padx=4, pady=4)
+btn_c_m.grid(row=1, column=1, padx=4, pady=4)
+lbl_c_spd.grid(row=1, column=2, padx=4, pady=4)
+btn_c_p.grid(row=1, column=3, padx=4, pady=4)
+btn_c_pp.grid(row=1, column=4, padx=4, pady=4)
+btn_c_stop.grid(row=1, column=5, padx=4, pady=4)
+
+frm_c.grid(row=2, column=0, padx=4, pady=4)
+
+frm_mtr.pack()
 
 root.mainloop()
