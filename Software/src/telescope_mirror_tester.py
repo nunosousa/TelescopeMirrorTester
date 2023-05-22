@@ -24,12 +24,12 @@ class View(tk.Frame):
         self.rd_a_select.set("Man")
         
         self.rd_a_man = tk.Radiobutton(master=frm_a, text="Manual Speed control", variable=self.rd_a_select, value="Man", command=self.radio_button_a_manual_pressed)
-        self.btn_a_mm = tk.Button(master=frm_a, text=dec_spd_coarse_text, width=5)
-        self.btn_a_m = tk.Button(master=frm_a, text=dec_spd_fine_text, width=5)
+        self.btn_a_mm = tk.Button(master=frm_a, text=dec_spd_coarse_text, width=5, command=lambda:self.speed_button_pressed('A', -self.spd_coarse_adjst))
+        self.btn_a_m = tk.Button(master=frm_a, text=dec_spd_fine_text, width=5, command=lambda:self.speed_button_pressed('A', -self.spd_fine_adjst))
         lbl_a_spd = tk.Label(master=frm_a, text="+100%", width=7, textvariable=self.lbl_a_spd_text, relief=tk.SUNKEN)
-        self.btn_a_p = tk.Button(master=frm_a, text=inc_spd_fine_text, width=5)
-        self.btn_a_pp = tk.Button(master=frm_a, text=inc_spd_coarse_text, width=5)
-        self.btn_a_stop = tk.Button(master=frm_a, text="STOP", width=5, bg="red", activebackground="red")
+        self.btn_a_p = tk.Button(master=frm_a, text=inc_spd_fine_text, width=5, command=lambda:self.speed_button_pressed('A', self.spd_fine_adjst))
+        self.btn_a_pp = tk.Button(master=frm_a, text=inc_spd_coarse_text, width=5, command=lambda:self.speed_button_pressed('A', self.spd_coarse_adjst))
+        self.btn_a_stop = tk.Button(master=frm_a, text="STOP", width=5, bg="red", activebackground="red", command=lambda:self.speed_button_pressed('A', 0))
         
         self.rd_a_man.grid(row=0, column=0, columnspan = 6, padx=4, pady=4, sticky = tk.W)
         self.btn_a_mm.grid(row=1, column=0, padx=4, pady=4)
@@ -75,12 +75,12 @@ class View(tk.Frame):
         self.lbl_b_spd_text.set("+100%")
         
         rd_b_aut = tk.Radiobutton(master=frm_b, text="Manual Speed control", state=tk.DISABLED)
-        self.btn_b_mm = tk.Button(master=frm_b, text=dec_spd_coarse_text, width=5)
-        self.btn_b_m = tk.Button(master=frm_b, text=dec_spd_fine_text, width=5)
+        self.btn_b_mm = tk.Button(master=frm_b, text=dec_spd_coarse_text, width=5, command=lambda:self.speed_button_pressed('B', -self.spd_coarse_adjst))
+        self.btn_b_m = tk.Button(master=frm_b, text=dec_spd_fine_text, width=5, command=lambda:self.speed_button_pressed('B', -self.spd_fine_adjst))
         lbl_b_spd = tk.Label(master=frm_b, text="+100%", width=7, textvariable=self.lbl_b_spd_text, relief=tk.SUNKEN)
-        self.btn_b_p = tk.Button(master=frm_b, text=inc_spd_fine_text, width=5)
-        self.btn_b_pp = tk.Button(master=frm_b, text=inc_spd_coarse_text, width=5)
-        self.btn_b_stop = tk.Button(master=frm_b, text="STOP", width=5, bg="red", activebackground="red")
+        self.btn_b_p = tk.Button(master=frm_b, text=inc_spd_fine_text, width=5, command=lambda:self.speed_button_pressed('B', self.spd_fine_adjst))
+        self.btn_b_pp = tk.Button(master=frm_b, text=inc_spd_coarse_text, width=5, command=lambda:self.speed_button_pressed('B', self.spd_coarse_adjst))
+        self.btn_b_stop = tk.Button(master=frm_b, text="STOP", width=5, bg="red", activebackground="red", command=lambda:self.speed_button_pressed('B', 0))
         
         rd_b_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky = tk.W)
         self.btn_b_mm.grid(row=1, column=0, padx=4, pady=4)
@@ -99,12 +99,12 @@ class View(tk.Frame):
         self.lbl_c_spd_text.set("+100%")
         
         rd_c_aut = tk.Radiobutton(master=frm_c, text="Manual Speed control", state=tk.DISABLED)
-        self.btn_c_mm = tk.Button(master=frm_c, text=dec_spd_coarse_text, width=5)
-        self.btn_c_m = tk.Button(master=frm_c, text=dec_spd_fine_text, width=5)
+        self.btn_c_mm = tk.Button(master=frm_c, text=dec_spd_coarse_text, width=5, command=lambda:self.speed_button_pressed('C', -self.spd_coarse_adjst))
+        self.btn_c_m = tk.Button(master=frm_c, text=dec_spd_fine_text, width=5, command=lambda:self.speed_button_pressed('C', -self.spd_fine_adjst))
         lbl_c_spd = tk.Label(master=frm_c, text="+100%", width=7, textvariable=self.lbl_c_spd_text, relief=tk.SUNKEN)
-        self.btn_c_p = tk.Button(master=frm_c, text=inc_spd_fine_text, width=5)
-        self.btn_c_pp = tk.Button(master=frm_c, text=inc_spd_coarse_text, width=5)
-        self.btn_c_stop = tk.Button(master=frm_c, text="STOP", width=5, bg="red", activebackground="red")
+        self.btn_c_p = tk.Button(master=frm_c, text=inc_spd_fine_text, width=5, command=lambda:self.speed_button_pressed('C', self.spd_fine_adjst))
+        self.btn_c_pp = tk.Button(master=frm_c, text=inc_spd_coarse_text, width=5, command=lambda:self.speed_button_pressed('C', self.spd_coarse_adjst))
+        self.btn_c_stop = tk.Button(master=frm_c, text="STOP", width=5, bg="red", activebackground="red", command=lambda:self.speed_button_pressed('C', 0))
         
         rd_c_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky = tk.W)
         self.btn_c_mm.grid(row=1, column=0, padx=4, pady=4)
@@ -143,6 +143,9 @@ class View(tk.Frame):
         self.btn_a_go.configure(state='normal')
         self.btn_a_copy.configure(state='normal')
         self.btn_a_zero.configure(state='normal')
+
+    def speed_button_pressed(self, axis, step):
+        print(axis + ' ' + str(step))
         
 class Model:
     pass        
@@ -159,7 +162,8 @@ class App(tk.Tk):
         # create a view and place it on the root window
         view = View(self)
         view.grid(row=0, column=0)
-
+        
+        self.resizable(width=False, height=False)
 
 if __name__ == '__main__':
     app = App()
