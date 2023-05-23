@@ -47,12 +47,14 @@ class VisualInterface(tk.Tk):
         self.btn_a_p.grid(row=1, column=3, padx=4, pady=4)
         self.btn_a_pp.grid(row=1, column=4, padx=4, pady=4)
         self.btn_a_stop.grid(row=1, column=5, padx=4, pady=4)
+
+        self.spn_a_stp_text = tk.StringVar()
         
         self.rd_a_aut = tk.Radiobutton(master=frm_a, text="Automatic Position control", variable=self.rd_a_select, value="Aut", command=lambda:self.select_a_axis_mode('Aut'))
         lbl_a_stp = tk.Label(master=frm_a, text="Position step:", width=14)
-        self.spn_a_stp = tk.Spinbox(master=frm_a, from_= -25.00, to = 25.00, width=5)
+        self.spn_a_stp = tk.Spinbox(master=frm_a, from_= -25.00, to = 25.00, width=5, textvariable=self.spn_a_stp_text, command=lambda:self.select_a_position_step(self.spn_a_stp_text.get()))
         lbl_a_stp_mm = tk.Label(master=frm_a, text="mm", width=3)
-        self.btn_a_go = tk.Button(master=frm_a, text="GO", width=5, bg="green", activebackground="green")
+        self.btn_a_go = tk.Button(master=frm_a, text="GO", width=5, bg="green", activebackground="green", command=self.start_a_automatic_mode)
         
         self.rd_a_aut.grid(row=2, column=0, columnspan = 6, padx=4, pady=4, sticky = tk.W)
         lbl_a_stp.grid(row=3, column=0, columnspan = 2, padx=0, pady=4, sticky = tk.E)
@@ -66,8 +68,8 @@ class VisualInterface(tk.Tk):
         lbl_a_pos = tk.Label(master=frm_a, text="Position:", width=10)
         lbl_a_pos_mm = tk.Label(master=frm_a, width=7, textvariable=self.lbl_a_pos_text, relief=tk.SUNKEN)
         lbl_a_mm = tk.Label(master=frm_a, text="mm", width=3)
-        self.btn_a_copy = tk.Button(master=frm_a, text="COPY", width=5, bg="purple", activebackground="purple")
-        self.btn_a_zero = tk.Button(master=frm_a, text="ZERO", width=5, bg="yellow", activebackground="yellow")
+        self.btn_a_copy = tk.Button(master=frm_a, text="COPY", width=5, bg="purple", activebackground="purple", command=self.copy_a_position)
+        self.btn_a_zero = tk.Button(master=frm_a, text="ZERO", width=5, bg="yellow", activebackground="yellow", command=self.clear_a_position)
         
         lbl_a_pos.grid(row=4, column=0, columnspan = 2, padx=0, pady=4, sticky = tk.E)
         lbl_a_pos_mm.grid(row=4, column=2, padx=4, pady=4)
@@ -129,7 +131,7 @@ class VisualInterface(tk.Tk):
         
         self.resizable(width=False, height=False)
 
-        # Choose manual mode for axis a at startup
+        # Choose manual mode for axis at startup
         self.select_a_axis_mode('Man')
 
     def select_a_axis_mode(self, mode):
@@ -156,8 +158,20 @@ class VisualInterface(tk.Tk):
             self.btn_a_copy.configure(state='normal')
             self.btn_a_zero.configure(state='normal')
 
-    def set_speed_on_axis(self, axis, step):
-        print(axis + ' ' + str(step))
+    def set_speed_on_axis(self, axis, spd_step):
+        print(axis + ' ' + str(spd_step))
+
+    def start_a_automatic_mode(self):
+        print("A automatic mode start")
+
+    def copy_a_position(self):
+        print("send to clipboard")
+
+    def clear_a_position(self):
+        print("clear a position")
+
+    def select_a_position_step(self, pos_step):
+        print(pos_step)
 
 if __name__ == '__main__':
     gui = VisualInterface()
