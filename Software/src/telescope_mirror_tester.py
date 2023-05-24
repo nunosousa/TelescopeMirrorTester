@@ -1,10 +1,4 @@
 import tkinter as tk
-        
-class Model:
-    pass        
-
-class Controller:
-    pass      
 
 class VisualInterface(tk.Tk):
     def __init__(self):
@@ -49,10 +43,11 @@ class VisualInterface(tk.Tk):
         self.btn_a_stop.grid(row=1, column=5, padx=4, pady=4)
 
         self.spn_a_stp_text = tk.StringVar()
-        
+        self.spn_a_stp_text.set(0) #Initial value
+
         self.rd_a_aut = tk.Radiobutton(master=frm_a, text="Automatic Position control", variable=self.rd_a_select, value="Aut", command=lambda:self.select_a_axis_mode('Aut'))
         lbl_a_stp = tk.Label(master=frm_a, text="Position step:", width=14)
-        self.spn_a_stp = tk.Spinbox(master=frm_a, from_= -25.00, to = 25.00, width=5, textvariable=self.spn_a_stp_text, command=lambda:self.select_a_position_step(self.spn_a_stp_text.get()))
+        self.spn_a_stp = tk.Spinbox(master=frm_a, from_=-25.4, to=25.4, increment=0.01, state = 'readonly', width=5, textvariable=self.spn_a_stp_text, command=lambda:self.select_a_position_step(self.spn_a_stp_text.get()))
         lbl_a_stp_mm = tk.Label(master=frm_a, text="mm", width=3)
         self.btn_a_go = tk.Button(master=frm_a, text="GO", width=5, bg="green", activebackground="green", command=self.start_a_automatic_mode)
         
