@@ -1,6 +1,7 @@
 import tkinter
 import serial
 import threading
+import queue
 
 class VisualInterface(tkinter.Tk):
     def __init__(self):
@@ -24,7 +25,7 @@ class VisualInterface(tkinter.Tk):
                                    text="A axis")
         
         self.lbl_a_spd_text = tkinter.StringVar()
-        self.lbl_a_spd_text.set("+100%")
+        self.lbl_a_spd_text.set("0%")
         
         self.rd_a_select = tkinter.StringVar()
         self.rd_a_select.set("Man")
@@ -43,7 +44,6 @@ class VisualInterface(tkinter.Tk):
                                       width=5,
                                       command=lambda:self.set_speed_on_axis('A', -self.spd_fine_adjst))
         lbl_a_spd = tkinter.Label(master=frm_a,
-                                  text="+100%",
                                   width=7,
                                   textvariable=self.lbl_a_spd_text,
                                   relief=tkinter.SUNKEN)
@@ -71,7 +71,7 @@ class VisualInterface(tkinter.Tk):
         self.btn_a_stop.grid(row=1, column=5, padx=4, pady=4)
 
         self.spn_a_stp_text = tkinter.StringVar()
-        self.spn_a_stp_text.set(0) #Initial value
+        self.spn_a_stp_text.set("0.0") #Initial value
 
         self.rd_a_aut = tkinter.Radiobutton(master=frm_a,
                                             text="Automatic Position control",
@@ -83,8 +83,9 @@ class VisualInterface(tkinter.Tk):
                                   width=14)
         self.spn_a_stp = tkinter.Spinbox(master=frm_a,
                                          from_=-25.4,
-                                         to=25.4, increment=0.01,
-                                         state = 'readonly',
+                                         to=25.4,
+                                         increment=0.01,
+                                         state='readonly',
                                          width=5,
                                          textvariable=self.spn_a_stp_text,
                                          command=lambda:self.select_a_position_step(self.spn_a_stp_text.get()))
@@ -105,7 +106,7 @@ class VisualInterface(tkinter.Tk):
         self.btn_a_go.grid(row=3, column=5, padx=4, pady=4)
 
         self.lbl_a_pos_text = tkinter.StringVar()
-        self.lbl_a_pos_text.set("-20.25")
+        self.lbl_a_pos_text.set("0.0")
         
         lbl_a_pos = tkinter.Label(master=frm_a,
                                   text="Position:",
@@ -114,7 +115,8 @@ class VisualInterface(tkinter.Tk):
                                      width=7,
                                      textvariable=self.lbl_a_pos_text,
                                      relief=tkinter.SUNKEN)
-        lbl_a_mm = tkinter.Label(master=frm_a, text="mm",
+        lbl_a_mm = tkinter.Label(master=frm_a,
+                                 text="mm",
                                  width=3)
         self.btn_a_copy = tkinter.Button(master=frm_a,
                                          text="COPY",
@@ -142,7 +144,7 @@ class VisualInterface(tkinter.Tk):
                                    text="B axis")
         
         self.lbl_b_spd_text = tkinter.StringVar()
-        self.lbl_b_spd_text.set("+100%")
+        self.lbl_b_spd_text.set("0%")
         
         rd_b_aut = tkinter.Radiobutton(master=frm_b,
                                        text="Manual Speed control",
@@ -156,7 +158,6 @@ class VisualInterface(tkinter.Tk):
                                       width=5,
                                       command=lambda:self.set_speed_on_axis('B', -self.spd_fine_adjst))
         lbl_b_spd = tkinter.Label(master=frm_b,
-                                  text="+100%",
                                   width=7,
                                   textvariable=self.lbl_b_spd_text,
                                   relief=tkinter.SUNKEN)
@@ -190,7 +191,7 @@ class VisualInterface(tkinter.Tk):
                                    text="C axis")
         
         self.lbl_c_spd_text = tkinter.StringVar()
-        self.lbl_c_spd_text.set("+100%")
+        self.lbl_c_spd_text.set("0%")
         
         rd_c_aut = tkinter.Radiobutton(master=frm_c,
                                        text="Manual Speed control",
@@ -204,7 +205,6 @@ class VisualInterface(tkinter.Tk):
                                       width=5,
                                       command=lambda:self.set_speed_on_axis('C', -self.spd_fine_adjst))
         lbl_c_spd = tkinter.Label(master=frm_c,
-                                  text="+100%",
                                   width=7,
                                   textvariable=self.lbl_c_spd_text,
                                   relief=tkinter.SUNKEN)
@@ -243,26 +243,32 @@ class VisualInterface(tkinter.Tk):
         # set the controller
         self.controller = None
 
+        self.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def select_a_axis_mode(self, mode):
-        if mode == 'Man': # Enable/disable widgets for the manual mode
+        if mode == 'Man':
+            # Enable manual mode widgets
             self.spn_a_stp.configure(state='disabled')
             self.btn_a_go.configure(state='disabled')
             self.btn_a_copy.configure(state='disabled')
             self.btn_a_zero.configure(state='disabled')
 
+            # Disable automatic mode widgets
             self.btn_a_mm.configure(state='normal')
             self.btn_a_m.configure(state='normal')
             self.btn_a_p.configure(state='normal')
             self.btn_a_pp.configure(state='normal')
             self.btn_a_stop.configure(state='normal')
 
-        else: # Enable/disable widgets for the automatic mode
+        else:
+            # Enable automatic mode widgets
             self.btn_a_mm.configure(state='disabled')
             self.btn_a_m.configure(state='disabled')
             self.btn_a_p.configure(state='disabled')
             self.btn_a_pp.configure(state='disabled')
             self.btn_a_stop.configure(state='disabled')
 
+            # Disable manual mode widgets
             self.spn_a_stp.configure(state='normal')
             self.btn_a_go.configure(state='normal')
             self.btn_a_copy.configure(state='normal')
@@ -291,10 +297,33 @@ class VisualInterface(tkinter.Tk):
         if self.controller:
             self.controller.select_a_position_step(pos_step)
 
+    def update_speed_reading_on_axis(self, axis, spd_value):
+        if axis == "A":
+            self.lbl_a_spd_text.set(spd_value)
+        elif axis == "B":
+            self.lbl_b_spd_text.set(spd_value)
+        elif axis == "C":
+            self.lbl_c_spd_text.set(spd_value)
+        else:
+            pass
+
+    def update_position_reading_on_axis(self, axis, pos_value):
+        if axis == "A":
+            self.lbl_a_pos_text.set(pos_value)
+        else:
+            pass
+    
+    def on_closing(self):
+        print("terminating")
+        self.destroy()
+
 
 class Controller:
-    def __init__(self):
-        pass
+    def __init__(self, view, motor_controller):
+        view.update_speed_reading_on_axis("A", "+12%")
+        view.update_speed_reading_on_axis("B", "+13%")
+        view.update_speed_reading_on_axis("C", "+14%")
+        view.update_position_reading_on_axis("A", "0.01")
 
     def set_speed_on_axis(self, axis, spd_step):
         print(axis + " " + str(spd_step))
@@ -312,23 +341,7 @@ class Controller:
         print(pos_step)
 
 
-class SerialMicrometerMonitor(serial.Serial):
-    def __init__(self):
-        super().__init__()
-
-        # serial port setup
-        self.port = '/dev/ttyUSB1'
-        self.baudrate = 9600
-        self.bytesize = serial.EIGHTBITS
-        self.parity = serial.PARITY_NONE
-        self.stopbits = serial.STOPBITS_ONE
-        self.timeout = 0
-        self.xonxoff = False #disable software flow control
-        self.rtscts = False  #disable hardware (RTS/CTS) flow control
-        self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
-
-
-class SerialMotorControllerMonitor(serial.Serial):
+class MotorControllerInterface(serial.Serial):
     def __init__(self):
         super().__init__()
 
@@ -346,18 +359,45 @@ class SerialMotorControllerMonitor(serial.Serial):
         #self.open()
 
 
+        #self.close()
+
+    def set_speed_on_axis(self, axis, spd_step):
+        print(axis + " " + str(spd_step))
+
+
+class MicrometerInterface(serial.Serial):
+    def __init__(self):
+        super().__init__()
+
+        # serial port setup
+        self.port = '/dev/ttyUSB0'
+        self.baudrate = 9600
+        self.bytesize = serial.EIGHTBITS
+        self.parity = serial.PARITY_NONE
+        self.stopbits = serial.STOPBITS_ONE
+        self.timeout = 0
+        self.xonxoff = False #disable software flow control
+        self.rtscts = False  #disable hardware (RTS/CTS) flow control
+        self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
+        
+        #self.open()
+
+        
+        #self.close()
+
+
 if __name__ == '__main__':
     # tbd
-    micrometer_readings = SerialMicrometerMonitor()
+    micrometer_readings = MicrometerInterface()
 
     # tbd
-    motor_controller = SerialMotorControllerMonitor()
-
-    # create a controller
-    controller = Controller()
+    motor_controller = MotorControllerInterface()
 
     # create a view
     view = VisualInterface()
+
+    # create a controller
+    controller = Controller(view, motor_controller)
     
     # set the controller to view
     view.set_controller(controller)
