@@ -3,7 +3,6 @@ import serial
 import threading
 import queue
 import time
-import logging
 import simple_pid
 
 #sudo chmod 666 /dev/ttyUSB0
@@ -374,11 +373,19 @@ class MotorControllerInterface(serial.Serial):
             self.serial_port_lock.acquire()
             self.write(b'getSpeed A\r\n')
             line = self.readline(100) # consume command echo: >> getSpeed A\n
-            logging.info("%s dsgdfg", line)
-            
+            print(line)
+
             line = self.readline(100) # get axis A speed value
             print(line)
             self.serial_port_lock.release()
+
+            string = line.decode('ascii')
+            string = string.strip('\r\n')
+            string = string.split('%, ')
+
+            print(string.split('%, '))
+
+            speed = int(string[0])
             
             time.sleep(0.01)
 
