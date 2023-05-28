@@ -10,7 +10,7 @@ class VisualInterface(tkinter.Tk):
         self.title("Measurement Platform Controler")
 
         # create widgets
-        frm_mtr = tkinter.Frame(master=self)
+        self.frm_mtr = tkinter.Frame(master=self)
 
         # Manual motor controls
         self.spd_fine_adjst= 5
@@ -21,7 +21,7 @@ class VisualInterface(tkinter.Tk):
         dec_spd_coarse_text = "-20%"
         
         # A Axis controls
-        frm_a = tkinter.LabelFrame(master=frm_mtr,
+        frm_a = tkinter.LabelFrame(master=self.frm_mtr,
                                    text="A axis")
         
         self.lbl_a_spd_text = tkinter.StringVar()
@@ -140,7 +140,7 @@ class VisualInterface(tkinter.Tk):
         frm_a.grid(row=0, column=0, padx=4, pady=4)
         
         # B Axis controls
-        frm_b = tkinter.LabelFrame(master=frm_mtr,
+        frm_b = tkinter.LabelFrame(master=self.frm_mtr,
                                    text="B axis")
         
         self.lbl_b_spd_text = tkinter.StringVar()
@@ -187,7 +187,7 @@ class VisualInterface(tkinter.Tk):
         frm_b.grid(row=1, column=0, padx=4, pady=4)
         
         # C Axis controls
-        frm_c = tkinter.LabelFrame(master=frm_mtr,
+        frm_c = tkinter.LabelFrame(master=self.frm_mtr,
                                    text="C axis")
         
         self.lbl_c_spd_text = tkinter.StringVar()
@@ -233,7 +233,7 @@ class VisualInterface(tkinter.Tk):
         
         frm_c.grid(row=2, column=0, padx=4, pady=4)
         
-        frm_mtr.pack()
+        self.frm_mtr.pack()
         
         self.resizable(width=False, height=False)
 
@@ -244,6 +244,8 @@ class VisualInterface(tkinter.Tk):
         self.controller = None
 
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+        self.frm_mtr.after(100, self.after_callback)
 
     def select_a_axis_mode(self, mode):
         if mode == 'Man':
@@ -276,6 +278,12 @@ class VisualInterface(tkinter.Tk):
 
     def set_controller(self, controller):
         self.controller = controller
+
+    def after_callback(self):
+        if self.controller:
+            self.controller.update_readings()
+
+        self.frm_mtr.after(100, self.after_callback)
 
     def set_speed_on_axis(self, axis, spd_step):
         if self.controller:
@@ -323,7 +331,6 @@ class MotorControllerInterface(serial.Serial):
         super().__init__()
 
         # serial port setup
-        self.port = '/dev/ttyUSB1'
         self.baudrate = 9600
         self.bytesize = serial.EIGHTBITS
         self.parity = serial.PARITY_ODD
@@ -332,11 +339,13 @@ class MotorControllerInterface(serial.Serial):
         self.xonxoff = False #disable software flow control
         self.rtscts = False  #disable hardware (RTS/CTS) flow control
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
-        
-        #self.open()
 
+    def run_monitor(self, serial_port):
+        self.port = serial_port
+        self.open()
 
-        #self.close()
+    def stop_monitor(self):
+        self.close()
 
     def set_speed_on_axis(self, axis, spd_step):
         print(axis + " " + str(spd_step))
@@ -347,30 +356,49 @@ class MicrometerInterface(serial.Serial):
         super().__init__()
 
         # serial port setup
-        self.port = '/dev/ttyUSB0'
         self.baudrate = 9600
         self.bytesize = serial.EIGHTBITS
         self.parity = serial.PARITY_NONE
         self.stopbits = serial.STOPBITS_ONE
-        self.timeout = 0
+        self.timeout = 1
         self.xonxoff = False #disable software flow control
         self.rtscts = False  #disable hardware (RTS/CTS) flow control
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
-        
-        #self.open()
-        #self.close()
 
-    def sd(self):
-        value = self.read_until(b'\r\x12')
+        self.received_data = queue.Queue()
+
+    def run_monitor(self, serial_port):
+        self.port = serial_port
+        self.open()
         
-        if not value:
-            return
-        
-        # if message delimiters are as expected, process it
-        if (value[0] == ord(b'+') or value[0] == ord(b'-')) and value[8] == ord(b'\r') and value[9] == ord(b'\x12'):
-            value=value.translate(None, b'\x00\r\x12') # remove unwanted bytes
-            decoded_str = value.decode('ascii')
-            decoded_int = float(decoded_str)/100.0
+        # Call work function
+        self.monitor=threading.Thread(target=self.process_micrometer_readings,
+                                      daemon=True)
+        self.monitor.start()
+
+    def stop_monitor(self):
+        self.close()
+
+    def process_micrometer_readings(self):
+        while True:
+            # the expected messages end in \r\x12
+            value = self.read_until(b'\r\x12')
+            
+            if not value:
+                continue
+            
+            if len(value) != 10:
+                continue
+
+            # if message delimiters are as expected, process it
+            if (value[0] == ord(b'+') or value[0] == ord(b'-')) and value[8] == ord(b'\r') and value[9] == ord(b'\x12'):
+                # remove unwanted bytes and convert to a float number
+                value=value.translate(None, b'\x00\r\x12')
+                decoded_str = value.decode('ascii')
+                decoded_float = float(decoded_str)/100.0
+
+                # put received data on queue
+                self.received_data.put(decoded_float)
 
 
 class Controller:
@@ -378,7 +406,19 @@ class Controller:
         view.update_speed_reading_on_axis("A", "+12%")
         view.update_speed_reading_on_axis("B", "+13%")
         view.update_speed_reading_on_axis("C", "+14%")
-        view.update_position_reading_on_axis("A", "0.01")
+        view.update_position_reading_on_axis("A", "0.00")
+
+        motor_controller.run_monitor('/dev/ttyUSB0')
+
+        micrometer_readings.run_monitor('/dev/ttyUSB1')
+
+    def update_readings(self):
+        try:
+            position = micrometer_readings.received_data.get(block=False)
+        except queue.Empty:
+            pass
+        else:
+            view.update_position_reading_on_axis("A", str(position))
 
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
