@@ -318,29 +318,6 @@ class VisualInterface(tkinter.Tk):
         self.destroy()
 
 
-class Controller:
-    def __init__(self, view, motor_controller):
-        view.update_speed_reading_on_axis("A", "+12%")
-        view.update_speed_reading_on_axis("B", "+13%")
-        view.update_speed_reading_on_axis("C", "+14%")
-        view.update_position_reading_on_axis("A", "0.01")
-
-    def set_speed_on_axis(self, axis, spd_step):
-        print(axis + " " + str(spd_step))
-
-    def start_a_automatic_mode(self):
-        print("start_a_automatic_mode")
-
-    def copy_a_position(self):
-        print("copy_a_position")
-
-    def clear_a_position(self):
-        print("clear_a_position")
-
-    def select_a_position_step(self, pos_step):
-        print(pos_step)
-
-
 class MotorControllerInterface(serial.Serial):
     def __init__(self):
         super().__init__()
@@ -381,9 +358,42 @@ class MicrometerInterface(serial.Serial):
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
         
         #self.open()
-
-        
         #self.close()
+
+    def sd(self):
+        value = self.read_until(b'\r\x12')
+        
+        if not value:
+            return
+        
+        # if message delimiters are as expected, process it
+        if (value[0] == ord(b'+') or value[0] == ord(b'-')) and value[8] == ord(b'\r') and value[9] == ord(b'\x12'):
+            value=value.translate(None, b'\x00\r\x12') # remove unwanted bytes
+            decoded_str = value.decode('ascii')
+            decoded_int = float(decoded_str)/100.0
+
+
+class Controller:
+    def __init__(self, view, motor_controller, micrometer_readings):
+        view.update_speed_reading_on_axis("A", "+12%")
+        view.update_speed_reading_on_axis("B", "+13%")
+        view.update_speed_reading_on_axis("C", "+14%")
+        view.update_position_reading_on_axis("A", "0.01")
+
+    def set_speed_on_axis(self, axis, spd_step):
+        motor_controller.set_speed_on_axis(axis, spd_step)
+
+    def start_a_automatic_mode(self):
+        print("start_a_automatic_mode")
+
+    def copy_a_position(self):
+        print("copy_a_position")
+
+    def clear_a_position(self):
+        print("clear_a_position")
+
+    def select_a_position_step(self, pos_step):
+        print(pos_step)
 
 
 if __name__ == '__main__':
@@ -397,7 +407,7 @@ if __name__ == '__main__':
     view = VisualInterface()
 
     # create a controller
-    controller = Controller(view, motor_controller)
+    controller = Controller(view, motor_controller, micrometer_readings)
     
     # set the controller to view
     view.set_controller(controller)
