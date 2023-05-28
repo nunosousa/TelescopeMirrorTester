@@ -2,6 +2,7 @@ import tkinter
 import serial
 import threading
 import queue
+import time
 
 class VisualInterface(tkinter.Tk):
     def __init__(self):
@@ -11,6 +12,9 @@ class VisualInterface(tkinter.Tk):
 
         # create widgets
         self.frm_mtr = tkinter.Frame(master=self)
+
+        # update function calling period
+        self.readings_update_period = 100
 
         # Manual motor controls
         self.spd_fine_adjst= 5
@@ -243,17 +247,17 @@ class VisualInterface(tkinter.Tk):
         # set the controller
         self.controller = None
 
+        # set window closing callback
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-        self.frm_mtr.after(100, self.after_callback)
+        # create a periodic event
+        self.after(100, self.after_callback)
 
     def select_a_axis_mode(self, mode):
         if mode == 'Man':
             # Enable manual mode widgets
             self.spn_a_stp.configure(state='disabled')
             self.btn_a_go.configure(state='disabled')
-            self.btn_a_copy.configure(state='disabled')
-            self.btn_a_zero.configure(state='disabled')
 
             # Disable automatic mode widgets
             self.btn_a_mm.configure(state='normal')
@@ -273,8 +277,6 @@ class VisualInterface(tkinter.Tk):
             # Disable manual mode widgets
             self.spn_a_stp.configure(state='normal')
             self.btn_a_go.configure(state='normal')
-            self.btn_a_copy.configure(state='normal')
-            self.btn_a_zero.configure(state='normal')
 
     def set_controller(self, controller):
         self.controller = controller
@@ -283,7 +285,7 @@ class VisualInterface(tkinter.Tk):
         if self.controller:
             self.controller.update_readings()
 
-        self.frm_mtr.after(100, self.after_callback)
+        self.after(self.readings_update_period, self.after_callback)
 
     def set_speed_on_axis(self, axis, spd_step):
         if self.controller:
@@ -339,6 +341,9 @@ class MotorControllerInterface(serial.Serial):
         self.xonxoff = False #disable software flow control
         self.rtscts = False  #disable hardware (RTS/CTS) flow control
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
+
+        self.transmited_data = queue.Queue()
+        self.received_data = queue.Queue()
 
     def run_monitor(self, serial_port):
         self.port = serial_port
@@ -403,22 +408,30 @@ class MicrometerInterface(serial.Serial):
 
 class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
+        self.ts_micrometer_prev = time.time()
+
         view.update_speed_reading_on_axis("A", "+12%")
         view.update_speed_reading_on_axis("B", "+13%")
         view.update_speed_reading_on_axis("C", "+14%")
-        view.update_position_reading_on_axis("A", "0.00")
+        view.update_position_reading_on_axis("A", "99.99")
 
         motor_controller.run_monitor('/dev/ttyUSB0')
 
         micrometer_readings.run_monitor('/dev/ttyUSB1')
 
     def update_readings(self):
+        # get current timestamp
+        time_stamp = time.time()
+
+        # update micrometer reading
         try:
             position = micrometer_readings.received_data.get(block=False)
         except queue.Empty:
-            pass
+            if time_stamp - self.ts_micrometer_prev > 0.5:
+                view.update_position_reading_on_axis("A", "99.99")
         else:
             view.update_position_reading_on_axis("A", str(position))
+            self.ts_micrometer_prev = time_stamp
 
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
