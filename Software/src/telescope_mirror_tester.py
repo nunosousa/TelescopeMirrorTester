@@ -346,13 +346,23 @@ class MotorControllerInterface(serial.Serial):
         self.rtscts = False  #disable hardware (RTS/CTS) flow control
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
 
-        self.speed_data = queue.Queue()
+        self.speed_data_A = queue.Queue()
+        self.speed_data_B = queue.Queue()
+        self.speed_data_C = queue.Queue()
+
         self.serial_port_lock = threading.Lock()
 
         self.motor_speed = {
             "motor_A": 0,
             "motor_B": 0,
             "motor_C": 0
+            }
+        
+        self.motor_direction = {
+            "coast": 0,
+            "brake": 0,
+            "reverse drive": -1,
+            "forward drive": 1
             }
 
     def run_monitor(self, serial_port):
@@ -373,20 +383,26 @@ class MotorControllerInterface(serial.Serial):
             self.serial_port_lock.acquire()
             self.write(b'getSpeed A\r\n')
             line = self.readline(100) # consume command echo: >> getSpeed A\n
-            print(line)
-
             line = self.readline(100) # get axis A speed value
-            print(line)
             self.serial_port_lock.release()
 
             string = line.decode('ascii')
             string = string.strip('\r\n')
             string = string.split('%, ')
 
-            print(string.split('%, '))
+            try:
+                speed = int(string[0])
+            except ValueError:
+                pass
+            else:
+                try:
+                    direction = self.motor_direction[string[1]]
+                except KeyError:
+                    pass
+                else:
+                    speed = speed * direction
+                    self.speed_data_A.put(speed) # put speed data on queue
 
-            speed = int(string[0])
-            
             time.sleep(0.01)
 
             self.serial_port_lock.acquire()
@@ -408,16 +424,6 @@ class MotorControllerInterface(serial.Serial):
             line = self.readline(100) # get axis C speed value
             print(line)
             self.serial_port_lock.release()
-
-            # possible values:
-            # '0%, coast\r\n'
-            # '0%, brake\r\n'
-            # '30%, reverse drive\r\n'
-            # '30%, forward drive\r\n'
-
-
-            # put speed data on queue
-            #self.speed_data.put(0)
 
     def set_speed_on_axis(self, axis, spd_step):
         # Call work function
@@ -499,6 +505,7 @@ class MicrometerInterface(serial.Serial):
 class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
         self.ts_micrometer_prev = time.time()
+        self.ts_a_speed_prev = time.time()
 
         view.update_speed_reading_on_axis("A", "+12%")
         view.update_speed_reading_on_axis("B", "+13%")
@@ -522,6 +529,16 @@ class Controller:
         else:
             view.update_position_reading_on_axis("A", str(position))
             self.ts_micrometer_prev = time_stamp
+
+        # update motor A speed reading
+        try:
+            speed = motor_controller.speed_data_A.get(block=False)
+        except queue.Empty:
+            if time_stamp - self.ts_a_speed_prev > 0.5:
+                view.update_position_reading_on_axis("A", "99.99")
+        else:
+            view.update_speed_reading_on_axis("A", str(speed) + "%")
+            self.ts_a_speed_prev = time_stamp
 
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
