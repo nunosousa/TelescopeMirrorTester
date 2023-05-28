@@ -23,10 +23,10 @@ class VisualInterface(tkinter.Tk):
         # Manual motor controls
         self.spd_fine_adjst= 5
         self.spd_coarse_adjst = 20
-        inc_spd_fine_text = "+5%"
-        inc_spd_coarse_text = "+20%"
-        dec_spd_fine_text = "-5%"
-        dec_spd_coarse_text = "-20%"
+        inc_spd_fine_text = ">"
+        inc_spd_coarse_text = ">>"
+        dec_spd_fine_text = "<"
+        dec_spd_coarse_text = ">>"
         
         # A Axis controls
         frm_a = tkinter.LabelFrame(master=self.frm_mtr,
@@ -378,8 +378,6 @@ class MotorControllerInterface(serial.Serial):
 
     def get_motor_speed(self):
         while True:
-            time.sleep(0.5)
-
             self.serial_port_lock.acquire()
             self.write(b'getSpeed A\r\n')
             line = self.readline(100) # consume command echo: >> getSpeed A\n
@@ -402,28 +400,8 @@ class MotorControllerInterface(serial.Serial):
                 else:
                     speed = speed * direction
                     self.speed_data_A.put(speed) # put speed data on queue
-
-            time.sleep(0.01)
-
-            self.serial_port_lock.acquire()
-            self.write(b'getSpeed B\r\n')
-            line = self.readline(100) # consume command echo: >> getSpeed B\n
-            print(line)
-            
-            line = self.readline(100) # get axis B speed value
-            print(line)
-            self.serial_port_lock.release()
-
-            time.sleep(0.01)
-            
-            self.serial_port_lock.acquire()
-            self.write(b'getSpeed C\r\n')
-            line = self.readline(100) # consume command echo: >> getSpeed C\n
-            print(line)
-            
-            line = self.readline(100) # get axis C speed value
-            print(line)
-            self.serial_port_lock.release()
+                    
+            time.sleep(0.5)
 
     def set_speed_on_axis(self, axis, spd_step):
         # Call work function
@@ -480,7 +458,7 @@ class MicrometerInterface(serial.Serial):
 
     def process_micrometer_readings(self):
         while True:
-            time.sleep(0)
+            time.sleep(0.01)
 
             # the expected messages end in \r\x12
             value = self.read_until(b'\r\x12')
@@ -507,9 +485,9 @@ class Controller:
         self.ts_micrometer_prev = time.time()
         self.ts_a_speed_prev = time.time()
 
-        view.update_speed_reading_on_axis("A", "+12%")
-        view.update_speed_reading_on_axis("B", "+13%")
-        view.update_speed_reading_on_axis("C", "+14%")
+        view.update_speed_reading_on_axis("A", "0%")
+        view.update_speed_reading_on_axis("B", "0%")
+        view.update_speed_reading_on_axis("C", "0%")
         view.update_position_reading_on_axis("A", "99.99")
 
         motor_controller.run_monitor('/dev/ttyUSB0')
@@ -539,6 +517,7 @@ class Controller:
         else:
             view.update_speed_reading_on_axis("A", str(speed) + "%")
             self.ts_a_speed_prev = time_stamp
+            print(speed)
 
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
