@@ -300,8 +300,8 @@ class VisualInterface(tkinter.Tk):
             self.controller.start_a_automatic_mode()
 
     def copy_a_position(self):
-        if self.controller:
-            self.controller.copy_a_position()
+        self.clipboard_clear()
+        self.clipboard_append(self.lbl_a_pos_text.get())
 
     def clear_a_position(self):
         if self.controller:
@@ -399,7 +399,6 @@ class MotorControllerInterface(serial.Serial):
             try:
                 speed = int(string[0]) # get speed value in integer format
             except ValueError:
-
                 pass
             else:
                 try:
@@ -564,15 +563,11 @@ class Controller:
     def start_a_automatic_mode(self):
         print("start_a_automatic_mode")
 
-    def copy_a_position(self):
-        print("copy_a_position")
-
     def clear_a_position(self):
         print("clear_a_position")
 
     def select_a_position_step(self, pos_step):
         print(pos_step)
-
 
 if __name__ == '__main__':
     # tbd
