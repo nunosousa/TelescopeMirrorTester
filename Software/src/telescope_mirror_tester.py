@@ -437,17 +437,20 @@ class MotorControllerInterface(serial.Serial):
         if speed != 0:
             if axis == 'A':
                 self.motor_a_active.set()
+                self.motor_b_active.clear()
+                self.motor_c_active.clear()
             elif axis == 'B':
+                self.motor_a_active.clear()
                 self.motor_b_active.set()
+                self.motor_c_active.clear()
             elif axis == 'C':
+                self.motor_a_active.clear()
+                self.motor_b_active.clear()
                 self.motor_c_active.set()
         else:
-            if axis == 'A':
-                self.motor_a_active.clear()
-            elif axis == 'B':
-                self.motor_b_active.clear()
-            elif axis == 'C':
-                self.motor_c_active.clear()
+            self.motor_a_active.clear()
+            self.motor_b_active.clear()
+            self.motor_c_active.clear()
 
 class MicrometerInterface(serial.Serial):
     def __init__(self):
@@ -539,11 +542,17 @@ class Controller:
         else:
             if motor_controller.motor_a_active.is_set():
                 view.update_speed_reading_on_axis("A", str(speed) + "%")
+                view.update_speed_reading_on_axis("B", "---%")
+                view.update_speed_reading_on_axis("C", "---%")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_b_active.is_set():
+                view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", str(speed) + "%")
+                view.update_speed_reading_on_axis("C", "---%")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_c_active.is_set():
+                view.update_speed_reading_on_axis("A", "---%")
+                view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", str(speed) + "%")
                 self.ts_motor_speed_prev = time_stamp
             else:
