@@ -26,7 +26,7 @@ class VisualInterface(tkinter.Tk):
         inc_spd_fine_text = ">"
         inc_spd_coarse_text = ">>"
         dec_spd_fine_text = "<"
-        dec_spd_coarse_text = ">>"
+        dec_spd_coarse_text = "<<"
         
         # A Axis controls
         frm_a = tkinter.LabelFrame(master=self.frm_mtr,
@@ -347,7 +347,9 @@ class MotorControllerInterface(serial.Serial):
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
 
         self.speed_data = queue.Queue()
-
+        self.motor_a_active = threading.Event()
+        self.motor_b_active = threading.Event()
+        self.motor_c_active = threading.Event()
         self.serial_port_lock = threading.Lock()
         
         # is dictionary is used to decode received serial messages
@@ -370,45 +372,43 @@ class MotorControllerInterface(serial.Serial):
         self.close()
 
     def get_motor_speed(self):
-        # tbd: change code to probe active motor and only when it is active
+        # monitor active motor speed
         while True:
+            time.sleep(0.2)
+
+            if self.motor_a_active.is_set():
+                command = b'getSpeed A\r\n'
+            elif self.motor_b_active.is_set():
+                command = b'getSpeed B\r\n'
+            elif self.motor_c_active.is_set():
+                command = b'getSpeed C\r\n'
+            else:
+                continue
+            
             self.serial_port_lock.acquire()
-            self.write(b'getSpeed A\r\n')
+            self.write(command)
             line = self.readline(100) # consume command echo: >> getSpeed A\n
             line = self.readline(100) # get axis A speed value
             self.serial_port_lock.release()
-
+            
             # parse command response and extract speed value
             string = line.decode('ascii')
             string = string.strip('\r\n')
             string = string.split('%, ')
 
-            speed = 0
-
             try:
                 speed = int(string[0]) # get speed value in integer format
             except ValueError:
-                #time.sleep(0.2)
-                #continue
+
                 pass
             else:
                 try:
                     direction = self.motor_direction[string[1]] # get direction value as a signed 1 or a 0 if stopped
                 except KeyError:
-                    #time.sleep(0.2)
-                    #continue
                     pass
                 else:
                     speed = speed * direction
                     self.speed_data.put(speed) # put speed data on queue
-            
-            time.sleep(0.2)
-            continue
-            # keep monitoring speed while it is different than zero
-            if speed != 0:
-                time.sleep(0.2)
-            else:
-                return
 
     def set_speed_on_axis(self, axis, speed):
         # Call work function
@@ -417,20 +417,37 @@ class MotorControllerInterface(serial.Serial):
         self.monitor.start()
 
     def set_motor_speed(self, axis, speed):
-        #build and send serial command
-
+        # validate inputs
         if axis != 'A' and axis != 'B' and axis != 'C':
             return
         
         if speed < -100 or speed > 100:
             return
         
+        # build serial command
         command = f'setSpeed {axis} {speed}\r\n'
 
+        # send serial command
         self.serial_port_lock.acquire()
         self.write(command.encode('ascii'))
         self.readline(100) # consume command echo: >> setSpeed C 99\n
         self.serial_port_lock.release()
+
+        # flag motor activity
+        if speed != 0:
+            if axis == 'A':
+                self.motor_a_active.set()
+            elif axis == 'B':
+                self.motor_b_active.set()
+            elif axis == 'C':
+                self.motor_c_active.set()
+        else:
+            if axis == 'A':
+                self.motor_a_active.clear()
+            elif axis == 'B':
+                self.motor_b_active.clear()
+            elif axis == 'C':
+                self.motor_c_active.clear()
 
 class MicrometerInterface(serial.Serial):
     def __init__(self):
