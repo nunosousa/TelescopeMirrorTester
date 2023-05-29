@@ -346,18 +346,11 @@ class MotorControllerInterface(serial.Serial):
         self.rtscts = False  #disable hardware (RTS/CTS) flow control
         self.dsrdtr = False  #disable hardware (DSR/DTR) flow control
 
-        self.speed_data_A = queue.Queue()
-        self.speed_data_B = queue.Queue()
-        self.speed_data_C = queue.Queue()
+        self.speed_data = queue.Queue()
 
         self.serial_port_lock = threading.Lock()
-
-        self.motor_speed = {
-            "motor_A": 0,
-            "motor_B": 0,
-            "motor_C": 0
-            }
         
+        # is dictionary is used to decode received serial messages
         self.motor_direction = {
             "coast": 0,
             "brake": 0,
@@ -377,6 +370,7 @@ class MotorControllerInterface(serial.Serial):
         self.close()
 
     def get_motor_speed(self):
+        # tbd: change code to probe active motor and only when it is active
         while True:
             self.serial_port_lock.acquire()
             self.write(b'getSpeed A\r\n')
@@ -384,49 +378,59 @@ class MotorControllerInterface(serial.Serial):
             line = self.readline(100) # get axis A speed value
             self.serial_port_lock.release()
 
+            # parse command response and extract speed value
             string = line.decode('ascii')
             string = string.strip('\r\n')
             string = string.split('%, ')
 
+            speed = 0
+
             try:
-                speed = int(string[0])
+                speed = int(string[0]) # get speed value in integer format
             except ValueError:
+                #time.sleep(0.2)
+                #continue
                 pass
             else:
                 try:
-                    direction = self.motor_direction[string[1]]
+                    direction = self.motor_direction[string[1]] # get direction value as a signed 1 or a 0 if stopped
                 except KeyError:
+                    #time.sleep(0.2)
+                    #continue
                     pass
                 else:
                     speed = speed * direction
-                    self.speed_data_A.put(speed) # put speed data on queue
-                    
-            time.sleep(0.5)
+                    self.speed_data.put(speed) # put speed data on queue
+            
+            time.sleep(0.2)
+            continue
+            # keep monitoring speed while it is different than zero
+            if speed != 0:
+                time.sleep(0.2)
+            else:
+                return
 
-    def set_speed_on_axis(self, axis, spd_step):
+    def set_speed_on_axis(self, axis, speed):
         # Call work function
-        self.monitor=threading.Thread(target=lambda:self.process_motor_speed(axis, spd_step),
+        self.monitor=threading.Thread(target=lambda:self.set_motor_speed(axis, speed),
                                       daemon=True)
         self.monitor.start()
 
-    def process_motor_speed(self, axis, spd_step):
-        if axis == 'A':
-            pass
-        elif axis == 'B':
-            pass
-        elif axis == 'C':
-            pass
-        else:
-            pass
+    def set_motor_speed(self, axis, speed):
+        #build and send serial command
+
+        if axis != 'A' and axis != 'B' and axis != 'C':
+            return
+        
+        if speed < -100 or speed > 100:
+            return
+        
+        command = f'setSpeed {axis} {speed}\r\n'
 
         self.serial_port_lock.acquire()
-        self.write(b'setSpeed A 20\r\n')
-        line = self.readline(100) # consume command echo: >> getSpeed C\n
-        print(line)
+        self.write(command.encode('ascii'))
+        self.readline(100) # consume command echo: >> setSpeed C 99\n
         self.serial_port_lock.release()
-
-        print(axis + " " + str(spd_step))
-
 
 class MicrometerInterface(serial.Serial):
     def __init__(self):
@@ -485,10 +489,10 @@ class Controller:
         self.ts_micrometer_prev = time.time()
         self.ts_a_speed_prev = time.time()
 
-        view.update_speed_reading_on_axis("A", "0%")
-        view.update_speed_reading_on_axis("B", "0%")
-        view.update_speed_reading_on_axis("C", "0%")
-        view.update_position_reading_on_axis("A", "99.99")
+        view.update_speed_reading_on_axis("A", "---%")
+        view.update_speed_reading_on_axis("B", "---%")
+        view.update_speed_reading_on_axis("C", "---%")
+        view.update_position_reading_on_axis("A", "--.--")
 
         motor_controller.run_monitor('/dev/ttyUSB0')
 
@@ -503,21 +507,20 @@ class Controller:
             position = micrometer_readings.position_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_micrometer_prev > 0.5:
-                view.update_position_reading_on_axis("A", "99.99")
+                view.update_position_reading_on_axis("A", "--.--")
         else:
             view.update_position_reading_on_axis("A", str(position))
             self.ts_micrometer_prev = time_stamp
 
         # update motor A speed reading
         try:
-            speed = motor_controller.speed_data_A.get(block=False)
+            speed = motor_controller.speed_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_a_speed_prev > 0.5:
-                view.update_position_reading_on_axis("A", "99.99")
+                view.update_speed_reading_on_axis("A", "---%")
         else:
             view.update_speed_reading_on_axis("A", str(speed) + "%")
             self.ts_a_speed_prev = time_stamp
-            print(speed)
 
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
