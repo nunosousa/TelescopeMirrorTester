@@ -504,7 +504,7 @@ class MicrometerInterface(serial.Serial):
 class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
         self.ts_micrometer_prev = time.time()
-        self.ts_a_speed_prev = time.time()
+        self.ts_motor_speed_prev = time.time()
 
         view.update_speed_reading_on_axis("A", "---%")
         view.update_speed_reading_on_axis("B", "---%")
@@ -512,7 +512,6 @@ class Controller:
         view.update_position_reading_on_axis("A", "--.--")
 
         motor_controller.run_monitor('/dev/ttyUSB0')
-
         micrometer_readings.run_monitor('/dev/ttyUSB1')
 
     def update_readings(self):
@@ -529,15 +528,26 @@ class Controller:
             view.update_position_reading_on_axis("A", str(position))
             self.ts_micrometer_prev = time_stamp
 
-        # update motor A speed reading
+        # update motor speed readings
         try:
             speed = motor_controller.speed_data.get(block=False)
         except queue.Empty:
-            if time_stamp - self.ts_a_speed_prev > 0.5:
+            if time_stamp - self.ts_motor_speed_prev > 0.5:
                 view.update_speed_reading_on_axis("A", "---%")
+                view.update_speed_reading_on_axis("B", "---%")
+                view.update_speed_reading_on_axis("C", "---%")
         else:
-            view.update_speed_reading_on_axis("A", str(speed) + "%")
-            self.ts_a_speed_prev = time_stamp
+            if motor_controller.motor_a_active.is_set():
+                view.update_speed_reading_on_axis("A", str(speed) + "%")
+                self.ts_motor_speed_prev = time_stamp
+            elif motor_controller.motor_b_active.is_set():
+                view.update_speed_reading_on_axis("B", str(speed) + "%")
+                self.ts_motor_speed_prev = time_stamp
+            elif motor_controller.motor_c_active.is_set():
+                view.update_speed_reading_on_axis("C", str(speed) + "%")
+                self.ts_motor_speed_prev = time_stamp
+            else:
+                pass
 
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
