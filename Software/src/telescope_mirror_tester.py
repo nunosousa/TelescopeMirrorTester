@@ -34,7 +34,6 @@ class VisualInterface(tkinter.Tk):
                                    text="A axis")
         
         self.lbl_a_spd_text = tkinter.StringVar()
-        self.lbl_a_spd_text.set("0%")
         
         self.rd_a_select = tkinter.StringVar()
         self.rd_a_select.set("Man")
@@ -80,7 +79,7 @@ class VisualInterface(tkinter.Tk):
         self.btn_a_stop.grid(row=1, column=5, padx=4, pady=4)
 
         self.spn_a_stp_text = tkinter.StringVar()
-        self.spn_a_stp_text.set("0.0") #Initial value
+        self.spn_a_stp_text.set("0.0")
 
         self.rd_a_aut = tkinter.Radiobutton(master=frm_a,
                                             text="Automatic Position control",
@@ -96,8 +95,7 @@ class VisualInterface(tkinter.Tk):
                                          increment=0.01,
                                          state='readonly',
                                          width=5,
-                                         textvariable=self.spn_a_stp_text,
-                                         command=lambda:self.select_a_position_step(self.spn_a_stp_text.get()))
+                                         textvariable=self.spn_a_stp_text)
         lbl_a_stp_mm = tkinter.Label(master=frm_a,
                                      text="mm",
                                      width=3)
@@ -115,7 +113,6 @@ class VisualInterface(tkinter.Tk):
         self.btn_a_go.grid(row=3, column=5, padx=4, pady=4)
 
         self.lbl_a_pos_text = tkinter.StringVar()
-        self.lbl_a_pos_text.set("0.0")
         
         lbl_a_pos = tkinter.Label(master=frm_a,
                                   text="Position:",
@@ -153,7 +150,6 @@ class VisualInterface(tkinter.Tk):
                                    text="B axis")
         
         self.lbl_b_spd_text = tkinter.StringVar()
-        self.lbl_b_spd_text.set("0%")
         
         rd_b_aut = tkinter.Radiobutton(master=frm_b,
                                        text="Manual Speed control",
@@ -200,7 +196,6 @@ class VisualInterface(tkinter.Tk):
                                    text="C axis")
         
         self.lbl_c_spd_text = tkinter.StringVar()
-        self.lbl_c_spd_text.set("0%")
         
         rd_c_aut = tkinter.Radiobutton(master=frm_c,
                                        text="Manual Speed control",
@@ -298,7 +293,7 @@ class VisualInterface(tkinter.Tk):
 
     def start_a_automatic_mode(self):
         if self.controller:
-            self.controller.start_a_automatic_mode()
+            self.controller.start_a_automatic_mode(self.spn_a_stp_text.get())
 
     def copy_a_position(self):
         self.clipboard_clear()
@@ -307,10 +302,6 @@ class VisualInterface(tkinter.Tk):
     def clear_a_position(self):
         if self.controller:
             self.controller.clear_a_position()
-
-    def select_a_position_step(self, pos_step):
-        if self.controller:
-            self.controller.select_a_position_step(pos_step)
 
     def update_speed_reading_on_axis(self, axis, spd_value):
         if axis == "A":
@@ -334,10 +325,11 @@ class VisualInterface(tkinter.Tk):
 
 
 class MotorControllerInterface(serial.Serial):
-    def __init__(self):
+    def __init__(self, serial_port):
         super().__init__()
 
         # serial port setup
+        self.port = serial_port
         self.baudrate = 9600
         self.bytesize = serial.EIGHTBITS
         self.parity = serial.PARITY_ODD
@@ -361,8 +353,7 @@ class MotorControllerInterface(serial.Serial):
             "forward drive": 1
             }
 
-    def run_monitor(self, serial_port):
-        self.port = serial_port
+    def run_monitor(self):
         self.open()
 
         self.monitor=threading.Thread(target=self.get_motor_speed,
@@ -453,10 +444,11 @@ class MotorControllerInterface(serial.Serial):
             self.motor_c_active.clear()
 
 class MicrometerInterface(serial.Serial):
-    def __init__(self):
+    def __init__(self, serial_port):
         super().__init__()
 
         # serial port setup
+        self.port = serial_port
         self.baudrate = 9600
         self.bytesize = serial.EIGHTBITS
         self.parity = serial.PARITY_NONE
@@ -468,8 +460,7 @@ class MicrometerInterface(serial.Serial):
 
         self.position_data = queue.Queue()
 
-    def run_monitor(self, serial_port):
-        self.port = serial_port
+    def run_monitor(self):
         self.open()
         
         # Call work function
@@ -505,7 +496,7 @@ class MicrometerInterface(serial.Serial):
 
 
 class Controller:
-    def __init__(self, view, motor_controller, micrometer_readings, motor_controller_port, micrometer_port):
+    def __init__(self, view, motor_controller, micrometer_readings):
         self.ts_micrometer_prev = time.time()
         self.ts_motor_speed_prev = time.time()
 
@@ -514,8 +505,8 @@ class Controller:
         view.update_speed_reading_on_axis("C", "---%")
         view.update_position_reading_on_axis("A", "--.--")
 
-        motor_controller.run_monitor(motor_controller_port)
-        micrometer_readings.run_monitor(micrometer_port)
+        motor_controller.run_monitor()
+        micrometer_readings.run_monitor()
 
     def update_readings(self):
         # get current timestamp
@@ -561,14 +552,11 @@ class Controller:
     def set_speed_on_axis(self, axis, spd_step):
         motor_controller.set_speed_on_axis(axis, spd_step)
 
-    def start_a_automatic_mode(self):
-        print("start_a_automatic_mode")
+    def start_a_automatic_mode(self, position_step):
+        print(f"start_a_automatic_mode with step {position_step}")
 
     def clear_a_position(self):
         print("clear_a_position")
-
-    def select_a_position_step(self, pos_step):
-        print(pos_step)
 
 
 def find_serial_device(vid, pid, serial_number):
@@ -594,17 +582,16 @@ if __name__ == '__main__':
         raise Exception("The expected serial ports are not available!")
 
     # tbd
-    micrometer_readings = MicrometerInterface()
+    micrometer_readings = MicrometerInterface(micrometer_port)
 
     # tbd
-    motor_controller = MotorControllerInterface()
+    motor_controller = MotorControllerInterface(motor_controller_port)
 
     # create a view
     view = VisualInterface()
 
     # create a controller
-    controller = Controller(view, motor_controller, micrometer_readings,
-                            motor_controller_port, micrometer_port)
+    controller = Controller(view, motor_controller, micrometer_readings)
     
     # set the controller to view
     view.set_controller(controller)
