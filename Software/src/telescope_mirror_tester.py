@@ -489,6 +489,21 @@ class MicrometerInterface(serial.Serial):
 
 class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
+        # setup PID controler
+        self.pid_controler = simple_pid.PID()
+        self.pid_controler.Kp = 20
+        self.pid_controler.Ki = 20
+        self.pid_controler.Kd = 20
+        self.pid_controler.proportional_on_measurement = False
+        self.pid_controler.differential_on_measurement = False
+        self.pid_controler.sample_time = 0.015
+        self.pid_controler.output_limits = (-100, 100)
+
+        self.auto_position_control_enabled = False
+
+        self.current_speed = 0
+        self.current_position = 0.0
+
         self.ts_micrometer_prev = time.time()
         self.ts_motor_speed_prev = time.time()
 
@@ -506,46 +521,65 @@ class Controller:
 
         # update micrometer reading
         try:
-            position = micrometer_readings.position_data.get(block=False)
+            self.current_position = micrometer_readings.position_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_micrometer_prev > 0.5:
+                # tbd: position gone stale, assume it is zero and stop control loop if applicable
                 view.update_position_reading_on_axis("A", "--.--")
         else:
-            view.update_position_reading_on_axis("A", str(position))
+            view.update_position_reading_on_axis("A", str(self.current_position))
             self.ts_micrometer_prev = time_stamp
+
+            # Compute new output from the PID according to the systems current value
+            speed_control = self.pid_controler(self.current_position)
+            if self.auto_position_control_enabled == True:
+                motor_controller.set_speed_on_axis('A', speed_control)
+                print(self.pid_controler.components)
 
         # update motor speed readings
         try:
-            speed = motor_controller.speed_data.get(block=False)
+            self.current_speed = motor_controller.speed_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_motor_speed_prev > 0.5:
+                self.current_speed = 0 # speed gone stale, assume it is zero
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", "---%")
         else:
             if motor_controller.motor_a_active.is_set():
-                view.update_speed_reading_on_axis("A", str(speed) + "%")
+                view.update_speed_reading_on_axis("A", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", "---%")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_b_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
-                view.update_speed_reading_on_axis("B", str(speed) + "%")
+                view.update_speed_reading_on_axis("B", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("C", "---%")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_c_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", "---%")
-                view.update_speed_reading_on_axis("C", str(speed) + "%")
+                view.update_speed_reading_on_axis("C", str(self.current_speed) + "%")
                 self.ts_motor_speed_prev = time_stamp
             else:
                 pass
 
-    def set_speed_on_axis(self, axis, spd_step):
-        motor_controller.set_speed_on_axis(axis, spd_step)
+    def set_speed_on_axis(self, axis, speed_step):
+        if speed_step == 0: # stop command
+            motor_controller.set_speed_on_axis(axis, 0)
+        else: # update current speed
+            motor_controller.set_speed_on_axis(axis, self.current_speed + speed_step)
 
     def start_a_automatic_mode(self, position_step):
+        # tbd: tell gui to disable controls before staring control loop
+
+        # set PID setpoint
+        self.pid_controler.setpoint = self.current_position + float(position_step)
+        self.auto_position_control_enabled = True
+
         print(f"start_a_automatic_mode with step {position_step}")
+
+        # tbd: tell gui to enable controls after ending control loop
 
 
 def find_serial_device(vid, pid, serial_number):
@@ -564,10 +598,10 @@ def find_serial_device(vid, pid, serial_number):
 
 if __name__ == '__main__':
     # find serial ports
-    motor_controller_port = find_serial_device(6790, 29987, None)
     micrometer_port = find_serial_device(1027, 24577, 'A602FCS9')
+    motor_controller_port = find_serial_device(6790, 29987, None)
 
-    if motor_controller_port == None or micrometer_port == None:
+    if micrometer_port == None or motor_controller_port == None:
         raise Exception("The expected serial ports are not available!")
 
     # tbd
