@@ -6,8 +6,10 @@ import queue
 import time
 import simple_pid
 
+
 #sudo chmod 666 /dev/ttyUSB0
 #sudo chmod 666 /dev/ttyUSB1
+
 
 class VisualInterface(tkinter.Tk):
     def __init__(self):
@@ -110,7 +112,7 @@ class VisualInterface(tkinter.Tk):
         lbl_a_stp.grid(row=3, column=0, columnspan = 2, padx=0, pady=4, sticky = tkinter.E)
         self.spn_a_stp.grid(row=3, column=2, padx=4, pady=4)
         lbl_a_stp_mm.grid(row=3, column=3, padx=0, pady=4, sticky = tkinter.W)
-        self.btn_a_go.grid(row=3, column=5, padx=4, pady=4)
+        self.btn_a_go.grid(row=3, column=4, padx=4, pady=4)
 
         self.lbl_a_pos_text = tkinter.StringVar()
         
@@ -130,18 +132,11 @@ class VisualInterface(tkinter.Tk):
                                          bg="purple",
                                          activebackground="purple",
                                          command=self.copy_a_position)
-        self.btn_a_zero = tkinter.Button(master=frm_a,
-                                         text="ZERO",
-                                         width=5,
-                                         bg="yellow",
-                                         activebackground="yellow",
-                                         command=self.clear_a_position)
         
         lbl_a_pos.grid(row=4, column=0, columnspan = 2, padx=0, pady=4, sticky = tkinter.E)
         lbl_a_pos_mm.grid(row=4, column=2, padx=4, pady=4)
         lbl_a_mm.grid(row=4, column=3, padx=0, pady=4, sticky = tkinter.W)
         self.btn_a_copy.grid(row=4, column=4, padx=4, pady=4)
-        self.btn_a_zero.grid(row=4, column=5, padx=4, pady=4)
         
         frm_a.grid(row=0, column=0, padx=4, pady=4)
         
@@ -299,10 +294,6 @@ class VisualInterface(tkinter.Tk):
         self.clipboard_clear()
         self.clipboard_append(self.lbl_a_pos_text.get())
 
-    def clear_a_position(self):
-        if self.controller:
-            self.controller.clear_a_position()
-
     def update_speed_reading_on_axis(self, axis, spd_value):
         if axis == "A":
             self.lbl_a_spd_text.set(spd_value)
@@ -443,6 +434,7 @@ class MotorControllerInterface(serial.Serial):
             self.motor_b_active.clear()
             self.motor_c_active.clear()
 
+
 class MicrometerInterface(serial.Serial):
     def __init__(self, serial_port):
         super().__init__()
@@ -554,9 +546,6 @@ class Controller:
 
     def start_a_automatic_mode(self, position_step):
         print(f"start_a_automatic_mode with step {position_step}")
-
-    def clear_a_position(self):
-        print("clear_a_position")
 
 
 def find_serial_device(vid, pid, serial_number):
