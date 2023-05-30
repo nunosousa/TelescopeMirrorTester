@@ -1,5 +1,6 @@
 import tkinter
 import serial
+import serial.tools.list_ports
 import threading
 import queue
 import time
@@ -504,7 +505,7 @@ class MicrometerInterface(serial.Serial):
 
 
 class Controller:
-    def __init__(self, view, motor_controller, micrometer_readings):
+    def __init__(self, view, motor_controller, micrometer_readings, motor_controller_port, micrometer_port):
         self.ts_micrometer_prev = time.time()
         self.ts_motor_speed_prev = time.time()
 
@@ -513,8 +514,8 @@ class Controller:
         view.update_speed_reading_on_axis("C", "---%")
         view.update_position_reading_on_axis("A", "--.--")
 
-        motor_controller.run_monitor('/dev/ttyUSB0')
-        micrometer_readings.run_monitor('/dev/ttyUSB1')
+        motor_controller.run_monitor(motor_controller_port)
+        micrometer_readings.run_monitor(micrometer_port)
 
     def update_readings(self):
         # get current timestamp
@@ -569,7 +570,29 @@ class Controller:
     def select_a_position_step(self, pos_step):
         print(pos_step)
 
+
+def find_serial_device(vid, pid, serial_number):
+    """Return the device path based on vender & product ID.
+    
+    The device is something like (like COM4, /dev/ttyUSB0 or /dev/cu.usbserial-1430)
+    """
+    device_list = serial.tools.list_ports.comports()
+    
+    for device in device_list:
+        if (device.vid == vid and device.pid == pid and device.serial_number == serial_number):
+            return device.device
+        
+    return None
+
+
 if __name__ == '__main__':
+    # find serial ports
+    motor_controller_port = find_serial_device(6790, 29987, None)
+    micrometer_port = find_serial_device(1027, 24577, 'A602FCS9')
+
+    if motor_controller_port == None or micrometer_port == None:
+        raise Exception("The expected serial ports are not available!")
+
     # tbd
     micrometer_readings = MicrometerInterface()
 
@@ -580,7 +603,8 @@ if __name__ == '__main__':
     view = VisualInterface()
 
     # create a controller
-    controller = Controller(view, motor_controller, micrometer_readings)
+    controller = Controller(view, motor_controller, micrometer_readings,
+                            motor_controller_port, micrometer_port)
     
     # set the controller to view
     view.set_controller(controller)
