@@ -21,11 +21,11 @@ class VisualInterface(tkinter.Tk):
         self.frm_mtr = tkinter.Frame(master=self)
 
         # update function calling period
-        self.readings_update_period = 100
+        self.readings_update_period = 15
 
         # Manual motor controls
-        self.spd_fine_adjst= 5
-        self.spd_coarse_adjst = 20
+        self.spd_fine_adjst= 1
+        self.spd_coarse_adjst = 5
         inc_spd_fine_text = ">"
         inc_spd_coarse_text = ">>"
         dec_spd_fine_text = "<"
@@ -491,13 +491,14 @@ class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
         # setup PID controler
         self.pid_controler = simple_pid.PID()
-        self.pid_controler.Kp = 20
-        self.pid_controler.Ki = 20
-        self.pid_controler.Kd = 20
+        self.pid_controler.Kp = 400
+        self.pid_controler.Ki = 0
+        self.pid_controler.Kd = 0
         self.pid_controler.proportional_on_measurement = False
         self.pid_controler.differential_on_measurement = False
         self.pid_controler.sample_time = 0.015
-        self.pid_controler.output_limits = (-100, 100)
+        self.pid_controler.output_limits = (0, 25)
+        #self.pid_controler.starting_output = 16.0
 
         self.auto_position_control_enabled = False
 
@@ -534,7 +535,8 @@ class Controller:
             speed_control = self.pid_controler(self.current_position)
             if self.auto_position_control_enabled == True:
                 motor_controller.set_speed_on_axis('A', speed_control)
-                print(self.pid_controler.components)
+                print(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
+                #print(self.pid_controler.components)
 
         # update motor speed readings
         try:
