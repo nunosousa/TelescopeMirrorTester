@@ -32,40 +32,40 @@ class VisualInterface(tkinter.Tk):
         dec_spd_coarse_text = "<<"
         
         # A Axis controls
-        frm_a = tkinter.LabelFrame(master=self.frm_mtr,
-                                   text="A axis")
+        self.frm_a = tkinter.LabelFrame(master=self.frm_mtr,
+                                        text="A axis")
         
         self.lbl_a_spd_text = tkinter.StringVar()
         
         self.rd_a_select = tkinter.StringVar()
         self.rd_a_select.set("Man")
         
-        self.rd_a_man = tkinter.Radiobutton(master=frm_a,
+        self.rd_a_man = tkinter.Radiobutton(master=self.frm_a,
                                             text="Manual Speed control",
                                             variable=self.rd_a_select,
                                             value="Man",
                                             command=lambda:self.select_a_axis_mode('Man'))
-        self.btn_a_mm = tkinter.Button(master=frm_a,
+        self.btn_a_mm = tkinter.Button(master=self.frm_a,
                                        text=dec_spd_coarse_text,
                                        width=5,
                                        command=lambda:self.set_speed_step_on_axis('A', -self.spd_coarse_adjst))
-        self.btn_a_m = tkinter.Button(master=frm_a,
+        self.btn_a_m = tkinter.Button(master=self.frm_a,
                                       text=dec_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_step_on_axis('A', -self.spd_fine_adjst))
-        self.lbl_a_spd = tkinter.Label(master=frm_a,
+        self.lbl_a_spd = tkinter.Label(master=self.frm_a,
                                   width=7,
                                   textvariable=self.lbl_a_spd_text,
                                   relief=tkinter.SUNKEN)
-        self.btn_a_p = tkinter.Button(master=frm_a,
+        self.btn_a_p = tkinter.Button(master=self.frm_a,
                                       text=inc_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_step_on_axis('A', self.spd_fine_adjst))
-        self.btn_a_pp = tkinter.Button(master=frm_a,
+        self.btn_a_pp = tkinter.Button(master=self.frm_a,
                                        text=inc_spd_coarse_text,
                                        width=5,
                                        command=lambda:self.set_speed_step_on_axis('A', self.spd_coarse_adjst))
-        self.btn_a_stop = tkinter.Button(master=frm_a,
+        self.btn_a_stop = tkinter.Button(master=self.frm_a,
                                          text="STOP",
                                          width=5,
                                          command=lambda:self.set_speed_step_on_axis('A', 0),
@@ -83,33 +83,33 @@ class VisualInterface(tkinter.Tk):
         self.spn_a_stp_text = tkinter.StringVar()
         self.spn_a_stp_text.set("0.0")
 
-        self.rd_a_aut = tkinter.Radiobutton(master=frm_a,
+        self.rd_a_aut = tkinter.Radiobutton(master=self.frm_a,
                                             text="Automatic Position control",
                                             variable=self.rd_a_select,
                                             value="Aut",
                                             command=lambda:self.select_a_axis_mode('Aut'))
-        lbl_a_stp = tkinter.Label(master=frm_a,
+        lbl_a_stp = tkinter.Label(master=self.frm_a,
                                   text="Step:",
                                   width=5,
                                   anchor="e")
-        self.spn_a_stp = tkinter.Spinbox(master=frm_a,
+        self.spn_a_stp = tkinter.Spinbox(master=self.frm_a,
                                          from_=-25.4,
                                          to=25.4,
                                          increment=0.01,
                                          state='readonly',
                                          width=5,
                                          textvariable=self.spn_a_stp_text)
-        lbl_a_stp_mm = tkinter.Label(master=frm_a,
+        lbl_a_stp_mm = tkinter.Label(master=self.frm_a,
                                      text="mm",
                                      width=3,
                                      anchor="w")
-        self.btn_a_go = tkinter.Button(master=frm_a,
+        self.btn_a_go = tkinter.Button(master=self.frm_a,
                                        text="GO",
                                        width=5,
                                        bg="green",
                                        activebackground="green",
                                        command=lambda:self.start_automatic_mode('A'))
-        self.btn_a_stop_aut = tkinter.Button(master=frm_a,
+        self.btn_a_stop_aut = tkinter.Button(master=self.frm_a,
                                              text="STOP",
                                              width=5,
                                              command=lambda:self.set_speed_step_on_axis('A', 0),
@@ -125,15 +125,15 @@ class VisualInterface(tkinter.Tk):
 
         self.lbl_a_new_pos_text = tkinter.StringVar()
         
-        lbl_a_new_pos = tkinter.Label(master=frm_a,
+        lbl_a_new_pos = tkinter.Label(master=self.frm_a,
                                       text="New position:",
                                       width=14,
                                       anchor="e")
-        self.lbl_a_new_pos_mm = tkinter.Label(master=frm_a,
+        self.lbl_a_new_pos_mm = tkinter.Label(master=self.frm_a,
                                               width=7,
                                               textvariable=self.lbl_a_new_pos_text,
                                               relief=tkinter.SUNKEN)
-        lbl_a_new_mm = tkinter.Label(master=frm_a,
+        lbl_a_new_mm = tkinter.Label(master=self.frm_a,
                                      text="mm",
                                      width=3,
                                      anchor="w")
@@ -142,7 +142,7 @@ class VisualInterface(tkinter.Tk):
         self.lbl_a_new_pos_mm.grid(row=4, column=2, padx=4, pady=4)
         lbl_a_new_mm.grid(row=4, column=3, padx=4, pady=4, sticky=tkinter.W)
 
-        frm_a_sep = tkinter.Frame(master=frm_a,
+        frm_a_sep = tkinter.Frame(master=self.frm_a,
                                   borderwidth=1,
                                   relief=tkinter.SUNKEN,
                                   height=2,
@@ -151,19 +151,19 @@ class VisualInterface(tkinter.Tk):
 
         self.lbl_a_pos_text = tkinter.StringVar()
         
-        lbl_a_pos = tkinter.Label(master=frm_a,
+        lbl_a_pos = tkinter.Label(master=self.frm_a,
                                   text="Current position:",
                                   width=18,
                                   anchor="e")
-        lbl_a_pos_mm = tkinter.Label(master=frm_a,
+        lbl_a_pos_mm = tkinter.Label(master=self.frm_a,
                                      width=7,
                                      textvariable=self.lbl_a_pos_text,
                                      relief=tkinter.SUNKEN)
-        lbl_a_mm = tkinter.Label(master=frm_a,
+        lbl_a_mm = tkinter.Label(master=self.frm_a,
                                  text="mm",
                                  width=3,
                                  anchor="w")
-        self.btn_a_copy = tkinter.Button(master=frm_a,
+        self.btn_a_copy = tkinter.Button(master=self.frm_a,
                                          text="COPY",
                                          width=5,
                                          bg="purple",
@@ -175,38 +175,38 @@ class VisualInterface(tkinter.Tk):
         lbl_a_mm.grid(row=6, column=3, padx=4, pady=4, sticky=tkinter.W)
         self.btn_a_copy.grid(row=6, column=4, padx=4, pady=4)
         
-        frm_a.grid(row=0, column=0, padx=4, pady=4)
+        self.frm_a.grid(row=0, column=0, padx=4, pady=4)
         
         # B Axis controls
-        frm_b = tkinter.LabelFrame(master=self.frm_mtr,
-                                   text="B axis")
+        self.frm_b = tkinter.LabelFrame(master=self.frm_mtr,
+                                        text="B axis")
         
         self.lbl_b_spd_text = tkinter.StringVar()
         
-        rd_b_aut = tkinter.Radiobutton(master=frm_b,
+        rd_b_aut = tkinter.Radiobutton(master=self.frm_b,
                                        text="Manual Speed control",
                                        state=tkinter.DISABLED)
-        self.btn_b_mm = tkinter.Button(master=frm_b,
+        self.btn_b_mm = tkinter.Button(master=self.frm_b,
                                        text=dec_spd_coarse_text,
                                        width=5,
                                        command=lambda:self.set_speed_step_on_axis('B', -self.spd_coarse_adjst))
-        self.btn_b_m = tkinter.Button(master=frm_b,
+        self.btn_b_m = tkinter.Button(master=self.frm_b,
                                       text=dec_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_step_on_axis('B', -self.spd_fine_adjst))
-        self.lbl_b_spd = tkinter.Label(master=frm_b,
+        self.lbl_b_spd = tkinter.Label(master=self.frm_b,
                                        width=7,
                                        textvariable=self.lbl_b_spd_text,
                                        relief=tkinter.SUNKEN)
-        self.btn_b_p = tkinter.Button(master=frm_b,
+        self.btn_b_p = tkinter.Button(master=self.frm_b,
                                       text=inc_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_step_on_axis('B', self.spd_fine_adjst))
-        self.btn_b_pp = tkinter.Button(master=frm_b,
+        self.btn_b_pp = tkinter.Button(master=self.frm_b,
                                        text=inc_spd_coarse_text,
                                        width=5,
                                        command=lambda:self.set_speed_step_on_axis('B', self.spd_coarse_adjst))
-        self.btn_b_stop = tkinter.Button(master=frm_b,
+        self.btn_b_stop = tkinter.Button(master=self.frm_b,
                                          text="STOP",
                                          width=5,
                                          bg="red",
@@ -221,38 +221,38 @@ class VisualInterface(tkinter.Tk):
         self.btn_b_pp.grid(row=1, column=4, padx=4, pady=4)
         self.btn_b_stop.grid(row=1, column=5, padx=4, pady=4)
         
-        frm_b.grid(row=1, column=0, padx=4, pady=4)
+        self.frm_b.grid(row=1, column=0, padx=4, pady=4)
         
         # C Axis controls
-        frm_c = tkinter.LabelFrame(master=self.frm_mtr,
-                                   text="C axis")
+        self.frm_c = tkinter.LabelFrame(master=self.frm_mtr,
+                                        text="C axis")
         
         self.lbl_c_spd_text = tkinter.StringVar()
         
-        rd_c_aut = tkinter.Radiobutton(master=frm_c,
+        rd_c_aut = tkinter.Radiobutton(master=self.frm_c,
                                        text="Manual Speed control",
                                        state=tkinter.DISABLED)
-        self.btn_c_mm = tkinter.Button(master=frm_c,
+        self.btn_c_mm = tkinter.Button(master=self.frm_c,
                                        text=dec_spd_coarse_text,
                                        width=5,
                                        command=lambda:self.set_speed_step_on_axis('C', -self.spd_coarse_adjst))
-        self.btn_c_m = tkinter.Button(master=frm_c,
+        self.btn_c_m = tkinter.Button(master=self.frm_c,
                                       text=dec_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_step_on_axis('C', -self.spd_fine_adjst))
-        self.lbl_c_spd = tkinter.Label(master=frm_c,
+        self.lbl_c_spd = tkinter.Label(master=self.frm_c,
                                        width=7,
                                        textvariable=self.lbl_c_spd_text,
                                        relief=tkinter.SUNKEN)
-        self.btn_c_p = tkinter.Button(master=frm_c,
+        self.btn_c_p = tkinter.Button(master=self.frm_c,
                                       text=inc_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_step_on_axis('C', self.spd_fine_adjst))
-        self.btn_c_pp = tkinter.Button(master=frm_c,
+        self.btn_c_pp = tkinter.Button(master=self.frm_c,
                                        text=inc_spd_coarse_text,
                                        width=5,
                                        command=lambda:self.set_speed_step_on_axis('C', self.spd_coarse_adjst))
-        self.btn_c_stop = tkinter.Button(master=frm_c,
+        self.btn_c_stop = tkinter.Button(master=self.frm_c,
                                          text="STOP",
                                          width=5,
                                          bg="red",
@@ -267,7 +267,7 @@ class VisualInterface(tkinter.Tk):
         self.btn_c_pp.grid(row=1, column=4, padx=4, pady=4)
         self.btn_c_stop.grid(row=1, column=5, padx=4, pady=4)
         
-        frm_c.grid(row=2, column=0, padx=4, pady=4)
+        self.frm_c.grid(row=2, column=0, padx=4, pady=4)
         
         self.frm_mtr.pack()
         
@@ -366,31 +366,14 @@ class VisualInterface(tkinter.Tk):
             pass
 
     def set_interface_mode(self, mode):
-        if mode == "A active automatic":
+        if mode == "A active":
             # enable A widgets
-            self.select_a_axis_mode('Aut')
-
-            # disable B widgets
-            self.btn_b_mm.configure(state='disabled')
-            self.btn_b_m.configure(state='disabled')
-            self.lbl_b_spd.configure(state='disabled')
-            self.btn_b_p.configure(state='disabled')
-            self.btn_b_pp.configure(state='disabled')
-            self.btn_b_stop.configure(state='disabled',
-                                      bg="gray")
-
-            # disable C widgets
-            self.btn_c_mm.configure(state='disabled')
-            self.btn_c_m.configure(state='disabled')
-            self.lbl_c_spd.configure(state='disabled')
-            self.btn_c_p.configure(state='disabled')
-            self.btn_c_pp.configure(state='disabled')
-            self.btn_c_stop.configure(state='disabled',
-                                      bg="gray")
-            
-        elif mode == "A active manual":
-            # enable A widgets
-            self.select_a_axis_mode('Man')
+            self.rd_a_man.configure(state='normal')
+            self.rd_a_aut.configure(state='normal')
+            if self.rd_a_select.get() == 'Aut':
+                self.select_a_axis_mode('Aut')
+            elif self.rd_a_select.get() == 'Man':
+                self.select_a_axis_mode('Man')
 
             # disable B widgets
             self.btn_b_mm.configure(state='disabled')
@@ -412,6 +395,8 @@ class VisualInterface(tkinter.Tk):
 
         elif mode == "B active":
             # disable A widgets
+            self.rd_a_man.configure(state='disabled')
+            self.rd_a_aut.configure(state='disabled')
             self.spn_a_stp.configure(state='disabled')
             self.btn_a_go.configure(state='disabled',
                                     bg="gray")
@@ -446,6 +431,8 @@ class VisualInterface(tkinter.Tk):
             
         elif mode == "C active":
             # disable A widgets
+            self.rd_a_man.configure(state='disabled')
+            self.rd_a_aut.configure(state='disabled')
             self.spn_a_stp.configure(state='disabled')
             self.btn_a_go.configure(state='disabled',
                                     bg="gray")
@@ -480,7 +467,12 @@ class VisualInterface(tkinter.Tk):
             
         elif mode == "none active":
             # enable A widgets
-            self.select_a_axis_mode('Man')
+            self.rd_a_man.configure(state='normal')
+            self.rd_a_aut.configure(state='normal')
+            if self.rd_a_select.get() == 'Aut':
+                self.select_a_axis_mode('Aut')
+            elif self.rd_a_select.get() == 'Man':
+                self.select_a_axis_mode('Man')
             
             # enable B widgets
             self.btn_b_mm.configure(state='normal')
@@ -727,7 +719,6 @@ class Controller:
         else:
             view.update_position_reading_on_axis("A", str(self.current_position))
             self.ts_micrometer_prev = time_stamp
-
             # Compute new output from the PID according to the systems current value
             if self.automatic_control_mode_enabled == True:
                 speed_control = self.pid_controler(self.current_position)
@@ -750,10 +741,7 @@ class Controller:
                 view.update_speed_reading_on_axis("A", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", "---%")
-                if self.automatic_control_mode_enabled == True:
-                    view.set_interface_mode("A active automatic")
-                else:
-                    view.set_interface_mode("A active manual")
+                view.set_interface_mode("A active")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_b_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
@@ -773,23 +761,16 @@ class Controller:
     def set_speed_step_on_axis(self, axis, speed_step):
         if speed_step == 0: # stop command
             motor_controller.set_speed_on_axis(axis, 0)
-            if axis == 'A': # stop controll loop
-                self.automatic_control_mode_enabled = False
-            elif axis == 'B':
-                pass
-            elif axis == 'C':
-                pass
-            else:
-                pass
+            self.automatic_control_mode_enabled = False
         else: # update current speed
             speed = self.current_speed + speed_step
             motor_controller.set_speed_on_axis(axis, speed)
 
     def start_automatic_mode(self, axis, position_step):
         # set PID setpoint
+        self.pid_controler.setpoint = self.current_position + float(position_step)
+        self.automatic_control_mode_enabled = True
         if axis == 'A': # stop controll loop
-            self.pid_controler.setpoint = self.current_position + float(position_step)
-            self.automatic_control_mode_enabled = True
             view.update_new_position_reading_on_axis("A", f"{self.pid_controler.setpoint:.2f}")
         elif axis == 'B':
             pass
