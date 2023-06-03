@@ -89,8 +89,9 @@ class VisualInterface(tkinter.Tk):
                                             value="Aut",
                                             command=lambda:self.select_a_axis_mode('Aut'))
         lbl_a_stp = tkinter.Label(master=frm_a,
-                                  text="Position step:",
-                                  width=14)
+                                  text="Step:",
+                                  width=5,
+                                  anchor="e")
         self.spn_a_stp = tkinter.Spinbox(master=frm_a,
                                          from_=-25.4,
                                          to=25.4,
@@ -100,32 +101,61 @@ class VisualInterface(tkinter.Tk):
                                          textvariable=self.spn_a_stp_text)
         lbl_a_stp_mm = tkinter.Label(master=frm_a,
                                      text="mm",
-                                     width=3)
+                                     width=3,
+                                     anchor="w")
         self.btn_a_go = tkinter.Button(master=frm_a,
                                        text="GO",
                                        width=5,
                                        bg="green",
                                        activebackground="green",
                                        command=self.start_a_automatic_mode)
+        self.btn_a_stop_aut = tkinter.Button(master=frm_a,
+                                             text="STOP",
+                                             width=5,
+                                             command=lambda:self.set_speed_on_axis('A', 0),
+                                             bg="red",
+                                             activebackground="red")
         
-        self.rd_a_aut.grid(row=2, column=0, columnspan = 6, padx=4, pady=4, sticky = tkinter.W)
-        lbl_a_stp.grid(row=3, column=0, columnspan = 2, padx=0, pady=4, sticky = tkinter.E)
+        self.rd_a_aut.grid(row=2, column=0, columnspan=6, padx=4, pady=4, sticky = tkinter.W)
+        lbl_a_stp.grid(row=3, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
         self.spn_a_stp.grid(row=3, column=2, padx=4, pady=4)
-        lbl_a_stp_mm.grid(row=3, column=3, padx=0, pady=4, sticky = tkinter.W)
+        lbl_a_stp_mm.grid(row=3, column=3, padx=4, pady=4, sticky = tkinter.W)
         self.btn_a_go.grid(row=3, column=4, padx=4, pady=4)
+        self.btn_a_stop_aut.grid(row=3, column=5, padx=4, pady=4)
+
+        self.lbl_a_new_pos_text = tkinter.StringVar()
+        
+        lbl_a_new_pos = tkinter.Label(master=frm_a,
+                                      text="New position:",
+                                      width=14,
+                                      anchor="e")
+        lbl_a_new_pos_mm = tkinter.Label(master=frm_a,
+                                         width=7,
+                                         textvariable=self.lbl_a_new_pos_text,
+                                         relief=tkinter.SUNKEN)
+        lbl_a_new_mm = tkinter.Label(master=frm_a,
+                                     text="mm",
+                                     width=3,
+                                     anchor="w")
+        
+        lbl_a_new_pos.grid(row=4, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
+        lbl_a_new_pos_mm.grid(row=4, column=2, padx=4, pady=4)
+        lbl_a_new_mm.grid(row=4, column=3, padx=4, pady=4, sticky = tkinter.W)
 
         self.lbl_a_pos_text = tkinter.StringVar()
         
         lbl_a_pos = tkinter.Label(master=frm_a,
-                                  text="Position:",
-                                  width=10)
+                                  text="Current position:",
+                                  width=18,
+                                  anchor="e")
         lbl_a_pos_mm = tkinter.Label(master=frm_a,
                                      width=7,
                                      textvariable=self.lbl_a_pos_text,
                                      relief=tkinter.SUNKEN)
         lbl_a_mm = tkinter.Label(master=frm_a,
                                  text="mm",
-                                 width=3)
+                                 width=3,
+                                 anchor="w")
         self.btn_a_copy = tkinter.Button(master=frm_a,
                                          text="COPY",
                                          width=5,
@@ -133,10 +163,10 @@ class VisualInterface(tkinter.Tk):
                                          activebackground="purple",
                                          command=self.copy_a_position)
         
-        lbl_a_pos.grid(row=4, column=0, columnspan = 2, padx=0, pady=4, sticky = tkinter.E)
-        lbl_a_pos_mm.grid(row=4, column=2, padx=4, pady=4)
-        lbl_a_mm.grid(row=4, column=3, padx=0, pady=4, sticky = tkinter.W)
-        self.btn_a_copy.grid(row=4, column=4, padx=4, pady=4)
+        lbl_a_pos.grid(row=5, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
+        lbl_a_pos_mm.grid(row=5, column=2, padx=4, pady=4)
+        lbl_a_mm.grid(row=5, column=3, padx=4, pady=4, sticky = tkinter.W)
+        self.btn_a_copy.grid(row=5, column=4, padx=4, pady=4)
         
         frm_a.grid(row=0, column=0, padx=4, pady=4)
         
