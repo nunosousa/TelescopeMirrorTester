@@ -119,7 +119,7 @@ class VisualInterface(tkinter.Tk):
         self.rd_a_aut.grid(row=2, column=0, columnspan=6, padx=4, pady=4, sticky = tkinter.W)
         lbl_a_stp.grid(row=3, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
         self.spn_a_stp.grid(row=3, column=2, padx=4, pady=4)
-        lbl_a_stp_mm.grid(row=3, column=3, padx=4, pady=4, sticky = tkinter.W)
+        lbl_a_stp_mm.grid(row=3, column=3, padx=4, pady=4, sticky=tkinter.W)
         self.btn_a_go.grid(row=3, column=4, padx=4, pady=4)
         self.btn_a_stop_aut.grid(row=3, column=5, padx=4, pady=4)
 
@@ -129,18 +129,25 @@ class VisualInterface(tkinter.Tk):
                                       text="New position:",
                                       width=14,
                                       anchor="e")
-        lbl_a_new_pos_mm = tkinter.Label(master=frm_a,
-                                         width=7,
-                                         textvariable=self.lbl_a_new_pos_text,
-                                         relief=tkinter.SUNKEN)
+        self.lbl_a_new_pos_mm = tkinter.Label(master=frm_a,
+                                              width=7,
+                                              textvariable=self.lbl_a_new_pos_text,
+                                              relief=tkinter.SUNKEN)
         lbl_a_new_mm = tkinter.Label(master=frm_a,
                                      text="mm",
                                      width=3,
                                      anchor="w")
         
         lbl_a_new_pos.grid(row=4, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
-        lbl_a_new_pos_mm.grid(row=4, column=2, padx=4, pady=4)
-        lbl_a_new_mm.grid(row=4, column=3, padx=4, pady=4, sticky = tkinter.W)
+        self.lbl_a_new_pos_mm.grid(row=4, column=2, padx=4, pady=4)
+        lbl_a_new_mm.grid(row=4, column=3, padx=4, pady=4, sticky=tkinter.W)
+
+        frm_a_sep = tkinter.Frame(master=frm_a,
+                                  borderwidth=1,
+                                  relief=tkinter.SUNKEN,
+                                  height=2,
+                                  width=430)
+        frm_a_sep.grid(row=5, column=0, columnspan=6, padx=0, pady=4)
 
         self.lbl_a_pos_text = tkinter.StringVar()
         
@@ -163,10 +170,10 @@ class VisualInterface(tkinter.Tk):
                                          activebackground="purple",
                                          command=self.copy_a_position)
         
-        lbl_a_pos.grid(row=5, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
-        lbl_a_pos_mm.grid(row=5, column=2, padx=4, pady=4)
-        lbl_a_mm.grid(row=5, column=3, padx=4, pady=4, sticky = tkinter.W)
-        self.btn_a_copy.grid(row=5, column=4, padx=4, pady=4)
+        lbl_a_pos.grid(row=6, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
+        lbl_a_pos_mm.grid(row=6, column=2, padx=4, pady=4)
+        lbl_a_mm.grid(row=6, column=3, padx=4, pady=4, sticky=tkinter.W)
+        self.btn_a_copy.grid(row=6, column=4, padx=4, pady=4)
         
         frm_a.grid(row=0, column=0, padx=4, pady=4)
         
@@ -206,7 +213,7 @@ class VisualInterface(tkinter.Tk):
                                          activebackground="red",
                                          command=lambda:self.set_speed_on_axis('B', 0))
         
-        rd_b_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky = tkinter.W)
+        rd_b_aut.grid(row=0, column=0, columnspan=5, padx=4, pady=4, sticky=tkinter.W)
         self.btn_b_mm.grid(row=1, column=0, padx=4, pady=4)
         self.btn_b_m.grid(row=1, column=1, padx=4, pady=4)
         lbl_b_spd.grid(row=1, column=2, padx=4, pady=4)
@@ -252,7 +259,7 @@ class VisualInterface(tkinter.Tk):
                                          activebackground="red",
                                          command=lambda:self.set_speed_on_axis('C', 0))
         
-        rd_c_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky = tkinter.W)
+        rd_c_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky=tkinter.W)
         self.btn_c_mm.grid(row=1, column=0, padx=4, pady=4)
         self.btn_c_m.grid(row=1, column=1, padx=4, pady=4)
         lbl_c_spd.grid(row=1, column=2, padx=4, pady=4)
@@ -280,11 +287,13 @@ class VisualInterface(tkinter.Tk):
 
     def select_a_axis_mode(self, mode):
         if mode == 'Man':
-            # Enable manual mode widgets
+            # Disable automatic mode widgets
             self.spn_a_stp.configure(state='disabled')
             self.btn_a_go.configure(state='disabled')
+            self.btn_a_stop_aut.configure(state='disabled')
+            self.lbl_a_new_pos_mm.configure(state='disabled')
 
-            # Disable automatic mode widgets
+            # Enable manual mode widgets
             self.btn_a_mm.configure(state='normal')
             self.btn_a_m.configure(state='normal')
             self.btn_a_p.configure(state='normal')
@@ -292,16 +301,18 @@ class VisualInterface(tkinter.Tk):
             self.btn_a_stop.configure(state='normal')
 
         else:
-            # Enable automatic mode widgets
+            # Disable manual mode widgets
             self.btn_a_mm.configure(state='disabled')
             self.btn_a_m.configure(state='disabled')
             self.btn_a_p.configure(state='disabled')
             self.btn_a_pp.configure(state='disabled')
             self.btn_a_stop.configure(state='disabled')
 
-            # Disable manual mode widgets
+            # Enable automatic mode widgets
             self.spn_a_stp.configure(state='normal')
             self.btn_a_go.configure(state='normal')
+            self.btn_a_stop_aut.configure(state='normal')
+            self.lbl_a_new_pos_mm.configure(state='normal')
 
     def set_controller(self, controller):
         self.controller = controller
