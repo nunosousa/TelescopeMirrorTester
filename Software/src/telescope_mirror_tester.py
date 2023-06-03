@@ -53,7 +53,7 @@ class VisualInterface(tkinter.Tk):
                                       text=dec_spd_fine_text,
                                       width=5,
                                       command=lambda:self.set_speed_on_axis('A', -self.spd_fine_adjst))
-        lbl_a_spd = tkinter.Label(master=frm_a,
+        self.lbl_a_spd = tkinter.Label(master=frm_a,
                                   width=7,
                                   textvariable=self.lbl_a_spd_text,
                                   relief=tkinter.SUNKEN)
@@ -72,10 +72,10 @@ class VisualInterface(tkinter.Tk):
                                          bg="red",
                                          activebackground="red")
         
-        self.rd_a_man.grid(row=0, column=0, columnspan = 6, padx=4, pady=4, sticky = tkinter.W)
+        self.rd_a_man.grid(row=0, column=0, columnspan = 6, padx=4, pady=4, sticky=tkinter.W)
         self.btn_a_mm.grid(row=1, column=0, padx=4, pady=4)
         self.btn_a_m.grid(row=1, column=1, padx=4, pady=4)
-        lbl_a_spd.grid(row=1, column=2, padx=4, pady=4)
+        self.lbl_a_spd.grid(row=1, column=2, padx=4, pady=4)
         self.btn_a_p.grid(row=1, column=3, padx=4, pady=4)
         self.btn_a_pp.grid(row=1, column=4, padx=4, pady=4)
         self.btn_a_stop.grid(row=1, column=5, padx=4, pady=4)
@@ -146,7 +146,7 @@ class VisualInterface(tkinter.Tk):
                                   borderwidth=1,
                                   relief=tkinter.SUNKEN,
                                   height=2,
-                                  width=430)
+                                  width=400)
         frm_a_sep.grid(row=5, column=0, columnspan=6, padx=0, pady=4)
 
         self.lbl_a_pos_text = tkinter.StringVar()
@@ -289,29 +289,37 @@ class VisualInterface(tkinter.Tk):
         if mode == 'Man':
             # Disable automatic mode widgets
             self.spn_a_stp.configure(state='disabled')
-            self.btn_a_go.configure(state='disabled')
-            self.btn_a_stop_aut.configure(state='disabled')
+            self.btn_a_go.configure(state='disabled',
+                                    bg="gray")
+            self.btn_a_stop_aut.configure(state='disabled',
+                                          bg="gray")
             self.lbl_a_new_pos_mm.configure(state='disabled')
 
             # Enable manual mode widgets
             self.btn_a_mm.configure(state='normal')
             self.btn_a_m.configure(state='normal')
+            self.lbl_a_spd.configure(state='normal')
             self.btn_a_p.configure(state='normal')
             self.btn_a_pp.configure(state='normal')
-            self.btn_a_stop.configure(state='normal')
+            self.btn_a_stop.configure(state='normal',
+                                      bg="red")
 
         else:
             # Disable manual mode widgets
             self.btn_a_mm.configure(state='disabled')
             self.btn_a_m.configure(state='disabled')
+            self.lbl_a_spd.configure(state='disabled')
             self.btn_a_p.configure(state='disabled')
             self.btn_a_pp.configure(state='disabled')
-            self.btn_a_stop.configure(state='disabled')
+            self.btn_a_stop.configure(state='disabled',
+                                      bg="gray")
 
             # Enable automatic mode widgets
             self.spn_a_stp.configure(state='normal')
-            self.btn_a_go.configure(state='normal')
-            self.btn_a_stop_aut.configure(state='normal')
+            self.btn_a_go.configure(state='normal',
+                                    bg="green")
+            self.btn_a_stop_aut.configure(state='normal',
+                                          bg="red")
             self.lbl_a_new_pos_mm.configure(state='normal')
 
     def set_controller(self, controller):
@@ -348,6 +356,24 @@ class VisualInterface(tkinter.Tk):
     def update_position_reading_on_axis(self, axis, pos_value):
         if axis == "A":
             self.lbl_a_pos_text.set(pos_value)
+        else:
+            pass
+
+    def update_new_position_reading_on_axis(self, axis, pos_value):
+        if axis == "A":
+            self.lbl_a_new_pos_text.set(pos_value)
+        else:
+            pass
+
+    def set_interface_mode(self, mode):
+        if mode == "A active":
+            pass
+        elif mode == "B active":
+            pass
+        elif mode == "C active":
+            pass
+        elif mode == "none active":
+            pass
         else:
             pass
     
@@ -545,6 +571,7 @@ class Controller:
 
         self.current_speed = 0
         self.current_position = 0.0
+        self.new_position = 0.0
 
         self.ts_micrometer_prev = time.time()
         self.ts_motor_speed_prev = time.time()
@@ -553,6 +580,7 @@ class Controller:
         view.update_speed_reading_on_axis("B", "---%")
         view.update_speed_reading_on_axis("C", "---%")
         view.update_position_reading_on_axis("A", "--.--")
+        view.update_new_position_reading_on_axis("A", "--.--")
 
         motor_controller.run_monitor()
         micrometer_readings.run_monitor()
@@ -566,8 +594,10 @@ class Controller:
             self.current_position = micrometer_readings.position_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_micrometer_prev > 0.5:
-                # tbd: position gone stale, assume it is zero and stop control loop if applicable
+                # position gone stale, assume it is zero and stop control loop if applicable
+                self.auto_position_control_enabled == False
                 view.update_position_reading_on_axis("A", "--.--")
+                view.update_new_position_reading_on_axis("A", "--.--")
         else:
             view.update_position_reading_on_axis("A", str(self.current_position))
             self.ts_micrometer_prev = time_stamp
@@ -576,8 +606,8 @@ class Controller:
             speed_control = self.pid_controler(self.current_position)
             if self.auto_position_control_enabled == True:
                 motor_controller.set_speed_on_axis('A', speed_control)
+                #debug!!
                 print(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
-                #print(self.pid_controler.components)
 
         # update motor speed readings
         try:
@@ -610,19 +640,16 @@ class Controller:
     def set_speed_on_axis(self, axis, speed_step):
         if speed_step == 0: # stop command
             motor_controller.set_speed_on_axis(axis, 0)
+            if axis == 'A': # stop controll loop
+                self.auto_position_control_enabled == False
         else: # update current speed
             motor_controller.set_speed_on_axis(axis, self.current_speed + speed_step)
 
     def start_a_automatic_mode(self, position_step):
-        # tbd: tell gui to disable controls before staring control loop
-
         # set PID setpoint
         self.pid_controler.setpoint = self.current_position + float(position_step)
         self.auto_position_control_enabled = True
-
-        print(f"start_a_automatic_mode with step {position_step}")
-
-        # tbd: tell gui to enable controls after ending control loop
+        view.update_new_position_reading_on_axis("A", f"{self.pid_controler.setpoint:.2f}")
 
 
 def find_serial_device(vid, pid, serial_number):
