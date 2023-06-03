@@ -48,11 +48,11 @@ class VisualInterface(tkinter.Tk):
         self.btn_a_mm = tkinter.Button(master=frm_a,
                                        text=dec_spd_coarse_text,
                                        width=5,
-                                       command=lambda:self.set_speed_on_axis('A', -self.spd_coarse_adjst))
+                                       command=lambda:self.set_speed_step_on_axis('A', -self.spd_coarse_adjst))
         self.btn_a_m = tkinter.Button(master=frm_a,
                                       text=dec_spd_fine_text,
                                       width=5,
-                                      command=lambda:self.set_speed_on_axis('A', -self.spd_fine_adjst))
+                                      command=lambda:self.set_speed_step_on_axis('A', -self.spd_fine_adjst))
         self.lbl_a_spd = tkinter.Label(master=frm_a,
                                   width=7,
                                   textvariable=self.lbl_a_spd_text,
@@ -60,15 +60,15 @@ class VisualInterface(tkinter.Tk):
         self.btn_a_p = tkinter.Button(master=frm_a,
                                       text=inc_spd_fine_text,
                                       width=5,
-                                      command=lambda:self.set_speed_on_axis('A', self.spd_fine_adjst))
+                                      command=lambda:self.set_speed_step_on_axis('A', self.spd_fine_adjst))
         self.btn_a_pp = tkinter.Button(master=frm_a,
                                        text=inc_spd_coarse_text,
                                        width=5,
-                                       command=lambda:self.set_speed_on_axis('A', self.spd_coarse_adjst))
+                                       command=lambda:self.set_speed_step_on_axis('A', self.spd_coarse_adjst))
         self.btn_a_stop = tkinter.Button(master=frm_a,
                                          text="STOP",
                                          width=5,
-                                         command=lambda:self.set_speed_on_axis('A', 0),
+                                         command=lambda:self.set_speed_step_on_axis('A', 0),
                                          bg="red",
                                          activebackground="red")
         
@@ -108,11 +108,11 @@ class VisualInterface(tkinter.Tk):
                                        width=5,
                                        bg="green",
                                        activebackground="green",
-                                       command=self.start_a_automatic_mode)
+                                       command=lambda:self.start_automatic_mode('A'))
         self.btn_a_stop_aut = tkinter.Button(master=frm_a,
                                              text="STOP",
                                              width=5,
-                                             command=lambda:self.set_speed_on_axis('A', 0),
+                                             command=lambda:self.set_speed_step_on_axis('A', 0),
                                              bg="red",
                                              activebackground="red")
         
@@ -189,34 +189,34 @@ class VisualInterface(tkinter.Tk):
         self.btn_b_mm = tkinter.Button(master=frm_b,
                                        text=dec_spd_coarse_text,
                                        width=5,
-                                       command=lambda:self.set_speed_on_axis('B', -self.spd_coarse_adjst))
+                                       command=lambda:self.set_speed_step_on_axis('B', -self.spd_coarse_adjst))
         self.btn_b_m = tkinter.Button(master=frm_b,
                                       text=dec_spd_fine_text,
                                       width=5,
-                                      command=lambda:self.set_speed_on_axis('B', -self.spd_fine_adjst))
-        lbl_b_spd = tkinter.Label(master=frm_b,
-                                  width=7,
-                                  textvariable=self.lbl_b_spd_text,
-                                  relief=tkinter.SUNKEN)
+                                      command=lambda:self.set_speed_step_on_axis('B', -self.spd_fine_adjst))
+        self.lbl_b_spd = tkinter.Label(master=frm_b,
+                                       width=7,
+                                       textvariable=self.lbl_b_spd_text,
+                                       relief=tkinter.SUNKEN)
         self.btn_b_p = tkinter.Button(master=frm_b,
                                       text=inc_spd_fine_text,
                                       width=5,
-                                      command=lambda:self.set_speed_on_axis('B', self.spd_fine_adjst))
+                                      command=lambda:self.set_speed_step_on_axis('B', self.spd_fine_adjst))
         self.btn_b_pp = tkinter.Button(master=frm_b,
                                        text=inc_spd_coarse_text,
                                        width=5,
-                                       command=lambda:self.set_speed_on_axis('B', self.spd_coarse_adjst))
+                                       command=lambda:self.set_speed_step_on_axis('B', self.spd_coarse_adjst))
         self.btn_b_stop = tkinter.Button(master=frm_b,
                                          text="STOP",
                                          width=5,
                                          bg="red",
                                          activebackground="red",
-                                         command=lambda:self.set_speed_on_axis('B', 0))
+                                         command=lambda:self.set_speed_step_on_axis('B', 0))
         
         rd_b_aut.grid(row=0, column=0, columnspan=5, padx=4, pady=4, sticky=tkinter.W)
         self.btn_b_mm.grid(row=1, column=0, padx=4, pady=4)
         self.btn_b_m.grid(row=1, column=1, padx=4, pady=4)
-        lbl_b_spd.grid(row=1, column=2, padx=4, pady=4)
+        self.lbl_b_spd.grid(row=1, column=2, padx=4, pady=4)
         self.btn_b_p.grid(row=1, column=3, padx=4, pady=4)
         self.btn_b_pp.grid(row=1, column=4, padx=4, pady=4)
         self.btn_b_stop.grid(row=1, column=5, padx=4, pady=4)
@@ -235,34 +235,34 @@ class VisualInterface(tkinter.Tk):
         self.btn_c_mm = tkinter.Button(master=frm_c,
                                        text=dec_spd_coarse_text,
                                        width=5,
-                                       command=lambda:self.set_speed_on_axis('C', -self.spd_coarse_adjst))
+                                       command=lambda:self.set_speed_step_on_axis('C', -self.spd_coarse_adjst))
         self.btn_c_m = tkinter.Button(master=frm_c,
                                       text=dec_spd_fine_text,
                                       width=5,
-                                      command=lambda:self.set_speed_on_axis('C', -self.spd_fine_adjst))
-        lbl_c_spd = tkinter.Label(master=frm_c,
-                                  width=7,
-                                  textvariable=self.lbl_c_spd_text,
-                                  relief=tkinter.SUNKEN)
+                                      command=lambda:self.set_speed_step_on_axis('C', -self.spd_fine_adjst))
+        self.lbl_c_spd = tkinter.Label(master=frm_c,
+                                       width=7,
+                                       textvariable=self.lbl_c_spd_text,
+                                       relief=tkinter.SUNKEN)
         self.btn_c_p = tkinter.Button(master=frm_c,
                                       text=inc_spd_fine_text,
                                       width=5,
-                                      command=lambda:self.set_speed_on_axis('C', self.spd_fine_adjst))
+                                      command=lambda:self.set_speed_step_on_axis('C', self.spd_fine_adjst))
         self.btn_c_pp = tkinter.Button(master=frm_c,
                                        text=inc_spd_coarse_text,
                                        width=5,
-                                       command=lambda:self.set_speed_on_axis('C', self.spd_coarse_adjst))
+                                       command=lambda:self.set_speed_step_on_axis('C', self.spd_coarse_adjst))
         self.btn_c_stop = tkinter.Button(master=frm_c,
                                          text="STOP",
                                          width=5,
                                          bg="red",
                                          activebackground="red",
-                                         command=lambda:self.set_speed_on_axis('C', 0))
+                                         command=lambda:self.set_speed_step_on_axis('C', 0))
         
         rd_c_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky=tkinter.W)
         self.btn_c_mm.grid(row=1, column=0, padx=4, pady=4)
         self.btn_c_m.grid(row=1, column=1, padx=4, pady=4)
-        lbl_c_spd.grid(row=1, column=2, padx=4, pady=4)
+        self.lbl_c_spd.grid(row=1, column=2, padx=4, pady=4)
         self.btn_c_p.grid(row=1, column=3, padx=4, pady=4)
         self.btn_c_pp.grid(row=1, column=4, padx=4, pady=4)
         self.btn_c_stop.grid(row=1, column=5, padx=4, pady=4)
@@ -331,13 +331,13 @@ class VisualInterface(tkinter.Tk):
 
         self.after(self.readings_update_period, self.after_callback)
 
-    def set_speed_on_axis(self, axis, spd_step):
+    def set_speed_step_on_axis(self, axis, spd_step):
         if self.controller:
-            self.controller.set_speed_on_axis(axis, spd_step)
+            self.controller.set_speed_step_on_axis(axis, spd_step)
 
-    def start_a_automatic_mode(self):
+    def start_automatic_mode(self, axis):
         if self.controller:
-            self.controller.start_a_automatic_mode(self.spn_a_stp_text.get())
+            self.controller.start_automatic_mode(axis, self.spn_a_stp_text.get())
 
     def copy_a_position(self):
         self.clipboard_clear()
@@ -366,14 +366,139 @@ class VisualInterface(tkinter.Tk):
             pass
 
     def set_interface_mode(self, mode):
-        if mode == "A active":
-            pass
+        if mode == "A active automatic":
+            # enable A widgets
+            self.select_a_axis_mode('Aut')
+
+            # disable B widgets
+            self.btn_b_mm.configure(state='disabled')
+            self.btn_b_m.configure(state='disabled')
+            self.lbl_b_spd.configure(state='disabled')
+            self.btn_b_p.configure(state='disabled')
+            self.btn_b_pp.configure(state='disabled')
+            self.btn_b_stop.configure(state='disabled',
+                                      bg="gray")
+
+            # disable C widgets
+            self.btn_c_mm.configure(state='disabled')
+            self.btn_c_m.configure(state='disabled')
+            self.lbl_c_spd.configure(state='disabled')
+            self.btn_c_p.configure(state='disabled')
+            self.btn_c_pp.configure(state='disabled')
+            self.btn_c_stop.configure(state='disabled',
+                                      bg="gray")
+            
+        elif mode == "A active manual":
+            # enable A widgets
+            self.select_a_axis_mode('Man')
+
+            # disable B widgets
+            self.btn_b_mm.configure(state='disabled')
+            self.btn_b_m.configure(state='disabled')
+            self.lbl_b_spd.configure(state='disabled')
+            self.btn_b_p.configure(state='disabled')
+            self.btn_b_pp.configure(state='disabled')
+            self.btn_b_stop.configure(state='disabled',
+                                      bg="gray")
+
+            # disable C widgets
+            self.btn_c_mm.configure(state='disabled')
+            self.btn_c_m.configure(state='disabled')
+            self.lbl_c_spd.configure(state='disabled')
+            self.btn_c_p.configure(state='disabled')
+            self.btn_c_pp.configure(state='disabled')
+            self.btn_c_stop.configure(state='disabled',
+                                      bg="gray")
+
         elif mode == "B active":
-            pass
+            # disable A widgets
+            self.spn_a_stp.configure(state='disabled')
+            self.btn_a_go.configure(state='disabled',
+                                    bg="gray")
+            self.btn_a_stop_aut.configure(state='disabled',
+                                          bg="gray")
+            self.lbl_a_new_pos_mm.configure(state='disabled')
+            self.btn_a_mm.configure(state='disabled')
+            self.btn_a_m.configure(state='disabled')
+            self.lbl_a_spd.configure(state='disabled')
+            self.btn_a_p.configure(state='disabled')
+            self.btn_a_pp.configure(state='disabled')
+            self.btn_a_stop.configure(state='disabled',
+                                      bg="gray")
+            
+            # enable B widgets
+            self.btn_b_mm.configure(state='normal')
+            self.btn_b_m.configure(state='normal')
+            self.lbl_b_spd.configure(state='normal')
+            self.btn_b_p.configure(state='normal')
+            self.btn_b_pp.configure(state='normal')
+            self.btn_b_stop.configure(state='normal',
+                                      bg="red")
+
+            # disable C widgets
+            self.btn_c_mm.configure(state='disabled')
+            self.btn_c_m.configure(state='disabled')
+            self.lbl_c_spd.configure(state='disabled')
+            self.btn_c_p.configure(state='disabled')
+            self.btn_c_pp.configure(state='disabled')
+            self.btn_c_stop.configure(state='disabled',
+                                      bg="gray")
+            
         elif mode == "C active":
-            pass
+            # disable A widgets
+            self.spn_a_stp.configure(state='disabled')
+            self.btn_a_go.configure(state='disabled',
+                                    bg="gray")
+            self.btn_a_stop_aut.configure(state='disabled',
+                                          bg="gray")
+            self.lbl_a_new_pos_mm.configure(state='disabled')
+            self.btn_a_mm.configure(state='disabled')
+            self.btn_a_m.configure(state='disabled')
+            self.lbl_a_spd.configure(state='disabled')
+            self.btn_a_p.configure(state='disabled')
+            self.btn_a_pp.configure(state='disabled')
+            self.btn_a_stop.configure(state='disabled',
+                                      bg="gray")
+            
+            # disable B widgets
+            self.btn_b_mm.configure(state='disabled')
+            self.btn_b_m.configure(state='disabled')
+            self.lbl_b_spd.configure(state='disabled')
+            self.btn_b_p.configure(state='disabled')
+            self.btn_b_pp.configure(state='disabled')
+            self.btn_b_stop.configure(state='disabled',
+                                      bg="gray")
+
+            # enable C widgets
+            self.btn_c_mm.configure(state='normal')
+            self.btn_c_m.configure(state='normal')
+            self.lbl_c_spd.configure(state='normal')
+            self.btn_c_p.configure(state='normal')
+            self.btn_c_pp.configure(state='normal')
+            self.btn_c_stop.configure(state='normal',
+                                      bg="red")
+            
         elif mode == "none active":
-            pass
+            # enable A widgets
+            self.select_a_axis_mode('Man')
+            
+            # enable B widgets
+            self.btn_b_mm.configure(state='normal')
+            self.btn_b_m.configure(state='normal')
+            self.lbl_b_spd.configure(state='normal')
+            self.btn_b_p.configure(state='normal')
+            self.btn_b_pp.configure(state='normal')
+            self.btn_b_stop.configure(state='normal',
+                                      bg="red")
+
+            # enable C widgets
+            self.btn_c_mm.configure(state='normal')
+            self.btn_c_m.configure(state='normal')
+            self.lbl_c_spd.configure(state='normal')
+            self.btn_c_p.configure(state='normal')
+            self.btn_c_pp.configure(state='normal')
+            self.btn_c_stop.configure(state='normal',
+                                      bg="red")
         else:
             pass
     
@@ -556,6 +681,14 @@ class MicrometerInterface(serial.Serial):
 
 class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
+        # set internal state variables
+        self.automatic_control_mode_enabled = False
+        self.current_speed = 0
+        self.current_position = 0.0
+        self.new_position = 0.0
+        self.ts_micrometer_prev = time.time()
+        self.ts_motor_speed_prev = time.time()
+
         # setup PID controler
         self.pid_controler = simple_pid.PID()
         self.pid_controler.Kp = 400
@@ -567,21 +700,14 @@ class Controller:
         self.pid_controler.output_limits = (0, 25)
         #self.pid_controler.starting_output = 16.0
 
-        self.auto_position_control_enabled = False
-
-        self.current_speed = 0
-        self.current_position = 0.0
-        self.new_position = 0.0
-
-        self.ts_micrometer_prev = time.time()
-        self.ts_motor_speed_prev = time.time()
-
+        # set visual interface initial configuration
         view.update_speed_reading_on_axis("A", "---%")
         view.update_speed_reading_on_axis("B", "---%")
         view.update_speed_reading_on_axis("C", "---%")
         view.update_position_reading_on_axis("A", "--.--")
         view.update_new_position_reading_on_axis("A", "--.--")
 
+        # start serial interfaces
         motor_controller.run_monitor()
         micrometer_readings.run_monitor()
 
@@ -589,13 +715,13 @@ class Controller:
         # get current timestamp
         time_stamp = time.time()
 
-        # update micrometer reading
+        # update axis A micrometer reading
         try:
             self.current_position = micrometer_readings.position_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_micrometer_prev > 0.5:
                 # position gone stale, assume it is zero and stop control loop if applicable
-                self.auto_position_control_enabled == False
+                self.automatic_control_mode_enabled = False
                 view.update_position_reading_on_axis("A", "--.--")
                 view.update_new_position_reading_on_axis("A", "--.--")
         else:
@@ -603,8 +729,8 @@ class Controller:
             self.ts_micrometer_prev = time_stamp
 
             # Compute new output from the PID according to the systems current value
-            speed_control = self.pid_controler(self.current_position)
-            if self.auto_position_control_enabled == True:
+            if self.automatic_control_mode_enabled == True:
+                speed_control = self.pid_controler(self.current_position)
                 motor_controller.set_speed_on_axis('A', speed_control)
                 #debug!!
                 print(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
@@ -618,38 +744,59 @@ class Controller:
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", "---%")
+                view.set_interface_mode("none active")
         else:
             if motor_controller.motor_a_active.is_set():
                 view.update_speed_reading_on_axis("A", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", "---%")
+                if self.automatic_control_mode_enabled == True:
+                    view.set_interface_mode("A active automatic")
+                else:
+                    view.set_interface_mode("A active manual")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_b_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("C", "---%")
+                view.set_interface_mode("B active")
                 self.ts_motor_speed_prev = time_stamp
             elif motor_controller.motor_c_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", str(self.current_speed) + "%")
+                view.set_interface_mode("C active")
                 self.ts_motor_speed_prev = time_stamp
             else:
                 pass
 
-    def set_speed_on_axis(self, axis, speed_step):
+    def set_speed_step_on_axis(self, axis, speed_step):
         if speed_step == 0: # stop command
             motor_controller.set_speed_on_axis(axis, 0)
             if axis == 'A': # stop controll loop
-                self.auto_position_control_enabled == False
+                self.automatic_control_mode_enabled = False
+            elif axis == 'B':
+                pass
+            elif axis == 'C':
+                pass
+            else:
+                pass
         else: # update current speed
-            motor_controller.set_speed_on_axis(axis, self.current_speed + speed_step)
+            speed = self.current_speed + speed_step
+            motor_controller.set_speed_on_axis(axis, speed)
 
-    def start_a_automatic_mode(self, position_step):
+    def start_automatic_mode(self, axis, position_step):
         # set PID setpoint
-        self.pid_controler.setpoint = self.current_position + float(position_step)
-        self.auto_position_control_enabled = True
-        view.update_new_position_reading_on_axis("A", f"{self.pid_controler.setpoint:.2f}")
+        if axis == 'A': # stop controll loop
+            self.pid_controler.setpoint = self.current_position + float(position_step)
+            self.automatic_control_mode_enabled = True
+            view.update_new_position_reading_on_axis("A", f"{self.pid_controler.setpoint:.2f}")
+        elif axis == 'B':
+            pass
+        elif axis == 'C':
+            pass
+        else:
+            pass
 
 
 def find_serial_device(vid, pid, serial_number):
