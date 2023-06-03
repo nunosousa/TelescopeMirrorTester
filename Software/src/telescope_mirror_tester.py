@@ -368,12 +368,14 @@ class VisualInterface(tkinter.Tk):
     def set_interface_mode(self, mode):
         if mode == "A active":
             # enable A widgets
-            self.rd_a_man.configure(state='normal')
-            self.rd_a_aut.configure(state='normal')
             if self.rd_a_select.get() == 'Aut':
                 self.select_a_axis_mode('Aut')
+                self.rd_a_man.configure(state='disabled')
+                self.rd_a_aut.configure(state='normal')
             elif self.rd_a_select.get() == 'Man':
                 self.select_a_axis_mode('Man')
+                self.rd_a_man.configure(state='normal')
+                self.rd_a_aut.configure(state='disabled')
 
             # disable B widgets
             self.btn_b_mm.configure(state='disabled')
@@ -583,6 +585,8 @@ class MotorControllerInterface(serial.Serial):
         self.monitor.start()
 
     def set_motor_speed(self, axis, speed):
+        speed = int(speed)
+
         # validate inputs
         if axis != 'A' and axis != 'B' and axis != 'C':
             return
@@ -756,7 +760,10 @@ class Controller:
                 view.set_interface_mode("C active")
                 self.ts_motor_speed_prev = time_stamp
             else:
-                pass
+                print("rrrrrrr")
+                view.set_interface_mode("none active")
+                self.automatic_control_mode_enabled = False
+                print("rrrrrrr")
 
     def set_speed_step_on_axis(self, axis, speed_step):
         if speed_step == 0: # stop command
