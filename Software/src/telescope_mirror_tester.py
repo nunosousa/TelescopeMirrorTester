@@ -6,7 +6,6 @@ import queue
 import time
 import simple_pid
 
-
 #sudo chmod 666 /dev/ttyUSB0
 #sudo chmod 666 /dev/ttyUSB1
 
@@ -116,7 +115,7 @@ class VisualInterface(tkinter.Tk):
                                              bg="red",
                                              activebackground="red")
         
-        self.rd_a_aut.grid(row=2, column=0, columnspan=6, padx=4, pady=4, sticky = tkinter.W)
+        self.rd_a_aut.grid(row=2, column=0, columnspan=6, padx=4, pady=4, sticky=tkinter.W)
         lbl_a_stp.grid(row=3, column=0, columnspan=2, padx=4, pady=4, sticky=tkinter.E)
         self.spn_a_stp.grid(row=3, column=2, padx=4, pady=4)
         lbl_a_stp_mm.grid(row=3, column=3, padx=4, pady=4, sticky=tkinter.W)
@@ -259,7 +258,7 @@ class VisualInterface(tkinter.Tk):
                                          activebackground="red",
                                          command=lambda:self.set_speed_step_on_axis('C', 0))
         
-        rd_c_aut.grid(row=0, column=0, columnspan = 5, padx=4, pady=4, sticky=tkinter.W)
+        rd_c_aut.grid(row=0, column=0, columnspan=5, padx=4, pady=4, sticky=tkinter.W)
         self.btn_c_mm.grid(row=1, column=0, padx=4, pady=4)
         self.btn_c_m.grid(row=1, column=1, padx=4, pady=4)
         self.lbl_c_spd.grid(row=1, column=2, padx=4, pady=4)
@@ -543,7 +542,7 @@ class MotorControllerInterface(serial.Serial):
     def get_motor_speed(self):
         # monitor active motor speed
         while True:
-            time.sleep(0.2)
+            time.sleep(0.05)
 
             if self.motor_a_active.is_set():
                 command = b'getSpeed A\r\n'
@@ -585,7 +584,8 @@ class MotorControllerInterface(serial.Serial):
         self.monitor.start()
 
     def set_motor_speed(self, axis, speed):
-        speed = int(speed)
+        # get an integer representation of speed
+        speed = int(round(speed))
 
         # validate inputs
         if axis != 'A' and axis != 'B' and axis != 'C':
@@ -760,10 +760,8 @@ class Controller:
                 view.set_interface_mode("C active")
                 self.ts_motor_speed_prev = time_stamp
             else:
-                print("rrrrrrr")
                 view.set_interface_mode("none active")
                 self.automatic_control_mode_enabled = False
-                print("rrrrrrr")
 
     def set_speed_step_on_axis(self, axis, speed_step):
         if speed_step == 0: # stop command
