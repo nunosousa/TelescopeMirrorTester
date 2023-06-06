@@ -542,7 +542,7 @@ class MotorControllerInterface(serial.Serial):
     def get_motor_speed(self):
         # monitor active motor speed
         while True:
-            time.sleep(0.05)
+            time.sleep(0.02)
 
             if self.motor_a_active.is_set():
                 command = b'getSpeed A\r\n'
