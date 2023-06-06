@@ -687,13 +687,13 @@ class Controller:
 
         # setup PID controler
         self.pid_controler = simple_pid.PID()
-        self.pid_controler.Kp = 400
-        self.pid_controler.Ki = 0
-        self.pid_controler.Kd = 0
+        self.pid_controler.Kp = 200
+        self.pid_controler.Ki = 10
+        self.pid_controler.Kd = 40
         self.pid_controler.proportional_on_measurement = False
         self.pid_controler.differential_on_measurement = False
         self.pid_controler.sample_time = 0.015
-        self.pid_controler.output_limits = (0, 25)
+        self.max_abs_output = 25
         #self.pid_controler.starting_output = 16.0
 
         # set visual interface initial configuration
@@ -772,6 +772,14 @@ class Controller:
             motor_controller.set_speed_on_axis(axis, speed)
 
     def start_automatic_mode(self, axis, position_step):
+        position_step = float(position_step)
+
+        # adjust controll output boundaries
+        if position_step > 0:
+            self.pid_controler.output_limits = (0, self.max_abs_output)
+        else:
+            self.pid_controler.output_limits = (-self.max_abs_output, 0)
+
         # set PID setpoint
         self.pid_controler.setpoint = self.current_position + float(position_step)
         self.automatic_control_mode_enabled = True
