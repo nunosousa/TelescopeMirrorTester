@@ -10,21 +10,19 @@ import logging
 #sudo chmod 666 /dev/ttyUSB0
 #sudo chmod 666 /dev/ttyUSB1
 
-# constants - Serial interface
-POSITION_UPDATE_PERIOD = 0.01 # seconds
-MOTOR_SPEED_UPDATE_PERIOD = 0.01 # seconds
-
 # constants - Visual interface
-GUI_REFRESH_PERIOD = int(max(POSITION_UPDATE_PERIOD, MOTOR_SPEED_UPDATE_PERIOD)*1000) # milliseconds
+GUI_REFRESH_PERIOD = 120 # milliseconds
+
+# constants - Serial interface
+MOTOR_SPEED_UPDATE_PERIOD = GUI_REFRESH_PERIOD/1000 # seconds
 
 # constants - Stale data threshold
 STALE_TIME_TRHESHOLD = 0.5 # seconds
 
 # constants - PID
-KP_CONSTANT = 200
+KP_CONSTANT = 400
 KD_CONSTANT = 0
 KI_CONSTANT = 0
-PID_SAMPLE_TIME = max(POSITION_UPDATE_PERIOD, MOTOR_SPEED_UPDATE_PERIOD)
 
 
 class VisualInterface(tkinter.Tk):
@@ -593,7 +591,7 @@ class MotorControllerInterface(serial.Serial):
                     speed = speed * direction
                     self.speed_data.put(speed) # put speed data on queue
 
-                    logging.info(f'Time: {time.time():.4f}, Motor speed actual: {speed}')
+                    #logging.info(f'Time: {time.time():.4f}, Motor speed actual: {speed}')
                     
                     # update motor activity
                     if speed == 0:
@@ -646,7 +644,7 @@ class MotorControllerInterface(serial.Serial):
             self.motor_b_active.clear()
             self.motor_c_active.clear()
         
-        logging.info(f'Time: {time.time():.4f}, Motor speed command: {speed}')
+        #logging.info(f'Time: {time.time():.4f}, Motor speed command: {speed}')
 
 
 class MicrometerInterface(serial.Serial):
@@ -679,8 +677,6 @@ class MicrometerInterface(serial.Serial):
 
     def process_micrometer_readings(self):
         while True:
-            time.sleep(POSITION_UPDATE_PERIOD)
-
             # the expected messages end in \r\x12
             value = self.read_until(b'\r\x12')
             
@@ -700,7 +696,7 @@ class MicrometerInterface(serial.Serial):
                 # put received data on queue
                 self.position_data.put(decoded_float)
                 
-                logging.info(f'Time: {time.time():.4f}, Position {decoded_float}')
+                #logging.info(f'Time: {time.time():.4f}, Position {decoded_float}')
 
 
 class Controller:
@@ -720,7 +716,7 @@ class Controller:
         self.pid_controler.Kd = KD_CONSTANT
         self.pid_controler.proportional_on_measurement = False
         self.pid_controler.differential_on_measurement = False
-        self.pid_controler.sample_time = PID_SAMPLE_TIME
+        self.pid_controler.sample_time = None
         self.max_abs_output = 25
         #self.pid_controler.starting_output = 16.0
 
@@ -756,7 +752,7 @@ class Controller:
                 speed_control = self.pid_controler(self.current_position)
                 motor_controller.set_speed_on_axis('A', speed_control)
                 
-                logging.info(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
+                logging.debug(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
 
         # update motor speed readings
         try:
@@ -858,6 +854,7 @@ if __name__ == '__main__':
     # set the controller to view
     view.set_controller(controller)
 
-    logging.getLogger().setLevel(logging.INFO)
+    #logging.getLogger().setLevel(logging.INFO)
+    logging.getLogger().setLevel(logging.DEBUG)
 
     view.mainloop()
