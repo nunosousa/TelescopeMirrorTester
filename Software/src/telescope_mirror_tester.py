@@ -5,9 +5,26 @@ import threading
 import queue
 import time
 import simple_pid
+import logging
 
 #sudo chmod 666 /dev/ttyUSB0
 #sudo chmod 666 /dev/ttyUSB1
+
+# constants - Serial interface
+POSITION_UPDATE_PERIOD = 0.01 # seconds
+MOTOR_SPEED_UPDATE_PERIOD = 0.01 # seconds
+
+# constants - Visual interface
+GUI_REFRESH_PERIOD = int(max(POSITION_UPDATE_PERIOD, MOTOR_SPEED_UPDATE_PERIOD)*1000) # milliseconds
+
+# constants - Stale data threshold
+STALE_TIME_TRHESHOLD = 0.5 # seconds
+
+# constants - PID
+KP_CONSTANT = 200
+KD_CONSTANT = 0
+KI_CONSTANT = 0
+PID_SAMPLE_TIME = max(POSITION_UPDATE_PERIOD, MOTOR_SPEED_UPDATE_PERIOD)
 
 
 class VisualInterface(tkinter.Tk):
@@ -18,9 +35,6 @@ class VisualInterface(tkinter.Tk):
 
         # create widgets
         self.frm_mtr = tkinter.Frame(master=self)
-
-        # update function calling period
-        self.readings_update_period = 15
 
         # Manual motor controls
         self.spd_fine_adjst= 1
@@ -282,7 +296,7 @@ class VisualInterface(tkinter.Tk):
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         # create a periodic event
-        self.after(100, self.after_callback)
+        self.after(GUI_REFRESH_PERIOD, self.after_callback)
 
     def select_a_axis_mode(self, mode):
         if mode == 'Man':
@@ -328,7 +342,7 @@ class VisualInterface(tkinter.Tk):
         if self.controller:
             self.controller.update_readings()
 
-        self.after(self.readings_update_period, self.after_callback)
+        self.after(GUI_REFRESH_PERIOD, self.after_callback)
 
     def set_speed_step_on_axis(self, axis, spd_step):
         if self.controller:
@@ -542,7 +556,7 @@ class MotorControllerInterface(serial.Serial):
     def get_motor_speed(self):
         # monitor active motor speed
         while True:
-            time.sleep(0.015)
+            time.sleep(MOTOR_SPEED_UPDATE_PERIOD)
 
             if self.motor_a_active.is_set():
                 command = b'getSpeed A\r\n'
@@ -578,6 +592,8 @@ class MotorControllerInterface(serial.Serial):
                 else:
                     speed = speed * direction
                     self.speed_data.put(speed) # put speed data on queue
+
+                    logging.info(f'Time: {time.time():.4f}, Motor speed actual: {speed}')
                     
                     # update motor activity
                     if speed == 0:
@@ -629,6 +645,8 @@ class MotorControllerInterface(serial.Serial):
             self.motor_a_active.clear()
             self.motor_b_active.clear()
             self.motor_c_active.clear()
+        
+        logging.info(f'Time: {time.time():.4f}, Motor speed command: {speed}')
 
 
 class MicrometerInterface(serial.Serial):
@@ -661,7 +679,7 @@ class MicrometerInterface(serial.Serial):
 
     def process_micrometer_readings(self):
         while True:
-            time.sleep(0.01)
+            time.sleep(POSITION_UPDATE_PERIOD)
 
             # the expected messages end in \r\x12
             value = self.read_until(b'\r\x12')
@@ -681,6 +699,8 @@ class MicrometerInterface(serial.Serial):
 
                 # put received data on queue
                 self.position_data.put(decoded_float)
+                
+                logging.info(f'Time: {time.time():.4f}, Position {decoded_float}')
 
 
 class Controller:
@@ -695,12 +715,12 @@ class Controller:
 
         # setup PID controler
         self.pid_controler = simple_pid.PID()
-        self.pid_controler.Kp = 200
-        self.pid_controler.Ki = 10
-        self.pid_controler.Kd = 40
+        self.pid_controler.Kp = KP_CONSTANT
+        self.pid_controler.Ki = KI_CONSTANT
+        self.pid_controler.Kd = KD_CONSTANT
         self.pid_controler.proportional_on_measurement = False
         self.pid_controler.differential_on_measurement = False
-        self.pid_controler.sample_time = 0.015
+        self.pid_controler.sample_time = PID_SAMPLE_TIME
         self.max_abs_output = 25
         #self.pid_controler.starting_output = 16.0
 
@@ -723,7 +743,7 @@ class Controller:
         try:
             self.current_position = micrometer_readings.position_data.get(block=False)
         except queue.Empty:
-            if time_stamp - self.ts_micrometer_prev > 0.5:
+            if time_stamp - self.ts_micrometer_prev > STALE_TIME_TRHESHOLD:
                 # position gone stale, assume it is zero and stop control loop if applicable
                 self.automatic_control_mode_enabled = False
                 view.update_position_reading_on_axis("A", "--.--")
@@ -735,14 +755,14 @@ class Controller:
             if self.automatic_control_mode_enabled == True:
                 speed_control = self.pid_controler(self.current_position)
                 motor_controller.set_speed_on_axis('A', speed_control)
-                #debug!!
-                print(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
+                
+                logging.info(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
 
         # update motor speed readings
         try:
             self.current_speed = motor_controller.speed_data.get(block=False)
         except queue.Empty:
-            if time_stamp - self.ts_motor_speed_prev > 0.5:
+            if time_stamp - self.ts_motor_speed_prev > STALE_TIME_TRHESHOLD:
                 self.current_speed = 0 # speed gone stale, assume it is zero
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", "---%")
@@ -837,5 +857,7 @@ if __name__ == '__main__':
     
     # set the controller to view
     view.set_controller(controller)
+
+    logging.getLogger().setLevel(logging.INFO)
 
     view.mainloop()
