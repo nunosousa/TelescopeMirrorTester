@@ -565,17 +565,25 @@ class MotorControllerInterface(serial.Serial):
             string = string.split('%, ')
 
             try:
-                speed = int(string[0]) # get speed value in integer format
+                # get speed value (first token of response string) in integer format
+                speed = int(string[0])
             except ValueError:
                 pass
             else:
                 try:
-                    direction = self.motor_direction[string[1]] # get direction value as a signed 1 or a 0 if stopped
+                    # get direction value (second token) as a signed 1 or a 0 if stopped
+                    direction = self.motor_direction[string[1]]
                 except KeyError:
                     pass
                 else:
                     speed = speed * direction
                     self.speed_data.put(speed) # put speed data on queue
+                    
+                    # update motor activity
+                    if speed == 0:
+                        self.motor_a_active.clear()
+                        self.motor_b_active.clear()
+                        self.motor_c_active.clear()
 
     def set_speed_on_axis(self, axis, speed):
         # Call work function
