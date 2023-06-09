@@ -3,29 +3,29 @@ This is an application intended to provide useful tools to perform Foucault or W
 
 Notes:
 
-##Creating a virtual environment
+## Creating a virtual environment
 To create a virtual environment, go to your project’s directory and run venv.
 ```
 python3 -m venv .venv
 ```
 
-##Activating a virtual environment
+## Activating a virtual environment
 ```
 source .venv/bin/activate
 ```
 
-##Installing packages using requirements file
+## Installing packages using requirements file
 ```
 python3 -m pip install -r requirements.txt
 ```
 
-##Starting JupyterLab
+## Starting JupyterLab
 Start JupyterLab using:
 ```
 jupyter lab
 ```
 
-##Leaving the virtual environment¶
+## Leaving the virtual environment¶
 If you want to switch projects or otherwise leave your virtual environment, simply run:
 ```
 deactivate
