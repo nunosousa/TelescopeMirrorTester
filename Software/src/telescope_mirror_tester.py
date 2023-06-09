@@ -20,9 +20,9 @@ MOTOR_SPEED_UPDATE_PERIOD = GUI_REFRESH_PERIOD/1000 # seconds
 STALE_TIME_TRHESHOLD = 0.5 # seconds
 
 # constants - PID
-KP_CONSTANT = 400
-KD_CONSTANT = 0
-KI_CONSTANT = 0
+KP_CONSTANT = 700
+KD_CONSTANT = 2
+KI_CONSTANT = 2
 
 
 class VisualInterface(tkinter.Tk):
@@ -717,7 +717,7 @@ class Controller:
         self.pid_controler.proportional_on_measurement = False
         self.pid_controler.differential_on_measurement = False
         self.pid_controler.sample_time = None
-        self.max_abs_output = 25
+        self.max_abs_output = 100#25
         #self.pid_controler.starting_output = 16.0
 
         # set visual interface initial configuration
@@ -803,6 +803,7 @@ class Controller:
             self.pid_controler.output_limits = (0, self.max_abs_output)
         else:
             self.pid_controler.output_limits = (-self.max_abs_output, 0)
+        self.pid_controler.output_limits = (-self.max_abs_output, self.max_abs_output) # remove
 
         # set PID setpoint
         self.pid_controler.setpoint = self.current_position + position_step
