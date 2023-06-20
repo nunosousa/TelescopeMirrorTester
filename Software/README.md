@@ -71,3 +71,19 @@ Run the following command to start taking frames from the camera:
 ```
 gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video0
 ```
+
+See a list of pixel formats with:
+```
+ffmpeg -pix_fmts
+```
+
+List v4l2loopback devices:
+```
+sudo v4l2loopback-ctl list
+```
+
+Further reading:
+
+http://www.gphoto.org/
+
+https://github.com/umlaeute/v4l2loopback
