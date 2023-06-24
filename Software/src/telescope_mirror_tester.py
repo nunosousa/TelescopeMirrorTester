@@ -702,6 +702,8 @@ class MicrometerInterface(serial.Serial):
 class Controller:
     def __init__(self, view, motor_controller, micrometer_readings):
         # set internal state variables
+        self.motor_controller = motor_controller
+        self.micrometer_readings = micrometer_readings
         self.automatic_control_mode_enabled = False
         self.current_speed = 0
         self.current_position = 0.0
@@ -728,8 +730,8 @@ class Controller:
         view.update_new_position_reading_on_axis("A", "--.--")
 
         # start serial interfaces
-        motor_controller.run_monitor()
-        micrometer_readings.run_monitor()
+        self.motor_controller.run_monitor()
+        self.micrometer_readings.run_monitor()
 
     def update_readings(self):
         # get current timestamp
@@ -737,7 +739,7 @@ class Controller:
 
         # update axis A micrometer reading
         try:
-            self.current_position = micrometer_readings.position_data.get(block=False)
+            self.current_position = self.micrometer_readings.position_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_micrometer_prev > STALE_TIME_TRHESHOLD:
                 # position gone stale, assume it is zero and stop control loop if applicable
@@ -750,13 +752,13 @@ class Controller:
             # Compute new output from the PID according to the systems current value
             if self.automatic_control_mode_enabled == True:
                 speed_control = self.pid_controler(self.current_position)
-                motor_controller.set_speed_on_axis('A', speed_control)
+                self.motor_controller.set_speed_on_axis('A', speed_control)
                 
                 logging.debug(f"command: {speed_control:.2f}, position: {self.current_position:.2f}, setpoint: {self.pid_controler.setpoint:.2f}, p: {self.pid_controler.components[0]:.2f}, i: {self.pid_controler.components[1]:.2f}, d: {self.pid_controler.components[2]:.2f}")
 
         # update motor speed readings
         try:
-            self.current_speed = motor_controller.speed_data.get(block=False)
+            self.current_speed = self.motor_controller.speed_data.get(block=False)
         except queue.Empty:
             if time_stamp - self.ts_motor_speed_prev > STALE_TIME_TRHESHOLD:
                 self.current_speed = 0 # speed gone stale, assume it is zero
@@ -765,19 +767,19 @@ class Controller:
                 view.update_speed_reading_on_axis("C", "---%")
                 view.set_interface_mode("none active")
         else:
-            if motor_controller.motor_a_active.is_set():
+            if self.motor_controller.motor_a_active.is_set():
                 view.update_speed_reading_on_axis("A", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", "---%")
                 view.set_interface_mode("A active")
                 self.ts_motor_speed_prev = time_stamp
-            elif motor_controller.motor_b_active.is_set():
+            elif self.motor_controller.motor_b_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", str(self.current_speed) + "%")
                 view.update_speed_reading_on_axis("C", "---%")
                 view.set_interface_mode("B active")
                 self.ts_motor_speed_prev = time_stamp
-            elif motor_controller.motor_c_active.is_set():
+            elif self.motor_controller.motor_c_active.is_set():
                 view.update_speed_reading_on_axis("A", "---%")
                 view.update_speed_reading_on_axis("B", "---%")
                 view.update_speed_reading_on_axis("C", str(self.current_speed) + "%")
@@ -789,11 +791,11 @@ class Controller:
 
     def set_speed_step_on_axis(self, axis, speed_step):
         if speed_step == 0: # stop command
-            motor_controller.set_speed_on_axis(axis, 0)
+            self.motor_controller.set_speed_on_axis(axis, 0)
             self.automatic_control_mode_enabled = False
         else: # update current speed
             speed = self.current_speed + speed_step
-            motor_controller.set_speed_on_axis(axis, speed)
+            self.motor_controller.set_speed_on_axis(axis, speed)
 
     def start_automatic_mode(self, axis, position_step):
         position_step = float(position_step)

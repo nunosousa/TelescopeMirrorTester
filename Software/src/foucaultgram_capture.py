@@ -111,15 +111,17 @@ class ShadowgramProcessor:
 class Controller:
     def __init__(self, view, camera_processor):
         # set internal state variables
+        self.view = view
+        self.camera_processor = camera_processor
 
         # set visual interface initial configuration
         #view.update_...(...)
 
         # start camera processor
-        camera_processor.run_capture()
+        self.camera_processor.run_capture()
     
     def update_shadowgram_data(self):
-        if camera_processor.new_shadowgram_data.is_set():
+        if self.camera_processor.new_shadowgram_data.is_set():
             pass
 
 
@@ -128,10 +130,10 @@ if __name__ == '__main__':
     view = VisualInterface()
 
     # setup the camera image processor 
-    camera = ShadowgramProcessor(1)
+    camera_processor = ShadowgramProcessor(1)
 
     # create a controller
-    controller = Controller(view, camera)
+    controller = Controller(view, camera_processor)
     
     # set the controller to view
     view.set_controller(controller)
