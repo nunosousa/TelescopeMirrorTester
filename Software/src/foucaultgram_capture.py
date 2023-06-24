@@ -122,7 +122,35 @@ class Controller:
     
     def update_shadowgram_data(self):
         if self.camera_processor.new_shadowgram_data.is_set():
-            pass
+            self.camera_processor.new_shadowgram_data.clear()
+
+            all_good = True
+            
+            try:
+                self.original_frame_data = self.camera_processor.original_frame_data.get(block=False)
+            except queue.Empty:
+                all_good = False
+            else:
+                pass
+
+            try:
+                self.processed_frame_data = self.camera_processor.processed_frame_data.get(block=False)
+            except queue.Empty:
+                all_good = False
+            else:
+                pass
+
+            try:
+                self.shadowgram_radius_data = self.camera_processor.shadowgram_radius_data.get(block=False)
+            except queue.Empty:
+                all_good = False
+            else:
+                pass
+
+            if all_good:
+                view.show_unprocessed_image(self.original_frame_data)
+                view.show_processed_image(self.processed_frame_data)
+                pass
 
 
 if __name__ == '__main__':
