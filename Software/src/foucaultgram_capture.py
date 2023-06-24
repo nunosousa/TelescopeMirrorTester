@@ -1,5 +1,7 @@
 import tkinter
 import cv2
+import threading
+import queue
 
 
 # constants - Visual interface
@@ -30,7 +32,7 @@ class VisualInterface(tkinter.Tk):
         # Capture command button
         self.btn_cap = tkinter.Button(master=self.frm_mtr,
                                        text="Capture and save",
-                                       command=self.capture_and_save_processed_image)
+                                       command=self.save_processed_frame)
         
         self.frm_unp.grid(row=0, column=0, padx=4, pady=4)
         self.frm_pro.grid(row=0, column=1, padx=4, pady=4)
@@ -48,13 +50,19 @@ class VisualInterface(tkinter.Tk):
 
     def set_controller(self, controller):
         self.controller = controller
+    
+    def save_processed_frame(self):
+        pass
 
-    def capture_and_save_processed_image(self):
+    def show_unprocessed_image(self, frame):
+        pass
+
+    def show_processed_image(self, frame):
         pass
 
     def after_callback(self):
         if self.controller:
-            self.controller.update_readings()
+            self.controller.update_shadowgram_data()
 
         self.after(GUI_REFRESH_PERIOD, self.after_callback)
     
@@ -63,17 +71,69 @@ class VisualInterface(tkinter.Tk):
         self.destroy()
 
 
-class CameraInterface():
+class ShadowgramProcessor:
     def __init__(self, camera):
-        super().__init__()
 
         # camera setup
+        self.capture_cam = cv2.VideoCapture(camera)
 
-    def run_monitor(self):
-        pass
+        self.original_frame_data = queue.Queue()
+        self.processed_frame_data = queue.Queue()
+        self.shadowgram_radius_data = queue.Queue()
+        self.new_shadowgram_data = threading.Event()
+
+    def run_capture(self):
+        # Call work function
+        self.monitor = threading.Thread(target=self.process_frame,
+                                        daemon=True)
+        self.monitor.start()
+
+    def process_frame(self):
+        while True:
+            # Capture frame-by-frame
+            ret, frame = self.capture_cam.read()
+            
+            # if frame is read correctly ret is True
+            if not ret:
+                print("Can't receive frame.")
+                continue
+
+            # process captured frame
+            shadowgram_radius = 0.0
+
+            # put received data on queue
+            self.original_frame_data.put(frame)
+            self.processed_frame_data.put(frame)
+            self.shadowgram_radius_data.put(shadowgram_radius)
+            self.new_shadowgram_data.set()
+
+
+class Controller:
+    def __init__(self, view, camera_processor):
+        # set internal state variables
+
+        # set visual interface initial configuration
+        #view.update_...(...)
+
+        # start camera processor
+        camera_processor.run_capture()
+    
+    def update_shadowgram_data(self):
+        if camera_processor.new_shadowgram_data.is_set():
+            pass
+
 
 if __name__ == '__main__':
-    # create a view
+    # create the visual interface
     view = VisualInterface()
+
+    # setup the camera image processor 
+    camera = ShadowgramProcessor(1)
+
+    # create a controller
+    controller = Controller(view, camera)
+    
+    # set the controller to view
+    view.set_controller(controller)
 
     view.mainloop()
