@@ -2,6 +2,7 @@ import tkinter
 import cv2
 import threading
 import queue
+import numpy
 
 
 # constants - Visual interface
@@ -51,13 +52,25 @@ class VisualInterface(tkinter.Tk):
     def set_controller(self, controller):
         self.controller = controller
     
-    def save_processed_frame(self):
-        pass
+    def set_frame_size(self, width, height):
+        self.cns_unp.configure(width=width)
+        self.cns_unp.configure(height=height)
+        self.cns_unp.create_image(0, 0, anchor="nw")
+
+        self.cns_pro.configure(width=width)
+        self.cns_pro.configure(height=height)
+        self.cns_pro.create_image(0, 0, anchor="nw")
 
     def show_unprocessed_image(self, frame):
-        pass
+        height, width = frame.shape # expect only one channel/gray image
+        data = f'P5 {width} {height} 255 '.encode() + frame.astype(numpy.uint8).tobytes()
+        frame_view = tkinter.PhotoImage(width=width, height=height, data=data, format='PPM')
+        self.cns_unp.create_image(image=frame_view)
 
     def show_processed_image(self, frame):
+        pass
+    
+    def save_processed_frame(self):
         pass
 
     def after_callback(self):
@@ -76,6 +89,13 @@ class ShadowgramProcessor:
 
         # camera setup
         self.capture_cam = cv2.VideoCapture(camera)
+
+        if not self.capture_cam.isOpened(): 
+            raise Exception("Unable to open video input!")
+        
+        self.frame_width = int(self.capture_cam.get(cv2.CAP_PROP_FRAME_WIDTH))
+        self.frame_height = int(self.capture_cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        self.frame_fps = int(self.capture_cam.get(cv2.CAP_PROP_FPS))
 
         self.original_frame_data = queue.Queue()
         self.processed_frame_data = queue.Queue()
@@ -102,6 +122,7 @@ class ShadowgramProcessor:
             shadowgram_radius = 0.0
 
             # put received data on queue
+            frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
             self.original_frame_data.put(frame)
             self.processed_frame_data.put(frame)
             self.shadowgram_radius_data.put(shadowgram_radius)
@@ -115,7 +136,8 @@ class Controller:
         self.camera_processor = camera_processor
 
         # set visual interface initial configuration
-        #view.update_...(...)
+        view.set_frame_size(self.camera_processor.frame_width,
+                            self.camera_processor.frame_height)
 
         # start camera processor
         self.camera_processor.run_capture()
@@ -150,7 +172,6 @@ class Controller:
             if all_good:
                 view.show_unprocessed_image(self.original_frame_data)
                 view.show_processed_image(self.processed_frame_data)
-                pass
 
 
 if __name__ == '__main__':
