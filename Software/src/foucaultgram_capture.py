@@ -184,8 +184,16 @@ class ShadowgramProcessor:
             self.shadowgram_event.set()
 
     def find_shadowgram(self, frame):
+        # convert captured image to grayscale
+        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+
+        # perform edge detection
+        canny_threshold_1 = 10
+        canny_threshold_2 = 80
+        frame_canny = cv2.Canny(frame, canny_threshold_1, canny_threshold_2, L2gradient=True)
+
         shadowgram_radius = 0.0
-        shadowgram = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+        shadowgram = frame_canny
 
         return shadowgram_radius, shadowgram
 
