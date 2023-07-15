@@ -6,6 +6,9 @@ import PIL.ImageTk
 import time
 
 
+# constants - Camera definitions
+CAMERA_ID = 5
+
 # constants - Frame grabber
 CAMERA_FRAME_GRAB_PERIOD = 0.025 # seconds
 CAMERA_FRAME_PROCESS_PERIOD = CAMERA_FRAME_GRAB_PERIOD
@@ -185,12 +188,12 @@ class ShadowgramProcessor:
 
     def find_shadowgram(self, frame):
         # convert captured image to grayscale
-        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+        frame_gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
 
         # perform edge detection
         canny_threshold_1 = 10
         canny_threshold_2 = 80
-        frame_canny = cv2.Canny(frame, canny_threshold_1, canny_threshold_2, L2gradient=True)
+        frame_canny = cv2.Canny(frame_gray, canny_threshold_1, canny_threshold_2, L2gradient=True)
 
         shadowgram_radius = 0.0
         shadowgram = frame_canny
@@ -232,7 +235,7 @@ if __name__ == '__main__':
     view = VisualInterface()
 
     # setup the camera image processor 
-    camera_processor = ShadowgramProcessor(3)
+    camera_processor = ShadowgramProcessor(CAMERA_ID)
 
     # create a controller
     controller = Controller(view, camera_processor)
