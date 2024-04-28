@@ -8,7 +8,7 @@
 		(date "mar. 31 mars 2015")
 	)
 	(lib_symbols
-		(symbol "Connector:DE9_Receptacle_MountingHoles"
+		(symbol "Connector:DE9_Plug_MountingHoles"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
@@ -22,7 +22,7 @@
 					)
 				)
 			)
-			(property "Value" "DE9_Receptacle_MountingHoles"
+			(property "Value" "DE9_Plug_MountingHoles"
 				(at 0 14.605 0)
 				(effects
 					(font
@@ -48,7 +48,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "9-pin female receptacle socket D-SUB connector, Mounting Hole"
+			(property "Description" "9-pin male plug pin D-SUB connector, Mounting Hole"
 				(at 0 0 0)
 				(effects
 					(font
@@ -57,7 +57,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "connector receptacle female D-SUB DB9"
+			(property "ki_keywords" "connector plug male D-SUB DB9"
 				(at 0 0 0)
 				(effects
 					(font
@@ -66,7 +66,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "DSUB*Female*"
+			(property "ki_fp_filters" "DSUB*Male*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -75,7 +75,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "DE9_Receptacle_MountingHoles_0_1"
+			(symbol "DE9_Plug_MountingHoles_0_1"
 				(circle
 					(center -1.778 -10.16)
 					(radius 0.762)
@@ -84,7 +84,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -95,7 +95,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -106,7 +106,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -117,7 +117,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -128,7 +128,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(polyline
@@ -241,7 +241,7 @@
 				)
 				(polyline
 					(pts
-						(xy -3.81 13.335) (xy -3.81 -13.335) (xy 3.81 -9.525) (xy 3.81 9.525) (xy -3.81 13.335)
+						(xy -3.81 -13.335) (xy -3.81 13.335) (xy 3.81 9.525) (xy 3.81 -9.525) (xy -3.81 -13.335)
 					)
 					(stroke
 						(width 0.254)
@@ -259,7 +259,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -270,7 +270,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -281,7 +281,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 				(circle
@@ -292,11 +292,11 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
 					)
 				)
 			)
-			(symbol "DE9_Receptacle_MountingHoles_1_1"
+			(symbol "DE9_Plug_MountingHoles_1_1"
 				(pin passive line
 					(at 0 -15.24 90)
 					(length 3.81)
@@ -316,7 +316,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 10.16 0)
+					(at -7.62 -10.16 0)
 					(length 3.81)
 					(name "1"
 						(effects
@@ -334,7 +334,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 5.08 0)
+					(at -7.62 -5.08 0)
 					(length 3.81)
 					(name "2"
 						(effects
@@ -370,7 +370,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 -5.08 0)
+					(at -7.62 5.08 0)
 					(length 3.81)
 					(name "4"
 						(effects
@@ -388,7 +388,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 -10.16 0)
+					(at -7.62 10.16 0)
 					(length 3.81)
 					(name "5"
 						(effects
@@ -406,7 +406,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 7.62 0)
+					(at -7.62 -7.62 0)
 					(length 3.81)
 					(name "6"
 						(effects
@@ -424,7 +424,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 2.54 0)
+					(at -7.62 -2.54 0)
 					(length 3.81)
 					(name "7"
 						(effects
@@ -442,7 +442,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 -2.54 0)
+					(at -7.62 2.54 0)
 					(length 3.81)
 					(name "8"
 						(effects
@@ -460,7 +460,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 -7.62 0)
+					(at -7.62 7.62 0)
 					(length 3.81)
 					(name "9"
 						(effects
@@ -3711,17 +3711,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:DE9_Receptacle_MountingHoles")
-		(at 148.59 76.2 0)
+		(lib_id "Connector:DE9_Plug_MountingHoles")
+		(at 207.01 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "6f381483-5937-4bb3-b9cb-4fdd39cdb3f9")
+		(uuid "23fb4439-f9d4-40d6-857e-f5ec876794f5")
 		(property "Reference" "J1"
-			(at 153.67 74.9299 0)
+			(at 212.09 78.7399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3729,8 +3729,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DE9_Receptacle_MountingHoles"
-			(at 153.67 77.4699 0)
+		(property "Value" "DE9_Plug_MountingHoles"
+			(at 212.09 81.2799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3738,8 +3738,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 148.59 76.2 0)
+		(property "Footprint" "Connector_Dsub:DSUB-9_Male_Vertical_P2.77x2.84mm_MountingHoles"
+			(at 207.01 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3748,7 +3748,7 @@
 			)
 		)
 		(property "Datasheet" " ~"
-			(at 148.59 76.2 0)
+			(at 207.01 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3756,44 +3756,44 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "9-pin female receptacle socket D-SUB connector, Mounting Hole"
-			(at 148.59 76.2 0)
+		(property "Description" "9-pin male plug pin D-SUB connector, Mounting Hole"
+			(at 207.01 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "9"
-			(uuid "7c0f0aa3-d545-4f61-822d-5d704eb0f8ac")
-		)
-		(pin "2"
-			(uuid "b8dc93bd-cdd2-4d92-8460-da096a8a9a6e")
 		)
 		(pin "0"
-			(uuid "9acb1e57-7be6-43be-b6fe-d2d1cb4c8653")
+			(uuid "0bfde888-0f7c-485c-ad89-242b3ed35775")
 		)
-		(pin "8"
-			(uuid "b118b687-b27f-43f8-a169-c8235eb60376")
-		)
-		(pin "1"
-			(uuid "22364321-d6dd-4f74-9633-c04c00b23c54")
-		)
-		(pin "7"
-			(uuid "51e3a787-7d3c-4902-b2f2-283ce7e5dddf")
-		)
-		(pin "4"
-			(uuid "0480813d-d3b9-477c-84c8-a806611543f1")
+		(pin "2"
+			(uuid "605a8c98-8cd2-413a-bd00-ffed3895fe84")
 		)
 		(pin "3"
-			(uuid "afa68c40-7b1c-4222-931f-6be3961fc43f")
-		)
-		(pin "6"
-			(uuid "81933f79-7000-4ddc-9e41-fe8495da8793")
+			(uuid "2929f165-2403-41da-b5ad-6e0b0d506cd1")
 		)
 		(pin "5"
-			(uuid "b5678776-c747-4075-950b-1da443dfa7c9")
+			(uuid "e475cdbb-0ae4-4d7c-8d81-343f9d220ce5")
+		)
+		(pin "1"
+			(uuid "e2d48010-9f25-40f7-8d2c-e47372c472bc")
+		)
+		(pin "4"
+			(uuid "39ccf653-1c6f-4d10-b058-91ba76067f4b")
+		)
+		(pin "6"
+			(uuid "b52ddf75-a926-4366-91f4-1cc4ed6e1d80")
+		)
+		(pin "9"
+			(uuid "a380d7dd-2d1a-49e8-bed7-4d58f7f5e658")
+		)
+		(pin "8"
+			(uuid "945440d1-785e-4ca3-ba23-ae46ad75db52")
+		)
+		(pin "7"
+			(uuid "70d51501-2536-46ef-b9f8-5d6580df522d")
 		)
 		(instances
 			(project "DataShield"
