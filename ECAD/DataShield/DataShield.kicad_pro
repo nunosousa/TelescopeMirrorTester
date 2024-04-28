@@ -371,7 +371,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Arduino_Mega.kicad_pro",
+    "filename": "DataShield.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -465,12 +465,30 @@
           "group_by": true,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
