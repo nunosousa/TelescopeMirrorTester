@@ -8,22 +8,22 @@
 		(date "mar. 31 mars 2015")
 	)
 	(lib_symbols
-		(symbol "Connector:DE9_Plug_MountingHoles"
+		(symbol "Connector:DE9_Plug"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 16.51 0)
+				(at 0 13.97 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "DE9_Plug_MountingHoles"
-				(at 0 14.605 0)
+			(property "Value" "DE9_Plug"
+				(at 0 -14.605 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -48,7 +48,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "9-pin male plug pin D-SUB connector, Mounting Hole"
+			(property "Description" "9-pin male plug pin D-SUB connector"
 				(at 0 0 0)
 				(effects
 					(font
@@ -57,7 +57,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "connector plug male D-SUB DB9"
+			(property "ki_keywords" "connector male plug D-SUB DB9"
 				(at 0 0 0)
 				(effects
 					(font
@@ -75,7 +75,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "DE9_Plug_MountingHoles_0_1"
+			(symbol "DE9_Plug_0_1"
 				(circle
 					(center -1.778 -10.16)
 					(radius 0.762)
@@ -296,25 +296,7 @@
 					)
 				)
 			)
-			(symbol "DE9_Plug_MountingHoles_1_1"
-				(pin passive line
-					(at 0 -15.24 90)
-					(length 3.81)
-					(name "PAD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
+			(symbol "DE9_Plug_1_1"
 				(pin passive line
 					(at -7.62 -10.16 0)
 					(length 3.81)
@@ -2053,6 +2035,127 @@
 				)
 			)
 		)
+		(symbol "Device:R"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Interface_UART_custom:MAX213"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2857,10 +2960,6 @@
 		(at 205.74 101.6)
 		(uuid "1590eff0-1d5c-46cf-9a55-03b8aa1053ac")
 	)
-	(no_connect
-		(at 247.65 83.82)
-		(uuid "5ff67609-5417-4e62-8757-330947958927")
-	)
 	(wire
 		(pts
 			(xy 44.45 109.22) (xy 44.45 119.38)
@@ -3113,6 +3212,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 118.11) (xy 160.02 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "436cff62-3268-491f-ae21-fc6c24439526")
+	)
+	(wire
+		(pts
 			(xy 234.95 104.14) (xy 240.03 104.14)
 		)
 		(stroke
@@ -3120,6 +3229,16 @@
 			(type default)
 		)
 		(uuid "49ed9303-c88f-4705-8e24-34f9f0e8ef41")
+	)
+	(wire
+		(pts
+			(xy 160.02 119.38) (xy 184.15 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a29ab0f-5035-4ea0-9347-5106092e6f1d")
 	)
 	(wire
 		(pts
@@ -3150,6 +3269,16 @@
 			(type solid)
 		)
 		(uuid "535f236c-2664-4c6c-ba0b-0e76f0bfcd2b")
+	)
+	(wire
+		(pts
+			(xy 205.74 119.38) (xy 219.71 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56b4ca64-fc45-4580-8c8b-4efae71af02b")
 	)
 	(wire
 		(pts
@@ -3741,6 +3870,56 @@
 		)
 		(uuid "f9315c78-c56d-49ea-b391-57a0fd98d09c")
 	)
+	(wire
+		(pts
+			(xy 219.71 119.38) (xy 219.71 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fda09f67-90c3-40f0-b0de-17843bcd7ee2")
+	)
+	(text "6.3V"
+		(exclude_from_sim no)
+		(at 200.152 62.484 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0639b15d-1bd4-4de6-b42b-8f31e9b689b2")
+	)
+	(text "6.3V"
+		(exclude_from_sim no)
+		(at 217.678 62.738 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4873e31a-40bc-4127-a8d3-344e8ca4f953")
+	)
+	(text "16V"
+		(exclude_from_sim no)
+		(at 183.896 61.976 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5388fdd7-95fe-4488-a397-c7e99c10f57a")
+	)
+	(text "16V"
+		(exclude_from_sim no)
+		(at 200.406 39.116 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a5dc20a7-69f7-4486-a358-d43b7061e91e")
+	)
 	(text "* Indicates a PWM-capable pin"
 		(exclude_from_sim no)
 		(at 177.8 180.34 0)
@@ -3751,6 +3930,16 @@
 			(justify left bottom)
 		)
 		(uuid "c364973a-9a67-4667-8185-a3a5c6c6cbdf")
+	)
+	(text "6.3V"
+		(exclude_from_sim no)
+		(at 183.388 39.624 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e58c18fd-cc87-4a24-b243-a4ad1bd6c450")
 	)
 	(label "A10"
 		(at 21.59 90.17 0)
@@ -5103,6 +5292,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 219.71 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1be4851e-11c7-46f0-a91a-fed5bd4ad39c")
+		(property "Reference" "R2"
+			(at 222.25 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kR"
+			(at 222.25 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 217.932 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 219.71 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e1a7c17b-ace2-4ad9-9a67-bca0f92e5697")
+		)
+		(pin "2"
+			(uuid "809e7c07-903d-4435-ac82-77764c41bc0c")
+		)
+		(instances
+			(project "DataShield"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 194.31 54.61 0)
 		(unit 1)
@@ -5160,109 +5419,6 @@
 			(project "DataShield"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:DE9_Plug_MountingHoles")
-		(at 247.65 99.06 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "23fb4439-f9d4-40d6-857e-f5ec876794f5")
-		(property "Reference" "J1"
-			(at 252.73 100.3301 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "RS232"
-			(at 252.73 97.7901 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Dsub:DSUB-9_Male_Vertical_P2.77x2.84mm_MountingHoles"
-			(at 247.65 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" " ~"
-			(at 247.65 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "9-pin male plug pin D-SUB connector, Mounting Hole"
-			(at 247.65 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 247.65 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "0"
-			(uuid "0bfde888-0f7c-485c-ad89-242b3ed35775")
-		)
-		(pin "2"
-			(uuid "605a8c98-8cd2-413a-bd00-ffed3895fe84")
-		)
-		(pin "3"
-			(uuid "2929f165-2403-41da-b5ad-6e0b0d506cd1")
-		)
-		(pin "5"
-			(uuid "e475cdbb-0ae4-4d7c-8d81-343f9d220ce5")
-		)
-		(pin "1"
-			(uuid "e2d48010-9f25-40f7-8d2c-e47372c472bc")
-		)
-		(pin "4"
-			(uuid "39ccf653-1c6f-4d10-b058-91ba76067f4b")
-		)
-		(pin "6"
-			(uuid "b52ddf75-a926-4366-91f4-1cc4ed6e1d80")
-		)
-		(pin "9"
-			(uuid "a380d7dd-2d1a-49e8-bed7-4d58f7f5e658")
-		)
-		(pin "8"
-			(uuid "945440d1-785e-4ca3-ba23-ae46ad75db52")
-		)
-		(pin "7"
-			(uuid "70d51501-2536-46ef-b9f8-5d6580df522d")
-		)
-		(instances
-			(project "DataShield"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -5472,16 +5628,35 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 184.15 119.38 90)
+		(lib_id "Connector:DE9_Plug")
+		(at 247.65 99.06 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7ed849e4-19c6-43d0-b309-a3c476252d17")
-		(property "Reference" "#PWR02"
-			(at 187.96 119.38 0)
+		(uuid "816d4657-a9e1-4693-80d6-4c740f155404")
+		(property "Reference" "J2"
+			(at 252.73 100.3301 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RS232"
+			(at 252.73 97.7901 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Dsub:DSUB-9_Male_Vertical_P2.77x2.84mm"
+			(at 247.65 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5489,32 +5664,26 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 179.324 119.38 90)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811071522_Ckmtw-Shenzhen-Cankemeng-D-DMS009PM-A000_C189688.pdf"
+			(at 247.65 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 184.15 119.38 0)
+		(property "Description" "9-pin male plug pin D-SUB connector"
+			(at 247.65 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 184.15 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 184.15 119.38 0)
+		(property "MPN" "D-DMS009PM-A000"
+			(at 247.65 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5523,12 +5692,36 @@
 			)
 		)
 		(pin "1"
-			(uuid "1b94dc08-cdc4-49f0-aed8-1f84999c39f7")
+			(uuid "ae2fbe3c-0524-426a-988d-8a508a971e85")
+		)
+		(pin "3"
+			(uuid "1e8b9743-2ee8-49f6-bd4f-b66f15b1a1ad")
+		)
+		(pin "8"
+			(uuid "b25756e7-bae9-4b6f-bfd0-71ded6080a2c")
+		)
+		(pin "2"
+			(uuid "8b0a3abf-1ce5-4b8c-b592-42c959c96581")
+		)
+		(pin "9"
+			(uuid "01ee14ca-1cbe-47ae-804b-550e1177abb9")
+		)
+		(pin "4"
+			(uuid "ad315e9d-ac3f-41d7-b777-37417984a338")
+		)
+		(pin "6"
+			(uuid "eb8912d3-1833-4136-ab38-9c7e5c310ef5")
+		)
+		(pin "7"
+			(uuid "ee298ff6-c1c4-4886-b021-2fc81ebbe786")
+		)
+		(pin "5"
+			(uuid "77cbdb05-e4e7-419e-99fb-24ea7d150e95")
 		)
 		(instances
 			(project "DataShield"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR02")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -5599,6 +5792,76 @@
 			(project "DataShield"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "98c4c92c-cecb-4791-9508-645e417bc7f0")
+		(property "Reference" "R1"
+			(at 162.56 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kR"
+			(at 162.56 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 158.242 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 160.02 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d8337f9-e801-40a6-977f-76ec0752a4b6")
+		)
+		(pin "2"
+			(uuid "a503099f-180c-4718-8a76-0fdcc3cbdc3e")
+		)
+		(instances
+			(project "DataShield"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -5997,6 +6260,69 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 219.71 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "db698165-c340-4740-826e-0646895bafbd")
+		(property "Reference" "#PWR03"
+			(at 219.71 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 220.0783 106.1656 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 219.71 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 219.71 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a3ffb305-cc23-42e2-8ea1-e015850402c6")
+		)
+		(instances
+			(project "DataShield"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Interface_UART_custom:MAX213")
 		(at 194.31 100.33 0)
 		(unit 1)
@@ -6154,69 +6480,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 205.74 119.38 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e3b281af-7185-4b54-986e-42cc1ec7593f")
-		(property "Reference" "#PWR03"
-			(at 201.93 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 210.312 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 205.74 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f61daf43-2f47-4d97-b200-e37f0d67d4e0")
-		)
-		(instances
-			(project "DataShield"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 238.76 110.49 0)
 		(unit 1)
@@ -6274,6 +6537,69 @@
 			(project "DataShield"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 160.02 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f439363f-ec2d-47ea-a886-7b4624436d0d")
+		(property "Reference" "#PWR02"
+			(at 160.02 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 160.3883 106.1656 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c14d3a6d-fbc0-4b40-808d-270f1655f5bb")
+		)
+		(instances
+			(project "DataShield"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
