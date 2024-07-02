@@ -1753,6 +1753,106 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
+		(at 181.61 63.5 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "657a75e9-5141-4026-86a5-8c8ed7f46992")
+		(property "Reference" "J5"
+			(at 186.69 60.9599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Wire RS485"
+			(at 186.69 63.4999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XFCN-I254-2-3-G-3-B_C509254.pdf"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" " I254-2*3-G-3-B"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1e81dbba-93d5-4c1a-b5b1-28f5f734e41e")
+		)
+		(pin "1"
+			(uuid "9513066b-8a98-4c9a-a5bc-9f3da5e9b237")
+		)
+		(pin "5"
+			(uuid "75448cb2-b49c-4d2c-a5c6-02c8eb2a341a")
+		)
+		(pin "4"
+			(uuid "6a54031a-d43b-444d-9dec-6da2726ab60c")
+		)
+		(pin "3"
+			(uuid "65b40816-e6f3-4405-9655-a8c4abad47b8")
+		)
+		(pin "6"
+			(uuid "634f640e-0e30-47b0-8d26-f1f012f5abc1")
+		)
+		(instances
+			(project "RS485Board"
+				(path "/6f00a375-73f6-4995-be24-d39e0f060d5c"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_2")
 		(lib_id "power:GND")
 		(at 111.76 76.2 180)
@@ -2270,7 +2370,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Conn_02x03_Odd_Even"
+		(property "Value" "RS485"
 			(at 186.69 83.8199 90)
 			(effects
 				(font
@@ -2443,7 +2543,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Conn_02x03_Odd_Even"
+		(property "Value" "RS485"
 			(at 116.84 83.8199 90)
 			(effects
 				(font
@@ -2869,6 +2969,106 @@
 			(project "RS485Board"
 				(path "/6f00a375-73f6-4995-be24-d39e0f060d5c"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
+		(at 111.76 62.23 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "d8c0e5e1-3ecc-4838-97d8-52d8375244b7")
+		(property "Reference" "J4"
+			(at 116.84 59.6899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Wire RS485"
+			(at 116.84 62.2299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical"
+			(at 111.76 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XFCN-I254-2-3-G-3-B_C509254.pdf"
+			(at 111.76 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 111.76 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" " I254-2*3-G-3-B"
+			(at 111.76 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 111.76 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ddc1374c-0f0c-4868-a4f2-aca44e9ea563")
+		)
+		(pin "1"
+			(uuid "7a1a3aa2-9872-4dbf-8393-12bde44da6fa")
+		)
+		(pin "5"
+			(uuid "5ff29d95-7e09-4702-9829-389260272993")
+		)
+		(pin "4"
+			(uuid "2db94595-eac1-4c24-84cf-a60af24b3338")
+		)
+		(pin "3"
+			(uuid "ccc9e60c-607f-4b69-ac9a-81f4b700daab")
+		)
+		(pin "6"
+			(uuid "70251e96-bdcf-4231-a6b9-b9d34e97fb0f")
+		)
+		(instances
+			(project "RS485Board"
+				(path "/6f00a375-73f6-4995-be24-d39e0f060d5c"
+					(reference "J4")
 					(unit 1)
 				)
 			)
