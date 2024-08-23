@@ -1395,12 +1395,6 @@
 		)
 	)
 	(junction
-		(at 134.62 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "32957271-2cb5-48e5-89bd-64ad2789c4de")
-	)
-	(junction
 		(at 130.81 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1483,16 +1477,6 @@
 			(type default)
 		)
 		(uuid "647b9b70-fdea-497e-888f-02124b20516b")
-	)
-	(wire
-		(pts
-			(xy 143.51 82.55) (xy 134.62 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "694eff29-f862-450e-8270-e5d930b70859")
 	)
 	(wire
 		(pts
@@ -1623,16 +1607,6 @@
 			(type default)
 		)
 		(uuid "d1d127ee-ada0-4f51-a1ff-7973d915614d")
-	)
-	(wire
-		(pts
-			(xy 143.51 81.28) (xy 143.51 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe0d4a7e-8535-4908-9f99-3ea31e9a1a68")
 	)
 	(text "16V"
 		(exclude_from_sim no)
@@ -2239,76 +2213,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/c25fa674-877f-4b5b-9daa-1e2d4b76be10"
 					(reference "#FLG05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 143.51 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "391f9aa3-cbda-478c-9e94-7a433f571d87")
-		(property "Reference" "#FLG06"
-			(at 143.51 79.375 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 143.51 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 143.51 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 143.51 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "07290b33-e7fb-4f99-bc58-f93d2926dbe4")
-		)
-		(instances
-			(project "DataShield"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/8057988e-d232-4d4b-9241-9be09a94e419"
-					(reference "#FLG06")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/c25fa674-877f-4b5b-9daa-1e2d4b76be10"
-					(reference "#FLG03")
 					(unit 1)
 				)
 			)
