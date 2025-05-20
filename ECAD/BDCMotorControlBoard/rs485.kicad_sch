@@ -1568,6 +1568,83 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
+		(at 54.61 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "932276f2-40d0-43f1-a7c4-31a2fbc32c59")
+		(property "Reference" "D3"
+			(at 53.0225 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 53.0225 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
+			(at 54.61 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 54.61 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 54.61 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a3890bd8-ce26-4def-ab8c-0fbb57838ded")
+		)
+		(pin "2"
+			(uuid "268aec67-5723-4bfb-a7f5-a99add617173")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/d99f6078-db8e-492e-a407-99d18dce8a4c"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
 		(at 54.61 127 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1592,7 +1669,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_Rectangular_W5.0mm_H2.0mm_Horizontal_O3.81mm_Z1.0mm"
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 54.61 127 0)
 			(effects
 				(font
