@@ -6,7 +6,7 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 198.12 111.76)
+		(at 214.63 114.3)
 		(size 35.56 38.1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22,7 +22,7 @@
 		)
 		(uuid "4a4145ca-611d-4918-8568-00cfbee98653")
 		(property "Sheetname" "Power Supply"
-			(at 198.12 111.0484 0)
+			(at 214.63 113.5884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31,7 +31,7 @@
 			)
 		)
 		(property "Sheetfile" "power_supply.kicad_sch"
-			(at 198.12 150.4446 0)
+			(at 214.63 152.9846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49,7 +49,7 @@
 	)
 	(sheet
 		(at 107.95 68.58)
-		(size 25.4 22.86)
+		(size 41.91 35.56)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -73,12 +73,102 @@
 			)
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
-			(at 107.95 92.0246 0)
+			(at 107.95 104.7246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "RS485_DE" output
+			(at 107.95 76.2 180)
+			(uuid "970be0e4-e0e8-4507-b1d9-b00e7ba52ed3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RS485_RX" input
+			(at 107.95 85.09 180)
+			(uuid "62dc01e8-4afd-4d53-ad2b-9f0305361a72")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RS485_TX" output
+			(at 107.95 78.74 180)
+			(uuid "9d1a3e39-ebce-420e-afab-0a03b902e28c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RS485_~{RE}" output
+			(at 107.95 82.55 180)
+			(uuid "52dfb4b6-d4c3-4d81-be16-cab098e84d62")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOTOR_A_SENSE" input
+			(at 149.86 82.55 0)
+			(uuid "49ab1a42-a419-450c-940f-4e670f4ce5cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOTOR_PWM1" output
+			(at 149.86 76.2 0)
+			(uuid "e01d8f55-d524-4924-8702-59f768c52fd9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOTOR_PWM2" output
+			(at 149.86 78.74 0)
+			(uuid "f8eb89d0-ba8a-488d-a333-8392e29784d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOTOR_LIM1" input
+			(at 149.86 85.09 0)
+			(uuid "e1f23ec9-c33c-4b10-88f4-3fb7212e1c3b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOTOR_LIM2" input
+			(at 149.86 87.63 0)
+			(uuid "da409833-d643-4f4f-86d4-6c475fb57dda")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -90,7 +180,7 @@
 		)
 	)
 	(sheet
-		(at 194.31 54.61)
+		(at 167.64 69.85)
 		(size 30.48 19.05)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -106,7 +196,7 @@
 		)
 		(uuid "83a46a74-20e5-45a4-9db6-7c0ecaae7ae9")
 		(property "Sheetname" "Motor Control"
-			(at 194.31 53.8984 0)
+			(at 167.64 69.1384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -115,12 +205,62 @@
 			)
 		)
 		(property "Sheetfile" "motor_control.kicad_sch"
-			(at 194.31 74.2446 0)
+			(at 167.64 89.4846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "A_SENSE" output
+			(at 167.64 82.55 180)
+			(uuid "e953587d-1998-426a-a779-370d14ca60ec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PWM1" input
+			(at 167.64 73.66 180)
+			(uuid "a1a1307b-7992-4b0d-af72-92cd3364eff2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PWM2" input
+			(at 167.64 76.2 180)
+			(uuid "92474c6d-f3b7-4514-8e67-418964110e88")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LIM1" output
+			(at 167.64 85.09 180)
+			(uuid "bcd364fa-64ed-4fd5-8ad1-060c35d9cd25")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LIM2" output
+			(at 167.64 87.63 180)
+			(uuid "1c93f0db-ea13-4bc3-b2c7-73557e7334f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -132,8 +272,8 @@
 		)
 	)
 	(sheet
-		(at 106.68 111.76)
-		(size 30.48 26.67)
+		(at 45.72 73.66)
+		(size 30.48 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -148,7 +288,7 @@
 		)
 		(uuid "d99f6078-db8e-492e-a407-99d18dce8a4c")
 		(property "Sheetname" "RS485"
-			(at 106.68 111.0484 0)
+			(at 45.72 72.9484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -157,12 +297,52 @@
 			)
 		)
 		(property "Sheetfile" "rs485.kicad_sch"
-			(at 106.68 139.0146 0)
+			(at 45.72 88.2146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "DE" input
+			(at 76.2 76.2 0)
+			(uuid "d9405102-c0c1-41ec-8957-a75c54007527")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RX" output
+			(at 76.2 85.09 0)
+			(uuid "27ebc4da-5670-461f-a147-c65c3d700725")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TX" input
+			(at 76.2 78.74 0)
+			(uuid "9b7e9742-b682-416e-b26d-a3f84f6ea260")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{RE}" input
+			(at 76.2 82.55 0)
+			(uuid "a6e9a6fb-03d1-4aa4-af7d-242e468b8ce5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
