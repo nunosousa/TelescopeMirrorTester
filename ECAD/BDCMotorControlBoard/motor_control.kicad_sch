@@ -2129,6 +2129,12 @@
 		(uuid "f42077fd-d064-4628-95f7-87a870a90cd4")
 	)
 	(junction
+		(at 83.82 176.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "11118eb1-a9ec-482e-a69f-3120a9038043")
+	)
+	(junction
 		(at 189.23 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2243,6 +2249,16 @@
 			(type default)
 		)
 		(uuid "1d1639aa-c238-4118-aae4-dbf6896dbecf")
+	)
+	(wire
+		(pts
+			(xy 83.82 176.53) (xy 83.82 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f2dc905-68d3-4437-90e2-5a1f4ba811f5")
 	)
 	(wire
 		(pts
@@ -2396,6 +2412,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 176.53) (xy 86.36 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e934a46-0e8c-48e2-9c63-e65c7ae15bb2")
+	)
+	(wire
+		(pts
 			(xy 81.28 85.09) (xy 82.55 85.09)
 		)
 		(stroke
@@ -2423,6 +2449,16 @@
 			(type default)
 		)
 		(uuid "a6646eb5-e618-43e1-a30e-2efd4464d667")
+	)
+	(wire
+		(pts
+			(xy 81.28 176.53) (xy 83.82 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae5bb739-4276-4fbe-b0bc-4fa25211d62b")
 	)
 	(wire
 		(pts
@@ -2664,6 +2700,28 @@
 			(justify right)
 		)
 		(uuid "2ebe1f97-c84d-4e67-8f17-b20008fad191")
+	)
+	(hierarchical_label "A_SENSE"
+		(shape output)
+		(at 73.66 176.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "60ef026a-88cb-44a3-b43f-d8f29fca49d6")
+	)
+	(hierarchical_label "A_SENSE_LP"
+		(shape output)
+		(at 86.36 176.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "81cebd4b-f6d0-4526-9947-6d5d5a59a746")
 	)
 	(hierarchical_label "A_SENSE"
 		(shape output)
@@ -3329,6 +3387,76 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 83.82 182.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3968de33-d361-4fc6-be35-51fd306ed95a")
+		(property "Reference" "C39"
+			(at 87.63 181.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 87.63 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 84.7852 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 83.82 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b90d11d4-aaf3-4c06-96fb-c17ba29cc487")
+		)
+		(pin "1"
+			(uuid "39901e38-9460-4a8b-a671-63d3754935b6")
+		)
+		(instances
+			(project ""
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "C39")
 					(unit 1)
 				)
 			)
@@ -5066,6 +5194,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 77.47 176.53 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "be7fa7b3-a132-42f0-a9f7-a451e3f0afe9")
+		(property "Reference" "R24"
+			(at 77.47 170.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 77.47 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 178.308 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 77.47 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 77.47 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "40e1747c-bb95-4887-bcde-434364b586c5")
+		)
+		(pin "2"
+			(uuid "1e07f2b5-80fd-4f33-95b5-c90ca5d6e9fe")
+		)
+		(instances
+			(project ""
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 82.55 105.41 0)
 		(unit 1)
@@ -5196,6 +5392,72 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 83.82 186.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c754648c-80e1-4cb0-979d-3fdb992038b2")
+		(property "Reference" "#PWR0103"
+			(at 83.82 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c23237b1-5989-42cb-a0a2-efe937877fb6")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
