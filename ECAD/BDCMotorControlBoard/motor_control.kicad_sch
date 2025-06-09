@@ -2138,7 +2138,7 @@
 		)
 		(uuid "128e0e24-f216-427a-848b-8f62b7168799")
 	)
-	(text "RC Low Pass filter analysis:\nInput square wave max frequency = 3 kHz (typical hall efect encoder frequency\nat max motor speed with no load)\n\nIf we accept that receiving up until the 9th harmonic is enough\nto correctly detect a square wave, then the max input frequency can be\nchoosen as 27kHz\n\nLow pass filter -3dB Cutoff Frequency: 31,8 kHz"
+	(text "RC Low Pass filter analysis:\nInput square wave max frequency = 3 kHz (typical hall efect encoder frequency\nat max motor speed with no load)\n\nIf we accept that receiving up until the 9th harmonic is enough\nto correctly detect a square wave, then the max input frequency can be\nchoosen as 27kHz\n\nLow pass filter -3dB Cutoff Frequency: 29,5 kHz"
 		(exclude_from_sim no)
 		(at 63.246 175.006 0)
 		(effects
@@ -2723,7 +2723,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 148.59) (xy 115.57 148.59)
+			(xy 96.52 148.59) (xy 107.95 148.59)
 		)
 		(stroke
 			(width 0)
@@ -2783,7 +2783,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 148.59) (xy 59.69 148.59)
+			(xy 40.64 148.59) (xy 52.07 148.59)
 		)
 		(stroke
 			(width 0)
@@ -2862,7 +2862,7 @@
 		(uuid "715f2669-44a9-40b6-836e-46d6590cd2a7")
 	)
 	(label "ENCODER_B"
-		(at 104.14 148.59 0)
+		(at 96.52 148.59 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2882,7 +2882,7 @@
 		(uuid "bd326f27-b9e9-4ced-a5e5-637e9bc3730d")
 	)
 	(label "ENCODER_A"
-		(at 48.26 148.59 0)
+		(at 40.64 148.59 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3357,6 +3357,83 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 63.5 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "187c5fe0-d3d3-403c-a9b3-449bd87da8e5")
+		(property "Reference" "R30"
+			(at 63.5 142.24 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 63.5 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 63.5 150.368 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 63.5 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0727RL"
+			(at 63.5 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1e3e2ec7-cec9-4cfd-9a2b-23a36d6385bf")
+		)
+		(pin "1"
+			(uuid "312b8385-abad-4696-938c-7a3bfe75dbe3")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -3954,6 +4031,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 111.76 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e11d537-8b8a-4c78-8014-36eb2b0e1f15")
+		(property "Reference" "R27"
+			(at 111.76 142.24 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 111.76 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 111.76 150.368 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 111.76 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 111.76 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0727RL"
+			(at 111.76 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "aee6c72c-cd91-4484-8b1a-e6bbcd99bb1a")
+		)
+		(pin "1"
+			(uuid "95ec7859-fe05-48f4-9b2b-8ecb35c578bf")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 99.06 115.57 0)
 		(unit 1)
@@ -4449,74 +4603,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 119.38 148.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6151c67a-8125-45d2-868b-b0a3dcda6eeb")
-		(property "Reference" "R27"
-			(at 119.38 142.24 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "50R"
-			(at 119.38 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 119.38 150.368 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 119.38 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 119.38 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "98697a8c-0c25-46f6-87f1-9cb9038468eb")
-		)
-		(pin "1"
-			(uuid "e91165ca-ce81-4bb2-b0ac-ef89d407be1d")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -5192,6 +5278,83 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "#PWR0100")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 119.38 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8215106b-ebe9-4e5a-b854-819515dd36e7")
+		(property "Reference" "R28"
+			(at 119.38 142.24 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 119.38 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 119.38 150.368 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 119.38 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0727RL"
+			(at 119.38 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c12c4ab5-92ee-4ed0-b64a-3aca5c15017a")
+		)
+		(pin "1"
+			(uuid "e15cdd43-fc14-4503-869f-4d2055abee87")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -6026,6 +6189,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 172.72 97.79 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a7613a23-a7b6-4993-bee0-36f9b81fa0b0")
+		(property "Reference" "R24"
+			(at 172.72 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 172.72 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 172.72 99.568 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 172.72 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 172.72 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0727RL"
+			(at 172.72 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8cf1a701-e237-4d2b-b739-93b636e283e0")
+		)
+		(pin "1"
+			(uuid "c595231f-fcfd-471c-9b1b-c79d23efe333")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 260.35 104.14 0)
 		(unit 1)
@@ -6237,6 +6477,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 55.88 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b0a93053-5f85-4cbd-a344-da90d592d8ff")
+		(property "Reference" "R29"
+			(at 55.88 142.24 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 55.88 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 55.88 150.368 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 55.88 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 55.88 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0727RL"
+			(at 55.88 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d61212f0-a154-46ec-9d76-137f9a8a704b")
+		)
+		(pin "1"
+			(uuid "b090a6f3-3a99-45ef-9fdb-47cc01b86ed0")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 142.24 77.47 270)
 		(unit 1)
@@ -6364,74 +6681,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "#PWR0117")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 172.72 97.79 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "be7fa7b3-a132-42f0-a9f7-a451e3f0afe9")
-		(property "Reference" "R24"
-			(at 172.72 91.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "27R"
-			(at 172.72 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 99.568 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 172.72 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 172.72 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "40e1747c-bb95-4887-bcde-434364b586c5")
-		)
-		(pin "2"
-			(uuid "1e07f2b5-80fd-4f33-95b5-c90ca5d6e9fe")
-		)
-		(instances
-			(project ""
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -6634,6 +6883,83 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "#PWR0103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 172.72 102.87 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c7ce6098-06d8-4b61-b3a7-109d89a916eb")
+		(property "Reference" "R26"
+			(at 172.72 109.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 172.72 106.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 172.72 101.092 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 172.72 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 172.72 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0727RL"
+			(at 172.72 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "16851d8b-f214-4f93-8252-c0d007ba5e5b")
+		)
+		(pin "1"
+			(uuid "5e133a05-0d33-4e7e-99df-45b26d9927a5")
+		)
+		(instances
+			(project "BDCMotorControlBoard"
+				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -7106,74 +7432,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 172.72 102.87 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e31ea36f-2105-43b7-86b6-cb9bd3d2ac1c")
-		(property "Reference" "R26"
-			(at 172.72 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "27R"
-			(at 172.72 106.68 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 101.092 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 172.72 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 172.72 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "94e5a6a5-4014-46f0-8f41-1ee7dd4c74c1")
-		)
-		(pin "2"
-			(uuid "569699d4-4c4a-4ed1-8e94-a0c044b3fc5f")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "R26")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 68.58 40.64 0)
 		(unit 1)
@@ -7300,74 +7558,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 63.5 148.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f09dd6c4-5be2-4991-ad25-0989414fa4fa")
-		(property "Reference" "R28"
-			(at 63.5 142.24 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "50R"
-			(at 63.5 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 63.5 150.368 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 63.5 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 63.5 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "205d8009-d006-4550-a6b1-b8b3f8fbad83")
-		)
-		(pin "1"
-			(uuid "02f3ca0a-707e-4000-a1b6-d19ba9cf4a8f")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "R28")
 					(unit 1)
 				)
 			)
