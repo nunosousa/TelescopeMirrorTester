@@ -1053,7 +1053,7 @@
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "091fb760-f8b4-4710-ab29-304b2c1b9497")
-		(at 134.49 125.51)
+		(at 102.49 86)
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R20"
@@ -3269,7 +3269,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "1fcbdf61-1de8-45b6-948a-3a8d1a00241f")
-		(at 140.0625 129.5)
+		(at 99.9375 81.95)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q4"
@@ -3629,7 +3629,7 @@
 				)
 			)
 		)
-		(property "Value" "27R"
+		(property "Value" "250R"
 			(at 0 1.05 0)
 			(layer "F.Fab")
 			(uuid "64cbcf08-3524-439a-9203-dcd5f407ac17")
@@ -3664,7 +3664,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0201FR-0727RL"
+		(property "MPN" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11117,7 +11117,7 @@
 	(footprint "LED_SMD:LED_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "7e0e5cda-abbc-4da8-818b-c09db3c19c97")
-		(at 144.5 115)
+		(at 99 87)
 		(descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "LED")
 		(property "Reference" "D5"
@@ -23892,52 +23892,9 @@
 			)
 		)
 	)
-	(gr_arc
-		(start 97 106)
-		(mid 96.292893 105.707107)
-		(end 96 105)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "142f1d85-c93e-463b-a85b-47a42f70ef9e")
-	)
-	(gr_arc
-		(start 103.5 88)
-		(mid 103.207107 88.707107)
-		(end 102.5 89)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "1b5132d5-6b4e-4ad7-a964-bdc1403d8129")
-	)
 	(gr_line
-		(start 103.5 110)
-		(end 103.5 107)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "1e5abc1d-caeb-484a-80c9-78c526713b7a")
-	)
-	(gr_arc
-		(start 96 90)
-		(mid 96.292893 89.292893)
-		(end 97 89)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "3b3f1366-18d6-40e1-b5d1-cbed9dbc619f")
-	)
-	(gr_line
-		(start 110 78.5)
-		(end 206 78.5)
+		(start 96 79)
+		(end 206 79)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -23946,8 +23903,8 @@
 		(uuid "466da551-4eaf-404a-abe1-6c3fb7a93238")
 	)
 	(gr_line
-		(start 206 78.5)
-		(end 206 116.5)
+		(start 206 79)
+		(end 206 116)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -23956,8 +23913,8 @@
 		(uuid "4931b4cd-8653-4335-bf6a-8f5ed3dcdf93")
 	)
 	(gr_line
-		(start 96 105)
-		(end 96 90)
+		(start 96 116)
+		(end 96 79)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -23966,77 +23923,14 @@
 		(uuid "5d409918-b075-4039-b0fb-c666af56a151")
 	)
 	(gr_line
-		(start 103.5 88)
-		(end 103.5 85)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "7008dc87-56f3-4337-b85d-d84f2035c646")
-	)
-	(gr_line
-		(start 102.5 106)
-		(end 97 106)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "7fee9d29-d350-48ef-9646-d91b0d6b6407")
-	)
-	(gr_line
-		(start 110 116.5)
-		(end 206 116.5)
+		(start 96 116)
+		(end 206 116)
 		(stroke
 			(width 0.05)
 			(type default)
 		)
 		(layer "Edge.Cuts")
 		(uuid "ab451451-e402-481c-a963-7731c2dc8561")
-	)
-	(gr_arc
-		(start 103.5 85)
-		(mid 105.403806 80.403806)
-		(end 110 78.5)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "b2122d99-ca8f-41b8-be4f-ba5e42a2c2f0")
-	)
-	(gr_arc
-		(start 102.5 106)
-		(mid 103.207107 106.292893)
-		(end 103.5 107)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "bc2e4b2c-7165-480f-ac15-4de27078b94b")
-	)
-	(gr_arc
-		(start 110 116.5)
-		(mid 105.403806 114.596194)
-		(end 103.5 110)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "cd4f830f-a592-4bbb-b1d3-f16868e324cb")
-	)
-	(gr_line
-		(start 102.5 89)
-		(end 97 89)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "cfd5c1bd-15ec-4633-8451-b6bd20213db8")
 	)
 	(embedded_fonts no)
 )
