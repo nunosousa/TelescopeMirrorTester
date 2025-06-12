@@ -2013,7 +2013,7 @@
 		)
 		(uuid "0ff31973-de96-429a-8f33-44e508bd0c53")
 	)
-	(text "Quiescent current analog: 450 µA maximum"
+	(text "Quiescent current analog: 450 µA maximum\nQuiescent current digital: 1.2 mA maximum"
 		(exclude_from_sim no)
 		(at 132.08 66.04 0)
 		(effects
@@ -2022,16 +2022,6 @@
 			)
 		)
 		(uuid "128e0e24-f216-427a-848b-8f62b7168799")
-	)
-	(text "Low pass filter -3dB Cutoff Frequency: xx kHz"
-		(exclude_from_sim no)
-		(at 166.878 109.728 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "5acd0a33-3096-43a0-a3d5-3dfa1cf0522c")
 	)
 	(text "ENCODER+"
 		(exclude_from_sim no)
@@ -2082,12 +2072,6 @@
 		(uuid "71437834-daa5-4c21-a2d9-fe9bae938fde")
 	)
 	(junction
-		(at 166.37 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "78176a0b-6303-466b-9317-cd483c7d50b2")
-	)
-	(junction
 		(at 58.42 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2116,16 +2100,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f2e694fc-863c-41bf-86d4-7bc2f6c8b254")
-	)
-	(wire
-		(pts
-			(xy 166.37 90.17) (xy 166.37 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0287eca3-d815-4396-878f-c37555642ba7")
 	)
 	(wire
 		(pts
@@ -2259,16 +2233,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 90.17) (xy 157.48 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4490e0ed-daf7-4196-b1f8-8e9f4712e955")
-	)
-	(wire
-		(pts
 			(xy 204.47 46.99) (xy 209.55 46.99)
 		)
 		(stroke
@@ -2396,26 +2360,6 @@
 			(type default)
 		)
 		(uuid "7876c7d5-9dbc-4b4d-a40e-148376468084")
-	)
-	(wire
-		(pts
-			(xy 166.37 90.17) (xy 167.64 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81dd8ce8-6439-40f1-8384-c1d6c0d926eb")
-	)
-	(wire
-		(pts
-			(xy 165.1 90.17) (xy 166.37 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ab8de2a-cfb5-47e7-84e9-b3aa765687b4")
 	)
 	(wire
 		(pts
@@ -2733,7 +2677,7 @@
 	)
 	(hierarchical_label "A_SENSE"
 		(shape output)
-		(at 167.64 90.17 0)
+		(at 143.51 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3785,76 +3729,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 166.37 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3968de33-d361-4fc6-be35-51fd306ed95a")
-		(property "Reference" "C39"
-			(at 170.18 93.9799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2n3C"
-			(at 170.18 96.5199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 167.3352 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 166.37 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 166.37 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b90d11d4-aaf3-4c06-96fb-c17ba29cc487")
-		)
-		(pin "1"
-			(uuid "39901e38-9460-4a8b-a671-63d3754935b6")
-		)
-		(instances
-			(project ""
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "C39")
 					(unit 1)
 				)
 			)
@@ -5739,83 +5613,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 161.29 90.17 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a7613a23-a7b6-4993-bee0-36f9b81fa0b0")
-		(property "Reference" "R24"
-			(at 161.29 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "250R"
-			(at 161.29 86.36 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
-			(at 161.29 91.948 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 161.29 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 161.29 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 161.29 90.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8cf1a701-e237-4d2b-b739-93b636e283e0")
-		)
-		(pin "1"
-			(uuid "c595231f-fcfd-471c-9b1b-c79d23efe333")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "R24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 242.57 82.55 0)
 		(unit 1)
@@ -6290,72 +6087,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
 					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 166.37 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c754648c-80e1-4cb0-979d-3fdb992038b2")
-		(property "Reference" "#PWR0103"
-			(at 166.37 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 166.37 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 166.37 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 166.37 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 166.37 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c23237b1-5989-42cb-a0a2-efe937877fb6")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/83a46a74-20e5-45a4-9db6-7c0ecaae7ae9"
-					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
