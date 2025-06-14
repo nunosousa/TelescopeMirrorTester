@@ -4122,9 +4122,9 @@
 		)
 		(uuid "4075911d-0fb0-4364-8154-cdfa3b35def4")
 	)
-	(text "SAR ADC Charge bucket filter\nLow pass filter -3dB Cutoff Frequency: 5,3 MHz"
+	(text "SAR ADC Charge bucket filter\nLow pass filter -3dB Cutoff Frequency: 1,6 MHz"
 		(exclude_from_sim no)
-		(at 202.184 143.002 0)
+		(at 194.564 143.002 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4225,7 +4225,7 @@
 		(uuid "b4063007-5ef6-4f11-b154-b6afec1082ed")
 	)
 	(junction
-		(at 207.01 125.73)
+		(at 194.31 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b69df43e-5f8b-40e0-962a-ddbb5b0ac3cc")
@@ -4247,12 +4247,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c705d314-f3db-4635-ab09-644292cd7099")
-	)
-	(junction
-		(at 193.04 125.73)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c71ab51d-8daa-4b3a-8007-b81114b15f0a")
 	)
 	(junction
 		(at 132.08 21.59)
@@ -4504,7 +4498,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 125.73) (xy 193.04 125.73)
+			(xy 163.83 125.73) (xy 194.31 125.73)
 		)
 		(stroke
 			(width 0)
@@ -4964,16 +4958,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 125.73) (xy 207.01 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "756ca5ef-bdb9-4cc5-b5e5-e66d06734546")
-	)
-	(wire
-		(pts
 			(xy 49.53 153.67) (xy 49.53 142.24)
 		)
 		(stroke
@@ -5204,7 +5188,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 125.73) (xy 207.01 125.73)
+			(xy 195.58 125.73) (xy 194.31 125.73)
 		)
 		(stroke
 			(width 0)
@@ -5724,16 +5708,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 125.73) (xy 193.04 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec2c1bce-f107-4478-8bcb-e65c1492ce9e")
-	)
-	(wire
-		(pts
 			(xy 200.66 21.59) (xy 200.66 22.86)
 		)
 		(stroke
@@ -5814,7 +5788,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 125.73) (xy 207.01 127)
+			(xy 194.31 125.73) (xy 194.31 127)
 		)
 		(stroke
 			(width 0)
@@ -6662,7 +6636,7 @@
 	)
 	(hierarchical_label "MOTOR_A_SENSE"
 		(shape input)
-		(at 215.9 125.73 0)
+		(at 203.2 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8539,7 +8513,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 207.01 130.81 0)
+		(at 194.31 130.81 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8549,7 +8523,7 @@
 		(fields_autoplaced yes)
 		(uuid "3968de33-d361-4fc6-be35-51fd306ed95a")
 		(property "Reference" "C39"
-			(at 203.2 129.5399 0)
+			(at 190.5 129.5399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8557,8 +8531,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15pC"
-			(at 203.2 132.0799 0)
+		(property "Value" "100pC"
+			(at 190.5 132.0799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8567,7 +8541,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 206.0448 134.62 0)
+			(at 193.3448 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8576,7 +8550,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 207.01 130.81 0)
+			(at 194.31 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8585,7 +8559,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 207.01 130.81 0)
+			(at 194.31 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9301,73 +9275,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
 					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 193.04 134.62 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5085187d-3543-4c0f-8e14-83e69a452c12")
-		(property "Reference" "#PWR083"
-			(at 193.04 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 193.04 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "afb3c602-95ff-4e35-805c-08166968dcde")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
-					(reference "#PWR083")
 					(unit 1)
 				)
 			)
@@ -10537,7 +10444,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 212.09 125.73 90)
+		(at 199.39 125.73 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10546,7 +10453,7 @@
 		(fields_autoplaced yes)
 		(uuid "6aa2a27b-4465-4a88-a01b-16d5556a5a9e")
 		(property "Reference" "R22"
-			(at 212.09 119.38 90)
+			(at 199.39 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10554,7 +10461,7 @@
 			)
 		)
 		(property "Value" "1kR"
-			(at 212.09 121.92 90)
+			(at 199.39 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10562,7 +10469,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 212.09 127.508 90)
+			(at 199.39 127.508 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10571,7 +10478,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 212.09 125.73 0)
+			(at 199.39 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10580,7 +10487,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 212.09 125.73 0)
+			(at 199.39 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10589,7 +10496,7 @@
 			)
 		)
 		(property "MPN" "RC0402FR-071KL"
-			(at 212.09 125.73 90)
+			(at 199.39 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12956,7 +12863,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 207.01 134.62 0)
+		(at 194.31 134.62 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12966,7 +12873,7 @@
 		(fields_autoplaced yes)
 		(uuid "c754648c-80e1-4cb0-979d-3fdb992038b2")
 		(property "Reference" "#PWR0103"
-			(at 207.01 140.97 0)
+			(at 194.31 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12975,7 +12882,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 207.01 139.7 0)
+			(at 194.31 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12983,7 +12890,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 207.01 134.62 0)
+			(at 194.31 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12992,7 +12899,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 207.01 134.62 0)
+			(at 194.31 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13001,7 +12908,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 207.01 134.62 0)
+			(at 194.31 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13112,77 +13019,6 @@
 			(project ""
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
 					(reference "U8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 193.04 130.81 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ca1be763-7457-4716-a8a6-7a0c89fac296")
-		(property "Reference" "C29"
-			(at 189.23 129.5399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "15pC"
-			(at 189.23 132.0799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 192.0748 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 193.04 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 193.04 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b7e938a3-7349-4edd-8319-95f47d62aed4")
-		)
-		(pin "1"
-			(uuid "18eb6bba-409a-48fc-8ac8-a2bdfec71bf7")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
-					(reference "C29")
 					(unit 1)
 				)
 			)
