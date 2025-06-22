@@ -4247,12 +4247,6 @@
 		(uuid "96571336-4871-4ab0-817a-6246a376343e")
 	)
 	(junction
-		(at 214.63 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a44e853f-3402-4644-bc51-f6cb566111fd")
-	)
-	(junction
 		(at 228.6 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4658,7 +4652,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 39.37) (xy 214.63 45.72)
+			(xy 213.36 39.37) (xy 213.36 45.72)
 		)
 		(stroke
 			(width 0)
@@ -5128,7 +5122,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 45.72) (xy 228.6 45.72)
+			(xy 213.36 45.72) (xy 228.6 45.72)
 		)
 		(stroke
 			(width 0)
@@ -5238,7 +5232,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 39.37) (xy 214.63 39.37)
+			(xy 146.05 39.37) (xy 213.36 39.37)
 		)
 		(stroke
 			(width 0)
@@ -11209,72 +11203,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 214.63 53.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7e44efac-9471-4a53-9955-96988a12418a")
-		(property "Reference" "#PWR065"
-			(at 214.63 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 214.63 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 214.63 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 214.63 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 214.63 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "29d47ab9-2bdf-4900-b7cb-a494ab182e15")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
-					(reference "#PWR065")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 186.69 26.67 0)
 		(unit 1)
@@ -13560,85 +13488,6 @@
 			(project "BDCMotorControlBoard"
 				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
 					(reference "#PWR010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 214.63 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e9c6ebc7-fea8-460d-a78e-9489cce05605")
-		(property "Reference" "C46"
-			(at 218.44 48.2599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
-			(at 218.44 50.7999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 215.5952 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 214.63 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 214.63 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "GRM033R60J104KE19D"
-			(at 214.63 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "64e840e0-e554-4a85-81ba-b865c8a22561")
-		)
-		(pin "1"
-			(uuid "687b474f-3f1c-4d84-be06-33d5f86a4ef1")
-		)
-		(instances
-			(project "BDCMotorControlBoard"
-				(path "/249dd5db-06ad-47dc-a5d6-b66af80e4bef/5ebe7803-ce98-4e10-9271-b43661729d62"
-					(reference "C46")
 					(unit 1)
 				)
 			)
