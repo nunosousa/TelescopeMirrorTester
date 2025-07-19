@@ -933,168 +933,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:L"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "L"
-				(at -1.27 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "L"
-				(at 1.905 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Inductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "inductor choke coil reactor magnetic"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "L_0_1"
-				(arc
-					(start 0 2.54)
-					(mid 0.6323 1.905)
-					(end 0 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 1.27)
-					(mid 0.6323 0.635)
-					(end 0 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 0)
-					(mid 0.6323 -0.635)
-					(end 0 -1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -1.27)
-					(mid 0.6323 -1.905)
-					(end 0 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "L_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1935,232 +1773,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5VD"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+5VD"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+5VD\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+5VD_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+5VD_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:PWR_FLAG"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#FLG"
-				(at 0 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "PWR_FLAG"
-				(at 0 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Special symbol for telling ERC where power comes from"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "flag power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PWR_FLAG_0_0"
-				(pin power_out line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "PWR_FLAG_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(junction
 		(at 60.96 80.01)
@@ -2179,12 +1791,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "47f539bf-5ced-4648-a418-98d63efd1438")
-	)
-	(junction
-		(at 87.63 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "75f47523-502e-4c99-ad8b-5b31fcb299f4")
 	)
 	(junction
 		(at 77.47 118.11)
@@ -2209,12 +1815,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ee5ffb07-93ed-46b4-b0d9-78814a270190")
-	)
-	(junction
-		(at 91.44 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ef8b9c51-cceb-4ff7-8944-7cd3712749b2")
 	)
 	(junction
 		(at 52.07 82.55)
@@ -2464,16 +2064,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 143.51) (xy 91.44 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5952ae54-8074-4cf2-8b0a-a2a9ca75419e")
-	)
-	(wire
-		(pts
 			(xy 104.14 118.11) (xy 114.3 118.11)
 		)
 		(stroke
@@ -2481,16 +2071,6 @@
 			(type default)
 		)
 		(uuid "5a500b14-6ce2-4fb5-be47-9a48b5a08c0b")
-	)
-	(wire
-		(pts
-			(xy 73.66 144.78) (xy 77.47 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5cf6ea29-8cc0-42a9-b48d-42d37c9f8893")
 	)
 	(wire
 		(pts
@@ -2511,16 +2091,6 @@
 			(type default)
 		)
 		(uuid "6078fde2-bfa6-4f72-b752-6114f63cd7a4")
-	)
-	(wire
-		(pts
-			(xy 87.63 144.78) (xy 87.63 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6197fc35-0887-4d55-97b4-949342df98e7")
 	)
 	(wire
 		(pts
@@ -2701,16 +2271,6 @@
 			(type default)
 		)
 		(uuid "9350de1f-6e51-4635-af07-e5d64a065234")
-	)
-	(wire
-		(pts
-			(xy 87.63 144.78) (xy 91.44 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96409c22-91e9-4f8a-bf56-a1d01700fe35")
 	)
 	(wire
 		(pts
@@ -2974,16 +2534,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 144.78) (xy 87.63 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ccd1d999-02bd-4317-8520-3784b227cdfc")
-	)
-	(wire
-		(pts
 			(xy 198.12 121.92) (xy 212.09 121.92)
 		)
 		(stroke
@@ -3051,16 +2601,6 @@
 			(type default)
 		)
 		(uuid "d95f3358-7d49-475a-8f2e-a9e38a9ba1a4")
-	)
-	(wire
-		(pts
-			(xy 100.33 143.51) (xy 100.33 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "db1d4fba-dae0-467d-852d-73cae5b453fe")
 	)
 	(wire
 		(pts
@@ -3134,16 +2674,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 143.51) (xy 73.66 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9db2325-bd1f-4e7d-8597-7131a6293c16")
-	)
-	(wire
-		(pts
 			(xy 104.14 92.71) (xy 114.3 92.71)
 		)
 		(stroke
@@ -3161,16 +2691,6 @@
 			(type default)
 		)
 		(uuid "ed1091df-3c7b-465a-bed1-a4142035d8a8")
-	)
-	(wire
-		(pts
-			(xy 100.33 144.78) (xy 91.44 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f3d5a66b-a42b-4099-979b-25f54e4ce00e")
 	)
 	(wire
 		(pts
@@ -3938,7 +3458,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0716e935-a611-49a4-aca0-2ea5179fc347")
-		(property "Reference" "J11"
+		(property "Reference" "J18"
 			(at 217.17 125.476 0)
 			(effects
 				(font
@@ -4053,205 +3573,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "J11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5VD")
-		(at 91.44 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1cb9532f-6c39-4633-b267-7b2d1567ca72")
-		(property "Reference" "#PWR0135"
-			(at 91.44 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5VD"
-			(at 91.44 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 91.44 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5VD\""
-			(at 91.44 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "08694e7c-3b8d-4fe7-aceb-ffe7074c607a")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0135")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 100.33 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "27535229-4bc2-4c90-9693-aea36d2785b7")
-		(property "Reference" "#FLG0101"
-			(at 100.33 141.605 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 100.33 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 100.33 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 100.33 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3aac3abc-9d3a-4126-8598-e1d2d763e387")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#FLG0101")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5VD")
-		(at 77.47 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2d66db99-a2b7-4873-901a-3540cd0d8f70")
-		(property "Reference" "#PWR0129"
-			(at 77.47 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5VD"
-			(at 77.47 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 77.47 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 77.47 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5VD\""
-			(at 77.47 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eac35f45-65f1-40c2-ad72-7bad2c49e520")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0129")
+					(reference "J18")
 					(unit 1)
 				)
 			)
@@ -4259,7 +3581,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 87.63 149.86 0)
+		(at 91.44 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4267,8 +3589,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2e1a16e0-307b-4202-9295-ef8bccad2ebd")
-		(property "Reference" "C47"
-			(at 91.44 148.5899 0)
+		(property "Reference" "C52"
+			(at 95.25 54.6099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4277,7 +3599,7 @@
 			)
 		)
 		(property "Value" "100nC"
-			(at 91.44 151.1299 0)
+			(at 95.25 57.1499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4286,7 +3608,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 88.5952 153.67 0)
+			(at 92.4052 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4295,7 +3617,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
-			(at 87.63 149.86 0)
+			(at 91.44 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4304,7 +3626,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 87.63 149.86 0)
+			(at 91.44 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4313,7 +3635,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 87.63 149.86 0)
+			(at 91.44 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4322,7 +3644,7 @@
 			)
 		)
 		(property "MPN" "C0805F104K5RACAUTO"
-			(at 87.63 149.86 0)
+			(at 91.44 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4339,7 +3661,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "C47")
+					(reference "C52")
 					(unit 1)
 				)
 			)
@@ -4354,7 +3676,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3654ecb1-0275-41c0-ad85-d5215c2af7a8")
-		(property "Reference" "U16"
+		(property "Reference" "U22"
 			(at 93.6341 72.39 0)
 			(effects
 				(font
@@ -4483,7 +3805,74 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "U16")
+					(reference "U22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "+5V_1")
+		(lib_id "power:+5V")
+		(at 77.47 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5bfcdd52-decc-4162-b04e-501de66ea3ed")
+		(property "Reference" "#PWR013"
+			(at 77.47 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 77.47 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 77.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bb71559f-a293-424c-8634-9226c54142bc")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -4500,7 +3889,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62ec619d-0503-4c55-a0db-be9f11a90baf")
-		(property "Reference" "#PWR0131"
+		(property "Reference" "#PWR0270"
 			(at 60.96 74.93 0)
 			(effects
 				(font
@@ -4550,7 +3939,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0131")
+					(reference "#PWR0270")
 					(unit 1)
 				)
 			)
@@ -4567,7 +3956,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "64e68842-39f5-4c71-a0e0-4de37424bf7f")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR0269"
 			(at 43.18 74.93 0)
 			(effects
 				(font
@@ -4617,7 +4006,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0133")
+					(reference "#PWR0269")
 					(unit 1)
 				)
 			)
@@ -4634,7 +4023,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "68b8c0f3-b119-4469-89f3-33b3fd23bd77")
-		(property "Reference" "#PWR0127"
+		(property "Reference" "#PWR0261"
 			(at 209.55 130.81 0)
 			(effects
 				(font
@@ -4684,7 +4073,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0127")
+					(reference "#PWR0261")
 					(unit 1)
 				)
 			)
@@ -4700,7 +4089,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70214d0b-0cfb-4fdd-b35d-604f213dca1b")
-		(property "Reference" "R39"
+		(property "Reference" "R38"
 			(at 63.5 73.6599 0)
 			(effects
 				(font
@@ -4772,93 +4161,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R39")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 81.28 144.78 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7cde4a7f-a717-45b4-a19e-a1e46ab65a9f")
-		(property "Reference" "L3"
-			(at 81.28 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uL"
-			(at 81.28 142.24 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 81.28 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Murata-Electronics-LQM21FN100M80L_C162582.pdf"
-			(at 81.28 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 81.28 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 81.28 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "LQM21FN100M80L"
-			(at 81.28 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9aab8324-92c7-415c-aa91-e817ed99fabf")
-		)
-		(pin "2"
-			(uuid "9c4833ca-c967-4fc7-8597-36e36da142d1")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "L3")
+					(reference "R38")
 					(unit 1)
 				)
 			)
@@ -4867,7 +4170,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 87.63 153.67 0)
+		(at 91.44 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4875,8 +4178,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a00127a9-0cfa-4e4c-8637-46bc4ea8e1bb")
-		(property "Reference" "#PWR0134"
-			(at 87.63 160.02 0)
+		(property "Reference" "#PWR0263"
+			(at 91.44 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4885,7 +4188,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 87.63 158.75 0)
+			(at 91.44 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4893,7 +4196,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 87.63 153.67 0)
+			(at 91.44 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4902,7 +4205,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 87.63 153.67 0)
+			(at 91.44 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4911,7 +4214,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 87.63 153.67 0)
+			(at 91.44 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4925,7 +4228,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0134")
+					(reference "#PWR0263")
 					(unit 1)
 				)
 			)
@@ -4941,7 +4244,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bcd8d235-b3f6-40cf-8b98-390f719b77c7")
-		(property "Reference" "R38"
+		(property "Reference" "R37"
 			(at 54.61 73.6599 0)
 			(effects
 				(font
@@ -5013,7 +4316,141 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R38")
+					(reference "R37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "+5V_1")
+		(lib_id "power:+5V")
+		(at 91.44 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d40fd745-5420-4ef7-a410-d26fadb1c49b")
+		(property "Reference" "#PWR012"
+			(at 91.44 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 91.44 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 91.44 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b6c57ddf-9dda-4836-a1e6-8d5649fdaf64")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "+5V_1")
+		(lib_id "power:+5V")
+		(at 91.44 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dc453e4c-2539-45f4-a8cd-3192d02bca4e")
+		(property "Reference" "#PWR011"
+			(at 91.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 91.44 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 91.44 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d6cec6ee-6315-4170-8b6e-7c2baf81d0e5")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -5030,7 +4467,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8b61b0a-26dd-45df-93f5-0c9976c8bc32")
-		(property "Reference" "#PWR0132"
+		(property "Reference" "#PWR0268"
 			(at 52.07 74.93 0)
 			(effects
 				(font
@@ -5080,7 +4517,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0132")
+					(reference "#PWR0268")
 					(unit 1)
 				)
 			)
@@ -5097,7 +4534,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0aeb73f-f86e-4704-9b1d-2308983b1038")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0264"
 			(at 91.44 132.08 0)
 			(effects
 				(font
@@ -5147,7 +4584,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0136")
+					(reference "#PWR0264")
 					(unit 1)
 				)
 			)
@@ -5163,7 +4600,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f674fb25-acc9-4aa0-986e-5f6b2ad94eb8")
-		(property "Reference" "R37"
+		(property "Reference" "R36"
 			(at 45.72 73.6599 0)
 			(effects
 				(font
@@ -5235,140 +4672,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5VD")
-		(at 91.44 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f9fb5e2f-f9e0-41fe-8130-580b47c215b3")
-		(property "Reference" "#PWR0130"
-			(at 91.44 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5VD"
-			(at 91.44 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 91.44 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5VD\""
-			(at 91.44 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c3283e33-de98-475e-a2a6-2e7dee988da5")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0130")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "+5V_1")
-		(lib_id "power:+5V")
-		(at 73.66 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fccf230b-d13c-415b-89a7-538098829f63")
-		(property "Reference" "#PWR0128"
-			(at 73.66 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 73.66 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 73.66 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 73.66 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 73.66 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b5e1beab-510e-4dd0-a491-a9a80f7a9db5")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0128")
+					(reference "R36")
 					(unit 1)
 				)
 			)
