@@ -5,6 +5,181 @@
 	(uuid "923d13a4-a323-4ae2-8939-c4fbc1e1abd0")
 	(paper "A4")
 	(lib_symbols
+		(symbol "74xGxx:74AUC1G79"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -2.54 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "74AUC1G79"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single D Flip-Flop, Low-Voltage CMOS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Single D Flip-Flop D CMOS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT* SG*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "74AUC1G79_0_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "74AUC1G79_1_1"
+				(pin input line
+					(at -12.7 5.08 0)
+					(length 5.08)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input clock
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 12.7 270)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 5.08 180)
+					(length 5.08)
+					(name "Q"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Analog_custom:MCP6S26"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1974,6 +2149,17 @@
 	)
 	(hierarchical_label "ENCODER_A"
 		(shape output)
+		(at 106.68 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b21bdf29-fc87-4618-888c-6bef282f5892")
+	)
+	(hierarchical_label "ENCODER_A"
+		(shape output)
 		(at 201.93 99.06 180)
 		(effects
 			(font
@@ -2016,6 +2202,17 @@
 		)
 		(uuid "d976b78a-651e-493a-8cf9-b01698374bce")
 	)
+	(hierarchical_label "ENCODER_B"
+		(shape output)
+		(at 106.68 54.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e15666b7-635c-4786-a9a5-c0eddf00e974")
+	)
 	(hierarchical_label "PGA_SI"
 		(shape input)
 		(at 91.44 111.76 180)
@@ -2048,6 +2245,83 @@
 			(justify right)
 		)
 		(uuid "f260042c-0b30-47a3-93e5-36de73556ae6")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 135.89 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1e99c7a7-a276-437f-912b-0e207510aac5")
+		(property "Reference" "C60"
+			(at 128.27 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 127 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 136.8552 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 135.89 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 135.89 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c0664942-fc1d-42d7-bffe-4c3b531fdf4d")
+		)
+		(pin "2"
+			(uuid "48ef4e3d-9613-4e53-bcbd-42c5be68d44b")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C60")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:L")
@@ -2130,6 +2404,156 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(reference "L4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xGxx:74AUC1G79")
+		(at 93.98 49.53 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2507366e-2df2-4a23-ad6a-4c4795848b2b")
+		(property "Reference" "U24"
+			(at 78.74 38.0298 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC1G79"
+			(at 78.74 40.5698 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 93.98 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT1G79_Q100.pdf"
+			(at 93.98 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single D Flip-Flop, Low-Voltage CMOS"
+			(at 93.98 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC1G79GW,125"
+			(at 93.98 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7b46e126-6d15-4ef0-85d9-406e808fb8ac")
+		)
+		(pin "4"
+			(uuid "87b92c64-028b-4e0c-aa67-5cfe46fd2d7a")
+		)
+		(pin "3"
+			(uuid "6df0ee9a-4162-4a1c-b59d-70128450c097")
+		)
+		(pin "2"
+			(uuid "f20f0d3e-73ce-47fc-ad0a-3989b7daa80a")
+		)
+		(pin "5"
+			(uuid "c5068c60-ca98-4723-a8b0-9d0bf01a0f54")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 135.89 44.45 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "25de614f-dceb-4dc8-91be-68f7420dd53f")
+		(property "Reference" "#PWR07"
+			(at 135.89 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 138.43 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5df4342a-8cee-4245-8657-69cd883844aa")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -2488,6 +2912,138 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 135.89 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b6fa05b-f41a-44de-b613-90e237866575")
+		(property "Reference" "#PWR08"
+			(at 135.89 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 135.89 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7e45dae9-99a0-4ae9-8417-526dab85bf7d")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 93.98 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a2e77847-690b-4df5-89a4-e48c58e8cfab")
+		(property "Reference" "#PWR010"
+			(at 93.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 93.98 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 93.98 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c0638e5-0330-4bb7-a573-96157b073b2a")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 102.87 83.82 0)
 		(unit 1)
@@ -2798,6 +3354,70 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(reference "#PWR0273")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 93.98 36.83 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f41cd19b-d597-4001-a51d-bb8c3451f038")
+		(property "Reference" "#PWR09"
+			(at 93.98 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 96.52 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 93.98 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9797ca0b-55f7-4b34-a2eb-9dc063c6cda9")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
