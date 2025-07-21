@@ -235,7 +235,7 @@
 	(net 113 "Net-(C52-Pad1)")
 	(net 114 "Net-(C53-Pad1)")
 	(net 115 "Net-(U23-V_{DD})")
-	(net 116 "Net-(U23-V_{OUT})")
+	(net 116 "Net-(U24-Vs)")
 	(net 117 "unconnected-(J1-Pin_2-Pad2)")
 	(net 118 "/13")
 	(net 119 "/SDA{slash}A4")
@@ -275,77 +275,76 @@
 	(net 153 "/Serial ports/DSR_LINE2")
 	(net 154 "/Serial ports/TX_LINE2")
 	(net 155 "Net-(U18-ISEN)")
-	(net 156 "unconnected-(U24-Q-Pad4)")
-	(net 157 "unconnected-(J1-Pin_8-Pad8)")
-	(net 158 "/Serial ports/DTR_IN1")
-	(net 159 "/Serial ports/CTS_IN1")
-	(net 160 "/Serial ports/~{SHDN_IN1}")
-	(net 161 "/Serial ports/DSR_IN1")
-	(net 162 "unconnected-(U1-NC-Pad3)")
-	(net 163 "unconnected-(U2-IO1_5-Pad18)")
-	(net 164 "/Serial ports/DCD_IN1")
-	(net 165 "/Serial ports/EN_IN1")
-	(net 166 "/Serial ports/RTS_IN1")
-	(net 167 "/Serial ports/RI_IN1")
-	(net 168 "unconnected-(U2-IO1_7-Pad20)")
-	(net 169 "/Serial ports/DCD_IN2")
-	(net 170 "/Serial ports/RI_IN2")
-	(net 171 "/Serial ports/DSR_IN2")
-	(net 172 "/Serial ports/EN_IN2")
-	(net 173 "/Serial ports/~{SHDN_IN2}")
-	(net 174 "unconnected-(U2-IO0_7-Pad11)")
-	(net 175 "/Serial ports/RTS_IN2")
-	(net 176 "unconnected-(U2-IO1_6-Pad19)")
-	(net 177 "unconnected-(U2-IO0_6-Pad10)")
-	(net 178 "unconnected-(U2-IO1_4-Pad17)")
-	(net 179 "Net-(U3-Pad2)")
-	(net 180 "/Motor Control/EN_MOTOR1")
-	(net 181 "/Serial ports/CTS_IN2")
-	(net 182 "/Serial ports/DTR_IN2")
-	(net 183 "Net-(U3-Pad5)")
-	(net 184 "unconnected-(J1-Pin_3-Pad3)")
-	(net 185 "/Motor Control/PWM2")
-	(net 186 "unconnected-(J1-Pin_4-Pad4)")
-	(net 187 "/Motor Control/EN_ENC_MOTOR1")
-	(net 188 "/Motor Control/EN_ENC_MOTOR2")
-	(net 189 "Net-(U6-IN2)")
-	(net 190 "Net-(U6-IN1)")
-	(net 191 "/Motor Control/PWM1")
-	(net 192 "Net-(J16-Pin_1)")
-	(net 193 "Net-(J17-Pin_1)")
-	(net 194 "Net-(U5-Pad2)")
-	(net 195 "/Motor Control/EN_ENC_MOTOR3")
-	(net 196 "Net-(U5-Pad10)")
-	(net 197 "Net-(U11-ISEN)")
-	(net 198 "/Motor Control/CURRENT1")
-	(net 199 "Net-(U10-Pad4)")
-	(net 200 "/Motor Control/EN_MOTOR2")
-	(net 201 "Net-(U10-Pad12)")
-	(net 202 "Net-(U10-Pad10)")
-	(net 203 "Net-(U10-Pad2)")
-	(net 204 "/Motor Control/CURRENT2")
-	(net 205 "unconnected-(U13-DOUT4-Pad28)")
-	(net 206 "unconnected-(U13-DIN4-Pad21)")
-	(net 207 "unconnected-(U14-DIN4-Pad21)")
-	(net 208 "Net-(U11-IN1)")
-	(net 209 "Net-(U11-IN2)")
-	(net 210 "unconnected-(U14-DOUT4-Pad28)")
-	(net 211 "Net-(U15-Pad2)")
-	(net 212 "/Motor Control/EN_MOTOR3")
-	(net 213 "Net-(U15-Pad5)")
-	(net 214 "Net-(U18-IN2)")
-	(net 215 "Net-(U18-IN1)")
-	(net 216 "Net-(U17-Pad2)")
-	(net 217 "Net-(U17-Pad10)")
-	(net 218 "/Motor Control/CURRENT3")
-	(net 219 "Net-(U20-Q5)")
-	(net 220 "Net-(U20-Q1)")
-	(net 221 "Net-(U20-Q3)")
-	(net 222 "Net-(U20-Q2)")
-	(net 223 "Net-(U20-Q4)")
-	(net 224 "Net-(U20-Q0)")
-	(net 225 "Net-(U20-Q6)")
-	(net 226 "Net-(U20-Q7)")
+	(net 156 "unconnected-(J1-Pin_8-Pad8)")
+	(net 157 "/Serial ports/DTR_IN1")
+	(net 158 "/Serial ports/CTS_IN1")
+	(net 159 "/Serial ports/~{SHDN_IN1}")
+	(net 160 "/Serial ports/DSR_IN1")
+	(net 161 "unconnected-(U1-NC-Pad3)")
+	(net 162 "unconnected-(U2-IO1_5-Pad18)")
+	(net 163 "/Serial ports/DCD_IN1")
+	(net 164 "/Serial ports/EN_IN1")
+	(net 165 "/Serial ports/RTS_IN1")
+	(net 166 "/Serial ports/RI_IN1")
+	(net 167 "unconnected-(U2-IO1_7-Pad20)")
+	(net 168 "/Serial ports/DCD_IN2")
+	(net 169 "/Serial ports/RI_IN2")
+	(net 170 "/Serial ports/DSR_IN2")
+	(net 171 "/Serial ports/EN_IN2")
+	(net 172 "/Serial ports/~{SHDN_IN2}")
+	(net 173 "unconnected-(U2-IO0_7-Pad11)")
+	(net 174 "/Serial ports/RTS_IN2")
+	(net 175 "unconnected-(U2-IO1_6-Pad19)")
+	(net 176 "unconnected-(U2-IO0_6-Pad10)")
+	(net 177 "unconnected-(U2-IO1_4-Pad17)")
+	(net 178 "Net-(U3-Pad2)")
+	(net 179 "/Motor Control/EN_MOTOR1")
+	(net 180 "/Serial ports/CTS_IN2")
+	(net 181 "/Serial ports/DTR_IN2")
+	(net 182 "Net-(U3-Pad5)")
+	(net 183 "unconnected-(J1-Pin_3-Pad3)")
+	(net 184 "/Motor Control/PWM2")
+	(net 185 "unconnected-(J1-Pin_4-Pad4)")
+	(net 186 "/Motor Control/EN_ENC_MOTOR1")
+	(net 187 "/Motor Control/EN_ENC_MOTOR2")
+	(net 188 "Net-(U6-IN2)")
+	(net 189 "Net-(U6-IN1)")
+	(net 190 "/Motor Control/PWM1")
+	(net 191 "Net-(J16-Pin_1)")
+	(net 192 "Net-(J17-Pin_1)")
+	(net 193 "Net-(U5-Pad2)")
+	(net 194 "/Motor Control/EN_ENC_MOTOR3")
+	(net 195 "Net-(U5-Pad10)")
+	(net 196 "Net-(U11-ISEN)")
+	(net 197 "/Motor Control/CURRENT1")
+	(net 198 "Net-(U10-Pad4)")
+	(net 199 "/Motor Control/EN_MOTOR2")
+	(net 200 "Net-(U10-Pad12)")
+	(net 201 "Net-(U10-Pad10)")
+	(net 202 "Net-(U10-Pad2)")
+	(net 203 "/Motor Control/CURRENT2")
+	(net 204 "unconnected-(U13-DOUT4-Pad28)")
+	(net 205 "unconnected-(U13-DIN4-Pad21)")
+	(net 206 "unconnected-(U14-DIN4-Pad21)")
+	(net 207 "Net-(U11-IN1)")
+	(net 208 "Net-(U11-IN2)")
+	(net 209 "unconnected-(U14-DOUT4-Pad28)")
+	(net 210 "Net-(U15-Pad2)")
+	(net 211 "/Motor Control/EN_MOTOR3")
+	(net 212 "Net-(U15-Pad5)")
+	(net 213 "Net-(U18-IN2)")
+	(net 214 "Net-(U18-IN1)")
+	(net 215 "Net-(U17-Pad2)")
+	(net 216 "Net-(U17-Pad10)")
+	(net 217 "/Motor Control/CURRENT3")
+	(net 218 "Net-(U20-Q5)")
+	(net 219 "Net-(U20-Q1)")
+	(net 220 "Net-(U20-Q3)")
+	(net 221 "Net-(U20-Q2)")
+	(net 222 "Net-(U20-Q4)")
+	(net 223 "Net-(U20-Q0)")
+	(net 224 "Net-(U20-Q6)")
+	(net 225 "Net-(U20-Q7)")
 	(footprint "Connector_PinSocket_2.54mm:PinSocket_2x18_P2.54mm_Vertical"
 		(locked yes)
 		(layer "F.Cu")
@@ -376,7 +375,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2306091004_HCTL-PZ254-2-18-Z-8-5_C2894979.pdf"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -398,6 +397,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-2-18-Z-8.5"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "beaa35c0-078a-4aee-a332-43b0b8ae5667")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8865f5f-5ebb-4e7b-ba85-624149174b78")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1027,7 +1052,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411121101_HCTL-PZ254-1-08-Z-8-5_C2894931.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1049,6 +1074,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-1-08-Z-8.5"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7387036-e80b-46d2-84c6-2f966aaa0a15")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "acfc7472-673e-4215-9106-db09a709f703")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1247,7 +1298,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 184 "unconnected-(J1-Pin_3-Pad3)")
+			(net 183 "unconnected-(J1-Pin_3-Pad3)")
 			(pinfunction "Pin_3")
 			(pintype "passive+no_connect")
 			(uuid "6c87a6e0-19ec-4603-b9c7-b52cb05d2bb5")
@@ -1258,7 +1309,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 186 "unconnected-(J1-Pin_4-Pad4)")
+			(net 185 "unconnected-(J1-Pin_4-Pad4)")
 			(pinfunction "Pin_4")
 			(pintype "passive+no_connect")
 			(uuid "81bfc365-819a-4d03-b2fa-f68436fffcdc")
@@ -1302,7 +1353,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 157 "unconnected-(J1-Pin_8-Pad8)")
+			(net 156 "unconnected-(J1-Pin_8-Pad8)")
 			(pinfunction "Pin_8")
 			(pintype "passive+no_connect")
 			(uuid "672e7e8a-459d-40ad-a53a-ea4d7d4fa41a")
@@ -1350,7 +1401,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411121101_HCTL-PZ254-1-08-Z-8-5_C2894931.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1372,6 +1423,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-1-08-Z-8.5"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0e8110d5-a00d-489e-b03b-63461cd0d0fe")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f640c859-ac5b-4274-b66f-c67705992592")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1673,7 +1750,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411121101_HCTL-PZ254-1-08-Z-8-5_C2894931.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1695,6 +1772,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-1-08-Z-8.5"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dbbedca4-cee9-4751-aec1-7ed8f48244c3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa10f719-040c-4466-bfbb-6d4ba92dc157")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1996,7 +2099,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411121101_HCTL-PZ254-1-10-Z-8-5_C2894933.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2018,6 +2121,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-1-10-Z-8.5"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d9e65bbe-c093-47c2-9e29-3d026533d4e4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2d9bbfbb-b596-4db8-b424-97c32a7041ec")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -2295,7 +2424,7 @@
 			(remove_unused_layers no)
 			(net 58 "/*8")
 			(pinfunction "Pin_10")
-			(pintype "passive+no_connect")
+			(pintype "passive")
 			(uuid "d402663c-484e-4e83-99f8-2eee3846baee")
 		)
 		(embedded_fonts no)
@@ -2341,7 +2470,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411121101_HCTL-PZ254-1-08-Z-8-5_C2894931.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2363,6 +2492,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-1-08-Z-8.5"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "50a30655-d930-4123-989c-a8522077ac59")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eed408a5-e7c5-4bdd-87e6-1525a697bb68")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -2664,7 +2819,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411121101_HCTL-PZ254-1-08-Z-8-5_C2894931.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2686,6 +2841,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254-1-08-Z-8.5"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "36f76072-bf6a-48a2-b7fa-2a696d9faf47")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c74d6b7c-d9c6-4a8e-9b60-2c8049ecf845")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -3256,6 +3437,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8b8f4f58-1adf-48b6-b177-d38e193c2c56")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/694b4171-2523-4931-a192-e56ee1f5f08c")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -3461,6 +3655,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3cd01776-36d8-4c2f-83c0-2c3ad29a68dc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "062412a0-13aa-4f75-b5bf-03eafa0052d0")
 			(effects
 				(font
 					(size 1 1)
@@ -3907,6 +4114,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "690c044b-0bee-41fc-abda-d33004d088b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "BarrelJack*")
 		(path "/d37cf7e2-d094-4e18-b516-613256cd0153")
 		(sheetname "/")
@@ -4303,6 +4523,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "42e12df8-5d3c-4a26-aa27-7407b1c2d042")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/656b9717-bcb2-43f6-8105-46d165ec7435")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -4508,6 +4741,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "861495a3-52fc-4263-b9b4-f5ac45b6d6cb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e8b6b637-c018-4fc1-97b4-ccb1d183525e")
 			(effects
 				(font
 					(size 1 1)
@@ -4727,6 +4973,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "acfb2475-c809-4a26-b644-f1df2eebf327")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/053a22ca-17bb-4dc8-a7ea-028314860374")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -4932,6 +5191,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ffcdb841-ee16-4287-815b-c980f976d446")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c7a98b3-af15-40f7-86ae-4a8e00247e28")
 			(effects
 				(font
 					(size 1 1)
@@ -5212,7 +5484,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 165 "/Serial ports/EN_IN1")
+			(net 164 "/Serial ports/EN_IN1")
 			(pinfunction "IO0_0")
 			(pintype "bidirectional")
 			(uuid "3e28b06e-b4fb-4c1e-91b8-eb9efbb8765f")
@@ -5222,7 +5494,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 166 "/Serial ports/RTS_IN1")
+			(net 165 "/Serial ports/RTS_IN1")
 			(pinfunction "IO0_1")
 			(pintype "bidirectional")
 			(uuid "7afc8012-4636-47da-8c76-6bdefa371fa9")
@@ -5232,7 +5504,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 161 "/Serial ports/DSR_IN1")
+			(net 160 "/Serial ports/DSR_IN1")
 			(pinfunction "IO0_2")
 			(pintype "bidirectional")
 			(uuid "657a8d3d-7b66-441c-a31f-67e8887d79c7")
@@ -5242,7 +5514,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 159 "/Serial ports/CTS_IN1")
+			(net 158 "/Serial ports/CTS_IN1")
 			(pinfunction "IO0_3")
 			(pintype "bidirectional")
 			(uuid "69bb97ee-5b10-42ff-ba0e-25c74a6270b0")
@@ -5252,7 +5524,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 158 "/Serial ports/DTR_IN1")
+			(net 157 "/Serial ports/DTR_IN1")
 			(pinfunction "IO0_4")
 			(pintype "bidirectional")
 			(uuid "346a709c-8164-41df-8d65-cb25c2ca5f0c")
@@ -5262,7 +5534,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 167 "/Serial ports/RI_IN1")
+			(net 166 "/Serial ports/RI_IN1")
 			(pinfunction "IO0_5")
 			(pintype "bidirectional")
 			(uuid "f7201528-a73a-49e7-9f64-611d85ed8d3d")
@@ -5272,7 +5544,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 160 "/Serial ports/~{SHDN_IN1}")
+			(net 159 "/Serial ports/~{SHDN_IN1}")
 			(pinfunction "IO0_6")
 			(pintype "bidirectional")
 			(uuid "dff7248e-3ffa-4109-b83e-12c2f0094698")
@@ -5282,7 +5554,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 164 "/Serial ports/DCD_IN1")
+			(net 163 "/Serial ports/DCD_IN1")
 			(pinfunction "IO0_7")
 			(pintype "bidirectional")
 			(uuid "14c6e74e-3045-4e33-a74f-6d1b385352d3")
@@ -5302,7 +5574,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 170 "/Serial ports/RI_IN2")
+			(net 169 "/Serial ports/RI_IN2")
 			(pinfunction "IO1_0")
 			(pintype "bidirectional")
 			(uuid "14d1ac8e-93cf-4b67-af8a-1b9435ae42b5")
@@ -5312,7 +5584,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 173 "/Serial ports/~{SHDN_IN2}")
+			(net 172 "/Serial ports/~{SHDN_IN2}")
 			(pinfunction "IO1_1")
 			(pintype "bidirectional")
 			(uuid "5668f5bb-d502-44f3-9fb1-80f490a3db9d")
@@ -5322,7 +5594,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 169 "/Serial ports/DCD_IN2")
+			(net 168 "/Serial ports/DCD_IN2")
 			(pinfunction "IO1_2")
 			(pintype "bidirectional")
 			(uuid "ce7ab328-92e4-497a-9282-7ac0b909eea7")
@@ -5332,7 +5604,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 182 "/Serial ports/DTR_IN2")
+			(net 181 "/Serial ports/DTR_IN2")
 			(pinfunction "IO1_3")
 			(pintype "bidirectional")
 			(uuid "7f4f6dce-b1a2-4df1-9d54-debe20bef75f")
@@ -5342,7 +5614,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 181 "/Serial ports/CTS_IN2")
+			(net 180 "/Serial ports/CTS_IN2")
 			(pinfunction "IO1_4")
 			(pintype "bidirectional")
 			(uuid "ccb6da24-a52d-481f-aebd-ff6c64a03151")
@@ -5352,7 +5624,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 171 "/Serial ports/DSR_IN2")
+			(net 170 "/Serial ports/DSR_IN2")
 			(pinfunction "IO1_5")
 			(pintype "bidirectional")
 			(uuid "503098af-b5fc-4888-945d-083d7565b1fe")
@@ -5362,7 +5634,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 172 "/Serial ports/EN_IN2")
+			(net 171 "/Serial ports/EN_IN2")
 			(pinfunction "IO1_6")
 			(pintype "bidirectional")
 			(uuid "907829e1-84c0-4c3f-9f22-1e7cd2cb5e10")
@@ -5372,7 +5644,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 175 "/Serial ports/RTS_IN2")
+			(net 174 "/Serial ports/RTS_IN2")
 			(pinfunction "IO1_7")
 			(pintype "bidirectional")
 			(uuid "4452ae2c-35dd-4ac7-8106-8a918ac95982")
@@ -5488,6 +5760,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "58a107f6-0b49-4035-a1fd-462ec832030f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8ea7bff6-dd57-4bf8-9ff2-27a92e8b906f")
 			(effects
 				(font
 					(size 1 1)
@@ -5738,7 +6023,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 218 "/Motor Control/CURRENT3")
+			(net 217 "/Motor Control/CURRENT3")
 			(pintype "output")
 			(uuid "04addd6e-a36a-4acb-a0dc-8f81b584cf06")
 		)
@@ -5853,6 +6138,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "509e15ac-f394-4747-8112-1c82e443ae64")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d3f72898-bca9-4409-a841-134fa3aaa83c")
 			(effects
 				(font
 					(size 1 1)
@@ -6539,6 +6837,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "465a0b32-7d6c-4936-bf9f-d609a8e27aec")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/f905bbc8-1376-41ef-a1b2-0cbb88505ad9")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -6660,7 +6971,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 192 "Net-(J16-Pin_1)")
+			(net 191 "Net-(J16-Pin_1)")
 			(pintype "passive")
 			(uuid "02296e0a-c354-4091-85a6-137f4c14bf2d")
 		)
@@ -6686,14 +6997,14 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_1206_3216Metric"
+	(footprint "Capacitor_SMD:C_1210_3225Metric"
 		(layer "F.Cu")
 		(uuid "18cd1b70-5bf2-4adf-88d3-553ae38e33a9")
 		(at 264.8325 112.355)
-		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(descr "Capacitor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C3"
-			(at 0 -1.85 0)
+			(at 0 -2.3 0)
 			(layer "F.SilkS")
 			(uuid "209ea72c-9d82-4f6f-9882-35648e8a2d71")
 			(effects
@@ -6704,7 +7015,7 @@
 			)
 		)
 		(property "Value" "10uC"
-			(at 0 1.85 0)
+			(at 0 2.3 0)
 			(layer "F.Fab")
 			(uuid "d2ad48ce-fc6a-4f3a-9ece-3192337baf41")
 			(effects
@@ -6743,7 +7054,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f53e0733-caf7-4b18-b47d-f285ca3a4fb4")
+			(uuid "414e97ee-5758-4944-82a4-75ad85beeff6")
 			(effects
 				(font
 					(size 1 1)
@@ -6756,7 +7067,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5276239e-c2dc-46bf-b531-bd6a03a0a1fa")
+			(uuid "4eece13e-0465-4b6e-b9fd-f8f7d6441036")
 			(effects
 				(font
 					(size 1 1)
@@ -6770,104 +7081,104 @@
 		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -0.711252 -0.91)
-			(end 0.711252 -0.91)
+			(start -0.711252 -1.36)
+			(end 0.711252 -1.36)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "33d22ceb-28dd-4fbc-ac69-040392b52d86")
+			(uuid "01c54d30-f785-4a8b-a815-8f81082c4487")
 		)
 		(fp_line
-			(start -0.711252 0.91)
-			(end 0.711252 0.91)
+			(start -0.711252 1.36)
+			(end 0.711252 1.36)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "9e9c6fc2-597d-4236-b4f2-716ac4c3df1f")
+			(uuid "68ac9c5d-a307-432f-9034-6512b0c1f7a8")
 		)
 		(fp_line
-			(start -2.3 -1.15)
-			(end 2.3 -1.15)
+			(start -2.3 -1.6)
+			(end 2.3 -1.6)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "37795a64-a6ee-417d-ba77-f7e7dd64c363")
+			(uuid "47b8bad3-83a1-4ab8-baec-353fbd9ff7c0")
 		)
 		(fp_line
-			(start -2.3 1.15)
-			(end -2.3 -1.15)
+			(start -2.3 1.6)
+			(end -2.3 -1.6)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "bbcf6d18-c88c-4c63-96fa-d53b951850ec")
+			(uuid "b6b931c2-d68a-409f-ab4f-0bacb71b6172")
 		)
 		(fp_line
-			(start 2.3 -1.15)
-			(end 2.3 1.15)
+			(start 2.3 -1.6)
+			(end 2.3 1.6)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "abe682f8-073e-4e18-9d7f-7818086b9dcb")
+			(uuid "7a91e582-71e8-4413-b98e-9c998fa19964")
 		)
 		(fp_line
-			(start 2.3 1.15)
-			(end -2.3 1.15)
+			(start 2.3 1.6)
+			(end -2.3 1.6)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "76f85098-b28a-4fe3-9fc1-8d4cad577aed")
+			(uuid "410514c3-d2a1-410c-9c14-93a620ac5719")
 		)
 		(fp_line
-			(start -1.6 -0.8)
-			(end 1.6 -0.8)
+			(start -1.6 -1.25)
+			(end 1.6 -1.25)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "d4456f55-c72f-47d6-b6f9-3b382f3491c8")
+			(uuid "ff35441c-ff9a-4c48-93c5-c0227bca9d3f")
 		)
 		(fp_line
-			(start -1.6 0.8)
-			(end -1.6 -0.8)
+			(start -1.6 1.25)
+			(end -1.6 -1.25)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "bb173270-ef75-43f8-9c76-58357c257b52")
+			(uuid "1d35cf06-a495-4258-98b1-801b6d88cbb7")
 		)
 		(fp_line
-			(start 1.6 -0.8)
-			(end 1.6 0.8)
+			(start 1.6 -1.25)
+			(end 1.6 1.25)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "cab8e94b-b850-415d-8805-f10fcc520f5f")
+			(uuid "8470b560-8a12-4b58-98c3-3894eb845ab4")
 		)
 		(fp_line
-			(start 1.6 0.8)
-			(end -1.6 0.8)
+			(start 1.6 1.25)
+			(end -1.6 1.25)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "977a5ac3-c630-4eed-a337-acc36cb6dd07")
+			(uuid "1c4690ce-8b3a-4663-a456-e72215a9ac35")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -6882,7 +7193,7 @@
 		)
 		(pad "1" smd roundrect
 			(at -1.475 0)
-			(size 1.15 1.8)
+			(size 1.15 2.7)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
 			(net 34 "+5V")
@@ -6891,7 +7202,7 @@
 		)
 		(pad "2" smd roundrect
 			(at 1.475 0)
-			(size 1.15 1.8)
+			(size 1.15 2.7)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
 			(net 1 "GND")
@@ -6899,7 +7210,7 @@
 			(uuid "5d5814b2-6024-481f-b7a8-a7283061b6f8")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step"
+		(model "${KICAD9_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7203,6 +7514,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "020ecda4-ede9-42b7-a141-c45b403fe526")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "VSSOP*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/931b7e54-a483-41a0-8d9a-4e43117ea379")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -7386,7 +7710,7 @@
 			(at -2.15 -0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 195 "/Motor Control/EN_ENC_MOTOR3")
+			(net 194 "/Motor Control/EN_ENC_MOTOR3")
 			(pintype "input")
 			(uuid "44ea1ea0-3a6f-4535-b8dd-d45731507ff7")
 		)
@@ -7394,7 +7718,7 @@
 			(at -2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 211 "Net-(U15-Pad2)")
+			(net 210 "Net-(U15-Pad2)")
 			(pintype "input")
 			(uuid "56339a3f-be23-48df-81d4-5e3df5e00c43")
 		)
@@ -7419,7 +7743,7 @@
 			(at 2.15 0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 213 "Net-(U15-Pad5)")
+			(net 212 "Net-(U15-Pad5)")
 			(pintype "input")
 			(uuid "f45caca2-9a38-4ce4-b5ae-9ea0ce7f99ca")
 		)
@@ -7435,7 +7759,7 @@
 			(at 2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 195 "/Motor Control/EN_ENC_MOTOR3")
+			(net 194 "/Motor Control/EN_ENC_MOTOR3")
 			(pintype "input")
 			(uuid "02458df7-2c35-49db-94be-0a683eac2a95")
 		)
@@ -7822,6 +8146,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "77772be7-9b42-4fc7-80db-d4822dfc227a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1adb74ab-4b3c-4e1f-98b8-15029765fb1e")
 			(effects
 				(font
 					(size 1 1)
@@ -9414,6 +9751,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "593c0804-de96-4cff-9173-3ac5ddea78cd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Texas*HTSOP*1EP*3.9x4.9mm*P1.27mm*EP2.95x4.9mm*Mask2.4x3.1mm*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/9e748a43-dd99-4ae2-9dc2-442bf3b8eeb4")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -9578,7 +9928,7 @@
 			(at -2.875 -0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 209 "Net-(U11-IN2)")
+			(net 208 "Net-(U11-IN2)")
 			(pinfunction "IN2")
 			(pintype "input")
 			(uuid "07206732-1401-4317-8d75-7423c9dc0ce0")
@@ -9587,7 +9937,7 @@
 			(at -2.875 0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 208 "Net-(U11-IN1)")
+			(net 207 "Net-(U11-IN1)")
 			(pinfunction "IN1")
 			(pintype "input")
 			(uuid "8bb4b5e7-19ac-4576-9246-ad778304e332")
@@ -9623,7 +9973,7 @@
 			(at 2.875 -0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 197 "Net-(U11-ISEN)")
+			(net 196 "Net-(U11-ISEN)")
 			(pinfunction "ISEN")
 			(pintype "passive")
 			(uuid "79eecd00-6482-4155-91f3-ad8c13248281")
@@ -9801,6 +10151,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f4a3791c-d9ad-400c-975c-14a3f1416fdb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Texas*HTSOP*1EP*3.9x4.9mm*P1.27mm*EP2.95x4.9mm*Mask2.4x3.1mm*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/9e748a43-dd99-4ae2-9dc2-442bf3b8eeb4")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -9965,7 +10328,7 @@
 			(at -2.875 -0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 214 "Net-(U18-IN2)")
+			(net 213 "Net-(U18-IN2)")
 			(pinfunction "IN2")
 			(pintype "input")
 			(uuid "b38a4efc-0e65-4d73-b921-38ad9e6a032b")
@@ -9974,7 +10337,7 @@
 			(at -2.875 0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 215 "Net-(U18-IN1)")
+			(net 214 "Net-(U18-IN1)")
 			(pinfunction "IN1")
 			(pintype "input")
 			(uuid "55e9dbdc-0160-4bed-abb1-d31c0f26202b")
@@ -10374,7 +10737,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10394,6 +10757,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa9193e3-8079-4a93-b588-fe899d0ab37d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "475ddb8a-3b13-4171-bd03-5549bab74808")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -10612,6 +11001,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e86891c-27a4-4e1c-88e2-41f431d66423")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Texas*HTSOP*1EP*3.9x4.9mm*P1.27mm*EP2.95x4.9mm*Mask2.4x3.1mm*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/9e748a43-dd99-4ae2-9dc2-442bf3b8eeb4")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -10776,7 +11178,7 @@
 			(at -2.875 -0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 189 "Net-(U6-IN2)")
+			(net 188 "Net-(U6-IN2)")
 			(pinfunction "IN2")
 			(pintype "input")
 			(uuid "6652a658-0b01-45ed-9d9b-6cb6073ed33b")
@@ -10785,7 +11187,7 @@
 			(at -2.875 0.635)
 			(size 2.2 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 190 "Net-(U6-IN1)")
+			(net 189 "Net-(U6-IN1)")
 			(pinfunction "IN1")
 			(pintype "input")
 			(uuid "5c29efde-cefb-4d6e-96b4-7c4ff68bd9e6")
@@ -10990,6 +11392,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fa13e2a4-25b0-4082-88e9-20805259ab4b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a7effd65-d6fc-4f10-b7a2-5c80dfb84dc2")
 			(effects
 				(font
 					(size 1 1)
@@ -11209,6 +11624,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7f5706dd-9ffe-4dc6-b584-7f8104299a34")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/54506a66-042e-4641-ace6-26ddfe7f6e50")
 		(sheetname "/")
@@ -11414,6 +11842,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "27874159-9c02-4c57-b766-bbf399521334")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "68c97b66-ee65-44bc-9e0e-3075d5995ef3")
 			(effects
 				(font
 					(size 1 1)
@@ -11633,6 +12074,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f884458-8bfd-4223-bab2-953c87f942fe")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/3f1fea31-7f82-4685-b21c-68656418cb44")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -11838,6 +12292,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e006df57-9d24-4e1a-9be7-26de6a6bed66")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4f3b280-ccde-47f9-9d51-ca6764561eca")
 			(effects
 				(font
 					(size 1 1)
@@ -12282,6 +12749,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11e75c39-492d-4d6a-a124-d53ca49898a5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/b9e502b0-b378-4946-bbbe-b8c8623f57ff")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -12487,6 +12967,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8cfe72bc-31ab-4def-b194-af4f7f5c27e6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0564276-373f-49e5-9bb2-2dbcba9da2c7")
 			(effects
 				(font
 					(size 1 1)
@@ -12708,6 +13201,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e7f3193-8c57-4fe8-a6ed-f7f1132da4a6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SSOP* VSSOP*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/7eb237d5-c43a-4adf-a986-c185c6f352cd")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -12891,7 +13397,7 @@
 			(at -2.15 -0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 200 "/Motor Control/EN_MOTOR2")
+			(net 199 "/Motor Control/EN_MOTOR2")
 			(pintype "input")
 			(uuid "509a5bd6-f8d5-49ff-a11f-1a4847b754e7")
 		)
@@ -12899,7 +13405,7 @@
 			(at -2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 191 "/Motor Control/PWM1")
+			(net 190 "/Motor Control/PWM1")
 			(pintype "input")
 			(uuid "813e2227-260c-4ecb-98ab-9bdb7f883ca2")
 		)
@@ -12907,7 +13413,7 @@
 			(at -2.15 0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 209 "Net-(U11-IN2)")
+			(net 208 "Net-(U11-IN2)")
 			(pintype "output")
 			(uuid "1c88ee04-a52b-474e-aac6-490d090b0051")
 		)
@@ -12924,7 +13430,7 @@
 			(at 2.15 0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 200 "/Motor Control/EN_MOTOR2")
+			(net 199 "/Motor Control/EN_MOTOR2")
 			(pintype "input")
 			(uuid "f680e4bf-5527-4627-be0f-15e775553a24")
 		)
@@ -12932,7 +13438,7 @@
 			(at 2.15 0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 185 "/Motor Control/PWM2")
+			(net 184 "/Motor Control/PWM2")
 			(pintype "input")
 			(uuid "032dd3d5-9c3a-4099-a48d-50715e1ddaee")
 		)
@@ -12940,7 +13446,7 @@
 			(at 2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 208 "Net-(U11-IN1)")
+			(net 207 "Net-(U11-IN1)")
 			(pintype "output")
 			(uuid "18f05c9a-9648-4cf9-8438-4d5d96e6e239")
 		)
@@ -13024,6 +13530,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e3d5493b-d2e8-4389-a2c0-c997cfc9c478")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0818bcd-2b68-43e5-826a-8bf429404579")
 			(effects
 				(font
 					(size 1 1)
@@ -13178,14 +13697,14 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_2010_5025Metric"
+	(footprint "Resistor_SMD:R_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "493cfd63-fe1f-4e46-9779-dc7e521efdd2")
 		(at 220.7525 69.175)
-		(descr "Resistor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(descr "Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R31"
-			(at 0 -2.28 0)
+			(at 0 -1.83 0)
 			(layer "F.SilkS")
 			(uuid "92f1680c-668e-4be5-941e-28f7f0d89af1")
 			(effects
@@ -13195,8 +13714,8 @@
 				)
 			)
 		)
-		(property "Value" "250mR"
-			(at 0 2.28 0)
+		(property "Value" "150mR"
+			(at 0 1.83 0)
 			(layer "F.Fab")
 			(uuid "418169e3-dcd7-4012-bf79-5449f75cf4cc")
 			(effects
@@ -13206,7 +13725,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2008171306_YAGEO-RL2010FK-070R25L_C723438.pdf"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2410121306_TA-I-Tech-RLH12FTCR150_C2683383.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13230,12 +13749,25 @@
 				)
 			)
 		)
-		(property "MPN" "RL2010FK-070R25L"
+		(property "MPN" "RLH12FTCR150"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ce299c8c-47a5-4cf5-b3f5-a02e92117fde")
+			(uuid "ea566f5a-5e18-4a6a-b0ec-c8fdb78810a4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "542fc5e1-6ae7-4968-bd43-1f94d60ef7fd")
 			(effects
 				(font
 					(size 1 1)
@@ -13249,104 +13781,104 @@
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -1.527064 -1.36)
-			(end 1.527064 -1.36)
+			(start -0.727064 -0.91)
+			(end 0.727064 -0.91)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "db283d79-a8d0-4418-ba6f-ced89769fd5b")
+			(uuid "6ed91fb2-4355-4b72-96bd-1b188ea5650d")
 		)
 		(fp_line
-			(start -1.527064 1.36)
-			(end 1.527064 1.36)
+			(start -0.727064 0.91)
+			(end 0.727064 0.91)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "17f25b57-16be-4487-9320-3a945287c1c9")
+			(uuid "58e15d6a-5398-4f15-ae56-6d3a78e0f2e6")
 		)
 		(fp_line
-			(start -3.18 -1.58)
-			(end 3.18 -1.58)
+			(start -2.28 -1.13)
+			(end 2.28 -1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "0981169a-cb3e-4fd0-ae64-8b86138b4dda")
+			(uuid "68d43ade-dbff-4376-a6c8-4091865f6f76")
 		)
 		(fp_line
-			(start -3.18 1.58)
-			(end -3.18 -1.58)
+			(start -2.28 1.13)
+			(end -2.28 -1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "4683241f-bc6c-4567-8bf1-36fcd80c73e8")
+			(uuid "8e649691-7f3d-4cfa-aa1d-bc4377118ed4")
 		)
 		(fp_line
-			(start 3.18 -1.58)
-			(end 3.18 1.58)
+			(start 2.28 -1.13)
+			(end 2.28 1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "20bbb924-d186-49af-b84f-e7075a2b06ca")
+			(uuid "9e1e2629-4c40-47b7-950e-9d8c322b0d68")
 		)
 		(fp_line
-			(start 3.18 1.58)
-			(end -3.18 1.58)
+			(start 2.28 1.13)
+			(end -2.28 1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "d8364f50-ba97-4e42-81ac-cc6b15c6ac8f")
+			(uuid "59fed0d9-0bc0-4771-bfac-301f2d38cc8f")
 		)
 		(fp_line
-			(start -2.5 -1.25)
-			(end 2.5 -1.25)
+			(start -1.6 -0.8)
+			(end 1.6 -0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "af5abe0a-c9f9-47b4-b9bc-2f54ccdbc69a")
+			(uuid "e5b949c7-c9eb-4267-bda3-fa416350a98a")
 		)
 		(fp_line
-			(start -2.5 1.25)
-			(end -2.5 -1.25)
+			(start -1.6 0.8)
+			(end -1.6 -0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "e23868b5-a118-4098-9b4f-c2b5f0a8371f")
+			(uuid "079e3abd-64e8-4ab2-9934-bfbe8d87669c")
 		)
 		(fp_line
-			(start 2.5 -1.25)
-			(end 2.5 1.25)
+			(start 1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "6123409e-6402-45a5-8c11-4d8bb8b529a4")
+			(uuid "b203ca9c-aeb7-48af-af0b-69e301c8d399")
 		)
 		(fp_line
-			(start 2.5 1.25)
-			(end -2.5 1.25)
+			(start 1.6 0.8)
+			(end -1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "0caac700-922e-4c41-a226-d35efa1abc05")
+			(uuid "d0c3ad0f-761b-42ec-91c5-9ba4e664a67b")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -13354,31 +13886,31 @@
 			(uuid "72a802a4-8a70-4c75-8b0d-8bd93f65616a")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
+					(thickness 0.12)
 				)
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.3125 0)
-			(size 1.225 2.65)
+			(at -1.4625 0)
+			(size 1.125 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.204082)
+			(roundrect_rratio 0.222222)
 			(net 1 "GND")
 			(pintype "passive")
 			(uuid "5a6cdd75-9848-443a-83dc-85e1db0ce7a1")
 		)
 		(pad "2" smd roundrect
-			(at 2.3125 0)
-			(size 1.225 2.65)
+			(at 1.4625 0)
+			(size 1.125 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.204082)
+			(roundrect_rratio 0.222222)
 			(net 155 "Net-(U18-ISEN)")
 			(pintype "passive")
 			(uuid "972d8799-cbb2-4972-91b2-7189de30b024")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2010_5025Metric.step"
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13448,6 +13980,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ee99fd13-ad9a-4f41-a2e8-a67014f3e6fa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1466c3b1-5677-49b1-89e6-f20086ac5f7c")
 			(effects
 				(font
 					(size 1 1)
@@ -13660,6 +14205,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "54e53d2d-5355-40ff-8581-b335eaab5ebd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea94f798-09e3-4715-8691-162e62ccdeb7")
 			(effects
 				(font
 					(size 1 1)
@@ -14331,6 +14889,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13dd28a2-b0ee-4a13-a5b7-918d2cd9e44a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/542b82d9-4dd6-47fb-9695-ab61f5b81a91")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -14536,6 +15107,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2aa99803-53f9-4809-9f75-4ffbfd8b0476")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d3e7a759-d20f-4d5d-87a7-9bdc0efceb32")
 			(effects
 				(font
 					(size 1 1)
@@ -15185,7 +15769,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_1811151524_JST-B6B-PH-K-S-LF-SN_C131342.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15209,12 +15793,25 @@
 				)
 			)
 		)
-		(property "Status" ""
+		(property "Status" "OK"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b4a1f62c-3f06-4af8-86fc-31ca093d8a18")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B6B-PH-K-S(LF)(SN)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66587976-c96c-48f6-9c1d-dde5a520005b")
 			(effects
 				(font
 					(size 1 1)
@@ -15893,6 +16490,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bdbb0967-a830-447f-a648-fe481dc9ab2a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/923e4464-d5d5-4708-9282-7add7dabad84")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -16098,6 +16708,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6c0190be-efec-4d6e-9e63-617e2baac501")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "410ff5a7-07d8-4f05-9b4a-aac8f520dcd7")
 			(effects
 				(font
 					(size 1 1)
@@ -16915,7 +17538,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.208333)
-			(net 192 "Net-(J16-Pin_1)")
+			(net 191 "Net-(J16-Pin_1)")
 			(pinfunction "Pin_1")
 			(pintype "passive")
 			(uuid "095521c9-8704-44b7-ab28-dd2403a8b999")
@@ -17241,7 +17864,7 @@
 			(at -3.6 -1.625)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 167 "/Serial ports/RI_IN1")
+			(net 166 "/Serial ports/RI_IN1")
 			(pinfunction "ROUT2")
 			(pintype "output")
 			(uuid "55766a4e-8c6f-43a1-8994-c499e371c8a4")
@@ -17259,7 +17882,7 @@
 			(at -3.6 -0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 158 "/Serial ports/DTR_IN1")
+			(net 157 "/Serial ports/DTR_IN1")
 			(pinfunction "DIN1")
 			(pintype "input")
 			(uuid "30f60084-4cb3-4786-8ade-219ed087e2b2")
@@ -17268,7 +17891,7 @@
 			(at -3.6 0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 159 "/Serial ports/CTS_IN1")
+			(net 158 "/Serial ports/CTS_IN1")
 			(pinfunction "ROUT1")
 			(pintype "output")
 			(uuid "752e0ae8-36ca-4f0b-87b1-985dec486e8e")
@@ -17376,7 +17999,7 @@
 			(at 3.6 0.975)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 166 "/Serial ports/RTS_IN1")
+			(net 165 "/Serial ports/RTS_IN1")
 			(pinfunction "DIN3")
 			(pintype "input")
 			(uuid "ea05fe35-ad2f-4ff4-a6e2-3807dec49b1f")
@@ -17385,7 +18008,7 @@
 			(at 3.6 0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 206 "unconnected-(U13-DIN4-Pad21)")
+			(net 205 "unconnected-(U13-DIN4-Pad21)")
 			(pinfunction "DIN4")
 			(pintype "input+no_connect")
 			(uuid "259dcd01-9445-4522-a0ee-76635146dc40")
@@ -17394,7 +18017,7 @@
 			(at 3.6 -0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 161 "/Serial ports/DSR_IN1")
+			(net 160 "/Serial ports/DSR_IN1")
 			(pinfunction "ROUT4")
 			(pintype "output")
 			(uuid "445bc426-30e8-47c6-ad90-c8cd4d58ca32")
@@ -17412,7 +18035,7 @@
 			(at 3.6 -1.625)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 165 "/Serial ports/EN_IN1")
+			(net 164 "/Serial ports/EN_IN1")
 			(pinfunction "EN")
 			(pintype "input")
 			(uuid "81346226-d52c-4307-af6a-a5795643cc9b")
@@ -17421,7 +18044,7 @@
 			(at 3.6 -2.275)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 160 "/Serial ports/~{SHDN_IN1}")
+			(net 159 "/Serial ports/~{SHDN_IN1}")
 			(pinfunction "~{SHDN}")
 			(pintype "input")
 			(uuid "7ae66768-80f3-4607-8d48-6f28602eff1b")
@@ -17430,7 +18053,7 @@
 			(at 3.6 -2.925)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 164 "/Serial ports/DCD_IN1")
+			(net 163 "/Serial ports/DCD_IN1")
 			(pinfunction "ROUT3")
 			(pintype "output")
 			(uuid "9c926f37-0099-4d6b-8eb1-e96d2ab5ea7e")
@@ -17448,7 +18071,7 @@
 			(at 3.6 -4.225)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 205 "unconnected-(U13-DOUT4-Pad28)")
+			(net 204 "unconnected-(U13-DOUT4-Pad28)")
 			(pinfunction "DOUT4")
 			(pintype "output+no_connect")
 			(uuid "f7b6af29-d0bc-4be2-8341-8dcc16cde92e")
@@ -17524,6 +18147,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8b0840cf-d09f-4e92-bcf2-f7173511b576")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a608815-926e-4168-9cec-0b72be1d6c31")
 			(effects
 				(font
 					(size 1 1)
@@ -17912,14 +18548,14 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_2010_5025Metric"
+	(footprint "Resistor_SMD:R_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "61643b2d-4029-4790-af7f-8b7f9233829f")
 		(at 252.1425 69.175)
-		(descr "Resistor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(descr "Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R22"
-			(at 0 -2.28 0)
+			(at 0 -1.83 0)
 			(layer "F.SilkS")
 			(uuid "04835856-b1af-45d7-8712-eadff3c2bdf9")
 			(effects
@@ -17929,8 +18565,8 @@
 				)
 			)
 		)
-		(property "Value" "250mR"
-			(at 0 2.28 0)
+		(property "Value" "150mR"
+			(at 0 1.83 0)
 			(layer "F.Fab")
 			(uuid "bbd6bf86-aa29-4271-b235-bab67fbed970")
 			(effects
@@ -17940,7 +18576,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2008171306_YAGEO-RL2010FK-070R25L_C723438.pdf"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2410121306_TA-I-Tech-RLH12FTCR150_C2683383.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -17964,12 +18600,25 @@
 				)
 			)
 		)
-		(property "MPN" "RL2010FK-070R25L"
+		(property "MPN" "RLH12FTCR150"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "50aa1012-b6e8-417e-a932-1892423bd753")
+			(uuid "7f47fff1-fc38-4879-8ac5-b8e5679f3142")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b003b105-e17a-47ff-91cb-9cb4d6b13cec")
 			(effects
 				(font
 					(size 1 1)
@@ -17983,104 +18632,104 @@
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -1.527064 -1.36)
-			(end 1.527064 -1.36)
+			(start -0.727064 -0.91)
+			(end 0.727064 -0.91)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "59cbe643-6065-4267-81d5-4372dd525789")
+			(uuid "23d4912f-6dda-48b5-bfe5-18a03fa4cb27")
 		)
 		(fp_line
-			(start -1.527064 1.36)
-			(end 1.527064 1.36)
+			(start -0.727064 0.91)
+			(end 0.727064 0.91)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "5ff138d5-b711-4a84-9287-28e00b0f478c")
+			(uuid "8c7f3900-6018-40bd-b308-2c50d8033151")
 		)
 		(fp_line
-			(start -3.18 -1.58)
-			(end 3.18 -1.58)
+			(start -2.28 -1.13)
+			(end 2.28 -1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "ccd8cfd2-0cf9-489e-b8d2-39fbc3577431")
+			(uuid "508cdccf-8b9e-4ddb-80a0-d1554712a6d9")
 		)
 		(fp_line
-			(start -3.18 1.58)
-			(end -3.18 -1.58)
+			(start -2.28 1.13)
+			(end -2.28 -1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "f4be2d84-9390-4feb-9979-8f9706a1f7e8")
+			(uuid "7e862f61-8ca3-453b-a7be-ce1255777156")
 		)
 		(fp_line
-			(start 3.18 -1.58)
-			(end 3.18 1.58)
+			(start 2.28 -1.13)
+			(end 2.28 1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "66308655-f205-44df-af7d-c21dc11c9989")
+			(uuid "0ce87d66-b923-4f2d-a305-f76af5f7f19f")
 		)
 		(fp_line
-			(start 3.18 1.58)
-			(end -3.18 1.58)
+			(start 2.28 1.13)
+			(end -2.28 1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "ec04a502-20f0-4c33-9017-f00ecbc6f8fe")
+			(uuid "6ff1cae5-0c31-4d32-b8fe-ca4bb94b1df7")
 		)
 		(fp_line
-			(start -2.5 -1.25)
-			(end 2.5 -1.25)
+			(start -1.6 -0.8)
+			(end 1.6 -0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "759d5c72-0400-4e9b-a646-8eea67c69dd2")
+			(uuid "bd9a1314-bd69-4520-a07f-577922b6c66e")
 		)
 		(fp_line
-			(start -2.5 1.25)
-			(end -2.5 -1.25)
+			(start -1.6 0.8)
+			(end -1.6 -0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "1f684dd4-09b7-4cb5-af47-140cd402e0b0")
+			(uuid "bb3cf4dd-0f06-4c33-9678-135811f90cf1")
 		)
 		(fp_line
-			(start 2.5 -1.25)
-			(end 2.5 1.25)
+			(start 1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "4612765d-c5f2-46d0-8b81-07e6327de3b0")
+			(uuid "21aa249f-2286-4d20-84b0-6638cd79eaf0")
 		)
 		(fp_line
-			(start 2.5 1.25)
-			(end -2.5 1.25)
+			(start 1.6 0.8)
+			(end -1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "2881a53e-fac1-4af5-b7ea-d010933298f7")
+			(uuid "e3ae0e3d-6b92-41c4-a92d-bc932e827b86")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -18088,31 +18737,31 @@
 			(uuid "fd17247c-3cf7-4ce9-917c-abb352c60745")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
+					(thickness 0.12)
 				)
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.3125 0)
-			(size 1.225 2.65)
+			(at -1.4625 0)
+			(size 1.125 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.204082)
+			(roundrect_rratio 0.222222)
 			(net 1 "GND")
 			(pintype "passive")
 			(uuid "7a8b0c4e-d358-4b58-9b73-223d3bc5cfd7")
 		)
 		(pad "2" smd roundrect
-			(at 2.3125 0)
-			(size 1.225 2.65)
+			(at 1.4625 0)
+			(size 1.125 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.204082)
-			(net 197 "Net-(U11-ISEN)")
+			(roundrect_rratio 0.222222)
+			(net 196 "Net-(U11-ISEN)")
 			(pintype "passive")
 			(uuid "90d1436c-e998-4748-ab86-6f7d75babe83")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2010_5025Metric.step"
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -18182,6 +18831,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cd874c94-daa5-48f9-bcb9-b981cbf2d912")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6cb12063-d0db-4af9-9bdf-ba1118e0ed4e")
 			(effects
 				(font
 					(size 1 1)
@@ -18626,6 +19288,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "29415235-1f14-4b77-95a5-6414ec8813e6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/923e4464-d5d5-4708-9282-7add7dabad84")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -18838,6 +19513,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "570ad6a0-e792-400b-b068-addfdcbe379c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/b9e502b0-b378-4946-bbbe-b8c8623f57ff")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -19043,6 +19731,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "080ffb68-1a71-4f34-8a02-727d62dd4034")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8fcc7594-9cee-4a4d-b28b-927ec988dcf4")
 			(effects
 				(font
 					(size 1 1)
@@ -19403,7 +20104,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 226 "Net-(U20-Q7)")
+			(net 225 "Net-(U20-Q7)")
 			(pinfunction "Q7")
 			(pintype "tri_state")
 			(uuid "6cb19c30-e05a-42af-91f1-4bfcf1ed2f56")
@@ -19413,7 +20114,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 225 "Net-(U20-Q6)")
+			(net 224 "Net-(U20-Q6)")
 			(pinfunction "Q6")
 			(pintype "tri_state")
 			(uuid "2a49fdae-1fc2-45d0-82f9-c10d4805653e")
@@ -19423,7 +20124,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 219 "Net-(U20-Q5)")
+			(net 218 "Net-(U20-Q5)")
 			(pinfunction "Q5")
 			(pintype "tri_state")
 			(uuid "77d5b1ef-fb9e-47f5-a879-834ca75b0669")
@@ -19433,7 +20134,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 223 "Net-(U20-Q4)")
+			(net 222 "Net-(U20-Q4)")
 			(pinfunction "Q4")
 			(pintype "tri_state")
 			(uuid "2aef48bd-6d45-4195-be5d-727ec0c39b96")
@@ -19443,7 +20144,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 221 "Net-(U20-Q3)")
+			(net 220 "Net-(U20-Q3)")
 			(pinfunction "Q3")
 			(pintype "tri_state")
 			(uuid "f14117cd-4ed4-401b-bd6d-7451bacb17c5")
@@ -19453,7 +20154,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 222 "Net-(U20-Q2)")
+			(net 221 "Net-(U20-Q2)")
 			(pinfunction "Q2")
 			(pintype "tri_state")
 			(uuid "dfd2bdb4-e8b7-4627-834b-ef35095ab3c8")
@@ -19463,7 +20164,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 220 "Net-(U20-Q1)")
+			(net 219 "Net-(U20-Q1)")
 			(pinfunction "Q1")
 			(pintype "tri_state")
 			(uuid "ed16ba57-55e3-4e0b-a775-f1bdd2e968f2")
@@ -19473,7 +20174,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 224 "Net-(U20-Q0)")
+			(net 223 "Net-(U20-Q0)")
 			(pinfunction "Q0")
 			(pintype "tri_state")
 			(uuid "be1bac81-052e-4962-a716-2f989211542d")
@@ -19501,14 +20202,14 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_2010_5025Metric"
+	(footprint "Resistor_SMD:R_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "6b45b9b7-5b7f-4955-abdc-9f534101da3a")
 		(at 220.7525 102.085)
-		(descr "Resistor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(descr "Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R13"
-			(at 0 -2.28 0)
+			(at 0 -1.83 0)
 			(layer "F.SilkS")
 			(uuid "8c927780-f752-4b0e-a840-f5fa3f7315e4")
 			(effects
@@ -19518,8 +20219,8 @@
 				)
 			)
 		)
-		(property "Value" "250mR"
-			(at 0 2.28 0)
+		(property "Value" "150mR"
+			(at 0 1.83 0)
 			(layer "F.Fab")
 			(uuid "5b872523-6557-491f-9d88-cefd7ec14c86")
 			(effects
@@ -19529,7 +20230,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2008171306_YAGEO-RL2010FK-070R25L_C723438.pdf"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2410121306_TA-I-Tech-RLH12FTCR150_C2683383.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -19553,12 +20254,25 @@
 				)
 			)
 		)
-		(property "MPN" "RL2010FK-070R25L"
+		(property "MPN" "RLH12FTCR150"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1134bb0f-e236-4152-af44-4227288d5a04")
+			(uuid "8efd8b02-6138-4dfe-9c53-30b0c85b46b3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eaafe484-a2a5-4f40-9f53-52cd5434b2dd")
 			(effects
 				(font
 					(size 1 1)
@@ -19572,104 +20286,104 @@
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -1.527064 -1.36)
-			(end 1.527064 -1.36)
+			(start -0.727064 -0.91)
+			(end 0.727064 -0.91)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "d14b4722-9b6b-40cd-8858-2af1f4a80549")
+			(uuid "7564cb83-7cb3-49e8-9e99-48e1668f8f60")
 		)
 		(fp_line
-			(start -1.527064 1.36)
-			(end 1.527064 1.36)
+			(start -0.727064 0.91)
+			(end 0.727064 0.91)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "188a1283-aba5-4ed8-9a5c-26cf873164fc")
+			(uuid "666479a6-839e-4e37-849e-2c032f21a369")
 		)
 		(fp_line
-			(start -3.18 -1.58)
-			(end 3.18 -1.58)
+			(start -2.28 -1.13)
+			(end 2.28 -1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "ab601f20-d761-4a02-b6bb-ce5893812b61")
+			(uuid "fdae1302-aeb4-4247-a098-f534563b5a52")
 		)
 		(fp_line
-			(start -3.18 1.58)
-			(end -3.18 -1.58)
+			(start -2.28 1.13)
+			(end -2.28 -1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "68964581-f8b2-4a1d-b387-e7d36099973c")
+			(uuid "a28597a4-ff71-4cef-a43f-36871aadd54c")
 		)
 		(fp_line
-			(start 3.18 -1.58)
-			(end 3.18 1.58)
+			(start 2.28 -1.13)
+			(end 2.28 1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "73356b82-b625-4067-a9f5-d1a5b8bfbf5e")
+			(uuid "db427eb4-fd9e-43dd-9464-c4b2800af077")
 		)
 		(fp_line
-			(start 3.18 1.58)
-			(end -3.18 1.58)
+			(start 2.28 1.13)
+			(end -2.28 1.13)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "35ec66e2-80b9-49d0-947f-e8be455b8ea3")
+			(uuid "f509c068-97c1-43fa-a452-e40df2d19eed")
 		)
 		(fp_line
-			(start -2.5 -1.25)
-			(end 2.5 -1.25)
+			(start -1.6 -0.8)
+			(end 1.6 -0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "bba9dbf7-c96f-4813-a168-b3b71d422ba2")
+			(uuid "7397105d-c7f9-455d-9513-06cbd9c2f498")
 		)
 		(fp_line
-			(start -2.5 1.25)
-			(end -2.5 -1.25)
+			(start -1.6 0.8)
+			(end -1.6 -0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "0fb4a560-ddb1-4bd8-858b-bdbce0489c20")
+			(uuid "72c90f16-4193-475d-9885-96e6599e10ec")
 		)
 		(fp_line
-			(start 2.5 -1.25)
-			(end 2.5 1.25)
+			(start 1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "abcb5060-bba6-42c7-86dd-9378757ec537")
+			(uuid "8f422abe-bd69-44e3-a162-84891879750f")
 		)
 		(fp_line
-			(start 2.5 1.25)
-			(end -2.5 1.25)
+			(start 1.6 0.8)
+			(end -1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "cdf5e0a9-7ea5-4e1e-9fe7-b4d888fb7a28")
+			(uuid "5896f206-321e-43a9-9c63-ff9ab81ff479")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -19677,31 +20391,31 @@
 			(uuid "26910f12-b550-4004-aee3-1fe1e97609e2")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
+					(thickness 0.12)
 				)
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.3125 0)
-			(size 1.225 2.65)
+			(at -1.4625 0)
+			(size 1.125 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.204082)
+			(roundrect_rratio 0.222222)
 			(net 1 "GND")
 			(pintype "passive")
 			(uuid "96c93d0f-e1b5-42f8-bdde-3f55aa00d567")
 		)
 		(pad "2" smd roundrect
-			(at 2.3125 0)
-			(size 1.225 2.65)
+			(at 1.4625 0)
+			(size 1.125 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.204082)
+			(roundrect_rratio 0.222222)
 			(net 141 "Net-(U6-ISEN)")
 			(pintype "passive")
 			(uuid "0dec039a-586c-47cf-ae3c-cbea9febb76d")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2010_5025Metric.step"
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -19808,7 +20522,7 @@
 				)
 			)
 		)
-		(property "Value" "100pC"
+		(property "Value" "4.7uC"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(uuid "f20519df-e43b-43c2-b680-64e0fa10869f")
@@ -19819,7 +20533,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/1912111437_YAGEO-CC0805KKX7R8BB475_C354262.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -19831,7 +20545,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -19843,10 +20557,23 @@
 				)
 			)
 		)
+		(property "MPN" "CC0805KKX7R8BB475"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa228dd7-3647-4457-8cb2-f99bc8623792")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/f5200431-7f38-42ac-bac3-8e7713bc75cf")
-		(sheetname "/Motor Control/")
-		(sheetfile "motor_control.kicad_sch")
+		(path "/f263fee5-eb62-47bd-ba94-db90778c147c")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
@@ -19964,7 +20691,7 @@
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 116 "Net-(U23-V_{OUT})")
+			(net 116 "Net-(U24-Vs)")
 			(pintype "passive")
 			(uuid "f1936840-ec53-4c4e-b082-c34c1865fe63")
 		)
@@ -20048,6 +20775,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d76f1773-2b82-40a1-b3cd-749e7c3d59ee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f69bd5dc-2771-40a7-bb29-4e99e3d21929")
 			(effects
 				(font
 					(size 1 1)
@@ -20492,6 +21232,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8c31ac1-f7b9-4419-8233-b5708e73e30f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/da116546-cfd0-4580-8668-75051c392a06")
 		(sheetname "/")
@@ -20667,7 +21420,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -20687,6 +21440,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49047e37-0bb2-4b56-b668-6707afbea66f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "278c8d6d-625d-4470-af18-910d547fadc4")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -20896,6 +21675,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "57c5b47e-c371-4f48-a4cc-daa809a85a11")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7f105fdb-cb9e-4d2f-89c4-8019c40308a1")
 			(effects
 				(font
 					(size 1 1)
@@ -21572,7 +22364,7 @@
 			(at -3.6 -1.625)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 170 "/Serial ports/RI_IN2")
+			(net 169 "/Serial ports/RI_IN2")
 			(pinfunction "ROUT2")
 			(pintype "output")
 			(uuid "36e6febf-b7db-4435-8ad2-9a3227533089")
@@ -21590,7 +22382,7 @@
 			(at -3.6 -0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 182 "/Serial ports/DTR_IN2")
+			(net 181 "/Serial ports/DTR_IN2")
 			(pinfunction "DIN1")
 			(pintype "input")
 			(uuid "71874d8b-f7d8-4ef7-9471-25927b71c7cd")
@@ -21599,7 +22391,7 @@
 			(at -3.6 0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 181 "/Serial ports/CTS_IN2")
+			(net 180 "/Serial ports/CTS_IN2")
 			(pinfunction "ROUT1")
 			(pintype "output")
 			(uuid "febedc7b-7eef-47b2-b612-a0414c290cb0")
@@ -21707,7 +22499,7 @@
 			(at 3.6 0.975)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 175 "/Serial ports/RTS_IN2")
+			(net 174 "/Serial ports/RTS_IN2")
 			(pinfunction "DIN3")
 			(pintype "input")
 			(uuid "fdcdade2-bad6-4106-b1df-05273836d412")
@@ -21716,7 +22508,7 @@
 			(at 3.6 0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 207 "unconnected-(U14-DIN4-Pad21)")
+			(net 206 "unconnected-(U14-DIN4-Pad21)")
 			(pinfunction "DIN4")
 			(pintype "input+no_connect")
 			(uuid "dfc81aa9-e6d3-4666-9e7e-8f5bb76c0964")
@@ -21725,7 +22517,7 @@
 			(at 3.6 -0.325)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 171 "/Serial ports/DSR_IN2")
+			(net 170 "/Serial ports/DSR_IN2")
 			(pinfunction "ROUT4")
 			(pintype "output")
 			(uuid "7817d6ac-cee0-45f8-b920-702ad87b42e6")
@@ -21743,7 +22535,7 @@
 			(at 3.6 -1.625)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 172 "/Serial ports/EN_IN2")
+			(net 171 "/Serial ports/EN_IN2")
 			(pinfunction "EN")
 			(pintype "input")
 			(uuid "39156214-06e6-4403-968c-163d274fedc6")
@@ -21752,7 +22544,7 @@
 			(at 3.6 -2.275)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 173 "/Serial ports/~{SHDN_IN2}")
+			(net 172 "/Serial ports/~{SHDN_IN2}")
 			(pinfunction "~{SHDN}")
 			(pintype "input")
 			(uuid "9859362c-776d-4aaf-a943-f48b59bf8a0e")
@@ -21761,7 +22553,7 @@
 			(at 3.6 -2.925)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 169 "/Serial ports/DCD_IN2")
+			(net 168 "/Serial ports/DCD_IN2")
 			(pinfunction "ROUT3")
 			(pintype "output")
 			(uuid "bfd77289-1172-44ce-b241-d96d0fc76255")
@@ -21779,7 +22571,7 @@
 			(at 3.6 -4.225)
 			(size 1.75 0.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 210 "unconnected-(U14-DOUT4-Pad28)")
+			(net 209 "unconnected-(U14-DOUT4-Pad28)")
 			(pinfunction "DOUT4")
 			(pintype "output+no_connect")
 			(uuid "6bd4a028-7312-40fe-bbbd-b6a70ef5e699")
@@ -22087,6 +22879,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d6e3652-1184-4041-95b5-627ae2d80787")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/fa6a1b0a-90e2-4082-809f-de1019afb937")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -22299,6 +23104,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9bac1b86-c77e-4d56-8630-87883858a50a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/ff640358-d48a-4c2f-841b-46f9778cbec6")
 		(sheetname "/")
@@ -22504,6 +23322,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "35985dee-b034-4c0d-9a2c-f8b6d8909b0c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b1ebcc55-2d30-4c28-9661-e6a46b4ff681")
 			(effects
 				(font
 					(size 1 1)
@@ -23190,6 +24021,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bf10d9c-79c3-4396-ae8d-f8d76c6c9ac3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/0f85c905-e985-4361-af26-9db2a2a0a127")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -23404,6 +24248,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bacc2eb8-74e7-4346-98c9-05f12758f927")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SSOP* VSSOP*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/7eb237d5-c43a-4adf-a986-c185c6f352cd")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -23587,7 +24444,7 @@
 			(at -2.15 -0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 212 "/Motor Control/EN_MOTOR3")
+			(net 211 "/Motor Control/EN_MOTOR3")
 			(pintype "input")
 			(uuid "b0de6155-b664-4773-b910-958177bd76cd")
 		)
@@ -23595,7 +24452,7 @@
 			(at -2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 191 "/Motor Control/PWM1")
+			(net 190 "/Motor Control/PWM1")
 			(pintype "input")
 			(uuid "53abcaa9-f67c-48a2-9103-ab9645ec122f")
 		)
@@ -23603,7 +24460,7 @@
 			(at -2.15 0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 214 "Net-(U18-IN2)")
+			(net 213 "Net-(U18-IN2)")
 			(pintype "output")
 			(uuid "17d8e94c-d75e-46a5-82f8-9200da646f53")
 		)
@@ -23620,7 +24477,7 @@
 			(at 2.15 0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 212 "/Motor Control/EN_MOTOR3")
+			(net 211 "/Motor Control/EN_MOTOR3")
 			(pintype "input")
 			(uuid "fd5c089f-db12-455a-add2-9dd8a3e0c9dd")
 		)
@@ -23628,7 +24485,7 @@
 			(at 2.15 0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 185 "/Motor Control/PWM2")
+			(net 184 "/Motor Control/PWM2")
 			(pintype "input")
 			(uuid "d79e12ad-7f5a-48f1-8468-d53548ab004f")
 		)
@@ -23636,7 +24493,7 @@
 			(at 2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 215 "Net-(U18-IN1)")
+			(net 214 "Net-(U18-IN1)")
 			(pintype "output")
 			(uuid "6a73a874-424c-4826-9118-13b33ae06c3e")
 		)
@@ -23720,6 +24577,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e094c4a3-b6d1-4689-998d-f2603a423dbc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8bc185b5-6ac6-4f14-a830-2e5395ab7a24")
 			(effects
 				(font
 					(size 1 1)
@@ -23857,7 +24727,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 192 "Net-(J16-Pin_1)")
+			(net 191 "Net-(J16-Pin_1)")
 			(pintype "passive")
 			(uuid "23f3348c-8d89-447e-82bc-33fdf35146aa")
 		)
@@ -24157,6 +25027,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b2ef6fed-c739-4e28-b259-7cb8a5f5b747")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b027f34-4373-4418-a34c-68b7b9f3e759")
 			(effects
 				(font
 					(size 1 1)
@@ -25522,6 +26405,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1c597b3-4ad9-4cf6-886f-534fb3c4d344")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/0f85c905-e985-4361-af26-9db2a2a0a127")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -25734,6 +26630,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7dbacbdb-d4c5-4a1c-a39c-22278eafda27")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/053a22ca-17bb-4dc8-a7ea-028314860374")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -25939,6 +26848,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "eca5623b-e910-457b-860f-d7ee4b6d36cf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b98af21e-4eb2-4ed4-9b9b-b09b296ab06d")
 			(effects
 				(font
 					(size 1 1)
@@ -27304,6 +28226,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfb7a4df-73ad-48e5-841e-cb47b002fb51")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SOT?23*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/d38eff35-970f-45b9-b472-9834cccdc37f")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -27547,7 +28482,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 198 "/Motor Control/CURRENT1")
+			(net 197 "/Motor Control/CURRENT1")
 			(pintype "output")
 			(uuid "196b81d6-2d88-4ee5-b488-f11d39573b41")
 		)
@@ -27664,6 +28599,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c6fca0b7-cf38-40ea-b114-121ccc9588b1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43a2098f-0558-47e2-ab1c-036f74516440")
 			(effects
 				(font
 					(size 1 1)
@@ -27854,7 +28802,7 @@
 			(at -2.15 -0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 188 "/Motor Control/EN_ENC_MOTOR2")
+			(net 187 "/Motor Control/EN_ENC_MOTOR2")
 			(pintype "input")
 			(uuid "7d8c3d41-4ae4-42a3-a71b-7a0e91c066a0")
 		)
@@ -27862,7 +28810,7 @@
 			(at -2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 199 "Net-(U10-Pad4)")
+			(net 198 "Net-(U10-Pad4)")
 			(pintype "input")
 			(uuid "0af99222-8e67-43b9-bc96-43237caf0321")
 		)
@@ -27887,7 +28835,7 @@
 			(at 2.15 0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 201 "Net-(U10-Pad12)")
+			(net 200 "Net-(U10-Pad12)")
 			(pintype "input")
 			(uuid "856d7f35-4732-45fc-bdab-8fcbb0f19de2")
 		)
@@ -27903,7 +28851,7 @@
 			(at 2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 188 "/Motor Control/EN_ENC_MOTOR2")
+			(net 187 "/Motor Control/EN_ENC_MOTOR2")
 			(pintype "input")
 			(uuid "dcfa5f10-5459-46ae-9a72-a3674e4cbf5a")
 		)
@@ -27987,6 +28935,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a6d099c0-9adc-489a-9413-75838077f3d1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "abf52706-52a5-47cd-b929-cc7b38b47477")
 			(effects
 				(font
 					(size 1 1)
@@ -28246,7 +29207,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 216 "Net-(U17-Pad2)")
+			(net 215 "Net-(U17-Pad2)")
 			(pintype "output")
 			(uuid "dc26a2a6-941b-4a62-8391-1d0bd5601fba")
 		)
@@ -28255,7 +29216,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 216 "Net-(U17-Pad2)")
+			(net 215 "Net-(U17-Pad2)")
 			(pintype "input")
 			(uuid "764c8e04-3707-4535-ba31-ceecbe5b5c3a")
 		)
@@ -28264,7 +29225,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 211 "Net-(U15-Pad2)")
+			(net 210 "Net-(U15-Pad2)")
 			(pintype "output")
 			(uuid "2b22462a-47d3-447c-a0c5-e161807c62d0")
 		)
@@ -28319,7 +29280,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 217 "Net-(U17-Pad10)")
+			(net 216 "Net-(U17-Pad10)")
 			(pintype "output")
 			(uuid "66f25c24-9cb0-4ad3-96a5-29cd76d2af13")
 		)
@@ -28337,7 +29298,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 213 "Net-(U15-Pad5)")
+			(net 212 "Net-(U15-Pad5)")
 			(pintype "output")
 			(uuid "f1d4ea63-bc45-476c-adb0-05c9ec86a7cd")
 		)
@@ -28346,7 +29307,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 217 "Net-(U17-Pad10)")
+			(net 216 "Net-(U17-Pad10)")
 			(pintype "input")
 			(uuid "d2f5498c-968d-4a63-aa5b-5da44f3b2830")
 		)
@@ -28431,6 +29392,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f3f929b8-77d0-46a5-96a6-7ec5874d368c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8dd35558-00f7-4d14-a70a-ec6f2bf6b1a2")
 			(effects
 				(font
 					(size 1 1)
@@ -28643,6 +29617,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8cbf80bf-ef6e-4af9-be88-bf2f6ca2d2cd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "abb241b4-1e9c-41d7-953c-bc783f9e702e")
 			(effects
 				(font
 					(size 1 1)
@@ -29089,6 +30076,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0528924-d090-410b-a7b3-70b5d9566783")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/f905bbc8-1376-41ef-a1b2-0cbb88505ad9")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -29294,6 +30294,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f38cb42a-4b41-427e-bda4-49a9ea536c4f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8bcf0dc6-d246-4981-9b89-ecae45e7b012")
 			(effects
 				(font
 					(size 1 1)
@@ -29930,7 +30943,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29950,6 +30963,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0218a3cf-156c-475f-a43c-da795adc789d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "126bfb05-05b9-4b70-8391-e69edaee437d")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -30166,6 +31205,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da797bc0-325c-4d1a-b14e-24d4754d9372")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/94731ab2-a5b7-46ec-b5d6-e5881d44a22c")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -30313,16 +31365,16 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
-		(uuid "a770e359-ab3a-4c40-8d5b-5c5a4235719a")
-		(at 210.05 117.35)
-		(descr "SOT-353, SC-70-5")
-		(tags "SOT-353 SC-70-5")
-		(property "Reference" "U24"
-			(at 0 -2.25 0)
+		(uuid "a6a02743-b2c9-4c31-b30a-2d326e4ec95a")
+		(at 224.0875 114)
+		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(tags "resistor")
+		(property "Reference" "R38"
+			(at 0 -1.65 0)
 			(layer "F.SilkS")
-			(uuid "d683c409-5a8e-47ad-a566-1a7e1e7c4d7c")
+			(uuid "bfa61db3-1431-45f3-8013-2df537d17140")
 			(effects
 				(font
 					(size 1 1)
@@ -30330,10 +31382,10 @@
 				)
 			)
 		)
-		(property "Value" "74AHC1G79"
-			(at 0 2 180)
+		(property "Value" "160R"
+			(at 0 1.65 0)
 			(layer "F.Fab")
-			(uuid "2282c9c3-7f18-4e3f-842e-d94d842718a9")
+			(uuid "de580c5b-61c2-4c0e-982f-e015ad99dffa")
 			(effects
 				(font
 					(size 1 1)
@@ -30341,12 +31393,11 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT1G79_Q100.pdf"
+		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2012011712_YAGEO-AC0805FR-7W160RL_C727986.pdf"
 			(at 0 0 0)
-			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9cb21f60-c072-448b-b627-e56ad52ac67d")
+			(uuid "48d73571-6048-4cdd-a195-373b9eecef53")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30354,12 +31405,11 @@
 				)
 			)
 		)
-		(property "Description" "Single D Flip-Flop, Low-Voltage CMOS"
+		(property "Description" ""
 			(at 0 0 0)
-			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7e1916fb-1b4b-4959-8762-8d2d51efd6b1")
+			(uuid "cb0ce07c-ea44-42c0-81cd-c65f227190ca")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30367,12 +31417,12 @@
 				)
 			)
 		)
-		(property "MPN" "74AHC1G79GW,125"
+		(property "MPN" "AC0805FR-7W160RL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f99b0977-1d7c-48ea-958f-dec27009e34c")
+			(uuid "69867c57-1da4-48d5-b336-1e487e264dfe")
 			(effects
 				(font
 					(size 1 1)
@@ -30380,196 +31430,142 @@
 				)
 			)
 		)
-		(property ki_fp_filters "SOT* SG*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/2507366e-2df2-4a23-ad6a-4c4795848b2b")
-		(sheetname "/Motor Control/")
-		(sheetfile "motor_control.kicad_sch")
+		(property ki_fp_filters "R_*")
+		(path "/c8bb4caf-5b38-405e-8f82-79cfcaa215de")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -0.71 -1.16)
-			(end 0.7 -1.16)
+			(start -0.227064 -0.735)
+			(end 0.227064 -0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "d1664587-b22b-4605-b47a-bdb6e1b55e8d")
+			(uuid "34456718-651d-48dd-88be-a93c39018a28")
 		)
 		(fp_line
-			(start -0.7 1.16)
-			(end 0.7 1.16)
+			(start -0.227064 0.735)
+			(end 0.227064 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "d6cf8357-2b03-4679-8c3a-3ae1cb4e3392")
-		)
-		(fp_poly
-			(pts
-				(xy -1.08 -1.11) (xy -1.32 -1.44) (xy -0.84 -1.44) (xy -1.08 -1.11)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill yes)
-			(layer "F.SilkS")
-			(uuid "2d67ce7b-5b6e-4469-895a-e65fceb1125f")
+			(uuid "25e089e7-2dc8-4abb-a335-e818d59bab76")
 		)
 		(fp_line
-			(start -1.6 -1.4)
-			(end -1.6 1.4)
+			(start -1.68 -0.95)
+			(end 1.68 -0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "11ffe72d-6206-48e3-ae81-c11be2486af8")
+			(uuid "81b1cc20-607f-4c6f-a8ca-44a9a92c1e8a")
 		)
 		(fp_line
-			(start -1.6 -1.4)
-			(end 1.6 -1.4)
+			(start -1.68 0.95)
+			(end -1.68 -0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "d17710e5-4490-4926-b61c-997fbfbceb0a")
+			(uuid "a41eccde-16e0-430c-aa8f-7f8427cda613")
 		)
 		(fp_line
-			(start -1.6 1.4)
-			(end 1.6 1.4)
+			(start 1.68 -0.95)
+			(end 1.68 0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "295c3ee7-19dc-4206-9524-0464bc9a1634")
+			(uuid "dd868b36-a839-4581-b68d-492e2e7554e1")
 		)
 		(fp_line
-			(start 1.6 1.4)
-			(end 1.6 -1.4)
+			(start 1.68 0.95)
+			(end -1.68 0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "b53052ac-e6f6-46c6-a3f9-01b939382841")
+			(uuid "caf1d871-6684-4752-9f89-bff5c1341eec")
 		)
 		(fp_line
-			(start -0.675 -0.6)
-			(end -0.675 1.1)
+			(start -1 -0.625)
+			(end 1 -0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "1bbb1731-a391-49ca-a8b0-ae45efbe0a8e")
+			(uuid "bbd68f9d-9d24-4fb3-88b4-2be6fc2e6adf")
 		)
 		(fp_line
-			(start -0.175 -1.1)
-			(end -0.675 -0.6)
+			(start -1 0.625)
+			(end -1 -0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "bec6bc5f-19ba-44f2-8a96-c304c2f8f529")
+			(uuid "596f1ae8-d746-48a5-9dca-b8e0e99a7e37")
 		)
 		(fp_line
-			(start 0.675 -1.1)
-			(end -0.175 -1.1)
+			(start 1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "b132dc90-7cbc-4892-9b79-7957cd99c716")
+			(uuid "2eaef962-11db-45ed-89d6-4abcfc9069e2")
 		)
 		(fp_line
-			(start 0.675 -1.1)
-			(end 0.675 1.1)
+			(start 1 0.625)
+			(end -1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "c56b8baa-9c5d-4579-ba85-2a51385d6d13")
-		)
-		(fp_line
-			(start 0.675 1.1)
-			(end -0.675 1.1)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "76b26e14-302b-4f4e-81d5-b0b17366bf33")
+			(uuid "cfde1224-b3a1-4b33-b19e-a72964c56cd0")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
-			(uuid "faf0c33b-8d95-4864-885c-b86bb0a6f120")
+			(uuid "3074c1dd-f3e5-4d60-9a31-9eb480c6f50b")
 			(effects
 				(font
 					(size 0.5 0.5)
-					(thickness 0.075)
+					(thickness 0.08)
 				)
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.95 -0.65)
-			(size 0.65 0.4)
+			(at -0.9125 0)
+			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(net 123 "/Motor Control/H-bridge #1/ENCODER_A")
-			(pinfunction "D")
-			(pintype "input")
-			(uuid "99c552f5-7046-4608-b289-a1119c2f7a73")
+			(roundrect_rratio 0.243902)
+			(net 116 "Net-(U24-Vs)")
+			(pintype "passive")
+			(uuid "2bd9a90d-63f7-4783-aa7d-6236553a2b62")
 		)
 		(pad "2" smd roundrect
-			(at -0.95 0)
-			(size 0.65 0.4)
+			(at 0.9125 0)
+			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(net 121 "/Motor Control/H-bridge #1/ENCODER_B")
-			(pinfunction "C")
-			(pintype "input")
-			(uuid "63b1c07e-f1d5-4d6e-a015-24b5bde80e90")
-		)
-		(pad "3" smd roundrect
-			(at -0.95 0.65)
-			(size 0.65 0.4)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(net 1 "GND")
-			(pinfunction "GND")
-			(pintype "power_in")
-			(uuid "f9623138-1704-4ac1-8d2b-aaa7a030a31f")
-		)
-		(pad "4" smd roundrect
-			(at 0.95 0.65)
-			(size 0.65 0.4)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(net 156 "unconnected-(U24-Q-Pad4)")
-			(pinfunction "Q")
-			(pintype "output")
-			(uuid "9d599e38-9b6a-4e2c-93da-fd088bee2237")
-		)
-		(pad "5" smd roundrect
-			(at 0.95 -0.65)
-			(size 0.65 0.4)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
+			(roundrect_rratio 0.243902)
 			(net 34 "+5V")
-			(pinfunction "VCC")
-			(pintype "power_in")
-			(uuid "6e350874-0afc-4849-83e9-5edf9b8e4d68")
+			(pintype "passive")
+			(uuid "7873b80d-6363-4e1f-bd6b-0d4e430abd7a")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-353_SC-70-5.step"
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -30580,6 +31576,262 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "OptoDevice_custom:IRM-H6XX"
+		(layer "F.Cu")
+		(uuid "a770e359-ab3a-4c40-8d5b-5c5a4235719a")
+		(at 215 119)
+		(property "Reference" "U24"
+			(at 0 -3.556 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "d683c409-5a8e-47ad-a566-1a7e1e7c4d7c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "IRM-H6XX"
+			(at 0 3.556 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "2282c9c3-7f18-4e3f-842e-d94d842718a9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DMO-0000682_IRM-H6xxJ7-V4.pdf"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9cb21f60-c072-448b-b627-e56ad52ac67d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7e1916fb-1b4b-4959-8762-8d2d51efd6b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "IRM-H638J7/TR2(CLW)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0aa96b24-e06e-442b-ad13-37abc90f9276")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "193ad55b-b0cd-4a52-b0fc-67890fa4afb0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Vishay*CAST*")
+		(path "/d532f269-f5e3-49bd-9bdf-62d868d99c1e")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start -2.413 -2.667)
+			(end -2.413 -2.159)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "dea870eb-19ea-4635-a060-da10c71f69c1")
+		)
+		(fp_line
+			(start -2.413 -2.159)
+			(end -3.81 -2.159)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b9e7e32f-2be7-49d6-89f4-958780db4207")
+		)
+		(fp_rect
+			(start -2.1 -2.6)
+			(end 2.1 2.6)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "39979764-7bb6-40e4-9c88-3f738c3bc771")
+		)
+		(fp_circle
+			(center 0 -0.88)
+			(end 1.5 -0.88)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "c3ba62cb-db6c-4ec2-aea2-dfae189b9c4f")
+		)
+		(fp_rect
+			(start -3.5 -1.52)
+			(end -2 -1.02)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "Dwgs.User")
+			(uuid "f3028c72-1856-4e6b-a348-abedeab96564")
+		)
+		(fp_rect
+			(start -3.5 1.52)
+			(end -2 1.02)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "Dwgs.User")
+			(uuid "38954be3-2f69-454c-a93c-cedbe8ac3939")
+		)
+		(fp_rect
+			(start -2 -2.5)
+			(end 2 2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "Dwgs.User")
+			(uuid "95439b95-c1f2-4d26-9728-21dd07ffd282")
+		)
+		(fp_rect
+			(start 3.5 -1.02)
+			(end 2 -1.52)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "Dwgs.User")
+			(uuid "7a428100-181a-4409-af12-a4458a2ad713")
+		)
+		(fp_rect
+			(start 3.5 1.52)
+			(end 2 1.02)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "Dwgs.User")
+			(uuid "532d24a7-6091-4f72-94ef-46bb8cca7115")
+		)
+		(fp_circle
+			(center 0 -0.88)
+			(end 1.5 -0.88)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "Dwgs.User")
+			(uuid "b549e30d-e205-4c2d-b5b9-5dc1eecec7f7")
+		)
+		(fp_rect
+			(start -4.191 -2.794)
+			(end 4.191 2.794)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "cf856555-005e-4b47-bb6c-3ae1b4f2251d")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 4.826 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "faf0c33b-8d95-4864-885c-b86bb0a6f120")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -3.15 -1.27)
+			(size 1.5 1.1)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 1 "GND")
+			(pinfunction "GND")
+			(pintype "power_in")
+			(uuid "99c552f5-7046-4608-b289-a1119c2f7a73")
+		)
+		(pad "2" smd roundrect
+			(at -3.15 1.27)
+			(size 1.5 1.1)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 1 "GND")
+			(pinfunction "GND")
+			(pintype "power_in")
+			(uuid "63b1c07e-f1d5-4d6e-a015-24b5bde80e90")
+		)
+		(pad "3" smd roundrect
+			(at 3.15 1.27)
+			(size 1.5 1.1)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 58 "/*8")
+			(pinfunction "OUT")
+			(pintype "output")
+			(uuid "f9623138-1704-4ac1-8d2b-aaa7a030a31f")
+		)
+		(pad "4" smd roundrect
+			(at 3.15 -1.27)
+			(size 1.5 1.1)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 116 "Net-(U24-Vs)")
+			(pinfunction "Vs")
+			(pintype "power_in")
+			(uuid "9d599e38-9b6a-4e2c-93da-fd088bee2237")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
 		(layer "F.Cu")
@@ -30639,6 +31891,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "997682a7-b87b-4997-95d0-2fa4035cd57a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f8490d5-5500-4695-8d56-c33199ac5fc5")
 			(effects
 				(font
 					(size 1 1)
@@ -30898,7 +32163,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 203 "Net-(U10-Pad2)")
+			(net 202 "Net-(U10-Pad2)")
 			(pintype "output")
 			(uuid "044a1695-a95e-40f9-93c9-f47fe699c463")
 		)
@@ -30907,7 +32172,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 203 "Net-(U10-Pad2)")
+			(net 202 "Net-(U10-Pad2)")
 			(pintype "input")
 			(uuid "a9a88769-8289-4533-ba8a-6e751d0a71d4")
 		)
@@ -30916,7 +32181,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 199 "Net-(U10-Pad4)")
+			(net 198 "Net-(U10-Pad4)")
 			(pintype "output")
 			(uuid "5c4e9713-c71c-4e5b-bebf-cce6c05ae26b")
 		)
@@ -30971,7 +32236,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 202 "Net-(U10-Pad10)")
+			(net 201 "Net-(U10-Pad10)")
 			(pintype "output")
 			(uuid "56179f89-61b8-48cd-893b-a04beb69a2f1")
 		)
@@ -30989,7 +32254,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 201 "Net-(U10-Pad12)")
+			(net 200 "Net-(U10-Pad12)")
 			(pintype "output")
 			(uuid "4dd76417-b787-4375-9370-16fc79ce24c3")
 		)
@@ -30998,7 +32263,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 202 "Net-(U10-Pad10)")
+			(net 201 "Net-(U10-Pad10)")
 			(pintype "input")
 			(uuid "3e188fe8-885c-4d38-bbeb-af9a2af15c9b")
 		)
@@ -31085,6 +32350,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "da415a4b-4a5c-4503-a8b4-07112e4a1d9f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "213a06d3-8cd1-4551-9213-b9cf54324398")
 			(effects
 				(font
 					(size 1 1)
@@ -31275,7 +32553,7 @@
 			(at -2.15 -0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 187 "/Motor Control/EN_ENC_MOTOR1")
+			(net 186 "/Motor Control/EN_ENC_MOTOR1")
 			(pintype "input")
 			(uuid "4c0bda28-9331-4f51-b531-89744d8bc902")
 		)
@@ -31283,7 +32561,7 @@
 			(at -2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 179 "Net-(U3-Pad2)")
+			(net 178 "Net-(U3-Pad2)")
 			(pintype "input")
 			(uuid "5e8e5682-16c0-4a50-a444-144805402a67")
 		)
@@ -31308,7 +32586,7 @@
 			(at 2.15 0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 183 "Net-(U3-Pad5)")
+			(net 182 "Net-(U3-Pad5)")
 			(pintype "input")
 			(uuid "58d8ebcd-b01e-412d-9dcf-e31deceaac0d")
 		)
@@ -31324,7 +32602,7 @@
 			(at 2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 187 "/Motor Control/EN_ENC_MOTOR1")
+			(net 186 "/Motor Control/EN_ENC_MOTOR1")
 			(pintype "input")
 			(uuid "170abb4e-9a72-4cd8-b863-2b56a41ee8f9")
 		)
@@ -32107,6 +33385,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2b0f743e-f7b6-4cff-a8c2-f1ae9f28d49e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/911e814b-846c-4e82-abd2-2a1ed641e850")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -32312,6 +33603,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2698e765-2599-4027-a4b4-194652ce4319")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "efe65081-03c4-49fd-9da7-db36de443c5d")
 			(effects
 				(font
 					(size 1 1)
@@ -32531,6 +33835,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a46c58d-75d1-47a5-be18-d20a4c9c8bdb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/466943cd-0198-4c1e-8e26-fbc3e9ec3822")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -32661,7 +33978,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 193 "Net-(J17-Pin_1)")
+			(net 192 "Net-(J17-Pin_1)")
 			(pintype "passive")
 			(uuid "aaf61cb5-c0bf-4e3a-93fc-b17595e97f52")
 		)
@@ -32706,7 +34023,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -32726,6 +34043,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8857347c-a5c4-425d-b0e0-bbc4841209eb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "40433b94-bdfe-422f-b9c7-ecc07001b4cc")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -33167,6 +34510,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9117189a-22d5-4167-a1c8-4cc91034a668")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/90412e15-8d70-4f05-a731-02e2d12964b0")
 		(sheetname "/")
@@ -33372,6 +34728,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1e864e56-a2ee-43b7-89d3-037d07219f5b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3274b793-d1f7-47c0-b4fe-f0410126863e")
 			(effects
 				(font
 					(size 1 1)
@@ -33622,7 +34991,7 @@
 			(size 1.95 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 116 "Net-(U23-V_{OUT})")
+			(net 36 "/A0")
 			(pinfunction "V_{OUT}")
 			(pintype "output")
 			(uuid "8d52bfab-bd97-4783-944f-4a35c465ab90")
@@ -33632,7 +35001,7 @@
 			(size 1.95 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 198 "/Motor Control/CURRENT1")
+			(net 197 "/Motor Control/CURRENT1")
 			(pinfunction "CH0")
 			(pintype "input")
 			(uuid "e012df02-96d2-4247-b91a-a7dfcf3572a0")
@@ -33642,7 +35011,7 @@
 			(size 1.95 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 204 "/Motor Control/CURRENT2")
+			(net 203 "/Motor Control/CURRENT2")
 			(pinfunction "CH1")
 			(pintype "input")
 			(uuid "f7796615-a3db-48bb-b04a-4aa34311d0ce")
@@ -33652,7 +35021,7 @@
 			(size 1.95 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 218 "/Motor Control/CURRENT3")
+			(net 217 "/Motor Control/CURRENT3")
 			(pinfunction "CH2")
 			(pintype "input")
 			(uuid "10fb2e42-3238-4bf0-ab13-b53c33c90b85")
@@ -34071,6 +35440,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "47406040-5e03-437f-ac0a-d14d220fea0d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SSOP* VSSOP*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/7eb237d5-c43a-4adf-a986-c185c6f352cd")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -34254,7 +35636,7 @@
 			(at -2.15 -0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 180 "/Motor Control/EN_MOTOR1")
+			(net 179 "/Motor Control/EN_MOTOR1")
 			(pintype "input")
 			(uuid "b988dd90-035b-4f3e-823f-08cd95eb50f6")
 		)
@@ -34262,7 +35644,7 @@
 			(at -2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 191 "/Motor Control/PWM1")
+			(net 190 "/Motor Control/PWM1")
 			(pintype "input")
 			(uuid "39c035d6-d9f0-45e2-b8d6-1b29c2b8ea1c")
 		)
@@ -34270,7 +35652,7 @@
 			(at -2.15 0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 189 "Net-(U6-IN2)")
+			(net 188 "Net-(U6-IN2)")
 			(pintype "output")
 			(uuid "b11c0a27-4fb5-46da-b1e1-08d469737e46")
 		)
@@ -34287,7 +35669,7 @@
 			(at 2.15 0.975)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 180 "/Motor Control/EN_MOTOR1")
+			(net 179 "/Motor Control/EN_MOTOR1")
 			(pintype "input")
 			(uuid "f16b4da2-6284-4d40-9df8-02771787cd1f")
 		)
@@ -34295,7 +35677,7 @@
 			(at 2.15 0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 185 "/Motor Control/PWM2")
+			(net 184 "/Motor Control/PWM2")
 			(pintype "input")
 			(uuid "edbf7998-a72c-489f-b934-13656478dcfa")
 		)
@@ -34303,7 +35685,7 @@
 			(at 2.15 -0.325)
 			(size 1.1 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 190 "Net-(U6-IN1)")
+			(net 189 "Net-(U6-IN1)")
 			(pintype "output")
 			(uuid "168f7541-c006-4f76-b106-8ee17420f2d0")
 		)
@@ -34619,6 +36001,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b1d4b9a7-3420-4dff-9c82-7dc1c341b2ea")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SOT?23*")
 		(path "/c3376d14-34af-442f-89a9-7202477cf23b")
 		(sheetname "/")
@@ -34882,7 +36277,7 @@
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 162 "unconnected-(U1-NC-Pad3)")
+			(net 161 "unconnected-(U1-NC-Pad3)")
 			(pinfunction "NC")
 			(pintype "no_connect")
 			(uuid "f82ec805-2040-4178-9537-f6f2f3a63896")
@@ -34928,7 +36323,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -34948,6 +36343,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d60bc8ba-8242-4631-9fa2-8c2a6be2532e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7efd4dd-aa8f-478e-bf3d-0612885a8c6b")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -35164,6 +36585,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "36c2f21e-282b-4932-9208-a60060ca0618")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/466943cd-0198-4c1e-8e26-fbc3e9ec3822")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -35369,6 +36803,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8766e0ae-fe19-4c58-b86e-0040839fcb66")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "42c24a83-c647-436a-8740-c471517b57ef")
 			(effects
 				(font
 					(size 1 1)
@@ -35619,7 +37066,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 204 "/Motor Control/CURRENT2")
+			(net 203 "/Motor Control/CURRENT2")
 			(pintype "output")
 			(uuid "83fe4b29-08dc-4318-92a9-402431936334")
 		)
@@ -35638,7 +37085,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 197 "Net-(U11-ISEN)")
+			(net 196 "Net-(U11-ISEN)")
 			(pinfunction "+")
 			(pintype "input")
 			(uuid "75d28b0d-ab8a-4d84-b482-734b4f25ce7f")
@@ -35734,6 +37181,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "be831ebf-abe9-4020-b22a-351cd40a31c6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "93b13acc-229d-4444-afd7-eaa24ac9dcfe")
 			(effects
 				(font
 					(size 1 1)
@@ -35953,6 +37413,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ac5eca4-e650-4295-abc0-64fcc2424c99")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/be4ccc5a-3452-47cf-ba96-bce5de8607a2")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -36165,6 +37638,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af55210a-3683-4f7d-8268-35be5bedfa03")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/97a2d852-dc40-453f-a9e8-417149353da6")
 		(sheetname "/")
@@ -36340,7 +37826,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_1811151524_JST-B6B-PH-K-S-LF-SN_C131342.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -36364,12 +37850,25 @@
 				)
 			)
 		)
-		(property "Status" ""
+		(property "Status" "OK"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ed6e584c-3afd-4f36-80df-1185e296923e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B6B-PH-K-S(LF)(SN)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2bf7ff2d-0a82-414d-b527-607e5870e083")
 			(effects
 				(font
 					(size 1 1)
@@ -37048,6 +38547,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf53b730-9312-4880-8a8e-71903d1c3c5e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/87c75775-16d6-41c5-9689-a4d02f2c78af/0716e935-a611-49a4-aca0-2ea5179fc347")
 		(sheetname "/Serial ports/")
@@ -37644,6 +39156,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7ccf042-97cd-4a2d-9e3f-002205e3f8f0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "TSSOP*4.4x7.8mm*P0.65mm*")
 		(path "/c2b7c2b5-5cd7-48b4-bf4f-4c21d1a472e0")
 		(sheetname "/")
@@ -37977,7 +39502,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 177 "unconnected-(U2-IO0_6-Pad10)")
+			(net 176 "unconnected-(U2-IO0_6-Pad10)")
 			(pinfunction "IO0_6")
 			(pintype "bidirectional+no_connect")
 			(uuid "3c78dd19-ca5d-47ac-bab5-82ceba26033c")
@@ -37987,7 +39512,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 174 "unconnected-(U2-IO0_7-Pad11)")
+			(net 173 "unconnected-(U2-IO0_7-Pad11)")
 			(pinfunction "IO0_7")
 			(pintype "bidirectional+no_connect")
 			(uuid "1ea01c2b-fa71-4e0b-b91d-bc72fdabbb5d")
@@ -38047,7 +39572,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 178 "unconnected-(U2-IO1_4-Pad17)")
+			(net 177 "unconnected-(U2-IO1_4-Pad17)")
 			(pinfunction "IO1_4")
 			(pintype "bidirectional+no_connect")
 			(uuid "5bbc9942-0efb-4353-86a7-ebf372f9fd85")
@@ -38057,7 +39582,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 163 "unconnected-(U2-IO1_5-Pad18)")
+			(net 162 "unconnected-(U2-IO1_5-Pad18)")
 			(pinfunction "IO1_5")
 			(pintype "bidirectional+no_connect")
 			(uuid "cc61266c-2df3-472e-8e67-a85110c809ee")
@@ -38067,7 +39592,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 176 "unconnected-(U2-IO1_6-Pad19)")
+			(net 175 "unconnected-(U2-IO1_6-Pad19)")
 			(pinfunction "IO1_6")
 			(pintype "bidirectional+no_connect")
 			(uuid "330f2b52-348e-4875-8d5e-f158fa95b452")
@@ -38077,7 +39602,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 168 "unconnected-(U2-IO1_7-Pad20)")
+			(net 167 "unconnected-(U2-IO1_7-Pad20)")
 			(pinfunction "IO1_7")
 			(pintype "bidirectional+no_connect")
 			(uuid "4b292ef6-ba87-42d1-a6d7-6d80d1414afa")
@@ -38193,6 +39718,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6ae782ef-3c69-459f-9b95-83d8c2dfc956")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66b256fb-e52c-4460-86b9-813c5993c89e")
 			(effects
 				(font
 					(size 1 1)
@@ -38405,6 +39943,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "18019269-8438-4906-a814-77b758f84e56")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "222049b3-2492-4936-ad46-62bc1078b09d")
 			(effects
 				(font
 					(size 1 1)
@@ -38625,7 +40176,6 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1e99c7a7-a276-437f-912b-0e207510aac5")
 		(sheetname "/Motor Control/")
 		(sheetfile "motor_control.kicad_sch")
 		(attr smd)
@@ -38838,6 +40388,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f608d21a-830d-42fb-b890-22efd5a795cb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "TSOP*21.0*10.*P1.27mm*")
 		(path "/186e5d72-789f-4418-a04a-f64ef1742d70/6a6bd7dc-ce34-49c6-9ff3-7a1c2fbf95e8")
 		(sheetname "/External RAM/")
@@ -39026,7 +40589,7 @@
 			(at -5.6 -4.445)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 226 "Net-(U20-Q7)")
+			(net 225 "Net-(U20-Q7)")
 			(pinfunction "A7")
 			(pintype "input")
 			(uuid "01c74e87-e064-41e6-9a8f-44992553a842")
@@ -39035,7 +40598,7 @@
 			(at -5.6 -3.175)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 225 "Net-(U20-Q6)")
+			(net 224 "Net-(U20-Q6)")
 			(pinfunction "A6")
 			(pintype "input")
 			(uuid "035ff60e-d32a-42ce-8d6a-b91a685222f4")
@@ -39044,7 +40607,7 @@
 			(at -5.6 -1.905)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 219 "Net-(U20-Q5)")
+			(net 218 "Net-(U20-Q5)")
 			(pinfunction "A5")
 			(pintype "input")
 			(uuid "53fcf41e-5015-414b-88c6-78d30fa10814")
@@ -39053,7 +40616,7 @@
 			(at -5.6 -0.625)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 223 "Net-(U20-Q4)")
+			(net 222 "Net-(U20-Q4)")
 			(pinfunction "A4")
 			(pintype "input")
 			(uuid "78022548-5072-4d38-84eb-159ae2977de0")
@@ -39062,7 +40625,7 @@
 			(at -5.6 0.625)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 221 "Net-(U20-Q3)")
+			(net 220 "Net-(U20-Q3)")
 			(pinfunction "A3")
 			(pintype "input")
 			(uuid "b05ab617-f43b-44b3-8971-b95f1f2f2721")
@@ -39071,7 +40634,7 @@
 			(at -5.6 1.905)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 222 "Net-(U20-Q2)")
+			(net 221 "Net-(U20-Q2)")
 			(pinfunction "A2")
 			(pintype "input")
 			(uuid "a0ce231c-8d54-4ff8-b09c-dd70db718479")
@@ -39080,7 +40643,7 @@
 			(at -5.6 3.175)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 220 "Net-(U20-Q1)")
+			(net 219 "Net-(U20-Q1)")
 			(pinfunction "A1")
 			(pintype "input")
 			(uuid "4a9c7696-ba7a-4686-b22b-0afc07ff8ae9")
@@ -39089,7 +40652,7 @@
 			(at -5.6 4.445)
 			(size 1.6 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 224 "Net-(U20-Q0)")
+			(net 223 "Net-(U20-Q0)")
 			(pinfunction "A0")
 			(pintype "input")
 			(uuid "078fee26-604a-443d-9f98-2cc414224e92")
@@ -39352,6 +40915,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a6db1975-db41-4c7a-a416-4c70c38f7544")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/45773a4d-6e8a-45ad-99d2-6e885ca6c2c7")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -39557,6 +41133,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ebe70b7b-59ce-43c2-80db-e59970195bed")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d234a954-d94b-4d07-9785-07d76a1472c9")
 			(effects
 				(font
 					(size 1 1)
@@ -39776,6 +41365,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "460da047-2851-4dc4-8cb2-7b730280a480")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/94731ab2-a5b7-46ec-b5d6-e5881d44a22c")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -39981,6 +41583,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ffb0adda-54e3-4468-ab93-1d64462a8aeb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "216d5206-b361-4cf3-9e02-9a0dc207317f")
 			(effects
 				(font
 					(size 1 1)
@@ -40240,7 +41855,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 194 "Net-(U5-Pad2)")
+			(net 193 "Net-(U5-Pad2)")
 			(pintype "output")
 			(uuid "dbbbdbf8-a93b-4e8d-b981-5069593a39c6")
 		)
@@ -40249,7 +41864,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 194 "Net-(U5-Pad2)")
+			(net 193 "Net-(U5-Pad2)")
 			(pintype "input")
 			(uuid "bed52372-f626-4103-be3e-1b46414b842c")
 		)
@@ -40258,7 +41873,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 179 "Net-(U3-Pad2)")
+			(net 178 "Net-(U3-Pad2)")
 			(pintype "output")
 			(uuid "81cfeede-b1ff-4f3c-9450-7886587be47b")
 		)
@@ -40313,7 +41928,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 196 "Net-(U5-Pad10)")
+			(net 195 "Net-(U5-Pad10)")
 			(pintype "output")
 			(uuid "449d7c83-ba27-4e0c-893e-f88bc0a9adc1")
 		)
@@ -40331,7 +41946,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 183 "Net-(U3-Pad5)")
+			(net 182 "Net-(U3-Pad5)")
 			(pintype "output")
 			(uuid "a2d5ba74-1288-415c-b2c8-e9805e0bd9da")
 		)
@@ -40340,7 +41955,7 @@
 			(size 1.475 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 196 "Net-(U5-Pad10)")
+			(net 195 "Net-(U5-Pad10)")
 			(pintype "input")
 			(uuid "402c9986-4622-4e50-b0b6-d7488b0c1285")
 		)
@@ -40805,7 +42420,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.208333)
-			(net 193 "Net-(J17-Pin_1)")
+			(net 192 "Net-(J17-Pin_1)")
 			(pinfunction "Pin_1")
 			(pintype "passive")
 			(uuid "99b74605-b08e-42d5-b8ac-1e8921acf220")
@@ -41211,6 +42826,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "34a16cbe-ef93-4670-818e-90b970baaf3c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/0f85c905-e985-4361-af26-9db2a2a0a127")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -41386,7 +43014,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -41406,6 +43034,32 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "367cd8f8-afc5-4150-8b11-b02b2a54a3f3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4dad5cd3-a50c-4dd9-a76d-28e23bc05947")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -41700,6 +43354,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae7a481c-f08f-45ad-92f3-c79d378619d0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/45773a4d-6e8a-45ad-99d2-6e885ca6c2c7")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -41864,7 +43531,7 @@
 				)
 			)
 		)
-		(property "Value" "1kR"
+		(property "Value" "10kR"
 			(at 0 1.65 0)
 			(layer "F.Fab")
 			(uuid "9701f589-cdf2-4852-b2de-937b60fd6e3c")
@@ -41875,7 +43542,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2010202005_YAGEO-AC0805FR-7W1KL_C727989.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -41887,7 +43554,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -41899,7 +43566,7 @@
 				)
 			)
 		)
-		(property "MPN" "AC0805FR-7W1KL"
+		(property "MPN" "RC0805JR-0710KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41912,10 +43579,23 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "68279185-2019-4426-880a-cc789d386950")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5cb50951-c0de-4fd7-9831-2258f3158657")
-		(sheetname "/Motor Control/")
-		(sheetfile "motor_control.kicad_sch")
+		(path "/228ee0a2-6c3d-484f-bdae-813063901be8")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.227064 -0.735)
@@ -42033,7 +43713,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 116 "Net-(U23-V_{OUT})")
+			(net 34 "+5V")
 			(pintype "passive")
 			(uuid "d9dcc2a7-4ffd-4219-951e-e67c19b205d1")
 		)
@@ -42042,7 +43722,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 36 "/A0")
+			(net 58 "/*8")
 			(pintype "passive")
 			(uuid "f147c95d-0ab4-4845-a57f-fdacfed4c236")
 		)
@@ -42117,6 +43797,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c0f62a7f-3c7b-41df-8782-cc265f8e67e0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8bfc1929-b140-481a-ae71-bd5daf3b38db")
 			(effects
 				(font
 					(size 1 1)
@@ -42336,6 +44029,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e0f08d81-2e48-4e46-b309-cc58b59edd73")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/9c5b4d89-217e-41b3-93bb-982d1e16e4a8")
 		(sheetname "/")
@@ -42541,6 +44247,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "84e4604b-65a6-46d6-a99a-3a19ebb60c25")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31ca6b7b-5e1c-472b-80a1-c11d8cafbcbc")
 			(effects
 				(font
 					(size 1 1)
@@ -42838,6 +44557,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a69aafdd-4186-4368-bd25-dfb19d6fdc91")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/e8ac8b08-7c7a-40a5-b50c-7b4aa889c030")
 		(sheetname "/Motor Control/H-bridge #1/")
@@ -43043,6 +44775,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ba0699f2-dc0f-49f4-aa29-cd03f1545129")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43befbd2-edf6-4f8b-b5cc-0f6eb34ca73f")
 			(effects
 				(font
 					(size 1 1)
@@ -43262,6 +45007,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "04e8fdea-1ded-4a39-bc74-27ea6085d80b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8/911e814b-846c-4e82-abd2-2a1ed641e850")
 		(sheetname "/Motor Control/H-bridge #2/")
@@ -43437,7 +45195,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_1811151524_JST-B6B-PH-K-S-LF-SN_C131342.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -43461,12 +45219,25 @@
 				)
 			)
 		)
-		(property "Status" ""
+		(property "Status" "OK"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "23ced0fc-4215-49c5-b1e4-ec9c7dd0487f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B6B-PH-K-S(LF)(SN)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aef6541d-804c-43a5-9555-909fa6b29032")
 			(effects
 				(font
 					(size 1 1)
@@ -44145,6 +45916,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a2d0ee91-c898-4fef-b281-c7940d0c0ffb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/e8ac8b08-7c7a-40a5-b50c-7b4aa889c030")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -44435,6 +46219,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f412da5-1671-405f-8251-fb2f282ca980")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/be4ccc5a-3452-47cf-ba96-bce5de8607a2")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -44640,6 +46437,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "53afb322-538a-4f14-8f21-c11a576ac515")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b185b5f0-0bc9-4bcc-9b60-54f063569d29")
 			(effects
 				(font
 					(size 1 1)
@@ -44859,6 +46669,19 @@
 				)
 			)
 		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5537aaa4-ec5a-4daf-b44d-8208bc639271")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/06f8a31f-1593-4487-94cf-aac03b34eaab/656b9717-bcb2-43f6-8105-46d165ec7435")
 		(sheetname "/Motor Control/H-bridge #3/")
@@ -44980,7 +46803,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 193 "Net-(J17-Pin_1)")
+			(net 192 "Net-(J17-Pin_1)")
 			(pintype "passive")
 			(uuid "7ca58703-9ba2-4f77-ae56-9c4055e8765d")
 		)
