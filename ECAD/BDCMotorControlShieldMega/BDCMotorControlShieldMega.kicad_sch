@@ -4155,9 +4155,9 @@
 		)
 		(uuid "c51be268-11fb-4a10-825d-6941dda38c8f")
 	)
-	(text "(OC1A/PCINT5) PB5 - *11\n(OC1B/PCINT6) PB6 - *12\n(OC1C/PCINT7) PB7 - *13"
+	(text "(OC1A/PCINT5) PB5 - *11 for MA\n(OC1B/PCINT6) PB6 - *12 for ADC trigger\n(OC1C/PCINT7) PB7 - *13 for MB"
 		(exclude_from_sim no)
-		(at 191.77 31.75 0)
+		(at 173.228 20.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13044,36 +13044,6 @@
 				(justify left)
 			)
 		)
-		(pin "EN_MOTOR1" input
-			(at 222.25 21.59 180)
-			(uuid "5ecef688-8beb-4628-80e2-e70adfc65a1a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "EN_MOTOR2" input
-			(at 222.25 24.13 180)
-			(uuid "f4ccb773-a19e-4abb-9b65-0aa6080ccf2a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "EN_MOTOR3" input
-			(at 222.25 26.67 180)
-			(uuid "23a1d192-9b46-4175-8a95-cc065dc5f084")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "LIM11" output
 			(at 222.25 49.53 180)
 			(uuid "b1a2a081-466b-4512-bdf0-4cfcaa5a6980")
@@ -13157,26 +13127,6 @@
 		(pin "PGA_SO" output
 			(at 222.25 71.12 180)
 			(uuid "05c1ac33-5be8-4545-8de8-fab30200cc2a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PWM1" input
-			(at 222.25 29.21 180)
-			(uuid "9e737077-8cc6-438d-9092-103484db1e7f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PWM2" input
-			(at 222.25 31.75 180)
-			(uuid "374e8479-7f26-4481-a7a9-307f5d0897a1")
 			(effects
 				(font
 					(size 1.27 1.27)

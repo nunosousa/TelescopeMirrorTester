@@ -5,6 +5,591 @@
 	(uuid "923d13a4-a323-4ae2-8939-c4fbc1e1abd0")
 	(paper "A4")
 	(lib_symbols
+		(symbol "74xx:74HC14"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "74HC14"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Hex inverter schmitt trigger"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "HCMOS not inverter"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DIP*W7.62mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "74HC14_1_0"
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -3.81 -3.81) (xy 3.81 0) (xy -3.81 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_1_1"
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -0.635 -1.27) (xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "74HC14_2_0"
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -3.81 -3.81) (xy 3.81 0) (xy -3.81 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_2_1"
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -0.635 -1.27) (xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "74HC14_3_0"
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -3.81 -3.81) (xy 3.81 0) (xy -3.81 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_3_1"
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -0.635 -1.27) (xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "74HC14_4_0"
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -3.81 -3.81) (xy 3.81 0) (xy -3.81 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_4_1"
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -0.635 -1.27) (xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "74HC14_5_0"
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -3.81 -3.81) (xy 3.81 0) (xy -3.81 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_5_1"
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -0.635 -1.27) (xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "74HC14_6_0"
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -3.81 -3.81) (xy 3.81 0) (xy -3.81 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_6_1"
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -0.635 -1.27) (xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "74HC14_7_0"
+				(pin power_in line
+					(at 0 12.7 270)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "74HC14_7_1"
+				(rectangle
+					(start -5.08 7.62)
+					(end 5.08 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Analog_custom:MCP6S26"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -341,6 +926,148 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -625,6 +1352,130 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -970,143 +1821,231 @@
 			(embedded_fonts no)
 		)
 	)
-	(junction
-		(at 215.9 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "27e08f61-76f2-407f-a93c-738da3f16313")
+	(text "Limit switches debouncing"
+		(exclude_from_sim no)
+		(at 89.154 110.744 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "93e02e28-7c87-4ec9-a693-60775feccdaf")
 	)
 	(junction
-		(at 99.06 68.58)
+		(at 147.32 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "22685c66-ff0f-4ccb-b5db-255c52e4b1e7")
+	)
+	(junction
+		(at 54.61 24.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2ef70a12-39f1-4949-b894-a6226ad5743b")
 	)
 	(junction
-		(at 218.44 81.28)
+		(at 44.45 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4a49366e-4a29-4feb-a12e-7e27a8ec2591")
+		(uuid "301350f1-8bd7-4062-8c12-14bbd72e133f")
 	)
 	(junction
-		(at 116.84 68.58)
+		(at 147.32 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4b0ec83b-0923-44b2-9863-141020b614c1")
+		(uuid "4a2c3ce9-66e1-4d97-a91e-22ad13875f22")
 	)
 	(junction
-		(at 129.54 110.49)
+		(at 49.53 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "52c82d74-3e10-4d23-b527-05a70611bfde")
 	)
 	(junction
-		(at 88.9 68.58)
+		(at 64.77 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d35a87c-259b-4636-88e1-759697ad39c0")
+	)
+	(junction
+		(at 127 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "66f93279-0afc-477b-993d-bf13e561f2b3")
+	)
+	(junction
+		(at 36.83 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68eeb161-54fe-4405-995b-8686807b623f")
+	)
+	(junction
+		(at 44.45 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "69932776-549c-4b70-900b-22fc934d28c3")
+	)
+	(junction
+		(at 64.77 24.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6c2c682c-62a1-4266-8b6c-a38114cd3625")
 	)
 	(junction
-		(at 129.54 107.95)
+		(at 49.53 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6d29d91c-e363-4f80-991a-c36bcdda468c")
 	)
 	(junction
-		(at 218.44 44.45)
+		(at 147.32 152.4)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c45152dc-0078-420c-b5a6-ee061b3717ce")
+		(uuid "6dfe12b2-0aa7-44d8-8aed-112723eea4a0")
 	)
 	(junction
-		(at 215.9 46.99)
+		(at 127 152.4)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f1d5db36-59cf-4dbc-aa4d-db6be090e3a1")
+		(uuid "775083e1-4224-4a40-a915-930f22124024")
+	)
+	(junction
+		(at 127 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "872b4eec-9a46-4276-9141-a94e92ca3b6a")
+	)
+	(junction
+		(at 64.77 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8eeb000c-aec2-4ba7-8326-53f646018713")
+	)
+	(junction
+		(at 64.77 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94fb3dc7-024a-4e4c-ae4a-99939d5bf607")
+	)
+	(junction
+		(at 44.45 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cea597f9-f44d-492a-bfdb-eca3ff08b22f")
 	)
 	(wire
 		(pts
-			(xy 220.98 81.28) (xy 218.44 81.28)
+			(xy 179.07 74.93) (xy 180.34 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "061d9e2f-6428-4ce0-b8d6-51815fb4bbc6")
+		(uuid "005b9282-a651-474a-90c2-b0eb6f19694e")
 	)
 	(wire
 		(pts
-			(xy 201.93 123.19) (xy 220.98 123.19)
+			(xy 118.11 31.75) (xy 119.38 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0964d7b0-372e-498e-944e-30a59d093add")
+		(uuid "0391b4a7-f1bc-42a0-9b3a-1d53f1ef942f")
 	)
 	(wire
 		(pts
-			(xy 220.98 83.82) (xy 215.9 83.82)
+			(xy 240.03 34.29) (xy 241.3 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0cce5af0-990e-45a3-be24-5a511b4f4bab")
+		(uuid "04b5d1eb-9d2a-41f0-a82c-605cd5e52d26")
 	)
 	(wire
 		(pts
-			(xy 201.93 95.25) (xy 220.98 95.25)
+			(xy 240.03 31.75) (xy 241.3 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "12654125-167c-4b57-98be-fe3d9cf650d9")
+		(uuid "051dee16-0cf3-4702-8559-5984c8cdaea5")
 	)
 	(wire
 		(pts
-			(xy 201.93 52.07) (xy 220.98 52.07)
+			(xy 44.45 181.61) (xy 44.45 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "139ea85a-d66f-4dab-a838-031353fa92ea")
+		(uuid "0a0b3139-6f37-4071-a07c-120b21e54ae9")
 	)
 	(wire
 		(pts
-			(xy 215.9 83.82) (xy 215.9 46.99)
+			(xy 36.83 24.13) (xy 36.83 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "14269b38-c2e8-48e4-8faf-8d30eb9d3d49")
+		(uuid "0c9f0781-2aaf-4187-a55a-53f56f3684cb")
 	)
 	(wire
 		(pts
-			(xy 128.27 102.87) (xy 139.7 102.87)
+			(xy 118.11 38.1) (xy 119.38 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15200c8b-cd9e-4686-a474-4731f7e5cb7e")
+		(uuid "0cd28544-a302-4dba-bc7f-a4d29e48b4b9")
 	)
 	(wire
 		(pts
-			(xy 201.93 138.43) (xy 220.98 138.43)
+			(xy 240.03 40.64) (xy 241.3 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "19a20134-a47c-42a7-b624-235c069be95c")
+		(uuid "12cfd636-6662-44cf-9686-d2bb91a08d09")
 	)
 	(wire
 		(pts
-			(xy 99.06 68.58) (xy 116.84 68.58)
+			(xy 39.37 181.61) (xy 44.45 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15819695-8555-4226-89cb-3d52e6b6e5b5")
+	)
+	(wire
+		(pts
+			(xy 154.94 181.61) (xy 147.32 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a2e4379-c406-46a0-b82d-c04cc16a6db3")
+	)
+	(wire
+		(pts
+			(xy 72.39 154.94) (xy 71.12 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ac62991-b657-465b-b9a2-10dcac368d37")
+	)
+	(wire
+		(pts
+			(xy 54.61 24.13) (xy 36.83 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1116,27 +2055,137 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 92.71) (xy 220.98 92.71)
+			(xy 64.77 123.19) (xy 64.77 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "27cbcebf-c02b-4713-81fa-8fc2900fe706")
+		(uuid "1edae8a7-82ae-4bef-8956-405a78002f08")
 	)
 	(wire
 		(pts
-			(xy 201.93 55.88) (xy 220.98 55.88)
+			(xy 240.03 71.12) (xy 241.3 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2e8d8fbe-5d72-473d-aacb-bbe7a9c2d92a")
+		(uuid "216226b9-e45b-4ead-b54c-a27eba4329ca")
 	)
 	(wire
 		(pts
-			(xy 129.54 105.41) (xy 129.54 107.95)
+			(xy 154.94 152.4) (xy 147.32 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2175be57-e631-4cf9-bedd-f2e1e2dd2871")
+	)
+	(wire
+		(pts
+			(xy 121.92 181.61) (xy 127 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26fd87ca-0014-494e-b12c-8b4e994a77b5")
+	)
+	(wire
+		(pts
+			(xy 118.11 77.47) (xy 119.38 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27b8671b-44af-4b61-be3c-93634388ff9b")
+	)
+	(wire
+		(pts
+			(xy 179.07 34.29) (xy 180.34 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28a3ec3c-3d95-4e57-8610-e3a6b2bb96b5")
+	)
+	(wire
+		(pts
+			(xy 72.39 123.19) (xy 64.77 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2caddb72-c16e-4302-a712-9622f9e5be3d")
+	)
+	(wire
+		(pts
+			(xy 240.03 38.1) (xy 241.3 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cd5b0a0-89b1-4b5b-960d-c8ecf7b0157f")
+	)
+	(wire
+		(pts
+			(xy 127 181.61) (xy 134.62 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dd7be55-cd52-4095-9e7b-67cbcd89a850")
+	)
+	(wire
+		(pts
+			(xy 72.39 184.15) (xy 71.12 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e9bf8fe-b7aa-4b0c-a93d-15ccde2fbabe")
+	)
+	(wire
+		(pts
+			(xy 71.12 154.94) (xy 71.12 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f4e36c5-34c8-4c40-bda0-5c5f592085ea")
+	)
+	(wire
+		(pts
+			(xy 64.77 181.61) (xy 64.77 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "312965d2-b1e4-4137-a510-bf56a3be4417")
+	)
+	(wire
+		(pts
+			(xy 147.32 152.4) (xy 147.32 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31d865b2-d2c5-4326-a270-9fbe61b669f8")
+	)
+	(wire
+		(pts
+			(xy 49.53 60.96) (xy 49.53 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1146,27 +2195,77 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 81.28) (xy 218.44 44.45)
+			(xy 179.07 81.28) (xy 180.34 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4191c34e-c36f-44f6-86bd-c49c2688725d")
+		(uuid "390c4dea-675a-4c3d-8b41-9cfc5860e4da")
 	)
 	(wire
 		(pts
-			(xy 218.44 118.11) (xy 218.44 81.28)
+			(xy 72.39 181.61) (xy 64.77 181.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "42bd4ba4-f9cd-41ca-9a14-0d4964a40bc8")
+		(uuid "3b20fefa-c2a7-4bfc-9cd1-727b8c8d597c")
 	)
 	(wire
 		(pts
-			(xy 99.06 68.58) (xy 97.79 68.58)
+			(xy 118.11 40.64) (xy 119.38 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b2c9b0b-bc4c-4f91-b6d3-0e5d7169418e")
+	)
+	(wire
+		(pts
+			(xy 153.67 184.15) (xy 153.67 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f94c196-b70a-4fce-a395-fc69f9fe986d")
+	)
+	(wire
+		(pts
+			(xy 240.03 77.47) (xy 241.3 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "400d46eb-6af2-4da5-9935-ed1821a2c847")
+	)
+	(wire
+		(pts
+			(xy 121.92 123.19) (xy 127 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41cf4f13-fd37-434b-81fa-ba0f5699fe4c")
+	)
+	(wire
+		(pts
+			(xy 39.37 123.19) (xy 44.45 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42c00f82-a035-44c3-99af-f8a69b5b2e8b")
+	)
+	(wire
+		(pts
+			(xy 54.61 24.13) (xy 55.88 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1176,17 +2275,47 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 99.06) (xy 220.98 99.06)
+			(xy 179.07 77.47) (xy 180.34 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "49491c05-553f-463a-8018-4d3fc4c34c1f")
+		(uuid "49e9f26a-e1a5-458d-90cf-ba9f2d5c629d")
 	)
 	(wire
 		(pts
-			(xy 129.54 107.95) (xy 129.54 110.49)
+			(xy 153.67 125.73) (xy 153.67 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b119bb6-822a-4d07-aaec-213697f0db71")
+	)
+	(wire
+		(pts
+			(xy 118.11 81.28) (xy 119.38 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4be9b68e-c022-4750-988b-2c61f2109c03")
+	)
+	(wire
+		(pts
+			(xy 59.69 152.4) (xy 64.77 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c701343-5ae8-4e55-a96c-ffa49bc68b54")
+	)
+	(wire
+		(pts
+			(xy 49.53 63.5) (xy 49.53 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1196,17 +2325,17 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 132.08) (xy 220.98 132.08)
+			(xy 142.24 123.19) (xy 147.32 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "52b06850-3e66-40d2-92e4-b2f51d7f2dbc")
+		(uuid "4e6bf360-309b-4ecf-9786-10ad49bc1257")
 	)
 	(wire
 		(pts
-			(xy 78.74 67.31) (xy 78.74 68.58)
+			(xy 74.93 22.86) (xy 74.93 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1216,7 +2345,17 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 68.58) (xy 88.9 69.85)
+			(xy 39.37 152.4) (xy 44.45 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56c4708e-f01a-4a16-ac7b-33d06fae469e")
+	)
+	(wire
+		(pts
+			(xy 64.77 24.13) (xy 64.77 25.4)
 		)
 		(stroke
 			(width 0)
@@ -1226,17 +2365,57 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 68.58) (xy 220.98 68.58)
+			(xy 240.03 81.28) (xy 241.3 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5d616327-85d1-4ea0-8c50-fa0c9caca1de")
+		(uuid "59e5f8fb-ac8e-424d-84c3-aad670a43468")
 	)
 	(wire
 		(pts
-			(xy 128.27 110.49) (xy 129.54 110.49)
+			(xy 240.03 27.94) (xy 241.3 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e3e25df-63fd-4551-83c1-b8c7efa70ab6")
+	)
+	(wire
+		(pts
+			(xy 72.39 152.4) (xy 64.77 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61f7d078-db85-434d-af9c-9703de753613")
+	)
+	(wire
+		(pts
+			(xy 163.83 44.45) (xy 180.34 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64588301-0ef5-4094-ae03-13c2f6d35f2c")
+	)
+	(wire
+		(pts
+			(xy 59.69 181.61) (xy 64.77 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64619bbe-21e3-48f2-bce1-4247fe0d722f")
+	)
+	(wire
+		(pts
+			(xy 48.26 66.04) (xy 49.53 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1246,27 +2425,17 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 44.45) (xy 220.98 44.45)
+			(xy 179.07 40.64) (xy 180.34 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6a8374a3-1736-4f51-872b-86e1303cff90")
+		(uuid "6672f710-5636-43fa-8006-4a2f4808c8af")
 	)
 	(wire
 		(pts
-			(xy 116.84 68.58) (xy 116.84 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c3363ea-4713-4f0f-a92c-dfcdf62c08fe")
-	)
-	(wire
-		(pts
-			(xy 116.84 67.31) (xy 116.84 68.58)
+			(xy 36.83 22.86) (xy 36.83 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1276,27 +2445,37 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 46.99) (xy 215.9 46.99)
+			(xy 154.94 123.19) (xy 147.32 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "73bd85bc-b9f9-4525-963e-9849ce9d4bc0")
+		(uuid "72dde4de-7c99-423b-8e9e-264853b8cf9c")
 	)
 	(wire
 		(pts
-			(xy 190.5 142.24) (xy 220.98 142.24)
+			(xy 121.92 152.4) (xy 127 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "751ab2f2-883d-484b-a7f6-b9e20892de4b")
+		(uuid "7784953e-fa9b-4264-b7f2-414418d3b270")
 	)
 	(wire
 		(pts
-			(xy 129.54 110.49) (xy 129.54 111.76)
+			(xy 127 123.19) (xy 134.62 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7abe121b-bd75-4322-a4d1-84d4836578a7")
+	)
+	(wire
+		(pts
+			(xy 49.53 66.04) (xy 49.53 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1306,47 +2485,67 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 120.65) (xy 215.9 83.82)
+			(xy 118.11 34.29) (xy 119.38 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7f8f376e-f85b-4676-bab8-009c1b004153")
+		(uuid "7ec9bc61-dc85-43e0-9fd8-e80c340ce9e7")
 	)
 	(wire
 		(pts
-			(xy 128.27 100.33) (xy 139.7 100.33)
+			(xy 71.12 184.15) (xy 71.12 185.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "891506a3-0d17-4162-9a7c-aa702e36942c")
+		(uuid "7f7c9bb5-c7ff-4588-be6c-4898d0c70681")
 	)
 	(wire
 		(pts
-			(xy 201.93 86.36) (xy 220.98 86.36)
+			(xy 127 152.4) (xy 134.62 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8d035e17-2611-46c6-90f1-ae8dc705f3a7")
+		(uuid "829c1f14-fb11-492d-a953-3d5855007eaf")
 	)
 	(wire
 		(pts
-			(xy 220.98 118.11) (xy 218.44 118.11)
+			(xy 154.94 184.15) (xy 153.67 184.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "934f8b23-52e1-4fc3-99d6-6668bd4a7597")
+		(uuid "8d0d559e-3ce5-4f6d-872c-d601c714d738")
 	)
 	(wire
 		(pts
-			(xy 90.17 68.58) (xy 88.9 68.58)
+			(xy 118.11 83.82) (xy 119.38 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f7c49fa-f211-47c9-9c3f-a544c434317d")
+	)
+	(wire
+		(pts
+			(xy 240.03 83.82) (xy 241.3 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9023753e-5d58-4ec6-bd9b-44cc6757be80")
+	)
+	(wire
+		(pts
+			(xy 63.5 24.13) (xy 64.77 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1356,37 +2555,87 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 88.9) (xy 220.98 88.9)
+			(xy 179.07 31.75) (xy 180.34 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93afeb08-1ea8-4c20-a5aa-e47ef5667125")
+		(uuid "949ba219-1316-4a26-8355-087e747d6199")
 	)
 	(wire
 		(pts
-			(xy 201.93 125.73) (xy 220.98 125.73)
+			(xy 102.87 44.45) (xy 119.38 44.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "99dae360-95bb-497a-93a2-1ffe4932f9b1")
+		(uuid "94da48e9-b7ed-4deb-aeda-d6bfa845cf15")
 	)
 	(wire
 		(pts
-			(xy 201.93 101.6) (xy 220.98 101.6)
+			(xy 72.39 125.73) (xy 71.12 125.73)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a6d2ab68-9d48-4147-8aab-ea960ee31e46")
+		(uuid "9b4191ba-b74c-4791-98bf-a1adebb65600")
 	)
 	(wire
 		(pts
-			(xy 99.06 69.85) (xy 99.06 68.58)
+			(xy 44.45 152.4) (xy 44.45 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b9a1bf4-27b7-4737-bb6f-0c4c9321d3ca")
+	)
+	(wire
+		(pts
+			(xy 224.79 44.45) (xy 241.3 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cf8b37b-8e90-49d7-b1f0-3eedcc4bcff2")
+	)
+	(wire
+		(pts
+			(xy 127 123.19) (xy 127 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f947e88-b01a-4c06-b31d-05d2e52affdd")
+	)
+	(wire
+		(pts
+			(xy 154.94 125.73) (xy 153.67 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2c560bd-388e-4bed-82b8-f5abf36f1519")
+	)
+	(wire
+		(pts
+			(xy 127 152.4) (xy 127 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a71ca5d4-203b-4a45-890a-1d7a59aa402c")
+	)
+	(wire
+		(pts
+			(xy 54.61 25.4) (xy 54.61 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1396,7 +2645,17 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 68.58) (xy 88.9 68.58)
+			(xy 147.32 123.19) (xy 147.32 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab43f063-7a0f-4d67-8095-51866a13c772")
+	)
+	(wire
+		(pts
+			(xy 74.93 24.13) (xy 64.77 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1406,117 +2665,187 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 105.41) (xy 220.98 105.41)
+			(xy 59.69 123.19) (xy 64.77 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c5f47809-61d1-47d4-8809-1d768a5d1a06")
+		(uuid "b9194398-0bb6-4781-84fa-f4b23a880c47")
 	)
 	(wire
 		(pts
-			(xy 201.93 135.89) (xy 220.98 135.89)
+			(xy 71.12 125.73) (xy 71.12 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c95c7502-73a8-4806-a8e0-2d0906a972d9")
+		(uuid "bbc2cff2-618f-4133-9e9b-8cf258d5fbd6")
 	)
 	(wire
 		(pts
-			(xy 215.9 46.99) (xy 220.98 46.99)
+			(xy 44.45 123.19) (xy 52.07 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c9d81015-0a88-4567-9f18-c4e842e7b80d")
+		(uuid "bcd70691-7402-45d2-b352-c63c57a02a98")
 	)
 	(wire
 		(pts
-			(xy 201.93 44.45) (xy 218.44 44.45)
+			(xy 44.45 152.4) (xy 52.07 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ca751f89-2e77-424e-a248-571e3b8f8849")
+		(uuid "bfbe3330-dd39-4882-8bba-91ff2376aaed")
 	)
 	(wire
 		(pts
-			(xy 201.93 62.23) (xy 220.98 62.23)
+			(xy 64.77 152.4) (xy 64.77 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d0a4e099-35f7-430c-948c-7270d0ea7f81")
+		(uuid "c457391c-6de1-4e6d-b936-3d9279397a97")
 	)
 	(wire
 		(pts
-			(xy 201.93 58.42) (xy 220.98 58.42)
+			(xy 147.32 181.61) (xy 147.32 180.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d0f6df41-233c-469a-ac8d-2db4e8633713")
+		(uuid "c465e910-83d6-4418-bef0-e1534693c1b5")
 	)
 	(wire
 		(pts
-			(xy 201.93 64.77) (xy 220.98 64.77)
+			(xy 142.24 152.4) (xy 147.32 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d28cacda-5c84-4618-9737-d7601032c49a")
+		(uuid "c859ab07-ddbf-46dc-9058-191d933541fa")
 	)
 	(wire
 		(pts
-			(xy 201.93 129.54) (xy 220.98 129.54)
+			(xy 142.24 181.61) (xy 147.32 181.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d7434e45-311c-4fa5-be03-491a4677d7ab")
+		(uuid "c8ef0ca6-fa01-4ff2-80b5-46c3525fc272")
 	)
 	(wire
 		(pts
-			(xy 220.98 120.65) (xy 215.9 120.65)
+			(xy 118.11 71.12) (xy 119.38 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e0e650bd-deb0-4b93-877e-d907b5271cbd")
+		(uuid "cb8d60f3-fa0f-4cdf-8f08-a28045b11e71")
 	)
 	(wire
 		(pts
-			(xy 201.93 49.53) (xy 220.98 49.53)
+			(xy 118.11 74.93) (xy 119.38 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e8196568-c190-45f1-ac1f-fac20c5ac641")
+		(uuid "cec3ae12-7030-4cea-8588-88e5b5ff0dce")
 	)
 	(wire
 		(pts
-			(xy 128.27 97.79) (xy 139.7 97.79)
+			(xy 118.11 27.94) (xy 119.38 27.94)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ef8513f0-bb72-49fd-bbc1-81e3c5e77dc8")
+		(uuid "d115fc75-9b76-4624-8415-8bac6d515e5a")
 	)
 	(wire
 		(pts
-			(xy 128.27 105.41) (xy 129.54 105.41)
+			(xy 44.45 123.19) (xy 44.45 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d563e72e-63c5-48ff-8ba1-632adb053d6d")
+	)
+	(wire
+		(pts
+			(xy 153.67 154.94) (xy 153.67 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d91c511d-938f-4ef9-ac7a-8aa86fa1b0dd")
+	)
+	(wire
+		(pts
+			(xy 154.94 154.94) (xy 153.67 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e13b3caa-87dd-47e0-9ce2-df1eaa4f1c3b")
+	)
+	(wire
+		(pts
+			(xy 179.07 71.12) (xy 180.34 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e14ff1b0-260c-4190-92b9-7aa3027fd9ca")
+	)
+	(wire
+		(pts
+			(xy 240.03 74.93) (xy 241.3 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e584542f-d74f-4255-8aa0-e337efced7d8")
+	)
+	(wire
+		(pts
+			(xy 224.79 87.63) (xy 241.3 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eadc2fe3-d0aa-449a-a150-57ee6c4c1e99")
+	)
+	(wire
+		(pts
+			(xy 179.07 27.94) (xy 180.34 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2200841-c913-416a-8306-ef0398e1c4b6")
+	)
+	(wire
+		(pts
+			(xy 48.26 60.96) (xy 49.53 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1526,7 +2855,47 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 107.95) (xy 129.54 107.95)
+			(xy 44.45 181.61) (xy 52.07 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5a3f2d8-6525-465e-8f26-50b286b71296")
+	)
+	(wire
+		(pts
+			(xy 102.87 87.63) (xy 119.38 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8f4e3aa-f5aa-4c86-adaa-00fb65b81b20")
+	)
+	(wire
+		(pts
+			(xy 179.07 83.82) (xy 180.34 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa68e561-5923-465e-a2ca-62912f8ca16e")
+	)
+	(wire
+		(pts
+			(xy 163.83 87.63) (xy 180.34 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa7ee87f-bda0-4cd5-875c-a1b68a6eb0ec")
+	)
+	(wire
+		(pts
+			(xy 48.26 63.5) (xy 49.53 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1534,8 +2903,38 @@
 		)
 		(uuid "fc28d6df-6f98-4658-8b54-f0a2210acb3e")
 	)
-	(label "CURRENT2"
-		(at 190.5 105.41 0)
+	(wire
+		(pts
+			(xy 127 181.61) (xy 127 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc3d7537-2ce0-4efb-83ba-daa18599872c")
+	)
+	(wire
+		(pts
+			(xy 179.07 38.1) (xy 180.34 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff395f8f-7573-4545-a953-1fdfd2e5e979")
+	)
+	(label "CURRENT_M3B"
+		(at 224.79 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "06700b59-a3da-4905-9a43-c8a1b42e3d1d")
+	)
+	(label "CURRENT_M1B"
+		(at 102.87 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1544,8 +2943,8 @@
 		)
 		(uuid "20159352-ad08-47b0-ab95-414b69a6f414")
 	)
-	(label "CURRENT1"
-		(at 190.5 68.58 0)
+	(label "CURRENT_M1A"
+		(at 102.87 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1554,8 +2953,18 @@
 		)
 		(uuid "459c5482-84fa-4fa6-acb0-c910b11b63f6")
 	)
-	(label "CURRENT3"
-		(at 190.5 142.24 0)
+	(label "CURRENT_M2B"
+		(at 163.83 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7d6dfb15-8a11-47d3-a831-5856ae549561")
+	)
+	(label "CURRENT_M2A"
+		(at 163.83 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1564,116 +2973,151 @@
 		)
 		(uuid "7f7d253d-bfda-4744-804f-696f0b02a311")
 	)
-	(label "CURRENT3"
-		(at 139.7 102.87 180)
+	(label "CURRENT_M3A"
+		(at 224.79 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "886f5b6b-e71e-45ab-8cad-fc7925c0354c")
+		(uuid "dde0fec8-2923-4b30-a029-3d3a4fd0b0c3")
 	)
-	(label "CURRENT1"
-		(at 139.7 97.79 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a7e18d5e-7c19-4835-be4f-87624408a02b")
-	)
-	(label "CURRENT2"
-		(at 139.7 100.33 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "acaaaa15-e19f-4b4f-b8d3-528815acfba2")
-	)
-	(hierarchical_label "EN_ENC_MOTOR1"
+	(hierarchical_label "FORWARD{slash}~{REVERSE}_MB"
 		(shape input)
-		(at 201.93 52.07 180)
+		(at 118.11 77.47 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "0571d7c6-4dbf-4c78-b389-bd53ac62e2f0")
+		(uuid "20d728ea-2927-4fff-9d86-6f55b77c55eb")
 	)
-	(hierarchical_label "EN_ENC_MOTOR2"
+	(hierarchical_label "LIM_SW_4"
+		(shape output)
+		(at 106.68 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "25fb93fd-6310-451a-8a24-7becf69946a3")
+	)
+	(hierarchical_label "LIM_SW_1"
+		(shape output)
+		(at 24.13 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "382f4a3a-6ad1-4444-a7dc-6083c7a3484b")
+	)
+	(hierarchical_label "PWM_MA"
 		(shape input)
-		(at 201.93 88.9 180)
+		(at 179.07 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "05a8bb53-a33f-4a3d-a60f-e0caf52cef7c")
+		(uuid "3acd112c-7bfa-4180-8c09-743f11d48486")
 	)
-	(hierarchical_label "LIM13"
+	(hierarchical_label "LIM_SW_3"
 		(shape output)
-		(at 201.93 129.54 180)
+		(at 24.13 181.61 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "0cce6801-ee55-4fcb-9990-c30030f626f2")
+		(uuid "3b8654c4-e500-4839-b08a-b25929408d69")
 	)
-	(hierarchical_label "LIM21"
-		(shape output)
-		(at 201.93 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "35d5ea43-97cd-4ff9-ac2e-c3fcfc037ae7")
-	)
-	(hierarchical_label "EN_MOTOR1"
+	(hierarchical_label "PWM_MB"
 		(shape input)
-		(at 201.93 49.53 180)
+		(at 179.07 74.93 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "4392ffd6-ef3e-4569-b9e6-69a175e09aa0")
+		(uuid "46e95548-2026-4c18-9bbd-6c1bd457f0e3")
 	)
-	(hierarchical_label "LIM23"
+	(hierarchical_label "LIM_SW_6"
 		(shape output)
-		(at 201.93 132.08 180)
+		(at 106.68 181.61 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "477c717d-d93f-4a9e-9d3a-2e50ccbe4184")
+		(uuid "488baf75-b606-4b0e-8520-1abede5859bb")
 	)
-	(hierarchical_label "LIM12"
-		(shape output)
-		(at 201.93 92.71 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4f89a76b-9044-4f08-ac86-b422c08d986c")
-	)
-	(hierarchical_label "PWM1"
+	(hierarchical_label "FORWARD{slash}~{REVERSE}_MA"
 		(shape input)
-		(at 201.93 44.45 180)
+		(at 240.03 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "48eb8226-b39d-46d6-9fd4-d3ec9f5e0e44")
+	)
+	(hierarchical_label "ENCODER_A_MB"
+		(shape output)
+		(at 240.03 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4a8f8da7-ec7d-4448-a10a-b507fd8a5ac5")
+	)
+	(hierarchical_label "ENCODER_B_MA"
+		(shape output)
+		(at 179.07 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4eb9df6d-b714-43ff-b277-ea41235d1a69")
+	)
+	(hierarchical_label "ENABLE_M3B"
+		(shape input)
+		(at 240.03 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "631e9296-4d68-450b-b1f5-bfc458efa12d")
+	)
+	(hierarchical_label "LIM_SW_5"
+		(shape output)
+		(at 106.68 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "66a141f0-098b-45c2-a395-c8ca093844d2")
+	)
+	(hierarchical_label "PWM_MA"
+		(shape input)
+		(at 118.11 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1682,20 +3126,31 @@
 		)
 		(uuid "6b62d26a-4dc3-4cc3-8828-892e2e07e85e")
 	)
-	(hierarchical_label "EN_MOTOR2"
+	(hierarchical_label "ENABLE_M3A"
 		(shape input)
-		(at 201.93 86.36 180)
+		(at 240.03 27.94 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "703af851-65cc-433c-9f7e-5f5896c32616")
+		(uuid "6c9f9856-3f06-4797-b845-8522d8f63af4")
 	)
-	(hierarchical_label "ENCODER_A"
+	(hierarchical_label "ENCODER_A_MB"
 		(shape output)
-		(at 201.93 62.23 180)
+		(at 179.07 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "70de60a9-a1b9-470a-8fea-d39f66b4dd38")
+	)
+	(hierarchical_label "ENCODER_A_MA"
+		(shape output)
+		(at 118.11 38.1 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1704,64 +3159,130 @@
 		)
 		(uuid "7246c322-f5a6-483c-be29-764abbc4371e")
 	)
-	(hierarchical_label "ENCODER_B"
-		(shape output)
-		(at 201.93 101.6 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7425ab2d-1dfa-4bad-b252-2994e6e340ff")
-	)
-	(hierarchical_label "LIM22"
-		(shape output)
-		(at 201.93 95.25 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "77cde7f3-cd57-4bc6-aece-b40b4e200b32")
-	)
-	(hierarchical_label "PWM2"
+	(hierarchical_label "FORWARD{slash}~{REVERSE}_MA"
 		(shape input)
-		(at 201.93 46.99 180)
+		(at 118.11 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "8eef82ad-281f-4bb3-8930-9db308772c79")
+		(uuid "7a3d2566-6b6f-4d58-9f80-93bf4a754266")
 	)
-	(hierarchical_label "EN_ENC_MOTOR3"
-		(shape input)
-		(at 201.93 125.73 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "983528ce-d0e9-4d45-ba96-d69da6802e98")
-	)
-	(hierarchical_label "ENCODER_A"
+	(hierarchical_label "ENCODER_A_MA"
 		(shape output)
-		(at 201.93 135.89 180)
+		(at 179.07 38.1 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "9b51b38e-1f9a-4b74-b90d-078e5b42111f")
+		(uuid "8172d868-7889-4166-b660-3a39f2642dd9")
+	)
+	(hierarchical_label "ENCODER_B_MA"
+		(shape output)
+		(at 240.03 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "834c1dc0-6a8f-49d6-a613-9a4fe9c4f840")
+	)
+	(hierarchical_label "PWM_MB"
+		(shape input)
+		(at 118.11 74.93 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "84624dfc-07de-48a8-a6be-031970415746")
+	)
+	(hierarchical_label "ENCODER_B_MB"
+		(shape output)
+		(at 240.03 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "91326ea7-0d09-411a-998a-3c76a0330e52")
+	)
+	(hierarchical_label "LIM_SW_2"
+		(shape output)
+		(at 24.13 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "93938260-3356-4ef1-8b6e-71f9d8438394")
+	)
+	(hierarchical_label "ENABLE_M2A"
+		(shape input)
+		(at 179.07 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "957e706f-b523-4aa3-a886-ea1918646217")
+	)
+	(hierarchical_label "ENCODER_B_MB"
+		(shape output)
+		(at 118.11 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "961f6c74-d1ec-49a0-b7de-74cdf4e58f50")
+	)
+	(hierarchical_label "ENCODER_A_MB"
+		(shape output)
+		(at 118.11 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "96851d99-e7d5-493c-9dd8-a71a896e5e61")
+	)
+	(hierarchical_label "FORWARD{slash}~{REVERSE}_MA"
+		(shape input)
+		(at 179.07 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9ae54e9e-519c-4835-93cb-b6c44b5932b9")
+	)
+	(hierarchical_label "PWM_MA"
+		(shape input)
+		(at 240.03 31.75 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9ec8dedf-cf27-430c-afff-c1cbcb15c393")
 	)
 	(hierarchical_label "A_SENSE"
 		(shape output)
-		(at 105.41 102.87 180)
+		(at 25.4 58.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1770,20 +3291,9 @@
 		)
 		(uuid "9f32d644-6981-483f-bfb4-4ff57f4b462b")
 	)
-	(hierarchical_label "ENCODER_B"
+	(hierarchical_label "ENCODER_B_MA"
 		(shape output)
-		(at 201.93 138.43 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a190f322-00a7-4aa3-b3d7-b6ca04a04fae")
-	)
-	(hierarchical_label "ENCODER_B"
-		(shape output)
-		(at 201.93 64.77 180)
+		(at 118.11 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1792,20 +3302,75 @@
 		)
 		(uuid "a1b14ce9-e0ac-4376-9e5e-27c538f6445a")
 	)
-	(hierarchical_label "ENCODER_A"
-		(shape output)
-		(at 201.93 99.06 180)
+	(hierarchical_label "ENABLE_M2B"
+		(shape input)
+		(at 179.07 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "b4c53698-b685-42e2-810a-ec30a97b1313")
+		(uuid "a5ccb2de-9a9a-483b-93ff-61feb9dec30c")
+	)
+	(hierarchical_label "FORWARD{slash}~{REVERSE}_MB"
+		(shape input)
+		(at 179.07 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b6febefc-e686-4e6c-8fcc-e219f0687a2e")
+	)
+	(hierarchical_label "PWM_MB"
+		(shape input)
+		(at 240.03 74.93 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c461da92-e1da-42f3-b16f-fb3b0eb2ceb1")
+	)
+	(hierarchical_label "FORWARD{slash}~{REVERSE}_MB"
+		(shape input)
+		(at 240.03 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ca57c4da-701c-4605-83a1-0a4feb62dfe3")
+	)
+	(hierarchical_label "ENCODER_A_MA"
+		(shape output)
+		(at 240.03 38.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cc55bb26-cb43-4db3-a1e9-94c45311ce56")
+	)
+	(hierarchical_label "ENABLE_M1A"
+		(shape input)
+		(at 118.11 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d2355a0c-af1c-4545-ba69-e40d38390017")
 	)
 	(hierarchical_label "~{PG_CS}"
 		(shape input)
-		(at 105.41 97.79 180)
+		(at 25.4 53.34 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1814,20 +3379,9 @@
 		)
 		(uuid "d7d80831-c43b-4ff5-8b8a-11f1e53037f2")
 	)
-	(hierarchical_label "LIM11"
-		(shape output)
-		(at 201.93 55.88 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d8bb4fd5-7840-487b-b12b-32b4481cf816")
-	)
 	(hierarchical_label "PGA_SCK"
 		(shape input)
-		(at 105.41 90.17 180)
+		(at 25.4 45.72 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1836,9 +3390,20 @@
 		)
 		(uuid "d976b78a-651e-493a-8cf9-b01698374bce")
 	)
+	(hierarchical_label "ENCODER_B_MB"
+		(shape output)
+		(at 179.07 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dca4c7cf-8d71-4eef-9300-5958e533526a")
+	)
 	(hierarchical_label "PGA_SI"
 		(shape input)
-		(at 105.41 95.25 180)
+		(at 25.4 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1847,20 +3412,9 @@
 		)
 		(uuid "e7d8ce70-bce7-4ae9-b05b-80d2ae4eac0f")
 	)
-	(hierarchical_label "EN_MOTOR3"
-		(shape input)
-		(at 201.93 123.19 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e867cf74-2cf8-43da-89e4-aafb6f0896a4")
-	)
 	(hierarchical_label "PGA_SO"
 		(shape output)
-		(at 105.41 92.71 180)
+		(at 25.4 48.26 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1869,43 +3423,47 @@
 		)
 		(uuid "f260042c-0b30-47a3-93e5-36de73556ae6")
 	)
+	(hierarchical_label "ENABLE_M1B"
+		(shape input)
+		(at 118.11 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f83459d9-52ab-413d-ab96-e052fe817827")
+	)
 	(symbol
-		(lib_id "Device:L")
-		(at 93.98 68.58 90)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 160.02 152.4 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "20070580-ccbc-409e-b379-f2e2297edb57")
-		(property "Reference" "L4"
-			(at 93.98 63.5 90)
+		(uuid "00a4f2a7-7fb4-4014-8b38-7aaa3c9816d0")
+		(property "Reference" "J16"
+			(at 162.56 152.3999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "10uL"
-			(at 93.98 66.04 90)
+		(property "Value" "Limit switch"
+			(at 162.56 154.9399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 93.98 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Murata-Electronics-LQM21FN100M80L_C162582.pdf"
-			(at 93.98 68.58 0)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 160.02 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1913,8 +3471,183 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Inductor"
-			(at 93.98 68.58 0)
+		(property "Datasheet" "~"
+			(at 160.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 160.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+			(at 160.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3c33b802-f642-4ff2-a2e5-3bed2dbc830e")
+		)
+		(pin "1"
+			(uuid "b3fc0a93-6d48-419d-8a34-151dade0f8e8")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 160.02 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "018fbd3f-33ba-4159-97fa-531f2ed6225f")
+		(property "Reference" "J17"
+			(at 162.56 181.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Limit switch"
+			(at 162.56 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 160.02 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 160.02 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+			(at 160.02 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8bb59fa1-9db7-4e33-af7b-64d42422fc1e")
+		)
+		(pin "1"
+			(uuid "0410597d-8831-4c23-988f-08cf1a6cc8fc")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xx:74HC14")
+		(at 31.75 123.19 0)
+		(mirror y)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0983d617-ce2a-4dfd-856d-a074e4392752")
+		(property "Reference" "U5"
+			(at 31.75 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 31.75 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 31.75 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 31.75 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 31.75 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 31.75 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1923,7 +3656,407 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 93.98 68.58 0)
+			(at 31.75 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "926c5275-65f3-44f6-ac16-da00c6e6a979")
+		)
+		(pin "4"
+			(uuid "1af44a47-0e33-4c0b-be26-6187ba519070")
+		)
+		(pin "9"
+			(uuid "d8fe2180-f5cc-4f1b-a512-2d68d2c34de3")
+		)
+		(pin "2"
+			(uuid "ec09c1aa-ba7d-47ae-ae30-6d11f95a0a05")
+		)
+		(pin "5"
+			(uuid "99a1a2b0-444c-4f75-a306-7b8fe9677569")
+		)
+		(pin "3"
+			(uuid "e70b0a43-d84e-454f-b856-2033ada6a373")
+		)
+		(pin "12"
+			(uuid "9c98e8f2-7445-4f49-be15-30ff9908e3f0")
+		)
+		(pin "1"
+			(uuid "b1f9d76b-42ab-4c18-b93d-63922b1e047c")
+		)
+		(pin "11"
+			(uuid "9ecec407-5d82-4268-9704-ae8e7fdb74f4")
+		)
+		(pin "7"
+			(uuid "5f8db165-7b54-43b3-8fad-c12125176711")
+		)
+		(pin "10"
+			(uuid "d80bd2bd-e630-453a-92a5-d7686c05ddd3")
+		)
+		(pin "13"
+			(uuid "437d28a6-9889-4c2f-b348-78d0f7b625d1")
+		)
+		(pin "14"
+			(uuid "4b6a0d05-5cb0-4746-bff9-402226823722")
+		)
+		(pin "8"
+			(uuid "89c45c2b-2b6f-492a-9be7-a0f50ffbc643")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 77.47 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09a80b2d-2760-4f8f-924c-b0fa18c88223")
+		(property "Reference" "J13"
+			(at 80.01 181.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Limit switch"
+			(at 80.01 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 77.47 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 77.47 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 77.47 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+			(at 77.47 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6d200fc7-cd59-45a8-b5fe-619b72151ed4")
+		)
+		(pin "1"
+			(uuid "641fc99c-41e0-41a0-8c4b-f8c38cf5a263")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 231.14 120.65 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0f8827f5-5b0a-4a34-9167-c8cd5880f068")
+		(property "Reference" "#PWR0161"
+			(at 231.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 233.68 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.14 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 231.14 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cb089cc5-211b-4f86-8b32-9ec9c6877880")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0161")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 64.77 114.3 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "16018922-edff-49a0-9645-c865f7fb4897")
+		(property "Reference" "#PWR0150"
+			(at 64.77 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 67.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 64.77 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "63ec11ce-e8ab-4dbb-bb7a-fa019850b644")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0150")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 160.02 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1f3a2791-37e8-42b6-9131-96fbc1b4be61")
+		(property "Reference" "J14"
+			(at 162.56 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Limit switch"
+			(at 162.56 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 160.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 160.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+			(at 160.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b89425fd-7601-4253-8863-3b2fb191d62d")
+		)
+		(pin "1"
+			(uuid "334b6fce-9835-4d24-8c5e-64b72518424f")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 59.69 24.13 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "20070580-ccbc-409e-b379-f2e2297edb57")
+		(property "Reference" "L4"
+			(at 59.69 19.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10uL"
+			(at 59.69 21.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Murata-Electronics-LQM21FN100M80L_C162582.pdf"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1932,7 +4065,7 @@
 			)
 		)
 		(property "MPN" "LQM21FN100M80L"
-			(at 93.98 68.58 0)
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1956,35 +4089,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 88.9 73.66 0)
-		(mirror y)
+		(lib_id "power:GND")
+		(at 44.45 190.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "28c1cc93-5f1d-4195-b26e-ceb5287b2a4d")
-		(property "Reference" "C58"
-			(at 85.09 72.3899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
-			(at 85.09 74.9299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 87.9348 77.47 0)
+		(fields_autoplaced yes)
+		(uuid "24793c0f-b55a-4b87-b21a-132adc80576f")
+		(property "Reference" "#PWR040"
+			(at 44.45 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1992,8 +4107,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
-			(at 88.9 73.66 0)
+		(property "Value" "GND"
+			(at 44.45 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2001,8 +4124,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
-			(at 88.9 73.66 0)
+		(property "Datasheet" ""
+			(at 44.45 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,8 +4133,82 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "C0805F104K5RACAUTO"
-			(at 88.9 73.66 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 44.45 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cb2c1854-7ef8-44dd-a509-e571f381da76")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR040")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 138.43 123.19 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "26d5168f-b5be-4983-bbe0-14719eb2f700")
+		(property "Reference" "R25"
+			(at 138.43 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10kR"
+			(at 138.43 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 138.43 124.968 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 138.43 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 138.43 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 138.43 123.19 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2020,7 +4217,94 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 88.9 73.66 0)
+			(at 138.43 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "de62f733-def3-4871-a4d4-b21f2c5dcd3b")
+		)
+		(pin "1"
+			(uuid "c38dc697-3a55-4eab-b951-41117c72ee2e")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 64.77 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "28c1cc93-5f1d-4195-b26e-ceb5287b2a4d")
+		(property "Reference" "C58"
+			(at 68.58 27.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 68.58 30.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 65.7352 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 64.77 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 64.77 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 64.77 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 64.77 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2045,7 +4329,8 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 78.74 67.31 0)
+		(at 74.93 22.86 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2053,7 +4338,7 @@
 		(dnp no)
 		(uuid "28d704a1-bcd8-4440-8b66-6a571f654c37")
 		(property "Reference" "#PWR0272"
-			(at 78.74 71.12 0)
+			(at 74.93 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2062,7 +4347,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 76.2 63.5 0)
+			(at 77.47 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2071,7 +4356,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 67.31 0)
+			(at 74.93 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2079,7 +4364,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 67.31 0)
+			(at 74.93 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2087,7 +4372,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 67.31 0)
+			(at 74.93 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2107,17 +4392,529 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 116.84 115.57 0)
+		(lib_id "74xx:74HC14")
+		(at 231.14 133.35 0)
+		(unit 7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "40bcf9fb-225d-4433-af39-5adef5097739")
+		(property "Reference" "U5"
+			(at 237.49 132.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 237.49 134.6199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 231.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 231.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 231.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 231.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 231.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e55d735-afb2-45dd-8fe4-d977e013f1f0")
+		)
+		(pin "4"
+			(uuid "1af44a47-0e33-4c0b-be26-6187ba519071")
+		)
+		(pin "9"
+			(uuid "d8fe2180-f5cc-4f1b-a512-2d68d2c34de4")
+		)
+		(pin "2"
+			(uuid "ec09c1aa-ba7d-47ae-ae30-6d11f95a0a06")
+		)
+		(pin "5"
+			(uuid "fb9ed22b-b0d6-43f0-aa3d-05857af665a6")
+		)
+		(pin "3"
+			(uuid "e70b0a43-d84e-454f-b856-2033ada6a374")
+		)
+		(pin "12"
+			(uuid "9c98e8f2-7445-4f49-be15-30ff9908e3f1")
+		)
+		(pin "1"
+			(uuid "b1f9d76b-42ab-4c18-b93d-63922b1e047d")
+		)
+		(pin "11"
+			(uuid "9ecec407-5d82-4268-9704-ae8e7fdb74f5")
+		)
+		(pin "7"
+			(uuid "59d0f908-5980-46c8-958c-00bcec1668fa")
+		)
+		(pin "10"
+			(uuid "d80bd2bd-e630-453a-92a5-d7686c05ddd4")
+		)
+		(pin "13"
+			(uuid "437d28a6-9889-4c2f-b348-78d0f7b625d2")
+		)
+		(pin "14"
+			(uuid "1fdec70b-ad13-4b38-b5ef-636d4f95931c")
+		)
+		(pin "8"
+			(uuid "89c45c2b-2b6f-492a-9be7-a0f50ffbc644")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 7)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 220.98 129.54 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "44687ee4-4601-4d55-9429-67b618c8ccfe")
+		(property "Reference" "#PWR0162"
+			(at 220.98 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 223.52 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.98 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "10ec9516-4bc4-4c81-8347-6bdb386ad978")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0162")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 220.98 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "45773a4d-6e8a-45ad-99d2-6e885ca6c2c7")
+		(property "Reference" "C15"
+			(at 213.36 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 212.09 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 221.9452 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 220.98 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 220.98 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 220.98 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "50012e63-034b-4876-8d17-62191e95f6f9")
+		)
+		(pin "2"
+			(uuid "8c3bd988-a1fb-4e51-8ba1-70d2914c4153")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 147.32 143.51 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "45d7cc4f-06b7-454e-9146-8421a71aa4d1")
+		(property "Reference" "#PWR059"
+			(at 147.32 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 149.86 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "922ae01c-cb9e-42ad-bda6-ba412176f64e")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR059")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 55.88 152.4 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "58dd44fb-f178-4bb1-9311-8c87c613f1bf")
-		(property "Reference" "#PWR0275"
-			(at 116.84 121.92 0)
+		(uuid "466943cd-0198-4c1e-8e26-fbc3e9ec3822")
+		(property "Reference" "R15"
+			(at 55.88 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10kR"
+			(at 55.88 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 55.88 154.178 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 55.88 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 55.88 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 55.88 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 55.88 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0c4b8552-887d-49b1-9ad2-4b3598af5e6f")
+		)
+		(pin "1"
+			(uuid "60ee4021-dd2a-4c74-95d4-3fe811ec8ff1")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 44.45 186.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4d26742b-bb64-4be7-9b72-2277600497a5")
+		(property "Reference" "C26"
+			(at 48.26 185.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 48.26 187.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 45.4152 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 44.45 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 44.45 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 44.45 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 44.45 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0b6094e0-1638-4c9b-a04c-b30ef0f45719")
+		)
+		(pin "1"
+			(uuid "9d086713-febb-498d-9134-a0494ec37e13")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 220.98 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "515161ed-93c8-4b8b-9ec5-04c27fd017b0")
+		(property "Reference" "#PWR0163"
+			(at 220.98 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2126,7 +4923,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 116.84 120.65 0)
+			(at 220.98 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2134,7 +4931,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 115.57 0)
+			(at 220.98 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2143,7 +4940,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 115.57 0)
+			(at 220.98 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2152,7 +4949,227 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 116.84 115.57 0)
+			(at 220.98 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b8114b0-e893-43dc-a0dc-f7d34c9e6d28")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0163")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 64.77 176.53 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54ec1381-5863-4a92-ab16-9cf70297bc14")
+		(property "Reference" "R24"
+			(at 67.31 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10kR"
+			(at 67.31 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 66.548 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "73293fac-f960-4e75-bdde-37635a0e5a4e")
+		)
+		(pin "1"
+			(uuid "7e668003-3cb0-410e-b0c7-acc13f43fa8a")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 44.45 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5879095a-f7dd-47f1-bf1a-68afcad8fd3f")
+		(property "Reference" "#PWR0148"
+			(at 44.45 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 44.45 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 44.45 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7f18ebb4-ccd4-4018-acd4-66dbc32d465e")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0148")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 36.83 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58dd44fb-f178-4bb1-9311-8c87c613f1bf")
+		(property "Reference" "#PWR0275"
+			(at 36.83 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 36.83 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 36.83 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 36.83 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2173,17 +5190,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 116.84 67.31 0)
+		(lib_id "power:GND")
+		(at 127 190.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a8e8350e-d8b6-4696-9ae0-61c1fcb1a122")
-		(property "Reference" "#FLG0109"
-			(at 116.84 65.405 0)
+		(uuid "5a18418a-0d09-484d-8c13-c2d10971ac11")
+		(property "Reference" "#PWR056"
+			(at 127 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2191,8 +5208,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "PWR_FLAG"
-			(at 116.84 62.23 0)
+		(property "Value" "GND"
+			(at 127 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2200,7 +5217,547 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 67.31 0)
+			(at 127 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 127 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "05860465-fbf0-4983-8b3e-c9054e0028f2")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 64.77 143.51 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5b928e69-5445-433e-839f-b60812870b71")
+		(property "Reference" "#PWR0149"
+			(at 64.77 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 67.31 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 64.77 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dc0ed11b-850b-40a7-8176-dc368b3602c0")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0149")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xx:74HC14")
+		(at 31.75 181.61 180)
+		(unit 5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5ca27b7d-79ab-49b7-a116-a037e32feeb4")
+		(property "Reference" "U5"
+			(at 31.75 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 31.75 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 31.75 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 31.75 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 31.75 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 31.75 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 31.75 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e55d735-afb2-45dd-8fe4-d977e013f1f1")
+		)
+		(pin "4"
+			(uuid "1af44a47-0e33-4c0b-be26-6187ba519072")
+		)
+		(pin "9"
+			(uuid "d8fe2180-f5cc-4f1b-a512-2d68d2c34de5")
+		)
+		(pin "2"
+			(uuid "ec09c1aa-ba7d-47ae-ae30-6d11f95a0a07")
+		)
+		(pin "5"
+			(uuid "fb9ed22b-b0d6-43f0-aa3d-05857af665a7")
+		)
+		(pin "3"
+			(uuid "e70b0a43-d84e-454f-b856-2033ada6a375")
+		)
+		(pin "12"
+			(uuid "9c98e8f2-7445-4f49-be15-30ff9908e3f2")
+		)
+		(pin "1"
+			(uuid "b1f9d76b-42ab-4c18-b93d-63922b1e047e")
+		)
+		(pin "11"
+			(uuid "d54f5b2e-4b83-4d22-bd2f-f3cd2b98b58f")
+		)
+		(pin "7"
+			(uuid "5f8db165-7b54-43b3-8fad-c12125176713")
+		)
+		(pin "10"
+			(uuid "f89aa2d7-e862-4645-b19e-c896c7197ef7")
+		)
+		(pin "13"
+			(uuid "437d28a6-9889-4c2f-b348-78d0f7b625d3")
+		)
+		(pin "14"
+			(uuid "4b6a0d05-5cb0-4746-bff9-402226823724")
+		)
+		(pin "8"
+			(uuid "89c45c2b-2b6f-492a-9be7-a0f50ffbc645")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 5)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 71.12 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5f20059a-5bf1-4501-abd9-dc5cfac6bf14")
+		(property "Reference" "#PWR0151"
+			(at 71.12 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.12 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fba9ed91-22ec-4630-9771-e7f7b966870c")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0151")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 231.14 146.05 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5f7c9ec1-a3a9-49bd-8021-d36b9f85e28e")
+		(property "Reference" "#PWR0164"
+			(at 231.14 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 231.14 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.14 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 231.14 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3ba8ae5-2975-43d4-94f5-6f017440e39c")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0164")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 64.77 147.32 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "656b9717-bcb2-43f6-8105-46d165ec7435")
+		(property "Reference" "R17"
+			(at 67.31 146.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10kR"
+			(at 67.31 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 66.548 147.32 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 64.77 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 64.77 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 64.77 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 64.77 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d0cec814-286e-4eac-b236-7ffb8768f533")
+		)
+		(pin "1"
+			(uuid "0b0de830-dc45-4101-ae38-86b70051fbde")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 127 161.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "68128009-0887-48d5-aa06-7c62ef664fcf")
+		(property "Reference" "#PWR055"
+			(at 127 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 127 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 127 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "efeb1d03-236b-4f33-92f9-927ac69ed6d7")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 77.47 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "68a6a09a-ae50-4b0f-bc5b-e01c2f855bc4")
+		(property "Reference" "J11"
+			(at 80.01 152.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Limit switch"
+			(at 80.01 154.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 77.47 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2209,7 +5766,1028 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 116.84 67.31 0)
+			(at 77.47 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 77.47 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+			(at 77.47 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "01f65f3f-8293-4e87-8de0-83ff6acb8c4f")
+		)
+		(pin "1"
+			(uuid "9820b0f5-2030-487d-a984-1e688aa2c1a0")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 55.88 123.19 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "694b4171-2523-4931-a192-e56ee1f5f08c")
+		(property "Reference" "R14"
+			(at 55.88 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10kR"
+			(at 55.88 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 55.88 124.968 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 55.88 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 55.88 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 55.88 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 55.88 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4fd95ad5-aa78-4d4c-b1ff-b256d24e302d")
+		)
+		(pin "1"
+			(uuid "4f473159-f190-4efa-b21a-e4ed2e827517")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 153.67 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7dcf1d6a-dce7-42a9-9c32-8d04bd6a7a53")
+		(property "Reference" "#PWR095"
+			(at 153.67 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.67 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3a676830-4b83-4873-b419-0b1351c59099")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR095")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 147.32 147.32 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "868c058b-e847-4929-bdce-8b413751bdcb")
+		(property "Reference" "R34"
+			(at 149.86 146.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10kR"
+			(at 149.86 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 149.098 147.32 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 147.32 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 147.32 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 147.32 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 147.32 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b0e82fa3-e097-46f7-b711-6ca55c2ba589")
+		)
+		(pin "1"
+			(uuid "ceda52cc-2b41-43ba-bfa2-32393e232e14")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xx:74HC14")
+		(at 114.3 123.19 0)
+		(mirror y)
+		(unit 6)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "88ef6b90-35f2-45bc-9ecb-478310441364")
+		(property "Reference" "U5"
+			(at 114.3 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 114.3 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 114.3 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 114.3 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 114.3 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 114.3 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 114.3 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e55d735-afb2-45dd-8fe4-d977e013f1f2")
+		)
+		(pin "4"
+			(uuid "1af44a47-0e33-4c0b-be26-6187ba519073")
+		)
+		(pin "9"
+			(uuid "d8fe2180-f5cc-4f1b-a512-2d68d2c34de6")
+		)
+		(pin "2"
+			(uuid "ec09c1aa-ba7d-47ae-ae30-6d11f95a0a08")
+		)
+		(pin "5"
+			(uuid "fb9ed22b-b0d6-43f0-aa3d-05857af665a8")
+		)
+		(pin "3"
+			(uuid "e70b0a43-d84e-454f-b856-2033ada6a376")
+		)
+		(pin "12"
+			(uuid "c30b208c-feff-4736-9c7f-20fe0cbf7a73")
+		)
+		(pin "1"
+			(uuid "b1f9d76b-42ab-4c18-b93d-63922b1e047f")
+		)
+		(pin "11"
+			(uuid "9ecec407-5d82-4268-9704-ae8e7fdb74f7")
+		)
+		(pin "7"
+			(uuid "5f8db165-7b54-43b3-8fad-c12125176714")
+		)
+		(pin "10"
+			(uuid "d80bd2bd-e630-453a-92a5-d7686c05ddd6")
+		)
+		(pin "13"
+			(uuid "f450557e-0bad-453e-988b-2b7cff09c562")
+		)
+		(pin "14"
+			(uuid "4b6a0d05-5cb0-4746-bff9-402226823725")
+		)
+		(pin "8"
+			(uuid "89c45c2b-2b6f-492a-9be7-a0f50ffbc646")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 6)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 127 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b4951b4-e698-4586-9bf3-dd9660de88c4")
+		(property "Reference" "#PWR043"
+			(at 127 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 127 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 127 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "113c88e9-1661-4b97-bb76-c14a8b556335")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 44.45 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "94731ab2-a5b7-46ec-b5d6-e5881d44a22c")
+		(property "Reference" "C17"
+			(at 48.26 156.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 48.26 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 45.4152 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 44.45 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 44.45 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 44.45 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 44.45 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bfbae882-2159-42a2-878e-b991d0270e2b")
+		)
+		(pin "1"
+			(uuid "f5b79d1e-f3f1-468f-a2e6-bd19a574de18")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xx:74HC14")
+		(at 31.75 152.4 0)
+		(mirror y)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "95f761fe-c129-4041-9eb2-a40a9cf6d507")
+		(property "Reference" "U5"
+			(at 31.75 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 31.75 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 31.75 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 31.75 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 31.75 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 31.75 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 31.75 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e55d735-afb2-45dd-8fe4-d977e013f1f3")
+		)
+		(pin "4"
+			(uuid "1af44a47-0e33-4c0b-be26-6187ba519074")
+		)
+		(pin "9"
+			(uuid "b357e22d-68a9-407d-a976-d95552532312")
+		)
+		(pin "2"
+			(uuid "ec09c1aa-ba7d-47ae-ae30-6d11f95a0a09")
+		)
+		(pin "5"
+			(uuid "fb9ed22b-b0d6-43f0-aa3d-05857af665a9")
+		)
+		(pin "3"
+			(uuid "e70b0a43-d84e-454f-b856-2033ada6a377")
+		)
+		(pin "12"
+			(uuid "9c98e8f2-7445-4f49-be15-30ff9908e3f4")
+		)
+		(pin "1"
+			(uuid "b1f9d76b-42ab-4c18-b93d-63922b1e0480")
+		)
+		(pin "11"
+			(uuid "9ecec407-5d82-4268-9704-ae8e7fdb74f8")
+		)
+		(pin "7"
+			(uuid "5f8db165-7b54-43b3-8fad-c12125176715")
+		)
+		(pin "10"
+			(uuid "d80bd2bd-e630-453a-92a5-d7686c05ddd7")
+		)
+		(pin "13"
+			(uuid "437d28a6-9889-4c2f-b348-78d0f7b625d5")
+		)
+		(pin "14"
+			(uuid "4b6a0d05-5cb0-4746-bff9-402226823726")
+		)
+		(pin "8"
+			(uuid "cbc7bf1d-9c71-4caa-a67a-72fc32af6195")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 153.67 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c2476f8-25d7-478c-ad61-702ac4a2f5bd")
+		(property "Reference" "#PWR094"
+			(at 153.67 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.67 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a226be93-132f-42b8-8ad3-bd39c3e53e5e")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR094")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 55.88 181.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e04109f-53f5-460e-b379-3552d25b32e3")
+		(property "Reference" "R23"
+			(at 55.88 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10kR"
+			(at 55.88 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 55.88 183.388 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 55.88 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 55.88 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 55.88 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 55.88 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dc2f27ab-59d5-41a1-90ee-70d7779aac8b")
+		)
+		(pin "1"
+			(uuid "31885c2f-f075-4846-aa62-a2f46f1f8d13")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 147.32 172.72 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a26648f3-c541-43ec-a145-9fcbdfade2bb")
+		(property "Reference" "#PWR061"
+			(at 147.32 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 149.86 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fb74945f-f83e-4da7-b1fd-5c65d5305bd2")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR061")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 147.32 118.11 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a455c722-9c2d-44a6-ac46-3c8f24aeb909")
+		(property "Reference" "R33"
+			(at 149.86 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10kR"
+			(at 149.86 119.3799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 149.098 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b7a6e90b-fa42-45a2-af8a-3528dc72defc")
+		)
+		(pin "1"
+			(uuid "4af97bd6-94af-47b3-94ce-60820a2171b6")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 36.83 22.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a8e8350e-d8b6-4696-9ae0-61c1fcb1a122")
+		(property "Reference" "#FLG0109"
+			(at 36.83 20.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 36.83 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 36.83 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2218,7 +6796,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 116.84 67.31 0)
+			(at 36.83 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2239,9 +6817,473 @@
 		)
 	)
 	(symbol
+		(lib_id "74xx:74HC14")
+		(at 114.3 181.61 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9d363d0-ea56-4203-9ea5-3ba365fba6c7")
+		(property "Reference" "U5"
+			(at 114.3 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 114.3 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 114.3 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 114.3 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 114.3 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 114.3 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 114.3 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e55d735-afb2-45dd-8fe4-d977e013f1f4")
+		)
+		(pin "4"
+			(uuid "1af44a47-0e33-4c0b-be26-6187ba519075")
+		)
+		(pin "9"
+			(uuid "d8fe2180-f5cc-4f1b-a512-2d68d2c34de8")
+		)
+		(pin "2"
+			(uuid "ec816285-112a-4026-9644-e5d4c734f44e")
+		)
+		(pin "5"
+			(uuid "fb9ed22b-b0d6-43f0-aa3d-05857af665aa")
+		)
+		(pin "3"
+			(uuid "e70b0a43-d84e-454f-b856-2033ada6a378")
+		)
+		(pin "12"
+			(uuid "9c98e8f2-7445-4f49-be15-30ff9908e3f5")
+		)
+		(pin "1"
+			(uuid "938ecc8d-a1cf-46bd-ba78-f6f6d06f21c7")
+		)
+		(pin "11"
+			(uuid "9ecec407-5d82-4268-9704-ae8e7fdb74f9")
+		)
+		(pin "7"
+			(uuid "5f8db165-7b54-43b3-8fad-c12125176716")
+		)
+		(pin "10"
+			(uuid "d80bd2bd-e630-453a-92a5-d7686c05ddd8")
+		)
+		(pin "13"
+			(uuid "437d28a6-9889-4c2f-b348-78d0f7b625d6")
+		)
+		(pin "14"
+			(uuid "4b6a0d05-5cb0-4746-bff9-402226823727")
+		)
+		(pin "8"
+			(uuid "89c45c2b-2b6f-492a-9be7-a0f50ffbc648")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 44.45 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9e502b0-b378-4946-bbbe-b8c8623f57ff")
+		(property "Reference" "C16"
+			(at 48.26 126.9999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 48.26 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 45.4152 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 44.45 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 44.45 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 44.45 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 44.45 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8d6ab1c0-65e4-4e8b-bab5-64efbd9e1a3d")
+		)
+		(pin "1"
+			(uuid "9933e8c9-5817-4e17-b6c2-30dd5e63e8b4")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 127 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bfbcf3ec-4151-454e-9c23-dfaf6da04db0")
+		(property "Reference" "C42"
+			(at 130.81 156.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 130.81 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 127.9652 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 127 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 127 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 127 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 127 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "afaa45ef-5374-48b6-ae8e-b97fa7de535a")
+		)
+		(pin "1"
+			(uuid "024b6614-3525-4be8-a2d1-8144f457f550")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 127 186.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c436327e-6e3f-49f9-b4fa-3d73e930ccf9")
+		(property "Reference" "C52"
+			(at 130.81 185.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 130.81 187.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 127.9652 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 127 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 127 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 127 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 127 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fbbd423a-9c78-4b19-8f58-dc38134f27d8")
+		)
+		(pin "1"
+			(uuid "bf368698-6a20-4528-b322-80d26ead0218")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 77.47 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4508ef4-ea5e-4a14-b47d-8d995c5d93ab")
+		(property "Reference" "J10"
+			(at 80.01 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Limit switch"
+			(at 80.01 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 77.47 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 77.47 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 77.47 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+			(at 77.47 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4cd03406-a9cf-4472-b68d-05a76d21fdff")
+		)
+		(pin "1"
+			(uuid "15ae29d9-a4c7-4331-97da-134e90ad69fe")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 88.9 77.47 0)
-		(mirror y)
+		(at 64.77 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2250,7 +7292,7 @@
 		(fields_autoplaced yes)
 		(uuid "cbc20494-18e1-4989-8c91-0ed13f83bf3e")
 		(property "Reference" "#PWR0271"
-			(at 88.9 83.82 0)
+			(at 64.77 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2259,7 +7301,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 88.9 82.55 0)
+			(at 64.77 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2267,7 +7309,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 77.47 0)
+			(at 64.77 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2276,7 +7318,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 77.47 0)
+			(at 64.77 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2285,7 +7327,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 77.47 0)
+			(at 64.77 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2306,8 +7348,74 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 71.12 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf4213d7-8ccb-45cc-b807-0b68af941c42")
+		(property "Reference" "#PWR0155"
+			(at 71.12 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.12 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "001f2bcb-9b35-48a5-afb3-df7bb55e4f8b")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0155")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Analog_custom:MCP6S26")
-		(at 116.84 95.25 0)
+		(at 36.83 50.8 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2317,7 +7425,7 @@
 		(fields_autoplaced yes)
 		(uuid "d26c5d7d-d16c-4bc2-8c26-e6bb866bc78d")
 		(property "Reference" "U23"
-			(at 114.6967 82.55 0)
+			(at 34.6867 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2326,7 +7434,7 @@
 			)
 		)
 		(property "Value" "MCP6S26"
-			(at 114.6967 85.09 0)
+			(at 34.6867 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2335,7 +7443,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 127 74.93 0)
+			(at 46.99 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2344,7 +7452,7 @@
 			)
 		)
 		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/21117B.pdf"
-			(at 123.19 77.47 0)
+			(at 43.18 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2353,7 +7461,7 @@
 			)
 		)
 		(property "Description" "Single-Ended, Rail-to-Rail I/O, Low Gain PGA"
-			(at 116.84 95.25 0)
+			(at 36.83 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2362,7 +7470,7 @@
 			)
 		)
 		(property "MPN" "MCP6S26-I/SL"
-			(at 116.84 95.25 0)
+			(at 36.83 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2371,7 +7479,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 116.84 95.25 0)
+			(at 36.83 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2431,17 +7539,203 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 64.77 172.72 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d95bee29-79d6-4915-b5c0-c348a7b61d99")
+		(property "Reference" "#PWR041"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 67.31 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "712e2517-e74c-4800-a0e3-f031821458c5")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xx:74HC14")
+		(at 114.3 152.4 180)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2aead8a-50c5-4ee1-83c6-ad137dfdb74b")
+		(property "Reference" "U5"
+			(at 114.3 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC14"
+			(at 114.3 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 114.3 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT14.pdf"
+			(at 114.3 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hex inverter schmitt trigger"
+			(at 114.3 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "74AHC14PW,118"
+			(at 114.3 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 114.3 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e55d735-afb2-45dd-8fe4-d977e013f1f5")
+		)
+		(pin "4"
+			(uuid "f90b40c0-13c3-4d81-84c9-b293b60c13ae")
+		)
+		(pin "9"
+			(uuid "d8fe2180-f5cc-4f1b-a512-2d68d2c34de9")
+		)
+		(pin "2"
+			(uuid "ec09c1aa-ba7d-47ae-ae30-6d11f95a0a0b")
+		)
+		(pin "5"
+			(uuid "fb9ed22b-b0d6-43f0-aa3d-05857af665ab")
+		)
+		(pin "3"
+			(uuid "4d1e6ce1-20be-4ea0-aa94-7336e5c4b643")
+		)
+		(pin "12"
+			(uuid "9c98e8f2-7445-4f49-be15-30ff9908e3f6")
+		)
+		(pin "1"
+			(uuid "b1f9d76b-42ab-4c18-b93d-63922b1e0482")
+		)
+		(pin "11"
+			(uuid "9ecec407-5d82-4268-9704-ae8e7fdb74fa")
+		)
+		(pin "7"
+			(uuid "5f8db165-7b54-43b3-8fad-c12125176717")
+		)
+		(pin "10"
+			(uuid "d80bd2bd-e630-453a-92a5-d7686c05ddd9")
+		)
+		(pin "13"
+			(uuid "437d28a6-9889-4c2f-b348-78d0f7b625d7")
+		)
+		(pin "14"
+			(uuid "4b6a0d05-5cb0-4746-bff9-402226823728")
+		)
+		(pin "8"
+			(uuid "89c45c2b-2b6f-492a-9be7-a0f50ffbc649")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U5")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 128.27 90.17 90)
+		(at 44.45 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "eff93c62-c65b-4d62-8d8b-e8d5812f7bfb")
-		(property "Reference" "#PWR0273"
-			(at 134.62 90.17 0)
+		(uuid "e382f1c8-aa86-4bb7-96d8-b9d6dbdb0923")
+		(property "Reference" "#PWR0156"
+			(at 44.45 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2450,16 +7744,15 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 90.1699 90)
+			(at 44.45 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 90.17 0)
+			(at 44.45 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2468,7 +7761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 90.17 0)
+			(at 44.45 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2477,7 +7770,250 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 128.27 90.17 0)
+			(at 44.45 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "51892bdf-1c35-49a7-94b7-ece5043acfc8")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR0156")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 127 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e5e76070-7532-4a39-a77e-ce8cee1af826")
+		(property "Reference" "C41"
+			(at 130.81 126.9999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 130.81 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 127.9652 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 127 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 127 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 127 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 127 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "361248f5-9d86-4364-9f26-0b4d38a4c669")
+		)
+		(pin "1"
+			(uuid "2948f13e-2109-459e-8ef5-46010337de14")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "C41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 147.32 176.53 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e8aa29b9-0737-41e5-853c-dc0e814af28b")
+		(property "Reference" "R35"
+			(at 149.86 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10kR"
+			(at 149.86 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 149.098 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 147.32 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 147.32 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 147.32 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 147.32 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2ae9fc04-1f24-4a51-aebc-25f155563d23")
+		)
+		(pin "1"
+			(uuid "e507c40b-5a02-478b-b728-e31b26d05d6e")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 48.26 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eff93c62-c65b-4d62-8d8b-e8d5812f7bfb")
+		(property "Reference" "#PWR0273"
+			(at 54.61 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 52.07 45.7199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 48.26 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2499,16 +8035,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 129.54 111.76 0)
+		(at 71.12 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f75106c5-b667-47ff-86fd-9b32a80426c1")
-		(property "Reference" "#PWR0276"
-			(at 129.54 118.11 0)
+		(uuid "f34cf55e-4753-4643-a9db-e1725e730573")
+		(property "Reference" "#PWR042"
+			(at 71.12 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2517,7 +8053,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 129.54 116.84 0)
+			(at 71.12 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2525,7 +8061,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 111.76 0)
+			(at 71.12 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2534,7 +8070,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 111.76 0)
+			(at 71.12 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2543,7 +8079,73 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 129.54 111.76 0)
+			(at 71.12 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a2e8bc89-6db9-4888-90f7-e50dd1f21e07")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR042")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 49.53 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f75106c5-b667-47ff-86fd-9b32a80426c1")
+		(property "Reference" "#PWR0276"
+			(at 49.53 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 49.53 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 49.53 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2564,43 +8166,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 99.06 73.66 0)
+		(lib_id "Device:R")
+		(at 64.77 118.11 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fb18c785-8f83-4565-84cc-6d0db9b4a011")
-		(property "Reference" "C59"
-			(at 102.87 72.3899 0)
+		(fields_autoplaced yes)
+		(uuid "f905bbc8-1376-41ef-a1b2-0cbb88505ad9")
+		(property "Reference" "R16"
+			(at 67.31 116.8399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "100nC"
-			(at 102.87 74.9299 0)
+		(property "Value" "10kR"
+			(at 67.31 119.3799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 100.0252 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
-			(at 99.06 73.66 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 66.548 118.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2608,8 +8202,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
-			(at 99.06 73.66 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 64.77 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2617,8 +8211,17 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "C0805F104K5RACAUTO"
-			(at 99.06 73.66 0)
+		(property "Description" "Resistor"
+			(at 64.77 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 64.77 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2627,7 +8230,181 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 99.06 73.66 0)
+			(at 64.77 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "95728e81-4ae6-4f42-b54b-651441ad8ec4")
+		)
+		(pin "1"
+			(uuid "dfb1a97f-b5c2-4aa4-8d2a-d750b8a72ec5")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 138.43 181.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa2dde9f-de9b-48bd-9f48-5a0da199d2d7")
+		(property "Reference" "R32"
+			(at 138.43 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10kR"
+			(at 138.43 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 138.43 183.388 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 138.43 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 138.43 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 138.43 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 138.43 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "adf5a0d7-207c-441d-b132-7d535c65d06f")
+		)
+		(pin "1"
+			(uuid "6e8f4e29-9fcc-4048-9b70-a248631ab0ca")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 54.61 29.21 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fb18c785-8f83-4565-84cc-6d0db9b4a011")
+		(property "Reference" "C59"
+			(at 50.8 27.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 50.8 30.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 53.6448 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
+			(at 54.61 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 54.61 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805F104K5RACAUTO"
+			(at 54.61 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 54.61 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2652,17 +8429,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 99.06 77.47 0)
-		(mirror y)
+		(at 153.67 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ffa4d6e1-2a2b-47bf-926f-0b144f4b3029")
-		(property "Reference" "#PWR0274"
-			(at 99.06 83.82 0)
+		(uuid "fb9fec78-7ac4-415e-aed0-bd1c697bf773")
+		(property "Reference" "#PWR062"
+			(at 153.67 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2671,7 +8447,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 99.06 82.55 0)
+			(at 153.67 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2679,7 +8455,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 99.06 77.47 0)
+			(at 153.67 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2688,7 +8464,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 77.47 0)
+			(at 153.67 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2697,7 +8473,223 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 99.06 77.47 0)
+			(at 153.67 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "52c4e3e4-0022-4e7f-9aa8-a36110643ce0")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR062")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 147.32 114.3 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fcf7d1f8-740e-493e-92c4-254b190462e6")
+		(property "Reference" "#PWR058"
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 149.86 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "747d253e-e736-4fca-b967-2c61678de914")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR058")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 138.43 152.4 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe8e7fbd-e3ce-4596-9a80-5881876c8e6e")
+		(property "Reference" "R26"
+			(at 138.43 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10kR"
+			(at 138.43 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 138.43 154.178 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 138.43 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 138.43 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 138.43 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 138.43 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f63ede64-6c9c-4e35-9a64-7654e120315d")
+		)
+		(pin "1"
+			(uuid "8c1efc7e-ef8f-4e56-a3f0-5a103a01ee8a")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 54.61 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ffa4d6e1-2a2b-47bf-926f-0b144f4b3029")
+		(property "Reference" "#PWR0274"
+			(at 54.61 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 54.61 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 54.61 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2718,8 +8710,8 @@
 		)
 	)
 	(sheet
-		(at 220.98 115.57)
-		(size 27.94 29.21)
+		(at 180.34 25.4)
+		(size 27.94 21.59)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -2732,9 +8724,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "06f8a31f-1593-4487-94cf-aac03b34eaab")
+		(uuid "02a43813-6db5-4243-87cf-51f76b96071c")
 		(property "Sheetname" "H-bridge #3"
-			(at 220.98 114.8584 0)
+			(at 180.34 24.6884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2743,7 +8735,7 @@
 			)
 		)
 		(property "Sheetfile" "h_bridge.kicad_sch"
-			(at 220.98 145.3646 0)
+			(at 180.34 47.5746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2752,8 +8744,8 @@
 			)
 		)
 		(pin "A_SENSE" output
-			(at 220.98 142.24 180)
-			(uuid "e0977f0b-55cb-47bf-bf6d-6e4a78ba4be0")
+			(at 180.34 44.45 180)
+			(uuid "4a9a9a61-7e9c-45b4-a65b-567d08fa56d6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2762,8 +8754,8 @@
 			)
 		)
 		(pin "ENCODER_A" output
-			(at 220.98 135.89 180)
-			(uuid "c5f92f00-9f1b-47db-bebe-aa7d75b0e921")
+			(at 180.34 38.1 180)
+			(uuid "226592ac-978e-4869-bdb6-cf653b7158a7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2772,8 +8764,8 @@
 			)
 		)
 		(pin "ENCODER_B" output
-			(at 220.98 138.43 180)
-			(uuid "b8221ac0-f74a-4979-af6c-b55c67d4d6bf")
+			(at 180.34 40.64 180)
+			(uuid "94083ae4-3721-4623-92f7-7847c67ec209")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2781,9 +8773,9 @@
 				(justify left)
 			)
 		)
-		(pin "LIM1" output
-			(at 220.98 129.54 180)
-			(uuid "701de529-8101-49dc-b593-30302f6bc994")
+		(pin "PWM" input
+			(at 180.34 31.75 180)
+			(uuid "d6b2f8e3-80e6-4e32-aa45-98b8fd2b9aa9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2791,9 +8783,9 @@
 				(justify left)
 			)
 		)
-		(pin "LIM2" output
-			(at 220.98 132.08 180)
-			(uuid "364df588-ef57-47d7-b2c9-3e31f0af79d8")
+		(pin "ENABLE_MOTOR" input
+			(at 180.34 27.94 180)
+			(uuid "ee00b665-6c7f-4b83-bbdb-29960e392c8e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2801,39 +8793,9 @@
 				(justify left)
 			)
 		)
-		(pin "PWM1" input
-			(at 220.98 118.11 180)
-			(uuid "5524a685-a663-43f8-96c4-2a30f1696ac2")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PWM2" input
-			(at 220.98 120.65 180)
-			(uuid "dfd9f688-94d3-4cba-b966-cdbb509720a5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "ENABLE_PWM" input
-			(at 220.98 123.19 180)
-			(uuid "6d1fa843-50e6-4284-b904-2b728595d921")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "~{ENABLE_ENCODER}" input
-			(at 220.98 125.73 180)
-			(uuid "4649ae0a-4cfa-4189-9f84-a1da7670ab04")
+		(pin "FORWARD{slash}~{REVERSE}" input
+			(at 180.34 34.29 180)
+			(uuid "00fbf1d5-1297-4c91-89bb-baba54d5ac81")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2844,14 +8806,14 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
-					(page "6")
+					(page "10")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 220.98 41.91)
-		(size 27.94 29.21)
+		(at 119.38 25.4)
+		(size 27.94 21.59)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -2866,7 +8828,7 @@
 		)
 		(uuid "0f35a59d-662c-4a21-95ae-6b9733fa9094")
 		(property "Sheetname" "H-bridge #1"
-			(at 220.98 41.1984 0)
+			(at 119.38 24.6884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2875,7 +8837,7 @@
 			)
 		)
 		(property "Sheetfile" "h_bridge.kicad_sch"
-			(at 220.98 71.7046 0)
+			(at 119.38 47.5746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2884,8 +8846,8 @@
 			)
 		)
 		(pin "A_SENSE" output
-			(at 220.98 68.58 180)
-			(uuid "6e495b86-7058-4f1a-88d7-70b0adc2393e")
+			(at 119.38 44.45 180)
+			(uuid "4a6ba838-ce2a-404c-b5b8-feceb3eede5f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2894,8 +8856,8 @@
 			)
 		)
 		(pin "ENCODER_A" output
-			(at 220.98 62.23 180)
-			(uuid "fa6a1c1a-7284-4b4e-8fe1-cbff4e75e597")
+			(at 119.38 38.1 180)
+			(uuid "58e4a520-8e65-45ec-8589-751457a4e378")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2904,8 +8866,8 @@
 			)
 		)
 		(pin "ENCODER_B" output
-			(at 220.98 64.77 180)
-			(uuid "ec8a0b1b-6353-4aa9-ab45-afa6a285b8f8")
+			(at 119.38 40.64 180)
+			(uuid "3ab4953b-5d9e-4133-b120-ae63bc1dd167")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2913,9 +8875,9 @@
 				(justify left)
 			)
 		)
-		(pin "LIM1" output
-			(at 220.98 55.88 180)
-			(uuid "980d5789-076f-4e87-839e-576487f778f0")
+		(pin "PWM" input
+			(at 119.38 31.75 180)
+			(uuid "2bb233b5-f944-467b-9cf0-977a61583fa0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2923,9 +8885,9 @@
 				(justify left)
 			)
 		)
-		(pin "LIM2" output
-			(at 220.98 58.42 180)
-			(uuid "5f7152b0-410e-4f29-b651-a2c1e64e4136")
+		(pin "ENABLE_MOTOR" input
+			(at 119.38 27.94 180)
+			(uuid "165361a6-a254-466c-a82e-214a301537e7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2933,39 +8895,9 @@
 				(justify left)
 			)
 		)
-		(pin "PWM1" input
-			(at 220.98 44.45 180)
-			(uuid "b85ce7ab-c6f5-43ad-85c8-780a827b9d30")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PWM2" input
-			(at 220.98 46.99 180)
-			(uuid "7bd101f3-0139-43bb-878c-e8ec4245c706")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "ENABLE_PWM" input
-			(at 220.98 49.53 180)
-			(uuid "f7136f4f-a91e-45a7-9967-bf5fd6eee0dd")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "~{ENABLE_ENCODER}" input
-			(at 220.98 52.07 180)
-			(uuid "1f710b7f-83a8-4b6a-8eb6-0beea72b71ca")
+		(pin "FORWARD{slash}~{REVERSE}" input
+			(at 119.38 34.29 180)
+			(uuid "53a9cf6a-c8bf-4fe0-b2c2-ab51040ce9ba")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2982,8 +8914,8 @@
 		)
 	)
 	(sheet
-		(at 220.98 78.74)
-		(size 27.94 29.21)
+		(at 241.3 68.58)
+		(size 27.94 21.59)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -2996,9 +8928,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "47b0d2f8-7bd5-41e1-a3f2-1d0bd21108b8")
-		(property "Sheetname" "H-bridge #2"
-			(at 220.98 78.0284 0)
+		(uuid "20869f19-ed90-4a72-826a-4c2f0e711105")
+		(property "Sheetname" "H-bridge #6"
+			(at 241.3 67.8684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3007,7 +8939,7 @@
 			)
 		)
 		(property "Sheetfile" "h_bridge.kicad_sch"
-			(at 220.98 108.5346 0)
+			(at 241.3 90.7546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3016,8 +8948,8 @@
 			)
 		)
 		(pin "A_SENSE" output
-			(at 220.98 105.41 180)
-			(uuid "af6302ea-e780-4db7-9117-217230ebaaef")
+			(at 241.3 87.63 180)
+			(uuid "43f58202-55c2-4143-8d4a-4a1db77607e9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3026,8 +8958,8 @@
 			)
 		)
 		(pin "ENCODER_A" output
-			(at 220.98 99.06 180)
-			(uuid "8c6c8d96-13d7-423c-a56d-8baf86fbfdb3")
+			(at 241.3 81.28 180)
+			(uuid "c0e1ae29-7ced-49f8-9625-08ea86b22d79")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3036,8 +8968,8 @@
 			)
 		)
 		(pin "ENCODER_B" output
-			(at 220.98 101.6 180)
-			(uuid "38158825-a555-4aaf-acf6-e31783e76491")
+			(at 241.3 83.82 180)
+			(uuid "fccf6966-abb4-4203-bd0d-ca92aaee5b22")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3045,9 +8977,9 @@
 				(justify left)
 			)
 		)
-		(pin "LIM1" output
-			(at 220.98 92.71 180)
-			(uuid "95a96956-9a83-431a-b62b-3dff0b926b7f")
+		(pin "PWM" input
+			(at 241.3 74.93 180)
+			(uuid "407e8e58-123a-4ba9-8b04-2b8fb8cff2d4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3055,9 +8987,9 @@
 				(justify left)
 			)
 		)
-		(pin "LIM2" output
-			(at 220.98 95.25 180)
-			(uuid "2b8b564b-6931-4f52-baa7-b7a2faa05b2a")
+		(pin "ENABLE_MOTOR" input
+			(at 241.3 71.12 180)
+			(uuid "af34660a-1edc-441b-9e51-ffd04b3eaa9a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3065,9 +8997,9 @@
 				(justify left)
 			)
 		)
-		(pin "PWM1" input
-			(at 220.98 81.28 180)
-			(uuid "5eb62321-29e9-499c-a763-715891afa80c")
+		(pin "FORWARD{slash}~{REVERSE}" input
+			(at 241.3 77.47 180)
+			(uuid "23724991-4740-4af1-9818-56423d5a9f56")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3075,9 +9007,51 @@
 				(justify left)
 			)
 		)
-		(pin "PWM2" input
-			(at 220.98 83.82 180)
-			(uuid "8ceea698-5f0f-4da9-9280-28527c922ecc")
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(page "12")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 241.3 25.4)
+		(size 27.94 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "219e6765-ba24-4ea3-b6f9-69eb8928e077")
+		(property "Sheetname" "H-bridge #5"
+			(at 241.3 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "h_bridge.kicad_sch"
+			(at 241.3 47.5746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A_SENSE" output
+			(at 241.3 44.45 180)
+			(uuid "551a6c09-1fdf-458b-8098-e076528c2ffd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3085,9 +9059,9 @@
 				(justify left)
 			)
 		)
-		(pin "ENABLE_PWM" input
-			(at 220.98 86.36 180)
-			(uuid "8a6530f0-f8b2-4ff2-9321-195e5a3f7a2c")
+		(pin "ENCODER_A" output
+			(at 241.3 38.1 180)
+			(uuid "22385f4d-cb03-43e8-8f79-7e928c771d55")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3095,9 +9069,141 @@
 				(justify left)
 			)
 		)
-		(pin "~{ENABLE_ENCODER}" input
-			(at 220.98 88.9 180)
-			(uuid "633ba412-5b93-44f6-a94a-f52cc05cf8f9")
+		(pin "ENCODER_B" output
+			(at 241.3 40.64 180)
+			(uuid "9d0badff-44bc-4b83-a0e5-b043eb2e1c70")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PWM" input
+			(at 241.3 31.75 180)
+			(uuid "c424f385-fcf6-4ad1-af7a-9491754e0bb5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENABLE_MOTOR" input
+			(at 241.3 27.94 180)
+			(uuid "c75f1e41-007f-4e04-8aa8-9ff6c17fa61c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FORWARD{slash}~{REVERSE}" input
+			(at 241.3 34.29 180)
+			(uuid "ae432e1d-9e64-4fe3-be4e-ecd1037cd3fc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 119.38 68.58)
+		(size 27.94 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5247a3e0-617b-4b02-b3dd-e6c080134575")
+		(property "Sheetname" "H-bridge #2"
+			(at 119.38 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "h_bridge.kicad_sch"
+			(at 119.38 90.7546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A_SENSE" output
+			(at 119.38 87.63 180)
+			(uuid "5968debe-9700-4616-88a6-401ee700dfcf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENCODER_A" output
+			(at 119.38 81.28 180)
+			(uuid "05a6d568-1c63-4537-bce0-549822d4d0d5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENCODER_B" output
+			(at 119.38 83.82 180)
+			(uuid "435204d7-17df-4052-8d0a-24dd0c3e6fc5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PWM" input
+			(at 119.38 74.93 180)
+			(uuid "119ee614-99c7-480c-9e1e-b27bb2ad2ff8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENABLE_MOTOR" input
+			(at 119.38 71.12 180)
+			(uuid "0b2a20a0-ea8f-49f9-9098-a4a35c17f921")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FORWARD{slash}~{REVERSE}" input
+			(at 119.38 77.47 180)
+			(uuid "a37de521-bfcc-485c-8253-ab11ecf80b1b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3109,6 +9215,108 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.34 68.58)
+		(size 27.94 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "86cbab9d-aceb-4c56-937e-84fcc11b0b66")
+		(property "Sheetname" "H-bridge #4"
+			(at 180.34 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "h_bridge.kicad_sch"
+			(at 180.34 90.7546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A_SENSE" output
+			(at 180.34 87.63 180)
+			(uuid "8b0ef78d-cb2c-427c-a8e3-01f63685938c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENCODER_A" output
+			(at 180.34 81.28 180)
+			(uuid "c5afee52-cda6-480c-ad1a-490d31070ae8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENCODER_B" output
+			(at 180.34 83.82 180)
+			(uuid "bed8295d-8277-4699-afb5-1f2817070f44")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PWM" input
+			(at 180.34 74.93 180)
+			(uuid "3329e669-82bc-469c-9feb-e76fea5e97ed")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENABLE_MOTOR" input
+			(at 180.34 71.12 180)
+			(uuid "08f66876-fb8c-4804-834f-3efcfe52a92e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FORWARD{slash}~{REVERSE}" input
+			(at 180.34 77.47 180)
+			(uuid "3bd9a200-459c-4904-9b1e-d47ef6885cf9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(page "6")
 				)
 			)
 		)
