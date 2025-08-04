@@ -1674,6 +1674,12 @@
 		)
 	)
 	(junction
+		(at 63.5 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "07138540-d146-4bd2-88be-23af0ca30fc7")
+	)
+	(junction
 		(at 77.47 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1865,6 +1871,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 86.36) (xy 63.5 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40440e76-3210-416a-afdd-ea5b9ec353bb")
+	)
+	(wire
+		(pts
 			(xy 171.45 83.82) (xy 182.88 83.82)
 		)
 		(stroke
@@ -1892,6 +1908,16 @@
 			(type default)
 		)
 		(uuid "529f48eb-49fd-4271-8d3f-64680412c2e5")
+	)
+	(wire
+		(pts
+			(xy 59.69 87.63) (xy 63.5 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55b616f7-b2d6-4626-bbc0-30e2d26b75dd")
 	)
 	(wire
 		(pts
@@ -2212,6 +2238,16 @@
 			(type default)
 		)
 		(uuid "b51fd39f-0239-4a66-8cdf-d4903d5d19ed")
+	)
+	(wire
+		(pts
+			(xy 63.5 87.63) (xy 78.74 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b595309f-f933-4785-b5e1-86f53db1e7f9")
 	)
 	(wire
 		(pts
@@ -3207,17 +3243,6 @@
 		)
 		(uuid "8b2d8487-58d5-4973-b4d6-e7ce5f54a6e1")
 	)
-	(hierarchical_label "~{INT}"
-		(shape output)
-		(at 63.5 104.14 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b8beca04-a68a-4ff3-8bfc-97eca0be092d")
-	)
 	(hierarchical_label "TX2"
 		(shape input)
 		(at 127 116.84 180)
@@ -3231,7 +3256,7 @@
 	)
 	(hierarchical_label "~{INT}"
 		(shape output)
-		(at 78.74 87.63 180)
+		(at 59.69 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3699,7 +3724,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 63.5 96.52 0)
+		(at 63.5 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3708,7 +3733,7 @@
 		(fields_autoplaced yes)
 		(uuid "64e68842-39f5-4c71-a0e0-4de37424bf7f")
 		(property "Reference" "#PWR0264"
-			(at 63.5 100.33 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3717,7 +3742,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 63.5 91.44 0)
+			(at 63.5 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3725,7 +3750,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 96.52 0)
+			(at 63.5 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3734,7 +3759,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 96.52 0)
+			(at 63.5 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3743,7 +3768,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 63.5 96.52 0)
+			(at 63.5 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4095,7 +4120,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 63.5 100.33 180)
+		(at 63.5 82.55 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4104,7 +4129,7 @@
 		(fields_autoplaced yes)
 		(uuid "f674fb25-acc9-4aa0-986e-5f6b2ad94eb8")
 		(property "Reference" "R36"
-			(at 66.04 99.0599 0)
+			(at 66.04 81.2799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4113,7 +4138,7 @@
 			)
 		)
 		(property "Value" "10kR"
-			(at 66.04 101.5999 0)
+			(at 66.04 83.8199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4122,7 +4147,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 65.278 100.33 90)
+			(at 65.278 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4131,7 +4156,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
-			(at 63.5 100.33 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4140,7 +4165,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 63.5 100.33 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4149,7 +4174,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 63.5 100.33 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4158,7 +4183,7 @@
 			)
 		)
 		(property "MPN" "RC0805JR-0710KL"
-			(at 63.5 100.33 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)

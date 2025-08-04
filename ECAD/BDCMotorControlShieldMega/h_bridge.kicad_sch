@@ -2830,17 +2830,6 @@
 		)
 		(uuid "26a6e68a-25cc-4f1a-9fba-687852dff9db")
 	)
-	(text "2.5V"
-		(exclude_from_sim no)
-		(at 181.61 135.89 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "616f83f9-2524-4d95-adad-f2165baf7cda")
-	)
 	(text "Input square wave max frequency = 3 kHz (typical hall efect encoder frequency\nat max motor speed with no load)\nLow pass filter -3dB Cutoff Frequency: 1,6 MHz"
 		(exclude_from_sim no)
 		(at 90.932 189.23 0)
@@ -2882,9 +2871,9 @@
 		)
 		(uuid "86eefb3e-6c03-4814-84cd-0da9011292df")
 	)
-	(text "I_trip = VREF/(10*RISEN)\nI_trip = 1.66 A"
+	(text "I_trip = VREF/(10*RISEN)"
 		(exclude_from_sim no)
-		(at 185.166 152.146 0)
+		(at 185.42 150.876 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2905,12 +2894,6 @@
 		(uuid "e77376e7-960d-4e32-ba18-e65b427f13f5")
 	)
 	(junction
-		(at 176.53 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2e02f131-feb5-4b13-8ffa-1a7813a6265c")
-	)
-	(junction
 		(at 120.65 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2923,10 +2906,10 @@
 		(uuid "4e84915b-b073-4dd3-9892-d51d57b5f1cb")
 	)
 	(junction
-		(at 176.53 135.89)
+		(at 177.8 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5fada022-0efa-4e3d-8fc9-96277fcb68f6")
+		(uuid "58dbdbc1-c849-41ad-9249-9f9244095a5f")
 	)
 	(junction
 		(at 234.95 119.38)
@@ -3115,6 +3098,16 @@
 			(type default)
 		)
 		(uuid "658dec2d-5762-4226-a475-cf07fb1d4e6f")
+	)
+	(wire
+		(pts
+			(xy 168.91 135.89) (xy 177.8 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65f9ec3f-54af-45dc-baf8-b6e7715feb08")
 	)
 	(wire
 		(pts
@@ -3318,16 +3311,6 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 135.89) (xy 186.69 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9edba015-ec9d-42fb-bdf9-41d5e4dacdb3")
-	)
-	(wire
-		(pts
 			(xy 234.95 119.38) (xy 234.95 134.62)
 		)
 		(stroke
@@ -3355,16 +3338,6 @@
 			(type default)
 		)
 		(uuid "ad5ab5bc-8535-423c-936d-23de167f7438")
-	)
-	(wire
-		(pts
-			(xy 176.53 134.62) (xy 176.53 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af90c4dc-7d72-41ee-8ca6-9f7c62f7b91e")
 	)
 	(wire
 		(pts
@@ -3438,7 +3411,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 137.16) (xy 176.53 137.16)
+			(xy 177.8 135.89) (xy 186.69 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3548,6 +3521,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 135.89) (xy 177.8 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8f7c768-e445-47b7-91ca-125013930d20")
+	)
+	(wire
+		(pts
 			(xy 120.65 166.37) (xy 120.65 165.1)
 		)
 		(stroke
@@ -3595,16 +3578,6 @@
 			(type default)
 		)
 		(uuid "fc37ebd5-8c98-4a83-bb3b-6ae0435c181a")
-	)
-	(wire
-		(pts
-			(xy 176.53 137.16) (xy 176.53 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fedbfdfc-3d2d-4b34-9e53-ab1a3e8e6572")
 	)
 	(label "IN2"
 		(at 181.61 130.81 0)
@@ -3789,6 +3762,17 @@
 		)
 		(uuid "1cb6c7db-455e-48e6-8611-2be4a7dc2727")
 	)
+	(hierarchical_label "VREF"
+		(shape input)
+		(at 168.91 135.89 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "27e34a4d-f1a1-428f-a24f-071be20fb8b8")
+	)
 	(hierarchical_label "ENABLE_MOTOR"
 		(shape input)
 		(at -52.07 101.6 180)
@@ -3905,35 +3889,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "4d46b89c-6778-40ad-9d8a-ea62d3638cff")
+			(uuid "a2761dc1-c1bc-4eeb-96fd-f7ec877c5353")
 		)
 		(pin "2"
-			(uuid "f437fa01-6548-44f7-adc4-d1971d6fb8b4")
+			(uuid "08d46ea1-0236-486f-9c30-1b67940d61e2")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C71")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C63")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C103")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C69")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C87")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C47")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C21")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C47")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C95")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C82")
 					(unit 1)
 				)
 			)
@@ -4011,35 +3995,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "06cd490f-8d6c-4f10-b038-23daf155d386")
+			(uuid "722fe1e1-fe43-4eb5-b62c-7eec3218bd5f")
 		)
 		(pin "2"
-			(uuid "3e81612e-142a-416a-828d-3cd5647f871d")
+			(uuid "8ae0463b-df17-4902-8b8b-674f1e13a524")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C70")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C5")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C102")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C68")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C86")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C46")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C20")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C46")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C94")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C81")
 					(unit 1)
 				)
 			)
@@ -4098,32 +4082,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "72101dcf-f9f9-4653-aa45-a77300e692f0")
+			(uuid "463a951f-c750-45eb-b2c6-e3886219fc6e")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0191")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR028")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0326")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0178")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0270")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR074")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR024")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR076")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0278")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0228")
 					(unit 1)
 				)
 			)
@@ -4201,35 +4185,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "23963b8e-4b80-4aa5-96fe-ea4c19559dfb")
+			(uuid "278feec6-a58e-4e1c-8f74-7ae64fa595ab")
 		)
 		(pin "2"
-			(uuid "f2c7f0e3-2738-494b-a90f-9f5e10a915f2")
+			(uuid "0f7b7cc5-bfc6-4189-92de-a59a1d620e1d")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "R40")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "R12")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "R58")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "R49")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
 					(reference "R19")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "R28")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "R9")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "R2")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "R29")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -4289,32 +4273,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "e4761aa3-339b-4606-b52b-a115f0c56076")
+			(uuid "84659fa0-fedc-4c53-a354-c13f2a3592ab")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#FLG06")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#FLG0102")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#FLG08")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#FLG06")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#FLG07")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#FLG05")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#FLG04")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#FLG05")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#FLG08")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#FLG07")
 					(unit 1)
 				)
 			)
@@ -4374,32 +4358,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "7ea442a9-26be-4ad6-83ca-2927dddbd196")
+			(uuid "f1c1ef70-4b54-4126-907a-1ade1b18b3e4")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0229")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0135")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0352")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0196")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0302")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0100")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR052")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR048")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0167")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0296")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0246")
 					(unit 1)
 				)
 			)
@@ -4415,7 +4399,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b745b19-5a26-40c6-aadb-450b2bdb699c")
-		(property "Reference" "U11"
+		(property "Reference" "U"
 			(at 93.98 15.24 0)
 			(effects
 				(font
@@ -4459,13 +4443,13 @@
 			)
 		)
 		(pin "7"
-			(uuid "9dc3d9ae-eaaf-4d06-898f-09b6fcded90e")
+			(uuid "271113e6-9eb5-45e4-b3bc-bede367986af")
 		)
 		(pin "1"
-			(uuid "b599d78d-7c5e-4332-bef1-9e923fea51a0")
+			(uuid "df28e95c-6a29-467b-94a0-aaa0ddf7aeb1")
 		)
 		(pin "2"
-			(uuid "563200e3-70c2-4b10-8ec0-dc35da3dd87d")
+			(uuid "cd7af3cb-8553-404f-b200-29e6c390c8f5")
 		)
 		(pin "5"
 			(uuid "2bfd6f38-7a33-478b-97de-0f8cf419106f")
@@ -4483,29 +4467,25 @@
 			(uuid "2e9fb915-7daf-4494-aa84-d50607e68ef3")
 		)
 		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U28")
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U35")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U11")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U37")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U36")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U25")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
 					(reference "U27")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U15")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U50")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U43")
 					(unit 1)
 				)
 			)
@@ -4566,32 +4546,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "9a1fb9c9-2756-4508-8ee2-e50547c43160")
+			(uuid "a6517c14-db37-47e9-92c0-58d8fcd3946a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0194")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0138")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0329")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0181")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0279")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR077")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR027")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR083")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0281")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0231")
 					(unit 1)
 				)
 			)
@@ -4650,32 +4630,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "03e194ac-6b0e-4618-a5fb-31b08cd9d8fa")
+			(uuid "930139f5-0558-46de-b94d-013db4e392c0")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0197")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR016")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0332")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0186")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0282")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR032")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
 					(reference "#PWR086")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR034")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0286")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0236")
 					(unit 1)
 				)
 			)
@@ -4734,32 +4714,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "68a7a4d3-591e-4e8f-bd9e-b0063d3052a5")
+			(uuid "51682dd4-1623-4112-861d-a0154f04fb82")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0181")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR08")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0316")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0165")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0243")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR064")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR09")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR066")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0256")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0218")
 					(unit 1)
 				)
 			)
@@ -4838,13 +4818,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "62db0aba-1711-46f9-a240-f719ef5f5c8d")
+			(uuid "2b13c9af-0321-4b19-9c31-4116ee704992")
 		)
 		(pin "1"
-			(uuid "d4050de6-dbea-48bd-b0e5-1da9878f37f9")
+			(uuid "80d9e5dc-ae8c-4e99-9240-a6591d2fa7c5")
 		)
 		(pin "6"
-			(uuid "5cb7af0e-2891-493c-8803-11927da60d61")
+			(uuid "f1deb5a7-68eb-4a01-8b3b-752e8bc6e45c")
 		)
 		(pin "5"
 			(uuid "812e24c9-dbf9-4e66-9bdc-45fd54d01091")
@@ -4863,28 +4843,28 @@
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U33")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U3")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U51")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U32")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U43")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U25")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "U9")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U19")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U48")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U41")
 					(unit 1)
 				)
 			)
@@ -4944,32 +4924,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "f6fce238-d0a8-4bc8-8c3e-d54257c9d0c9")
+			(uuid "57996a9d-9610-462f-bc89-1d36561d525b")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0231")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0144")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0354")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0200")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0304")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0121")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR054")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR052")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0169")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0300")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0250")
 					(unit 1)
 				)
 			)
@@ -5030,32 +5010,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "ea76cfee-6cf2-4b3d-b498-0bc3c28afb32")
+			(uuid "a9001a1d-fc5f-4fc1-9bcf-7e9d2f34217a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0182")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR02")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0317")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0166")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0244")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR065")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR011")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR067")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0257")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0219")
 					(unit 1)
 				)
 			)
@@ -5116,32 +5096,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "c2ab87ed-e49a-486e-87dd-9f3b87896752")
+			(uuid "020bab8c-6a37-4359-a1ef-578e4c20cc71")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0192")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR029")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0327")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0179")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0277")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR075")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR025")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR077")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0279")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0229")
 					(unit 1)
 				)
 			)
@@ -5229,13 +5209,13 @@
 			(uuid "e804e935-06d1-4ade-aa12-6f3588709b0a")
 		)
 		(pin "5"
-			(uuid "8a5bed0b-0f05-488e-acbe-364ea2eb86ac")
+			(uuid "455dad6d-235f-4b52-851c-766d8dc0df03")
 		)
 		(pin "7"
-			(uuid "d6ce2c82-89e5-4d34-8be3-ed40cb43b8c5")
+			(uuid "a0e199c1-c814-40b4-9c7e-fcac02d7747d")
 		)
 		(pin "3"
-			(uuid "af107a24-a108-4bf5-944e-a2a3d3a9c2f6")
+			(uuid "0e40afc5-49e7-46e9-86e4-a0898d435b15")
 		)
 		(pin "8"
 			(uuid "b1a311b4-fcd1-4be7-9ca5-59841b9bc2fe")
@@ -5245,28 +5225,28 @@
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U33")
-					(unit 2)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U3")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U51")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U32")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U43")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U25")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "U9")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U19")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U48")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U41")
 					(unit 2)
 				)
 			)
@@ -5344,35 +5324,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "9619a323-ed4d-45d6-8641-b506dc08656d")
+			(uuid "4ebd4385-0ade-4584-8df8-c5afc93847a4")
 		)
 		(pin "2"
-			(uuid "d009f1e6-be2f-417b-83f8-208e094cf2b1")
+			(uuid "b900ed6d-5581-48b5-8ed3-6b3e8cf22ade")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C83")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C14")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C115")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C78")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C99")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C62")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C43")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C67")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C104")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C91")
 					(unit 1)
 				)
 			)
@@ -5433,32 +5413,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "258418ce-eba3-417b-a100-11a2cbcd01e9")
+			(uuid "eb9818ad-2dc8-4ade-821e-bf64250d3da4")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0186")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0131")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0321")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0172")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0248")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR069")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR017")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR071")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0261")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0223")
 					(unit 1)
 				)
 			)
@@ -5537,35 +5517,35 @@
 			)
 		)
 		(pin "2"
-			(uuid "174ad734-1d63-4ccc-ae4e-9d910038a7ed")
+			(uuid "c55bec97-5954-4e29-b816-36cb8f941b13")
 		)
 		(pin "1"
-			(uuid "e0dff143-8c90-4b24-a5cd-c8c73b0afe40")
+			(uuid "24410ac1-3347-4326-bdea-8efc3b48b5b8")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C74")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C11")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C106")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C72")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C90")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C50")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C24")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C50")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C98")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C85")
 					(unit 1)
 				)
 			)
@@ -5643,10 +5623,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "de7c5c12-442c-48ad-9444-04e8acf11a85")
+			(uuid "228680cd-3c3f-4e78-a9bd-f3fdc938a865")
 		)
 		(pin "7"
-			(uuid "a08391bd-9d69-4b63-a242-f2b6ca2cabe6")
+			(uuid "3dec28a6-eb3a-465a-afaf-7447674af7bc")
 		)
 		(pin "5"
 			(uuid "809c95d1-7241-45df-a66a-2b8b60863997")
@@ -5661,35 +5641,35 @@
 			(uuid "d2d0f2ec-b4e3-4c70-8659-20ea8049171e")
 		)
 		(pin "2"
-			(uuid "fd3afb1c-713d-4359-b6e3-9174a1665880")
+			(uuid "ccd4b982-558a-4904-96cb-99ee0d59aaf9")
 		)
 		(pin "3"
 			(uuid "edcd3b83-00a5-4ea0-8961-7bc18a31a831")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U39")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U34")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U55")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U36")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U47")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U28")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U15")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U16")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U29")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U51")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U44")
 					(unit 1)
 				)
 			)
@@ -5748,32 +5728,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "779023fb-4dbd-41fc-be53-81b03354a361")
+			(uuid "072664a7-8356-4224-95cc-3c2f8a1a80cc")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0195")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR07")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0330")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0182")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0280")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR078")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR030")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR084")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0282")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0232")
 					(unit 1)
 				)
 			)
@@ -5857,13 +5837,13 @@
 			(uuid "8d10b66b-120e-4172-b607-702dcee4824b")
 		)
 		(pin "5"
-			(uuid "db36a475-c174-494b-af72-b83e255938e7")
+			(uuid "1ffb72bb-ca26-4fab-b27c-bcacba6e0bab")
 		)
 		(pin "4"
 			(uuid "c91b808b-df7d-45b0-b838-251d9544cf7a")
 		)
 		(pin "6"
-			(uuid "3d057c90-933a-499d-b89f-555a80a96269")
+			(uuid "c9d76a61-e82f-411a-ae94-57adf9dbc602")
 		)
 		(pin "8"
 			(uuid "d2d0f2ec-b4e3-4c70-8659-20ea8049171f")
@@ -5872,32 +5852,32 @@
 			(uuid "00a2ba0f-f13f-4521-88fe-42bb9c87368e")
 		)
 		(pin "3"
-			(uuid "540d7dd1-7c30-48fa-8450-ddb34917cedc")
+			(uuid "9385e18f-41ef-45ef-980d-00925f50969f")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U39")
-					(unit 2)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U34")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U55")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U36")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U47")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U28")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U15")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U16")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U29")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U51")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U44")
 					(unit 2)
 				)
 			)
@@ -5906,14 +5886,14 @@
 	(symbol
 		(lib_id "74xGxx:74AUC2G32")
 		(at 95.25 48.26 0)
-		(unit 2)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "528097f0-5f17-4f95-8f2d-5df151b7c74f")
-		(property "Reference" "U11"
+		(property "Reference" "U"
 			(at 93.98 38.1 0)
 			(effects
 				(font
@@ -5966,13 +5946,13 @@
 			(uuid "563200e3-70c2-4b10-8ec0-dc35da3dd87e")
 		)
 		(pin "5"
-			(uuid "2bfd6f38-7a33-478b-97de-0f8cf4191070")
+			(uuid "4b364aea-9afb-444a-a2e1-260661d23b73")
 		)
 		(pin "6"
-			(uuid "87da76a9-b729-4dbc-9c9e-f90dbd938d09")
+			(uuid "8ef321f4-eee1-4875-8465-087e6ec7f852")
 		)
 		(pin "3"
-			(uuid "bd320d83-91c0-4a06-963c-9279be127c64")
+			(uuid "cd352663-0280-4ad7-b438-4e033efe37a4")
 		)
 		(pin "8"
 			(uuid "24d5701b-5b1d-4c2f-a8d4-4fc28a06de18")
@@ -5981,138 +5961,26 @@
 			(uuid "2e9fb915-7daf-4494-aa84-d50607e68ef4")
 		)
 		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U28")
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U35")
 					(unit 2)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U11")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U37")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U36")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U25")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
 					(reference "U27")
 					(unit 2)
 				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 176.53 140.97 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "542b82d9-4dd6-47fb-9695-ab61f5b81a91")
-		(property "Reference" "R10"
-			(at 173.99 139.6999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U15")
+					(unit 2)
 				)
-				(justify left)
-			)
-		)
-		(property "Value" "10kR"
-			(at 173.99 142.2399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U50")
+					(unit 2)
 				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 178.308 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
-			(at 176.53 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 176.53 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "RC0805JR-0710KL"
-			(at 176.53 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 176.53 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "144dc130-becf-4390-ba57-41a8be52bc1c")
-		)
-		(pin "2"
-			(uuid "0be4ec0b-4120-429d-b998-a69c511eb3d1")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "R42")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "R10")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "R60")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "R51")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "R21")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "R30")
-					(unit 1)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U43")
+					(unit 2)
 				)
 			)
 		)
@@ -6170,32 +6038,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a733299-be12-4137-b84c-a46fd76c7602")
+			(uuid "e5b0562d-e1a3-484a-8cf8-d1126c10476a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0183")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR03")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0318")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0167")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0245")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR066")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR012")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR068")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0258")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -6275,47 +6143,47 @@
 			)
 		)
 		(pin "2"
-			(uuid "8d04856e-91dc-41f8-998e-7dab43bd5ae0")
+			(uuid "fc4ae9a1-b3e8-4fab-955d-7701a1355ade")
 		)
 		(pin "4"
-			(uuid "bfe78cb8-9f5f-4af2-9d07-e3ba89aa7455")
+			(uuid "7adf3cb5-5121-451a-b491-3b0a9033a9ca")
 		)
 		(pin "1"
-			(uuid "84fc6488-7159-4fa2-bba0-91171ce1e218")
+			(uuid "e7877b2a-1e28-411a-805e-53638c03b66a")
 		)
 		(pin "5"
-			(uuid "77c3e436-260f-4a0a-be8b-65b970c502c0")
+			(uuid "f4c4b7ba-2835-49c2-b590-5e75ad87f8f7")
 		)
 		(pin "3"
-			(uuid "8fef952b-ffea-448d-97d1-41b4c7cf1fff")
+			(uuid "474ed2b9-d17d-421d-9621-c16ff143db01")
 		)
 		(pin "6"
-			(uuid "db34e944-b33a-4a2a-b315-d2a6c7034ad4")
+			(uuid "78995d9a-fcd0-4c00-b440-8d054fcfc8ff")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "J19")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "J9")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "J25")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "J19")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "J22")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "J15")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "J12")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "J15")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "J21")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "J20")
 					(unit 1)
 				)
 			)
@@ -6394,35 +6262,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "a2fa2a88-e5f5-4930-8da9-d7dfa7fea6f5")
+			(uuid "8aabcfc4-2981-411f-8b3f-acb3633f3bad")
 		)
 		(pin "2"
-			(uuid "b8bf8bcd-656c-43c5-a658-1a49ca5f2067")
+			(uuid "a86b17a0-12c9-4dea-81e9-0343944de553")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C84")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C13")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C116")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C79")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C100")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C64")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C44")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C68")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C105")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C92")
 					(unit 1)
 				)
 			)
@@ -6430,7 +6298,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 165.1 144.78 0)
+		(at 177.8 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6439,7 +6307,7 @@
 		(fields_autoplaced yes)
 		(uuid "681d170b-381e-4c8c-84b8-93cba0e2ba91")
 		(property "Reference" "#PWR0137"
-			(at 165.1 151.13 0)
+			(at 177.8 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6448,7 +6316,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 165.1 149.86 0)
+			(at 177.8 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6456,7 +6324,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 165.1 144.78 0)
+			(at 177.8 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6465,7 +6333,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 165.1 144.78 0)
+			(at 177.8 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6474,7 +6342,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 165.1 144.78 0)
+			(at 177.8 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6482,32 +6350,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "ddc3f7d3-7b85-4d0f-a36b-0e8fe9b889ab")
+			(uuid "f7d2523f-6d1f-4099-a4b1-c2c64d7e5351")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0221")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0137")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0344")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0190")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0294")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR090")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR044")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR038")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR098")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0290")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0240")
 					(unit 1)
 				)
 			)
@@ -6586,143 +6454,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "37aa622f-3cbc-4040-9821-7ca5ddd5404b")
+			(uuid "34f9ad1a-6232-4b8c-93bc-2e64ef2047ee")
 		)
 		(pin "2"
-			(uuid "0403281d-aa90-42d3-81a0-ac8bd9abd45c")
+			(uuid "a0206f64-1fde-40c0-84f1-d37eec091e9b")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "R43")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "R13")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "R61")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "R52")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "R22")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "R31")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 176.53 130.81 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6e16ed40-75c0-4bf0-b629-cfacb86a9bcb")
-		(property "Reference" "R9"
-			(at 173.99 129.5399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10kR"
-			(at 173.99 132.0799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 178.308 130.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
-			(at 176.53 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 176.53 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "RC0805JR-0710KL"
-			(at 176.53 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 176.53 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3c94fb95-4805-4eb2-9e2b-7e7664f6e8b4")
-		)
-		(pin "2"
-			(uuid "399e460b-364b-4a0f-887d-39a50938af33")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "R41")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "R9")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "R59")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "R50")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
 					(reference "R20")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "R29")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "R10")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "R3")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "R30")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -6782,116 +6542,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "a92571fb-7686-4a4a-9ea2-1aad8c2fcba4")
+			(uuid "14b5e89c-e1b4-4a56-8204-bf7536abe172")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0230")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0147")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0353")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0199")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0303")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0109")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR053")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR051")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0168")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0299")
 					(unit 1)
 				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 176.53 127 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7352eac6-2d61-4998-9a7c-0d05ee486f29")
-		(property "Reference" "#PWR0141"
-			(at 176.53 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 179.07 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 176.53 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 176.53 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 176.53 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d2f4e745-b519-4f57-96b1-2149d2a9e400")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0222")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR0141")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0345")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0295")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR045")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR099")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0249")
 					(unit 1)
 				)
 			)
@@ -6952,32 +6628,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "59a2064b-a762-4b4e-866a-5501e6a060d8")
+			(uuid "67c58e35-b8bd-4676-99e4-72c67a0d1843")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0202")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR05")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0337")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0189")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0287")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR089")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR037")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR091")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0289")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0239")
 					(unit 1)
 				)
 			)
@@ -7036,32 +6712,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "079aa547-1336-49f3-97ca-30ad371eb606")
+			(uuid "eb722975-938b-4f09-9976-e1c664c0363f")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0187")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0136")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0322")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0174")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0249")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR070")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR018")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR072")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0262")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0224")
 					(unit 1)
 				)
 			)
@@ -7121,32 +6797,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "09149c1f-f779-4384-a8bd-7121562b2341")
+			(uuid "cc354c3b-5aef-46b7-8738-17fb3d992e98")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0234")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0160")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0357")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0201")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0307")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0132")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR057")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR053")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0172")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0301")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0251")
 					(unit 1)
 				)
 			)
@@ -7206,32 +6882,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "1ec2a928-2eae-4f04-8383-68ca1cbbc081")
+			(uuid "a680bc56-93f0-41d4-af9c-6cd634b47957")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0225")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0143")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0348")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0192")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0298")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR092")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR048")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR044")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0133")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0292")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0242")
 					(unit 1)
 				)
 			)
@@ -7291,41 +6967,41 @@
 			)
 		)
 		(pin "2"
-			(uuid "67f3a969-36c9-41c5-8889-3673a7fedc02")
+			(uuid "942d2459-4718-491b-b460-b0ac96b184c2")
 		)
 		(pin "5"
-			(uuid "87b4c6e2-84ec-4a65-b5df-4fe423053fb9")
+			(uuid "6345312f-67be-438d-acba-5a2105fc4005")
 		)
 		(pin "3"
-			(uuid "6cb6398d-c14a-428d-b5e2-a65af0c9522a")
+			(uuid "3eb33e3b-6da5-4757-a98f-9b23ef0a0ecb")
 		)
 		(pin "4"
-			(uuid "5a5d5db2-f040-4a47-a989-ad8688cd742e")
+			(uuid "3c4323bb-07fb-4793-9589-86e06ddfe05e")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U35")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U38")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U52")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U33")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U44")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U26")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "U10")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U26")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U49")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U42")
 					(unit 1)
 				)
 			)
@@ -7384,32 +7060,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "0e5e52d5-3bb9-4b95-8a2d-681e51021640")
+			(uuid "1a48720d-76f6-420e-8c0a-30b4516cfae2")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0193")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR01")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0328")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0180")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0278")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR076")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR026")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR078")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0280")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0230")
 					(unit 1)
 				)
 			)
@@ -7468,32 +7144,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "da00381e-8ee8-4fed-8a64-407d7ab2ce0f")
+			(uuid "9bf093c1-39d7-4297-a9ca-46dea695330a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0189")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR019")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0324")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0176")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0251")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR072")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR021")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR074")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0276")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0226")
 					(unit 1)
 				)
 			)
@@ -7555,32 +7231,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "5dac7861-8ebe-4388-8407-ecce268d5282")
+			(uuid "39815fe4-ea41-4de3-aefe-0a750472690a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0199")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0127")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0334")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0184")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR084")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR032")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
 					(reference "#PWR0284")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR034")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR088")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0234")
 					(unit 1)
 				)
 			)
@@ -7659,35 +7335,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "74ee6171-c22b-4cbe-a329-be15d0d36115")
+			(uuid "fb6664e7-b74b-47c3-80e8-1c25c42765d2")
 		)
 		(pin "2"
-			(uuid "276c3f92-faaa-475a-9cae-f64e2eea9717")
+			(uuid "391bd2b6-5a6c-496a-807b-9e1789722d77")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C79")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C9")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C111")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C76")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C95")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C55")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C29")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C62")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C102")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C89")
 					(unit 1)
 				)
 			)
@@ -7747,41 +7423,41 @@
 			)
 		)
 		(pin "2"
-			(uuid "94852704-7446-4c64-b2cb-809556eb050d")
+			(uuid "798842d1-f6b4-42be-9c6d-43eeae4583dd")
 		)
 		(pin "5"
-			(uuid "ab0848d6-5ca4-4b02-ae6c-bc4261df3e72")
+			(uuid "653fa590-9532-408a-ba09-57ad94f5118e")
 		)
 		(pin "3"
-			(uuid "0d029325-cbf6-4452-887f-32363332aed3")
+			(uuid "e809528a-885a-4cbe-86a1-b351e846cdf6")
 		)
 		(pin "4"
-			(uuid "96828fa3-3ef1-43f5-94bb-6d8d842ef86d")
+			(uuid "a6208695-6f69-42ed-97ab-f388f8a9a72d")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U32")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U4")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U50")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U31")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U42")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U19")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "U8")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U18")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U47")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U40")
 					(unit 1)
 				)
 			)
@@ -7789,7 +7465,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 165.1 140.97 0)
+		(at 177.8 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7797,7 +7473,7 @@
 		(dnp no)
 		(uuid "923e4464-d5d5-4708-9282-7add7dabad84")
 		(property "Reference" "C7"
-			(at 158.75 139.7 0)
+			(at 171.45 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7806,7 +7482,7 @@
 			)
 		)
 		(property "Value" "100nC"
-			(at 156.21 142.24 0)
+			(at 168.91 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7815,7 +7491,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 166.0652 144.78 0)
+			(at 178.7652 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7824,7 +7500,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
-			(at 165.1 140.97 0)
+			(at 177.8 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7833,7 +7509,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 165.1 140.97 0)
+			(at 177.8 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7841,7 +7517,7 @@
 			)
 		)
 		(property "MPN" "C0805F104K5RACAUTO"
-			(at 165.1 140.97 0)
+			(at 177.8 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7850,7 +7526,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 165.1 140.97 0)
+			(at 177.8 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7859,35 +7535,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "35632cd1-0a8e-4935-84db-739a51888d87")
+			(uuid "291ed2ae-1357-4d3b-b5e1-9e76cc2b35a9")
 		)
 		(pin "2"
-			(uuid "3de166f2-6533-4176-bad4-eb5e1177c6c3")
+			(uuid "907af33b-ff88-446d-983f-8e41bb10696b")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C77")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C7")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C109")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C74")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C93")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C53")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C27")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C53")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C100")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C87")
 					(unit 1)
 				)
 			)
@@ -7985,35 +7661,35 @@
 			(uuid "2ee850f2-346a-4b9b-98a0-ea54993bd421")
 		)
 		(pin "8"
-			(uuid "9dcefe19-fc62-4fa8-814d-5c5383091eb2")
+			(uuid "d58e4c83-3c88-467d-b5e5-39757cd0c179")
 		)
 		(pin "4"
-			(uuid "3535f046-cd01-4c96-ba39-78ec684779c8")
+			(uuid "d89b6700-67c4-455b-8e38-641482c8c4e5")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U33")
-					(unit 3)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U3")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U51")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U32")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U43")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U25")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "U9")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U19")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U48")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U41")
 					(unit 3)
 				)
 			)
@@ -8091,35 +7767,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "6d84b47e-c70c-4ade-9431-beb8d04ff7bc")
+			(uuid "61ea63b7-ca6f-444a-a1b1-739128decd1b")
 		)
 		(pin "2"
-			(uuid "c863d351-2dd9-4402-be93-8b2f1b2657b5")
+			(uuid "e36fbee2-2eaa-43cd-b705-51c24a54ae54")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C69")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C18")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C101")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C67")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C85")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C45")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C19")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C45")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C93")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C80")
 					(unit 1)
 				)
 			)
@@ -8180,32 +7856,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "e8605a3e-5680-4a8a-b1cc-d7eb7cc564a1")
+			(uuid "95207385-b22c-49f7-a599-21fe540a1576")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0184")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR06")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0319")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0168")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0246")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR067")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR014")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR069")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0259")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -8263,32 +7939,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "56ab168e-8044-4eee-886e-eebda3b31ee9")
+			(uuid "bfc58004-383d-488f-b988-e4adef807519")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0242")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0158")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0365")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0217")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0315")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0141")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR065")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR063")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0180")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0305")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0255")
 					(unit 1)
 				)
 			)
@@ -8366,56 +8042,56 @@
 			)
 		)
 		(pin "1"
-			(uuid "06c54300-782c-441e-80e3-080ea6601882")
+			(uuid "0507561d-8bf7-4785-bfcf-ab75c7eb0973")
 		)
 		(pin "2"
-			(uuid "193785c3-2442-4b83-a46f-2692436446cf")
+			(uuid "6f709f91-0cb3-49ce-ab7a-9f3ed12fdeaa")
 		)
 		(pin "3"
-			(uuid "e1286a80-c8e0-4541-b863-054f450166a4")
+			(uuid "6942c544-8726-491c-8623-087b7ddcd310")
 		)
 		(pin "4"
-			(uuid "4b36dbda-2ce6-4694-8f62-002c1d6c9da7")
+			(uuid "6647527e-d671-430b-ac47-bd09faa7bd27")
 		)
 		(pin "5"
-			(uuid "41b8519d-b8f9-48b6-940e-d517f960804d")
+			(uuid "fcf3e47f-20b8-4001-94f2-769d44f88dd5")
 		)
 		(pin "6"
-			(uuid "737a342a-b6a8-4612-b1c4-d14ebb7ee115")
+			(uuid "f4b9938d-bd7c-4304-a9cb-803492433934")
 		)
 		(pin "7"
-			(uuid "000b81ef-5021-4318-9755-db0579d83393")
+			(uuid "68fe9652-5362-40b5-8d08-f5df13633bd7")
 		)
 		(pin "8"
-			(uuid "9c691b99-733b-4550-94ab-4d2e9ad7ecc7")
+			(uuid "b617074d-e7cf-404a-9734-5389e9ec5c09")
 		)
 		(pin "9"
-			(uuid "d9f9ceae-89b6-44ff-95c3-5d853bfd6d0b")
+			(uuid "385fe7f2-76d7-4d95-a628-aebc6b10a71a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U40")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U6")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U56")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U37")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U48")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U29")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U16")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U17")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U30")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U52")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U45")
 					(unit 1)
 				)
 			)
@@ -8476,32 +8152,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "8d77247f-895f-4728-81f5-f994b80db09e")
+			(uuid "a34cbe5a-26f4-42fd-9db4-b75779614366")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0190")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR013")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0325")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0177")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0252")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR073")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR023")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR075")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0277")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0227")
 					(unit 1)
 				)
 			)
@@ -8562,32 +8238,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "b6f09010-25d1-442f-b306-9bdfa98b461c")
+			(uuid "211c29a9-29a0-4618-b1fc-c0932217a497")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0240")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0152")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0363")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0215")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0313")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0134")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR063")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR057")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0178")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0303")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0253")
 					(unit 1)
 				)
 			)
@@ -8666,35 +8342,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "7b54715b-a6c8-4faf-b14e-ec5a36abda81")
+			(uuid "b2cb1801-0def-4f29-9678-f35bb311eaf0")
 		)
 		(pin "2"
-			(uuid "e6268100-3d0b-4142-85bc-273aeb58c20d")
+			(uuid "13fa2b59-881c-4fbb-b2c7-98d3ff8fdc4b")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "L5")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "L1")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "L7")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "L5")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "L6")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "L3")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "L2")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "L3")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "L7")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "L6")
 					(unit 1)
 				)
 			)
@@ -8754,32 +8430,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "47ec90e1-0b09-4a82-b005-5d8f7fd5d314")
+			(uuid "1154402f-4c45-4b9b-ac52-a3c25828a4ed")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0228")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0140")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0351")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0195")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0301")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR099")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR051")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR047")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0166")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0295")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0245")
 					(unit 1)
 				)
 			)
@@ -8857,35 +8533,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "0edbe849-18d9-49b3-b646-336738e2e8c0")
+			(uuid "2bff491d-0b57-44d8-ba8e-93489a83acf1")
 		)
 		(pin "2"
-			(uuid "919b2ed1-c180-47de-95e3-60d849880fe8")
+			(uuid "29a5efb2-41de-47ab-a607-4f636eac51a7")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C80")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C12")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C112")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C77")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C96")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C61")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C30")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C64")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C103")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C90")
 					(unit 1)
 				)
 			)
@@ -8947,32 +8623,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "8dbc78ec-be78-45e5-aeb8-594456a1c831")
+			(uuid "ef739def-5b55-469a-92d8-fe7c6973c455")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0216")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0153")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0339")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0198")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0289")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0108")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR039")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR050")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR093")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0298")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0248")
 					(unit 1)
 				)
 			)
@@ -9033,32 +8709,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "a20b5cad-57cf-4152-a4cb-bddc4645a98c")
+			(uuid "12a628db-153f-429b-a4aa-a4fdaad0d6c5")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0196")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR022")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0331")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0183")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0281")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR083")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR031")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR085")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0283")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0233")
 					(unit 1)
 				)
 			)
@@ -9067,14 +8743,14 @@
 	(symbol
 		(lib_id "74xGxx:74AUC2G32")
 		(at 93.98 74.93 0)
-		(unit 3)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b9a1c087-c68a-409a-b579-a398bd3393d2")
-		(property "Reference" "U11"
+		(property "Reference" "U"
 			(at 100.33 73.6599 0)
 			(effects
 				(font
@@ -9138,35 +8814,31 @@
 			(uuid "bd320d83-91c0-4a06-963c-9279be127c65")
 		)
 		(pin "8"
-			(uuid "24d5701b-5b1d-4c2f-a8d4-4fc28a06de19")
+			(uuid "5172bda0-9882-4f15-8b9c-ff8a14c2c815")
 		)
 		(pin "4"
-			(uuid "2e9fb915-7daf-4494-aa84-d50607e68ef5")
+			(uuid "b27f8624-b110-4c6c-91b9-45406b496cd8")
 		)
 		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U28")
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U35")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U11")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U37")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U36")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U25")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
 					(reference "U27")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U15")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U50")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U43")
 					(unit 3)
 				)
 			)
@@ -9228,32 +8900,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "dc92b358-5fda-4d7c-bae1-51d0791c3f72")
+			(uuid "56609f14-9fb5-479e-a751-4dd7902df948")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0200")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0130")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0335")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0185")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR085")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR033")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
 					(reference "#PWR0285")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR035")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR089")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0235")
 					(unit 1)
 				)
 			)
@@ -9332,120 +9004,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "0b3f3f71-3f59-40ba-8520-0b71623a7b3f")
+			(uuid "4a1b326a-e2fc-4061-97da-936589198802")
 		)
 		(pin "2"
-			(uuid "a55f5d81-a9fd-4322-bcea-7945fb0a46d2")
+			(uuid "438ec276-c084-4217-a0da-a5eb304ff589")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C78")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C8")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C110")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C75")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C94")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C54")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C28")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C61")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C101")
 					(unit 1)
 				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 176.53 144.78 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bf257c9c-2f5d-4484-9251-19c1bd8d6019")
-		(property "Reference" "#PWR0134"
-			(at 176.53 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 176.53 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 176.53 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 176.53 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 176.53 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "68d171d0-c081-4e03-bd83-23b741992d1d")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0223")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR0134")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0346")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0296")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR046")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0100")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C88")
 					(unit 1)
 				)
 			)
@@ -9505,32 +9092,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "d4aae0e4-eb62-47e0-99bc-a35757f589e9")
+			(uuid "acfdf737-950a-4026-a7ee-bdbac66ae0a8")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0237")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0157")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0360")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0202")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0310")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0133")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR060")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR054")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0175")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0302")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0252")
 					(unit 1)
 				)
 			)
@@ -9589,32 +9176,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "81d88c49-c7aa-4369-b7cf-d4c033b6a88a")
+			(uuid "3d97f50a-0269-429a-8623-6f366db9143f")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0201")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR04")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0336")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0188")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0286")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR088")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR036")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR090")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0288")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0238")
 					(unit 1)
 				)
 			)
@@ -9674,32 +9261,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "8ce58270-b37f-4aa5-8347-95c36434509b")
+			(uuid "2377c1ae-9ad9-4066-b177-09e3fe10e4b9")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0227")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0142")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0350")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0194")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0300")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR098")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR050")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR046")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0165")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0294")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0244")
 					(unit 1)
 				)
 			)
@@ -9760,32 +9347,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "3552ca63-aec7-4a7d-b018-36ba2bfdb716")
+			(uuid "c797765d-6166-4efb-8ad3-b33fd2adb44a")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0198")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR010")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0333")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0187")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0283")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR033")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
 					(reference "#PWR087")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR035")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0287")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0237")
 					(unit 1)
 				)
 			)
@@ -9845,32 +9432,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "f8915f83-3e12-410e-9095-19cdb60ad1e6")
+			(uuid "d22d905b-d7ab-4fb1-a41c-7c02002dda00")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0224")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0146")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0347")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0191")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0297")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR091")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR047")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR039")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0132")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0291")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0241")
 					(unit 1)
 				)
 			)
@@ -9946,44 +9533,44 @@
 			)
 		)
 		(pin "1"
-			(uuid "582f77c1-964a-4a48-9bd3-331624037965")
+			(uuid "e4bc5834-4cbc-4015-b159-e0e822f50264")
 		)
 		(pin "2"
-			(uuid "aeee1c1f-ce37-4902-b9b1-83fc28fcef20")
+			(uuid "d8a98660-0d5c-4040-9cd5-f25457ddd516")
 		)
 		(pin "3"
-			(uuid "6ead5903-55ac-47d6-9954-445c0621c02d")
+			(uuid "346acd7c-385e-4d16-bd2a-92023694ec53")
 		)
 		(pin "4"
-			(uuid "2f307ce0-ab71-4dd5-932c-df7c3a4d8040")
+			(uuid "728aa8f0-2ea7-4346-8467-7496fe64009d")
 		)
 		(pin "5"
-			(uuid "49da8b97-0453-4aea-8a8b-6bcd1a3a3d9c")
+			(uuid "df470d04-d268-47dc-aa7f-15f824ea7e79")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U41")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U7")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U57")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U39")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U49")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U30")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U17")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U18")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U31")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U53")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U46")
 					(unit 1)
 				)
 			)
@@ -10062,35 +9649,35 @@
 			)
 		)
 		(pin "2"
-			(uuid "f443390c-868b-4fa3-9666-0eddabe824cd")
+			(uuid "cb801bfe-ab10-4021-9652-82ac763f692f")
 		)
 		(pin "1"
-			(uuid "29ee76a1-88c9-43f3-aef3-dd4c2e248461")
+			(uuid "9de104df-1fc2-47fe-b7ca-fe2cfd0593d7")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C73")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C10")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C105")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C71")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C89")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C49")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C23")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C49")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C97")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C84")
 					(unit 1)
 				)
 			)
@@ -10149,32 +9736,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "5713499f-7a13-4b94-8ec4-cecae8641ed6")
+			(uuid "eb8b141f-197b-47db-8a9b-412f23f81e93")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0215")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0154")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0338")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0197")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0288")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0107")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR038")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR049")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR092")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0297")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0247")
 					(unit 1)
 				)
 			)
@@ -10233,32 +9820,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "daa93067-b2c5-4fc4-88db-3ad1b691d42a")
+			(uuid "140c7b13-719f-40a0-9121-735f04f6b373")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0185")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0129")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0320")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0169")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0247")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR068")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR015")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR070")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0260")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0222")
 					(unit 1)
 				)
 			)
@@ -10336,35 +9923,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e23893e-6d5c-4645-a442-4a9a58111525")
+			(uuid "9d8321a4-72b1-400f-a1d9-c29f9ccd4b99")
 		)
 		(pin "2"
-			(uuid "80fba2f5-0c9d-462d-8b2d-a3d5082c1809")
+			(uuid "a7514b3b-3e3b-411e-ba24-95d00f825b80")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "R39")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "R11")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "R57")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "R48")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
 					(reference "R18")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "R27")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "R4")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "R1")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "R28")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -10426,32 +10013,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "83953ba1-57cf-409e-a601-04ffac0657d9")
+			(uuid "8c795a7e-8a4e-470b-9504-5dfeb72e52dd")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0188")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0128")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0323")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0175")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0250")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR071")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR020")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR073")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0270")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0225")
 					(unit 1)
 				)
 			)
@@ -10540,13 +10127,13 @@
 			(uuid "809c95d1-7241-45df-a66a-2b8b60863996")
 		)
 		(pin "4"
-			(uuid "9d0ee809-ec85-44f8-b95c-82efb8385bbe")
+			(uuid "40e1218e-1370-47e3-b680-d77015aefc29")
 		)
 		(pin "6"
 			(uuid "bd5778a2-cf10-4ce5-9fba-c9e3328737a2")
 		)
 		(pin "8"
-			(uuid "74a5d9a1-023a-4155-aa1a-51a21c412232")
+			(uuid "eff07f0c-f1f3-4b6a-bc32-88c140fa8ed0")
 		)
 		(pin "2"
 			(uuid "00a2ba0f-f13f-4521-88fe-42bb9c87368c")
@@ -10556,28 +10143,28 @@
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "U39")
-					(unit 3)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "U34")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "U55")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U36")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "U47")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U28")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "U15")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U16")
 					(unit 3)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "U29")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U51")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U44")
 					(unit 3)
 				)
 			)
@@ -10637,32 +10224,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a657445-92c1-408e-b6e3-7a1bc9ccd6ac")
+			(uuid "52de55ae-bd90-4b68-af33-73fe7bac4c0c")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0226")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0145")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0349")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0193")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0299")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR093")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR049")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR045")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0139")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0293")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0243")
 					(unit 1)
 				)
 			)
@@ -10740,35 +10327,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "7cabfe36-d945-4ef9-a7ce-abe641596d4f")
+			(uuid "c431ca33-1a81-44ed-b59b-4377ffb13ef9")
 		)
 		(pin "2"
-			(uuid "59337bde-d9a2-4555-b2c4-0d1d10f6ed3e")
+			(uuid "ad73663c-7cd8-45d3-95c5-0ead612eccca")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C75")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C60")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C107")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C73")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C91")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C51")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C25")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C51")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C99")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C86")
 					(unit 1)
 				)
 			)
@@ -10846,35 +10433,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "0def2ccf-ede0-46b6-bbc3-32e9cebc4754")
+			(uuid "914e2fd5-6ee1-4af3-a8d3-ee174eac1c24")
 		)
 		(pin "2"
-			(uuid "ecb50ce4-a74c-4acd-80f8-0a4e8d0af1c5")
+			(uuid "9bed0ca4-530a-4d14-9337-14278a2fde21")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "C72")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "C6")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "C104")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "C70")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "C88")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "C48")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C22")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "C48")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "C96")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "C83")
 					(unit 1)
 				)
 			)
@@ -10935,32 +10522,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "46bf532f-05c3-47bc-8078-c4bc66009f38")
+			(uuid "7d95f145-e25e-45d4-b8f3-040a7ec1444c")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/02a43813-6db5-4243-87cf-51f76b96071c"
-					(reference "#PWR0241")
-					(unit 1)
-				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
 					(reference "#PWR0159")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/20869f19-ed90-4a72-826a-4c2f0e711105"
-					(reference "#PWR0364")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0216")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/219e6765-ba24-4ea3-b6f9-69eb8928e077"
-					(reference "#PWR0314")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0139")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/5247a3e0-617b-4b02-b3dd-e6c080134575"
-					(reference "#PWR064")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR060")
 					(unit 1)
 				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/86cbab9d-aceb-4c56-937e-84fcc11b0b66"
-					(reference "#PWR0179")
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "#PWR0304")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "#PWR0254")
 					(unit 1)
 				)
 			)
