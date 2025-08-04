@@ -438,7 +438,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "74xGxx:74AUC2G125"
+		(symbol "74xGxx:74AUC2G126"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -450,7 +450,7 @@
 					)
 				)
 			)
-			(property "Value" "74AUC2G125"
+			(property "Value" "74AUC2G126"
 				(at 0 -3.81 0)
 				(effects
 					(font
@@ -503,7 +503,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "74AUC2G125_1_1"
+			(symbol "74AUC2G126_1_1"
 				(polyline
 					(pts
 						(xy -7.62 6.35) (xy -7.62 -6.35) (xy 5.08 0) (xy -7.62 6.35)
@@ -534,9 +534,9 @@
 						)
 					)
 				)
-				(pin input inverted
-					(at 0 10.16 270)
-					(length 7.62)
+				(pin input line
+					(at 0 7.62 270)
+					(length 5.08)
 					(name "~"
 						(effects
 							(font
@@ -571,7 +571,7 @@
 					)
 				)
 			)
-			(symbol "74AUC2G125_2_1"
+			(symbol "74AUC2G126_2_1"
 				(polyline
 					(pts
 						(xy -7.62 6.35) (xy -7.62 -6.35) (xy 5.08 0) (xy -7.62 6.35)
@@ -602,9 +602,9 @@
 						)
 					)
 				)
-				(pin input inverted
-					(at 0 10.16 270)
-					(length 7.62)
+				(pin input line
+					(at 0 7.62 270)
+					(length 5.08)
 					(name "~"
 						(effects
 							(font
@@ -639,7 +639,7 @@
 					)
 				)
 			)
-			(symbol "74AUC2G125_3_0"
+			(symbol "74AUC2G126_3_0"
 				(rectangle
 					(start -5.08 -5.08)
 					(end 5.08 5.08)
@@ -652,7 +652,7 @@
 					)
 				)
 			)
-			(symbol "74AUC2G125_3_1"
+			(symbol "74AUC2G126_3_1"
 				(pin power_in line
 					(at 0 10.16 270)
 					(length 5.08)
@@ -2981,6 +2981,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 156.21) (xy 71.12 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0990d4fc-52d6-4a4c-a3b3-2221f807013e")
+	)
+	(wire
+		(pts
 			(xy 234.95 118.11) (xy 234.95 119.38)
 		)
 		(stroke
@@ -3091,16 +3101,6 @@
 	)
 	(wire
 		(pts
-			(xy -24.13 101.6) (xy -7.62 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "658dec2d-5762-4226-a475-cf07fb1d4e6f")
-	)
-	(wire
-		(pts
 			(xy 168.91 135.89) (xy 177.8 135.89)
 		)
 		(stroke
@@ -3108,6 +3108,16 @@
 			(type default)
 		)
 		(uuid "65f9ec3f-54af-45dc-baf8-b6e7715feb08")
+	)
+	(wire
+		(pts
+			(xy 71.12 119.38) (xy 71.12 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6769bec6-b238-4385-a1be-df5ad65f9acf")
 	)
 	(wire
 		(pts
@@ -3181,6 +3191,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 156.21) (xy 71.12 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ffd9bcb-6425-47ab-9851-08dc19db1de4")
+	)
+	(wire
+		(pts
 			(xy 106.68 43.18) (xy 106.68 33.02)
 		)
 		(stroke
@@ -3191,16 +3211,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 153.67) (xy 71.12 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85ebb09c-6000-43b4-a603-60e30755eea5")
-	)
-	(wire
-		(pts
 			(xy 209.55 55.88) (xy 220.98 55.88)
 		)
 		(stroke
@@ -3208,26 +3218,6 @@
 			(type default)
 		)
 		(uuid "884a1544-fbaa-45e1-a031-8f4f75ddfd7c")
-	)
-	(wire
-		(pts
-			(xy 71.12 153.67) (xy 71.12 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "884c2cc4-5440-4fac-b8b6-95b16dda991f")
-	)
-	(wire
-		(pts
-			(xy 53.34 116.84) (xy 71.12 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89d98baa-5be8-4de1-bdba-84e1db4e64a9")
 	)
 	(wire
 		(pts
@@ -3391,16 +3381,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 116.84) (xy 71.12 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb04a45a-293c-46a7-96a1-4ee3b8a9702e")
-	)
-	(wire
-		(pts
 			(xy 40.64 22.86) (xy 80.01 22.86)
 		)
 		(stroke
@@ -3428,6 +3408,16 @@
 			(type default)
 		)
 		(uuid "cff5f0e8-b83a-4c8d-823a-6fe8ac182cb4")
+	)
+	(wire
+		(pts
+			(xy 69.85 119.38) (xy 71.12 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0412833-bb33-4c25-987c-ebda51614d07")
 	)
 	(wire
 		(pts
@@ -3589,16 +3579,6 @@
 		)
 		(uuid "0b9f528a-5970-4550-bee3-c0400618f0b7")
 	)
-	(label "~{ENABLE_ENCODER}"
-		(at 53.34 153.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1653d7cb-9a1d-4803-b138-6d29eb939fd4")
-	)
 	(label "IN1"
 		(at 181.61 128.27 0)
 		(effects
@@ -3669,16 +3649,6 @@
 		)
 		(uuid "953fef74-4017-4c80-b500-73d0578552a8")
 	)
-	(label "~{ENABLE_ENCODER}"
-		(at 53.34 116.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a90ee35b-6c9d-4936-87fb-7daf69f64fe6")
-	)
 	(label "MOTOR+"
 		(at 209.55 45.72 0)
 		(effects
@@ -3719,16 +3689,6 @@
 		)
 		(uuid "ecfdba29-ae69-43af-832e-7cd4c7d433a4")
 	)
-	(label "~{ENABLE_ENCODER}"
-		(at -7.62 101.6 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f4c563bd-59fa-40d7-86b8-e2fa6d7adb1a")
-	)
 	(hierarchical_label "ENCODER_B"
 		(shape output)
 		(at 58.42 165.1 180)
@@ -3762,6 +3722,17 @@
 		)
 		(uuid "1cb6c7db-455e-48e6-8611-2be4a7dc2727")
 	)
+	(hierarchical_label "ENABLE_MOTOR"
+		(shape input)
+		(at 69.85 156.21 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "26dcdc60-e264-484f-8d46-2932b0d18033")
+	)
 	(hierarchical_label "VREF"
 		(shape input)
 		(at 168.91 135.89 180)
@@ -3773,17 +3744,6 @@
 		)
 		(uuid "27e34a4d-f1a1-428f-a24f-071be20fb8b8")
 	)
-	(hierarchical_label "ENABLE_MOTOR"
-		(shape input)
-		(at -52.07 101.6 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2bf7fae2-c995-4984-b06d-828dd7ba56f6")
-	)
 	(hierarchical_label "FORWARD{slash}~{REVERSE}"
 		(shape input)
 		(at 35.56 22.86 180)
@@ -3794,6 +3754,17 @@
 			(justify right)
 		)
 		(uuid "5a9430b2-8340-428b-b820-e96aec85d8f9")
+	)
+	(hierarchical_label "ENABLE_MOTOR"
+		(shape input)
+		(at 69.85 119.38 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9384a6d3-29c0-4e9d-9be9-d97d27dc22a0")
 	)
 	(hierarchical_label "PWM"
 		(shape input)
@@ -4424,7 +4395,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
+		(property "Datasheet" ""
 			(at 95.25 25.4 0)
 			(effects
 				(font
@@ -4666,215 +4637,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at -41.91 91.44 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "28ef8bf6-e586-4d3c-b90e-24f3d4efb94d")
-		(property "Reference" "#PWR08"
-			(at -41.91 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at -39.37 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at -41.91 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -41.91 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at -41.91 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "51682dd4-1623-4112-861d-a0154f04fb82")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR08")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "#PWR0165")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "#PWR064")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "#PWR09")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "#PWR0256")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "#PWR0218")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "74xGxx:74AUC2G125")
-		(at 71.12 165.1 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2c2d2296-da4c-4fb5-ba8a-1632016a28dd")
-		(property "Reference" "U3"
-			(at 72.39 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "74AHC2G125"
-			(at 72.39 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-8_3x3mm_P0.65mm"
-			(at 71.12 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G125.pdf"
-			(at 71.12 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Buffer Tri-State, Low-Voltage CMOS"
-			(at 71.12 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "74AHC2G125DP,125"
-			(at 71.12 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 71.12 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2b13c9af-0321-4b19-9c31-4116ee704992")
-		)
-		(pin "1"
-			(uuid "80d9e5dc-ae8c-4e99-9240-a6591d2fa7c5")
-		)
-		(pin "6"
-			(uuid "f1deb5a7-68eb-4a01-8b3b-752e8bc6e45c")
-		)
-		(pin "5"
-			(uuid "812e24c9-dbf9-4e66-9bdc-45fd54d01091")
-		)
-		(pin "7"
-			(uuid "eee6ea9f-8b20-40bf-9fd3-db1ae93f6302")
-		)
-		(pin "3"
-			(uuid "2ee850f2-346a-4b9b-98a0-ea54993bd41f")
-		)
-		(pin "8"
-			(uuid "b1a311b4-fcd1-4be7-9ca5-59841b9bc2fd")
-		)
-		(pin "4"
-			(uuid "7730a395-67a2-4c0f-b0d8-14cac1cf4fd2")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U3")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "U32")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "U25")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "U9")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "U48")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "U41")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 209.55 104.14 0)
 		(unit 1)
@@ -4954,92 +4716,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "#PWR0250")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at -41.91 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3a700e20-3c6b-4bc1-84d9-f2cca5d784bb")
-		(property "Reference" "#PWR02"
-			(at -41.91 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at -41.91 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at -41.91 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at -41.91 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at -41.91 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a9001a1d-fc5f-4fc1-9bcf-7e9d2f34217a")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR02")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "#PWR0166")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "#PWR065")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "#PWR011")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "#PWR0257")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "#PWR0219")
 					(unit 1)
 				)
 			)
@@ -5127,131 +4803,6 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "#PWR0229")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "74xGxx:74AUC2G125")
-		(at 71.12 128.27 0)
-		(mirror y)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3cc6a178-b855-4e31-b9bf-85df846f91ca")
-		(property "Reference" "U3"
-			(at 72.39 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "74AHC2G125"
-			(at 72.39 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-8_3x3mm_P0.65mm"
-			(at 71.12 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G125.pdf"
-			(at 71.12 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Buffer Tri-State, Low-Voltage CMOS"
-			(at 71.12 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "74AHC2G125DP,125"
-			(at 71.12 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 71.12 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e26092e9-0ec7-4727-a0fe-916753c9b5d6")
-		)
-		(pin "1"
-			(uuid "f33e17b2-df21-4e5c-98a8-3c702476f9c9")
-		)
-		(pin "6"
-			(uuid "e804e935-06d1-4ade-aa12-6f3588709b0a")
-		)
-		(pin "5"
-			(uuid "455dad6d-235f-4b52-851c-766d8dc0df03")
-		)
-		(pin "7"
-			(uuid "a0e199c1-c814-40b4-9c7e-fcac02d7747d")
-		)
-		(pin "3"
-			(uuid "0e40afc5-49e7-46e9-86e4-a0898d435b15")
-		)
-		(pin "8"
-			(uuid "b1a311b4-fcd1-4be7-9ca5-59841b9bc2fe")
-		)
-		(pin "4"
-			(uuid "7730a395-67a2-4c0f-b0d8-14cac1cf4fd3")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U3")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "U32")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "U25")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "U9")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "U48")
-					(unit 2)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "U41")
-					(unit 2)
 				)
 			)
 		)
@@ -5358,6 +4909,115 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "C91")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xGxx:74AUC2G126")
+		(at 38.1 147.32 0)
+		(mirror y)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41d1698d-9e7f-409d-8597-86cb0cdc088f")
+		(property "Reference" "U11"
+			(at 44.45 146.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "74AHC2G126"
+			(at 44.45 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G126.pdf"
+			(at 38.1 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual Buffer Tri-State, Low-Voltage CMOS"
+			(at 38.1 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "4d11ad61-4914-4b3f-b0e1-0621fe3feb63")
+		)
+		(pin "6"
+			(uuid "0704fa8b-4733-4d3d-aa9d-534094f9c32f")
+		)
+		(pin "2"
+			(uuid "49125e9f-e1f9-4445-a810-9770214d3430")
+		)
+		(pin "5"
+			(uuid "114263af-1791-4caa-a4fb-3a72c885d26d")
+		)
+		(pin "1"
+			(uuid "4aadb81d-3758-4ad1-b933-e6f1d869e489")
+		)
+		(pin "7"
+			(uuid "ca485986-54f4-42b8-b279-c0120f6b9f19")
+		)
+		(pin "3"
+			(uuid "5d1d6cee-7d6f-41d9-b968-5161109a0e9c")
+		)
+		(pin "8"
+			(uuid "105c3007-7dca-4a59-8469-18afa7705ad2")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "U11")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U56")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U55")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U54")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U58")
+					(unit 3)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U57")
+					(unit 3)
 				)
 			)
 		)
@@ -5922,7 +5582,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
+		(property "Datasheet" ""
 			(at 95.25 48.26 0)
 			(effects
 				(font
@@ -5989,90 +5649,6 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "U43")
 					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at -41.91 124.46 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "622545e8-1372-477d-a69d-30e916f0c9c2")
-		(property "Reference" "#PWR03"
-			(at -41.91 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at -39.37 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at -41.91 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -41.91 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at -41.91 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e5b0562d-e1a3-484a-8cf8-d1126c10476a")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR03")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "#PWR0167")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "#PWR066")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "#PWR012")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "#PWR0258")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "#PWR0220")
-					(unit 1)
 				)
 			)
 		)
@@ -6922,6 +6498,113 @@
 		)
 	)
 	(symbol
+		(lib_id "74xGxx:74AUC2G126")
+		(at 71.12 128.27 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "829a51d5-d662-4036-903e-fe59be2fb94d")
+		(property "Reference" "U11"
+			(at 72.39 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC2G126"
+			(at 72.39 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G126.pdf"
+			(at 71.12 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual Buffer Tri-State, Low-Voltage CMOS"
+			(at 71.12 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "4d11ad61-4914-4b3f-b0e1-0621fe3feb63")
+		)
+		(pin "6"
+			(uuid "0704fa8b-4733-4d3d-aa9d-534094f9c32f")
+		)
+		(pin "2"
+			(uuid "49125e9f-e1f9-4445-a810-9770214d3430")
+		)
+		(pin "5"
+			(uuid "114263af-1791-4caa-a4fb-3a72c885d26d")
+		)
+		(pin "1"
+			(uuid "4aadb81d-3758-4ad1-b933-e6f1d869e489")
+		)
+		(pin "7"
+			(uuid "ca485986-54f4-42b8-b279-c0120f6b9f19")
+		)
+		(pin "3"
+			(uuid "5d1d6cee-7d6f-41d9-b968-5161109a0e9c")
+		)
+		(pin "8"
+			(uuid "105c3007-7dca-4a59-8469-18afa7705ad2")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "U11")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U56")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U55")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U54")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U58")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U57")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xGxx:74AHC1G04")
 		(at 58.42 50.8 0)
 		(unit 1)
@@ -6956,7 +6639,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
+		(property "Datasheet" ""
 			(at 58.42 50.8 0)
 			(effects
 				(font
@@ -7378,100 +7061,6 @@
 		)
 	)
 	(symbol
-		(lib_id "74xGxx:74AHC1G04")
-		(at -36.83 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "91d6a3d4-9fa9-4ab8-82b0-9998c457985d")
-		(property "Reference" "U4"
-			(at -22.86 95.1798 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "74AHC1G04"
-			(at -22.86 97.7198 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at -36.83 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
-			(at -36.83 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single NOT Gate, Low-Voltage CMOS"
-			(at -36.83 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "798842d1-f6b4-42be-9c6d-43eeae4583dd")
-		)
-		(pin "5"
-			(uuid "653fa590-9532-408a-ba09-57ad94f5118e")
-		)
-		(pin "3"
-			(uuid "e809528a-885a-4cbe-86a1-b351e846cdf6")
-		)
-		(pin "4"
-			(uuid "a6208695-6f69-42ed-97ab-f388f8a9a72d")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U4")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "U31")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "U19")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "U8")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "U47")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "U40")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 177.8 140.97 0)
 		(unit 1)
@@ -7572,324 +7161,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "C87")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "74xGxx:74AUC2G125")
-		(at 38.1 147.32 0)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "931b7e54-a483-41a0-8d9a-4e43117ea379")
-		(property "Reference" "U3"
-			(at 44.45 146.0499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "74AHC2G125"
-			(at 44.45 148.5899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-8_3x3mm_P0.65mm"
-			(at 38.1 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G125.pdf"
-			(at 38.1 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Buffer Tri-State, Low-Voltage CMOS"
-			(at 38.1 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "74AHC2G125DP,125"
-			(at 38.1 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 38.1 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e26092e9-0ec7-4727-a0fe-916753c9b5d7")
-		)
-		(pin "1"
-			(uuid "f33e17b2-df21-4e5c-98a8-3c702476f9ca")
-		)
-		(pin "6"
-			(uuid "e804e935-06d1-4ade-aa12-6f3588709b0b")
-		)
-		(pin "5"
-			(uuid "812e24c9-dbf9-4e66-9bdc-45fd54d01093")
-		)
-		(pin "7"
-			(uuid "eee6ea9f-8b20-40bf-9fd3-db1ae93f6304")
-		)
-		(pin "3"
-			(uuid "2ee850f2-346a-4b9b-98a0-ea54993bd421")
-		)
-		(pin "8"
-			(uuid "d58e4c83-3c88-467d-b5e5-39757cd0c179")
-		)
-		(pin "4"
-			(uuid "d89b6700-67c4-455b-8e38-641482c8c4e5")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "U3")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "U32")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "U25")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "U9")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "U48")
-					(unit 3)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "U41")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at -41.91 128.27 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "93a77c04-308d-4edb-83e8-1bc79f9e8507")
-		(property "Reference" "C18"
-			(at -49.53 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
-			(at -50.8 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at -40.9448 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_KEMET-C0805F104K5RACAUTO_C141162.pdf"
-			(at -41.91 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at -41.91 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "C0805F104K5RACAUTO"
-			(at -41.91 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at -41.91 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "61ea63b7-ca6f-444a-a1b1-739128decd1b")
-		)
-		(pin "2"
-			(uuid "e36fbee2-2eaa-43cd-b705-51c24a54ae54")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "C18")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "C67")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "C45")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "C19")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "C93")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "C80")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at -41.91 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9b468134-890f-43cc-ba98-37e42dbec0e5")
-		(property "Reference" "#PWR06"
-			(at -41.91 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at -41.91 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at -41.91 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at -41.91 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at -41.91 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "95207385-b22c-49f7-a599-21fe540a1576")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR06")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "#PWR0168")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "#PWR067")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "#PWR014")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "#PWR0259")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -8785,7 +8056,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
+		(property "Datasheet" ""
 			(at 93.98 74.93 0)
 			(effects
 				(font
@@ -9131,6 +8402,113 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "#PWR0252")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xGxx:74AUC2G126")
+		(at 71.12 165.1 0)
+		(mirror y)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5f49e9f-847e-411d-9c44-ad1093187de1")
+		(property "Reference" "U11"
+			(at 72.39 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHC2G126"
+			(at 72.39 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G126.pdf"
+			(at 71.12 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual Buffer Tri-State, Low-Voltage CMOS"
+			(at 71.12 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "4d11ad61-4914-4b3f-b0e1-0621fe3feb63")
+		)
+		(pin "6"
+			(uuid "0704fa8b-4733-4d3d-aa9d-534094f9c32f")
+		)
+		(pin "2"
+			(uuid "49125e9f-e1f9-4445-a810-9770214d3430")
+		)
+		(pin "5"
+			(uuid "114263af-1791-4caa-a4fb-3a72c885d26d")
+		)
+		(pin "1"
+			(uuid "4aadb81d-3758-4ad1-b933-e6f1d869e489")
+		)
+		(pin "7"
+			(uuid "ca485986-54f4-42b8-b279-c0120f6b9f19")
+		)
+		(pin "3"
+			(uuid "5d1d6cee-7d6f-41d9-b968-5161109a0e9c")
+		)
+		(pin "8"
+			(uuid "105c3007-7dca-4a59-8469-18afa7705ad2")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "U11")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "U56")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "U55")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "U54")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
+					(reference "U58")
+					(unit 2)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
+					(reference "U57")
+					(unit 2)
 				)
 			)
 		)
