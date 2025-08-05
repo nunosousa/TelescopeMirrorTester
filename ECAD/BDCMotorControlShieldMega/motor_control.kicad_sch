@@ -2547,6 +2547,26 @@
 		)
 		(uuid "2056d8c0-5c61-476a-8fd4-4a104a86fa58")
 	)
+	(text "I2C Address: 0100 000"
+		(exclude_from_sim no)
+		(at 135.128 155.448 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "40f3a300-f99b-4a63-bc96-c190b6a21ee3")
+	)
+	(text "I2C Address: 0101 100"
+		(exclude_from_sim no)
+		(at 55.372 149.606 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "45c1bd23-4fc9-461d-ad8a-4b520751fe88")
+	)
 	(text "I/O concentrator"
 		(exclude_from_sim no)
 		(at 113.792 94.742 0)
@@ -2557,6 +2577,16 @@
 			(justify left bottom)
 		)
 		(uuid "59c98fbb-5243-45cb-8e5f-dd665e1046d8")
+	)
+	(text "I2C Address: 0101 110"
+		(exclude_from_sim no)
+		(at 56.642 189.738 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "77ca2844-d158-4709-9ab3-6678cb5792f3")
 	)
 	(junction
 		(at 199.39 97.79)
@@ -2587,12 +2617,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "454c6de1-d175-47ca-baeb-cc5978ff733a")
-	)
-	(junction
-		(at 27.94 184.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4dd72fdc-9595-43ad-9360-31af1603243f")
 	)
 	(junction
 		(at 209.55 97.79)
@@ -2856,16 +2880,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 181.61) (xy 27.94 184.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2baa7de2-f27f-48f1-b357-10a0906e74a1")
-	)
-	(wire
-		(pts
 			(xy 241.3 31.75) (xy 242.57 31.75)
 		)
 		(stroke
@@ -2913,6 +2927,16 @@
 			(type default)
 		)
 		(uuid "3b2c9b0b-bc4c-4f91-b6d3-0e5d7169418e")
+	)
+	(wire
+		(pts
+			(xy 22.86 181.61) (xy 29.21 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c4eff1c-0046-4b51-bd4d-cafdb33e531d")
 	)
 	(wire
 		(pts
@@ -3026,16 +3050,6 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 181.61) (xy 27.94 181.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4bb1c35c-3842-4ea4-94e5-70e9959fd2bf")
-	)
-	(wire
-		(pts
 			(xy 66.04 66.04) (xy 67.31 66.04)
 		)
 		(stroke
@@ -3063,6 +3077,16 @@
 			(type solid)
 		)
 		(uuid "4e209a87-dbc2-40c2-9cda-bdd4e6147a4f")
+	)
+	(wire
+		(pts
+			(xy 22.86 181.61) (xy 22.86 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50742fa9-77af-4f5d-a3f5-5873ffbcba3a")
 	)
 	(wire
 		(pts
@@ -10966,6 +10990,71 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(reference "C59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 22.86 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc7e5401-c998-48bf-9cf2-62bbeef697dd")
+		(property "Reference" "#PWR029"
+			(at 22.86 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 22.86 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.86 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 22.86 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0fba3bc3-4bc1-4e49-9518-957131ac001e")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
