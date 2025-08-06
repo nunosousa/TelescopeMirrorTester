@@ -469,7 +469,10 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Inteface_Optical_custom:IRM-H6XX"
+		(symbol "Interface_Optical:IRM-H6xxT"
+			(pin_names
+				(offset 1.016)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -482,7 +485,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "IRM-H6XX"
+			(property "Value" "IRM-H6xxT"
 				(at -10.16 -7.62 0)
 				(effects
 					(font
@@ -491,7 +494,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "OptoDevice:Everlight_IRM-H6xxT"
 				(at -1.27 -9.525 0)
 				(effects
 					(font
@@ -500,7 +503,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://en.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DMO-0000004-IRM-H6XX-TR2_Series_Datasheet_V4.pdf"
 				(at 16.51 7.62 0)
 				(effects
 					(font
@@ -509,7 +512,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Photo Modules for PCM Remote Control Systems"
+			(property "Description" "IR Receiver Modules for remote controls"
 				(at 0 0 0)
 				(effects
 					(font
@@ -527,7 +530,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Vishay*CAST*"
+			(property "ki_fp_filters" "Everlight*IRM?H6xxT*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -536,7 +539,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "IRM-H6XX_0_0"
+			(symbol "IRM-H6xxT_0_0"
 				(arc
 					(start -10.287 -1.778)
 					(mid -11.0899 -0.1905)
@@ -582,7 +585,7 @@
 					)
 				)
 			)
-			(symbol "IRM-H6XX_0_1"
+			(symbol "IRM-H6xxT_0_1"
 				(polyline
 					(pts
 						(xy -8.763 0.381) (xy -9.652 1.27)
@@ -833,11 +836,11 @@
 					)
 				)
 			)
-			(symbol "IRM-H6XX_1_1"
+			(symbol "IRM-H6xxT_1_1"
 				(pin power_in line
 					(at 10.16 5.08 180)
 					(length 2.54)
-					(name "Vs"
+					(name "Vcc"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -888,7 +891,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at 10.16 -5.08 180)
 					(length 2.54)
 					(hide yes)
@@ -2062,6 +2065,92 @@
 		)
 	)
 	(symbol
+		(lib_id "Interface_Optical:IRM-H6xxT")
+		(at 175.26 88.9 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "91130fe5-bdf4-4077-9a1d-97134cf82efb")
+		(property "Reference" "U28"
+			(at 187.96 87.6299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "IRM-H6xxT"
+			(at 187.96 90.1699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "OptoDevice:Everlight_IRM-H6xxT"
+			(at 176.53 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://en.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DMO-0000004-IRM-H6XX-TR2_Series_Datasheet_V4.pdf"
+			(at 158.75 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "IR Receiver Modules for remote controls"
+			(at 175.26 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "IRM-H638J7/TR2(CLW)"
+			(at 175.26 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "0d3ed0f0-be8c-419d-adc6-aefb12282c01")
+		)
+		(pin "2"
+			(uuid "f2a2a14c-2d0b-493a-86c6-ab58912ed26e")
+		)
+		(pin "1"
+			(uuid "bd227b0c-7091-45f4-8de8-e25da8f37b29")
+		)
+		(pin "4"
+			(uuid "08043168-ec1b-4395-bf37-e43a12cec97a")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/0406e976-491f-498f-9b04-e9a77bf80632"
+					(reference "U28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 127 115.57 0)
 		(mirror y)
@@ -2264,98 +2353,6 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/0406e976-491f-498f-9b04-e9a77bf80632"
 					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Inteface_Optical_custom:IRM-H6XX")
-		(at 175.26 88.9 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d532f269-f5e3-49bd-9bdf-62d868d99c1e")
-		(property "Reference" "U24"
-			(at 176.995 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "IRM-H6XX"
-			(at 176.995 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OptoDevice_custom:IRM-H6XX"
-			(at 176.53 98.425 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DMO-0000682_IRM-H6xxJ7-V4.pdf"
-			(at 158.75 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 175.26 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "IRM-H638J7/TR2(CLW)"
-			(at 175.26 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 175.26 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b17ac0a6-1cf1-46da-9ce6-97c1c8446d71")
-		)
-		(pin "2"
-			(uuid "a09ea64a-9eb5-4767-a488-11c5769df05a")
-		)
-		(pin "3"
-			(uuid "0bcd9661-6e1f-4371-bddf-1e45316d9105")
-		)
-		(pin "4"
-			(uuid "fcea7534-658a-495a-8094-ad884405bb53")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/0406e976-491f-498f-9b04-e9a77bf80632"
-					(reference "U24")
 					(unit 1)
 				)
 			)
