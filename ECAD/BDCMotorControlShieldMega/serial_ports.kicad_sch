@@ -3287,145 +3287,6 @@
 		(uuid "ec96ccce-63f5-4ce8-86e3-e7f652835e60")
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x20")
-		(at 217.17 96.52 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0716e935-a611-49a4-aca0-2ea5179fc347")
-		(property "Reference" "J18"
-			(at 217.17 125.476 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x20"
-			(at 217.17 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_FFC-FPC:TE_2-84952-0_1x20-1MP_P1.0mm_Horizontal"
-			(at 217.17 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2309211458_HCTL-CT10252-20R-00-D_C18198043.pdf"
-			(at 217.17 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 217.17 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "CT10252-20R-00-D"
-			(at 217.17 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 217.17 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "20"
-			(uuid "16e6045e-d8a6-4c6e-84b2-f0084ae2b055")
-		)
-		(pin "8"
-			(uuid "ea7f5f0b-cf77-488d-849a-e5c93e5c889a")
-		)
-		(pin "15"
-			(uuid "75df19af-a834-4d09-a543-0bb79e154d3b")
-		)
-		(pin "16"
-			(uuid "6ca97d14-a9d3-4655-a6db-59076db1098a")
-		)
-		(pin "2"
-			(uuid "c5d5c94b-6224-48b1-9d51-2bc381895075")
-		)
-		(pin "1"
-			(uuid "3481921e-3549-475e-9699-fbfc21c694b9")
-		)
-		(pin "3"
-			(uuid "b899ff20-2acc-41ff-a84a-b06b96e235f0")
-		)
-		(pin "4"
-			(uuid "dba621c3-df64-4986-9ce1-0c9f54dfd4f1")
-		)
-		(pin "7"
-			(uuid "b797007c-6977-4347-92c0-dd47d913755f")
-		)
-		(pin "9"
-			(uuid "a6c0ecfb-26bf-42fc-9ad9-9f3aa10cfa0b")
-		)
-		(pin "11"
-			(uuid "c7c9e65c-337a-45a1-abbb-938aa217b5e4")
-		)
-		(pin "19"
-			(uuid "fc21625a-62d0-4e04-bd47-fd9f2eac9565")
-		)
-		(pin "13"
-			(uuid "f83ef890-6561-46c7-b07e-66a326588d99")
-		)
-		(pin "12"
-			(uuid "2f8846e3-6c84-4f0b-91d9-cdf601fe0e0f")
-		)
-		(pin "17"
-			(uuid "1f026809-2383-43b0-86fc-7e42dbe2465b")
-		)
-		(pin "5"
-			(uuid "91eb289c-f263-49fc-bfc2-5790e05e16ca")
-		)
-		(pin "10"
-			(uuid "e2c07e91-dd93-4bb9-8579-e413ce07c4b6")
-		)
-		(pin "6"
-			(uuid "9f0220a5-06f3-47be-81b4-7475426e2109")
-		)
-		(pin "18"
-			(uuid "ed0591ab-f398-4258-aa16-1caaf2cca58c")
-		)
-		(pin "14"
-			(uuid "b8a90a3a-67d2-4362-857c-7b37997bc0fb")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "J18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 91.44 55.88 0)
 		(unit 1)
@@ -3661,6 +3522,145 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
 					(reference "U22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x20")
+		(at 217.17 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "497c052e-3c46-4c32-8803-3c17f08f265d")
+		(property "Reference" "J22"
+			(at 217.17 125.476 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x20"
+			(at 217.17 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_FFC-FPC:TE_2-84982-0_2Rows-20Pins-P1.0mm_Vertical"
+			(at 217.17 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2309211458_HCTL-CT10252-20R-00-D_C18198043.pdf"
+			(at 217.17 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 217.17 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CT10252-20R-00-D"
+			(at 217.17 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" ""
+			(at 217.17 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "20"
+			(uuid "ebe71857-f18d-4705-ba01-3adcf24d74b8")
+		)
+		(pin "8"
+			(uuid "cca40735-1a1d-4fbc-894e-fb1c0bd58f84")
+		)
+		(pin "15"
+			(uuid "91665ddf-d060-4a3a-bfe3-71c5321a933f")
+		)
+		(pin "16"
+			(uuid "5f505a63-accc-4e65-a160-74605a9eff59")
+		)
+		(pin "2"
+			(uuid "7f56c590-0b74-4fcc-b065-6df4ba9c48d8")
+		)
+		(pin "1"
+			(uuid "eef8d680-10d1-4db6-995a-e72238511de6")
+		)
+		(pin "3"
+			(uuid "c2ee932a-e307-4b27-a820-57ba505029f2")
+		)
+		(pin "4"
+			(uuid "38b2a22b-68c2-4424-bef8-b49c18782c0f")
+		)
+		(pin "7"
+			(uuid "ad471b07-dda1-43de-8067-da16c6031d91")
+		)
+		(pin "9"
+			(uuid "cc94607c-2283-4c30-835d-5703fc8ce172")
+		)
+		(pin "11"
+			(uuid "3f2e9838-8624-42de-97fa-91cd3b5a7950")
+		)
+		(pin "19"
+			(uuid "5bef8a8c-e532-4d2d-8af6-e24edab49f7c")
+		)
+		(pin "13"
+			(uuid "70eeb733-a224-4932-afec-830750a3cabe")
+		)
+		(pin "12"
+			(uuid "0c3660c2-8081-4170-8af0-cc83c4fe9721")
+		)
+		(pin "17"
+			(uuid "1a7aa5a7-96be-4d3b-b87a-3977f176c114")
+		)
+		(pin "5"
+			(uuid "d0a321bc-8d19-4658-8383-fac8988e8450")
+		)
+		(pin "10"
+			(uuid "2498323d-11bf-423b-a89b-08cde781ff00")
+		)
+		(pin "6"
+			(uuid "e1fe3b9f-b842-4051-bae4-dbd5f00c8fdd")
+		)
+		(pin "18"
+			(uuid "d4d39a89-f406-4fbd-80fc-8c9dca1aa5ca")
+		)
+		(pin "14"
+			(uuid "109953cd-fee8-43d6-a217-01640d932254")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
+					(reference "J22")
 					(unit 1)
 				)
 			)
