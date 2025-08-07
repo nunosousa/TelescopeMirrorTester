@@ -411,6 +411,11 @@
 	(net 289 "Net-(U106-Pad10)")
 	(net 290 "Net-(U107-Pad10)")
 	(net 291 "Net-(U107-Pad3)")
+	(net 292 "Net-(JP1-A)")
+	(net 293 "Net-(JP1-B)")
+	(net 294 "Net-(JP2-A)")
+	(net 295 "Net-(JP3-A)")
+	(net 296 "unconnected-(U13-NC-Pad3)")
 	(footprint "Connector_PinSocket_2.54mm:PinSocket_2x18_P2.54mm_Vertical"
 		(locked yes)
 		(layer "F.Cu")
@@ -9889,7 +9894,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d/52682118-2866-4254-ba97-437491fd6ab3")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d/b39fb92a-1191-46a3-9af1-6a4955ae4272")
 		(sheetname "/Motor Control/H-bridge #2/")
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
@@ -17864,7 +17869,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9/52682118-2866-4254-ba97-437491fd6ab3")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9/b39fb92a-1191-46a3-9af1-6a4955ae4272")
 		(sheetname "/Motor Control/H-bridge #6/")
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
@@ -26027,6 +26032,253 @@
 			)
 		)
 	)
+	(footprint "Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm_NumberLabels"
+		(layer "F.Cu")
+		(uuid "594203d0-c23d-49ba-b236-73c7ad803156")
+		(at 255 45)
+		(descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open, labeled with numbers")
+		(tags "solder jumper open")
+		(property "Reference" "JP1"
+			(at 0.725 -1.775 0)
+			(layer "F.SilkS")
+			(uuid "6e48e591-f314-4138-a16c-6bf7b11d9de4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 0.725 1.925 0)
+			(layer "F.Fab")
+			(uuid "88f0558b-0e2f-4b8f-81b1-e3a6ab67a9b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "daff74f6-cc55-40ed-b267-ef6c0ec760f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5eef996d-4777-493c-bfb5-2233f837eb8b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "SolderJumper*Open*")
+		(path "/ae108946-c695-4adb-a002-69472968dc3a")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
+		(zone_connect 1)
+		(attr exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(fp_rect
+			(start -2.5 -0.75)
+			(end 2.5 0.75)
+			(stroke
+				(width 0)
+				(type default)
+			)
+			(fill yes)
+			(layer "F.Mask")
+			(uuid "3f708aa9-4767-40f0-b3ba-3ba7444d8465")
+		)
+		(fp_line
+			(start -2.75 -1)
+			(end 2.75 -1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "052fb4aa-5ec1-4c48-b4bf-293b86aca986")
+		)
+		(fp_line
+			(start -2.75 0.95)
+			(end -2.75 -1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "17d2014c-8d3f-4013-ad83-56110a389836")
+		)
+		(fp_line
+			(start 2.75 -1)
+			(end 2.75 0.95)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2572738d-b835-4798-823b-9c5881a92851")
+		)
+		(fp_line
+			(start 2.75 0.95)
+			(end -2.75 0.95)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d1a4478f-34e3-4e89-bbca-6fc563aff265")
+		)
+		(fp_line
+			(start -2.98 -1.27)
+			(end -2.98 1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "51262424-b619-4802-86c2-7ecdce55a0cf")
+		)
+		(fp_line
+			(start -2.98 -1.27)
+			(end 3 -1.27)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "0257f768-d599-4c7a-966e-8fe4c57c29e5")
+		)
+		(fp_line
+			(start 3 1.25)
+			(end -2.98 1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "21d2dbf4-9bab-43c5-9d04-4e3bb0c91238")
+		)
+		(fp_line
+			(start 3 1.25)
+			(end 3 -1.27)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "3698107f-048e-40c0-9248-8d486c711930")
+		)
+		(fp_text user "1"
+			(at -3.35 0 0)
+			(layer "F.SilkS")
+			(uuid "8037d40c-db3e-4e2a-9fd2-2ad54be3e94d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(fp_text user "3"
+			(at 3.4 0 0)
+			(layer "F.SilkS")
+			(uuid "9990012d-504d-4a83-8502-0dba1456d3fa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd custom
+			(at -2 0)
+			(size 0.3 0.3)
+			(layers "F.Cu" "F.Mask")
+			(net 292 "Net-(JP1-A)")
+			(pinfunction "A")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "1cd62a7f-e1ad-42eb-929a-6dd37fc44ef2")
+		)
+		(pad "2" smd custom
+			(at 0 0)
+			(size 0.3 0.3)
+			(layers "F.Cu")
+			(net 52 "/AREF")
+			(pinfunction "C")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 0.7 0) (xy 1.2 0.75) (xy -1.2 0.75) (xy -0.7 0) (xy -1.2 -0.75) (xy 1.2 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "be51a5f1-3ac6-4ff6-b2dd-4d038fe29afb")
+		)
+		(pad "3" smd custom
+			(at 2 0 180)
+			(size 0.3 0.3)
+			(layers "F.Cu" "F.Mask")
+			(net 293 "Net-(JP1-B)")
+			(pinfunction "B")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "e63e06bd-afab-4775-9838-403ba19b571d")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "59d53948-c2b0-4492-a8c4-3384b1d9f81c")
@@ -32033,7 +32285,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d/8e3cf51c-a531-4b07-8024-6db0f5144708")
 		(sheetname "/Motor Control/H-bridge #2/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -32808,7 +33060,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c/8e3cf51c-a531-4b07-8024-6db0f5144708")
 		(sheetname "/Motor Control/H-bridge #3/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -37217,6 +37469,365 @@
 			)
 		)
 	)
+	(footprint "Package_TO_SOT_SMD:SOT-23"
+		(layer "F.Cu")
+		(uuid "799838c6-c536-4355-b2d7-22b3e83ccdde")
+		(at 253.95 49.175)
+		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236), generated with kicad-footprint-generator ipc_gullwing_generator.py")
+		(tags "SOT TO_SOT_SMD")
+		(property "Reference" "U13"
+			(at 0 -2.4 0)
+			(layer "F.SilkS")
+			(uuid "5599f72e-7a1b-4f3a-80d4-7336aeac760e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "LM4040DBZ-2.0"
+			(at 0 2.4 0)
+			(layer "F.Fab")
+			(uuid "d8bbabf9-41d8-44f5-93cb-52d4422e59ba")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm4040.pdf"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d68bea6c-d111-4687-9e37-8dd5e4f1127b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "4.096V Precision Micropower Shunt Voltage Reference, SOT-23"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43d4a926-7d3c-40c6-a329-4bb003eb3240")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "LM4040B20IDBZR"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "901add38-e2d1-4fff-a033-f13cc7bc6471")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d6e8077-f297-42f2-bbea-aee409e6b7ba")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "SOT?23*")
+		(path "/43eddd8b-8ba7-4e9b-9eaf-0fa9894a0f14")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start 0 -1.56)
+			(end -0.65 -1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "0c1dce48-b074-4ff2-9ced-0e8d970f2ab8")
+		)
+		(fp_line
+			(start 0 -1.56)
+			(end 0.65 -1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "8997fca1-7d99-467f-9784-5a2eb3c2137c")
+		)
+		(fp_line
+			(start 0 1.56)
+			(end -0.65 1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "0cf7718f-c478-4be5-afe5-4fc40ac922ce")
+		)
+		(fp_line
+			(start 0 1.56)
+			(end 0.65 1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "86049069-882c-4d24-a502-cc2a6c79c804")
+		)
+		(fp_poly
+			(pts
+				(xy -1.1625 -1.51) (xy -1.4025 -1.84) (xy -0.9225 -1.84)
+			)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill yes)
+			(layer "F.SilkS")
+			(uuid "dfc5eb08-b5cc-4c45-a4c5-4337d13cfd23")
+		)
+		(fp_line
+			(start -1.93 -1.5)
+			(end -0.9 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "bb4d92f3-ebd2-43cd-937d-bf2c14c97d84")
+		)
+		(fp_line
+			(start -1.93 1.5)
+			(end -1.93 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "c1903b99-5dd3-43bb-84a1-276d8ed1ba46")
+		)
+		(fp_line
+			(start -0.9 -1.7)
+			(end 0.9 -1.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "f1b2dae6-ae8d-47c3-a054-a19ef2d06a1e")
+		)
+		(fp_line
+			(start -0.9 -1.5)
+			(end -0.9 -1.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "9738cd93-b1c4-482e-a076-d1c7f4632874")
+		)
+		(fp_line
+			(start -0.9 1.5)
+			(end -1.93 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "bb07ed7f-b02f-4372-95fa-16d3ee720e54")
+		)
+		(fp_line
+			(start -0.9 1.7)
+			(end -0.9 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "0af4aedd-01bf-4761-8e09-98874e8e6f88")
+		)
+		(fp_line
+			(start 0.9 -1.7)
+			(end 0.9 -0.55)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "a9a97b16-e963-4f8c-891b-a70b5870c1c2")
+		)
+		(fp_line
+			(start 0.9 -0.55)
+			(end 1.93 -0.55)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "dc26fbf5-d367-4a13-a63d-ebd9d8218fb9")
+		)
+		(fp_line
+			(start 0.9 0.55)
+			(end 0.9 1.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "f7db9766-9e04-475d-9c35-c2d8b11a355d")
+		)
+		(fp_line
+			(start 0.9 1.7)
+			(end -0.9 1.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "634bbe07-45d8-4fc5-b546-b3b5a9f78aba")
+		)
+		(fp_line
+			(start 1.93 -0.55)
+			(end 1.93 0.55)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "827de614-f62d-4f83-9ce5-585440f9a75a")
+		)
+		(fp_line
+			(start 1.93 0.55)
+			(end 0.9 0.55)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "46a260fa-d5ab-4f7a-98a9-4e5f5edfe196")
+		)
+		(fp_line
+			(start -0.65 -1.125)
+			(end -0.325 -1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "21d379c7-d2c4-46a0-92c6-dad61623224f")
+		)
+		(fp_line
+			(start -0.65 1.45)
+			(end -0.65 -1.125)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a1161510-090b-4892-9aca-fe120dd391dc")
+		)
+		(fp_line
+			(start -0.325 -1.45)
+			(end 0.65 -1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "4e7b78db-a13e-4ea2-b8ec-dda2b2caca77")
+		)
+		(fp_line
+			(start 0.65 -1.45)
+			(end 0.65 1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a5032f34-33ed-47af-9845-885611e19e5e")
+		)
+		(fp_line
+			(start 0.65 1.45)
+			(end -0.65 1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "76df4fa2-4ea5-44e1-8c6e-a03ea1607cae")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "74faee59-d445-4330-ac63-273fd36a357d")
+			(effects
+				(font
+					(size 0.32 0.32)
+					(thickness 0.05)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.9375 -0.95)
+			(size 1.475 0.6)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 292 "Net-(JP1-A)")
+			(pinfunction "K")
+			(pintype "passive")
+			(uuid "4e438368-40dc-45dd-a2b6-c2c431706868")
+		)
+		(pad "2" smd roundrect
+			(at -0.9375 0.95)
+			(size 1.475 0.6)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 1 "GND")
+			(pinfunction "A")
+			(pintype "passive")
+			(uuid "0957fa76-0df9-4d36-bb76-60aa36be26d2")
+		)
+		(pad "3" smd roundrect
+			(at 0.9375 0)
+			(size 1.475 0.6)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 296 "unconnected-(U13-NC-Pad3)")
+			(pinfunction "NC")
+			(pintype "no_connect")
+			(uuid "b2c86749-b111-4a97-a831-52026729aaef")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "7bc4140f-7d72-4904-b084-4d08742e4e79")
@@ -39044,7 +39655,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b/52682118-2866-4254-ba97-437491fd6ab3")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b/b39fb92a-1191-46a3-9af1-6a4955ae4272")
 		(sheetname "/Motor Control/H-bridge #5/")
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
@@ -41512,7 +42123,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 34 "+5V")
+			(net 294 "Net-(JP2-A)")
 			(pintype "passive")
 			(uuid "58528ce5-ee51-4327-9e41-b42a8d31fc6f")
 		)
@@ -41521,7 +42132,7 @@
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
-			(net 52 "/AREF")
+			(net 293 "Net-(JP1-B)")
 			(pintype "passive")
 			(uuid "7de487ec-5c5c-4294-b96c-036dba057783")
 		)
@@ -44145,7 +44756,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9/8e3cf51c-a531-4b07-8024-6db0f5144708")
 		(sheetname "/Motor Control/H-bridge #6/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -44565,7 +45176,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c/52682118-2866-4254-ba97-437491fd6ab3")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c/b39fb92a-1191-46a3-9af1-6a4955ae4272")
 		(sheetname "/Motor Control/H-bridge #3/")
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
@@ -46656,6 +47267,207 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
+		(layer "F.Cu")
+		(uuid "9aeb774d-8c41-4eac-a505-c4aaff2ad498")
+		(at 258.58 48.55)
+		(descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open")
+		(tags "solder jumper open")
+		(property "Reference" "JP2"
+			(at 0 -1.8 0)
+			(layer "F.SilkS")
+			(uuid "b51c5894-1aaf-46df-9cca-af2f042dce07")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 0 1.9 0)
+			(layer "F.Fab")
+			(uuid "756d1532-a9b3-4887-b641-6eebaec67be3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f20ea12b-b776-47ca-8e77-b5b63e3f8b49")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8923ac40-e4b5-45a0-96a3-91c76e1191e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "SolderJumper*Open*")
+		(path "/f1c226ee-6e68-47e4-bf1c-f0d9ef910172")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
+		(zone_connect 1)
+		(attr exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(fp_rect
+			(start -1.225 -0.75)
+			(end 1.225 0.75)
+			(stroke
+				(width 0)
+				(type default)
+			)
+			(fill yes)
+			(layer "F.Mask")
+			(uuid "09bcddb4-234f-4805-8c9f-3f8398d9addf")
+		)
+		(fp_line
+			(start -1.4 -1)
+			(end 1.4 -1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ec472c99-7c9a-477c-b0a9-24ea5031cd34")
+		)
+		(fp_line
+			(start -1.4 1)
+			(end -1.4 -1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5344c74b-d699-4559-bd78-c2debe1a7a6d")
+		)
+		(fp_line
+			(start 1.4 -1)
+			(end 1.4 1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "428166af-72c8-4e29-ba79-292654104870")
+		)
+		(fp_line
+			(start 1.4 1)
+			(end -1.4 1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c50ca5c1-1cca-4d0c-a790-e013d4ae3663")
+		)
+		(fp_line
+			(start -1.65 -1.25)
+			(end -1.65 1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "a802a4a4-26bb-44a4-a7d2-35f4c5f4ed17")
+		)
+		(fp_line
+			(start -1.65 -1.25)
+			(end 1.65 -1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "6718b965-b0a0-4f1c-b5a7-0e78e6dca03e")
+		)
+		(fp_line
+			(start 1.65 1.25)
+			(end -1.65 1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "2bc11ab6-0147-4c8b-bb9b-5936592ac480")
+		)
+		(fp_line
+			(start 1.65 1.25)
+			(end 1.65 -1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "04a04528-ab1e-4be8-a589-308baf86513a")
+		)
+		(pad "1" smd custom
+			(at -0.725 0)
+			(size 0.3 0.3)
+			(layers "F.Cu" "F.Mask")
+			(net 294 "Net-(JP2-A)")
+			(pinfunction "A")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "e77be3cd-a952-4863-a541-fae316918b4d")
+		)
+		(pad "2" smd custom
+			(at 0.725 0)
+			(size 0.3 0.3)
+			(layers "F.Cu" "F.Mask")
+			(net 34 "+5V")
+			(pinfunction "B")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "d46b91d3-6237-40fe-ae6d-7b700a2e0b4c")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
@@ -49360,7 +50172,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b/8e3cf51c-a531-4b07-8024-6db0f5144708")
 		(sheetname "/Motor Control/H-bridge #5/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -52025,6 +52837,231 @@
 			)
 		)
 	)
+	(footprint "Resistor_SMD:R_0805_2012Metric"
+		(layer "F.Cu")
+		(uuid "ab515d64-0b90-4112-9aa8-425a200c0d14")
+		(at 253.7 52.87)
+		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(tags "resistor")
+		(property "Reference" "R31"
+			(at 0 -1.65 0)
+			(layer "F.SilkS")
+			(uuid "a8e3be85-7352-4e87-9337-c90d61521953")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1kR"
+			(at 0 1.65 0)
+			(layer "F.Fab")
+			(uuid "b7fdf8bf-328c-4a3c-85c0-a49cb2cf6783")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2010202005_YAGEO-AC0805FR-7W1KL_C727989.pdf"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5318bf7-3bdf-450b-9417-f281811f9051")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8053d8b2-2b01-46a3-b537-c444a391a0c3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "AC0805FR-7W1KL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "62376804-100c-456d-8815-a9442d8d52d7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "OK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "21c4f1e6-4b45-427e-a722-9b7137d781eb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/c1ddcbc7-b39a-4b93-8a46-5c93b78f2bfc")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start -0.227064 -0.735)
+			(end 0.227064 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "da4b550b-b724-493e-9f5f-445af3dd9b8b")
+		)
+		(fp_line
+			(start -0.227064 0.735)
+			(end 0.227064 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c8860df6-0612-4d77-a55b-899b11a457f4")
+		)
+		(fp_line
+			(start -1.68 -0.95)
+			(end 1.68 -0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "bb2a2ea8-49ce-4a25-89d1-05d4befbed0d")
+		)
+		(fp_line
+			(start -1.68 0.95)
+			(end -1.68 -0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "ad903827-08fc-48b0-b406-9b2ab260a80d")
+		)
+		(fp_line
+			(start 1.68 -0.95)
+			(end 1.68 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "804cfa91-51a7-4ed4-a2e7-3f97022769b4")
+		)
+		(fp_line
+			(start 1.68 0.95)
+			(end -1.68 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "1a7293bc-84ee-425a-b964-ca9d0912e038")
+		)
+		(fp_line
+			(start -1 -0.625)
+			(end 1 -0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a844d658-e520-4d7b-a2a1-9c9e962ac0a2")
+		)
+		(fp_line
+			(start -1 0.625)
+			(end -1 -0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "be8d4417-964d-4247-b84d-19be9bb279f6")
+		)
+		(fp_line
+			(start 1 -0.625)
+			(end 1 0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6cb0f5df-1be1-4b82-b321-f6e79ed6d1da")
+		)
+		(fp_line
+			(start 1 0.625)
+			(end -1 0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "85b1e084-5600-4e6c-8080-74ba714cea6e")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "41bba8fc-71bb-4f48-bd26-512d9cc03a17")
+			(effects
+				(font
+					(size 0.5 0.5)
+					(thickness 0.08)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.9125 0)
+			(size 1.025 1.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.243902)
+			(net 295 "Net-(JP3-A)")
+			(pintype "passive")
+			(uuid "fd0b1690-ab96-4378-ba05-4b28df0fe474")
+		)
+		(pad "2" smd roundrect
+			(at 0.9125 0)
+			(size 1.025 1.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.243902)
+			(net 292 "Net-(JP1-A)")
+			(pintype "passive")
+			(uuid "d4ed3714-f251-4b50-bf84-cde4e7d0b9cb")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "ad2c232a-091d-4c30-87f3-cebc02cb0ef6")
@@ -52318,7 +53355,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/8e3cf51c-a531-4b07-8024-6db0f5144708")
 		(sheetname "/Motor Control/H-bridge #1/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -54957,7 +55994,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e/52682118-2866-4254-ba97-437491fd6ab3")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e/b39fb92a-1191-46a3-9af1-6a4955ae4272")
 		(sheetname "/Motor Control/H-bridge #4/")
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
@@ -68283,6 +69320,207 @@
 		)
 		(embedded_fonts no)
 	)
+	(footprint "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
+		(layer "F.Cu")
+		(uuid "e3abda4d-8d2d-45bd-a411-1922ab70ea53")
+		(at 258.58 52.1)
+		(descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open")
+		(tags "solder jumper open")
+		(property "Reference" "JP3"
+			(at 0 -1.8 0)
+			(layer "F.SilkS")
+			(uuid "30e99d0a-4cea-4e52-886f-6c41b99b2d2f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 0 1.9 0)
+			(layer "F.Fab")
+			(uuid "497df520-12bb-46e1-8924-a447d971cf09")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a402aff3-df24-47cb-a492-0399b88edd7d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e87548f3-f0d3-4ba1-a5ae-8ccf58ff3ed4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "SolderJumper*Open*")
+		(path "/fff73701-0818-49e0-8027-691c2dd7c9e8")
+		(sheetname "/")
+		(sheetfile "BDCMotorControlShieldMega.kicad_sch")
+		(zone_connect 1)
+		(attr exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(fp_rect
+			(start -1.225 -0.75)
+			(end 1.225 0.75)
+			(stroke
+				(width 0)
+				(type default)
+			)
+			(fill yes)
+			(layer "F.Mask")
+			(uuid "77835100-af25-414d-b94e-20ecbae98142")
+		)
+		(fp_line
+			(start -1.4 -1)
+			(end 1.4 -1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "357ea223-ea43-4d96-91c8-7cea36af4d6a")
+		)
+		(fp_line
+			(start -1.4 1)
+			(end -1.4 -1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "deb13604-47c4-4620-b701-4bdc91761371")
+		)
+		(fp_line
+			(start 1.4 -1)
+			(end 1.4 1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "49ddd8fc-7569-49ae-9793-3573d585ef4a")
+		)
+		(fp_line
+			(start 1.4 1)
+			(end -1.4 1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7f8b0804-6c23-4608-a6a8-0bf919394aa3")
+		)
+		(fp_line
+			(start -1.65 -1.25)
+			(end -1.65 1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "6f0a87aa-e9f6-4e25-a5af-8f2bfc0bd638")
+		)
+		(fp_line
+			(start -1.65 -1.25)
+			(end 1.65 -1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "4ef6bfc6-cd1a-4826-9e1b-ad4284a65034")
+		)
+		(fp_line
+			(start 1.65 1.25)
+			(end -1.65 1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "585dec11-c5f8-4611-a597-257dd5ad0ebf")
+		)
+		(fp_line
+			(start 1.65 1.25)
+			(end 1.65 -1.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "292f7df4-6c31-4e5a-a963-624c0e6f7193")
+		)
+		(pad "1" smd custom
+			(at -0.725 0)
+			(size 0.3 0.3)
+			(layers "F.Cu" "F.Mask")
+			(net 295 "Net-(JP3-A)")
+			(pinfunction "A")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "5e8102f1-4140-4bde-9de1-74a1ce5fb868")
+		)
+		(pad "2" smd custom
+			(at 0.725 0)
+			(size 0.3 0.3)
+			(layers "F.Cu" "F.Mask")
+			(net 34 "+5V")
+			(pinfunction "B")
+			(pintype "passive")
+			(zone_connect 2)
+			(thermal_bridge_angle 45)
+			(options
+				(clearance outline)
+				(anchor rect)
+			)
+			(primitives
+				(gr_poly
+					(pts
+						(xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75)
+					)
+					(width 0)
+					(fill yes)
+				)
+			)
+			(uuid "7c3d3585-7916-43a6-83b7-ca84e2aeeb33")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Package_SO:TSSOP-8_3x3mm_P0.65mm"
 		(layer "F.Cu")
 		(uuid "e50cf989-0027-402e-ac0b-eeb1dd31f51b")
@@ -68351,7 +69589,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e/8e3cf51c-a531-4b07-8024-6db0f5144708")
 		(sheetname "/Motor Control/H-bridge #4/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -73307,7 +74545,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/52682118-2866-4254-ba97-437491fd6ab3")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/b39fb92a-1191-46a3-9af1-6a4955ae4272")
 		(sheetname "/Motor Control/H-bridge #1/")
 		(sheetfile "h_bridge.kicad_sch")
 		(attr smd)
@@ -75973,7 +77211,7 @@
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 52 "/AREF")
+			(net 293 "Net-(JP1-B)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "48ed8f01-ab85-4715-bd5f-c61ae53745df")
