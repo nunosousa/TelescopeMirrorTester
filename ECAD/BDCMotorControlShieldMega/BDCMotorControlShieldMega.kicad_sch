@@ -8,228 +8,6 @@
 		(date "mar. 31 mars 2015")
 	)
 	(lib_symbols
-		(symbol "Connector:Barrel_Jack_Switch"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Barrel_Jack_Switch"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "DC Barrel Jack with an internal switch"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "DC power barrel jack connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "BarrelJack*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Barrel_Jack_Switch_0_1"
-				(rectangle
-					(start -5.08 3.81)
-					(end 5.08 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.54) (xy -2.54 -2.54) (xy -1.27 -1.27) (xy 0 -2.54) (xy 2.54 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 1.905)
-					(mid -3.9343 2.54)
-					(end -3.302 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 1.905)
-					(mid -3.9343 2.54)
-					(end -3.302 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.286) (xy 1.905 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.683 3.175)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 1.27 0) (xy 1.27 -2.286) (xy 0.635 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Barrel_Jack_Switch_1_1"
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_01x08"
 			(pin_names
 				(offset 1.016)
@@ -2997,12 +2775,6 @@
 		(uuid "c62ac952-945c-4c46-83d1-af65f502a1d9")
 	)
 	(junction
-		(at 236.22 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "079745ce-47c8-4beb-8c26-68aaad4a3ab8")
-	)
-	(junction
 		(at 21.59 132.08)
 		(diameter 1.016)
 		(color 0 0 0 0)
@@ -3027,22 +2799,22 @@
 		(uuid "6a79a045-ae0b-4b85-a65d-1f9b2e829cae")
 	)
 	(junction
-		(at 236.22 83.82)
+		(at 31.75 27.94)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6d051fa6-bfa7-4c0e-80df-3b601bbe8b8b")
+		(uuid "791e84e7-9f8f-4d55-aad6-34603198b8b0")
 	)
 	(junction
 		(at 31.75 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "74dc4bae-30d6-4a7b-8cc5-ffd819456fbc")
+		(uuid "8548edc9-28d6-4f97-8e76-aa2cce47de81")
 	)
 	(junction
-		(at 29.21 27.94)
+		(at 27.94 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "96389a07-3800-4043-98fc-e41fc89f001b")
+		(uuid "b09e6ac1-89ac-4860-a4c0-5f1655bd8aed")
 	)
 	(junction
 		(at 74.93 119.38)
@@ -3127,10 +2899,6 @@
 		(uuid "4d9fe911-8438-49f7-906f-808cbd5d1e90")
 	)
 	(no_connect
-		(at 34.29 49.53)
-		(uuid "4e2acd6e-6baf-4b78-8886-f8717f5f1a0b")
-	)
-	(no_connect
 		(at 34.29 102.87)
 		(uuid "5494fb47-2000-4f93-aafc-27c6915ac9d7")
 	)
@@ -3171,10 +2939,6 @@
 		(uuid "79638d96-24b4-4a2b-9b62-fe401b772e3d")
 	)
 	(no_connect
-		(at 34.29 36.83)
-		(uuid "79abf28b-a72f-49d7-8a23-01ed57e4fce1")
-	)
-	(no_connect
 		(at 41.91 119.38)
 		(uuid "7be810a6-6651-4991-8508-e673768f0ed0")
 	)
@@ -3197,6 +2961,10 @@
 	(no_connect
 		(at 62.23 69.85)
 		(uuid "93939981-775b-4244-a3bd-c58816542e47")
+	)
+	(no_connect
+		(at 34.29 36.83)
+		(uuid "958a1b36-988e-4f98-916a-fa50f1919f63")
 	)
 	(no_connect
 		(at 52.07 119.38)
@@ -3288,7 +3056,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 50.8) (xy 31.75 52.07)
+			(xy 31.75 46.99) (xy 31.75 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3298,13 +3066,13 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 88.9) (xy 236.22 90.17)
+			(xy 27.94 49.53) (xy 27.94 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "032703ab-b49d-4fed-9c19-01ea4c76731e")
+		(uuid "04f94a7a-135f-418c-bc8d-f5a40922c596")
 	)
 	(wire
 		(pts
@@ -3348,16 +3116,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 86.36) (xy 236.22 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "09edd78a-2f13-4ca4-9e4d-6fe37f447ef1")
-	)
-	(wire
-		(pts
 			(xy 153.67 53.34) (xy 143.51 53.34)
 		)
 		(stroke
@@ -3388,7 +3146,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 27.94) (xy 29.21 41.91)
+			(xy 31.75 27.94) (xy 31.75 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3508,7 +3266,7 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 27.94) (xy 29.21 27.94)
+			(xy 22.86 27.94) (xy 31.75 27.94)
 		)
 		(stroke
 			(width 0)
@@ -3538,23 +3296,13 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 50.8) (xy 31.75 50.8)
+			(xy 22.86 50.8) (xy 31.75 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2a32b467-0db5-42f0-bb82-4cfbbf22ff63")
-	)
-	(wire
-		(pts
-			(xy 31.75 46.99) (xy 31.75 50.8)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "2df788b2-ce68-49bc-a497-4b6570a17f30")
 	)
 	(wire
 		(pts
@@ -3588,7 +3336,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 41.91) (xy 34.29 41.91)
+			(xy 31.75 41.91) (xy 34.29 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3608,7 +3356,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 26.67) (xy 29.21 27.94)
+			(xy 31.75 26.67) (xy 31.75 27.94)
 		)
 		(stroke
 			(width 0)
@@ -3678,16 +3426,6 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 83.82) (xy 236.22 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "437a46ee-5a27-41f5-abee-9f8a85d6b936")
-	)
-	(wire
-		(pts
 			(xy 62.23 59.69) (xy 74.93 59.69)
 		)
 		(stroke
@@ -3748,6 +3486,26 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 50.8) (xy 31.75 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4edce57d-15cb-41d3-9ee4-da373fc27204")
+	)
+	(wire
+		(pts
+			(xy 19.05 48.26) (xy 19.05 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "530fe89f-f1ae-42f2-9a30-57683884abd3")
+	)
+	(wire
+		(pts
 			(xy 62.23 97.79) (xy 74.93 97.79)
 		)
 		(stroke
@@ -3805,16 +3563,6 @@
 			(type solid)
 		)
 		(uuid "5eba66fb-d394-4a95-b661-8517284f6bbe")
-	)
-	(wire
-		(pts
-			(xy 232.41 88.9) (xy 236.22 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "616758f5-34bd-47f6-a326-aac8ff1ef98b")
 	)
 	(wire
 		(pts
@@ -3918,26 +3666,6 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 83.82) (xy 236.22 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bdfe43e-64a3-4453-a62b-b6ca560181e5")
-	)
-	(wire
-		(pts
-			(xy 245.11 82.55) (xy 245.11 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c02c766-1b40-4f36-9664-18b64036eadc")
-	)
-	(wire
-		(pts
 			(xy 44.45 132.08) (xy 44.45 142.24)
 		)
 		(stroke
@@ -3955,16 +3683,6 @@
 			(type solid)
 		)
 		(uuid "71ad99dc-87b2-4b55-8fb1-b4ea7d9fe558")
-	)
-	(wire
-		(pts
-			(xy 232.41 86.36) (xy 236.22 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a183cdd-5a9e-40b7-bc20-b683f5e34ab3")
 	)
 	(wire
 		(pts
@@ -4068,16 +3786,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 83.82) (xy 236.22 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d8d6481-7d1a-4fa8-babb-4f0aeba2b31e")
-	)
-	(wire
-		(pts
 			(xy 21.59 92.71) (xy 34.29 92.71)
 		)
 		(stroke
@@ -4125,6 +3833,16 @@
 			(type solid)
 		)
 		(uuid "9c00f49e-4d93-4132-bbc2-85830ec88495")
+	)
+	(wire
+		(pts
+			(xy 27.94 49.53) (xy 34.29 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5a192df-f436-4fab-ae03-61f525e31363")
 	)
 	(wire
 		(pts
@@ -4185,16 +3903,6 @@
 			(type solid)
 		)
 		(uuid "b8d843ab-6138-4016-858d-11c02d63fa6d")
-	)
-	(wire
-		(pts
-			(xy 19.05 49.53) (xy 19.05 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ba2133dc-f580-4ade-82f4-258f586ba7fd")
 	)
 	(wire
 		(pts
@@ -4298,6 +4006,16 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 50.8) (xy 22.86 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca256d56-a767-49f9-a029-2e8017fbfcec")
+	)
+	(wire
+		(pts
 			(xy 21.59 87.63) (xy 34.29 87.63)
 		)
 		(stroke
@@ -4345,6 +4063,16 @@
 			(type solid)
 		)
 		(uuid "d8dca6cb-64e3-4d5e-8e73-4b1fdf2bae54")
+	)
+	(wire
+		(pts
+			(xy 19.05 49.53) (xy 27.94 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbe1b5a9-7f9f-4bfb-8d4a-93487f0f5aa7")
 	)
 	(wire
 		(pts
@@ -4448,7 +4176,7 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 26.67) (xy 19.05 27.94)
+			(xy 22.86 26.67) (xy 22.86 27.94)
 		)
 		(stroke
 			(width 0)
@@ -6586,16 +6314,15 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 19.05 26.67 0)
+		(at 22.86 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "00c42a32-375d-4877-b4c8-d20851fa71a8")
 		(property "Reference" "#FLG01"
-			(at 19.05 24.765 0)
+			(at 22.86 24.765 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6604,7 +6331,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 19.05 21.59 0)
+			(at 22.86 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6612,7 +6339,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 19.05 26.67 0)
+			(at 22.86 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6621,7 +6348,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 19.05 26.67 0)
+			(at 22.86 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6630,7 +6357,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 19.05 26.67 0)
+			(at 22.86 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6652,16 +6379,16 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 19.05 49.53 0)
+		(at 22.86 52.07 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "27141157-1a69-4fd3-8795-cfeecda2160e")
 		(property "Reference" "#FLG02"
-			(at 19.05 47.625 0)
+			(at 22.86 53.975 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6670,7 +6397,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 19.05 44.45 0)
+			(at 22.86 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6678,7 +6405,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 19.05 49.53 0)
+			(at 22.86 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6687,7 +6414,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 19.05 49.53 0)
+			(at 22.86 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6696,7 +6423,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 19.05 49.53 0)
+			(at 22.86 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6847,71 +6574,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 236.22 90.17 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "43f77f2f-010e-4ea8-b229-eff9372394e2")
-		(property "Reference" "#PWR0110"
-			(at 236.22 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 236.22 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 236.22 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 236.22 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 236.22 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "27a363e6-7274-424b-bffa-1a4ec7e131a3")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR0110")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 234.95 133.35 0)
 		(unit 1)
@@ -6939,7 +6601,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 235.9152 137.16 0)
 			(effects
 				(font
@@ -7307,6 +6969,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 19.05 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e1742a6-1e60-4a3d-94e2-0cea9141292e")
+		(property "Reference" "#FLG011"
+			(at 19.05 46.355 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 19.05 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 19.05 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 19.05 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 19.05 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "207a1582-9e16-4400-af1a-fb923f13e329")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "#FLG011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 218.44 45.72 0)
 		(unit 1)
@@ -7465,74 +7192,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 245.11 82.55 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c5b841f2-1b16-4ed8-955a-df9e79237125")
-		(property "Reference" "#FLG03"
-			(at 245.11 80.645 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 245.11 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 245.11 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 245.11 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 245.11 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "479d4425-819b-4baa-b389-34cdbcb95155")
-		)
-		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#FLG03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 29.21 26.67 0)
+		(at 31.75 26.67 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7541,7 +7202,7 @@
 		(dnp no)
 		(uuid "c9d51cae-f063-4c2e-88d1-d4716a353cfc")
 		(property "Reference" "#PWR0102"
-			(at 29.21 30.48 0)
+			(at 31.75 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7550,7 +7211,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 30.48 22.86 0)
+			(at 33.02 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7559,7 +7220,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 29.21 26.67 0)
+			(at 31.75 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7567,7 +7228,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 26.67 0)
+			(at 31.75 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7575,7 +7236,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 29.21 26.67 0)
+			(at 31.75 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7589,94 +7250,6 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "#PWR0102")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Barrel_Jack_Switch")
-		(at 224.79 86.36 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d37cf7e2-d094-4e18-b516-613256cd0153")
-		(property "Reference" "J8"
-			(at 224.79 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Barrel_Jack_Switch"
-			(at 224.79 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal"
-			(at 226.06 87.376 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2108131530_Korean-Hroparts-Elec-DC-005-20A_C130239.pdf"
-			(at 226.06 87.376 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 224.79 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "DC-005-20A"
-			(at 224.79 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 224.79 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7adba070-57bb-4892-8a28-ffe47740366a")
-		)
-		(pin "2"
-			(uuid "8644c91d-026a-42bc-a57e-324e0aa2aa03")
-		)
-		(pin "3"
-			(uuid "bbfc1647-c59e-4a12-8df6-aa2339294bfd")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -7771,71 +7344,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
-		(at 236.22 82.55 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e8cd595e-9a2f-4176-b8d8-c749db3f3f2a")
-		(property "Reference" "#PWR0106"
-			(at 236.22 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 236.22 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 236.22 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 236.22 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 236.22 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "973e9de4-9ee1-426e-a1e5-333437444fd5")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR0106")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 234.95 137.16 0)
 		(unit 1)
@@ -7896,6 +7404,70 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "#PWR0116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 27.94 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ec7ed57e-326e-46f1-8499-48ece1caf766")
+		(property "Reference" "#PWR035"
+			(at 27.94 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 27.94 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 27.94 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "50b25dbc-c75f-4c65-b4ee-633a46cbeee7")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)

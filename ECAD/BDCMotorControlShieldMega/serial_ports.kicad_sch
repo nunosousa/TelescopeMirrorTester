@@ -2579,7 +2579,7 @@
 		)
 		(uuid "026ee68b-d9e0-46f6-8cc1-20b44e9ed6d7")
 	)
-	(label "EN_IN1"
+	(label "ST_IN1"
 		(at 114.3 80.01 180)
 		(effects
 			(font
@@ -2599,7 +2599,7 @@
 		)
 		(uuid "08862a7f-9ae7-47d0-b3db-bea66556a750")
 	)
-	(label "EN_IN2"
+	(label "ST_IN2"
 		(at 114.3 118.11 180)
 		(effects
 			(font
@@ -2789,7 +2789,7 @@
 		)
 		(uuid "49bbb848-580d-4ff4-92b3-ba9486bbed0a")
 	)
-	(label "EN_IN1"
+	(label "ST_IN1"
 		(at 128.27 91.44 0)
 		(effects
 			(font
@@ -3019,7 +3019,7 @@
 		)
 		(uuid "a82a3dd4-bf6d-4001-8198-19fa2f4561cd")
 	)
-	(label "EN_IN2"
+	(label "ST_IN2"
 		(at 128.27 129.54 0)
 		(effects
 			(font
@@ -3314,7 +3314,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 92.4052 59.69 0)
 			(effects
 				(font
@@ -4330,16 +4330,6 @@
 				(justify right)
 			)
 		)
-		(pin "EN" input
-			(at 138.43 91.44 180)
-			(uuid "d6fe5132-5956-46f6-aef6-936322dc0bf9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "RI" output
 			(at 138.43 86.36 180)
 			(uuid "530f8b94-ef96-46d8-bfb8-ae93a85f47f2")
@@ -4420,9 +4410,19 @@
 				(justify right)
 			)
 		)
-		(pin "~{SHDN}" input
+		(pin "~{SHUTDOWN}" input
 			(at 138.43 93.98 180)
-			(uuid "fa72c371-c608-4acc-9ce8-02e1c09c5f9e")
+			(uuid "437888b6-fb35-4f88-a535-b2d1fb0491e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{STATUS}" output
+			(at 138.43 91.44 180)
+			(uuid "0d69bebe-e60d-4d4b-aaa9-af9a3a0f4004")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4552,16 +4552,6 @@
 				(justify right)
 			)
 		)
-		(pin "EN" input
-			(at 138.43 129.54 180)
-			(uuid "9875bba1-bdf5-418d-8d94-2f417ba45372")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "RI" output
 			(at 138.43 124.46 180)
 			(uuid "4f7c5fb7-f92d-4a5a-99b5-212857bc1194")
@@ -4642,9 +4632,19 @@
 				(justify right)
 			)
 		)
-		(pin "~{SHDN}" input
+		(pin "~{SHUTDOWN}" input
 			(at 138.43 132.08 180)
-			(uuid "3ca7d833-00fa-4aa1-99bb-6a6846f0ff29")
+			(uuid "b0be263a-ba9a-4a58-b6d4-1e7a2f28702b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{STATUS}" output
+			(at 138.43 129.54 180)
+			(uuid "be0427ac-8f1c-4e1f-a72a-36aa5087281f")
 			(effects
 				(font
 					(size 1.27 1.27)
