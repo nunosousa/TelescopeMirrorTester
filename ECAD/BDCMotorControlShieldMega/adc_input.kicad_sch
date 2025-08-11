@@ -5,7 +5,7 @@
 	(uuid "2eada4dc-f35d-45e2-9b35-30dffbeed065")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Amplifier_Operational:OPA4340EA"
+		(symbol "Amplifier_Operational:ADA4807-4ARUZ"
 			(pin_names
 				(offset 0.127)
 			)
@@ -13,32 +13,25 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 2.54 5.08 0)
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "OPA4340EA"
-				(at 5.08 -5.08 0)
+			(property "Value" "ADA4807-4ARUZ"
+				(at 0 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-				(at 0 0 0)
+			(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+				(at -1.27 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -46,7 +39,16 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
+			(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4807-1_4807-2_4807-4.pdf"
+				(at 1.27 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
 				(at 0 0 0)
 				(effects
 					(font
@@ -72,7 +74,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SSOP*3.9x4.9mm*P0.635mm* SOIC*3.9x9.9mm*P1.27mm* QSOP*3.9x4.9mm*P0.635mm*"
+			(property "ki_fp_filters" "TSSOP*4.4x5mm*P0.65mm*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -81,7 +83,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "OPA4340EA_1_1"
+			(symbol "ADA4807-4ARUZ_1_1"
 				(polyline
 					(pts
 						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
@@ -130,44 +132,6 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at -2.54 -2.54 90)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin output line
 					(at 7.62 0 180)
 					(length 2.54)
@@ -187,7 +151,7 @@
 					)
 				)
 			)
-			(symbol "OPA4340EA_2_1"
+			(symbol "ADA4807-4ARUZ_2_1"
 				(polyline
 					(pts
 						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
@@ -255,7 +219,75 @@
 					)
 				)
 			)
-			(symbol "OPA4340EA_3_1"
+			(symbol "ADA4807-4ARUZ_3_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ADA4807-4ARUZ_4_1"
 				(polyline
 					(pts
 						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
@@ -296,7 +328,7 @@
 							)
 						)
 					)
-					(number "11"
+					(number "13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -308,38 +340,6 @@
 					(at 7.62 0 180)
 					(length 2.54)
 					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "OPA4340EA_4_1"
-				(polyline
-					(pts
-						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -354,44 +354,8 @@
 						)
 					)
 				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
-			(symbol "OPA4340EA_5_1"
+			(symbol "ADA4807-4ARUZ_5_1"
 				(pin power_in line
 					(at -2.54 7.62 270)
 					(length 3.81)
@@ -420,7 +384,7 @@
 							)
 						)
 					)
-					(number "13"
+					(number "11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -570,6 +534,156 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -684,607 +798,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Diode:1N4148WT"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "1N4148WT"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Diode_SMD:D_SOD-523"
-				(at 0 -4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds30396.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "75V 0.15A Fast switching Diode, SOD-523"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "D*SOD?523*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "1N4148WT_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "1N4148WT_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Jumper:SolderJumper_2_Open"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_2_Open"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Solder Jumper, 2-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "solder jumper SPST"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SolderJumper_2_Open_0_1"
-				(polyline
-					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SolderJumper_2_Open_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Jumper:SolderJumper_3_Open"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at -2.54 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_3_Open"
-				(at 0 2.794 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Solder Jumper, 3-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Solder Jumper SPDT"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SolderJumper_3_Open_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -2.032 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.016) (xy -1.016 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.016 -1.016)
-					(mid -2.0276 0)
-					(end -1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.016 -1.016)
-					(mid -2.0276 0)
-					(end -1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -0.508 1.016)
-					(end 0.508 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.016 1.016)
-					(mid 2.0276 0)
-					(end 1.016 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.016 1.016)
-					(mid 2.0276 0)
-					(end 1.016 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 1.016) (xy 1.016 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.032 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SolderJumper_3_Open_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1995,7 +1508,7 @@
 	)
 	(text "3.0V\nreference"
 		(exclude_from_sim no)
-		(at 32.004 104.394 0)
+		(at 35.814 81.534 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2003,9 +1516,9 @@
 		)
 		(uuid "4aff7d39-2c9d-4c25-810e-ce0d0440ae65")
 	)
-	(text "Selectable ADC voltage references"
+	(text "ADC voltage reference"
 		(exclude_from_sim no)
-		(at 40.132 40.64 0)
+		(at 43.434 54.864 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2022,16 +1535,6 @@
 			)
 		)
 		(uuid "7d862b0e-96fb-4ad9-84dd-74de4be6bfa3")
-	)
-	(text "4.096V\nreference"
-		(exclude_from_sim no)
-		(at 31.496 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "8671147f-73b3-42bc-b899-33160f104f1a")
 	)
 	(text "Voltage clipping\nloop - gain 0"
 		(exclude_from_sim no)
@@ -2050,7 +1553,7 @@
 		(uuid "0a147b7b-06b3-4e27-9fd8-4e298058c72c")
 	)
 	(junction
-		(at 39.37 104.14)
+		(at 43.18 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "11a53cde-0f77-4dbc-aca2-f3e387bcd52f")
@@ -2096,12 +1599,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3ef18258-ec4c-4342-ab75-092fcdbc12d4")
-	)
-	(junction
-		(at 39.37 64.77)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5362c98b-08bd-41c2-ab31-550b2520153d")
 	)
 	(junction
 		(at 151.13 54.61)
@@ -2200,10 +1697,28 @@
 		(uuid "d3a36e2d-8abd-49ce-9d40-5e8bc5ed1081")
 	)
 	(junction
+		(at 64.77 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7dede91-f5f3-4a75-a636-3a0ba390f6f2")
+	)
+	(junction
 		(at 217.17 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e6754c7b-e359-43f8-8731-708e604a5fb4")
+	)
+	(no_connect
+		(at 111.76 124.46)
+		(uuid "1f60eca0-1dad-4a23-a75c-3d7477b4f4f5")
+	)
+	(no_connect
+		(at 96.52 127)
+		(uuid "7f2ed10f-ee2e-4066-a695-6c854245cfe7")
+	)
+	(no_connect
+		(at 96.52 121.92)
+		(uuid "e8d22516-e3f6-49df-b021-dee38db595c2")
 	)
 	(wire
 		(pts
@@ -2267,6 +1782,16 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 181.61) (xy 35.56 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14bb8715-fd12-4368-b8c8-6fed935048e0")
+	)
+	(wire
+		(pts
 			(xy 193.04 114.3) (xy 195.58 114.3)
 		)
 		(stroke
@@ -2297,7 +1822,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 148.59) (xy 44.45 148.59)
+			(xy 38.1 171.45) (xy 39.37 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2364,6 +1889,16 @@
 			(type default)
 		)
 		(uuid "20c7bad8-b636-421a-8003-2a0008f7ec0f")
+	)
+	(wire
+		(pts
+			(xy 35.56 181.61) (xy 35.56 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "242cf3d2-8fbd-466e-a74d-3809da328f98")
 	)
 	(wire
 		(pts
@@ -2434,6 +1969,16 @@
 			(type default)
 		)
 		(uuid "321984d2-a974-4d1d-a844-baa93585a18a")
+	)
+	(wire
+		(pts
+			(xy 64.77 171.45) (xy 64.77 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3499c10d-9d50-46b8-a3ff-17e659713a16")
 	)
 	(wire
 		(pts
@@ -2517,13 +2062,13 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 86.36) (xy 58.42 104.14)
+			(xy 35.56 179.07) (xy 39.37 179.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "435849bd-9dd2-41de-8c43-45df1abdafef")
+		(uuid "42c344d8-d539-4a4b-bc59-41b9340bd4fb")
 	)
 	(wire
 		(pts
@@ -2567,13 +2112,13 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 64.77) (xy 58.42 76.2)
+			(xy 59.69 171.45) (xy 64.77 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4f58d19e-e0d3-4950-83a3-3a408bf02cca")
+		(uuid "4e77d40a-c725-4964-973b-720d0db0571e")
 	)
 	(wire
 		(pts
@@ -2607,13 +2152,23 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 104.14) (xy 58.42 104.14)
+			(xy 43.18 81.28) (xy 66.04 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "56011f6d-ced1-4894-bba5-c8e09762e286")
+	)
+	(wire
+		(pts
+			(xy 31.75 180.34) (xy 31.75 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "562c5a2b-2539-472b-8e35-6bf12d08e099")
 	)
 	(wire
 		(pts
@@ -2627,13 +2182,13 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 81.28) (xy 66.04 81.28)
+			(xy 35.56 173.99) (xy 35.56 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5fa14d75-300a-492a-8c55-91ee4ced585c")
+		(uuid "5b8583a7-5890-4a5b-af1d-7a400165a944")
 	)
 	(polyline
 		(pts
@@ -3017,6 +2572,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 173.99) (xy 35.56 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b46740fe-c319-466b-867a-7dddbbd53572")
+	)
+	(wire
+		(pts
 			(xy 161.29 54.61) (xy 162.56 54.61)
 		)
 		(stroke
@@ -3054,6 +2619,16 @@
 			(type default)
 		)
 		(uuid "bba33f68-0179-44ac-bedf-8e3f8ffe4aba")
+	)
+	(wire
+		(pts
+			(xy 31.75 171.45) (xy 31.75 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdb47b33-ed05-429e-b8bd-aa81b321da94")
 	)
 	(wire
 		(pts
@@ -3137,7 +2712,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 147.32) (xy 43.18 148.59)
+			(xy 38.1 170.18) (xy 38.1 171.45)
 		)
 		(stroke
 			(width 0)
@@ -3167,6 +2742,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 171.45) (xy 81.28 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cec78764-be4c-4857-a862-0c6fdada82f0")
+	)
+	(wire
+		(pts
 			(xy 217.17 120.65) (xy 222.25 120.65)
 		)
 		(stroke
@@ -3184,6 +2769,16 @@
 			(type default)
 		)
 		(uuid "d326a119-d433-47fb-995c-cec3835cc85a")
+	)
+	(wire
+		(pts
+			(xy 64.77 171.45) (xy 81.28 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d67eb745-b4cc-4be4-8a29-8efa3a11b23f")
 	)
 	(wire
 		(pts
@@ -3317,6 +2912,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 171.45) (xy 31.75 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f73bade9-8b98-49e4-b725-58585799b5dd")
+	)
+	(wire
+		(pts
 			(xy 151.13 69.85) (xy 151.13 54.61)
 		)
 		(stroke
@@ -3364,16 +2969,6 @@
 			(type default)
 		)
 		(uuid "fb7c6dad-76fb-4db0-b595-ef4c4db1deef")
-	)
-	(wire
-		(pts
-			(xy 39.37 64.77) (xy 58.42 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fbe8e49b-c1eb-4b9a-a2dc-070328fada78")
 	)
 	(label "-VREF"
 		(at 129.54 83.82 0)
@@ -3441,42 +3036,33 @@
 		(uuid "f69eb339-dfae-4221-bede-4094ddf2479a")
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 248.92 69.85 0)
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 226.06 129.54 0)
 		(mirror x)
-		(unit 4)
+		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "08183d82-1bd2-4bb5-9bf3-f1ca361a7fda")
-		(property "Reference" "U32"
-			(at 248.92 80.01 0)
+		(uuid "0847d82b-75d8-4c9c-ae48-e25915c05d85")
+		(property "Reference" "U34"
+			(at 226.06 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "OPA4340EA"
-			(at 248.92 77.47 0)
+		(property "Value" "AD8648"
+			(at 226.06 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 248.92 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 248.92 69.85 0)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 224.79 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3484,8 +3070,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 248.92 69.85 0)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 227.33 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3493,66 +3079,229 @@
 				(hide yes)
 			)
 		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb545")
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 226.06 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a7980")
+		(property "MPN" "AD8648ARUZ"
+			(at 226.06 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f4")
+		(property "Sim.Device" ""
+			(at 226.06 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e07104782")
+		(property "Sim.Pins" ""
+			(at 226.06 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f4d")
-		)
-		(pin "14"
-			(uuid "11ef5fca-600e-4b2f-a5f1-5112de34b4bd")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a5")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a3188221")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a467d")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b206")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b33")
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c3")
 		)
 		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa88f")
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee12")
 		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b4")
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d2")
 		)
 		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce4")
+			(uuid "72540e9e-9e04-41f7-afbd-967d926ec091")
 		)
-		(pin "15"
-			(uuid "357fcad4-6745-4ab1-ad55-a5b401fbff33")
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd5")
 		)
-		(pin "16"
-			(uuid "e2c0490f-591d-4066-9eb0-6af5bc1387fc")
+		(pin "7"
+			(uuid "db6043a9-b007-4fbe-80ce-5eb94a8cd6ea")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819c9")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041ad9")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86255")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a24")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffcf")
+		)
+		(pin "5"
+			(uuid "f94b3e8d-976e-4178-bd0c-84b5e57d4e29")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b7f")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8893")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U32")
-					(unit 4)
+					(reference "U34")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 165.1 179.07 0)
+		(unit 5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "094736c7-8c4d-44b0-a5d8-7b640ed5a5e3")
+		(property "Reference" "U34"
+			(at 163.83 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 163.83 180.3399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 163.83 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 166.37 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 165.1 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 165.1 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 165.1 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 165.1 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c5")
+		)
+		(pin "11"
+			(uuid "95bc3d56-df81-4a23-8154-ca2608724d67")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d4")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b731029799")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd7")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b7")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819cb")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041adb")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86257")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a26")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffd1")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc4")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b81")
+		)
+		(pin "4"
+			(uuid "bcc55f04-77bd-4787-a93f-7b1d84237032")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U34")
+					(unit 5)
 				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 139.7 176.53 0)
+		(at 146.05 179.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3561,7 +3310,7 @@
 		(fields_autoplaced yes)
 		(uuid "0a5009a4-348f-4517-b6c6-e7635d6d047a")
 		(property "Reference" "C47"
-			(at 143.51 175.2599 0)
+			(at 149.86 177.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3570,7 +3319,7 @@
 			)
 		)
 		(property "Value" "100nC"
-			(at 143.51 177.7999 0)
+			(at 149.86 180.3399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3579,7 +3328,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 140.6652 180.34 0)
+			(at 147.0152 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3588,7 +3337,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 176.53 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3597,7 +3346,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 139.7 176.53 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3606,7 +3355,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 139.7 176.53 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3615,7 +3364,25 @@
 			)
 		)
 		(property "MPN" ""
-			(at 139.7 176.53 0)
+			(at 146.05 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 146.05 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3639,17 +3406,84 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 158.75 176.53 0)
+		(lib_id "power:GND")
+		(at 49.53 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0b0f59a2-90e3-4b66-bc4e-9efc5b21b904")
+		(property "Reference" "#PWR0110"
+			(at 49.53 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 49.53 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 49.53 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "44a893ed-0abd-4657-8953-cc717b855473")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "#PWR0110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 133.35 179.07 0)
 		(unit 5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0f839be0-9c0f-4c6b-9792-f75b15966806")
-		(property "Reference" "U32"
-			(at 157.48 175.2599 0)
+		(uuid "0b729f61-6e09-441c-a8b8-baedf9eec3ad")
+		(property "Reference" "U1"
+			(at 132.08 177.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3657,8 +3491,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA4340EA"
-			(at 157.48 177.7999 0)
+		(property "Value" "AD8648"
+			(at 132.08 180.3399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3666,8 +3500,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 158.75 176.53 0)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 132.08 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3675,8 +3509,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 158.75 176.53 0)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 134.62 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3684,8 +3518,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 158.75 176.53 0)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 133.35 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3693,58 +3527,79 @@
 				(hide yes)
 			)
 		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb543")
+		(property "MPN" "AD8648ARUZ"
+			(at 133.35 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a797e")
+		(property "Sim.Device" ""
+			(at 133.35 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f2")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e07104780")
+		(property "Sim.Pins" ""
+			(at 133.35 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f4b")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847384")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a3")
-		)
-		(pin "13"
-			(uuid "da58896b-5475-4406-a61f-c5db365ce5a3")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a467b")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b204")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b31")
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c1")
 		)
 		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa88d")
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee10")
 		)
-		(pin "4"
-			(uuid "3a876b87-1a7e-4e20-b672-06c3c1a65ee9")
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d0")
 		)
 		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce2")
+			(uuid "5c1db551-100e-4848-b169-31b731029795")
 		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc1")
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd3")
 		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e376b")
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b3")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819c7")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041ad7")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86253")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a22")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffcd")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc0")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b7d")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8891")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project ""
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U32")
+					(reference "U1")
 					(unit 5)
 				)
 			)
@@ -3752,7 +3607,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 102.87 168.91 0)
+		(at 130.81 171.45 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3761,7 +3616,7 @@
 		(dnp no)
 		(uuid "1c4dfa8e-27b1-4c2d-afe1-100326ad23e5")
 		(property "Reference" "#PWR067"
-			(at 102.87 172.72 0)
+			(at 130.81 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3770,7 +3625,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 104.14 165.1 0)
+			(at 132.08 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3779,7 +3634,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 102.87 168.91 0)
+			(at 130.81 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3787,7 +3642,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 168.91 0)
+			(at 130.81 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3795,7 +3650,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 102.87 168.91 0)
+			(at 130.81 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3810,203 +3665,6 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "#PWR067")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N4148WT")
-		(at 189.23 57.15 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1dd14267-789d-4252-9e20-08324ab287c8")
-		(property "Reference" "D3"
-			(at 189.23 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N4148WT"
-			(at 189.23 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 189.23 61.595 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds30396.pdf"
-			(at 189.23 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "75V 0.15A Fast switching Diode, SOD-523"
-			(at 189.23 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 189.23 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 189.23 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a1af410e-4777-42a7-b7be-3e25c6eb5a65")
-		)
-		(pin "2"
-			(uuid "e16ca6c8-18ad-4f21-9508-b0439f976378")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 173.99 114.3 0)
-		(mirror x)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1def6539-b43f-455f-9629-ca8ab6a7977a")
-		(property "Reference" "U14"
-			(at 173.99 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 173.99 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 173.99 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 173.99 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 173.99 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb544")
-		)
-		(pin "5"
-			(uuid "e746a7d6-0c34-48f9-babe-cb674bc36df6")
-		)
-		(pin "7"
-			(uuid "3dfe73fe-7ae7-4481-b0c7-58df5421364a")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e07104781")
-		)
-		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f4c")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847385")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a4")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a3188220")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a467c")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b205")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b32")
-		)
-		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa88e")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b3")
-		)
-		(pin "6"
-			(uuid "d07c7e2e-6199-4bf7-abab-b7bbb48de985")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc2")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e376c")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U14")
-					(unit 2)
 				)
 			)
 		)
@@ -4064,6 +3722,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 226.06 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 226.06 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "616dd4ee-efd7-4e7f-a296-e41b46d3bfb9")
 		)
@@ -4080,25 +3756,26 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 111.76 129.54 0)
-		(mirror x)
+		(lib_id "power:-5V")
+		(at 81.28 173.99 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2178b8d8-df72-45c6-96eb-fa63c93f1d4e")
-		(property "Reference" "U14"
-			(at 111.76 139.7 0)
+		(fields_autoplaced yes)
+		(uuid "2367ef07-3033-4855-8a55-659b5322be87")
+		(property "Reference" "#PWR089"
+			(at 81.28 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "OPA4340EA"
-			(at 111.76 137.16 0)
+		(property "Value" "-5V"
+			(at 81.28 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4106,7 +3783,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 129.54 0)
+			(at 81.28 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4114,8 +3791,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 111.76 129.54 0)
+		(property "Datasheet" ""
+			(at 81.28 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4123,67 +3800,22 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 111.76 129.54 0)
+		(property "Description" "Power symbol creates a global label with name \"-5V\""
+			(at 81.28 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb542")
-		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a797d")
-		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f1")
 		)
 		(pin "1"
-			(uuid "9f98b424-d63f-4918-b8a0-aba354eaa520")
-		)
-		(pin "9"
-			(uuid "1069d9b2-e430-49b7-82e8-fa82ae058472")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847383")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a2")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a318821e")
-		)
-		(pin "2"
-			(uuid "35ccd168-877e-4865-b3a9-afc79e5856e4")
-		)
-		(pin "3"
-			(uuid "808965a4-3e75-4564-9abf-373b331ca0d5")
-		)
-		(pin "8"
-			(uuid "bb6797d7-1e6f-476d-b2ef-78ddf1190a7a")
-		)
-		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa88c")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b1")
-		)
-		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce1")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc0")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e376a")
+			(uuid "56a3f4fe-f9f8-42fa-ae71-fe41c9e6adbf")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U14")
+					(reference "#PWR089")
 					(unit 1)
 				)
 			)
@@ -4257,118 +3889,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 226.06 72.39 0)
-		(mirror x)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "26c1ecfc-244f-4bb2-a47f-2b76e79a6d13")
-		(property "Reference" "U32"
-			(at 226.06 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 226.06 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 226.06 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 226.06 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "bcfd9b1e-b951-41cb-922a-1031082a1c65")
-		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a797c")
-		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f0")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e0710477e")
-		)
-		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f49")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847382")
-		)
-		(pin "10"
-			(uuid "a19aedd2-6a2e-4935-b1f1-46188df1ed07")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a318821d")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a4679")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b202")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b2f")
-		)
-		(pin "11"
-			(uuid "69283d9a-7c94-4caa-bc9d-a416539def09")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b0")
-		)
-		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce0")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fbf")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e3769")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U32")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:-5V")
-		(at 139.7 180.34 180)
+		(at 146.05 182.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4377,7 +3899,7 @@
 		(fields_autoplaced yes)
 		(uuid "292f3126-bac9-41f3-a95e-d669443f2ac9")
 		(property "Reference" "#PWR066"
-			(at 139.7 176.53 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4386,7 +3908,7 @@
 			)
 		)
 		(property "Value" "-5V"
-			(at 139.7 185.42 0)
+			(at 146.05 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4394,7 +3916,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 180.34 0)
+			(at 146.05 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4403,7 +3925,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 180.34 0)
+			(at 146.05 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4412,7 +3934,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"-5V\""
-			(at 139.7 180.34 0)
+			(at 146.05 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4477,6 +3999,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 173.99 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 173.99 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 173.99 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4568,7 +4108,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 54.61 161.29 0)
+		(at 49.53 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4577,7 +4117,7 @@
 		(fields_autoplaced yes)
 		(uuid "36280b46-8338-4939-a1a6-d07ffc06a7b7")
 		(property "Reference" "#PWR088"
-			(at 54.61 167.64 0)
+			(at 49.53 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4586,7 +4126,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 54.61 166.37 0)
+			(at 49.53 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4595,7 +4135,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 54.61 161.29 0)
+			(at 49.53 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4604,7 +4144,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 161.29 0)
+			(at 49.53 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4613,7 +4153,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 54.61 161.29 0)
+			(at 49.53 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4629,226 +4169,6 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "#PWR088")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 248.92 127 0)
-		(mirror x)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3853bb3b-0d8a-446e-9992-fb9cfc151964")
-		(property "Reference" "U14"
-			(at 248.92 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 248.92 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 248.92 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 248.92 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 248.92 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb546")
-		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a7981")
-		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f5")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e07104783")
-		)
-		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f4e")
-		)
-		(pin "14"
-			(uuid "bbe5c5b4-fb23-4d1f-981b-2d0f362a9d7d")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a6")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a3188222")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a467e")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b207")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b34")
-		)
-		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa890")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b5")
-		)
-		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce5")
-		)
-		(pin "15"
-			(uuid "c4f59222-3b44-4e8c-b99c-862539fdf5ef")
-		)
-		(pin "16"
-			(uuid "69df1b47-3f41-4392-a21e-6402377afd88")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U14")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 226.06 129.54 0)
-		(mirror x)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3b10255d-bc92-41d5-8a4e-eee853244e53")
-		(property "Reference" "U14"
-			(at 226.06 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 226.06 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 226.06 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 226.06 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "c3d19642-d97b-4d10-b654-216f0c5b4f23")
-		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a797f")
-		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f3")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e0710477f")
-		)
-		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f4a")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847386")
-		)
-		(pin "10"
-			(uuid "ccad876f-0289-4a9f-9d61-8f0760eb8a93")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a318821f")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a467a")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b203")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b30")
-		)
-		(pin "11"
-			(uuid "5a4a2085-d22a-4aba-a875-72b47cd47fdd")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b2")
-		)
-		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce3")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc3")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e376d")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U14")
-					(unit 3)
 				)
 			)
 		)
@@ -4922,7 +4242,7 @@
 	)
 	(symbol
 		(lib_id "Reference_Voltage:LM4040DBZ-4.1")
-		(at 39.37 107.95 90)
+		(at 43.18 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4931,7 +4251,7 @@
 		(fields_autoplaced yes)
 		(uuid "43eddd8b-8ba7-4e9b-9eaf-0fa9894a0f14")
 		(property "Reference" "U13"
-			(at 41.91 106.6799 90)
+			(at 45.72 83.8199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4940,7 +4260,7 @@
 			)
 		)
 		(property "Value" "LM4040DBZ-3.0"
-			(at 41.91 109.2199 90)
+			(at 45.72 86.3599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4949,7 +4269,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 44.45 107.95 0)
+			(at 48.26 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4959,7 +4279,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm4040.pdf"
-			(at 39.37 107.95 0)
+			(at 43.18 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4969,7 +4289,7 @@
 			)
 		)
 		(property "Description" "3.0V Precision Micropower Shunt Voltage Reference, SOT-23"
-			(at 39.37 107.95 0)
+			(at 43.18 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4978,7 +4298,7 @@
 			)
 		)
 		(property "MPN" "LM4040B30IDBZR"
-			(at 39.37 107.95 90)
+			(at 43.18 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4987,7 +4307,25 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 39.37 107.95 90)
+			(at 43.18 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 43.18 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 43.18 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5008,70 +4346,6 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "U13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 39.37 49.53 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "43f24a49-c185-400c-8652-50388f74e1fa")
-		(property "Reference" "#PWR0122"
-			(at 39.37 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 40.64 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 39.37 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6222019a-5ac9-4c4f-abeb-5f8af213afca")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0122")
 					(unit 1)
 				)
 			)
@@ -5123,6 +4397,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 101.6 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 101.6 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 101.6 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5198,6 +4490,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 209.55 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 209.55 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7b8ced9b-6c67-4602-a8a4-70f99a334a6a")
 		)
@@ -5215,7 +4525,7 @@
 	)
 	(symbol
 		(lib_id "Regulator_SwitchedCapacitor:LM2776")
-		(at 54.61 151.13 0)
+		(at 49.53 173.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5224,7 +4534,7 @@
 		(fields_autoplaced yes)
 		(uuid "4de72823-a9f5-46d3-bd9b-e109c724c244")
 		(property "Reference" "U33"
-			(at 67.31 142.1698 0)
+			(at 62.23 165.0298 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5232,7 +4542,7 @@
 			)
 		)
 		(property "Value" "LM2776"
-			(at 67.31 144.7098 0)
+			(at 62.23 167.5698 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5240,7 +4550,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 55.88 160.02 0)
+			(at 50.8 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5250,7 +4560,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2776.pdf"
-			(at 7.62 119.38 0)
+			(at 2.54 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5259,7 +4569,25 @@
 			)
 		)
 		(property "Description" "Switched capacitor inverter, inverts positive voltage +2.7 to +5.5V to negative, 200mA, SOT-23-6"
-			(at 54.61 151.13 0)
+			(at 49.53 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 49.53 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 49.53 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5296,7 +4624,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 43.18 147.32 0)
+		(at 38.1 170.18 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5305,7 +4633,7 @@
 		(dnp no)
 		(uuid "51ce484b-ea64-4b2a-b9f1-dc71993e7a0f")
 		(property "Reference" "#PWR087"
-			(at 43.18 151.13 0)
+			(at 38.1 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5314,7 +4642,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 44.45 143.51 0)
+			(at 39.37 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5323,7 +4651,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 147.32 0)
+			(at 38.1 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5331,7 +4659,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 147.32 0)
+			(at 38.1 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5339,7 +4667,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 43.18 147.32 0)
+			(at 38.1 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5360,7 +4688,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 39.37 88.9 0)
+		(at 43.18 73.66 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5369,7 +4697,7 @@
 		(dnp no)
 		(uuid "52b62e6d-8bec-4caa-b3fd-1b388612227a")
 		(property "Reference" "#PWR034"
-			(at 39.37 92.71 0)
+			(at 43.18 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5378,7 +4706,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 40.64 85.09 0)
+			(at 44.45 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5387,7 +4715,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 88.9 0)
+			(at 43.18 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5395,7 +4723,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 88.9 0)
+			(at 43.18 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5403,7 +4731,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 39.37 88.9 0)
+			(at 43.18 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5468,6 +4796,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 157.48 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 157.48 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 157.48 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5558,8 +4904,270 @@
 		)
 	)
 	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 104.14 124.46 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b4a6364-5a50-4872-b7a8-471b3347b086")
+		(property "Reference" "U34"
+			(at 104.14 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 104.14 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 102.87 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 105.41 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c2")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee11")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d1")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b731029796")
+		)
+		(pin "13"
+			(uuid "13a52a44-6512-485d-9167-9825692b6813")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b4")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819c8")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041ad8")
+		)
+		(pin "12"
+			(uuid "4f48996f-84cc-4af0-91a8-6dc7a8b3ec5a")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a23")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffce")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc1")
+		)
+		(pin "14"
+			(uuid "4ad8e7f7-bcc2-47d4-937e-cf35ac7b01b4")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8892")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U34")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 248.92 127 0)
+		(mirror x)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5be1ea5e-7d84-462a-a05c-03ffcf070610")
+		(property "Reference" "U34"
+			(at 248.92 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 248.92 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 247.65 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 250.19 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 248.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 248.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 248.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 248.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "bf5aee32-b8e7-47ec-86e2-d9814f106922")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee13")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d3")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b731029798")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd6")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b6")
+		)
+		(pin "10"
+			(uuid "6e309064-17e0-41c6-9c00-58501c1450f1")
+		)
+		(pin "8"
+			(uuid "5f5bea5e-7944-4a19-832d-7985dbb4c0d5")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86256")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a25")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffd0")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc3")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b80")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8894")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U34")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:-5V")
-		(at 86.36 180.34 180)
+		(at 114.3 182.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5568,7 +5176,7 @@
 		(fields_autoplaced yes)
 		(uuid "5d840438-ebf2-4c9b-a319-1daeeafd338d")
 		(property "Reference" "#PWR078"
-			(at 86.36 176.53 0)
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5577,7 +5185,7 @@
 			)
 		)
 		(property "Value" "-5V"
-			(at 86.36 185.42 0)
+			(at 114.3 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5585,7 +5193,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 180.34 0)
+			(at 114.3 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5594,7 +5202,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 180.34 0)
+			(at 114.3 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5603,7 +5211,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"-5V\""
-			(at 86.36 180.34 0)
+			(at 114.3 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5625,7 +5233,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 156.21 168.91 0)
+		(at 162.56 171.45 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5634,7 +5242,7 @@
 		(dnp no)
 		(uuid "610f927b-f683-4327-b94b-a26022aed748")
 		(property "Reference" "#PWR083"
-			(at 156.21 172.72 0)
+			(at 162.56 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5643,7 +5251,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 157.48 165.1 0)
+			(at 163.83 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5652,7 +5260,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 168.91 0)
+			(at 162.56 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5660,7 +5268,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 168.91 0)
+			(at 162.56 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5668,7 +5276,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 156.21 168.91 0)
+			(at 162.56 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5688,94 +5296,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:1N4148WT")
-		(at 173.99 45.72 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "623db9e0-5128-44fc-a18f-479df85ca8c3")
-		(property "Reference" "D4"
-			(at 173.99 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N4148WT"
-			(at 173.99 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 173.99 50.165 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds30396.pdf"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "75V 0.15A Fast switching Diode, SOD-523"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f4e144df-914b-4bff-8efa-effe22d9b271")
-		)
-		(pin "2"
-			(uuid "f89a0213-0731-4108-bb0d-d2675f93503f")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "D4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:-5V")
-		(at 102.87 184.15 180)
+		(at 130.81 186.69 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5784,7 +5306,7 @@
 		(fields_autoplaced yes)
 		(uuid "67b505ce-f9b8-43f0-a0cd-8e7445ea9fac")
 		(property "Reference" "#PWR072"
-			(at 102.87 180.34 0)
+			(at 130.81 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5793,7 +5315,7 @@
 			)
 		)
 		(property "Value" "-5V"
-			(at 102.87 189.23 0)
+			(at 130.81 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5801,7 +5323,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 102.87 184.15 0)
+			(at 130.81 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5810,7 +5332,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 184.15 0)
+			(at 130.81 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5819,7 +5341,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"-5V\""
-			(at 102.87 184.15 0)
+			(at 130.81 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5840,43 +5362,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:1N4148WT")
-		(at 189.23 114.3 0)
+		(lib_id "Device:D_Schottky")
+		(at 173.99 102.87 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "72a607c6-621f-49a9-a7cc-42c65d49ebbf")
-		(property "Reference" "D2"
-			(at 189.23 109.22 0)
+		(uuid "6ac3878c-43e1-4d2d-81bf-3662d8a888e4")
+		(property "Reference" "D1"
+			(at 174.3075 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1N4148WT"
-			(at 189.23 111.76 0)
+		(property "Value" "RB886GT2R"
+			(at 174.3075 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 189.23 118.745 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds30396.pdf"
-			(at 189.23 114.3 0)
+		(property "Footprint" ""
+			(at 173.99 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5884,8 +5396,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "75V 0.15A Fast switching Diode, SOD-523"
-			(at 189.23 114.3 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C84550.pdf"
+			(at 173.99 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5893,8 +5405,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 189.23 114.3 0)
+		(property "Description" "Schottky diode"
+			(at 173.99 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5902,8 +5414,26 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 189.23 114.3 0)
+		(property "MPN" "RB886GT2R"
+			(at 173.99 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 173.99 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 173.99 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5912,15 +5442,277 @@
 			)
 		)
 		(pin "1"
-			(uuid "292c0388-5ea3-485b-9554-c7843edd8287")
+			(uuid "b09daf37-18fd-41f7-8df4-bd4632c8dd41")
 		)
 		(pin "2"
-			(uuid "8b81486d-c622-4729-bfb2-58e7a4797704")
+			(uuid "55321548-6f8e-411c-800b-44e4fade3b90")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "D2")
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 115.57 83.82 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6eb4cd0b-b179-491b-abd9-614a8d520e02")
+		(property "Reference" "U1"
+			(at 115.57 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 115.57 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 114.3 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 116.84 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 115.57 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 115.57 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 115.57 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 115.57 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c4")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee14")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d5")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b731029797")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd4")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b5")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819ca")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041ada")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86254")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a27")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffd2")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc2")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b7e")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8895")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 173.99 114.3 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "79a31bd3-e166-4cdd-ac07-cde25612e952")
+		(property "Reference" "U34"
+			(at 173.99 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 173.99 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 172.72 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 175.26 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 173.99 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 173.99 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 173.99 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 173.99 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c6")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee15")
+		)
+		(pin "2"
+			(uuid "9c24895c-14d1-48c2-9ba8-39dcc5138006")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b73102979a")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd8")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b8")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819cc")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041adc")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86258")
+		)
+		(pin "1"
+			(uuid "b5eaf483-1dca-416c-a592-b2babc50a43e")
+		)
+		(pin "3"
+			(uuid "c77fd81f-5995-4242-8560-92ba54185d8e")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc5")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b82")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8896")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U34")
 					(unit 1)
 				)
 			)
@@ -5979,6 +5771,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 157.48 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 157.48 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0d573f04-c272-49aa-8949-fed9fed978a2")
 		)
@@ -5996,7 +5806,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 86.36 172.72 0)
+		(at 114.3 175.26 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6005,7 +5815,7 @@
 		(dnp no)
 		(uuid "7ea05f74-7055-45ee-8e5f-96ff494bfb55")
 		(property "Reference" "#PWR065"
-			(at 86.36 176.53 0)
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6014,7 +5824,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 87.63 168.91 0)
+			(at 115.57 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6023,7 +5833,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 172.72 0)
+			(at 114.3 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6031,7 +5841,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 172.72 0)
+			(at 114.3 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6039,7 +5849,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 86.36 172.72 0)
+			(at 114.3 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6060,7 +5870,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 86.36 176.53 0)
+		(at 114.3 179.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6069,7 +5879,7 @@
 		(fields_autoplaced yes)
 		(uuid "81fdf740-6dcc-4f84-a17d-d062973a5ebe")
 		(property "Reference" "C45"
-			(at 90.17 175.2599 0)
+			(at 118.11 177.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6078,7 +5888,7 @@
 			)
 		)
 		(property "Value" "100nC"
-			(at 90.17 177.7999 0)
+			(at 118.11 180.3399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6087,7 +5897,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 87.3252 180.34 0)
+			(at 115.2652 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6096,7 +5906,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 176.53 0)
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6105,7 +5915,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 86.36 176.53 0)
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6114,7 +5924,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 86.36 176.53 0)
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6123,7 +5933,25 @@
 			)
 		)
 		(property "MPN" ""
-			(at 86.36 176.53 0)
+			(at 114.3 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 114.3 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6147,42 +5975,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:1N4148WT")
-		(at 173.99 102.87 0)
+		(lib_id "Device:D_Schottky")
+		(at 173.99 45.72 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "88766bb2-23ab-4431-bae2-c7dfbd8ca056")
-		(property "Reference" "D1"
-			(at 173.99 107.95 0)
+		(uuid "86a7fce1-6160-4b2a-8438-084e8afce4ff")
+		(property "Reference" "D3"
+			(at 174.3075 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1N4148WT"
-			(at 173.99 105.41 0)
+		(property "Value" "RB886GT2R"
+			(at 174.3075 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 173.99 107.315 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds30396.pdf"
-			(at 173.99 102.87 0)
+		(property "Footprint" ""
+			(at 173.99 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6190,8 +6009,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "75V 0.15A Fast switching Diode, SOD-523"
-			(at 173.99 102.87 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C84550.pdf"
+			(at 173.99 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6199,8 +6018,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 173.99 102.87 0)
+		(property "Description" "Schottky diode"
+			(at 173.99 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6208,8 +6027,26 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 173.99 102.87 0)
+		(property "MPN" "RB886GT2R"
+			(at 173.99 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 173.99 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 173.99 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6218,15 +6055,121 @@
 			)
 		)
 		(pin "1"
-			(uuid "078e2e4f-8bdc-4416-8adc-970e83e0016a")
+			(uuid "1cea54a5-399f-4f21-bd05-9be8084fdd1f")
 		)
 		(pin "2"
-			(uuid "1555bbc0-60bf-4dd4-9528-0731454aade9")
+			(uuid "7bc4a67e-7cdc-4e69-a79c-0f9979c83e23")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "D1")
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 64.77 176.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "894465f8-22e3-4220-afab-d2c4db9578ad")
+		(property "Reference" "C48"
+			(at 68.58 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2uC"
+			(at 68.58 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 65.7352 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" ""
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 64.77 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ff1bb639-1309-47d0-a849-8aefb05540b5")
+		)
+		(pin "1"
+			(uuid "eab93d53-335d-4182-98b2-d730e57d5494")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "C48")
 					(unit 1)
 				)
 			)
@@ -6285,6 +6228,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 209.55 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 209.55 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "22d6562e-b72b-4d03-9ff2-983af4949264")
 		)
@@ -6302,7 +6263,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 139.7 172.72 0)
+		(at 146.05 175.26 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6311,7 +6272,7 @@
 		(dnp no)
 		(uuid "935eb3d5-a2f5-4b6d-a8fa-f12b982d34f8")
 		(property "Reference" "#PWR077"
-			(at 139.7 176.53 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6320,7 +6281,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 140.97 168.91 0)
+			(at 147.32 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6329,7 +6290,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 172.72 0)
+			(at 146.05 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6337,7 +6298,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 172.72 0)
+			(at 146.05 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6345,7 +6306,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 139.7 172.72 0)
+			(at 146.05 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6359,6 +6320,101 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "#PWR077")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 189.23 57.15 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "94c9f433-5dac-4876-9f68-535b5a08ab35")
+		(property "Reference" "D5"
+			(at 189.5475 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RB886GT2R"
+			(at 189.5475 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C84550.pdf"
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RB886GT2R"
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "169172e2-c69d-48b8-a0ca-a5831f2520e9")
+		)
+		(pin "2"
+			(uuid "710dba59-d093-4b27-a53f-c156fcff37d7")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -6417,6 +6473,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 157.48 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 157.48 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "06fda70a-3ad8-4bdd-942a-46cacf1e7a88")
 		)
@@ -6427,93 +6501,6 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "R42")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 39.37 60.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9c5b4d89-217e-41b3-93bb-982d1e16e4a8")
-		(property "Reference" "R7"
-			(at 41.91 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 41.91 62.2299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 37.592 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2010202005_YAGEO-AC0805FR-7W1KL_C727989.pdf"
-			(at 39.37 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 39.37 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "AC0805FR-7W1KL"
-			(at 39.37 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 39.37 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6145704f-5ad6-4491-b412-991dc5f914cf")
-		)
-		(pin "2"
-			(uuid "84e731f9-16fb-47b1-b63b-0b271f7bbdd5")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -6571,6 +6558,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 209.55 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 209.55 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4d25f0ff-3d97-4c1d-bcde-030503002342")
 		)
@@ -6588,16 +6593,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 39.37 111.76 0)
+		(at 64.77 180.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a33a7f44-bc01-4f86-ab78-0ff730adc4c3")
-		(property "Reference" "#PWR036"
-			(at 39.37 118.11 0)
+		(uuid "a2d2a9fa-ee4f-4c9d-8690-cc0672cde6e9")
+		(property "Reference" "#PWR0106"
+			(at 64.77 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6606,15 +6611,16 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 39.37 116.84 0)
+			(at 64.77 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 111.76 0)
+			(at 64.77 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6623,7 +6629,73 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 111.76 0)
+			(at 64.77 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 64.77 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c8bb8d5a-2b49-4128-ab0a-04e47bae9363")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "#PWR0106")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 43.18 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a33a7f44-bc01-4f86-ab78-0ff730adc4c3")
+		(property "Reference" "#PWR036"
+			(at 43.18 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 43.18 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6632,7 +6704,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 39.37 111.76 0)
+			(at 43.18 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6646,79 +6718,6 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "#PWR036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 58.42 81.28 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ae108946-c695-4adb-a002-69472968dc3a")
-		(property "Reference" "JP1"
-			(at 55.88 81.2799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 54.61 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm_NumberLabels"
-			(at 58.42 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 58.42 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 58.42 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "08917551-b087-4c2f-bb11-11990766ed03")
-		)
-		(pin "2"
-			(uuid "dcce4c99-d458-4872-9abc-60cfd13c2d4e")
-		)
-		(pin "3"
-			(uuid "0f1bab4e-ddb1-4302-9476-9b7f193306b6")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -6777,6 +6776,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 157.48 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 157.48 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "274915ed-5ddb-4f31-b568-5a3e0e9aad53")
 		)
@@ -6787,6 +6804,112 @@
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "R41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 49.53 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b07fc2ba-60d7-4d94-b1d7-606ce1034af7")
+		(property "Reference" "C51"
+			(at 53.34 149.8599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2uC"
+			(at 53.34 152.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 50.4952 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" ""
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "edf311c6-b222-4ced-ba3a-c19cfe000a1a")
+		)
+		(pin "1"
+			(uuid "49617daf-df80-4861-a013-d179a089a5e4")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "C51")
 					(unit 1)
 				)
 			)
@@ -6838,6 +6961,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 115.57 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 115.57 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 115.57 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6928,6 +7069,112 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 31.75 176.53 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b9180674-d467-4591-afe8-7e24b684a29a")
+		(property "Reference" "C60"
+			(at 27.94 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uC"
+			(at 27.94 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 30.7848 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" ""
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "867293d0-9753-4f98-88f3-a9fd3b992847")
+		)
+		(pin "1"
+			(uuid "55e91378-8d35-4b6c-a084-92861aa9ca28")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "C60")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 226.06 63.5 270)
 		(unit 1)
@@ -6980,6 +7227,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 226.06 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 226.06 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1c6bbbfd-4bd2-49fd-ab66-c0af5a5f6de3")
 		)
@@ -6996,295 +7261,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 39.37 72.39 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b9bbb098-7b8e-4429-98b9-6eb74ff7d4d4")
-		(property "Reference" "#PWR0120"
-			(at 39.37 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 39.37 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 39.37 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b936e102-be15-4514-89b3-f44444e7d210")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0120")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 115.57 83.82 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bd596b77-baf4-46ec-b0dc-a0dfe311555d")
-		(property "Reference" "U32"
-			(at 115.57 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 115.57 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 115.57 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 115.57 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 115.57 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb547")
-		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a7982")
-		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f6")
-		)
-		(pin "1"
-			(uuid "96915031-9e83-4429-af4e-f2c6120275b0")
-		)
-		(pin "9"
-			(uuid "e833af9c-91cc-4936-b46d-c53a57ba94e5")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847387")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a7")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a3188223")
-		)
-		(pin "2"
-			(uuid "eeac05fa-7500-401d-a05a-edc2a0980292")
-		)
-		(pin "3"
-			(uuid "e0c9ab41-b4c3-4e08-983c-06bcae2a972a")
-		)
-		(pin "8"
-			(uuid "76a14b3a-1c02-461a-a631-0aef46489658")
-		)
-		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa891")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b6")
-		)
-		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce6")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc4")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e376e")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U32")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 105.41 176.53 0)
-		(unit 5)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c0c4b86d-9212-4be1-8a23-7617d132a4a0")
-		(property "Reference" "U14"
-			(at 104.14 175.2599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 104.14 177.7999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 105.41 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 105.41 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 105.41 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb548")
-		)
-		(pin "5"
-			(uuid "ecf17aee-3169-4145-be14-54cdbd6a7983")
-		)
-		(pin "7"
-			(uuid "3794e3ca-f5a2-436f-8a5a-bd56518872f7")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e07104784")
-		)
-		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f4f")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847388")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a8")
-		)
-		(pin "13"
-			(uuid "ae785d6b-9c06-413b-858c-f11b4ad12492")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a467f")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b208")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b35")
-		)
-		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa892")
-		)
-		(pin "4"
-			(uuid "ac610fbb-7a2f-4658-9e66-3f121b862afb")
-		)
-		(pin "6"
-			(uuid "ffa868bf-332c-448a-9517-d52e8f6c1ce7")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc5")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e376f")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U14")
-					(unit 5)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
-		(at 39.37 100.33 0)
+		(at 43.18 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7293,7 +7271,7 @@
 		(fields_autoplaced yes)
 		(uuid "c1ddcbc7-b39a-4b93-8a46-5c93b78f2bfc")
 		(property "Reference" "R31"
-			(at 41.91 99.0599 0)
+			(at 45.72 76.1999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7302,7 +7280,7 @@
 			)
 		)
 		(property "Value" "1kR"
-			(at 41.91 101.5999 0)
+			(at 45.72 78.7399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7311,7 +7289,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 37.592 100.33 90)
+			(at 41.402 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7320,7 +7298,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2010202005_YAGEO-AC0805FR-7W1KL_C727989.pdf"
-			(at 39.37 100.33 0)
+			(at 43.18 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7329,7 +7307,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 39.37 100.33 0)
+			(at 43.18 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7337,7 +7315,7 @@
 			)
 		)
 		(property "MPN" "AC0805FR-7W1KL"
-			(at 39.37 100.33 0)
+			(at 43.18 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7346,7 +7324,25 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 39.37 100.33 0)
+			(at 43.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 43.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 43.18 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7365,209 +7361,6 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
 					(reference "R31")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Reference_Voltage:LM4040DBZ-4.1")
-		(at 39.37 68.58 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c3376d14-34af-442f-89a9-7202477cf23b")
-		(property "Reference" "U1"
-			(at 41.91 67.3099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LM4040DBZ-4.1"
-			(at 41.91 69.8499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 44.45 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm4040.pdf"
-			(at 39.37 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4.096V Precision Micropower Shunt Voltage Reference, SOT-23"
-			(at 39.37 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "LM4040B41IDBZR"
-			(at 39.37 68.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 39.37 68.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "57e66155-697a-4f98-9e83-64fe843dea48")
-		)
-		(pin "2"
-			(uuid "10477674-03e0-47a1-b51b-946c3fd760b5")
-		)
-		(pin "1"
-			(uuid "b6458217-0111-4925-9197-f02205f47d16")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:OPA4340EA")
-		(at 173.99 57.15 0)
-		(mirror x)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c8a3c03a-9e65-42f7-9302-e1caee6f8733")
-		(property "Reference" "U32"
-			(at 173.99 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA4340EA"
-			(at 173.99 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 173.99 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa340.pdf"
-			(at 173.99 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Single-Supply, Rail-to-Rail Operational Amplifier, MicroAmplifier Series, SSOP-16"
-			(at 173.99 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "12"
-			(uuid "8b710bab-c643-4945-9e60-451bceabb549")
-		)
-		(pin "5"
-			(uuid "a555dd97-81c8-441e-9fa1-adcc9993bbdd")
-		)
-		(pin "7"
-			(uuid "72815da2-70f4-4d18-8888-2372bbae129a")
-		)
-		(pin "1"
-			(uuid "6d57f242-92b8-4366-97a0-fa0e07104785")
-		)
-		(pin "9"
-			(uuid "1c74ed86-97c4-4c36-9ff6-d415641f3f50")
-		)
-		(pin "14"
-			(uuid "b9ba283d-9c7d-4a3a-8ab4-d0c6e9847389")
-		)
-		(pin "10"
-			(uuid "d7996354-850a-46ad-89eb-11bcabfde6a9")
-		)
-		(pin "13"
-			(uuid "3f8790d8-869e-4c9d-90c2-9b21a3188224")
-		)
-		(pin "2"
-			(uuid "9388562a-078b-49e7-a6e1-8789be8a4680")
-		)
-		(pin "3"
-			(uuid "8ba95ee7-0a19-41fe-a532-47df22e3b209")
-		)
-		(pin "8"
-			(uuid "f927723c-53e5-4679-a2d5-fbd8c5a39b36")
-		)
-		(pin "11"
-			(uuid "59c780e9-2ba0-4555-a5b6-b8c2fdcaa893")
-		)
-		(pin "4"
-			(uuid "4a757b70-32cf-4672-83c5-f5a7bd9622b7")
-		)
-		(pin "6"
-			(uuid "859246ac-cd9e-4d83-a22e-a36cbcc25c20")
-		)
-		(pin "15"
-			(uuid "744a0532-8267-46df-a064-183bfcfd6fc6")
-		)
-		(pin "16"
-			(uuid "dab02950-1dcf-4c09-912d-3d28fc5e3770")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "U32")
-					(unit 2)
 				)
 			)
 		)
@@ -7624,6 +7417,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 209.55 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 209.55 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "73143449-aa2e-4ca2-816e-0487876f8fd4")
 		)
@@ -7640,8 +7451,270 @@
 		)
 	)
 	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 248.92 69.85 0)
+		(mirror x)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cb1a7576-15b9-4e19-b60d-cdba01d9846e")
+		(property "Reference" "U1"
+			(at 248.92 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 248.92 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 247.65 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 250.19 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c7")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee16")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d6")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b73102979b")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefd9")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7b9")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819cd")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041add")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e86259")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a28")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffd3")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc6")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b83")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8897")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U1")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 226.06 72.39 0)
+		(mirror x)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cc75edd2-fe72-4939-8841-59eb47c4b2f6")
+		(property "Reference" "U1"
+			(at 226.06 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 226.06 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 224.79 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 227.33 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 226.06 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 226.06 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 226.06 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 226.06 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c8")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee17")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d7")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b73102979c")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefda")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7ba")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819ce")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041ade")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e8625a")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a29")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffd4")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc7")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b84")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8898")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U1")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:-5V")
-		(at 156.21 184.15 180)
+		(at 162.56 186.69 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7650,7 +7723,7 @@
 		(fields_autoplaced yes)
 		(uuid "cc8328ce-7474-4561-860a-47b95df6f528")
 		(property "Reference" "#PWR073"
-			(at 156.21 180.34 0)
+			(at 162.56 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7659,7 +7732,7 @@
 			)
 		)
 		(property "Value" "-5V"
-			(at 156.21 189.23 0)
+			(at 162.56 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7667,7 +7740,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 184.15 0)
+			(at 162.56 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7676,7 +7749,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 184.15 0)
+			(at 162.56 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7685,7 +7758,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"-5V\""
-			(at 156.21 184.15 0)
+			(at 162.56 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7778,6 +7851,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 66.04 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 66.04 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "49d10257-aaa3-4da9-baf1-7e5bd4ba579e")
 		)
@@ -7845,6 +7936,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 173.99 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 173.99 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8894b540-ee43-4a85-99cf-1c8c10e1024a")
 		)
@@ -7861,79 +7970,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 39.37 53.34 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f1c226ee-6e68-47e4-bf1c-f0d9ef910172")
-		(property "Reference" "JP2"
-			(at 41.91 52.0699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SolderJumper_2_Open"
-			(at 41.91 54.6099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
-			(at 39.37 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 39.37 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 39.37 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "59dfb5b5-07d9-44a1-941f-f70088f7ddac")
-		)
-		(pin "2"
-			(uuid "8c2fd3cb-faae-4649-9eaf-a9b8e9268854")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "JP2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 54.61 143.51 0)
+		(at 49.53 166.37 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7942,7 +7980,7 @@
 		(dnp no)
 		(uuid "f92517aa-d244-41ae-9b65-0057f3ac1547")
 		(property "Reference" "#PWR086"
-			(at 54.61 147.32 0)
+			(at 49.53 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7951,7 +7989,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 55.88 139.7 0)
+			(at 50.8 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7960,7 +7998,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 54.61 143.51 0)
+			(at 49.53 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7968,7 +8006,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 143.51 0)
+			(at 49.53 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7976,7 +8014,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 54.61 143.51 0)
+			(at 49.53 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8063,45 +8101,228 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 39.37 92.71 90)
+		(lib_id "Amplifier_Operational:ADA4807-4ARUZ")
+		(at 173.99 57.15 0)
+		(mirror x)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fbf6b262-fa03-4dae-bab4-ef89e5c0e56b")
+		(property "Reference" "U1"
+			(at 173.99 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AD8648"
+			(at 173.99 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+			(at 172.72 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8646_8647_8648.pdf"
+			(at 175.26 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Rail-to-Rail Input/Output Amplifiers, TSSOP-14"
+			(at 173.99 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AD8648ARUZ"
+			(at 173.99 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 173.99 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 173.99 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "5c71d3f6-4398-468b-af94-d50ddb0fb9c9")
+		)
+		(pin "11"
+			(uuid "1b6dcfc3-d3c5-416d-846a-ac2180f0ee18")
+		)
+		(pin "2"
+			(uuid "03518193-41a4-455b-bfb4-194d22e946d8")
+		)
+		(pin "6"
+			(uuid "5c1db551-100e-4848-b169-31b73102979d")
+		)
+		(pin "13"
+			(uuid "2224e564-dd88-49ca-a1dc-f0ae5ebdefdb")
+		)
+		(pin "7"
+			(uuid "32d7b76c-2dda-44b2-bbd6-8ea711b5c7bb")
+		)
+		(pin "10"
+			(uuid "2882afd3-1b34-4510-9a6b-baa3335819cf")
+		)
+		(pin "8"
+			(uuid "f2156104-09a9-42f6-8ee5-8effc1041adf")
+		)
+		(pin "12"
+			(uuid "60ee385b-fe2f-4d50-b1b5-a256c9e8625b")
+		)
+		(pin "1"
+			(uuid "af8fee8e-3bef-4d10-9e56-e0334ebb6a2a")
+		)
+		(pin "3"
+			(uuid "725c52e7-c899-4464-8d17-8cd563d2ffd5")
+		)
+		(pin "5"
+			(uuid "ec6f7d25-574d-4077-8d09-24eada534bc8")
+		)
+		(pin "14"
+			(uuid "51f2d953-675a-4ec9-833e-d3106c178b85")
+		)
+		(pin "4"
+			(uuid "a8f639b6-7b93-461e-8a55-433a0c3a8899")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "U1")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 49.53 147.32 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "feba0b07-fee0-4882-9278-34380b6d83f8")
+		(property "Reference" "#PWR0120"
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 50.8 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5fa7267e-3ba7-42f4-a53f-3846005d54f4")
+		)
+		(instances
+			(project "BDCMotorControlShieldMega"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "#PWR0120")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 189.23 114.3 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fff73701-0818-49e0-8027-691c2dd7c9e8")
-		(property "Reference" "JP3"
-			(at 41.91 91.4399 90)
+		(uuid "fffdd83b-8176-47f1-a969-65abacc7254d")
+		(property "Reference" "D2"
+			(at 189.5475 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "SolderJumper_2_Open"
-			(at 41.91 93.9799 90)
+		(property "Value" "RB886GT2R"
+			(at 189.5475 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
-			(at 39.37 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 39.37 92.71 0)
+		(property "Footprint" ""
+			(at 189.23 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8109,8 +8330,44 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 39.37 92.71 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C84550.pdf"
+			(at 189.23 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 189.23 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RB886GT2R"
+			(at 189.23 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 189.23 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 189.23 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8119,15 +8376,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "29bacdde-9270-4a20-87ca-f06bf4356420")
+			(uuid "8ca9374c-ca3d-4fd3-b28c-1079319a4992")
 		)
 		(pin "2"
-			(uuid "dbbf3d8a-ebb0-4c2c-8883-b7d4cbdd1ffb")
+			(uuid "8598a037-7ecb-44a2-9836-c0fd0d9b9bfe")
 		)
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "JP3")
+					(reference "D2")
 					(unit 1)
 				)
 			)
