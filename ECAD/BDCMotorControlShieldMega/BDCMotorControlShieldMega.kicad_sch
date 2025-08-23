@@ -2630,12 +2630,6 @@
 		(color 0 0 0 0)
 		(uuid "48ab88d7-7084-4d02-b109-3ad55a30bb11")
 	)
-	(junction
-		(at 74.93 119.38)
-		(diameter 1.016)
-		(color 0 0 0 0)
-		(uuid "f71da641-16e6-4257-80c3-0b9d804fee4f")
-	)
 	(no_connect
 		(at 62.23 132.08)
 		(uuid "0f029aab-e79c-42e7-a151-57ffa94021b0")
@@ -2709,6 +2703,10 @@
 		(uuid "4d9fe911-8438-49f7-906f-808cbd5d1e90")
 	)
 	(no_connect
+		(at 69.85 132.08)
+		(uuid "52b1f45c-de87-4852-b6a4-4a7796954b4b")
+	)
+	(no_connect
 		(at 34.29 102.87)
 		(uuid "5494fb47-2000-4f93-aafc-27c6915ac9d7")
 	)
@@ -2743,6 +2741,10 @@
 	(no_connect
 		(at 34.29 36.83)
 		(uuid "6fccdb00-0618-49f2-bd5e-df65b6661b4c")
+	)
+	(no_connect
+		(at 69.85 119.38)
+		(uuid "74de212d-f4d9-4aed-a94c-c2346a4538be")
 	)
 	(no_connect
 		(at 34.29 97.79)
@@ -2939,16 +2941,6 @@
 			(type solid)
 		)
 		(uuid "10a001fd-550c-4180-b3e7-b52dc39e5aa8")
-	)
-	(wire
-		(pts
-			(xy 74.93 119.38) (xy 74.93 132.08)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "144ec9ba-84d6-46c1-95c2-7b9d044c8102")
 	)
 	(wire
 		(pts
@@ -3492,16 +3484,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 111.76) (xy 74.93 119.38)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "802f1617-74b6-45d5-81bd-fc68fa18fa33")
-	)
-	(wire
-		(pts
 			(xy 217.17 100.33) (xy 207.01 100.33)
 		)
 		(stroke
@@ -3539,16 +3521,6 @@
 			(type solid)
 		)
 		(uuid "8a3d35a2-f0f6-4dec-a606-7c8e288ca828")
-	)
-	(wire
-		(pts
-			(xy 69.85 119.38) (xy 74.93 119.38)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "8bc8f231-fbd0-4b5f-8d67-284a97c50296")
 	)
 	(wire
 		(pts
@@ -3859,16 +3831,6 @@
 			(type solid)
 		)
 		(uuid "dc0559a6-1a61-400e-bac5-581da973ea8a")
-	)
-	(wire
-		(pts
-			(xy 74.93 132.08) (xy 69.85 132.08)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "dc5eef5c-4268-4346-9dfa-59c86286b7a6")
 	)
 	(wire
 		(pts
@@ -6166,69 +6128,6 @@
 			(project "Arduino_Mega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(reference "#PWR0105")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 74.93 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-000056d75ab8")
-		(property "Reference" "#PWR0103"
-			(at 74.93 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 75.2983 107.4356 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 74.93 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 74.93 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5f768500-89d6-479e-8869-0f9364910e8f")
-		)
-		(instances
-			(project "Arduino_Mega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
