@@ -1628,12 +1628,6 @@
 		(uuid "b5ce2f27-b347-4b0f-a869-29cd30d9ed75")
 	)
 	(junction
-		(at 78.74 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b879eb48-2128-46f1-9c64-df45376648f5")
-	)
-	(junction
 		(at 176.53 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1736,16 +1730,6 @@
 			(type default)
 		)
 		(uuid "18aa81da-79e4-459a-972b-539692628822")
-	)
-	(wire
-		(pts
-			(xy 78.74 71.12) (xy 107.95 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a9f2bb7-b024-4b9b-8782-5753bb502f10")
 	)
 	(wire
 		(pts
@@ -2549,7 +2533,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 71.12) (xy 78.74 86.36)
+			(xy 78.74 85.09) (xy 78.74 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2917,17 +2901,6 @@
 			(justify right)
 		)
 		(uuid "65ded6de-0c67-452d-a969-350aeadb464d")
-	)
-	(hierarchical_label "ADC_VREF"
-		(shape output)
-		(at 107.95 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a05cac0b-7982-40f6-8d5a-802370151b80")
 	)
 	(hierarchical_label "VA1_OUT"
 		(shape output)
@@ -6117,7 +6090,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3VADC")
-		(at 78.74 71.12 0)
+		(at 78.74 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6126,7 +6099,7 @@
 		(fields_autoplaced yes)
 		(uuid "9ff0cf27-9fcf-483a-a51b-63f8aaf0af01")
 		(property "Reference" "#PWR0471"
-			(at 82.55 72.39 0)
+			(at 82.55 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6135,7 +6108,7 @@
 			)
 		)
 		(property "Value" "+3VADC"
-			(at 78.74 66.04 0)
+			(at 78.74 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6143,7 +6116,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 71.12 0)
+			(at 78.74 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6152,7 +6125,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 71.12 0)
+			(at 78.74 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6161,7 +6134,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3VADC\""
-			(at 78.74 71.12 0)
+			(at 78.74 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
