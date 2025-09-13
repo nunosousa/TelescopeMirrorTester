@@ -2599,7 +2599,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 55.88) (xy 256.54 55.88)
+			(xy 238.76 55.88) (xy 247.65 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2609,7 +2609,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 58.42) (xy 256.54 58.42)
+			(xy 238.76 58.42) (xy 247.65 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2626,16 +2626,6 @@
 			(type default)
 		)
 		(uuid "6c21acbc-bfe6-4cdf-9525-74c8b1f049d3")
-	)
-	(wire
-		(pts
-			(xy 247.65 66.04) (xy 256.54 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71a13c71-f54b-44b3-98eb-8d5dcd4756c7")
 	)
 	(wire
 		(pts
@@ -2877,16 +2867,6 @@
 		)
 		(uuid "f41a37dd-b1cb-4ca5-9a8e-c057317693c8")
 	)
-	(label "I_O.~{RESET}"
-		(at 256.54 66.04 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "0b586f46-3b11-4d39-9065-59007493364a")
-	)
 	(label "~{RXLED}"
 		(at 149.86 158.75 180)
 		(effects
@@ -2896,16 +2876,6 @@
 			(justify right bottom)
 		)
 		(uuid "0dcc8830-f743-414e-a296-a841ebdf0081")
-	)
-	(label "I_O.RX0_0"
-		(at 256.54 55.88 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "161304e0-fa1d-4969-ab2f-33a8262d8e1e")
 	)
 	(label "VBUS_ON"
 		(at 72.39 58.42 180)
@@ -2936,16 +2906,6 @@
 			(justify right bottom)
 		)
 		(uuid "40d52768-ea49-4fc8-b928-f624a9aa21f2")
-	)
-	(label "I_O.TX0_1"
-		(at 256.54 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "4bec0c2b-b587-411d-8fe1-763d850eb615")
 	)
 	(label "USBP"
 		(at 189.23 63.5 0)
@@ -3028,6 +2988,39 @@
 			(justify left)
 		)
 		(uuid "0c71fd97-b733-4104-a5be-bc3b4afe5970")
+	)
+	(hierarchical_label "RX"
+		(shape output)
+		(at 247.65 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2c05627c-db73-48c0-b336-f1de36650f3d")
+	)
+	(hierarchical_label "TX"
+		(shape input)
+		(at 247.65 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3b935291-597e-4fc8-bc94-79e395938417")
+	)
+	(hierarchical_label "~{MCU_RESET}"
+		(shape output)
+		(at 247.65 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b5c87d76-8594-4a91-9f2e-897901c3d710")
 	)
 	(symbol
 		(lib_id "Device:LED")
