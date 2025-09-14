@@ -1428,6 +1428,107 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "Inverter feedback\nloop with gain 1\nWhen VA0 < VREF"
 		(exclude_from_sim no)
@@ -1512,6 +1613,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0cc387fa-b6ca-4896-9af1-5544d3bc995b")
+	)
+	(junction
+		(at 67.31 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d3739f8-688b-462b-8299-96fd4e8343e1")
 	)
 	(junction
 		(at 41.91 86.36)
@@ -2353,6 +2460,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 86.36) (xy 78.74 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fd53f1f-21ae-448f-b079-01f2cb6a1987")
+	)
+	(wire
+		(pts
 			(xy 110.49 80.01) (xy 110.49 88.9)
 		)
 		(stroke
@@ -2380,6 +2497,16 @@
 			(type default)
 		)
 		(uuid "8b621b7b-9778-4bd5-80c2-8a527e565853")
+	)
+	(wire
+		(pts
+			(xy 67.31 85.09) (xy 67.31 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d24703c-6842-4fa3-a124-901ada34dbd0")
 	)
 	(wire
 		(pts
@@ -2593,7 +2720,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 86.36) (xy 78.74 86.36)
+			(xy 64.77 86.36) (xy 67.31 86.36)
 		)
 		(stroke
 			(width 0)
@@ -3209,7 +3336,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a5009a4-348f-4517-b6c6-e7635d6d047a")
-		(property "Reference" "C116"
+		(property "Reference" "C114"
 			(at 149.86 177.7999 0)
 			(effects
 				(font
@@ -3299,7 +3426,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "C116")
+					(reference "C114")
 					(unit 1)
 				)
 			)
@@ -3448,7 +3575,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1c4dfa8e-27b1-4c2d-afe1-100326ad23e5")
-		(property "Reference" "#PWR0370"
+		(property "Reference" "#PWR0367"
 			(at 130.81 175.26 0)
 			(effects
 				(font
@@ -3496,7 +3623,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0370")
+					(reference "#PWR0367")
 					(unit 1)
 				)
 			)
@@ -3598,7 +3725,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "24df1c33-59e6-4b52-b7bc-062b6eec3412")
-		(property "Reference" "#PWR0376"
+		(property "Reference" "#PWR0373"
 			(at 190.5 74.93 0)
 			(effects
 				(font
@@ -3649,7 +3776,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0376")
+					(reference "#PWR0373")
 					(unit 1)
 				)
 			)
@@ -3665,7 +3792,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "292f3126-bac9-41f3-a95e-d669443f2ac9")
-		(property "Reference" "#PWR0373"
+		(property "Reference" "#PWR0370"
 			(at 146.05 179.07 0)
 			(effects
 				(font
@@ -3715,7 +3842,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0373")
+					(reference "#PWR0370")
 					(unit 1)
 				)
 			)
@@ -3816,7 +3943,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32a711cf-9b63-436a-bc7f-683fb359a3b3")
-		(property "Reference" "#PWR0378"
+		(property "Reference" "#PWR0375"
 			(at 242.57 90.17 0)
 			(effects
 				(font
@@ -3867,7 +3994,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0378")
+					(reference "#PWR0375")
 					(unit 1)
 				)
 			)
@@ -3883,7 +4010,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3f187357-9046-4216-86c5-091ac5343a2d")
-		(property "Reference" "#PWR0365"
+		(property "Reference" "#PWR0361"
 			(at 64.77 100.33 0)
 			(effects
 				(font
@@ -3934,7 +4061,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0365")
+					(reference "#PWR0361")
 					(unit 1)
 				)
 			)
@@ -4232,7 +4359,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "52b62e6d-8bec-4caa-b3fd-1b388612227a")
-		(property "Reference" "#PWR0363"
+		(property "Reference" "#PWR0359"
 			(at 41.91 82.55 0)
 			(effects
 				(font
@@ -4280,7 +4407,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0363")
+					(reference "#PWR0359")
 					(unit 1)
 				)
 			)
@@ -4382,7 +4509,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5a61463f-62de-4eea-a8b1-55f6032ea37a")
-		(property "Reference" "#PWR0377"
+		(property "Reference" "#PWR0374"
 			(at 190.5 132.08 0)
 			(effects
 				(font
@@ -4433,7 +4560,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0377")
+					(reference "#PWR0374")
 					(unit 1)
 				)
 			)
@@ -4711,7 +4838,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5d840438-ebf2-4c9b-a319-1daeeafd338d")
-		(property "Reference" "#PWR0369"
+		(property "Reference" "#PWR0366"
 			(at 114.3 179.07 0)
 			(effects
 				(font
@@ -4761,7 +4888,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0369")
+					(reference "#PWR0366")
 					(unit 1)
 				)
 			)
@@ -4777,7 +4904,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "610f927b-f683-4327-b94b-a26022aed748")
-		(property "Reference" "#PWR0374"
+		(property "Reference" "#PWR0371"
 			(at 162.56 175.26 0)
 			(effects
 				(font
@@ -4825,7 +4952,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0374")
+					(reference "#PWR0371")
 					(unit 1)
 				)
 			)
@@ -4841,7 +4968,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "67b505ce-f9b8-43f0-a0cd-8e7445ea9fac")
-		(property "Reference" "#PWR0371"
+		(property "Reference" "#PWR0368"
 			(at 130.81 182.88 0)
 			(effects
 				(font
@@ -4891,7 +5018,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0371")
+					(reference "#PWR0368")
 					(unit 1)
 				)
 			)
@@ -5133,7 +5260,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78934a93-73bd-49e5-aefb-5fe5dccab4b9")
-		(property "Reference" "#PWR0367"
+		(property "Reference" "#PWR0364"
 			(at 113.03 148.59 0)
 			(effects
 				(font
@@ -5184,7 +5311,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0367")
+					(reference "#PWR0364")
 					(unit 1)
 				)
 			)
@@ -5417,7 +5544,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7ea05f74-7055-45ee-8e5f-96ff494bfb55")
-		(property "Reference" "#PWR0368"
+		(property "Reference" "#PWR0365"
 			(at 114.3 179.07 0)
 			(effects
 				(font
@@ -5465,7 +5592,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0368")
+					(reference "#PWR0365")
 					(unit 1)
 				)
 			)
@@ -5481,7 +5608,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "81fdf740-6dcc-4f84-a17d-d062973a5ebe")
-		(property "Reference" "C115"
+		(property "Reference" "C113"
 			(at 118.11 177.7999 0)
 			(effects
 				(font
@@ -5571,7 +5698,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "C115")
+					(reference "C113")
 					(unit 1)
 				)
 			)
@@ -5759,6 +5886,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 67.31 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "929f6cb1-4939-45db-86b6-f1ad91265d97")
+		(property "Reference" "#FLG010"
+			(at 67.31 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 67.31 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 67.31 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.31 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 67.31 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "191ca850-cea7-4a60-9bab-0a010f32754b")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
+					(reference "#FLG010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 146.05 175.26 0)
 		(mirror y)
@@ -5768,7 +5961,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "935eb3d5-a2f5-4b6d-a8fa-f12b982d34f8")
-		(property "Reference" "#PWR0372"
+		(property "Reference" "#PWR0369"
 			(at 146.05 179.07 0)
 			(effects
 				(font
@@ -5816,7 +6009,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0372")
+					(reference "#PWR0369")
 					(unit 1)
 				)
 			)
@@ -6098,7 +6291,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9ff0cf27-9fcf-483a-a51b-63f8aaf0af01")
-		(property "Reference" "#PWR0471"
+		(property "Reference" "#PWR0362"
 			(at 82.55 86.36 0)
 			(effects
 				(font
@@ -6148,7 +6341,7 @@
 		(instances
 			(project ""
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0471")
+					(reference "#PWR0362")
 					(unit 1)
 				)
 			)
@@ -6164,7 +6357,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a33a7f44-bc01-4f86-ab78-0ff730adc4c3")
-		(property "Reference" "#PWR0364"
+		(property "Reference" "#PWR0360"
 			(at 41.91 100.33 0)
 			(effects
 				(font
@@ -6213,7 +6406,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0364")
+					(reference "#PWR0360")
 					(unit 1)
 				)
 			)
@@ -6401,7 +6594,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b81b2627-afe4-4cfd-bd58-6bd7977bf21c")
-		(property "Reference" "#PWR0379"
+		(property "Reference" "#PWR0376"
 			(at 242.57 147.32 0)
 			(effects
 				(font
@@ -6452,7 +6645,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0379")
+					(reference "#PWR0376")
 					(unit 1)
 				)
 			)
@@ -7006,7 +7199,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cc8328ce-7474-4561-860a-47b95df6f528")
-		(property "Reference" "#PWR0375"
+		(property "Reference" "#PWR0372"
 			(at 162.56 182.88 0)
 			(effects
 				(font
@@ -7056,7 +7249,7 @@
 		(instances
 			(project ""
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0375")
+					(reference "#PWR0372")
 					(unit 1)
 				)
 			)
@@ -7072,7 +7265,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d521dc5d-ed22-41e6-a9ef-89f04024be04")
-		(property "Reference" "C114"
+		(property "Reference" "C112"
 			(at 68.58 88.8999 0)
 			(effects
 				(font
@@ -7162,7 +7355,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "C114")
+					(reference "C112")
 					(unit 1)
 				)
 			)
@@ -7263,7 +7456,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f931d4ec-331f-4788-923a-ab80314c3e59")
-		(property "Reference" "#PWR0366"
+		(property "Reference" "#PWR0363"
 			(at 92.71 99.06 0)
 			(effects
 				(font
@@ -7314,7 +7507,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/47668151-ec4f-4ade-9211-f888644ab2e2"
-					(reference "#PWR0366")
+					(reference "#PWR0363")
 					(unit 1)
 				)
 			)
