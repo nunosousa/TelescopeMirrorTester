@@ -5232,6 +5232,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+5V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+5VA"
 			(power)
 			(pin_numbers
@@ -5478,6 +5603,16 @@
 			)
 		)
 		(uuid "36817940-b9cd-4ae0-ae93-03577e2c6c73")
+	)
+	(text "I2C pull-up resistors"
+		(exclude_from_sim no)
+		(at 167.386 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5aa96d3b-f7c4-4a6e-84e6-addfc7b5eb7f")
 	)
 	(text "Imax = 3mA"
 		(exclude_from_sim no)
@@ -5759,6 +5894,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 156.21) (xy 172.72 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b93dba8-bddb-4d41-a086-37723b78f55a")
+	)
+	(wire
+		(pts
 			(xy 140.97 120.65) (xy 153.67 120.65)
 		)
 		(stroke
@@ -5909,7 +6054,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 156.21) (xy 162.56 156.21)
+			(xy 124.46 156.21) (xy 125.73 156.21)
 		)
 		(stroke
 			(width 0)
@@ -6009,7 +6154,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 151.13) (xy 162.56 149.86)
+			(xy 125.73 151.13) (xy 125.73 149.86)
 		)
 		(stroke
 			(width 0)
@@ -6359,7 +6504,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 156.21) (xy 162.56 157.48)
+			(xy 125.73 156.21) (xy 125.73 157.48)
 		)
 		(stroke
 			(width 0)
@@ -6519,6 +6664,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 162.56) (xy 162.56 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcf7db40-8d16-4d60-97c4-46f8a3f4cf85")
+	)
+	(wire
+		(pts
 			(xy 219.71 77.47) (xy 234.95 77.47)
 		)
 		(stroke
@@ -6526,6 +6681,16 @@
 			(type default)
 		)
 		(uuid "be817456-965a-4a19-a4f6-a9c9c397d016")
+	)
+	(wire
+		(pts
+			(xy 162.56 156.21) (xy 162.56 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf6944a3-5ddf-4689-8949-80d9ce166cc9")
 	)
 	(wire
 		(pts
@@ -6619,7 +6784,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 151.13) (xy 162.56 151.13)
+			(xy 124.46 151.13) (xy 125.73 151.13)
 		)
 		(stroke
 			(width 0)
@@ -6656,6 +6821,16 @@
 			(type default)
 		)
 		(uuid "f4a7de3f-da04-47dd-aad6-9a454ed00db5")
+	)
+	(wire
+		(pts
+			(xy 172.72 160.02) (xy 173.99 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faab8126-a8a4-4b05-9a7c-22f3625dc041")
 	)
 	(wire
 		(pts
@@ -7549,7 +7724,7 @@
 	)
 	(hierarchical_label "MOSI"
 		(shape output)
-		(at 161.29 153.67 0)
+		(at 124.46 153.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7657,6 +7832,17 @@
 		)
 		(uuid "4530ca53-3db7-40e0-af2a-c541ee4001d6")
 	)
+	(hierarchical_label "SDA"
+		(shape bidirectional)
+		(at 173.99 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5408b3cd-350b-4c1e-90ea-c0c1b1fd62cf")
+	)
 	(hierarchical_label "PCINT16"
 		(shape input)
 		(at 39.37 73.66 180)
@@ -7692,7 +7878,7 @@
 	)
 	(hierarchical_label "~{RESET}"
 		(shape input)
-		(at 148.59 156.21 180)
+		(at 111.76 156.21 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7780,7 +7966,7 @@
 	)
 	(hierarchical_label "SCK"
 		(shape output)
-		(at 148.59 153.67 180)
+		(at 111.76 153.67 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7810,6 +7996,17 @@
 			(justify right)
 		)
 		(uuid "e2b99fd5-d861-40dc-86aa-778ec83b24b9")
+	)
+	(hierarchical_label "SCL"
+		(shape output)
+		(at 173.99 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e779d703-aa05-4827-ad1d-60d88d3c4c38")
 	)
 	(hierarchical_label "PCINT17"
 		(shape input)
@@ -7846,7 +8043,7 @@
 	)
 	(hierarchical_label "MISO"
 		(shape input)
-		(at 148.59 151.13 180)
+		(at 111.76 151.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10341,9 +10538,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 172.72 148.59 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "605a5bf7-b8c0-438f-b436-77c81eced685")
+		(property "Reference" "#PWR0206"
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 173.99 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 172.72 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "840c1c36-0553-4e71-a6de-e500df385cdd")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
+					(reference "#PWR0206")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 162.56 157.48 0)
+		(at 125.73 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10352,7 +10613,7 @@
 		(fields_autoplaced yes)
 		(uuid "61f5e543-e98c-4042-832f-36ccc06b094a")
 		(property "Reference" "#PWR0464"
-			(at 162.56 163.83 0)
+			(at 125.73 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10361,7 +10622,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 162.56 162.56 0)
+			(at 125.73 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10369,7 +10630,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 157.48 0)
+			(at 125.73 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10378,7 +10639,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 157.48 0)
+			(at 125.73 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10387,7 +10648,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 157.48 0)
+			(at 125.73 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10543,7 +10804,7 @@
 	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
-		(at 162.56 149.86 0)
+		(at 125.73 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10552,7 +10813,7 @@
 		(fields_autoplaced yes)
 		(uuid "70ee99ea-c49f-4101-99e8-f6a7ca3f5645")
 		(property "Reference" "#PWR0463"
-			(at 162.56 153.67 0)
+			(at 125.73 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10561,7 +10822,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 162.56 144.78 0)
+			(at 125.73 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10569,7 +10830,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 149.86 0)
+			(at 125.73 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10578,7 +10839,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 149.86 0)
+			(at 125.73 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10587,7 +10848,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 162.56 149.86 0)
+			(at 125.73 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10754,6 +11015,70 @@
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
 					(reference "D14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 162.56 148.59 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7d1fa7cd-89dd-4d87-92bc-773efd657e47")
+		(property "Reference" "#PWR0205"
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 163.83 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9d3af73f-993e-4813-9aa9-9b98fd9ce8aa")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
+					(reference "#PWR0205")
 					(unit 1)
 				)
 			)
@@ -11069,7 +11394,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
-		(at 153.67 153.67 0)
+		(at 116.84 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11078,7 +11403,7 @@
 		(fields_autoplaced yes)
 		(uuid "94845fc5-81d0-43fa-8f29-060ac40535f6")
 		(property "Reference" "J18"
-			(at 154.94 144.78 0)
+			(at 118.11 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11086,7 +11411,7 @@
 			)
 		)
 		(property "Value" "ICSP"
-			(at 154.94 147.32 0)
+			(at 118.11 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11094,7 +11419,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
-			(at 153.67 153.67 0)
+			(at 116.84 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11103,7 +11428,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2306091006_HCTL-PZ254-2-03-Z-8-5_C2894964.pdf"
-			(at 153.67 153.67 0)
+			(at 116.84 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11112,7 +11437,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 153.67 153.67 0)
+			(at 116.84 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11121,7 +11446,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 153.67 153.67 0)
+			(at 116.84 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11130,7 +11455,7 @@
 			)
 		)
 		(property "MPN" "PZ254-2-03-Z-8.5"
-			(at 153.67 153.67 0)
+			(at 116.84 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12064,6 +12389,112 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 172.72 152.4 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "da116546-cfd0-4580-8668-75051c392a06")
+		(property "Reference" "R22"
+			(at 170.18 151.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kR"
+			(at 170.18 153.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 174.498 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 172.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "36c6e937-e561-4713-b938-fe824d6025c7")
+		)
+		(pin "2"
+			(uuid "6f849cfa-2975-45e8-b544-d1a130e6d313")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
 		(at 153.67 129.54 0)
@@ -12433,6 +12864,111 @@
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
 					(reference "#PWR0458")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 162.56 152.4 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f4f2736f-8d8a-4bc2-93eb-8ee71a63b9a3")
+		(property "Reference" "R21"
+			(at 160.02 151.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kR"
+			(at 160.02 153.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 164.338 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171610_YAGEO-RC0805JR-0710KL_C100047.pdf"
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0805JR-0710KL"
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 162.56 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc61137e-2613-4f0a-bece-b3f384ff461c")
+		)
+		(pin "2"
+			(uuid "20ac23b6-de17-4d91-8c81-2721afe86aed")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
+					(reference "R21")
 					(unit 1)
 				)
 			)

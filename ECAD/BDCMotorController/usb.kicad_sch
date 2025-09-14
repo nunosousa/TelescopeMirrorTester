@@ -2150,11 +2150,12 @@
 	)
 	(text "*These capacitors used for edge rate control and to bypass high\nfrequency energy to ground. These capacitors should be limited to a maximum of 50 pF\nand should be located as close to the microcontroller as possible.\n**ESD protection diodes with a maximum capacitance of 50 pF are also used on the\nUSB_DP and USB_DM signal lines; this capacitance needs to be taken into\nconsideration on the overall capacitance value."
 		(exclude_from_sim no)
-		(at 140.716 118.618 0)
+		(at 97.028 117.856 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "6f3ab19b-b218-430b-90f3-ad12a3c53f91")
 	)
@@ -2413,26 +2414,6 @@
 			(type default)
 		)
 		(uuid "6008d7a7-17b7-4608-87ce-8b3b3454e9ce")
-	)
-	(wire
-		(pts
-			(xy 238.76 55.88) (xy 247.65 55.88)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "67f6e478-4859-4300-b4fd-e5804c66cbaa")
-	)
-	(wire
-		(pts
-			(xy 238.76 58.42) (xy 247.65 58.42)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "68951f98-a3f5-4b6b-baa5-340a49943f21")
 	)
 	(wire
 		(pts
@@ -2808,7 +2789,7 @@
 	)
 	(hierarchical_label "RX"
 		(shape output)
-		(at 247.65 55.88 0)
+		(at 238.76 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2819,7 +2800,7 @@
 	)
 	(hierarchical_label "TX"
 		(shape input)
-		(at 247.65 58.42 0)
+		(at 238.76 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
