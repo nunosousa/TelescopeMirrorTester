@@ -2391,7 +2391,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e/8e3cf51c-a531-4b07-8024-6db0f5144708")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
 		(sheetname "/Motor Control/H-bridge #4/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -2651,7 +2651,7 @@
 	(footprint "Connector_Dsub:DSUB-9_Pins_Vertical_P2.77x2.84mm_MountingHoles"
 		(layer "F.Cu")
 		(uuid "05a3d1bb-f47f-4390-a9a2-dd73cbb6f2b0")
-		(at -65.14 33.819338)
+		(at 195.96 64.58)
 		(descr "9-pin D-Sub connector, straight/vertical, THT-mount, pins (male), pitch 2.77x2.84mm, distance of mounting holes 25mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf")
 		(tags "9-pin D-Sub connector straight vertical THT pins pitch 2.77x2.84mm mounting holes distance 25mm")
 		(property "Reference" "J5"
@@ -13908,14 +13908,14 @@
 			)
 		)
 	)
-	(footprint "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal"
+	(footprint "Connector_USB:USB_B_TE_5787834_Vertical"
 		(layer "F.Cu")
 		(uuid "1e4e61ca-acf8-43e1-8bce-c75680af5e82")
-		(at 43.225 35.02)
-		(descr "USB B receptacle, Horizontal, through-hole, http://www.on-shore.com/wp-content/uploads/2015/09/usb-b1hsxx.pdf")
-		(tags "USB-B receptacle horizontal through-hole")
+		(at 202 110.8)
+		(descr "http://www.mouser.com/ds/2/418/NG_CD_5787834_A4-669110.pdf")
+		(tags "USB_B USB B vertical female connector")
 		(property "Reference" "J13"
-			(at 6.76 -7.77 0)
+			(at -5.8 -4.55 0)
 			(layer "F.SilkS")
 			(uuid "43378a8a-d1c4-4b11-b16e-483f913316fd")
 			(effects
@@ -13926,7 +13926,7 @@
 			)
 		)
 		(property "Value" "USB_B"
-			(at 6.76 10.27 0)
+			(at -1.25 10.25 0)
 			(layer "F.Fab")
 			(uuid "6a7e3274-a730-47aa-aae8-22bc1d7f9b4a")
 			(effects
@@ -13936,7 +13936,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2202151200_Amphenol-ICC-61729-1011BLF_C254704.pdf"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13967,7 +13967,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a665ff75-819d-4a6b-91d3-85aec7e868e9")
+			(uuid "a8973ed5-7014-46fa-a50d-f4fcc2c061f4")
 			(effects
 				(font
 					(size 1 1)
@@ -13975,12 +13975,12 @@
 				)
 			)
 		)
-		(property "MPN" "61729-1011BLF"
+		(property "MPN" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "96ba6c27-b89b-4c3d-b44e-3feed2bd06f2")
+			(uuid "e1b736ce-bc16-41c5-801a-209da56108ad")
 			(effects
 				(font
 					(size 1 1)
@@ -13994,187 +13994,187 @@
 		(sheetfile "usb.kicad_sch")
 		(attr through_hole)
 		(fp_line
-			(start -2.32 -0.5)
-			(end -2.32 0.5)
+			(start -8.3 -3.8)
+			(end 5.8 -3.8)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "7509a04f-5265-4b75-aea6-4db50813efb3")
+			(uuid "45bc91ed-49d2-4f62-9d83-ded98ce33945")
 		)
 		(fp_line
-			(start -2.32 0.5)
-			(end -1.82 0)
+			(start -8.3 1)
+			(end -8.3 -3.8)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "ef8a38a7-d551-44d7-9ca5-0e5bf339c2fd")
+			(uuid "c68791f4-983a-4d90-a3a2-6f4d843ad82b")
 		)
 		(fp_line
-			(start -1.82 0)
-			(end -2.32 -0.5)
+			(start -8.3 9.3)
+			(end -8.3 4.5)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "fc644bff-5cff-42bc-9102-d57458e68e5d")
+			(uuid "a2cf852c-5e11-4cf1-8760-272ef90133d0")
 		)
 		(fp_line
-			(start -1.6 -4.91)
-			(end -1.6 7.41)
+			(start -0.5 -4.5)
+			(end 0 -4)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "27ed5ba9-ae23-4e25-b7bf-7155a930eb5f")
+			(uuid "70c675d7-9e26-4aee-84b5-3b1c6bea775a")
 		)
 		(fp_line
-			(start -1.6 7.41)
-			(end 2.66 7.41)
+			(start 0 -4)
+			(end 0.5 -4.5)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "5c732c11-5f80-4c4e-a022-d21bacd0152f")
+			(uuid "635f0d3d-1b5d-414a-a8ed-8de62f235927")
 		)
 		(fp_line
-			(start 2.66 -4.91)
-			(end -1.6 -4.91)
+			(start 0.5 -4.5)
+			(end -0.5 -4.5)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "8cb9c97b-ac42-4c75-8c76-20d83b5b3d75")
+			(uuid "d64b71fb-42ee-40f2-906a-383febd99c99")
 		)
 		(fp_line
-			(start 6.76 -4.91)
-			(end 15.12 -4.91)
+			(start 5.8 -3.8)
+			(end 5.8 1)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "57f36171-bed9-4b6c-a011-4f6e684fe879")
+			(uuid "0c7a599b-e234-4061-9d50-41439814ccfb")
 		)
 		(fp_line
-			(start 15.12 -4.91)
-			(end 15.12 7.41)
+			(start 5.8 4.5)
+			(end 5.8 9.3)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "f5d2fa91-1c79-49a6-b238-347c1ad1bc73")
+			(uuid "fa70f15d-3711-4421-bf0c-4eca28c78bc0")
 		)
 		(fp_line
-			(start 15.12 7.41)
-			(end 6.76 7.41)
+			(start 5.8 9.3)
+			(end -8.3 9.3)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "f95f4234-f446-4cc9-ba26-4e42b6654558")
+			(uuid "3d4f63a4-4b32-414f-b175-0d11e1b42f14")
 		)
 		(fp_line
-			(start -1.99 -7.02)
-			(end -1.99 9.52)
+			(start -9 -4)
+			(end -9 9.5)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "8cecb14b-bc92-434e-8d56-d0b2f643270e")
+			(uuid "ba4ca427-d9d5-42e0-9ec5-a8dd93a8f314")
 		)
 		(fp_line
-			(start -1.99 9.52)
-			(end 15.51 9.52)
+			(start -9 -4)
+			(end 6.5 -4)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "1d9ef0ad-1d58-4e6c-a3da-2f876d32906a")
+			(uuid "0f041bad-2fb6-45b0-b9c4-5f02c432ec41")
 		)
 		(fp_line
-			(start 15.51 -7.02)
-			(end -1.99 -7.02)
+			(start 6.5 9.5)
+			(end -9 9.5)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "2dd1422b-2935-445d-a1e1-9569df21803f")
+			(uuid "c8011654-63f8-44e3-bb7d-4a2f18f323a6")
 		)
 		(fp_line
-			(start 15.51 9.52)
-			(end 15.51 -7.02)
+			(start 6.5 9.5)
+			(end 6.5 -4)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "366b86e5-6a3a-4729-a321-9b68a8d07ebe")
+			(uuid "8175afe2-0cbf-4e1a-9a1d-aca35fd21573")
 		)
 		(fp_line
-			(start -1.49 -3.8)
-			(end -0.49 -4.8)
+			(start -8.25 -3.75)
+			(end 5 -3.75)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "cb206738-ca63-4107-bb61-fb6fd4b197c1")
+			(uuid "c358b494-0a96-4066-87f1-b15b4b28ecdc")
 		)
 		(fp_line
-			(start -1.49 7.3)
-			(end -1.49 -3.8)
+			(start -8.25 9.25)
+			(end -8.25 -3.75)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "1532b78f-8cfd-4c6a-928d-d4691177d04a")
+			(uuid "da0f466f-28e6-4276-b380-9155649d612d")
 		)
 		(fp_line
-			(start -0.49 -4.8)
-			(end 15.01 -4.8)
+			(start 5 -3.75)
+			(end 5.75 -3)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "fbac3d6a-1cae-456a-ae16-c1c4a3b0a26f")
+			(uuid "265770d1-7553-444f-ab4c-102030f2460e")
 		)
 		(fp_line
-			(start 15.01 -4.8)
-			(end 15.01 7.3)
+			(start 5.75 -3)
+			(end 5.75 9.25)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "b9ac53f9-f0fd-4614-aa3b-99e5a3c35440")
+			(uuid "d16a4deb-3c70-40f0-874f-bae6b802d1dc")
 		)
 		(fp_line
-			(start 15.01 7.3)
-			(end -1.49 7.3)
+			(start 5.75 9.25)
+			(end -8.25 9.25)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "ee7dc4c6-a544-48dc-8400-aa5a6652c212")
+			(uuid "571c247a-6196-4cfa-aad0-d75afbf533be")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 6.76 1.25 0)
+			(at -1.2 6.4 0)
 			(layer "F.Fab")
 			(uuid "cd714d8f-cc51-4c8f-85ec-e7938b562aec")
 			(effects
@@ -14186,7 +14186,7 @@
 		)
 		(pad "1" thru_hole rect
 			(at 0 0)
-			(size 1.7 1.7)
+			(size 1.4 1.4)
 			(drill 0.92)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
@@ -14196,8 +14196,8 @@
 			(uuid "c3498584-7cdd-4127-b33b-db122cc2e7b1")
 		)
 		(pad "2" thru_hole circle
-			(at 0 2.5)
-			(size 1.7 1.7)
+			(at -2.5 0)
+			(size 1.4 1.4)
 			(drill 0.92)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
@@ -14207,8 +14207,8 @@
 			(uuid "dc5cfff4-b40c-48cd-98cb-039692851494")
 		)
 		(pad "3" thru_hole circle
-			(at 2 2.5)
-			(size 1.7 1.7)
+			(at -2.5 3.2)
+			(size 1.4 1.4)
 			(drill 0.92)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
@@ -14218,8 +14218,8 @@
 			(uuid "4cb25619-234c-4661-a9bb-227dce08e8dd")
 		)
 		(pad "4" thru_hole circle
-			(at 2 0)
-			(size 1.7 1.7)
+			(at 0 3.2)
+			(size 1.4 1.4)
 			(drill 0.92)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
@@ -14229,9 +14229,9 @@
 			(uuid "c19fb8dd-9132-4143-8dff-5ea45134ce0e")
 		)
 		(pad "5" thru_hole circle
-			(at 4.71 -4.77)
-			(size 3.5 3.5)
-			(drill 2.33)
+			(at -7.27 2.71)
+			(size 3 3)
+			(drill 2.3)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net 64 "Net-(J13-Shield)")
@@ -14240,18 +14240,18 @@
 			(uuid "fba15473-c830-4106-b74c-104c4c6a3698")
 		)
 		(pad "5" thru_hole circle
-			(at 4.71 7.27)
-			(size 3.5 3.5)
-			(drill 2.33)
+			(at 4.77 2.71)
+			(size 3 3)
+			(drill 2.3)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net 64 "Net-(J13-Shield)")
 			(pinfunction "Shield")
 			(pintype "passive")
-			(uuid "51f004d2-e8fb-401b-9793-d764a5a26340")
+			(uuid "fba15473-c830-4106-b74c-104c4c6a3698")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_B_OST_USB-B1HSxx_Horizontal.step"
+		(model "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_B_TE_5787834_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15766,7 +15766,7 @@
 			)
 		)
 		(property ki_fp_filters "TSSOP*4.4x6.5mm*P0.65mm*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/c5112800-5924-4852-87a4-3b4bb8c74720")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/ee9b4ff2-b13f-4f8d-8ad7-8708209410cc")
 		(sheetname "/Motor Control/")
 		(sheetfile "motor_control.kicad_sch")
 		(attr smd)
@@ -16181,7 +16181,7 @@
 	(footprint "Connector_Dsub:DSUB-9_Pins_Vertical_P2.77x2.84mm_MountingHoles"
 		(layer "F.Cu")
 		(uuid "1f833932-07bb-4a89-9c84-436f8ac6f97c")
-		(at -65.14 48.858676)
+		(at 195.96 79.58)
 		(descr "9-pin D-Sub connector, straight/vertical, THT-mount, pins (male), pitch 2.77x2.84mm, distance of mounting holes 25mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf")
 		(tags "9-pin D-Sub connector straight vertical THT pins pitch 2.77x2.84mm mounting holes distance 25mm")
 		(property "Reference" "J6"
@@ -16789,13 +16789,13 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "1f9cf451-172f-4e51-adb8-d87c3cf3d5df")
-		(at -20.6 29.78)
+		(at 93.5 65 90)
 		(descr "Through hole straight pin header, 1x16, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x16 2.54mm single row")
 		(property "Reference" "J14"
-			(at 0 -2.38 0)
+			(at 0 -2.38 90)
 			(layer "F.SilkS")
-			(uuid "8c3bb8a7-5de3-4cb4-b4e6-9b58e5ecc179")
+			(uuid "7a422777-f83a-4341-9086-e2949f8a4059")
 			(effects
 				(font
 					(size 1 1)
@@ -16804,9 +16804,9 @@
 			)
 		)
 		(property "Value" "Conn_01x16"
-			(at 0 40.48 0)
+			(at 0 40.48 90)
 			(layer "F.Fab")
-			(uuid "f99d5a52-b692-49be-9e00-c06030cb0c0e")
+			(uuid "e20955d3-6c38-4170-9e74-09ac37e34bc2")
 			(effects
 				(font
 					(size 1 1)
@@ -16815,10 +16815,10 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "74c34af0-1635-40bc-9eb3-ea4e3f261ed5")
+			(uuid "0600815b-73f8-4186-bcc2-043f45cb2972")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16827,10 +16827,10 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x16, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "323cffa7-4558-4000-848c-186ff0c597fa")
+			(uuid "d1662862-0e57-4e80-b124-56c9f0b80d69")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16864,14 +16864,14 @@
 			(uuid "8302734a-353e-4503-a15d-e188c32f28ed")
 		)
 		(fp_line
-			(start -1.38 1.27)
-			(end -1.38 39.48)
+			(start 1.38 1.27)
+			(end 1.38 39.48)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "e0161cfd-7a93-48f3-baf3-798bbad31b3b")
+			(uuid "ff1ba18d-e18f-434d-8076-ad15a02592e7")
 		)
 		(fp_line
 			(start -1.38 1.27)
@@ -16884,6 +16884,16 @@
 			(uuid "0a47e149-a98d-4af4-9377-f0bba1a3bdce")
 		)
 		(fp_line
+			(start -1.38 1.27)
+			(end -1.38 39.48)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e0161cfd-7a93-48f3-baf3-798bbad31b3b")
+		)
+		(fp_line
 			(start -1.38 39.48)
 			(end 1.38 39.48)
 			(stroke
@@ -16892,36 +16902,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "4ef5386c-cb09-48f6-8f70-14c79ebe0352")
-		)
-		(fp_line
-			(start 1.38 1.27)
-			(end 1.38 39.48)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "ff1ba18d-e18f-434d-8076-ad15a02592e7")
-		)
-		(fp_line
-			(start -1.77 -1.78)
-			(end -1.77 39.88)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "8e81017d-9f17-41ed-b4f5-0aff9747433b")
-		)
-		(fp_line
-			(start -1.77 39.88)
-			(end 1.77 39.88)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "71a6cbc2-d3fc-4f70-9136-9e6878eb2301")
 		)
 		(fp_line
 			(start 1.77 -1.78)
@@ -16934,6 +16914,16 @@
 			(uuid "83522d7b-b1cd-4c82-99f9-1e9ad9aeeb76")
 		)
 		(fp_line
+			(start -1.77 -1.78)
+			(end -1.77 39.88)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "8e81017d-9f17-41ed-b4f5-0aff9747433b")
+		)
+		(fp_line
 			(start 1.77 39.88)
 			(end 1.77 -1.78)
 			(stroke
@@ -16944,34 +16934,14 @@
 			(uuid "d0a1f778-09d4-4ff5-af15-39bac68b2e2c")
 		)
 		(fp_line
-			(start -1.27 -0.635)
-			(end -0.635 -1.27)
+			(start -1.77 39.88)
+			(end 1.77 39.88)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "a81cf39e-d842-4d60-a596-96d852750f9f")
-		)
-		(fp_line
-			(start -1.27 39.37)
-			(end -1.27 -0.635)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "79da1f56-02dc-45c2-8c71-47508aa74e11")
-		)
-		(fp_line
-			(start -0.635 -1.27)
-			(end 1.27 -1.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "64f66fba-bce6-421c-8851-8dab5e99673c")
+			(layer "F.CrtYd")
+			(uuid "71a6cbc2-d3fc-4f70-9136-9e6878eb2301")
 		)
 		(fp_line
 			(start 1.27 -1.27)
@@ -16984,6 +16954,26 @@
 			(uuid "c2150b2b-4e54-4205-b50a-3a67fb02f1a5")
 		)
 		(fp_line
+			(start -0.635 -1.27)
+			(end 1.27 -1.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "64f66fba-bce6-421c-8851-8dab5e99673c")
+		)
+		(fp_line
+			(start -1.27 -0.635)
+			(end -0.635 -1.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a81cf39e-d842-4d60-a596-96d852750f9f")
+		)
+		(fp_line
 			(start 1.27 39.37)
 			(end -1.27 39.37)
 			(stroke
@@ -16993,8 +16983,18 @@
 			(layer "F.Fab")
 			(uuid "03459d04-0055-43b1-9b79-a01ec7f7048a")
 		)
+		(fp_line
+			(start -1.27 39.37)
+			(end -1.27 -0.635)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "79da1f56-02dc-45c2-8c71-47508aa74e11")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 19.05 90)
+			(at 0 19.05 0)
 			(layer "F.Fab")
 			(uuid "a8811e77-a38a-4235-9202-5e0e480426a4")
 			(effects
@@ -17005,7 +17005,7 @@
 			)
 		)
 		(pad "1" thru_hole rect
-			(at 0 0)
+			(at 0 0 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17016,7 +17016,7 @@
 			(uuid "05e466fc-6556-4bcd-b2cb-a26728d20d97")
 		)
 		(pad "2" thru_hole circle
-			(at 0 2.54)
+			(at 0 2.54 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17027,7 +17027,7 @@
 			(uuid "c8db9ca3-d900-42bf-ae18-1de962353fd3")
 		)
 		(pad "3" thru_hole circle
-			(at 0 5.08)
+			(at 0 5.08 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17038,7 +17038,7 @@
 			(uuid "bed023cf-ef2b-4058-a7e0-79fb7e8786d1")
 		)
 		(pad "4" thru_hole circle
-			(at 0 7.62)
+			(at 0 7.62 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17049,7 +17049,7 @@
 			(uuid "1a9f90a0-3e28-49ef-98a6-ef3b0e103ce5")
 		)
 		(pad "5" thru_hole circle
-			(at 0 10.16)
+			(at 0 10.16 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17060,7 +17060,7 @@
 			(uuid "8dd1385e-1844-49ac-9d2f-4026d6022d00")
 		)
 		(pad "6" thru_hole circle
-			(at 0 12.7)
+			(at 0 12.7 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17071,7 +17071,7 @@
 			(uuid "15a5c710-88fd-452c-8fa1-fca301dbc062")
 		)
 		(pad "7" thru_hole circle
-			(at 0 15.24)
+			(at 0 15.24 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17082,7 +17082,7 @@
 			(uuid "be6404fd-e545-496e-8e1b-c9e1919a0fd8")
 		)
 		(pad "8" thru_hole circle
-			(at 0 17.78)
+			(at 0 17.78 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17093,7 +17093,7 @@
 			(uuid "f5aeb91f-3a66-426f-aff5-ad223281c64a")
 		)
 		(pad "9" thru_hole circle
-			(at 0 20.32)
+			(at 0 20.32 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17104,7 +17104,7 @@
 			(uuid "d92bc488-5131-4718-a053-345a23d48071")
 		)
 		(pad "10" thru_hole circle
-			(at 0 22.86)
+			(at 0 22.86 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17115,7 +17115,7 @@
 			(uuid "78df21d8-91b6-4421-8118-cbbe7711cd06")
 		)
 		(pad "11" thru_hole circle
-			(at 0 25.4)
+			(at 0 25.4 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17126,7 +17126,7 @@
 			(uuid "09e73003-0aed-4c13-b8f6-f07a72034626")
 		)
 		(pad "12" thru_hole circle
-			(at 0 27.94)
+			(at 0 27.94 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17137,7 +17137,7 @@
 			(uuid "1280165d-5a23-4c8c-b919-4890143788e3")
 		)
 		(pad "13" thru_hole circle
-			(at 0 30.48)
+			(at 0 30.48 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17148,7 +17148,7 @@
 			(uuid "4eedad4d-843b-4641-afa1-2f1173291dfe")
 		)
 		(pad "14" thru_hole circle
-			(at 0 33.02)
+			(at 0 33.02 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17159,7 +17159,7 @@
 			(uuid "50af9e0c-59a8-4313-8399-de020e5a5ec6")
 		)
 		(pad "15" thru_hole circle
-			(at 0 35.56)
+			(at 0 35.56 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -17170,7 +17170,7 @@
 			(uuid "0995a3da-a112-437c-bb65-74adc99fc12a")
 		)
 		(pad "16" thru_hole circle
-			(at 0 38.1)
+			(at 0 38.1 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -32099,7 +32099,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c/8e3cf51c-a531-4b07-8024-6db0f5144708")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
 		(sheetname "/Motor Control/H-bridge #3/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -34291,7 +34291,7 @@
 	(footprint "Connector_Dsub:DSUB-9_Pins_Vertical_P2.77x2.84mm_MountingHoles"
 		(layer "F.Cu")
 		(uuid "59912577-26a7-4f13-8c93-5ba2bee174dd")
-		(at -65.14 63.898014)
+		(at 195.96 95.58)
 		(descr "9-pin D-Sub connector, straight/vertical, THT-mount, pins (male), pitch 2.77x2.84mm, distance of mounting holes 25mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf")
 		(tags "9-pin D-Sub connector straight vertical THT pins pitch 2.77x2.84mm mounting holes distance 25mm")
 		(property "Reference" "J7"
@@ -53038,7 +53038,7 @@
 	(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-6-2.54_1x06_P2.54mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "83ab44ac-5e62-4fb8-bb91-1458833ac9da")
-		(at 30.9 78.71)
+		(at 79.38 120)
 		(descr "Terminal Block Phoenix MPT-0,5-6-2.54, 6 pins, pitch 2.54mm, size 15.7x6.2mm, drill diameter 1.1mm, pad diameter 2.2mm, http://www.mouser.com/ds/2/324/ItemDetail_1725672-916605.pdf, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Phoenix")
 		(tags "THT Terminal Block Phoenix MPT-0,5-6-2.54 pitch 2.54mm size 15.7x6.2mm drill 1.1mm pad 2.2mm")
 		(property "Reference" "J9"
@@ -54835,7 +54835,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/8e3cf51c-a531-4b07-8024-6db0f5144708")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
 		(sheetname "/Motor Control/H-bridge #1/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -59014,12 +59014,13 @@
 	(footprint "MountingHole:MountingHole_3.2mm_M3"
 		(layer "F.Cu")
 		(uuid "8c315c58-98d8-4309-b519-de23f18ce08c")
-		(at -14.33 31.45)
+		(at 83.5 62.5)
 		(descr "Mounting Hole 3.2mm, M3, no annular, generated by kicad-footprint-generator mountinghole.py")
 		(tags "mountinghole M3")
 		(property "Reference" "H1"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ee3798d4-fa40-49d7-8ca0-45f50886dfa2")
 			(effects
 				(font
@@ -59031,6 +59032,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "2601eecb-02de-4f92-a36f-05d8bca22e14")
 			(effects
 				(font
@@ -60240,12 +60242,13 @@
 	(footprint "MountingHole:MountingHole_3.2mm_M3"
 		(layer "F.Cu")
 		(uuid "8e6d99f9-8f7c-4743-9633-763d062bf7e4")
-		(at -14.33 55.3)
+		(at 176.5 117.5)
 		(descr "Mounting Hole 3.2mm, M3, no annular, generated by kicad-footprint-generator mountinghole.py")
 		(tags "mountinghole M3")
 		(property "Reference" "H4"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5068c94c-8c74-4b1d-a9a8-a861b5ab8849")
 			(effects
 				(font
@@ -60257,6 +60260,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "e1f3dc46-ae2d-420c-b8d8-0815fb369f1c")
 			(effects
 				(font
@@ -71726,7 +71730,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b/8e3cf51c-a531-4b07-8024-6db0f5144708")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
 		(sheetname "/Motor Control/H-bridge #5/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -84401,12 +84405,13 @@
 	(footprint "MountingHole:MountingHole_3.2mm_M3"
 		(layer "F.Cu")
 		(uuid "bd5f9b9f-d4db-4c98-809f-ed93c9846b30")
-		(at -14.33 39.4)
+		(at 176.5 62.5)
 		(descr "Mounting Hole 3.2mm, M3, no annular, generated by kicad-footprint-generator mountinghole.py")
 		(tags "mountinghole M3")
 		(property "Reference" "H2"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e97c3e19-eee3-46ce-a388-65cfdcc3247b")
 			(effects
 				(font
@@ -84418,6 +84423,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "2c859391-a038-4714-b706-2379f168852f")
 			(effects
 				(font
@@ -99206,7 +99212,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d/8e3cf51c-a531-4b07-8024-6db0f5144708")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
 		(sheetname "/Motor Control/H-bridge #2/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -103288,12 +103294,13 @@
 	(footprint "MountingHole:MountingHole_3.2mm_M3"
 		(layer "F.Cu")
 		(uuid "ec13a268-df67-42fd-b891-274b5fd2db6d")
-		(at -14.33 47.35)
+		(at 83.5 117.5)
 		(descr "Mounting Hole 3.2mm, M3, no annular, generated by kicad-footprint-generator mountinghole.py")
 		(tags "mountinghole M3")
 		(property "Reference" "H3"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bcc119d9-85a2-49a2-b929-8ff3f20f5197")
 			(effects
 				(font
@@ -103305,6 +103312,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "64d3330b-9962-4636-aef8-18628694b86b")
 			(effects
 				(font
@@ -112093,7 +112101,7 @@
 			)
 		)
 		(property ki_fp_filters "VSSOP*")
-		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9/8e3cf51c-a531-4b07-8024-6db0f5144708")
+		(path "/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9/c092a871-c441-4edc-aea8-1e8be9fe4eaf")
 		(sheetname "/Motor Control/H-bridge #6/")
 		(sheetfile "h_bridge.kicad_sch")
 		(clearance 0.2)
@@ -115727,6 +115735,17 @@
 		(fill no)
 		(layer "Dwgs.User")
 		(uuid "7b4b45c1-7e70-469d-a9f3-40c39380c025")
+	)
+	(gr_rect
+		(start 83.5 62.5)
+		(end 176.5 117.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "9a636bf1-cfc9-4d42-9984-91aff282aaa6")
 	)
 	(gr_rect
 		(start 75 54)
