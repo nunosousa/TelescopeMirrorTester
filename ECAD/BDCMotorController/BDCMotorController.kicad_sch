@@ -53,6 +53,14 @@
 		(color 0 0 0 0)
 		(uuid "c3b8055d-d6a1-43c9-8119-738bbd78652a")
 	)
+	(no_connect
+		(at 107.95 54.61)
+		(uuid "aecc2b51-5dc7-402b-adb0-7cdfb3b886a0")
+	)
+	(no_connect
+		(at 107.95 66.04)
+		(uuid "ca9a309a-1e85-42af-b285-d2ab77d93e95")
+	)
 	(wire
 		(pts
 			(xy 100.33 129.54) (xy 107.95 129.54)
@@ -95,7 +103,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 63.5) (xy 139.7 63.5)
+			(xy 135.89 66.04) (xy 139.7 66.04)
 		)
 		(stroke
 			(width 0)
@@ -155,7 +163,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 66.04) (xy 170.18 66.04)
+			(xy 166.37 68.58) (xy 170.18 68.58)
 		)
 		(stroke
 			(width 0)
@@ -252,16 +260,6 @@
 			(type default)
 		)
 		(uuid "4c8720e1-e8e5-4ee9-aa02-e0ce01da830e")
-	)
-	(wire
-		(pts
-			(xy 135.89 71.12) (xy 139.7 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4efdcf70-b8b9-4f1e-a00a-455d731aa5b4")
 	)
 	(wire
 		(pts
@@ -405,7 +403,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 66.04) (xy 139.7 66.04)
+			(xy 135.89 68.58) (xy 139.7 68.58)
 		)
 		(stroke
 			(width 0)
@@ -535,7 +533,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 63.5) (xy 170.18 63.5)
+			(xy 166.37 66.04) (xy 170.18 66.04)
 		)
 		(stroke
 			(width 0)
@@ -552,16 +550,6 @@
 			(type solid)
 		)
 		(uuid "f594f82b-766a-40c9-8ba7-9a1c29117ea2")
-	)
-	(wire
-		(pts
-			(xy 135.89 68.58) (xy 139.7 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f741c84f-02e6-4a84-a126-76beb010371d")
 	)
 	(sheet
 		(at 170.18 129.54)
@@ -616,8 +604,8 @@
 		)
 	)
 	(sheet
-		(at 139.7 60.96)
-		(size 26.67 12.7)
+		(at 139.7 63.5)
+		(size 26.67 7.62)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -632,7 +620,7 @@
 		)
 		(uuid "47668151-ec4f-4ade-9211-f888644ab2e2")
 		(property "Sheetname" "ADC conditioning"
-			(at 139.7 60.2484 0)
+			(at 139.7 62.7884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -641,7 +629,7 @@
 			)
 		)
 		(property "Sheetfile" "adc_input.kicad_sch"
-			(at 139.7 74.2446 0)
+			(at 139.7 71.7046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -650,7 +638,7 @@
 			)
 		)
 		(pin "VA0_IN" input
-			(at 166.37 63.5 0)
+			(at 166.37 66.04 0)
 			(uuid "9247c39e-d9d2-4616-88dd-6c8f957c8a0b")
 			(effects
 				(font
@@ -660,7 +648,7 @@
 			)
 		)
 		(pin "VA0_OUT" output
-			(at 139.7 63.5 180)
+			(at 139.7 66.04 180)
 			(uuid "fb3a805e-caa4-42fd-8d60-722fd8b70166")
 			(effects
 				(font
@@ -670,7 +658,7 @@
 			)
 		)
 		(pin "VA1_IN" input
-			(at 166.37 66.04 0)
+			(at 166.37 68.58 0)
 			(uuid "4f299c09-6433-47c1-891f-417ea347cb70")
 			(effects
 				(font
@@ -680,28 +668,8 @@
 			)
 		)
 		(pin "VA1_OUT" output
-			(at 139.7 66.04 180)
-			(uuid "a00ca077-e640-4a31-99f9-e5da1cf282e9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "VA0_CLIPPING" output
 			(at 139.7 68.58 180)
-			(uuid "41c119c8-f869-49cf-92e8-fa50c8b4b5af")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "VA1_CLIPPING" output
-			(at 139.7 71.12 180)
-			(uuid "182f9992-2367-406d-8be0-027eee831edc")
+			(uuid "a00ca077-e640-4a31-99f9-e5da1cf282e9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -772,7 +740,7 @@
 			)
 		)
 		(pin "ADC0" input
-			(at 135.89 63.5 0)
+			(at 135.89 66.04 0)
 			(uuid "c964bfc4-2d38-4a82-9fef-8e36d8571aec")
 			(effects
 				(font
@@ -782,7 +750,7 @@
 			)
 		)
 		(pin "ADC1" input
-			(at 135.89 66.04 0)
+			(at 135.89 68.58 0)
 			(uuid "3b3f1a0e-b5fc-4419-bc33-13006d379a8b")
 			(effects
 				(font
@@ -962,7 +930,7 @@
 			)
 		)
 		(pin "INT6" input
-			(at 135.89 68.58 0)
+			(at 135.89 82.55 0)
 			(uuid "c5a357a0-1dc2-4342-8c17-c138914cb036")
 			(effects
 				(font
@@ -972,13 +940,13 @@
 			)
 		)
 		(pin "INT7" input
-			(at 135.89 71.12 0)
+			(at 107.95 66.04 180)
 			(uuid "d14321dc-2f5b-4cb1-b78b-5b32ff53c100")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "PF4" input
@@ -1162,13 +1130,13 @@
 			)
 		)
 		(pin "PCINT14" input
-			(at 135.89 82.55 0)
+			(at 107.95 54.61 180)
 			(uuid "1e08eaf1-9ce4-4891-82a8-3927b9b7082a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "PCINT15" input
@@ -1642,7 +1610,7 @@
 			)
 		)
 		(pin "A_SENSE_0" output
-			(at 170.18 63.5 180)
+			(at 170.18 66.04 180)
 			(uuid "cc203b1e-a5d2-4a26-9d04-3793b118c41a")
 			(effects
 				(font
@@ -1652,7 +1620,7 @@
 			)
 		)
 		(pin "A_SENSE_1" output
-			(at 170.18 66.04 180)
+			(at 170.18 68.58 180)
 			(uuid "9162fead-00b6-447d-a44f-7231c59d93cc")
 			(effects
 				(font
