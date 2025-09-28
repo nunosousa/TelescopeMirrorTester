@@ -1566,189 +1566,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:LED"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Light emitting diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_0_1"
-				(polyline
-					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LED_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -4902,211 +4719,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_BJT:BC847"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BC847"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 5.08 -1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "0.1A Ic, 45V Vce, NPN Transistor, SOT-23"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "NPN Small Signal Transistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "BC847_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy 0.635 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "BC847_1_1"
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3.3VADC"
 			(power)
 			(pin_numbers
@@ -5606,7 +5218,7 @@
 	)
 	(text "I2C pull-up resistors"
 		(exclude_from_sim no)
-		(at 167.386 142.24 0)
+		(at 177.546 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5614,19 +5226,9 @@
 		)
 		(uuid "5aa96d3b-f7c4-4a6e-84e6-addfc7b5eb7f")
 	)
-	(text "Imax = 3mA"
-		(exclude_from_sim no)
-		(at 145.542 66.802 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "c2eb86d8-9fa8-46fd-b5d9-b4ce7ee84bf8")
-	)
 	(text "Guideline:\nC3 = C4 = 2*(CL - Cstray)\nCstray assumed to be 5pF"
 		(exclude_from_sim no)
-		(at 172.212 131.572 0)
+		(at 173.482 102.362 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5635,19 +5237,19 @@
 		(uuid "d5636cf6-4721-418f-b35b-5a084efad55f")
 	)
 	(junction
-		(at 147.32 31.75)
+		(at 143.51 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "515304d2-3f98-4b9b-bfa1-dbd5a71dcbd4")
 	)
 	(junction
-		(at 120.65 120.65)
+		(at 121.92 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "60c5ce05-ba35-4e51-82ad-fb5e87c973aa")
 	)
 	(junction
-		(at 153.67 31.75)
+		(at 149.86 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "668dae0b-5ca0-46bc-8f2b-ee9ee04b48ed")
@@ -5659,13 +5261,13 @@
 		(uuid "901ea261-e18a-4f45-96f7-30ce186898ee")
 	)
 	(junction
-		(at 153.67 120.65)
+		(at 154.94 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a801c422-a76e-4f5b-baa3-190aea557a94")
 	)
 	(junction
-		(at 137.16 31.75)
+		(at 133.35 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b6be543a-6400-48e1-83cc-7ba312720538")
@@ -5705,6 +5307,10 @@
 	(no_connect
 		(at 80.01 60.96)
 		(uuid "4595b080-3128-448f-9f22-b64cc943f6c4")
+	)
+	(no_connect
+		(at 39.37 134.62)
+		(uuid "580be5fe-d69a-4076-b21c-afad3e8bed78")
 	)
 	(no_connect
 		(at 39.37 154.94)
@@ -5774,7 +5380,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 121.92) (xy 120.65 120.65)
+			(xy 121.92 92.71) (xy 121.92 91.44)
 		)
 		(stroke
 			(width 0)
@@ -5824,17 +5430,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 134.62) (xy 39.37 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b91a9d7-d2a4-48f1-bb7f-6407dbbb40e4")
-	)
-	(wire
-		(pts
-			(xy 172.72 156.21) (xy 172.72 160.02)
+			(xy 182.88 148.59) (xy 182.88 152.4)
 		)
 		(stroke
 			(width 0)
@@ -5844,7 +5440,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 120.65) (xy 153.67 120.65)
+			(xy 142.24 91.44) (xy 154.94 91.44)
 		)
 		(stroke
 			(width 0)
@@ -5854,7 +5450,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 31.75) (xy 163.83 31.75)
+			(xy 149.86 35.56) (xy 160.02 35.56)
 		)
 		(stroke
 			(width 0)
@@ -5864,7 +5460,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 30.48) (xy 147.32 31.75)
+			(xy 143.51 34.29) (xy 143.51 35.56)
 		)
 		(stroke
 			(width 0)
@@ -5924,7 +5520,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 105.41) (xy 120.65 120.65)
+			(xy 121.92 76.2) (xy 121.92 91.44)
 		)
 		(stroke
 			(width 0)
@@ -5934,7 +5530,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 31.75) (xy 123.19 33.02)
+			(xy 119.38 35.56) (xy 119.38 36.83)
 		)
 		(stroke
 			(width 0)
@@ -5994,7 +5590,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 156.21) (xy 125.73 156.21)
+			(xy 144.78 144.78) (xy 146.05 144.78)
 		)
 		(stroke
 			(width 0)
@@ -6034,7 +5630,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 105.41) (xy 120.65 105.41)
+			(xy 134.62 76.2) (xy 121.92 76.2)
 		)
 		(stroke
 			(width 0)
@@ -6074,16 +5670,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 80.01) (xy 157.48 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "567b7a84-130e-432e-9b34-3cf88b358852")
-	)
-	(wire
-		(pts
 			(xy 184.15 57.15) (xy 195.58 57.15)
 		)
 		(stroke
@@ -6094,7 +5680,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 151.13) (xy 125.73 149.86)
+			(xy 146.05 139.7) (xy 146.05 138.43)
 		)
 		(stroke
 			(width 0)
@@ -6124,7 +5710,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 120.65) (xy 153.67 121.92)
+			(xy 154.94 91.44) (xy 154.94 92.71)
 		)
 		(stroke
 			(width 0)
@@ -6194,7 +5780,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 31.75) (xy 153.67 31.75)
+			(xy 143.51 35.56) (xy 149.86 35.56)
 		)
 		(stroke
 			(width 0)
@@ -6324,7 +5910,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 31.75) (xy 147.32 31.75)
+			(xy 133.35 35.56) (xy 143.51 35.56)
 		)
 		(stroke
 			(width 0)
@@ -6424,7 +6010,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 120.65) (xy 133.35 120.65)
+			(xy 121.92 91.44) (xy 134.62 91.44)
 		)
 		(stroke
 			(width 0)
@@ -6434,7 +6020,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 31.75) (xy 137.16 30.48)
+			(xy 133.35 35.56) (xy 133.35 34.29)
 		)
 		(stroke
 			(width 0)
@@ -6444,7 +6030,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 156.21) (xy 125.73 157.48)
+			(xy 146.05 144.78) (xy 146.05 146.05)
 		)
 		(stroke
 			(width 0)
@@ -6534,7 +6120,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 105.41) (xy 153.67 120.65)
+			(xy 154.94 76.2) (xy 154.94 91.44)
 		)
 		(stroke
 			(width 0)
@@ -6544,7 +6130,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 105.41) (xy 153.67 105.41)
+			(xy 142.24 76.2) (xy 154.94 76.2)
 		)
 		(stroke
 			(width 0)
@@ -6604,7 +6190,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 162.56) (xy 162.56 162.56)
+			(xy 184.15 154.94) (xy 172.72 154.94)
 		)
 		(stroke
 			(width 0)
@@ -6624,7 +6210,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 156.21) (xy 162.56 162.56)
+			(xy 172.72 148.59) (xy 172.72 154.94)
 		)
 		(stroke
 			(width 0)
@@ -6664,7 +6250,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 31.75) (xy 137.16 31.75)
+			(xy 130.81 35.56) (xy 133.35 35.56)
 		)
 		(stroke
 			(width 0)
@@ -6674,7 +6260,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 33.02) (xy 153.67 31.75)
+			(xy 149.86 36.83) (xy 149.86 35.56)
 		)
 		(stroke
 			(width 0)
@@ -6704,7 +6290,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 31.75) (xy 124.46 31.75)
+			(xy 119.38 35.56) (xy 120.65 35.56)
 		)
 		(stroke
 			(width 0)
@@ -6724,7 +6310,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 151.13) (xy 125.73 151.13)
+			(xy 144.78 139.7) (xy 146.05 139.7)
 		)
 		(stroke
 			(width 0)
@@ -6764,7 +6350,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 160.02) (xy 173.99 160.02)
+			(xy 182.88 152.4) (xy 184.15 152.4)
 		)
 		(stroke
 			(width 0)
@@ -7439,16 +7025,6 @@
 		)
 		(uuid "a15ad86b-b8a6-46e4-a704-4c01ff8a2809")
 	)
-	(label "LED_IND"
-		(at 25.4 134.62 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a54bfeba-999e-415d-834c-101469b1d674")
-	)
 	(label "XMEM_A12"
 		(at 93.98 83.82 180)
 		(effects
@@ -7468,16 +7044,6 @@
 			(justify left bottom)
 		)
 		(uuid "a6bdbc0c-6407-4fd0-9f6e-5819ad80cb65")
-	)
-	(label "LED_IND"
-		(at 157.48 80.01 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "ac4f10df-2169-4365-91d0-31491adffdad")
 	)
 	(label "~{XMEM_EN}"
 		(at 184.15 82.55 0)
@@ -7560,7 +7126,7 @@
 		(uuid "d3c54e8c-f296-46c2-b55b-2b95c2c1b828")
 	)
 	(label "XTAL1"
-		(at 151.13 120.65 180)
+		(at 152.4 91.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7600,7 +7166,7 @@
 		(uuid "e1d24522-a149-4a4a-b64f-288c6090621c")
 	)
 	(label "XTAL2"
-		(at 123.19 120.65 0)
+		(at 124.46 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7686,7 +7252,7 @@
 	)
 	(hierarchical_label "MOSI"
 		(shape output)
-		(at 124.46 153.67 0)
+		(at 144.78 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7829,7 +7395,7 @@
 	)
 	(hierarchical_label "~{RESET}"
 		(shape input)
-		(at 163.83 31.75 0)
+		(at 160.02 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7873,7 +7439,7 @@
 	)
 	(hierarchical_label "SDA"
 		(shape bidirectional)
-		(at 173.99 162.56 0)
+		(at 184.15 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7928,7 +7494,7 @@
 	)
 	(hierarchical_label "~{RESET}"
 		(shape input)
-		(at 111.76 156.21 180)
+		(at 132.08 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8060,7 +7626,7 @@
 	)
 	(hierarchical_label "SCK"
 		(shape output)
-		(at 111.76 153.67 180)
+		(at 132.08 142.24 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8104,7 +7670,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape output)
-		(at 173.99 160.02 0)
+		(at 184.15 152.4 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8148,7 +7714,7 @@
 	)
 	(hierarchical_label "MISO"
 		(shape input)
-		(at 111.76 151.13 180)
+		(at 132.08 139.7 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8249,7 +7815,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 120.65 129.54 0)
+		(at 121.92 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8257,8 +7823,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "013852a0-5dfb-4673-a68c-8a79fbb11c24")
-		(property "Reference" "#PWR0471"
-			(at 120.65 135.89 0)
+		(property "Reference" "#PWR0472"
+			(at 121.92 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8267,7 +7833,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 120.65 134.62 0)
+			(at 121.92 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8275,7 +7841,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 129.54 0)
+			(at 121.92 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8284,7 +7850,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 129.54 0)
+			(at 121.92 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8293,7 +7859,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 120.65 129.54 0)
+			(at 121.92 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8307,7 +7873,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0471")
+					(reference "#PWR0472")
 					(unit 1)
 				)
 			)
@@ -8469,187 +8035,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 144.78 80.01 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0e47e42e-7357-4659-9031-648233839342")
-		(property "Reference" "R74"
-			(at 144.78 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10kR"
-			(at 144.78 76.2 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 144.78 81.788 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 144.78 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 144.78 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" ""
-			(at 144.78 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 144.78 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a0a789cd-c06f-4f37-b1b0-92b9330579c8")
-		)
-		(pin "2"
-			(uuid "fcb8c812-581b-4f2e-8f49-b5b9259a5b85")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "R74")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:BC847")
-		(at 135.89 80.01 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1f2dcf6a-2464-4939-a2a4-b572cfd4e846")
-		(property "Reference" "Q1"
-			(at 130.81 78.7399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BC847"
-			(at 130.81 81.2799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 130.81 81.915 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/1811141238_Nexperia-BC847C-215_C8664.pdf"
-			(at 135.89 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "0.1A Ic, 45V Vce, NPN Transistor, SOT-23"
-			(at 135.89 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "BC847C,215"
-			(at 135.89 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 135.89 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dcdd2887-55c3-4cb1-baaf-1588d544ee26")
-		)
-		(pin "3"
-			(uuid "c03e2606-900c-4c9e-b2e1-573cfb2f3127")
-		)
-		(pin "2"
-			(uuid "dc825484-df4d-4b27-86c3-8b9826e39d01")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
 		(at 208.28 34.29 0)
@@ -8660,7 +8045,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2085058a-97d6-4d49-b38f-003999a182e0")
-		(property "Reference" "#PWR0488"
+		(property "Reference" "#PWR0486"
 			(at 208.28 40.64 0)
 			(effects
 				(font
@@ -8710,7 +8095,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0488")
+					(reference "#PWR0486")
 					(unit 1)
 				)
 			)
@@ -8719,7 +8104,7 @@
 	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
-		(at 147.32 22.86 0)
+		(at 143.51 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8727,8 +8112,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "253a321e-f29b-428c-bfd1-fface8fa01ac")
-		(property "Reference" "#PWR0482"
-			(at 147.32 26.67 0)
+		(property "Reference" "#PWR0476"
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8737,7 +8122,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 147.32 17.78 0)
+			(at 143.51 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8745,7 +8130,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 22.86 0)
+			(at 143.51 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8754,7 +8139,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 22.86 0)
+			(at 143.51 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8763,7 +8148,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 147.32 22.86 0)
+			(at 143.51 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8777,7 +8162,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0482")
+					(reference "#PWR0476")
 					(unit 1)
 				)
 			)
@@ -8851,7 +8236,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 129.54 31.75 0)
+		(at 125.73 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8860,7 +8245,7 @@
 		(fields_autoplaced yes)
 		(uuid "28b6071e-61c9-417e-b68c-bfc6117cec75")
 		(property "Reference" "SW1"
-			(at 129.54 24.13 0)
+			(at 125.73 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8868,7 +8253,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 129.54 26.67 0)
+			(at 125.73 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8876,7 +8261,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
-			(at 129.54 26.67 0)
+			(at 125.73 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8885,7 +8270,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 26.67 0)
+			(at 125.73 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8894,7 +8279,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 129.54 31.75 0)
+			(at 125.73 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8903,7 +8288,7 @@
 			)
 		)
 		(property "Status" ""
-			(at 129.54 31.75 0)
+			(at 125.73 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8912,7 +8297,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 129.54 31.75 0)
+			(at 125.73 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8946,7 +8331,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2a67a96f-ecb2-41e2-8fed-4363674ad037")
-		(property "Reference" "#PWR0494"
+		(property "Reference" "#PWR0492"
 			(at 250.19 124.46 0)
 			(effects
 				(font
@@ -8996,7 +8381,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0494")
+					(reference "#PWR0492")
 					(unit 1)
 				)
 			)
@@ -9408,7 +8793,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36ccfe79-11df-4a87-9bb5-29c939cabcbf")
-		(property "Reference" "#PWR0491"
+		(property "Reference" "#PWR0489"
 			(at 250.19 30.48 0)
 			(effects
 				(font
@@ -9458,7 +8843,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0491")
+					(reference "#PWR0489")
 					(unit 1)
 				)
 			)
@@ -9475,7 +8860,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "38a3ce10-1f72-446c-b831-7c054220ea4e")
-		(property "Reference" "#PWR0489"
+		(property "Reference" "#PWR0487"
 			(at 208.28 53.34 0)
 			(effects
 				(font
@@ -9525,7 +8910,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0489")
+					(reference "#PWR0487")
 					(unit 1)
 				)
 			)
@@ -9958,7 +9343,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 147.32 26.67 270)
+		(at 143.51 30.48 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9966,8 +9351,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48715f7d-f497-4dcd-bab7-fb6665a31bd7")
-		(property "Reference" "D13"
-			(at 149.86 25.3999 90)
+		(property "Reference" "D12"
+			(at 146.05 29.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9976,7 +9361,7 @@
 			)
 		)
 		(property "Value" "4148"
-			(at 149.86 27.9399 90)
+			(at 146.05 31.7499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9985,7 +9370,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9994,7 +9379,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1809050431_onsemi-MMSD4148T1G_C11177.pdf"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10003,7 +9388,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10012,7 +9397,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10021,7 +9406,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10030,7 +9415,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10039,7 +9424,7 @@
 			)
 		)
 		(property "MPN" "MMSD4148T1G"
-			(at 147.32 26.67 0)
+			(at 143.51 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10056,142 +9441,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "D13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "+5V_1")
-		(lib_id "power:+5V")
-		(at 133.35 59.69 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4aedd5f1-2bf0-4217-92f3-28dd40051f79")
-		(property "Reference" "#PWR0475"
-			(at 133.35 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 133.35 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.35 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.35 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 133.35 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "210ab241-58ed-4e84-8fa6-ee5b952650e3")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0475")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 133.35 85.09 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5060eeeb-5ef6-4a23-8f16-b5eb31676109")
-		(property "Reference" "#PWR0476"
-			(at 133.35 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 133.35 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.35 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.35 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 133.35 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bbf27bc9-fe33-4198-85e9-35210048142a")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0476")
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -10489,15 +9739,15 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 137.16 26.67 0)
+		(at 133.35 30.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "5ae2248a-cfb6-4d26-991f-5fa8e800f458")
-		(property "Reference" "R72"
-			(at 139.7 25.3999 0)
+		(property "Reference" "R71"
+			(at 135.89 29.2099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10506,7 +9756,7 @@
 			)
 		)
 		(property "Value" "10kR"
-			(at 139.7 27.9399 0)
+			(at 135.89 31.7499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10515,7 +9765,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 135.382 26.67 90)
+			(at 131.572 30.48 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10524,7 +9774,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 26.67 0)
+			(at 133.35 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10533,7 +9783,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 137.16 26.67 0)
+			(at 133.35 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10542,7 +9792,7 @@
 			)
 		)
 		(property "Status" ""
-			(at 137.16 26.67 0)
+			(at 133.35 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10551,7 +9801,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 137.16 26.67 0)
+			(at 133.35 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10568,7 +9818,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "R72")
+					(reference "R71")
 					(unit 1)
 				)
 			)
@@ -10644,7 +9894,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 172.72 148.59 0)
+		(at 182.88 140.97 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10652,8 +9902,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "605a5bf7-b8c0-438f-b436-77c81eced685")
-		(property "Reference" "#PWR0486"
-			(at 172.72 152.4 0)
+		(property "Reference" "#PWR0484"
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10662,7 +9912,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 173.99 144.78 0)
+			(at 184.15 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10671,7 +9921,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 172.72 148.59 0)
+			(at 182.88 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10679,7 +9929,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 148.59 0)
+			(at 182.88 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10687,7 +9937,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 172.72 148.59 0)
+			(at 182.88 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10700,7 +9950,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0486")
+					(reference "#PWR0484")
 					(unit 1)
 				)
 			)
@@ -10709,7 +9959,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 125.73 157.48 0)
+		(at 146.05 146.05 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10717,8 +9967,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "61f5e543-e98c-4042-832f-36ccc06b094a")
-		(property "Reference" "#PWR0474"
-			(at 125.73 163.83 0)
+		(property "Reference" "#PWR0480"
+			(at 146.05 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10727,7 +9977,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 125.73 162.56 0)
+			(at 146.05 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10735,7 +9985,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 157.48 0)
+			(at 146.05 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10744,7 +9994,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 157.48 0)
+			(at 146.05 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10753,7 +10003,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 157.48 0)
+			(at 146.05 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10767,7 +10017,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0474")
+					(reference "#PWR0480")
 					(unit 1)
 				)
 			)
@@ -10783,7 +10033,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "668b72f4-db85-470b-9055-7007693a89d0")
-		(property "Reference" "#PWR0470"
+		(property "Reference" "#PWR0471"
 			(at 119.38 179.07 0)
 			(effects
 				(font
@@ -10833,7 +10083,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0470")
+					(reference "#PWR0471")
 					(unit 1)
 				)
 			)
@@ -10909,7 +10159,7 @@
 	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
-		(at 125.73 149.86 0)
+		(at 146.05 138.43 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10917,8 +10167,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70ee99ea-c49f-4101-99e8-f6a7ca3f5645")
-		(property "Reference" "#PWR0473"
-			(at 125.73 153.67 0)
+		(property "Reference" "#PWR0479"
+			(at 146.05 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10927,7 +10177,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 125.73 144.78 0)
+			(at 146.05 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10935,7 +10185,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 149.86 0)
+			(at 146.05 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10944,7 +10194,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 149.86 0)
+			(at 146.05 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10953,7 +10203,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 125.73 149.86 0)
+			(at 146.05 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10967,7 +10217,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0473")
+					(reference "#PWR0479")
 					(unit 1)
 				)
 			)
@@ -10976,7 +10226,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 137.16 125.73 0)
+		(at 138.43 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10984,8 +10234,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75965379-3aa8-43ea-ac86-a5b3d36d0e45")
-		(property "Reference" "#PWR0479"
-			(at 137.16 132.08 0)
+		(property "Reference" "#PWR0475"
+			(at 138.43 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10994,7 +10244,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 137.16 130.81 0)
+			(at 138.43 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11002,7 +10252,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 125.73 0)
+			(at 138.43 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11011,7 +10261,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 125.73 0)
+			(at 138.43 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11020,7 +10270,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 137.16 125.73 0)
+			(at 138.43 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11034,92 +10284,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0479")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 133.35 63.5 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "77f1d9db-1dce-4473-bc8b-15f23bb852d4")
-		(property "Reference" "D12"
-			(at 129.286 62.992 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 129.54 65.0875 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
-			(at 133.35 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.35 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 133.35 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" ""
-			(at 133.35 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 133.35 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dd9928da-e4f9-44ab-8ddf-ed48b011ceee")
-		)
-		(pin "2"
-			(uuid "e86ccf9f-a466-4c9a-b5e9-17fe239518ff")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "D12")
+					(reference "#PWR0475")
 					(unit 1)
 				)
 			)
@@ -11127,7 +10292,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 162.56 148.59 0)
+		(at 172.72 140.97 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11135,8 +10300,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7d1fa7cd-89dd-4d87-92bc-773efd657e47")
-		(property "Reference" "#PWR0485"
-			(at 162.56 152.4 0)
+		(property "Reference" "#PWR0483"
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11145,7 +10310,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 163.83 144.78 0)
+			(at 173.99 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11154,7 +10319,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 148.59 0)
+			(at 172.72 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11162,7 +10327,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 148.59 0)
+			(at 172.72 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11170,7 +10335,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 162.56 148.59 0)
+			(at 172.72 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11183,7 +10348,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0485")
+					(reference "#PWR0483")
 					(unit 1)
 				)
 			)
@@ -11192,7 +10357,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 144.78 182.88 0)
+		(at 144.78 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11200,8 +10365,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8a9fdee7-bb6e-4b64-8419-825fe6c8f384")
-		(property "Reference" "#PWR0481"
-			(at 144.78 189.23 0)
+		(property "Reference" "#PWR0478"
+			(at 144.78 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11210,7 +10375,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 144.78 187.96 0)
+			(at 144.78 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11218,7 +10383,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 144.78 182.88 0)
+			(at 144.78 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11227,7 +10392,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 144.78 182.88 0)
+			(at 144.78 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11236,7 +10401,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 144.78 182.88 0)
+			(at 144.78 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11250,7 +10415,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0481")
+					(reference "#PWR0478")
 					(unit 1)
 				)
 			)
@@ -11267,7 +10432,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8e021086-3ac7-4110-be00-71a1e86d5be6")
-		(property "Reference" "#PWR0492"
+		(property "Reference" "#PWR0490"
 			(at 250.19 40.64 0)
 			(effects
 				(font
@@ -11317,7 +10482,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0492")
+					(reference "#PWR0490")
 					(unit 1)
 				)
 			)
@@ -11413,7 +10578,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 137.16 105.41 90)
+		(at 138.43 76.2 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11421,8 +10586,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "93497f48-08e6-4cae-81fe-36d6bd82280f")
-		(property "Reference" "R73"
-			(at 137.16 99.06 90)
+		(property "Reference" "R72"
+			(at 138.43 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11430,7 +10595,7 @@
 			)
 		)
 		(property "Value" "100kR"
-			(at 137.16 101.6 90)
+			(at 138.43 72.39 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11438,7 +10603,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 137.16 107.188 90)
+			(at 138.43 77.978 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11447,7 +10612,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810311438_YAGEO-RT0805BRD07100KL_C122537.pdf"
-			(at 137.16 105.41 0)
+			(at 138.43 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11456,7 +10621,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 137.16 105.41 0)
+			(at 138.43 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11465,7 +10630,7 @@
 			)
 		)
 		(property "MPN" "RT0805BRD07100KL"
-			(at 137.16 105.41 0)
+			(at 138.43 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11474,7 +10639,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 137.16 105.41 0)
+			(at 138.43 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11491,7 +10656,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "R73")
+					(reference "R72")
 					(unit 1)
 				)
 			)
@@ -11499,7 +10664,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
-		(at 116.84 153.67 0)
+		(at 137.16 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11508,7 +10673,7 @@
 		(fields_autoplaced yes)
 		(uuid "94845fc5-81d0-43fa-8f29-060ac40535f6")
 		(property "Reference" "J15"
-			(at 118.11 144.78 0)
+			(at 138.43 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11516,7 +10681,7 @@
 			)
 		)
 		(property "Value" "ICSP"
-			(at 118.11 147.32 0)
+			(at 138.43 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11524,7 +10689,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
-			(at 116.84 153.67 0)
+			(at 137.16 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11533,7 +10698,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2306091006_HCTL-PZ254-2-03-Z-8-5_C2894964.pdf"
-			(at 116.84 153.67 0)
+			(at 137.16 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11542,7 +10707,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 116.84 153.67 0)
+			(at 137.16 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11551,7 +10716,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 116.84 153.67 0)
+			(at 137.16 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11560,7 +10725,7 @@
 			)
 		)
 		(property "MPN" "PZ254-2-03-Z-8.5"
-			(at 116.84 153.67 0)
+			(at 137.16 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11597,7 +10762,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 120.65 125.73 0)
+		(at 121.92 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11605,7 +10770,7 @@
 		(dnp no)
 		(uuid "94af9f78-4422-4739-afe1-3072a814a0f4")
 		(property "Reference" "C156"
-			(at 124.46 124.4599 0)
+			(at 125.73 95.2499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11614,7 +10779,7 @@
 			)
 		)
 		(property "Value" "13pC"
-			(at 124.46 126.9999 0)
+			(at 125.73 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11623,7 +10788,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 121.6152 129.54 0)
+			(at 122.8852 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11632,7 +10797,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG130J500NT_C501858.pdf"
-			(at 120.65 125.73 0)
+			(at 121.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11641,7 +10806,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 120.65 125.73 0)
+			(at 121.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11650,7 +10815,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 120.65 125.73 0)
+			(at 121.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11659,7 +10824,7 @@
 			)
 		)
 		(property "MPN" "0805CG130J500NT"
-			(at 120.65 125.73 0)
+			(at 121.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11684,7 +10849,7 @@
 	)
 	(symbol
 		(lib_id "Device:Crystal_GND24")
-		(at 137.16 120.65 0)
+		(at 138.43 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11692,7 +10857,7 @@
 		(dnp no)
 		(uuid "a1ae013e-cbd7-4fee-8f0e-9c277cf2d35f")
 		(property "Reference" "Y1"
-			(at 142.24 117.602 0)
+			(at 143.51 88.392 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11700,7 +10865,7 @@
 			)
 		)
 		(property "Value" "16MHz"
-			(at 142.24 115.57 0)
+			(at 143.51 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11708,7 +10873,7 @@
 			)
 		)
 		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
-			(at 137.16 120.65 0)
+			(at 138.43 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11717,7 +10882,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404180925_Seiko-Epson-X1E0000210119_C89371.pdf"
-			(at 137.16 120.65 0)
+			(at 138.43 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11726,7 +10891,7 @@
 			)
 		)
 		(property "Description" "Four pin crystal, GND on pins 2 and 4"
-			(at 137.16 120.65 0)
+			(at 138.43 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11735,7 +10900,7 @@
 			)
 		)
 		(property "MPN" "X1E0000210119"
-			(at 137.16 120.65 0)
+			(at 138.43 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11744,7 +10909,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 137.16 120.65 0)
+			(at 138.43 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11775,7 +10940,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 144.78 179.07 0)
+		(at 144.78 181.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11784,15 +10949,6 @@
 		(fields_autoplaced yes)
 		(uuid "a69a7817-96fa-4051-9c14-3c74651eb948")
 		(property "Reference" "C157"
-			(at 148.59 177.7999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
 			(at 148.59 180.3399 0)
 			(effects
 				(font
@@ -11801,8 +10957,17 @@
 				(justify left)
 			)
 		)
+		(property "Value" "100nC"
+			(at 148.59 182.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 145.7452 182.88 0)
+			(at 145.7452 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11811,7 +10976,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 144.78 179.07 0)
+			(at 144.78 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11820,7 +10985,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 144.78 179.07 0)
+			(at 144.78 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11829,7 +10994,7 @@
 			)
 		)
 		(property "Status" ""
-			(at 144.78 179.07 0)
+			(at 144.78 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11838,7 +11003,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 144.78 179.07 0)
+			(at 144.78 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11872,7 +11037,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a9d19e5c-f699-4918-b701-e51340067cf8")
-		(property "Reference" "#PWR0493"
+		(property "Reference" "#PWR0491"
 			(at 250.19 55.88 0)
 			(effects
 				(font
@@ -11922,7 +11087,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0493")
+					(reference "#PWR0491")
 					(unit 1)
 				)
 			)
@@ -12161,7 +11326,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 123.19 33.02 0)
+		(at 119.38 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12169,8 +11334,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd0bd7d0-8806-49a8-95aa-17713cf30f25")
-		(property "Reference" "#PWR0472"
-			(at 123.19 39.37 0)
+		(property "Reference" "#PWR0470"
+			(at 119.38 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12179,7 +11344,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.19 38.1 0)
+			(at 119.38 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12187,7 +11352,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 123.19 33.02 0)
+			(at 119.38 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12196,7 +11361,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 33.02 0)
+			(at 119.38 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12205,7 +11370,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 123.19 33.02 0)
+			(at 119.38 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12219,7 +11384,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0472")
+					(reference "#PWR0470")
 					(unit 1)
 				)
 			)
@@ -12295,7 +11460,7 @@
 	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
-		(at 137.16 22.86 0)
+		(at 133.35 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12303,8 +11468,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bfe79872-a5a3-4fa7-9cc7-36f4c8b2dc9b")
-		(property "Reference" "#PWR0477"
-			(at 137.16 26.67 0)
+		(property "Reference" "#PWR0473"
+			(at 133.35 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12313,7 +11478,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 137.16 17.78 0)
+			(at 133.35 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12321,7 +11486,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 22.86 0)
+			(at 133.35 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12330,7 +11495,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 22.86 0)
+			(at 133.35 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12339,7 +11504,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 137.16 22.86 0)
+			(at 133.35 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12353,7 +11518,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0477")
+					(reference "#PWR0473")
 					(unit 1)
 				)
 			)
@@ -12429,7 +11594,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 153.67 40.64 0)
+		(at 149.86 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12437,8 +11602,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d7bfdc0d-b21b-4423-a86a-e0bf0004ba24")
-		(property "Reference" "#PWR0483"
-			(at 153.67 46.99 0)
+		(property "Reference" "#PWR0481"
+			(at 149.86 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12447,7 +11612,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 153.67 45.72 0)
+			(at 149.86 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12455,7 +11620,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 40.64 0)
+			(at 149.86 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12464,7 +11629,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 40.64 0)
+			(at 149.86 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12473,7 +11638,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 153.67 40.64 0)
+			(at 149.86 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12487,7 +11652,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0483")
+					(reference "#PWR0481")
 					(unit 1)
 				)
 			)
@@ -12495,7 +11660,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 172.72 152.4 0)
+		(at 182.88 144.78 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12504,8 +11669,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "da116546-cfd0-4580-8668-75051c392a06")
-		(property "Reference" "R76"
-			(at 170.18 151.1299 0)
+		(property "Reference" "R74"
+			(at 180.34 143.5099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12514,7 +11679,7 @@
 			)
 		)
 		(property "Value" "10kR"
-			(at 170.18 153.6699 0)
+			(at 180.34 146.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12523,7 +11688,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 174.498 152.4 90)
+			(at 184.658 144.78 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12532,7 +11697,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 152.4 0)
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12541,7 +11706,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 172.72 152.4 0)
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12549,7 +11714,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 172.72 152.4 0)
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12558,7 +11723,7 @@
 			)
 		)
 		(property "Status" ""
-			(at 172.72 152.4 0)
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12567,7 +11732,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 172.72 152.4 0)
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12576,7 +11741,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 172.72 152.4 0)
+			(at 182.88 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12593,7 +11758,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "R76")
+					(reference "R74")
 					(unit 1)
 				)
 			)
@@ -12602,7 +11767,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 153.67 129.54 0)
+		(at 154.94 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12610,8 +11775,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e20cc5c7-6ff3-4e50-94d9-7150f42f6e22")
-		(property "Reference" "#PWR0484"
-			(at 153.67 135.89 0)
+		(property "Reference" "#PWR0482"
+			(at 154.94 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12620,7 +11785,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 153.67 134.62 0)
+			(at 154.94 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12628,7 +11793,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 129.54 0)
+			(at 154.94 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12637,7 +11802,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 129.54 0)
+			(at 154.94 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12646,7 +11811,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 153.67 129.54 0)
+			(at 154.94 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12660,7 +11825,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0484")
+					(reference "#PWR0482")
 					(unit 1)
 				)
 			)
@@ -12668,7 +11833,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 153.67 125.73 0)
+		(at 154.94 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12676,7 +11841,7 @@
 		(dnp no)
 		(uuid "e275452a-4685-4a1b-8ff5-b8872fb10998")
 		(property "Reference" "C159"
-			(at 157.48 124.4599 0)
+			(at 158.75 95.2499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12685,7 +11850,7 @@
 			)
 		)
 		(property "Value" "13pC"
-			(at 157.48 126.9999 0)
+			(at 158.75 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12694,7 +11859,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 154.6352 129.54 0)
+			(at 155.9052 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12703,7 +11868,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG130J500NT_C501858.pdf"
-			(at 153.67 125.73 0)
+			(at 154.94 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12712,7 +11877,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 153.67 125.73 0)
+			(at 154.94 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12721,7 +11886,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 153.67 125.73 0)
+			(at 154.94 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12730,7 +11895,7 @@
 			)
 		)
 		(property "MPN" "0805CG130J500NT"
-			(at 153.67 125.73 0)
+			(at 154.94 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12852,7 +12017,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eee1e39a-d9dc-450c-8560-07d8a884b445")
-		(property "Reference" "#PWR0487"
+		(property "Reference" "#PWR0485"
 			(at 208.28 30.48 0)
 			(effects
 				(font
@@ -12902,7 +12067,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0487")
+					(reference "#PWR0485")
 					(unit 1)
 				)
 			)
@@ -12910,7 +12075,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3VADC")
-		(at 144.78 175.26 0)
+		(at 144.78 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12918,8 +12083,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0095f75-2600-403c-ad90-9612ce9babb2")
-		(property "Reference" "#PWR0480"
-			(at 148.59 176.53 0)
+		(property "Reference" "#PWR0477"
+			(at 148.59 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12928,7 +12093,7 @@
 			)
 		)
 		(property "Value" "+3VADC"
-			(at 144.78 170.18 0)
+			(at 144.78 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12936,7 +12101,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 144.78 175.26 0)
+			(at 144.78 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12945,7 +12110,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 144.78 175.26 0)
+			(at 144.78 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12954,7 +12119,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3VADC\""
-			(at 144.78 175.26 0)
+			(at 144.78 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12968,7 +12133,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0480")
+					(reference "#PWR0477")
 					(unit 1)
 				)
 			)
@@ -12976,7 +12141,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 162.56 152.4 0)
+		(at 172.72 144.78 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12984,8 +12149,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f4f2736f-8d8a-4bc2-93eb-8ee71a63b9a3")
-		(property "Reference" "R75"
-			(at 160.02 151.1299 0)
+		(property "Reference" "R73"
+			(at 170.18 143.5099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12994,7 +12159,7 @@
 			)
 		)
 		(property "Value" "10kR"
-			(at 160.02 153.6699 0)
+			(at 170.18 146.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13003,7 +12168,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 164.338 152.4 90)
+			(at 174.498 144.78 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13012,7 +12177,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 152.4 0)
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13021,7 +12186,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 162.56 152.4 0)
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13029,7 +12194,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 162.56 152.4 0)
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13038,7 +12203,7 @@
 			)
 		)
 		(property "Status" ""
-			(at 162.56 152.4 0)
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13047,7 +12212,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 162.56 152.4 0)
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13056,7 +12221,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 162.56 152.4 0)
+			(at 172.72 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13073,95 +12238,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "R75")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 133.35 71.12 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f739bb48-c5c4-4c0d-a659-3c4af9338dd3")
-		(property "Reference" "R71"
-			(at 135.89 69.8499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1kR"
-			(at 135.89 72.3899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 135.128 71.12 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.35 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 133.35 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 133.35 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 133.35 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5375df20-f9db-4a65-a051-d2c9b9669698")
-		)
-		(pin "1"
-			(uuid "fb77ed1d-e1b7-4f6a-ae65-417fee4bd5da")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "R71")
+					(reference "R73")
 					(unit 1)
 				)
 			)
@@ -13628,7 +12705,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "faeb50f0-42fb-4cef-adac-38869d04893a")
-		(property "Reference" "#PWR0490"
+		(property "Reference" "#PWR0488"
 			(at 208.28 96.52 0)
 			(effects
 				(font
@@ -13678,7 +12755,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0490")
+					(reference "#PWR0488")
 					(unit 1)
 				)
 			)
@@ -13754,7 +12831,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 137.16 115.57 180)
+		(at 138.43 86.36 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13762,8 +12839,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ffd6f08b-24fa-46bc-9bcb-997aa356c1e8")
-		(property "Reference" "#PWR0478"
-			(at 137.16 109.22 0)
+		(property "Reference" "#PWR0474"
+			(at 138.43 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13772,7 +12849,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 137.16 110.49 0)
+			(at 138.43 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13780,7 +12857,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 115.57 0)
+			(at 138.43 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13789,7 +12866,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 115.57 0)
+			(at 138.43 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13798,7 +12875,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 137.16 115.57 0)
+			(at 138.43 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13812,7 +12889,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0478")
+					(reference "#PWR0474")
 					(unit 1)
 				)
 			)
@@ -13820,7 +12897,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 153.67 36.83 0)
+		(at 149.86 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13828,7 +12905,7 @@
 		(dnp no)
 		(uuid "ffdfce10-7afc-4283-a315-109349a8679f")
 		(property "Reference" "C158"
-			(at 157.48 35.5599 0)
+			(at 153.67 39.3699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13837,7 +12914,7 @@
 			)
 		)
 		(property "Value" "4n7C"
-			(at 157.48 38.0999 0)
+			(at 153.67 41.9099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13846,7 +12923,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 154.6352 40.64 0)
+			(at 150.8252 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13855,7 +12932,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311211121_YAGEO-CC0805JRX7R9BB472_C327170.pdf"
-			(at 153.67 36.83 0)
+			(at 149.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13864,7 +12941,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 153.67 36.83 0)
+			(at 149.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13873,7 +12950,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 153.67 36.83 0)
+			(at 149.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13882,7 +12959,7 @@
 			)
 		)
 		(property "MPN" "CC0805JRX7R9BB472"
-			(at 153.67 36.83 0)
+			(at 149.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
