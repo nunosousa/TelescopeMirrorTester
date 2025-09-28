@@ -1840,6 +1840,16 @@
 		)
 		(uuid "56a45b4e-fcfd-4bf7-b7da-431af1d7ed86")
 	)
+	(text "62.5ns < t_{T+} < 333us / 2\n62.5ns < RC discharging to V_{T-} min and V_{T-} max < 166.5us"
+		(exclude_from_sim no)
+		(at 46.736 176.784 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "67057531-110b-4ab9-80e6-140cb1298f1b")
+	)
 	(text "V"
 		(exclude_from_sim no)
 		(at 33.782 51.562 0)
@@ -1953,6 +1963,16 @@
 			)
 		)
 		(uuid "e3682efa-5d17-4b04-9a39-88909b88f316")
+	)
+	(text "62.5ns < t_{T+} < 333us / 2\n62.5ns < RC charging to V_{T+} min and V_{T+} max < 166.5us\n\nRC charging time to 99.9% < 166.5us"
+		(exclude_from_sim no)
+		(at 44.704 160.528 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e9eaa145-d698-4cd3-a64a-86b37ad23572")
 	)
 	(text "V"
 		(exclude_from_sim no)
@@ -4089,6 +4109,114 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 148.59 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "02460361-1553-4c29-a685-cfd23c47c395")
+		(property "Reference" "C164"
+			(at 140.97 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nC"
+			(at 139.7 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 149.5552 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3cc5b64a-3d44-40f6-8599-17b379ab5d58")
+		)
+		(pin "2"
+			(uuid "0711f662-88c5-4211-90f0-520af398be7c")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
+					(reference "C165")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
+					(reference "C164")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:74HC00")
 		(at 228.6 59.69 0)
 		(unit 2)
@@ -4987,16 +5115,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 148.59 73.66 0)
-		(mirror y)
+		(at 148.59 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "42b15c8e-ccd1-40cb-9f32-4adf462063ca")
+		(uuid "415d8f30-84dc-45b9-a597-df9655a48bd0")
 		(property "Reference" "C146"
-			(at 144.78 72.3899 0)
+			(at 140.97 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5004,8 +5131,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100pC"
-			(at 144.78 74.9299 0)
+		(property "Value" "100nC"
+			(at 139.7 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5014,7 +5141,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 147.6248 77.47 0)
+			(at 149.5552 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5022,8 +5149,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
-			(at 148.59 73.66 0)
+		(property "Datasheet" ""
+			(at 148.59 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5031,8 +5158,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
-			(at 148.59 73.66 0)
+		(property "Description" ""
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 148.59 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5040,17 +5175,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CC0805KRX7R9BB101"
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 148.59 73.66 0)
+		(property "Status" ""
+			(at 148.59 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5059,7 +5185,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 148.59 73.66 0)
+			(at 148.59 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5068,7 +5194,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 148.59 73.66 0)
+			(at 148.59 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5076,16 +5202,16 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "f6c80b13-8816-4836-802b-fb6c2faff21b")
-		)
 		(pin "1"
-			(uuid "d169a76a-0f6b-48f9-a01c-fc1b63dd2107")
+			(uuid "f694b10a-34b0-40fd-acae-1226826b72dc")
+		)
+		(pin "2"
+			(uuid "ec8fc0ac-8364-4232-b786-8934601eaa42")
 		)
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "C164")
+					(reference "C147")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
@@ -8223,116 +8349,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
 					(reference "C144")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 148.59 116.84 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f93aae84-570f-4788-bf04-db588dcec095")
-		(property "Reference" "C147"
-			(at 144.78 115.5699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100pC"
-			(at 144.78 118.1099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 147.6248 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "CC0805KRX7R9BB101"
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b834d871-7bca-496a-8220-d76ceb826bfc")
-		)
-		(pin "1"
-			(uuid "f22c640b-e0ae-4b62-9dc6-608f748977df")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "C165")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "C147")
 					(unit 1)
 				)
 			)
