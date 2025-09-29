@@ -1755,9 +1755,9 @@
 		)
 		(uuid "15ba4fd1-c40c-4dfd-b053-0beb452aaaba")
 	)
-	(text "V_{T-}"
+	(text "1.50V < V_{T-} < 3.05V"
 		(exclude_from_sim no)
-		(at 33.274 65.024 0)
+		(at 24.638 65.024 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1777,20 +1777,9 @@
 		)
 		(uuid "183179e8-e2ca-4ff0-a00b-728d831604d5")
 	)
-	(text "Schmitt trigger (74AHC1G17) levels @ 5V_{cc} (all values interpolated to 5V from given datapoints in the datasheet)\nV_{T+} max = 3.49V\nV_{T-} min = 1.50V\nV_{H} min = V_{T+} - V_{T-} = 0.45V\n\nWorst cases:\nV_{T+} min = V_{T-} min + 0.45V = 1.95V\nV_{T-} max = V_{T+} max - 0.45V = 3.05V"
-		(exclude_from_sim no)
-		(at 16.51 131.318 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1966ba1a-08c0-4ccb-a79c-f772998d9018")
-	)
 	(text "tmin = 62.5ns @ fMCU = 16MHz"
 		(exclude_from_sim no)
-		(at 67.31 152.4 0)
+		(at 67.31 160.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1798,9 +1787,9 @@
 		)
 		(uuid "1f4892fd-ed2d-4f77-a1cc-c4dc742c3be1")
 	)
-	(text "t_{T+}"
+	(text "4.4us < t_{T+} < 13.3us"
 		(exclude_from_sim no)
-		(at 43.434 120.142 0)
+		(at 44.196 119.634 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1840,16 +1829,6 @@
 		)
 		(uuid "56a45b4e-fcfd-4bf7-b7da-431af1d7ed86")
 	)
-	(text "62.5ns < t_{T+} < 333us / 2\n62.5ns < RC discharging to V_{T-} min and V_{T-} max < 166.5us"
-		(exclude_from_sim no)
-		(at 46.736 176.784 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "67057531-110b-4ab9-80e6-140cb1298f1b")
-	)
 	(text "V"
 		(exclude_from_sim no)
 		(at 33.782 51.562 0)
@@ -1871,6 +1850,16 @@
 			)
 		)
 		(uuid "786e7fd5-57af-4bc1-ab2e-a9edf4bcaab5")
+	)
+	(text "167us min"
+		(exclude_from_sim no)
+		(at 51.308 25.654 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "788215cf-d207-45a6-b40e-081294787deb")
 	)
 	(text "XOR gate"
 		(exclude_from_sim no)
@@ -1903,9 +1892,9 @@
 		)
 		(uuid "8782e120-eb0e-4c6b-b93d-cba0dd461c19")
 	)
-	(text "V_{T+}"
+	(text "1.95V < V_{T+} < 3.49V\n"
 		(exclude_from_sim no)
-		(at 33.274 60.96 0)
+		(at 24.638 61.214 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1954,25 +1943,15 @@
 		)
 		(uuid "e2876ac9-f214-47d4-8e34-cc9213ff138e")
 	)
-	(text "t_{T-}"
+	(text "4.4us < t_{T-} < 13.4us"
 		(exclude_from_sim no)
-		(at 62.23 120.396 0)
+		(at 63.5 121.666 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "e3682efa-5d17-4b04-9a39-88909b88f316")
-	)
-	(text "62.5ns < t_{T+} < 333us / 2\n62.5ns < RC charging to V_{T+} min and V_{T+} max < 166.5us\n\nRC charging time to 99.9% < 166.5us"
-		(exclude_from_sim no)
-		(at 44.704 160.528 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "e9eaa145-d698-4cd3-a64a-86b37ad23572")
 	)
 	(text "V"
 		(exclude_from_sim no)
@@ -2151,6 +2130,27 @@
 		)
 		(uuid "098807d7-ec0d-40ba-899e-ccdf63ebf566")
 	)
+	(polyline
+		(pts
+			(xy 41.91 25.4) (xy 41.91 27.94)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(uuid "0b3a2475-449b-45d8-8fe4-ddac4420c0fa")
+	)
+	(polyline
+		(pts
+			(xy 41.91 25.4) (xy 41.91 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c350365-50e7-4eea-ad7d-b9e24c483073")
+	)
 	(wire
 		(pts
 			(xy 260.35 38.1) (xy 261.62 38.1)
@@ -2261,6 +2261,17 @@
 			(type default)
 		)
 		(uuid "19ca1f5c-03fe-4f53-8950-f5a54fee6dfc")
+	)
+	(polyline
+		(pts
+			(xy 60.96 25.4) (xy 60.96 27.94)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(uuid "1bcabc3f-8847-4300-a659-d0f2f409637e")
 	)
 	(polyline
 		(pts
@@ -2539,6 +2550,17 @@
 	)
 	(polyline
 		(pts
+			(xy 41.91 25.4) (xy 41.91 27.94)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(uuid "466f5a35-7ad8-4b7a-a3f0-232933147d4e")
+	)
+	(polyline
+		(pts
 			(xy 110.49 90.17) (xy 111.76 91.44)
 		)
 		(stroke
@@ -2756,6 +2778,17 @@
 			(type default)
 		)
 		(uuid "711af4ad-1fb0-4a59-9b86-fbd90d0c2fa3")
+	)
+	(polyline
+		(pts
+			(xy 41.91 26.67) (xy 60.96 26.67)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(uuid "73592314-27f8-42c5-a1e1-2013c1ab24f0")
 	)
 	(wire
 		(pts
@@ -3620,7 +3653,7 @@
 		(uuid "ff791481-1fce-493e-a574-57c1fb685894")
 	)
 	(image
-		(at 69.088 146.304)
+		(at 69.088 153.924)
 		(scale 0.337824)
 		(uuid "57d15d2e-35f2-4964-9860-4c7cbad0176b")
 		(data "iVBORw0KGgoAAAANSUhEUgAAA64AAABJCAIAAACyzeyCAAAAA3NCSVQICAjb4U/gAAAACXBIWXMA"
@@ -4048,7 +4081,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "01daa762-2d00-4416-929c-713c0c53676d")
-		(property "Reference" "#PWR0436"
+		(property "Reference" "#PWR0432"
 			(at 148.59 127 0)
 			(effects
 				(font
@@ -4098,119 +4131,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0500")
+					(reference "#PWR0496")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0436")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 148.59 73.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "02460361-1553-4c29-a685-cfd23c47c395")
-		(property "Reference" "C164"
-			(at 140.97 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
-			(at 139.7 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 149.5552 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" ""
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3cc5b64a-3d44-40f6-8599-17b379ab5d58")
-		)
-		(pin "2"
-			(uuid "0711f662-88c5-4211-90f0-520af398be7c")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "C165")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "C164")
+					(reference "#PWR0432")
 					(unit 1)
 				)
 			)
@@ -4488,6 +4413,96 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 143.51 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1480e4b8-f480-47de-8398-27d3e1ca9a71")
+		(property "Reference" "R69"
+			(at 143.51 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100kR"
+			(at 143.51 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 143.51 113.538 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810311438_YAGEO-RT0805BRD07100KL_C122537.pdf"
+			(at 143.51 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 143.51 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RT0805BRD07100KL"
+			(at 143.51 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 143.51 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a60ee7a8-ef66-4cbd-861b-135eb31cfc53")
+		)
+		(pin "2"
+			(uuid "8fffe814-e6c0-4db8-9a4c-de7c31a6bee1")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
+					(reference "R76")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
+					(reference "R69")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 260.35 39.37 0)
 		(unit 1)
@@ -4497,7 +4512,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1aff9a06-dd36-4e7b-a4c5-7dcf893353da")
-		(property "Reference" "#PWR0447"
+		(property "Reference" "#PWR0445"
 			(at 260.35 45.72 0)
 			(effects
 				(font
@@ -4547,11 +4562,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0511")
+					(reference "#PWR0509")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0447")
+					(reference "#PWR0445")
 					(unit 1)
 				)
 			)
@@ -5014,7 +5029,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "377e685b-970f-4217-b046-703c6c1630bd")
-		(property "Reference" "U71"
+		(property "Reference" "U70"
 			(at 158.75 62.1598 0)
 			(effects
 				(font
@@ -5103,119 +5118,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U80")
+					(reference "U79")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U71")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 148.59 116.84 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "415d8f30-84dc-45b9-a597-df9655a48bd0")
-		(property "Reference" "C146"
-			(at 140.97 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
-			(at 139.7 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 149.5552 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 148.59 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f694b10a-34b0-40fd-acae-1226826b72dc")
-		)
-		(pin "2"
-			(uuid "ec8fc0ac-8364-4232-b786-8934601eaa42")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "C147")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "C146")
+					(reference "U70")
 					(unit 1)
 				)
 			)
@@ -5366,7 +5273,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4cfc50c0-8704-48b6-9f8e-429791a8cfe5")
-		(property "Reference" "#PWR0445"
+		(property "Reference" "#PWR0446"
 			(at 267.97 137.16 0)
 			(effects
 				(font
@@ -5414,11 +5321,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0509")
+					(reference "#PWR0510")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0445")
+					(reference "#PWR0446")
 					(unit 1)
 				)
 			)
@@ -5434,7 +5341,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4df58af7-5071-4df6-ad8d-6169ce5abd21")
-		(property "Reference" "U70"
+		(property "Reference" "U72"
 			(at 210.8117 88.9 0)
 			(effects
 				(font
@@ -5549,11 +5456,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U79")
+					(reference "U81")
 					(unit 4)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U70")
+					(reference "U72")
 					(unit 4)
 				)
 			)
@@ -5689,6 +5596,96 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
 					(reference "U73")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 143.51 68.58 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5369932b-a899-42a4-8cc8-94894ca65c66")
+		(property "Reference" "R68"
+			(at 143.51 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100kR"
+			(at 143.51 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 143.51 70.358 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810311438_YAGEO-RT0805BRD07100KL_C122537.pdf"
+			(at 143.51 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 143.51 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RT0805BRD07100KL"
+			(at 143.51 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 143.51 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "57efaf18-03e4-441c-8413-2a96e24f6492")
+		)
+		(pin "2"
+			(uuid "dc0d4621-5a75-4709-b689-12e88828857c")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
+					(reference "R75")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
+					(reference "R68")
 					(unit 1)
 				)
 			)
@@ -5839,7 +5836,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5ef5730b-3b0e-48af-9ce3-2a1d4de5b1ca")
-		(property "Reference" "#PWR0431"
+		(property "Reference" "#PWR0433"
 			(at 163.83 138.43 0)
 			(effects
 				(font
@@ -5887,11 +5884,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0495")
+					(reference "#PWR0497")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0431")
+					(reference "#PWR0433")
 					(unit 1)
 				)
 			)
@@ -5906,7 +5903,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6005eb9b-6f48-4738-ad8a-c12951020603")
-		(property "Reference" "C145"
+		(property "Reference" "C147"
 			(at 190.5 147.32 0)
 			(effects
 				(font
@@ -5995,11 +5992,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "C163")
+					(reference "C165")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "C145")
+					(reference "C147")
 					(unit 1)
 				)
 			)
@@ -6015,7 +6012,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62ce723a-3d7d-4bf9-be76-a8d281ecabc0")
-		(property "Reference" "#PWR0434"
+		(property "Reference" "#PWR0440"
 			(at 198.12 157.48 0)
 			(effects
 				(font
@@ -6065,11 +6062,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0498")
+					(reference "#PWR0504")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0434")
+					(reference "#PWR0440")
 					(unit 1)
 				)
 			)
@@ -6085,7 +6082,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a13f753-1d0c-41a5-bf4f-6b36cc0aa52d")
-		(property "Reference" "#PWR0446"
+		(property "Reference" "#PWR0447"
 			(at 267.97 165.1 0)
 			(effects
 				(font
@@ -6135,11 +6132,121 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0510")
+					(reference "#PWR0511")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0446")
+					(reference "#PWR0447")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 148.59 73.66 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7b012c65-14a3-437a-92e2-8e7ea78431de")
+		(property "Reference" "C145"
+			(at 144.78 72.3899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100pC"
+			(at 144.78 74.9299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 147.6248 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d3927ffc-8561-4f76-b0e5-cf08257a751b")
+		)
+		(pin "1"
+			(uuid "d385e0a6-9738-422c-bc19-235711cf079e")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
+					(reference "C163")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
+					(reference "C145")
 					(unit 1)
 				)
 			)
@@ -6155,7 +6262,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7f717274-2dec-4e71-9765-509c8771c0a2")
-		(property "Reference" "#PWR0438"
+		(property "Reference" "#PWR0442"
 			(at 217.17 166.37 0)
 			(effects
 				(font
@@ -6205,11 +6312,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0502")
+					(reference "#PWR0506")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0438")
+					(reference "#PWR0442")
 					(unit 1)
 				)
 			)
@@ -6225,7 +6332,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81b93e35-32cf-4003-ae08-11c2b4da5136")
-		(property "Reference" "#PWR0439"
+		(property "Reference" "#PWR0435"
 			(at 167.64 62.23 0)
 			(effects
 				(font
@@ -6273,11 +6380,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0503")
+					(reference "#PWR0499")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0439")
+					(reference "#PWR0435")
 					(unit 1)
 				)
 			)
@@ -6293,7 +6400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "851a00c8-0338-4df5-a189-91e61b70db40")
-		(property "Reference" "U70"
+		(property "Reference" "U72"
 			(at 193.0317 95.25 0)
 			(effects
 				(font
@@ -6408,11 +6515,121 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U79")
+					(reference "U81")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U70")
+					(reference "U72")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 148.59 116.84 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "85d42292-29bc-4050-ab82-2637e987441d")
+		(property "Reference" "C146"
+			(at 144.78 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100pC"
+			(at 144.78 118.1099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 147.6248 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2506131735_YAGEO-CC0805KRX7R9BB101_C107140.pdf"
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB101"
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 148.59 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "80a04b10-e950-4441-ad88-422713dbfc2c")
+		)
+		(pin "1"
+			(uuid "78fe7506-181d-435a-b7a7-4b8dfca29492")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
+					(reference "C164")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
+					(reference "C146")
 					(unit 1)
 				)
 			)
@@ -6428,7 +6645,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8c2ad699-cba0-4d22-9e62-ce0ea8d640ae")
-		(property "Reference" "#PWR0441"
+		(property "Reference" "#PWR0437"
 			(at 167.64 105.41 0)
 			(effects
 				(font
@@ -6476,11 +6693,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0505")
+					(reference "#PWR0501")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0441")
+					(reference "#PWR0437")
 					(unit 1)
 				)
 			)
@@ -6551,115 +6768,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
 					(reference "#PWR0430")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 143.51 111.76 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9ef20543-db63-4aa1-93e9-44f0a4a234bd")
-		(property "Reference" "R69"
-			(at 143.51 105.41 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1kR"
-			(at 143.51 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 143.51 113.538 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 143.51 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 143.51 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 143.51 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 143.51 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 143.51 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 143.51 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8c62f789-89c0-4c71-ae8c-c060649bb118")
-		)
-		(pin "2"
-			(uuid "891a4e8b-93d8-4f93-a525-5ae5874706bc")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "R76")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "R69")
 					(unit 1)
 				)
 			)
@@ -6812,7 +6920,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aba450a5-b9ff-41bf-98c1-28992aad2cb0")
-		(property "Reference" "U70"
+		(property "Reference" "U72"
 			(at 210.8117 116.84 0)
 			(effects
 				(font
@@ -6927,11 +7035,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U79")
+					(reference "U81")
 					(unit 3)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U70")
+					(reference "U72")
 					(unit 3)
 				)
 			)
@@ -6947,7 +7055,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ae33aaf9-1471-45ad-84bd-9c46fc3be1c0")
-		(property "Reference" "#PWR0437"
+		(property "Reference" "#PWR0441"
 			(at 217.17 138.43 0)
 			(effects
 				(font
@@ -6995,11 +7103,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0501")
+					(reference "#PWR0505")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0437")
+					(reference "#PWR0441")
 					(unit 1)
 				)
 			)
@@ -7015,7 +7123,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3026793-835d-4665-9525-a8d2228be7ab")
-		(property "Reference" "U70"
+		(property "Reference" "U72"
 			(at 223.52 146.0499 0)
 			(effects
 				(font
@@ -7132,11 +7240,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U79")
+					(reference "U81")
 					(unit 5)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U70")
+					(reference "U72")
 					(unit 5)
 				)
 			)
@@ -7287,7 +7395,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c78fb36f-dd48-4b50-bd54-2d857c8fd54b")
-		(property "Reference" "#PWR0432"
+		(property "Reference" "#PWR0434"
 			(at 163.83 166.37 0)
 			(effects
 				(font
@@ -7337,11 +7445,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0496")
+					(reference "#PWR0498")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0432")
+					(reference "#PWR0434")
 					(unit 1)
 				)
 			)
@@ -7357,7 +7465,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ca822b75-07b5-4a9b-8b9c-49fde12dae02")
-		(property "Reference" "#PWR0440"
+		(property "Reference" "#PWR0436"
 			(at 167.64 85.09 0)
 			(effects
 				(font
@@ -7407,11 +7515,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0504")
+					(reference "#PWR0500")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0440")
+					(reference "#PWR0436")
 					(unit 1)
 				)
 			)
@@ -7426,7 +7534,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cbb45478-16a4-4477-b48d-bf3c09b16be1")
-		(property "Reference" "U72"
+		(property "Reference" "U71"
 			(at 158.75 105.3398 0)
 			(effects
 				(font
@@ -7515,11 +7623,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U81")
+					(reference "U80")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U72")
+					(reference "U71")
 					(unit 1)
 				)
 			)
@@ -7534,7 +7642,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1da9b61-a15e-4f42-8e35-563fa9fe4ebb")
-		(property "Reference" "U70"
+		(property "Reference" "U72"
 			(at 228.5917 95.25 0)
 			(effects
 				(font
@@ -7649,11 +7757,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "U79")
+					(reference "U81")
 					(unit 2)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "U70")
+					(reference "U72")
 					(unit 2)
 				)
 			)
@@ -7794,115 +7902,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 143.51 68.58 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d65c6e33-138b-44a9-82fe-e8ce65228427")
-		(property "Reference" "R68"
-			(at 143.51 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1kR"
-			(at 143.51 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 143.51 70.358 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 143.51 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 143.51 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 143.51 68.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" "OK"
-			(at 143.51 68.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 143.51 68.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 143.51 68.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "691a4261-14ae-4c2f-8eed-cf0ac4d9498b")
-		)
-		(pin "2"
-			(uuid "6bc66468-282d-4f7c-9c10-5d9aaab38ae7")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "R75")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "R68")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 148.59 77.47 0)
 		(unit 1)
@@ -7912,7 +7911,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de0424ac-bb77-4725-ad22-955a25fe4b4f")
-		(property "Reference" "#PWR0435"
+		(property "Reference" "#PWR0431"
 			(at 148.59 83.82 0)
 			(effects
 				(font
@@ -7962,11 +7961,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0499")
+					(reference "#PWR0495")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0435")
+					(reference "#PWR0431")
 					(unit 1)
 				)
 			)
@@ -7982,7 +7981,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e9533bb6-4ebf-4844-a508-16a9b6cdeb53")
-		(property "Reference" "#PWR0433"
+		(property "Reference" "#PWR0439"
 			(at 198.12 147.32 0)
 			(effects
 				(font
@@ -8030,11 +8029,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0497")
+					(reference "#PWR0503")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0433")
+					(reference "#PWR0439")
 					(unit 1)
 				)
 			)
@@ -8050,7 +8049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f30020de-89d2-475f-a79d-109b7b306cf7")
-		(property "Reference" "#PWR0442"
+		(property "Reference" "#PWR0438"
 			(at 167.64 128.27 0)
 			(effects
 				(font
@@ -8100,11 +8099,11 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7332c390-df69-4887-9955-5042bba45ea6"
-					(reference "#PWR0506")
+					(reference "#PWR0502")
 					(unit 1)
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/900f150c-7ff8-4dd3-b80e-d3977fed4d00"
-					(reference "#PWR0442")
+					(reference "#PWR0438")
 					(unit 1)
 				)
 			)
