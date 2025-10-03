@@ -73,7 +73,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 83.82) (xy 107.95 83.82)
+			(xy 100.33 81.28) (xy 107.95 81.28)
 		)
 		(stroke
 			(width 0)
@@ -503,16 +503,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 81.28) (xy 107.95 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee538f22-5445-47c1-81a5-bb94f73b3568")
-	)
-	(wire
-		(pts
 			(xy 135.89 26.67) (xy 170.18 26.67)
 		)
 		(stroke
@@ -909,16 +899,6 @@
 				(justify left)
 			)
 		)
-		(pin "~{RESET}" input
-			(at 107.95 81.28 180)
-			(uuid "b10de40b-aee0-45a4-9fc7-ac2a49e67d6e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "INT5" input
 			(at 135.89 45.72 0)
 			(uuid "9ed82418-0c64-434d-abb1-cd19d79e4575")
@@ -1140,7 +1120,7 @@
 			)
 		)
 		(pin "PCINT15" input
-			(at 107.95 83.82 180)
+			(at 107.95 81.28 180)
 			(uuid "989ea884-e9ed-4334-bc91-a1cf11ba6d89")
 			(effects
 				(font
@@ -1159,7 +1139,7 @@
 	)
 	(sheet
 		(at 72.39 73.66)
-		(size 27.94 12.7)
+		(size 27.94 10.16)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1183,7 +1163,7 @@
 			)
 		)
 		(property "Sheetfile" "usb.kicad_sch"
-			(at 72.39 86.9446 0)
+			(at 72.39 84.4046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1191,18 +1171,8 @@
 				(justify left top)
 			)
 		)
-		(pin "~{MCU_RESET}" output
-			(at 100.33 81.28 0)
-			(uuid "571dec81-49a6-4fea-87a5-77ca311d8550")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "~{USB_ON}" output
-			(at 100.33 83.82 0)
+			(at 100.33 81.28 0)
 			(uuid "429ee9d2-0d3f-4a4d-b9e9-d9f6d83716d9")
 			(effects
 				(font
