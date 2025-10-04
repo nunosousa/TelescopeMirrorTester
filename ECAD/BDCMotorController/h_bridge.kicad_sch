@@ -3553,12 +3553,6 @@
 		(uuid "b6f892b9-f94c-4520-95af-7fe2c90f3d90")
 	)
 	(junction
-		(at 264.16 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "defba46d-b4db-42a6-a6ad-f0b17ef14733")
-	)
-	(junction
 		(at 254 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3636,7 +3630,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 46.99) (xy 264.16 46.99)
+			(xy 262.89 46.99) (xy 266.7 46.99)
 		)
 		(stroke
 			(width 0)
@@ -4056,7 +4050,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 46.99) (xy 273.05 45.72)
+			(xy 266.7 46.99) (xy 266.7 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4156,16 +4150,6 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 46.99) (xy 262.89 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad5ab5bc-8535-423c-936d-23de167f7438")
-	)
-	(wire
-		(pts
 			(xy 64.77 40.64) (xy 39.37 40.64)
 		)
 		(stroke
@@ -4183,16 +4167,6 @@
 			(type default)
 		)
 		(uuid "b436b69d-7fdd-418c-8605-c6ef180df4dd")
-	)
-	(wire
-		(pts
-			(xy 264.16 46.99) (xy 264.16 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5adca0a-32e0-4657-911d-e632769459d8")
 	)
 	(wire
 		(pts
@@ -8824,7 +8798,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 273.05 45.72 0)
+		(at 266.7 45.72 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8833,7 +8807,7 @@
 		(dnp no)
 		(uuid "6189926a-ddaa-439a-a67d-04ff80b092c0")
 		(property "Reference" "#PWR038"
-			(at 273.05 49.53 0)
+			(at 266.7 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8842,7 +8816,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 274.32 41.91 0)
+			(at 267.97 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8851,7 +8825,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 273.05 45.72 0)
+			(at 266.7 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8859,7 +8833,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 273.05 45.72 0)
+			(at 266.7 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8867,7 +8841,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 273.05 45.72 0)
+			(at 266.7 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8987,131 +8961,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "#PWR0245")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 264.16 52.07 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "66d821d3-ff46-4368-84ad-afbea115543a")
-		(property "Reference" "C13"
-			(at 271.78 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nC"
-			(at 273.05 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 263.1948 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 264.16 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 264.16 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 264.16 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Status" ""
-			(at 264.16 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 264.16 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 264.16 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8aabcfc4-2981-411f-8b3f-acb3633f3bad")
-		)
-		(pin "2"
-			(uuid "a86b17a0-12c9-4dea-81e9-0343944de553")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "C13")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "C62")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "C49")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "C26")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "C97")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "C84")
 					(unit 1)
 				)
 			)
@@ -14349,92 +14198,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
 					(reference "C75")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 264.16 55.88 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fbd1272d-5a6c-48bc-98d6-03f03e425800")
-		(property "Reference" "#PWR037"
-			(at 264.16 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 264.16 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 264.16 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 264.16 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 264.16 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7d95f145-e25e-45d4-b8f3-040a7ec1444c")
-		)
-		(instances
-			(project "BDCMotorControlShieldMega"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
-					(reference "#PWR037")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
-					(reference "#PWR0163")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
-					(reference "#PWR0125")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
-					(reference "#PWR075")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/9c1d3753-7607-44db-88e5-2b726259e1a9"
-					(reference "#PWR0305")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/db93cbcf-6130-4891-b6ab-d7381ac9d23b"
-					(reference "#PWR0267")
 					(unit 1)
 				)
 			)
