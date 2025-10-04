@@ -5,131 +5,6 @@
 	(uuid "d6251320-02ab-4475-8df3-ddf7fb0b45d9")
 	(paper "A4")
 	(lib_symbols
-		(symbol "+5V_1"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+5V"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+5V_1_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+5V_1_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:Buzzer"
 			(pin_names
 				(offset 0.0254)
@@ -291,35 +166,36 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D"
+		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 1.016)
-				(hide yes)
+				(offset 0.254)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "D"
-				(at 0 -2.54 0)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at 0 0 0)
+				(at 0.9652 -3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -336,7 +212,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Diode"
+			(property "Description" "Unpolarized capacitor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -345,7 +221,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "D"
+			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -354,7 +230,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Pins" "1=K 2=A"
+			(property "ki_fp_filters" "C_*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -363,31 +239,13 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_0_1"
+			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
-						(width 0.254)
+						(width 0.508)
 						(type default)
 					)
 					(fill
@@ -396,22 +254,10 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
+						(width 0.508)
 						(type default)
 					)
 					(fill
@@ -419,11 +265,11 @@
 					)
 				)
 			)
-			(symbol "D_1_1"
+			(symbol "C_1_1"
 				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -439,9 +285,9 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -459,34 +305,36 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Simulation_SPICE:NPN"
+		(symbol "Device:C_Polarized"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 0)
+				(offset 0.254)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Q"
-				(at -2.54 7.62 0)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "NPN"
-				(at -2.54 5.08 0)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at 63.5 0 0)
+				(at 0.9652 -3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -494,16 +342,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_BJTs"
-				(at 63.5 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Bipolar transistor symbol for simulation only, substrate tied to the emitter"
+			(property "Datasheet" "~"
 				(at 0 0 0)
 				(effects
 					(font
@@ -512,7 +351,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "NPN"
+			(property "Description" "Polarized capacitor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -521,7 +360,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Type" "GUMMELPOON"
+			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -530,7 +369,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Pins" "1=C 2=B 3=E"
+			(property "ki_fp_filters" "CP_*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -539,22 +378,12 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "simulation"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "NPN_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy 0.635 0)
-					)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
 					(stroke
-						(width 0.1524)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -563,19 +392,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
+						(xy -1.778 2.286) (xy -0.762 2.286)
 					)
 					(stroke
 						(width 0)
@@ -587,7 +404,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
+						(xy -1.27 2.794) (xy -1.27 1.778)
 					)
 					(stroke
 						(width 0)
@@ -597,21 +414,9 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
-					)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
 					(stroke
 						(width 0)
 						(type default)
@@ -620,54 +425,12 @@
 						(type outline)
 					)
 				)
-				(polyline
-					(pts
-						(xy 2.794 -1.27) (xy 2.794 -1.27)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 -1.27) (xy 2.794 -1.27)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 			)
-			(symbol "NPN_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin open_collector line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -682,10 +445,110 @@
 						)
 					)
 				)
-				(pin open_emitter line
-					(at 2.54 -5.08 90)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Driver_Motor:DRV8870DDA"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -6.35 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DRV8870DDA"
+				(at 8.89 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias"
+				(at 2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8870.pdf"
+				(at -6.35 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Brushed DC Motor Driver, PWM Control, 45V, 3.6A, Dynamic current limiting, HTSOP-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "H-bridge driver motor current limit"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Texas*HTSOP*1EP*3.9x4.9mm*P1.27mm*EP2.95x4.9mm*Mask2.4x3.1mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DRV8870DDA_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "DRV8870DDA_1_1"
+				(pin input line
+					(at -10.16 2.54 0)
 					(length 2.54)
-					(name "E"
+					(name "IN1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -693,6 +556,151 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "IN2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "VREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "OUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "OUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "ISEN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -804,122 +812,255 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(junction
-		(at 152.4 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "15a44ab8-2ac4-4f62-afc9-19ea86c1ed88")
-	)
-	(junction
-		(at 152.4 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "df8bcb4d-3f99-4a0d-913e-9276f7c68829")
+		(symbol "power:VDC"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "VDC"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"VDC\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "VDC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VDC_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(wire
 		(pts
-			(xy 147.32 87.63) (xy 147.32 88.9)
+			(xy 153.67 87.63) (xy 154.94 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "09de4d5a-d84a-463d-8b79-a037ba760e44")
+		(uuid "0c7613e0-7067-4a60-badb-a386272f7f64")
 	)
 	(wire
 		(pts
-			(xy 147.32 78.74) (xy 152.4 78.74)
+			(xy 152.4 96.52) (xy 153.67 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0c0f3002-3c67-4ad5-b53d-4465f21bab8f")
+		(uuid "130e9947-a0fd-4cbb-999f-80107688220e")
 	)
 	(wire
 		(pts
-			(xy 152.4 78.74) (xy 152.4 81.28)
+			(xy 153.67 92.71) (xy 154.94 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1323e24c-c533-4898-bcf4-03bd3e3e87e2")
+		(uuid "3f238ab6-8474-4c60-a430-dd7d2a9a95d8")
 	)
 	(wire
 		(pts
-			(xy 152.4 88.9) (xy 152.4 90.17)
+			(xy 152.4 91.44) (xy 153.67 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "37fb45e6-c034-4687-b89f-5008e2d6f7da")
+		(uuid "469e8402-d9b6-4fc3-abb1-b870af3a11a5")
 	)
 	(wire
 		(pts
-			(xy 153.67 86.36) (xy 152.4 86.36)
+			(xy 127 88.9) (xy 132.08 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6b8bdfb9-e244-43e4-84a6-e79a308eef2b")
+		(uuid "4bda61e8-f0ad-4ac6-b152-1c7d438290d6")
 	)
 	(wire
 		(pts
-			(xy 152.4 86.36) (xy 152.4 88.9)
+			(xy 153.67 92.71) (xy 153.67 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aafd2fb6-ca01-4c66-b7f6-f603772b25bc")
+		(uuid "5c9c2b5a-488c-4092-a93f-11ebcd600ce5")
 	)
 	(wire
 		(pts
-			(xy 147.32 80.01) (xy 147.32 78.74)
+			(xy 152.4 88.9) (xy 153.67 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dd912931-2a92-4a8f-8fe2-a1a091e4aa94")
+		(uuid "70ebc91e-46dc-49a5-85bc-4a0dc7ec76a2")
 	)
 	(wire
 		(pts
-			(xy 147.32 88.9) (xy 152.4 88.9)
+			(xy 127 91.44) (xy 132.08 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e251a727-916f-45c8-ada7-0325715bf724")
+		(uuid "9091ec2f-dd52-4fd1-8d99-d6bad4ea3e87")
 	)
 	(wire
 		(pts
-			(xy 153.67 81.28) (xy 152.4 81.28)
+			(xy 153.67 87.63) (xy 153.67 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e5229e50-5d82-43f7-aa38-e0507fa53ea9")
+		(uuid "d5feeb30-7c5b-49e5-a11d-8cad780da1ef")
 	)
 	(wire
 		(pts
-			(xy 152.4 77.47) (xy 152.4 78.74)
+			(xy 153.67 96.52) (xy 153.67 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e838c611-e5ce-44f3-bb19-0ed0356a5a4a")
+		(uuid "ff0d26d0-f065-435e-8508-bc79475b7eb8")
+	)
+	(label "IN1"
+		(at 127 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "399bd96b-d44c-447c-8218-b986668040ff")
+	)
+	(label "IN2"
+		(at 127 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ef13572f-40a5-4684-b7bb-d063843e462a")
 	)
 	(hierarchical_label "PWM"
 		(shape input)
-		(at 97.79 92.71 180)
+		(at 115.57 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -929,18 +1070,17 @@
 		(uuid "ff8cd291-51fe-4a3a-9a7a-4193b5ebdcd2")
 	)
 	(symbol
-		(lib_name "+5V_1")
-		(lib_id "power:+5V")
-		(at 152.4 77.47 0)
+		(lib_id "power:VDC")
+		(at 142.24 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "015c701a-0465-4804-bede-f10e6cd19b15")
-		(property "Reference" "#PWR0305"
-			(at 152.4 81.28 0)
+		(uuid "3630cb8c-7a95-462a-bf2e-02b758ea6fa3")
+		(property "Reference" "#PWR0517"
+			(at 142.24 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -948,8 +1088,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 152.4 72.39 0)
+		(property "Value" "VDC"
+			(at 142.24 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -957,7 +1097,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 77.47 0)
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -966,7 +1106,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 77.47 0)
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -974,8 +1114,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 152.4 77.47 0)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -984,29 +1124,29 @@
 			)
 		)
 		(pin "1"
-			(uuid "10409568-5019-40a9-9964-e4da409b67b5")
+			(uuid "f0eaffef-f721-42c6-997d-5c949f7bc155")
 		)
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
-					(reference "#PWR0305")
+					(reference "#PWR0517")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 147.32 83.82 90)
-		(mirror x)
+		(lib_id "Device:C")
+		(at 128.27 124.46 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "47950123-4629-4b85-8d98-3dd268647523")
-		(property "Reference" "D15"
-			(at 144.78 82.5499 90)
+		(uuid "520902b3-d0d5-49dc-95a6-1d2c9425771e")
+		(property "Reference" "C62"
+			(at 134.62 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1014,8 +1154,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4148"
-			(at 144.78 85.0899 90)
+		(property "Value" "100nC"
+			(at 137.16 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1023,8 +1163,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 147.32 83.82 0)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 127.3048 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1032,8 +1172,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1809050431_onsemi-MMSD4148T1G_C11177.pdf"
-			(at 147.32 83.82 0)
+		(property "Datasheet" ""
+			(at 128.27 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1041,8 +1181,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode"
-			(at 147.32 83.82 0)
+		(property "Description" ""
+			(at 128.27 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 128.27 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1050,8 +1198,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 147.32 83.82 0)
+		(property "Status" ""
+			(at 128.27 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1059,8 +1207,95 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 147.32 83.82 0)
+		(property "Sim.Device" ""
+			(at 128.27 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 128.27 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0e2b33ec-584c-4213-acdb-143a5ad6c0b8")
+		)
+		(pin "2"
+			(uuid "df7e4384-429b-4e9c-928f-9a19172c7e15")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "C62")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 142.24 124.46 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "525d5a2b-415d-4bb1-b7cc-d52bca241d3f")
+		(property "Reference" "C69"
+			(at 149.86 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uC"
+			(at 151.13 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+			(at 141.2748 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "UMK325AB7106KM-T"
+			(at 142.24 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1069,7 +1304,7 @@
 			)
 		)
 		(property "Status" "OK"
-			(at 147.32 83.82 0)
+			(at 142.24 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1077,8 +1312,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "MMSD4148T1G"
-			(at 147.32 83.82 0)
+		(property "Sim.Device" ""
+			(at 142.24 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1086,116 +1321,25 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "fd5a527e-0854-4223-8f76-beffc91a4f6a")
+		(property "Sim.Pins" ""
+			(at 142.24 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "97806dc4-ed71-4e06-b491-bbfa899dfcbc")
+			(uuid "159532c2-e427-4c56-8966-4140e2c815a5")
+		)
+		(pin "2"
+			(uuid "fc926f83-2b66-4b38-8153-c4fb6aef3a3a")
 		)
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
-					(reference "D15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:NPN")
-		(at 149.86 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5fcf2b29-0097-445d-aaaa-cc3d98a4c0eb")
-		(property "Reference" "Q1"
-			(at 154.94 93.9799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NPN"
-			(at 154.94 96.5199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 213.36 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_BJTs"
-			(at 213.36 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Bipolar transistor symbol for simulation only, substrate tied to the emitter"
-			(at 149.86 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NPN"
-			(at 149.86 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "GUMMELPOON"
-			(at 149.86 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=C 2=B 3=E"
-			(at 149.86 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "12839b76-bb68-4837-9334-b395ae648f2e")
-		)
-		(pin "3"
-			(uuid "e7fa78a5-92e9-4e28-a24a-8d183cf7fa1f")
-		)
-		(pin "1"
-			(uuid "51660770-6c4d-4641-9a51-b65952dd8350")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
-					(reference "Q1")
+					(reference "C69")
 					(unit 1)
 				)
 			)
@@ -1203,16 +1347,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 152.4 100.33 0)
+		(at 142.24 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "846f25a5-190d-458e-bb13-1de6a13d4344")
-		(property "Reference" "#PWR0359"
-			(at 152.4 106.68 0)
+		(uuid "866f0c6c-d8c9-457c-bff5-5b71d319ac6e")
+		(property "Reference" "#PWR0516"
+			(at 142.24 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1221,7 +1365,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 152.4 105.41 0)
+			(at 142.24 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1229,7 +1373,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 100.33 0)
+			(at 142.24 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1238,7 +1382,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 100.33 0)
+			(at 142.24 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1246,8 +1390,73 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 100.33 0)
+		(property "Description" ""
+			(at 142.24 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d9973ea2-3294-410e-af1a-e3f26ba4c406")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0516")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDC")
+		(at 128.27 120.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9823bada-61f8-4776-b1b4-1d76ac38c12b")
+		(property "Reference" "#PWR0364"
+			(at 128.27 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDC"
+			(at 128.27 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 128.27 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1256,12 +1465,181 @@
 			)
 		)
 		(pin "1"
-			(uuid "6e25d0dc-a85f-47a3-bbbb-5456022d2f2d")
+			(uuid "aa83f54b-e5cb-461a-9458-17f719ad0c91")
 		)
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
-					(reference "#PWR0359")
+					(reference "#PWR0364")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 153.67 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a4f10ac5-9a76-423f-b68e-7947bc107940")
+		(property "Reference" "#PWR0521"
+			(at 153.67 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.67 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 153.67 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "86b58e4c-e999-4835-84c0-9a6cd7677a26")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0521")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 154.94 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a66a3c6d-f1dc-4b5a-b5d4-bcf1ffd4b263")
+		(property "Reference" "C71"
+			(at 158.75 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47uC"
+			(at 158.75 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+			(at 155.9052 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2212021100_Murata-Electronics-GRM32ER61C476KE15L_C77101.pdf"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM32ER61C476KE15L"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "13c795a4-bff4-4852-ae15-77a694fd0c91")
+		)
+		(pin "2"
+			(uuid "a5e71d77-0482-4a8a-8df2-5ecc484ed08d")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "C71")
 					(unit 1)
 				)
 			)
@@ -1269,7 +1647,7 @@
 	)
 	(symbol
 		(lib_id "Device:Buzzer")
-		(at 156.21 83.82 0)
+		(at 187.96 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1278,7 +1656,7 @@
 		(fields_autoplaced yes)
 		(uuid "bb67c91e-f3de-4216-be88-2a970d785bab")
 		(property "Reference" "BZ1"
-			(at 160.02 82.5499 0)
+			(at 191.77 88.8999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1287,7 +1665,7 @@
 			)
 		)
 		(property "Value" "Buzzer"
-			(at 160.02 85.0899 0)
+			(at 191.77 91.4399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1296,7 +1674,7 @@
 			)
 		)
 		(property "Footprint" "Buzzer_Beeper:Buzzer_Murata_PKMCS0909E"
-			(at 155.575 81.28 90)
+			(at 187.325 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1305,7 +1683,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 155.575 81.28 90)
+			(at 187.325 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1314,7 +1692,16 @@
 			)
 		)
 		(property "Description" "Buzzer, polarized"
-			(at 156.21 83.82 0)
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "PKMCS0909E4000-R1"
+			(at 187.96 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1332,6 +1719,537 @@
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
 					(reference "BZ1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDC")
+		(at 154.94 120.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c429bddc-1db6-46c3-a6af-7b0dcfae24c6")
+		(property "Reference" "#PWR0519"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDC"
+			(at 154.94 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 154.94 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4994fc33-8e20-433d-a895-3f2b2bf3931f")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0519")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDC")
+		(at 142.24 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c6717165-c470-4371-86b7-c7767b55fc7c")
+		(property "Reference" "#PWR0468"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDC"
+			(at 142.24 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 142.24 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "10e172d3-6ce1-4b74-8662-39700ca160cb")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0468")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Buzzer")
+		(at 157.48 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf57af57-8f1f-419a-b633-07dc9dae96a6")
+		(property "Reference" "BZ2"
+			(at 161.29 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Buzzer"
+			(at 161.29 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Buzzer_Beeper:Buzzer_TDK_PS1240P02BT_D12.2mm_H6.5mm"
+			(at 156.845 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/sw_piezo/sw_piezo/piezo-buzzer/catalog/piezoelectronic_buzzer_ps_en.pdf"
+			(at 156.845 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Buzzer, polarized"
+			(at 157.48 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "PS1240P02BT"
+			(at 157.48 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "94f1ffa6-f1c9-4bf6-a3ea-98dd9fe7c433")
+		)
+		(pin "2"
+			(uuid "1fe331e7-310f-4989-a8fa-e9ca737e1fc3")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "BZ2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 154.94 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d907c86e-863a-402f-8ff7-b9739dcc2af2")
+		(property "Reference" "#PWR0520"
+			(at 154.94 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f075742-2f25-4b54-9f1e-db5036eb0ddb")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0520")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Driver_Motor:DRV8870DDA")
+		(at 142.24 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dcf7a8fa-b751-40a8-8c64-08b806eb4d59")
+		(property "Reference" "U83"
+			(at 144.78 101.092 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV8870DDA"
+			(at 144.2594 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias"
+			(at 144.78 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8870.pdf"
+			(at 135.89 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DRV8870DDAR"
+			(at 142.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Status" "OK"
+			(at 142.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 142.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 142.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "60377c12-d1c1-418c-85cf-fb21568395b7")
+		)
+		(pin "2"
+			(uuid "cf4428c4-8960-4009-9efa-a4ee97ad8efa")
+		)
+		(pin "3"
+			(uuid "94a85ac7-a129-4338-aa76-4201ffddd3df")
+		)
+		(pin "4"
+			(uuid "57dc0e53-9a19-4472-ac39-75dd8c48e077")
+		)
+		(pin "5"
+			(uuid "0ee191db-02fe-439d-875f-4378b03fbbd9")
+		)
+		(pin "6"
+			(uuid "9bc23cb4-2154-4d66-a5bf-71f017aca177")
+		)
+		(pin "7"
+			(uuid "0735cc28-bf6a-48b8-8fef-c21bffd31661")
+		)
+		(pin "8"
+			(uuid "ef167261-854c-4b30-98ec-4736e1c9f08a")
+		)
+		(pin "9"
+			(uuid "419bb2a1-b102-4f1b-a661-08e0d1448a47")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "U83")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 128.27 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef9947a8-0c6f-48c4-ae9f-7e24572a79e1")
+		(property "Reference" "#PWR0366"
+			(at 128.27 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.27 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 128.27 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7572d644-ffbe-48ae-af35-fd1059165030")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0366")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 142.24 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd06a308-57f5-4780-b409-4203b36dc4f5")
+		(property "Reference" "#PWR0518"
+			(at 142.24 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 142.24 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5f5853d8-2812-4b1c-8010-48ee2c52b84b")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a96368a3-9052-4b7d-a3cc-643e12247403"
+					(reference "#PWR0518")
 					(unit 1)
 				)
 			)
