@@ -618,189 +618,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:LED"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Light emitting diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_0_1"
-				(polyline
-					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LED_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1676,16 +1493,6 @@
 		)
 		(uuid "55938ff0-018e-4cc0-acf4-a4e249497c81")
 	)
-	(text "RX1\nRX2\nRX3\nTX1\nTX2\nTX3"
-		(exclude_from_sim no)
-		(at 143.256 173.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "59900fbd-2c17-4d6d-bd81-aa8802feab72")
-	)
 	(text "I2C Address: 0100 111"
 		(exclude_from_sim no)
 		(at 82.55 78.486 0)
@@ -1725,6 +1532,38 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a9bdda4c-1337-41ef-8492-e28d799fcf98")
+	)
+	(no_connect
+		(at 80.01 138.43)
+		(uuid "28d1c8c9-717e-46f6-8ff2-7805ba30fafe")
+	)
+	(no_connect
+		(at 80.01 133.35)
+		(uuid "64cc36fe-bca0-4336-8a18-3968bf535ff1")
+	)
+	(no_connect
+		(at 80.01 135.89)
+		(uuid "84a1252a-27ca-4e7d-a9f2-4d5bcc14873c")
+	)
+	(no_connect
+		(at 80.01 128.27)
+		(uuid "94dfd713-f1a6-40de-ade6-10466c91ace8")
+	)
+	(no_connect
+		(at 80.01 130.81)
+		(uuid "982ba168-7d44-47eb-b3a9-87f402788d3a")
+	)
+	(no_connect
+		(at 80.01 140.97)
+		(uuid "b523b041-7b73-4c7e-ade9-921f7adc161c")
+	)
+	(no_connect
+		(at 80.01 125.73)
+		(uuid "cd5a7e3a-932f-4f3c-8e5a-97cfccb7548b")
+	)
+	(no_connect
+		(at 80.01 123.19)
+		(uuid "f83fdd94-a532-43ee-9ad6-75951951f963")
 	)
 	(wire
 		(pts
@@ -1848,26 +1687,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 135.89) (xy 90.17 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2446d22d-0dfd-4c91-bd4e-e7e174dda677")
-	)
-	(wire
-		(pts
-			(xy 80.01 138.43) (xy 90.17 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "26763dd8-a7ad-4bf4-a8ff-56ae09a95d8b")
-	)
-	(wire
-		(pts
 			(xy 212.09 91.44) (xy 226.06 91.44)
 		)
 		(stroke
@@ -1905,26 +1724,6 @@
 			(type default)
 		)
 		(uuid "2d71df64-52a3-4942-8f48-1dd93d3d8bf7")
-	)
-	(wire
-		(pts
-			(xy 130.81 182.88) (xy 130.81 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e5980a0-8a1b-47b6-9855-49ea480424cf")
-	)
-	(wire
-		(pts
-			(xy 107.95 182.88) (xy 107.95 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e957f88-b21b-4dee-8618-563b2299a869")
 	)
 	(wire
 		(pts
@@ -1995,16 +1794,6 @@
 			(type default)
 		)
 		(uuid "3cace51e-bf48-4f5a-a8b5-22ac301fc508")
-	)
-	(wire
-		(pts
-			(xy 80.01 125.73) (xy 90.17 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ebb3cc2-b6fa-40cf-8dcf-7e9f2593918f")
 	)
 	(wire
 		(pts
@@ -2258,26 +2047,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 182.88) (xy 85.09 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ac8365e-c6c6-44f1-9ef2-63e56b7dfd28")
-	)
-	(wire
-		(pts
-			(xy 62.23 182.88) (xy 62.23 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7cfed4d3-3ad1-48da-99e7-8c6ff07679da")
-	)
-	(wire
-		(pts
 			(xy 80.01 105.41) (xy 90.17 105.41)
 		)
 		(stroke
@@ -2345,16 +2114,6 @@
 			(type default)
 		)
 		(uuid "8e16c96f-d1fd-44fd-b0d3-90c21bd21464")
-	)
-	(wire
-		(pts
-			(xy 80.01 140.97) (xy 90.17 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ed67a28-8f60-4cb9-bb31-f7b298c6346e")
 	)
 	(wire
 		(pts
@@ -2608,16 +2367,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 133.35) (xy 90.17 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b57739f4-f58b-4c1f-a806-d610e8a28323")
-	)
-	(wire
-		(pts
 			(xy 39.37 39.37) (xy 54.61 39.37)
 		)
 		(stroke
@@ -2625,16 +2374,6 @@
 			(type default)
 		)
 		(uuid "b595309f-f933-4785-b5e1-86f53db1e7f9")
-	)
-	(wire
-		(pts
-			(xy 80.01 128.27) (xy 90.17 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b899dc74-8b12-438e-be24-27e7f394927b")
 	)
 	(wire
 		(pts
@@ -2705,16 +2444,6 @@
 			(type default)
 		)
 		(uuid "c259cac7-290f-4da3-9088-f09e894b0acb")
-	)
-	(wire
-		(pts
-			(xy 50.8 182.88) (xy 50.8 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2aaf51e-9c7d-49c3-8d4c-aea1bed8aefb")
 	)
 	(wire
 		(pts
@@ -2898,26 +2627,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 182.88) (xy 73.66 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9d91afc-5483-49eb-af2b-dcf34d970144")
-	)
-	(wire
-		(pts
-			(xy 80.01 130.81) (xy 90.17 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da3bd413-c0f7-47fb-9173-510b5322b496")
-	)
-	(wire
-		(pts
 			(xy 135.89 57.15) (xy 146.05 57.15)
 		)
 		(stroke
@@ -2998,16 +2707,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 182.88) (xy 96.52 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb4bf6a6-24e7-4712-bd11-d53c220ce1aa")
-	)
-	(wire
-		(pts
 			(xy 135.89 39.37) (xy 146.05 39.37)
 		)
 		(stroke
@@ -3015,16 +2714,6 @@
 			(type default)
 		)
 		(uuid "ed1091df-3c7b-465a-bed1-a4142035d8a8")
-	)
-	(wire
-		(pts
-			(xy 80.01 123.19) (xy 90.17 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f02c8e6e-a327-4c7a-bfd4-f7d920a212c8")
 	)
 	(wire
 		(pts
@@ -3136,16 +2825,6 @@
 		)
 		(uuid "ff4e2b8c-8a44-4b44-9c34-0d583a081759")
 	)
-	(wire
-		(pts
-			(xy 119.38 182.88) (xy 119.38 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffdfb728-b31e-4d60-80a1-e1cc54f06530")
-	)
 	(label "DTR_IN1"
 		(at 135.89 54.61 0)
 		(effects
@@ -3226,16 +2905,6 @@
 		)
 		(uuid "12216a27-3173-45e9-9e4c-2caa3eedf838")
 	)
-	(label "LED01"
-		(at 90.17 125.73 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "145bf6b5-bf8a-459e-81f5-1b9bb083e425")
-	)
 	(label "RTS_LINE1"
 		(at 212.09 53.34 0)
 		(effects
@@ -3245,16 +2914,6 @@
 			(justify left bottom)
 		)
 		(uuid "146bdaaa-ab10-4228-b9e7-4b96a34bd93d")
-	)
-	(label "LED00"
-		(at 50.8 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "161652a3-a238-4ef3-bc2c-eb8f3b06aab3")
 	)
 	(label "DCD_LINE3"
 		(at 190.5 115.57 180)
@@ -3275,16 +2934,6 @@
 			(justify right bottom)
 		)
 		(uuid "18ddb3e2-a797-4712-9cc2-4aa8bd93e0ae")
-	)
-	(label "LED04"
-		(at 90.17 133.35 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "19cfbd03-130d-46e2-a926-10da748545cb")
 	)
 	(label "DSR_LINE3"
 		(at 212.09 134.62 0)
@@ -3406,16 +3055,6 @@
 		)
 		(uuid "37460e28-5e62-4bc0-bda1-d166722b0675")
 	)
-	(label "LED02"
-		(at 90.17 128.27 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "39aea2e3-b8c4-446c-a041-d3e65dc13724")
-	)
 	(label "RI_IN3"
 		(at 135.89 133.35 0)
 		(effects
@@ -3485,16 +3124,6 @@
 			(justify right bottom)
 		)
 		(uuid "42323e75-89ed-495d-b3ab-44b2ac221b39")
-	)
-	(label "LED00"
-		(at 90.17 123.19 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "4566b39d-669f-4983-a028-1002338cf5e4")
 	)
 	(label "ST_IN3"
 		(at 135.89 138.43 0)
@@ -3576,16 +3205,6 @@
 		)
 		(uuid "5717bbb0-0d0e-4868-bad2-340de8db2a86")
 	)
-	(label "LED02"
-		(at 73.66 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "587e25e4-eb17-4e8c-8b4b-8571565b2946")
-	)
 	(label "CTS_IN1"
 		(at 90.17 39.37 180)
 		(effects
@@ -3636,16 +3255,6 @@
 		)
 		(uuid "6d2732bd-1b82-4eb1-96d1-81891d855cfc")
 	)
-	(label "LED06"
-		(at 90.17 138.43 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "70666918-e56d-4d5d-a177-5d08c01067bb")
-	)
 	(label "DCD_IN3"
 		(at 135.89 115.57 0)
 		(effects
@@ -3695,36 +3304,6 @@
 			(justify left bottom)
 		)
 		(uuid "7c658347-450c-4551-a3ab-14c2633b2956")
-	)
-	(label "LED03"
-		(at 85.09 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7cc27ad8-036c-4c41-8194-bff27da607c7")
-	)
-	(label "LED05"
-		(at 90.17 135.89 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7e987479-cdc1-43f2-9294-74a4ee27c184")
-	)
-	(label "LED03"
-		(at 90.17 130.81 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7e9afd8d-61d0-4611-b384-6659dc6764a0")
 	)
 	(label "CTS_LINE2"
 		(at 190.5 90.17 180)
@@ -3786,16 +3365,6 @@
 		)
 		(uuid "86757378-b0e3-4057-a161-eaf01240a30a")
 	)
-	(label "LED04"
-		(at 96.52 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "86fe88e0-788d-43e5-9487-9c24869668b3")
-	)
 	(label "RX_LINE2"
 		(at 190.5 82.55 180)
 		(effects
@@ -3805,16 +3374,6 @@
 			(justify right bottom)
 		)
 		(uuid "8aa12d13-1f4e-4ce1-98f2-a2f0746ba8c5")
-	)
-	(label "LED01"
-		(at 62.23 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8c99bc1b-e748-4367-acee-de681f61474c")
 	)
 	(label "CTS_IN3"
 		(at 135.89 128.27 0)
@@ -3896,16 +3455,6 @@
 		)
 		(uuid "a513d996-e6f6-4591-bad7-ccf67825f741")
 	)
-	(label "LED06"
-		(at 119.38 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a550f385-ff99-460c-ba5d-e99b88678669")
-	)
 	(label "DSR_IN2"
 		(at 135.89 80.01 0)
 		(effects
@@ -3986,16 +3535,6 @@
 		)
 		(uuid "b08b0cee-c52a-4ebd-8b70-327dd38ae5f6")
 	)
-	(label "LED05"
-		(at 107.95 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b1350e3e-3368-474a-aa16-cb4ce9a080c7")
-	)
 	(label "RTS_IN3"
 		(at 90.17 102.87 180)
 		(effects
@@ -4015,16 +3554,6 @@
 			(justify right bottom)
 		)
 		(uuid "b7d4c617-8ce0-4b3b-875a-6aa1cad4fc5d")
-	)
-	(label "LED07"
-		(at 90.17 140.97 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "bec2aff5-8b70-48e7-a472-68af09ec1bca")
 	)
 	(label "RX_LINE3"
 		(at 190.5 120.65 180)
@@ -4155,16 +3684,6 @@
 			(justify right bottom)
 		)
 		(uuid "e4d7a98c-7b59-4ad3-96da-be65a1eb293f")
-	)
-	(label "LED07"
-		(at 130.81 190.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e72ee10d-3185-43c3-a18b-b0d376889216")
 	)
 	(label "RI_IN1"
 		(at 135.89 57.15 0)
@@ -4399,84 +3918,6 @@
 		(uuid "f7610e6e-e40b-4c67-9b77-dd46988dff6f")
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 62.23 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1226bb90-5062-4c00-bb3d-843d38cea845")
-		(property "Reference" "D2"
-			(at 66.04 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 66.04 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 62.23 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 62.23 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 62.23 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 62.23 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f340405e-0661-4793-a4e6-b941588c8ff1")
-		)
-		(pin "2"
-			(uuid "cd577b3d-3e4a-4372-87c0-9d01e96b132b")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 233.68 104.14 0)
 		(unit 1)
@@ -4486,7 +3927,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "164c0065-7b59-4d5b-9112-65bdfaba264c")
-		(property "Reference" "#PWR0190"
+		(property "Reference" "#PWR0182"
 			(at 233.68 110.49 0)
 			(effects
 				(font
@@ -4536,163 +3977,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0190")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 96.52 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "19432b7d-62d0-4060-8b40-71e91409a2c5")
-		(property "Reference" "D5"
-			(at 100.33 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 100.33 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 96.52 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 96.52 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 96.52 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 96.52 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "89779122-fb24-4efa-bc72-1532046bde50")
-		)
-		(pin "2"
-			(uuid "a51d4af4-41cf-4ce5-947b-2a8ac557702e")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 62.23 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "194a7107-e32d-4f14-8d63-62483a4889ce")
-		(property "Reference" "R16"
-			(at 64.77 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 64.77 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 60.452 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 62.23 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 62.23 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 62.23 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "97844543-db3c-4f03-ac3e-0e3c60a13965")
-		)
-		(pin "2"
-			(uuid "36f5e2ac-f019-4778-ab76-3c19868a6f71")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R16")
+					(reference "#PWR0182")
 					(unit 1)
 				)
 			)
@@ -4763,134 +4048,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 85.09 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1f2b1406-45c8-4bbc-a3f3-858976f1b856")
-		(property "Reference" "#PWR0181"
-			(at 85.09 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 86.36 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 85.09 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b6374a0a-c3e4-43c2-a903-3c747d4f6e6e")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0181")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 130.81 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "25477fce-f167-4271-a9f5-b0d1a8231a1c")
-		(property "Reference" "#PWR0185"
-			(at 130.81 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 132.08 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 130.81 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 130.81 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 130.81 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0658e2ee-9da8-4b2e-afd1-cb34c3250a2b")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0185")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 53.34 142.24 0)
 		(unit 1)
@@ -4900,7 +4057,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2652cf70-6253-47de-abbe-a3e9d40c70c7")
-		(property "Reference" "#PWR0174"
+		(property "Reference" "#PWR0173"
 			(at 53.34 148.59 0)
 			(effects
 				(font
@@ -4950,7 +4107,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0174")
+					(reference "#PWR0173")
 					(unit 1)
 				)
 			)
@@ -4966,7 +4123,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27429cef-2758-4b5b-9c41-e2f1df218ed5")
-		(property "Reference" "#PWR0191"
+		(property "Reference" "#PWR0183"
 			(at 233.68 148.59 0)
 			(effects
 				(font
@@ -5016,85 +4173,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0191")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 130.81 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "28dc5cbb-0750-448e-8183-bfcc864cb374")
-		(property "Reference" "D8"
-			(at 134.62 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 134.62 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 130.81 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 130.81 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 130.81 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 130.81 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eb83789b-475a-40c9-873b-88059cf9bc94")
-		)
-		(pin "2"
-			(uuid "5d6d9bb0-fa2b-4040-8d73-50c3b1fbc6b3")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D8")
+					(reference "#PWR0183")
 					(unit 1)
 				)
 			)
@@ -5110,7 +4189,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2dff7439-d974-447c-9911-0ac7fb439b01")
-		(property "Reference" "#PWR0189"
+		(property "Reference" "#PWR0181"
 			(at 233.68 72.39 0)
 			(effects
 				(font
@@ -5160,7 +4239,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0189")
+					(reference "#PWR0181")
 					(unit 1)
 				)
 			)
@@ -5282,7 +4361,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "31501253-0d15-40a5-9214-6867c360f28f")
-		(property "Reference" "#PWR0178"
+		(property "Reference" "#PWR0176"
 			(at 67.31 99.06 0)
 			(effects
 				(font
@@ -5330,7 +4409,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0178")
+					(reference "#PWR0176")
 					(unit 1)
 				)
 			)
@@ -5508,84 +4587,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 96.52 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "37739c0b-8c07-475b-95a2-0d049410072b")
-		(property "Reference" "R19"
-			(at 99.06 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 99.06 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 94.742 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 96.52 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 96.52 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5ace025d-2d2c-4937-b417-a75c1f0657c7")
-		)
-		(pin "2"
-			(uuid "ba409865-e2bd-4142-bab9-1c2a84253014")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 224.79 66.04 0)
 		(unit 1)
@@ -5595,7 +4596,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3804d510-769c-4807-b38a-2bde4668933e")
-		(property "Reference" "#PWR0186"
+		(property "Reference" "#PWR0178"
 			(at 224.79 72.39 0)
 			(effects
 				(font
@@ -5645,241 +4646,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0186")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 119.38 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "38a5e71a-6535-474c-92a2-7fd37960a9fa")
-		(property "Reference" "D7"
-			(at 123.19 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 123.19 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 119.38 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 119.38 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 119.38 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5dc0c57d-e270-4e17-9dcb-91bfa853718e")
-		)
-		(pin "2"
-			(uuid "be6af892-786e-448c-9f3e-1edb67c42f98")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 85.09 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3e6c5bb9-6a20-4e53-a3ee-ed320898ff23")
-		(property "Reference" "R18"
-			(at 87.63 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 87.63 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 83.312 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 85.09 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 85.09 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c5162409-53f4-4197-a423-e77a88d23624")
-		)
-		(pin "2"
-			(uuid "3c6ca63e-98ef-4523-8679-5cda5b4e30b3")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 50.8 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "47ee0467-1a82-4050-a010-2885fa72ce89")
-		(property "Reference" "D1"
-			(at 54.61 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 54.61 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 50.8 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 50.8 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 50.8 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "496f3ae0-19e4-4c62-85ca-f9a349c237a7")
-		)
-		(pin "2"
-			(uuid "4da54c21-b288-4209-ad97-61730b350de8")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D1")
+					(reference "#PWR0178")
 					(unit 1)
 				)
 			)
@@ -6159,7 +4926,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5bfcdd52-decc-4162-b04e-501de66ea3ed")
-		(property "Reference" "#PWR0172"
+		(property "Reference" "#PWR0171"
 			(at 53.34 69.85 0)
 			(effects
 				(font
@@ -6209,85 +4976,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0172")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 50.8 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "620a95bb-0375-4e46-acec-9f6109e3663b")
-		(property "Reference" "R15"
-			(at 53.34 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 53.34 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 49.022 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 50.8 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3483faa7-6539-47d4-9509-c08e413e6949")
-		)
-		(pin "2"
-			(uuid "5aafde88-6b32-44ea-aa15-49de43c3681b")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R15")
+					(reference "#PWR0171")
 					(unit 1)
 				)
 			)
@@ -6463,7 +5152,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "870b2f6b-570d-4fa0-8b48-38c6019400b3")
-		(property "Reference" "#PWR0179"
+		(property "Reference" "#PWR0177"
 			(at 67.31 152.4 0)
 			(effects
 				(font
@@ -6513,85 +5202,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0179")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 130.81 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "897b4ba0-2d77-477d-bed4-e5fd44375635")
-		(property "Reference" "R22"
-			(at 133.35 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 133.35 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 129.032 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 130.81 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 130.81 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 130.81 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "208fd879-333d-49a9-bbe8-3768f21d8ba9")
-		)
-		(pin "2"
-			(uuid "b13c2397-3fe3-4f43-aab7-07e0cea1df91")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R22")
+					(reference "#PWR0177")
 					(unit 1)
 				)
 			)
@@ -6607,7 +5218,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8aadf46a-7497-4a69-b8a8-10f3fd4d3dc9")
-		(property "Reference" "#PWR0173"
+		(property "Reference" "#PWR0172"
 			(at 53.34 138.43 0)
 			(effects
 				(font
@@ -6657,7 +5268,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0173")
+					(reference "#PWR0172")
 					(unit 1)
 				)
 			)
@@ -6673,7 +5284,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8bd20972-9a56-4499-b8b8-375dfed172f3")
-		(property "Reference" "#PWR0176"
+		(property "Reference" "#PWR0174"
 			(at 67.31 30.48 0)
 			(effects
 				(font
@@ -6721,355 +5332,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0176")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 107.95 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8bf41f12-12a1-40a8-afd6-92a0affbf168")
-		(property "Reference" "#PWR0183"
-			(at 107.95 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 109.22 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2381aef7-bccf-4eb2-b13f-06be3b72f3ba")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0183")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 119.38 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8e140c86-9db0-4e8d-ab7e-be1a381ed4b5")
-		(property "Reference" "#PWR0184"
-			(at 119.38 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 120.65 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 119.38 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 119.38 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ea0beef8-1e1e-43eb-b1c4-e6c387d0fb83")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0184")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 73.66 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8f8e900c-2d38-43ab-a5e8-338dd6d3f167")
-		(property "Reference" "R17"
-			(at 76.2 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 76.2 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 71.882 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 73.66 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 73.66 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 73.66 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4230e1aa-17bc-4ce9-9294-39964b124303")
-		)
-		(pin "2"
-			(uuid "c70528df-90e6-4f53-b340-2ec7cbe2319a")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 73.66 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8ff42bc7-8e3a-4dca-8823-3e89aca7e36f")
-		(property "Reference" "#PWR0180"
-			(at 73.66 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 74.93 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 73.66 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 73.66 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 73.66 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "60b88e2c-848f-4f63-a1e6-01d9f3295a45")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0180")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 119.38 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9188da30-b03f-45bc-bb1d-924b73ef55da")
-		(property "Reference" "R21"
-			(at 121.92 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 121.92 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 117.602 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 119.38 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 119.38 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "76e30f54-982d-4116-a68b-97568a435572")
-		)
-		(pin "2"
-			(uuid "e875b522-024d-417f-8bc2-0f6f318626b3")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R21")
+					(reference "#PWR0174")
 					(unit 1)
 				)
 			)
@@ -7419,226 +5682,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 85.09 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b119b383-bf12-4674-a82e-3a81b0e52f8b")
-		(property "Reference" "D4"
-			(at 88.9 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 88.9 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 85.09 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 85.09 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 85.09 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 85.09 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e8eb50f8-f239-4b3e-b645-001c74fceef9")
-		)
-		(pin "2"
-			(uuid "9818dd3c-5917-4a92-92bf-bbac524b8952")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 62.23 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c0c6c050-8d20-494a-bd52-142295aa1a34")
-		(property "Reference" "#PWR0175"
-			(at 62.23 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 63.5 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 62.23 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 62.23 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 62.23 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c524b2c5-4c0f-47d7-8d78-6006a7f33100")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0175")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 107.95 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c8f537b7-b34f-4e3b-80dd-b5c97367cd2b")
-		(property "Reference" "R20"
-			(at 110.49 170.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1kR"
-			(at 110.49 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 106.172 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 107.95 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6ccdb0a6-156f-45c5-b7be-a889eb445ff4")
-		)
-		(pin "2"
-			(uuid "91860b06-c657-4fcc-adde-2781ba9cae84")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 39.37 116.84 0)
 		(mirror y)
@@ -7712,7 +5755,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5e84e21-0860-4b81-a5d9-723c04fb6bf4")
-		(property "Reference" "#PWR0188"
+		(property "Reference" "#PWR0180"
 			(at 224.79 148.59 0)
 			(effects
 				(font
@@ -7762,71 +5805,7 @@
 		(instances
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0188")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 96.52 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dfe1fd8b-038a-45d8-b774-9b4d175d2bb1")
-		(property "Reference" "#PWR0182"
-			(at 96.52 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 97.79 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 96.52 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "14f219d8-10a9-45c7-a8c2-3028fb3262bd")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0182")
+					(reference "#PWR0180")
 					(unit 1)
 				)
 			)
@@ -7897,70 +5876,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 50.8 167.64 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ee0870ca-2b89-4264-ab31-579076e977b7")
-		(property "Reference" "#PWR0171"
-			(at 50.8 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 52.07 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 50.8 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5d7665ce-9d0c-46de-abf0-99548bd13f88")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0171")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 67.31 77.47 0)
 		(unit 1)
@@ -7970,7 +5885,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0aeb73f-f86e-4704-9b1d-2308983b1038")
-		(property "Reference" "#PWR0177"
+		(property "Reference" "#PWR0175"
 			(at 67.31 83.82 0)
 			(effects
 				(font
@@ -8020,7 +5935,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0177")
+					(reference "#PWR0175")
 					(unit 1)
 				)
 			)
@@ -8133,162 +6048,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 107.95 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f732c423-516c-458c-8f77-06764c30677e")
-		(property "Reference" "D6"
-			(at 111.76 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 111.76 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8ef41363-10eb-49cb-99a5-96ac736b2743")
-		)
-		(pin "2"
-			(uuid "abcc6836-93b2-4b67-b20f-ef066ad9c88f")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 73.66 179.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f8873a93-3acf-4671-a7fe-b498a77738f9")
-		(property "Reference" "D3"
-			(at 77.47 179.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 77.47 181.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 73.66 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS20-2005-059/LTL-4231N-001.pdf"
-			(at 73.66 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 73.66 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "LTL-4231N"
-			(at 73.66 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a268ea59-c6f1-4c48-8ff7-b985e14a6faf")
-		)
-		(pin "2"
-			(uuid "1eebbddd-6b98-41b7-9b2c-7be7cd3e5215")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 224.79 104.14 0)
 		(unit 1)
@@ -8298,7 +6057,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fa4a003c-e51d-4bfb-830e-a91059b2c0cb")
-		(property "Reference" "#PWR0187"
+		(property "Reference" "#PWR0179"
 			(at 224.79 110.49 0)
 			(effects
 				(font
@@ -8348,7 +6107,7 @@
 		(instances
 			(project "BDCMotorControlShieldMega"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af"
-					(reference "#PWR0187")
+					(reference "#PWR0179")
 					(unit 1)
 				)
 			)
