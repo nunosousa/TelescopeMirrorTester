@@ -5216,7 +5216,7 @@
 		)
 		(uuid "36817940-b9cd-4ae0-ae93-03577e2c6c73")
 	)
-	(text "I2C Devices:\nMotor control I/O expander: 0b0100 000; Maximum pin capacitance: 10 pF\nDigital Potentiometer: 0b0101 100; Maximum pin capacitance: 10 pF\nSerial ports I/O expander: 0b0100 111; Maximum pin capacitance: 10 pF\nSerial ports I/O expander: 0b0100 110; Maximum pin capacitance: 10 pF\nMCU; Maximum pin capacitance: 10 pF\nI2C line max capacitance: 10pF tbd\n\nR pull-up min = 1500R\nR pull-up max = 5000R"
+	(text "I2C Devices:\nMotor control I/O expander: 0b0100 000; Maximum pin capacitance: 10 pF\nDigital Potentiometer: 0b0101 100; Maximum pin capacitance: 10 pF\nSerial ports I/O expander: 0b0100 111; Maximum pin capacitance: 10 pF\nSerial ports I/O expander: 0b0100 110; Maximum pin capacitance: 10 pF\nMCU; Maximum pin capacitance: 10 pF\nI2C line max capacitance: ~40pF\n\nR pull-up min = ~1k5R\nR pull-up max (100KHz) = ~10kR\nR pull-up max (>100KHz) = 3kR"
 		(exclude_from_sim no)
 		(at 272.796 140.208 0)
 		(effects
@@ -12916,7 +12916,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kR"
+		(property "Value" "2kR"
 			(at 180.34 146.0499 0)
 			(effects
 				(font
@@ -13396,7 +13396,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kR"
+		(property "Value" "2kR"
 			(at 170.18 146.0499 0)
 			(effects
 				(font
