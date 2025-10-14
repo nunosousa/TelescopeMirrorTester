@@ -1118,7 +1118,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Potentiometer_Digital:MCP4431-xxxx-ST"
+		(symbol "Potentiometer_Digital:MCP4451-xxxx-ST"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1130,7 +1130,7 @@
 					)
 				)
 			)
-			(property "Value" "MCP4431-xxxx-ST"
+			(property "Value" "MCP4451-xxxx-ST"
 				(at 10.16 -11.43 0)
 				(effects
 					(font
@@ -1139,7 +1139,7 @@
 				)
 			)
 			(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
-				(at 0 -12.7 0)
+				(at 3.4798 -4.9276 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1148,7 +1148,7 @@
 				)
 			)
 			(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
-				(at 0 -15.24 0)
+				(at 3.4798 -7.4676 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1156,7 +1156,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Quad 7 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
+			(property "Description" "Quad 8 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1191,7 +1191,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "MCP4431-xxxx-ST_1_1"
+			(symbol "MCP4451-xxxx-ST_1_1"
 				(polyline
 					(pts
 						(xy 1.7272 0) (xy 0 0)
@@ -1365,7 +1365,7 @@
 					)
 				)
 			)
-			(symbol "MCP4431-xxxx-ST_2_1"
+			(symbol "MCP4451-xxxx-ST_2_1"
 				(polyline
 					(pts
 						(xy 1.7272 0) (xy 0 0)
@@ -1539,7 +1539,7 @@
 					)
 				)
 			)
-			(symbol "MCP4431-xxxx-ST_3_1"
+			(symbol "MCP4451-xxxx-ST_3_1"
 				(polyline
 					(pts
 						(xy 1.7272 0) (xy 0 0)
@@ -1713,7 +1713,7 @@
 					)
 				)
 			)
-			(symbol "MCP4431-xxxx-ST_4_1"
+			(symbol "MCP4451-xxxx-ST_4_1"
 				(polyline
 					(pts
 						(xy 1.7272 0) (xy 0 0)
@@ -1887,7 +1887,7 @@
 					)
 				)
 			)
-			(symbol "MCP4431-xxxx-ST_5_1"
+			(symbol "MCP4451-xxxx-ST_5_1"
 				(rectangle
 					(start -10.16 10.16)
 					(end 10.16 -10.16)
@@ -4277,6 +4277,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Type" ""
+			(at 261.62 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f51ef43f-6797-4215-8520-2af49c52653f")
 		)
@@ -4503,6 +4512,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 85.09 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 85.09 124.46 0)
 			(effects
 				(font
@@ -4854,156 +4872,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Potentiometer_Digital:MCP4431-xxxx-ST")
-		(at 121.92 41.91 180)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "348bd980-df0c-4f1c-9104-0008c0d2e948")
-		(property "Reference" "U33"
-			(at 114.3 43.1801 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MCP4431"
-			(at 114.3 40.6401 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
-			(at 121.92 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
-			(at 121.92 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad 7 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
-			(at 121.92 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MCP4431-103E/ST"
-			(at 121.92 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 121.92 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 121.92 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "13"
-			(uuid "eabfb48f-8b90-475a-99e3-91f47af1b4a8")
-		)
-		(pin "12"
-			(uuid "c16e6452-6d06-4f69-b50f-2f2932ba5a07")
-		)
-		(pin "11"
-			(uuid "422a3a69-a80a-4e5c-9fe4-9c97471f11ee")
-		)
-		(pin "9"
-			(uuid "d8d3c8ef-72d3-4dae-a2cc-4458399b43c8")
-		)
-		(pin "8"
-			(uuid "8ef9e20c-29bd-4551-a6cf-5a408ef12c2a")
-		)
-		(pin "10"
-			(uuid "d2143735-69d9-4db6-8a63-e9f7f517b904")
-		)
-		(pin "3"
-			(uuid "203a4ee2-7d2f-4e50-9d64-6fca93e86abf")
-		)
-		(pin "1"
-			(uuid "f544072d-f34d-4281-872d-1fd4a14f6df4")
-		)
-		(pin "14"
-			(uuid "ac59043a-9991-4862-a2bd-2fd09e2671a5")
-		)
-		(pin "20"
-			(uuid "5c1e7174-b66a-4f0b-9c5f-0c9367ca2915")
-		)
-		(pin "15"
-			(uuid "9c71794f-4afb-421f-afe4-84932c303a32")
-		)
-		(pin "6"
-			(uuid "d38e005b-eac0-47ba-a1df-7738d4c3eb3c")
-		)
-		(pin "16"
-			(uuid "e2a3ea32-5fea-4ef9-9c00-02bb4f673463")
-		)
-		(pin "2"
-			(uuid "4785bd9d-4adb-46bd-a584-9209a630c0c4")
-		)
-		(pin "5"
-			(uuid "6b54f4e0-f88a-477b-8ecb-b068aecb1dcd")
-		)
-		(pin "17"
-			(uuid "36f782a4-3729-4b3d-9e72-190a061632d0")
-		)
-		(pin "18"
-			(uuid "c25f1425-a787-41da-9884-10b3206e19f3")
-		)
-		(pin "19"
-			(uuid "ee2b4b61-9ab2-4e72-bfbb-f8d3465523d8")
-		)
-		(pin "4"
-			(uuid "d4318da5-12a5-415d-8a6c-6d08ad34ced4")
-		)
-		(pin "7"
-			(uuid "6c4bcae8-ec42-4ba8-a17e-8e3478d5ecb5")
-		)
-		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
-					(reference "U33")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 247.65 90.17 0)
 		(mirror y)
@@ -5222,6 +5090,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Type" ""
+			(at 247.65 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1d9e9f50-4ae9-4807-a5bc-167793c5061d")
 		)
@@ -5367,6 +5244,147 @@
 		)
 	)
 	(symbol
+		(lib_id "Potentiometer_Digital:MCP4451-xxxx-ST")
+		(at 121.92 41.91 180)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "400c3910-31af-456a-9db5-4d10176a7cdf")
+		(property "Reference" "U68"
+			(at 114.3 43.1801 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MCP4451"
+			(at 114.3 40.6401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
+			(at 118.4402 36.9824 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
+			(at 118.4402 34.4424 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad 8 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
+			(at 121.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MCP4451-103E/ST"
+			(at 121.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 121.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "12"
+			(uuid "2fe9bbcc-ca36-4cee-862a-cddb35f19fe8")
+		)
+		(pin "8"
+			(uuid "8874e269-5c73-4b18-b9af-0ec584e1698c")
+		)
+		(pin "3"
+			(uuid "52d22206-e457-4927-abdc-c10ea12ad98e")
+		)
+		(pin "11"
+			(uuid "f7b6d93a-ce0e-4ad4-9bbf-9fc64a5e88b8")
+		)
+		(pin "9"
+			(uuid "093e4d2f-1c2d-4d27-9aae-e2e7eff8a1b8")
+		)
+		(pin "10"
+			(uuid "d4420e5e-f73e-4494-a7d7-663400338ebb")
+		)
+		(pin "18"
+			(uuid "ca1e5505-063e-4cd6-b074-91eba943aa7c")
+		)
+		(pin "19"
+			(uuid "4b7cf8c3-f4da-4a2f-a1b0-c7116528f387")
+		)
+		(pin "20"
+			(uuid "58352487-986a-4646-9506-4fc8002026ae")
+		)
+		(pin "7"
+			(uuid "e688708b-9234-4454-9671-555b1c161033")
+		)
+		(pin "6"
+			(uuid "42888ca8-fb1e-48ed-95da-0297ded2c4f4")
+		)
+		(pin "4"
+			(uuid "3df67f20-e76a-4665-8ac8-77468ca6ca5a")
+		)
+		(pin "1"
+			(uuid "6031f26c-1612-40b7-906d-a27879f4ca9e")
+		)
+		(pin "15"
+			(uuid "91145885-e245-478f-bfc3-320e46362c6f")
+		)
+		(pin "5"
+			(uuid "86f6a3ac-61cc-47e4-95f6-37d234ad63fd")
+		)
+		(pin "16"
+			(uuid "951358cd-de79-4613-b4d2-69b4b5f00c7f")
+		)
+		(pin "17"
+			(uuid "1543ca17-6bc2-4f79-bd78-d5636a67a40f")
+		)
+		(pin "14"
+			(uuid "497a6349-c969-420d-9a45-34bfd1c9d04a")
+		)
+		(pin "2"
+			(uuid "2a051a96-292b-47eb-ae6b-a8f635157158")
+		)
+		(pin "13"
+			(uuid "061dafcf-ceb9-4e4d-b668-9ef4f3956f3f")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U68")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 247.65 63.5 0)
 		(unit 1)
@@ -5492,6 +5510,147 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(reference "#PWR0191")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Potentiometer_Digital:MCP4451-xxxx-ST")
+		(at 34.29 76.2 180)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4717e407-8cdb-4ab8-bfa1-5c02a0ab2ea0")
+		(property "Reference" "U68"
+			(at 26.67 77.4701 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MCP4451"
+			(at 26.67 74.9301 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
+			(at 30.8102 71.2724 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
+			(at 30.8102 68.7324 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad 8 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
+			(at 34.29 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MCP4451-103E/ST"
+			(at 34.29 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 34.29 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "12"
+			(uuid "2fe9bbcc-ca36-4cee-862a-cddb35f19fe8")
+		)
+		(pin "8"
+			(uuid "8874e269-5c73-4b18-b9af-0ec584e1698c")
+		)
+		(pin "3"
+			(uuid "52d22206-e457-4927-abdc-c10ea12ad98e")
+		)
+		(pin "11"
+			(uuid "f7b6d93a-ce0e-4ad4-9bbf-9fc64a5e88b8")
+		)
+		(pin "9"
+			(uuid "093e4d2f-1c2d-4d27-9aae-e2e7eff8a1b8")
+		)
+		(pin "10"
+			(uuid "d4420e5e-f73e-4494-a7d7-663400338ebb")
+		)
+		(pin "18"
+			(uuid "ca1e5505-063e-4cd6-b074-91eba943aa7c")
+		)
+		(pin "19"
+			(uuid "4b7cf8c3-f4da-4a2f-a1b0-c7116528f387")
+		)
+		(pin "20"
+			(uuid "58352487-986a-4646-9506-4fc8002026ae")
+		)
+		(pin "7"
+			(uuid "e688708b-9234-4454-9671-555b1c161033")
+		)
+		(pin "6"
+			(uuid "42888ca8-fb1e-48ed-95da-0297ded2c4f4")
+		)
+		(pin "4"
+			(uuid "3df67f20-e76a-4665-8ac8-77468ca6ca5a")
+		)
+		(pin "1"
+			(uuid "6031f26c-1612-40b7-906d-a27879f4ca9e")
+		)
+		(pin "15"
+			(uuid "91145885-e245-478f-bfc3-320e46362c6f")
+		)
+		(pin "5"
+			(uuid "86f6a3ac-61cc-47e4-95f6-37d234ad63fd")
+		)
+		(pin "16"
+			(uuid "951358cd-de79-4613-b4d2-69b4b5f00c7f")
+		)
+		(pin "17"
+			(uuid "1543ca17-6bc2-4f79-bd78-d5636a67a40f")
+		)
+		(pin "14"
+			(uuid "497a6349-c969-420d-9a45-34bfd1c9d04a")
+		)
+		(pin "2"
+			(uuid "2a051a96-292b-47eb-ae6b-a8f635157158")
+		)
+		(pin "13"
+			(uuid "061dafcf-ceb9-4e4d-b668-9ef4f3956f3f")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U68")
+					(unit 2)
 				)
 			)
 		)
@@ -5627,16 +5786,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Potentiometer_Digital:MCP4431-xxxx-ST")
-		(at 34.29 76.2 180)
-		(unit 2)
+		(lib_id "Potentiometer_Digital:MCP4451-xxxx-ST")
+		(at 121.92 76.2 180)
+		(unit 4)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "682af1cd-6d90-4b3d-9cc3-b5e8db31b0f7")
-		(property "Reference" "U33"
-			(at 26.67 77.4701 0)
+		(uuid "860e21cf-0cf2-4cec-b944-21b49e5034e5")
+		(property "Reference" "U68"
+			(at 114.3 77.4701 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5644,8 +5803,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP4431"
-			(at 26.67 74.9301 0)
+		(property "Value" "MCP4451"
+			(at 114.3 74.9301 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5654,7 +5813,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
-			(at 34.29 63.5 0)
+			(at 118.4402 71.2724 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5663,7 +5822,7 @@
 			)
 		)
 		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
-			(at 34.29 60.96 0)
+			(at 118.4402 68.7324 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5671,8 +5830,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Quad 7 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
-			(at 34.29 76.2 0)
+		(property "Description" "Quad 8 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
+			(at 121.92 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5680,8 +5839,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "MCP4431-103E/ST"
-			(at 34.29 76.2 0)
+		(property "MPN" "MCP4451-103E/ST"
+			(at 121.92 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5689,89 +5848,80 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" ""
-			(at 34.29 76.2 0)
+		(property "Sim.Type" ""
+			(at 121.92 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Sim.Pins" ""
-			(at 34.29 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "13"
-			(uuid "eabfb48f-8b90-475a-99e3-91f47af1b4a9")
 		)
 		(pin "12"
-			(uuid "c16e6452-6d06-4f69-b50f-2f2932ba5a08")
-		)
-		(pin "11"
-			(uuid "422a3a69-a80a-4e5c-9fe4-9c97471f11ef")
-		)
-		(pin "9"
-			(uuid "d8d3c8ef-72d3-4dae-a2cc-4458399b43cb")
+			(uuid "2fe9bbcc-ca36-4cee-862a-cddb35f19fe8")
 		)
 		(pin "8"
-			(uuid "8ef9e20c-29bd-4551-a6cf-5a408ef12c2d")
-		)
-		(pin "10"
-			(uuid "d2143735-69d9-4db6-8a63-e9f7f517b907")
+			(uuid "8874e269-5c73-4b18-b9af-0ec584e1698c")
 		)
 		(pin "3"
-			(uuid "203a4ee2-7d2f-4e50-9d64-6fca93e86ac1")
+			(uuid "52d22206-e457-4927-abdc-c10ea12ad98e")
 		)
-		(pin "1"
-			(uuid "f544072d-f34d-4281-872d-1fd4a14f6df6")
+		(pin "11"
+			(uuid "f7b6d93a-ce0e-4ad4-9bbf-9fc64a5e88b8")
 		)
-		(pin "14"
-			(uuid "ac59043a-9991-4862-a2bd-2fd09e2671a8")
+		(pin "9"
+			(uuid "093e4d2f-1c2d-4d27-9aae-e2e7eff8a1b8")
 		)
-		(pin "20"
-			(uuid "5c1e7174-b66a-4f0b-9c5f-0c9367ca2916")
-		)
-		(pin "15"
-			(uuid "9c71794f-4afb-421f-afe4-84932c303a35")
-		)
-		(pin "6"
-			(uuid "d38e005b-eac0-47ba-a1df-7738d4c3eb3f")
-		)
-		(pin "16"
-			(uuid "e2a3ea32-5fea-4ef9-9c00-02bb4f673466")
-		)
-		(pin "2"
-			(uuid "4785bd9d-4adb-46bd-a584-9209a630c0c6")
-		)
-		(pin "5"
-			(uuid "6b54f4e0-f88a-477b-8ecb-b068aecb1dd0")
-		)
-		(pin "17"
-			(uuid "36f782a4-3729-4b3d-9e72-190a061632d3")
+		(pin "10"
+			(uuid "d4420e5e-f73e-4494-a7d7-663400338ebb")
 		)
 		(pin "18"
-			(uuid "c25f1425-a787-41da-9884-10b3206e19f4")
+			(uuid "ca1e5505-063e-4cd6-b074-91eba943aa7c")
 		)
 		(pin "19"
-			(uuid "ee2b4b61-9ab2-4e72-bfbb-f8d3465523d9")
+			(uuid "4b7cf8c3-f4da-4a2f-a1b0-c7116528f387")
 		)
-		(pin "4"
-			(uuid "d4318da5-12a5-415d-8a6c-6d08ad34ced7")
+		(pin "20"
+			(uuid "58352487-986a-4646-9506-4fc8002026ae")
 		)
 		(pin "7"
-			(uuid "6c4bcae8-ec42-4ba8-a17e-8e3478d5ecb8")
+			(uuid "e688708b-9234-4454-9671-555b1c161033")
+		)
+		(pin "6"
+			(uuid "42888ca8-fb1e-48ed-95da-0297ded2c4f4")
+		)
+		(pin "4"
+			(uuid "3df67f20-e76a-4665-8ac8-77468ca6ca5a")
+		)
+		(pin "1"
+			(uuid "6031f26c-1612-40b7-906d-a27879f4ca9e")
+		)
+		(pin "15"
+			(uuid "91145885-e245-478f-bfc3-320e46362c6f")
+		)
+		(pin "5"
+			(uuid "86f6a3ac-61cc-47e4-95f6-37d234ad63fd")
+		)
+		(pin "16"
+			(uuid "951358cd-de79-4613-b4d2-69b4b5f00c7f")
+		)
+		(pin "17"
+			(uuid "1543ca17-6bc2-4f79-bd78-d5636a67a40f")
+		)
+		(pin "14"
+			(uuid "497a6349-c969-420d-9a45-34bfd1c9d04a")
+		)
+		(pin "2"
+			(uuid "2a051a96-292b-47eb-ae6b-a8f635157158")
+		)
+		(pin "13"
+			(uuid "061dafcf-ceb9-4e4d-b668-9ef4f3956f3f")
 		)
 		(instances
 			(project ""
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
-					(reference "U33")
-					(unit 2)
+					(reference "U68")
+					(unit 4)
 				)
 			)
 		)
@@ -5929,6 +6079,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Type" ""
+			(at 120.65 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5ae09b81-08e0-4c52-b7be-e3c30fb389ce")
 		)
@@ -6067,6 +6226,147 @@
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(reference "#PWR0189")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Potentiometer_Digital:MCP4451-xxxx-ST")
+		(at 34.29 41.91 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a1c4d5b2-2adf-4e25-ad5d-9b277bc1b42e")
+		(property "Reference" "U68"
+			(at 26.67 43.1801 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MCP4451"
+			(at 26.67 40.6401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
+			(at 30.8102 36.9824 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
+			(at 30.8102 34.4424 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad 8 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
+			(at 34.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MCP4451-103E/ST"
+			(at 34.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 34.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "12"
+			(uuid "2fe9bbcc-ca36-4cee-862a-cddb35f19fe8")
+		)
+		(pin "8"
+			(uuid "8874e269-5c73-4b18-b9af-0ec584e1698c")
+		)
+		(pin "3"
+			(uuid "52d22206-e457-4927-abdc-c10ea12ad98e")
+		)
+		(pin "11"
+			(uuid "f7b6d93a-ce0e-4ad4-9bbf-9fc64a5e88b8")
+		)
+		(pin "9"
+			(uuid "093e4d2f-1c2d-4d27-9aae-e2e7eff8a1b8")
+		)
+		(pin "10"
+			(uuid "d4420e5e-f73e-4494-a7d7-663400338ebb")
+		)
+		(pin "18"
+			(uuid "ca1e5505-063e-4cd6-b074-91eba943aa7c")
+		)
+		(pin "19"
+			(uuid "4b7cf8c3-f4da-4a2f-a1b0-c7116528f387")
+		)
+		(pin "20"
+			(uuid "58352487-986a-4646-9506-4fc8002026ae")
+		)
+		(pin "7"
+			(uuid "e688708b-9234-4454-9671-555b1c161033")
+		)
+		(pin "6"
+			(uuid "42888ca8-fb1e-48ed-95da-0297ded2c4f4")
+		)
+		(pin "4"
+			(uuid "3df67f20-e76a-4665-8ac8-77468ca6ca5a")
+		)
+		(pin "1"
+			(uuid "6031f26c-1612-40b7-906d-a27879f4ca9e")
+		)
+		(pin "15"
+			(uuid "91145885-e245-478f-bfc3-320e46362c6f")
+		)
+		(pin "5"
+			(uuid "86f6a3ac-61cc-47e4-95f6-37d234ad63fd")
+		)
+		(pin "16"
+			(uuid "951358cd-de79-4613-b4d2-69b4b5f00c7f")
+		)
+		(pin "17"
+			(uuid "1543ca17-6bc2-4f79-bd78-d5636a67a40f")
+		)
+		(pin "14"
+			(uuid "497a6349-c969-420d-9a45-34bfd1c9d04a")
+		)
+		(pin "2"
+			(uuid "2a051a96-292b-47eb-ae6b-a8f635157158")
+		)
+		(pin "13"
+			(uuid "061dafcf-ceb9-4e4d-b668-9ef4f3956f3f")
+		)
+		(instances
+			(project ""
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
+					(reference "U68")
 					(unit 1)
 				)
 			)
@@ -6554,6 +6854,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Type" ""
+			(at 148.59 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "85f41eda-0b43-4e7f-8de6-a1bb3e68f457")
 		)
@@ -6631,157 +6940,6 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
 					(reference "U34")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Potentiometer_Digital:MCP4431-xxxx-ST")
-		(at 59.69 124.46 0)
-		(unit 5)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c5112800-5924-4852-87a4-3b4bb8c74720")
-		(property "Reference" "U33"
-			(at 72.39 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MCP4431"
-			(at 72.39 125.7299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
-			(at 59.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
-			(at 59.69 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad 7 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
-			(at 59.69 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MCP4431-103E/ST"
-			(at 59.69 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 59.69 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 59.69 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "13"
-			(uuid "eabfb48f-8b90-475a-99e3-91f47af1b4ad")
-		)
-		(pin "12"
-			(uuid "c16e6452-6d06-4f69-b50f-2f2932ba5a0c")
-		)
-		(pin "11"
-			(uuid "422a3a69-a80a-4e5c-9fe4-9c97471f11f3")
-		)
-		(pin "9"
-			(uuid "d8d3c8ef-72d3-4dae-a2cc-4458399b43cd")
-		)
-		(pin "8"
-			(uuid "8ef9e20c-29bd-4551-a6cf-5a408ef12c2f")
-		)
-		(pin "10"
-			(uuid "d2143735-69d9-4db6-8a63-e9f7f517b909")
-		)
-		(pin "3"
-			(uuid "203a4ee2-7d2f-4e50-9d64-6fca93e86ac3")
-		)
-		(pin "1"
-			(uuid "f544072d-f34d-4281-872d-1fd4a14f6df8")
-		)
-		(pin "14"
-			(uuid "ac59043a-9991-4862-a2bd-2fd09e2671a9")
-		)
-		(pin "20"
-			(uuid "5c1e7174-b66a-4f0b-9c5f-0c9367ca2919")
-		)
-		(pin "15"
-			(uuid "9c71794f-4afb-421f-afe4-84932c303a36")
-		)
-		(pin "6"
-			(uuid "d38e005b-eac0-47ba-a1df-7738d4c3eb40")
-		)
-		(pin "16"
-			(uuid "e2a3ea32-5fea-4ef9-9c00-02bb4f673467")
-		)
-		(pin "2"
-			(uuid "4785bd9d-4adb-46bd-a584-9209a630c0c8")
-		)
-		(pin "5"
-			(uuid "6b54f4e0-f88a-477b-8ecb-b068aecb1dd1")
-		)
-		(pin "17"
-			(uuid "36f782a4-3729-4b3d-9e72-190a061632d4")
-		)
-		(pin "18"
-			(uuid "c25f1425-a787-41da-9884-10b3206e19f7")
-		)
-		(pin "19"
-			(uuid "ee2b4b61-9ab2-4e72-bfbb-f8d3465523dc")
-		)
-		(pin "4"
-			(uuid "d4318da5-12a5-415d-8a6c-6d08ad34ced8")
-		)
-		(pin "7"
-			(uuid "6c4bcae8-ec42-4ba8-a17e-8e3478d5ecb9")
-		)
-		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
-					(reference "U33")
-					(unit 5)
 				)
 			)
 		)
@@ -6936,6 +7094,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 234.95 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 234.95 46.99 0)
 			(effects
 				(font
@@ -7281,6 +7448,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Type" ""
+			(at 234.95 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "8c7bf287-af02-4fb8-add5-869918a7d6c6")
 		)
@@ -7462,156 +7638,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Potentiometer_Digital:MCP4431-xxxx-ST")
-		(at 121.92 76.2 180)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ee9b4ff2-b13f-4f8d-8ad7-8708209410cc")
-		(property "Reference" "U33"
-			(at 114.3 77.4701 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MCP4431"
-			(at 114.3 74.9301 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
-			(at 121.92 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
-			(at 121.92 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad 7 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
-			(at 121.92 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MCP4431-103E/ST"
-			(at 121.92 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 121.92 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 121.92 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "13"
-			(uuid "eabfb48f-8b90-475a-99e3-91f47af1b4af")
-		)
-		(pin "12"
-			(uuid "c16e6452-6d06-4f69-b50f-2f2932ba5a0e")
-		)
-		(pin "11"
-			(uuid "422a3a69-a80a-4e5c-9fe4-9c97471f11f5")
-		)
-		(pin "9"
-			(uuid "d8d3c8ef-72d3-4dae-a2cc-4458399b43ce")
-		)
-		(pin "8"
-			(uuid "8ef9e20c-29bd-4551-a6cf-5a408ef12c30")
-		)
-		(pin "10"
-			(uuid "d2143735-69d9-4db6-8a63-e9f7f517b90a")
-		)
-		(pin "3"
-			(uuid "203a4ee2-7d2f-4e50-9d64-6fca93e86ac5")
-		)
-		(pin "1"
-			(uuid "f544072d-f34d-4281-872d-1fd4a14f6dfa")
-		)
-		(pin "14"
-			(uuid "ac59043a-9991-4862-a2bd-2fd09e2671ab")
-		)
-		(pin "20"
-			(uuid "5c1e7174-b66a-4f0b-9c5f-0c9367ca291b")
-		)
-		(pin "15"
-			(uuid "9c71794f-4afb-421f-afe4-84932c303a38")
-		)
-		(pin "6"
-			(uuid "d38e005b-eac0-47ba-a1df-7738d4c3eb42")
-		)
-		(pin "16"
-			(uuid "e2a3ea32-5fea-4ef9-9c00-02bb4f673469")
-		)
-		(pin "2"
-			(uuid "4785bd9d-4adb-46bd-a584-9209a630c0ca")
-		)
-		(pin "5"
-			(uuid "6b54f4e0-f88a-477b-8ecb-b068aecb1dd3")
-		)
-		(pin "17"
-			(uuid "36f782a4-3729-4b3d-9e72-190a061632d6")
-		)
-		(pin "18"
-			(uuid "c25f1425-a787-41da-9884-10b3206e19f9")
-		)
-		(pin "19"
-			(uuid "ee2b4b61-9ab2-4e72-bfbb-f8d3465523de")
-		)
-		(pin "4"
-			(uuid "d4318da5-12a5-415d-8a6c-6d08ad34ceda")
-		)
-		(pin "7"
-			(uuid "6c4bcae8-ec42-4ba8-a17e-8e3478d5ecbb")
-		)
-		(instances
-			(project ""
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
-					(reference "U33")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 246.38 107.95 90)
 		(unit 1)
@@ -7679,16 +7705,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Potentiometer_Digital:MCP4431-xxxx-ST")
-		(at 34.29 41.91 180)
-		(unit 1)
+		(lib_id "Potentiometer_Digital:MCP4451-xxxx-ST")
+		(at 59.69 124.46 0)
+		(unit 5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f8f13695-ba49-4d1e-a481-c8fbdbd8eeaf")
-		(property "Reference" "U33"
-			(at 26.67 43.1801 0)
+		(fields_autoplaced yes)
+		(uuid "f084ae96-d6e1-4a7e-9ef4-3cc119bc7bbe")
+		(property "Reference" "U68"
+			(at 72.39 123.1899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7696,8 +7723,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP4431"
-			(at 26.67 40.6401 0)
+		(property "Value" "MCP4451"
+			(at 72.39 125.7299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7706,7 +7733,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
-			(at 34.29 29.21 0)
+			(at 63.1698 129.3876 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7715,7 +7742,7 @@
 			)
 		)
 		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22267A_MCP4431.pdf"
-			(at 34.29 26.67 0)
+			(at 63.1698 131.9276 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7723,8 +7750,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Quad 7 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
-			(at 34.29 41.91 0)
+		(property "Description" "Quad 8 Bit Digital Potentiometer, I²C, Volatile Memory, TSSOP-20"
+			(at 59.69 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7732,8 +7759,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "MCP4431-103E/ST"
-			(at 34.29 41.91 0)
+		(property "MPN" "MCP4451-103E/ST"
+			(at 59.69 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7741,89 +7768,80 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" ""
-			(at 34.29 41.91 0)
+		(property "Sim.Type" ""
+			(at 59.69 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Sim.Pins" ""
-			(at 34.29 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "13"
-			(uuid "eabfb48f-8b90-475a-99e3-91f47af1b4b0")
 		)
 		(pin "12"
-			(uuid "c16e6452-6d06-4f69-b50f-2f2932ba5a0f")
-		)
-		(pin "11"
-			(uuid "422a3a69-a80a-4e5c-9fe4-9c97471f11f6")
-		)
-		(pin "9"
-			(uuid "d8d3c8ef-72d3-4dae-a2cc-4458399b43cf")
+			(uuid "2fe9bbcc-ca36-4cee-862a-cddb35f19fe8")
 		)
 		(pin "8"
-			(uuid "8ef9e20c-29bd-4551-a6cf-5a408ef12c31")
-		)
-		(pin "10"
-			(uuid "d2143735-69d9-4db6-8a63-e9f7f517b90b")
+			(uuid "8874e269-5c73-4b18-b9af-0ec584e1698c")
 		)
 		(pin "3"
-			(uuid "203a4ee2-7d2f-4e50-9d64-6fca93e86ac6")
+			(uuid "52d22206-e457-4927-abdc-c10ea12ad98e")
 		)
-		(pin "1"
-			(uuid "f544072d-f34d-4281-872d-1fd4a14f6dfb")
+		(pin "11"
+			(uuid "f7b6d93a-ce0e-4ad4-9bbf-9fc64a5e88b8")
 		)
-		(pin "14"
-			(uuid "ac59043a-9991-4862-a2bd-2fd09e2671ac")
+		(pin "9"
+			(uuid "093e4d2f-1c2d-4d27-9aae-e2e7eff8a1b8")
 		)
-		(pin "20"
-			(uuid "5c1e7174-b66a-4f0b-9c5f-0c9367ca291c")
-		)
-		(pin "15"
-			(uuid "9c71794f-4afb-421f-afe4-84932c303a39")
-		)
-		(pin "6"
-			(uuid "d38e005b-eac0-47ba-a1df-7738d4c3eb43")
-		)
-		(pin "16"
-			(uuid "e2a3ea32-5fea-4ef9-9c00-02bb4f67346a")
-		)
-		(pin "2"
-			(uuid "4785bd9d-4adb-46bd-a584-9209a630c0cb")
-		)
-		(pin "5"
-			(uuid "6b54f4e0-f88a-477b-8ecb-b068aecb1dd4")
-		)
-		(pin "17"
-			(uuid "36f782a4-3729-4b3d-9e72-190a061632d7")
+		(pin "10"
+			(uuid "d4420e5e-f73e-4494-a7d7-663400338ebb")
 		)
 		(pin "18"
-			(uuid "c25f1425-a787-41da-9884-10b3206e19fa")
+			(uuid "ca1e5505-063e-4cd6-b074-91eba943aa7c")
 		)
 		(pin "19"
-			(uuid "ee2b4b61-9ab2-4e72-bfbb-f8d3465523df")
+			(uuid "4b7cf8c3-f4da-4a2f-a1b0-c7116528f387")
 		)
-		(pin "4"
-			(uuid "d4318da5-12a5-415d-8a6c-6d08ad34cedb")
+		(pin "20"
+			(uuid "58352487-986a-4646-9506-4fc8002026ae")
 		)
 		(pin "7"
-			(uuid "6c4bcae8-ec42-4ba8-a17e-8e3478d5ecbc")
+			(uuid "e688708b-9234-4454-9671-555b1c161033")
+		)
+		(pin "6"
+			(uuid "42888ca8-fb1e-48ed-95da-0297ded2c4f4")
+		)
+		(pin "4"
+			(uuid "3df67f20-e76a-4665-8ac8-77468ca6ca5a")
+		)
+		(pin "1"
+			(uuid "6031f26c-1612-40b7-906d-a27879f4ca9e")
+		)
+		(pin "15"
+			(uuid "91145885-e245-478f-bfc3-320e46362c6f")
+		)
+		(pin "5"
+			(uuid "86f6a3ac-61cc-47e4-95f6-37d234ad63fd")
+		)
+		(pin "16"
+			(uuid "951358cd-de79-4613-b4d2-69b4b5f00c7f")
+		)
+		(pin "17"
+			(uuid "1543ca17-6bc2-4f79-bd78-d5636a67a40f")
+		)
+		(pin "14"
+			(uuid "497a6349-c969-420d-9a45-34bfd1c9d04a")
+		)
+		(pin "2"
+			(uuid "2a051a96-292b-47eb-ae6b-a8f635157158")
+		)
+		(pin "13"
+			(uuid "061dafcf-ceb9-4e4d-b668-9ef4f3956f3f")
 		)
 		(instances
 			(project ""
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd"
-					(reference "U33")
-					(unit 1)
+					(reference "U68")
+					(unit 5)
 				)
 			)
 		)
@@ -7911,6 +7929,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 247.65 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 247.65 93.98 0)
 			(effects
 				(font
@@ -8016,6 +8043,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 120.65 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 120.65 128.27 0)
 			(effects
 				(font
