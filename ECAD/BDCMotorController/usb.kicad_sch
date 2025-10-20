@@ -1997,6 +1997,12 @@
 		(uuid "f3f06fd8-1583-4121-b12d-a2e76cabe665")
 	)
 	(junction
+		(at 240.03 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06088186-20e8-4445-8b6d-645d96234363")
+	)
+	(junction
 		(at 78.74 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2302,7 +2308,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 151.13) (xy 146.05 147.32)
+			(xy 240.03 90.17) (xy 240.03 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2362,6 +2368,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 90.17) (xy 240.03 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dacba241-7a38-4bcd-87d2-6e46c8618481")
+	)
+	(wire
+		(pts
 			(xy 189.23 92.71) (xy 189.23 93.98)
 		)
 		(stroke
@@ -2412,7 +2428,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 151.13) (xy 147.32 151.13)
+			(xy 240.03 90.17) (xy 241.3 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2472,7 +2488,7 @@
 	)
 	(hierarchical_label "~{USB_ON}"
 		(shape output)
-		(at 147.32 151.13 0)
+		(at 241.3 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2480,17 +2496,6 @@
 			(justify left)
 		)
 		(uuid "05cb0dba-bc06-437e-89ae-29f3e136a529")
-	)
-	(hierarchical_label "~{USB_ON}"
-		(shape output)
-		(at 231.14 90.17 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0c71fd97-b733-4104-a5be-bc3b4afe5970")
 	)
 	(hierarchical_label "RX"
 		(shape output)
@@ -2584,7 +2589,7 @@
 	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
-		(at 146.05 139.7 0)
+		(at 240.03 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2593,7 +2598,7 @@
 		(fields_autoplaced yes)
 		(uuid "14df7378-2ef9-429a-b48f-4153cff7a5e1")
 		(property "Reference" "#PWR0328"
-			(at 146.05 143.51 0)
+			(at 240.03 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2602,7 +2607,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 146.05 134.62 0)
+			(at 240.03 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2610,7 +2615,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 139.7 0)
+			(at 240.03 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2619,7 +2624,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 139.7 0)
+			(at 240.03 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2628,7 +2633,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 146.05 139.7 0)
+			(at 240.03 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3109,7 +3114,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 146.05 143.51 0)
+		(at 240.03 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3118,7 +3123,7 @@
 		(fields_autoplaced yes)
 		(uuid "41282fae-6e9d-44a7-8cbb-cbb13a645b74")
 		(property "Reference" "R54"
-			(at 148.59 142.2399 0)
+			(at 242.57 83.8199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3127,7 +3132,7 @@
 			)
 		)
 		(property "Value" "10kR"
-			(at 148.59 144.7799 0)
+			(at 242.57 86.3599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3136,7 +3141,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 144.272 143.51 90)
+			(at 238.252 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3145,7 +3150,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 143.51 0)
+			(at 240.03 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3154,7 +3159,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 146.05 143.51 0)
+			(at 240.03 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3163,7 +3168,7 @@
 			)
 		)
 		(property "Status" ""
-			(at 146.05 143.51 0)
+			(at 240.03 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3172,7 +3177,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 146.05 143.51 0)
+			(at 240.03 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3181,7 +3186,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 146.05 143.51 0)
+			(at 240.03 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
