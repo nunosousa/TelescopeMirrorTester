@@ -58027,7 +58027,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "9b1ac19d-a0cc-4264-badd-9d7febe546c5")
-		(at 86.36 98.933 180)
+		(at 88.9 99.695 180)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C9"
@@ -83688,7 +83688,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "de79587c-5619-4bff-962b-7985542ddd2f")
-		(at 86.614 96.139 180)
+		(at 88.9 97.155 180)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C8"
@@ -84216,7 +84216,7 @@
 	(footprint "Capacitor_SMD:C_1210_3225Metric"
 		(layer "F.Cu")
 		(uuid "e2d3ade4-93f7-48cc-96d1-ad06f7383226")
-		(at 86.106 102.362 180)
+		(at 88.9 102.87 180)
 		(descr "Capacitor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C10"
@@ -94332,6 +94332,38 @@
 		(net 0)
 		(net_name "")
 		(layer "F.Cu")
+		(uuid "21c3e1c9-c0fc-49bf-800f-a4db4c8a96d9")
+		(hatch edge 0.5)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks allowed)
+			(vias allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy 97.79 105.664) (xy 97.79 105.156) (xy 94.996 105.156) (xy 94.996 105.664)
+			)
+		)
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "F.Cu")
 		(uuid "27711752-5bc0-4b6d-8acb-13d61d008bcb")
 		(hatch edge 0.5)
 		(connect_pads yes
@@ -94417,11 +94449,9 @@
 			(layer "F.Cu")
 			(pts
 				(xy 100.076 107.318) (xy 100.056315 107.385039) (xy 100.003511 107.430794) (xy 99.952 107.442) (xy 95.504 107.442)
-				(xy 95.504 105.534) (xy 95.523685 105.466961) (xy 95.576489 105.421206) (xy 95.628 105.41) (xy 96.038709 105.41)
-				(xy 96.077026 105.416068) (xy 96.203757 105.457246) (xy 96.413713 105.4905) (xy 96.413714 105.4905)
-				(xy 96.626286 105.4905) (xy 96.626287 105.4905) (xy 96.836243 105.457246) (xy 96.962973 105.416068)
-				(xy 97.001291 105.41) (xy 98.044 105.41) (xy 98.044 98.044) (xy 97.914 98.044) (xy 97.846961 98.024315)
-				(xy 97.801206 97.971511) (xy 97.79 97.92) (xy 97.79 97.79) (xy 100.076 97.79)
+				(xy 95.504 105.788) (xy 95.523685 105.720961) (xy 95.576489 105.675206) (xy 95.628 105.664) (xy 98.044 105.664)
+				(xy 98.044 98.044) (xy 97.914 98.044) (xy 97.846961 98.024315) (xy 97.801206 97.971511) (xy 97.79 97.92)
+				(xy 97.79 97.79) (xy 100.076 97.79)
 			)
 		)
 	)
@@ -94602,8 +94632,6 @@
 		(fill
 			(thermal_gap 0.5)
 			(thermal_bridge_width 0.5)
-			(smoothing fillet)
-			(radius 1)
 		)
 		(polygon
 			(pts
@@ -94754,15 +94782,15 @@
 		)
 		(polygon
 			(pts
-				(xy 95.25 101.6) (xy 97.79 101.6) (xy 97.79 105.41) (xy 95.25 105.41)
+				(xy 95.25 101.6) (xy 97.79 101.6) (xy 97.79 104.14) (xy 95.25 104.14)
 			)
 		)
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 97.479039 101.619685) (xy 97.524794 101.672489) (xy 97.536 101.724) (xy 97.536 104.778) (xy 97.516315 104.845039)
-				(xy 97.463511 104.890794) (xy 97.412 104.902) (xy 95.628 104.902) (xy 95.560961 104.882315) (xy 95.515206 104.829511)
-				(xy 95.504 104.778) (xy 95.504 101.724) (xy 95.523685 101.656961) (xy 95.576489 101.611206) (xy 95.628 101.6)
+				(xy 97.479039 101.619685) (xy 97.524794 101.672489) (xy 97.536 101.724) (xy 97.536 104.016) (xy 97.516315 104.083039)
+				(xy 97.463511 104.128794) (xy 97.412 104.14) (xy 95.628 104.14) (xy 95.560961 104.120315) (xy 95.515206 104.067511)
+				(xy 95.504 104.016) (xy 95.504 101.724) (xy 95.523685 101.656961) (xy 95.576489 101.611206) (xy 95.628 101.6)
 				(xy 97.412 101.6)
 			)
 		)
@@ -94861,7 +94889,7 @@
 		)
 		(polygon
 			(pts
-				(xy 97.536 105.156) (xy 98.044 105.156) (xy 98.044 98.044) (xy 97.536 98.044)
+				(xy 97.536 105.664) (xy 98.044 105.664) (xy 98.044 98.044) (xy 97.536 98.044)
 			)
 		)
 	)
