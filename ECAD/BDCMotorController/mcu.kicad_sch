@@ -1033,6 +1033,26 @@
 					(hide yes)
 				)
 			)
+			(property private "KLC_S3.3" "The rectangle is not a symbol body but a graphical element"
+				(at 0 -12.7 0)
+				(show_name)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property private "KLC_S4.1" "Some pins are on 50mil grid to make the symbol small"
+				(at 0 -15.24 0)
+				(show_name)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "quartz ceramic resonator oscillator"
 				(at 0 0 0)
 				(effects
@@ -1113,18 +1133,6 @@
 				)
 				(polyline
 					(pts
-						(xy 0 3.556) (xy 0 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0 -3.81) (xy 0 -3.556)
 					)
 					(stroke
@@ -1180,9 +1188,9 @@
 					)
 				)
 				(pin passive line
-					(at 0 5.08 270)
+					(at 0 -5.08 90)
 					(length 1.27)
-					(name "2"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1200,7 +1208,8 @@
 				(pin passive line
 					(at 0 -5.08 90)
 					(length 1.27)
-					(name "4"
+					(hide yes)
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5298,16 +5307,16 @@
 		(uuid "21bb2094-33eb-40dd-8373-a7eb164e7ea8")
 	)
 	(no_connect
-		(at 80.01 157.48)
-		(uuid "27764f53-ea13-42cc-87a3-b86a5b1fcba4")
-	)
-	(no_connect
 		(at 39.37 149.86)
 		(uuid "307b4061-1530-4ea9-9d52-a3c368b6ae91")
 	)
 	(no_connect
 		(at 39.37 58.42)
 		(uuid "3134582a-1676-4f6f-9b82-d4539d007f51")
+	)
+	(no_connect
+		(at 39.37 63.5)
+		(uuid "34bb2a3e-d132-4e73-96d0-cf1de07c6e51")
 	)
 	(no_connect
 		(at 80.01 147.32)
@@ -5322,10 +5331,6 @@
 		(uuid "5aab4540-191e-4288-b02c-75649736c14a")
 	)
 	(no_connect
-		(at 80.01 154.94)
-		(uuid "60ded302-819a-4dba-b71a-b2ed2af25882")
-	)
-	(no_connect
 		(at 39.37 53.34)
 		(uuid "6a93f8fe-17b6-422f-8ab3-0db0cab87e86")
 	)
@@ -5338,24 +5343,28 @@
 		(uuid "79dda3df-b757-45c3-8e3e-cd6fd651fcf4")
 	)
 	(no_connect
-		(at 39.37 114.3)
-		(uuid "a06cef7a-88b1-4e67-bbc0-76139f01b5dd")
+		(at 39.37 66.04)
+		(uuid "7a49eed7-0691-4789-bc2d-ebbb9af07ec1")
 	)
 	(no_connect
-		(at 80.01 152.4)
-		(uuid "a0a1e85e-b252-4e3a-b070-7a8debe687f6")
+		(at 39.37 60.96)
+		(uuid "82b432e5-dbab-4039-bbf7-e07b21d05eb2")
+	)
+	(no_connect
+		(at 39.37 114.3)
+		(uuid "a06cef7a-88b1-4e67-bbc0-76139f01b5dd")
 	)
 	(no_connect
 		(at 39.37 101.6)
 		(uuid "af45bbfc-02d5-4848-b4b8-6ec0cfa0fd8b")
 	)
 	(no_connect
-		(at 80.01 160.02)
-		(uuid "c269cec1-06b1-4788-8e91-6aea93e5ee8b")
-	)
-	(no_connect
 		(at 80.01 124.46)
 		(uuid "d2bb84c7-9a51-4d9f-9b07-c0e9e6abaa9f")
+	)
+	(no_connect
+		(at 39.37 68.58)
+		(uuid "dce2c4fe-168a-499b-a3b6-5c0e807e71ad")
 	)
 	(no_connect
 		(at 80.01 149.86)
@@ -8297,17 +8306,6 @@
 		)
 		(uuid "07ab4515-0037-40bf-a9f0-78b9b3a5a2ed")
 	)
-	(hierarchical_label "PL7"
-		(shape output)
-		(at 39.37 68.58 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "07c7c18a-4a75-420c-a49b-030f985acd73")
-	)
 	(hierarchical_label "ICP4"
 		(shape input)
 		(at 39.37 50.8 180)
@@ -8384,17 +8382,6 @@
 			(justify right)
 		)
 		(uuid "21494e70-d52b-4f75-9c71-9ac5c6fa968c")
-	)
-	(hierarchical_label "PL5"
-		(shape output)
-		(at 39.37 63.5 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "22162de8-a8ba-4a1d-80a1-b2ddea3c4ccc")
 	)
 	(hierarchical_label "ADC1"
 		(shape input)
@@ -8572,6 +8559,17 @@
 		)
 		(uuid "9215b067-a648-4b98-94ac-3e1c3cf3baef")
 	)
+	(hierarchical_label "PF6"
+		(shape output)
+		(at 80.01 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "93c126d3-a265-4408-9c7d-e05508832d8f")
+	)
 	(hierarchical_label "RXD3"
 		(shape input)
 		(at 39.37 96.52 180)
@@ -8594,17 +8592,6 @@
 		)
 		(uuid "9a64dfb9-3674-464e-a494-6dadea011614")
 	)
-	(hierarchical_label "PL6"
-		(shape output)
-		(at 39.37 66.04 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9cf12962-d090-4522-bb09-fd678e4c1da0")
-	)
 	(hierarchical_label "PK2"
 		(shape bidirectional)
 		(at 39.37 78.74 180)
@@ -8615,17 +8602,6 @@
 			(justify right)
 		)
 		(uuid "afa2a369-72f4-4e59-a637-0dae66a79e78")
-	)
-	(hierarchical_label "PL4"
-		(shape output)
-		(at 39.37 60.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b1fa58b9-7884-4d65-b12c-2263d03258f2")
 	)
 	(hierarchical_label "INT6"
 		(shape input)
@@ -8648,6 +8624,17 @@
 			(justify right)
 		)
 		(uuid "be5ff9cb-7712-45be-b9c7-6ae82d66a49a")
+	)
+	(hierarchical_label "PF7"
+		(shape output)
+		(at 80.01 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c39a6fbe-fd81-4f64-8d44-2d39a13fc693")
 	)
 	(hierarchical_label "MISO"
 		(shape input)
@@ -8770,6 +8757,17 @@
 		)
 		(uuid "e8c22ceb-4e9e-4538-a365-cbe536dd7b40")
 	)
+	(hierarchical_label "PF4"
+		(shape output)
+		(at 80.01 152.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "eb957249-0bb3-47c5-95e9-b28a037d2078")
+	)
 	(hierarchical_label "SCL"
 		(shape output)
 		(at 80.01 96.52 0)
@@ -8802,6 +8800,17 @@
 			(justify left)
 		)
 		(uuid "fc12931e-69d4-4813-b381-7460b087898f")
+	)
+	(hierarchical_label "PF5"
+		(shape output)
+		(at 80.01 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ffdb434a-9bb8-452c-aa9c-62bde5a0f0a0")
 	)
 	(symbol
 		(lib_name "+5V_1")
@@ -14286,73 +14295,6 @@
 			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
 					(reference "#PWR0380")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 138.43 86.36 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ffd6f08b-24fa-46bc-9bcb-997aa356c1e8")
-		(property "Reference" "#PWR0388"
-			(at 138.43 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 138.43 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 138.43 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 138.43 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 138.43 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a7358d07-1e4b-4d58-8e5f-2aaeb6d58743")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
-					(reference "#PWR0388")
 					(unit 1)
 				)
 			)
