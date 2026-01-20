@@ -6,7 +6,7 @@
 	(descr "http://www.mouser.com/ds/2/418/NG_CD_5787834_A4-669110.pdf")
 	(tags "USB_B USB B vertical female connector")
 	(property "Reference" "REF**"
-		(at -6 -5.5 0)
+		(at -5.6 -5.4 0)
 		(layer "F.SilkS")
 		(uuid "4c7cbe93-a163-4203-851b-6b1334fd2dc3")
 		(effects
@@ -55,8 +55,8 @@
 	)
 	(attr through_hole)
 	(fp_line
-		(start -8.3 -4.5)
-		(end 5.8 -4.5)
+		(start -7.6 -4.4)
+		(end 5 -4.4)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -65,8 +65,8 @@
 		(uuid "eb5b2dd0-d6ca-41b0-8bdd-21a64fd17f3b")
 	)
 	(fp_line
-		(start -8.3 1)
-		(end -8.3 -4.5)
+		(start -7.6 1)
+		(end -7.6 -4.4)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -75,8 +75,8 @@
 		(uuid "cb447a30-5f16-45c9-a18a-336e67247962")
 	)
 	(fp_line
-		(start -8.3 7.5)
-		(end -8.3 4.5)
+		(start -7.6 7.6)
+		(end -7.6 4.5)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -115,8 +115,8 @@
 		(uuid "b6381cdb-b9b6-4578-bd1e-2f634ccc7480")
 	)
 	(fp_line
-		(start 5.8 -4.5)
-		(end 5.8 1)
+		(start 5 -4.4)
+		(end 5 1)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -125,8 +125,8 @@
 		(uuid "7bd7e75b-0e96-4cea-a8b7-53c327fc3e26")
 	)
 	(fp_line
-		(start 5.8 4.5)
-		(end 5.8 7.5)
+		(start 5 4.5)
+		(end 5 7.6)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -135,8 +135,8 @@
 		(uuid "0bb007ef-0732-4abb-879d-062fd41433ee")
 	)
 	(fp_line
-		(start 5.8 7.5)
-		(end -8.3 7.5)
+		(start 5 7.6)
+		(end -7.6 7.6)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -145,8 +145,18 @@
 		(uuid "2e73c2b4-9fa7-4008-95c8-2bf38df0ecf8")
 	)
 	(fp_line
-		(start -9 -4.5)
-		(end -9 8)
+		(start -7.838053 1.032408)
+		(end -7.8 -4.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ce3b01a9-f88e-4237-84f8-588f4480c907")
+	)
+	(fp_line
+		(start -7.800001 4.399999)
+		(end -7.8 7.8)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -155,8 +165,8 @@
 		(uuid "52d9c6ec-7c3a-4770-9466-13376a0c9730")
 	)
 	(fp_line
-		(start -9 -4.5)
-		(end 6.5 -4.5)
+		(start -7.8 -4.6)
+		(end 5.2 -4.6)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -165,8 +175,8 @@
 		(uuid "5e12790f-6be1-4907-8a81-aa3172d4aaa7")
 	)
 	(fp_line
-		(start 6.5 8)
-		(end -9 8)
+		(start 5.2 7.8)
+		(end -7.8 7.8)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -175,14 +185,46 @@
 		(uuid "6f0953c4-3129-43f0-8b26-bca1b9dc1376")
 	)
 	(fp_line
-		(start 6.5 8)
-		(end 6.5 -4.5)
+		(start 5.200003 1.018699)
+		(end 5.2 -4.6)
 		(stroke
 			(width 0.05)
 			(type solid)
 		)
 		(layer "F.CrtYd")
 		(uuid "946524c6-de95-40a3-aa98-3120670d9381")
+	)
+	(fp_line
+		(start 5.205088 4.4)
+		(end 5.2 7.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "05a4fd31-1ea7-4abe-8782-a88ad3d1c2ce")
+	)
+	(fp_arc
+		(start -7.8 4.4)
+		(mid -9.041045 2.730012)
+		(end -7.838053 1.032408)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9865654e-43f8-423d-92c1-11912791bfb8")
+	)
+	(fp_arc
+		(start 5.198167 1.018233)
+		(mid 6.515105 2.706428)
+		(end 5.205088 4.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c981091d-d865-4daf-80a4-490cbd5e7d69")
 	)
 	(fp_line
 		(start -7.265 -4.175)
