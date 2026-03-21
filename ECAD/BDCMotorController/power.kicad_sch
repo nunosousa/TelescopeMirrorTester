@@ -3246,6 +3246,30 @@
 		(color 0 0 0 0)
 		(uuid "ff152edf-02d6-489c-aaaf-2920189fd913")
 	)
+	(no_connect
+		(at 220.98 101.6)
+		(uuid "358b55d8-e961-4626-89bd-150ecac7c6ce")
+	)
+	(no_connect
+		(at 228.6 93.98)
+		(uuid "3827702f-2ceb-4a6f-a5fa-8cf8ebbcca69")
+	)
+	(no_connect
+		(at 213.36 93.98)
+		(uuid "3dbbaa08-bbf8-4574-8f00-97f4f6b9e973")
+	)
+	(no_connect
+		(at 228.6 91.44)
+		(uuid "a3fcb01b-a350-4d31-b3ca-b3dc03c62e40")
+	)
+	(no_connect
+		(at 213.36 91.44)
+		(uuid "c34f2425-27d0-4b50-9a36-9f87a271231f")
+	)
+	(no_connect
+		(at 218.44 101.6)
+		(uuid "f0bcfb78-393e-48cf-aba1-f9e0091ee20f")
+	)
 	(wire
 		(pts
 			(xy 123.19 40.64) (xy 132.08 40.64)
@@ -4178,7 +4202,7 @@
 			(uuid "051180e6-8cb3-4001-97e1-daf4f50cbc74")
 		)
 		(instances
-			(project ""
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "D3")
 					(unit 1)
@@ -4245,7 +4269,7 @@
 			(uuid "44a893ed-0abd-4657-8953-cc717b855473")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0301")
 					(unit 1)
@@ -4606,7 +4630,7 @@
 			(uuid "56a3f4fe-f9f8-42fa-ae71-fe41c9e6adbf")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0311")
 					(unit 1)
@@ -5076,7 +5100,7 @@
 			(uuid "d8836ab5-d95c-46fd-a936-5e086534395d")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0308")
 					(unit 1)
@@ -5709,7 +5733,7 @@
 			(uuid "de3dd830-b6c3-4af5-ba2f-3f5e468f7485")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "U50")
 					(unit 1)
@@ -5773,7 +5797,7 @@
 			(uuid "934c9b4c-7ce0-4aea-aa41-8071d25eccdc")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0304")
 					(unit 1)
@@ -6393,7 +6417,7 @@
 			(uuid "eddf8f5e-fbe8-4359-a845-4ec6ac47084f")
 		)
 		(instances
-			(project ""
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "D4")
 					(unit 1)
@@ -6797,7 +6821,7 @@
 			(uuid "eab93d53-335d-4182-98b2-d730e57d5494")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "C96")
 					(unit 1)
@@ -6877,8 +6901,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "8c5fb11c-15b8-4eda-a53a-05a3a1d247ea")
 		(property "Reference" "U68"
@@ -6946,7 +6970,7 @@
 			(uuid "f0c76fc6-510e-4dd0-856d-79cd9de945a8")
 		)
 		(instances
-			(project ""
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "U68")
 					(unit 1)
@@ -7438,7 +7462,7 @@
 			(uuid "c8bb8d5a-2b49-4128-ab0a-04e47bae9363")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0310")
 					(unit 1)
@@ -7508,7 +7532,7 @@
 			(uuid "04b9b11c-f93b-4f1e-a2ce-16ffd42379b1")
 		)
 		(instances
-			(project ""
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "J14")
 					(unit 1)
@@ -7623,7 +7647,7 @@
 			(uuid "49617daf-df80-4861-a013-d179a089a5e4")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "C91")
 					(unit 1)
@@ -8035,7 +8059,7 @@
 			(uuid "55e91378-8d35-4b6c-a084-92861aa9ca28")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "C94")
 					(unit 1)
@@ -8790,7 +8814,7 @@
 			(uuid "b00a9ec9-a6c1-4202-97a1-ba9e2b60cf4d")
 		)
 		(instances
-			(project ""
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "Q1")
 					(unit 1)
@@ -9181,7 +9205,7 @@
 			(uuid "a8150e55-f82e-40b6-8e9e-d1be3eda5459")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0307")
 					(unit 1)
@@ -9312,7 +9336,7 @@
 			(uuid "5fa7267e-3ba7-42f4-a53f-3846005d54f4")
 		)
 		(instances
-			(project "BDCMotorControlShieldMega"
+			(project "BDCMotorController"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ba083037-3551-4343-972e-1d3a68128020"
 					(reference "#PWR0300")
 					(unit 1)
