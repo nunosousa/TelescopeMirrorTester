@@ -2564,6 +2564,236 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:SM712_SOT23"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SM712_SOT23"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf"
+				(at -3.81 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "transient voltage suppressor thyrector transil"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SM712_SOT23_0_0"
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SM712_SOT23_0_1"
+				(polyline
+					(pts
+						(xy -6.35 0) (xy 6.35 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 -1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -6.35 1.27) (xy -6.35 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.302 1.27) (xy -3.81 1.27) (xy -3.81 -1.27) (xy -4.318 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy 6.35 -1.27) (xy 6.35 1.27) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.318 1.27) (xy 3.81 1.27) (xy 3.81 -1.27) (xy 3.302 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SM712_SOT23_1_1"
+				(pin passive line
+					(at -8.89 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -3.81 90)
+					(length 2.54)
+					(name "common"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Driver_Motor:DRV8870DDA"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3793,6 +4023,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 196.85) (xy 73.66 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31c63938-9f1e-4676-b295-e12f617d1369")
+	)
+	(wire
+		(pts
 			(xy 223.52 76.2) (xy 223.52 74.93)
 		)
 		(stroke
@@ -4260,6 +4500,16 @@
 			(type default)
 		)
 		(uuid "d58c1cac-db2e-442c-b855-59beab1612ab")
+	)
+	(wire
+		(pts
+			(xy 96.52 196.85) (xy 110.49 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8d5ad40-8165-4e82-90c6-71a1cbceb06f")
 	)
 	(wire
 		(pts
@@ -6161,6 +6411,16 @@
 			"JHVcKrEkdVwqsSR1WiH8HzZtmyQZxOxaAAAAAElFTkSuQmCC"
 		)
 	)
+	(label "ENCODER_A_IN"
+		(at 59.69 196.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0578ada3-8f70-49e3-ba41-436c5936e03f")
+	)
 	(label "IN2"
 		(at 189.23 55.88 0)
 		(effects
@@ -6220,6 +6480,16 @@
 			(justify left bottom)
 		)
 		(uuid "5ae4d0b3-1368-4128-8e60-33ff0189ef6a")
+	)
+	(label "ENCODER_B_IN"
+		(at 96.52 196.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "75472072-9646-44be-8d21-4d59fade3aa9")
 	)
 	(label "ENCODER_A_IN"
 		(at 160.02 133.35 180)
@@ -7021,6 +7291,94 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 77.47 187.96 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "11415937-f827-4e1b-a262-92965f9b2993")
+		(property "Reference" "#PWR0456"
+			(at 77.47 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 78.74 184.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b08c997c-8100-4a3a-962d-7291bb3eaa17")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "#PWR0456")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0459")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0458")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR0457")
 					(unit 1)
 				)
 			)
@@ -11252,6 +11610,103 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:SM712_SOT23")
+		(at 77.47 196.85 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9bd1ef27-afe5-42c5-8fce-6e6f32ccf424")
+		(property "Reference" "D13"
+			(at 80.01 195.5799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SM712_SOT23"
+			(at 80.01 198.1199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 68.58 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf"
+			(at 77.47 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
+			(at 77.47 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "be96a9ac-d902-4fa1-8a11-5b516e9b8e8a")
+		)
+		(pin "2"
+			(uuid "1458f4c5-ce85-4faf-82ec-8e46c0cc27b9")
+		)
+		(pin "1"
+			(uuid "c4be5e3d-e443-4951-bf07-6c2c901fb3ad")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "D13")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "D16")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "D15")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "D14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Driver_Motor:DRV8870DDA")
 		(at 204.47 58.42 0)
 		(unit 1)
@@ -12094,6 +12549,97 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "#PWR065")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 77.47 205.74 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9ed291b-d4e5-4621-95e2-a8ca076ae96f")
+		(property "Reference" "#PWR0452"
+			(at 77.47 212.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 77.47 210.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 77.47 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e178bb76-4b9f-4200-9431-d31ad0f2d8cd")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "#PWR0452")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0455")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0454")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR0453")
 					(unit 1)
 				)
 			)
@@ -13778,6 +14324,94 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 114.3 187.96 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c9548f6b-524d-405d-9df8-54fb60a2ee99")
+		(property "Reference" "#PWR0460"
+			(at 114.3 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 115.57 184.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 114.3 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c0826dd2-f9af-4ebb-90f6-1936cd062fab")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "#PWR0460")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0463")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR0462")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR0461")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:74HC00")
 		(at 101.6 58.42 0)
 		(unit 3)
@@ -13944,6 +14578,103 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "U10")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:SM712_SOT23")
+		(at 114.3 196.85 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d31a03a2-7d0d-44fb-b35e-e643f61587ea")
+		(property "Reference" "D8"
+			(at 116.84 195.5799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SM712_SOT23"
+			(at 116.84 198.1199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 105.41 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf"
+			(at 114.3 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
+			(at 114.3 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "f83b72fb-4727-4797-98e1-be85010233f6")
+		)
+		(pin "2"
+			(uuid "e838613e-ca01-4792-af78-56de633ddede")
+		)
+		(pin "1"
+			(uuid "db34f7b3-4946-4925-9418-15d4e7aec0b0")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "D8")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "D12")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "D11")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "D10")
+					(unit 1)
 				)
 			)
 		)
@@ -15255,6 +15986,97 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
 					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 114.3 205.74 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc0b54f7-95d5-4bfb-8294-5b6a9189a3ec")
+		(property "Reference" "#PWR011"
+			(at 114.3 212.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 114.3 210.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 114.3 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f4cab5cf-8944-4774-b25f-84801dbd232b")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/0f35a59d-662c-4a21-95ae-6b9733fa9094"
+					(reference "#PWR011")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/1949bfb0-b654-4869-9f56-28044d883a1e"
+					(reference "#PWR0137")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/7d087673-1f16-40fb-b467-936724ec3b6c"
+					(reference "#PWR099")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/db5ef6f2-ef2e-48a9-8a35-f048f36a95fd/8074d482-79d8-49a8-9216-60ea87ed863d"
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
