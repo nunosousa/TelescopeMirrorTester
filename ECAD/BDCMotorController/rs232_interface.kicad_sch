@@ -1219,7 +1219,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5V"
+		(symbol "power:+5VL"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -1244,7 +1244,7 @@
 					)
 				)
 			)
-			(property "Value" "+5V"
+			(property "Value" "+5VL"
 				(at 0 3.556 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1276,7 +1276,7 @@
 					)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(property "Description" "Power symbol creates a global label with name \"+5VL\""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1298,7 +1298,7 @@
 					)
 				)
 			)
-			(symbol "+5V_0_1"
+			(symbol "+5VL_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -1336,7 +1336,7 @@
 					)
 				)
 			)
-			(symbol "+5V_1_1"
+			(symbol "+5VL_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
@@ -2320,6 +2320,92 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5VL")
+		(at 142.24 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4216758c-250b-4072-bfe8-9abd77a99a1a")
+		(property "Reference" "#PWR0465"
+			(at 142.24 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5VL"
+			(at 142.24 27.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VL\""
+			(at 142.24 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef2c1aba-cd06-4078-aae9-72fbb79ce2a5")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/1fe58cfe-b5e1-40dd-a576-672b073019c8"
+					(reference "#PWR0465")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/3aa0bce3-2784-4e70-9d00-9f30517f08e3"
+					(reference "#PWR0467")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/c99ec0b8-42bd-4c50-ba99-44aca8e764aa"
+					(reference "#PWR0466")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 142.24 36.83 0)
 		(unit 1)
@@ -2545,174 +2631,6 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/c99ec0b8-42bd-4c50-ba99-44aca8e764aa"
 					(reference "#PWR088")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 142.24 55.88 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a70e2d1d-8a62-4095-9c47-b545583a3929")
-		(property "Reference" "#PWR079"
-			(at 142.24 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 143.51 52.07 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 142.24 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 142.24 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 142.24 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "08413ab0-c413-4343-894b-cf8229a53b45")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/1fe58cfe-b5e1-40dd-a576-672b073019c8"
-					(reference "#PWR079")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/3aa0bce3-2784-4e70-9d00-9f30517f08e3"
-					(reference "#PWR0318")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/c99ec0b8-42bd-4c50-ba99-44aca8e764aa"
-					(reference "#PWR085")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 142.24 33.02 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a74bc040-7f96-47df-8df3-d26ba821a4e2")
-		(property "Reference" "#PWR077"
-			(at 142.24 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 143.51 29.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 142.24 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 142.24 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 142.24 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1987df64-9e4e-42c9-baa6-6a2ef87d6344")
-		)
-		(instances
-			(project "BDCMotorController"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/1fe58cfe-b5e1-40dd-a576-672b073019c8"
-					(reference "#PWR077")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/3aa0bce3-2784-4e70-9d00-9f30517f08e3"
-					(reference "#PWR0316")
-					(unit 1)
-				)
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/c99ec0b8-42bd-4c50-ba99-44aca8e764aa"
-					(reference "#PWR083")
 					(unit 1)
 				)
 			)
@@ -3089,6 +3007,92 @@
 				)
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/c99ec0b8-42bd-4c50-ba99-44aca8e764aa"
 					(reference "#PWR086")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VL")
+		(at 142.24 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ed60cbcf-8aa9-46d3-9749-f7ec5e13fc8d")
+		(property "Reference" "#PWR0468"
+			(at 142.24 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5VL"
+			(at 142.24 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VL\""
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2491b4ae-354b-4caa-ad2f-8f05274a13ec")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/1fe58cfe-b5e1-40dd-a576-672b073019c8"
+					(reference "#PWR0468")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/3aa0bce3-2784-4e70-9d00-9f30517f08e3"
+					(reference "#PWR0470")
+					(unit 1)
+				)
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/87c75775-16d6-41c5-9689-a4d02f2c78af/c99ec0b8-42bd-4c50-ba99-44aca8e764aa"
+					(reference "#PWR0469")
 					(unit 1)
 				)
 			)
