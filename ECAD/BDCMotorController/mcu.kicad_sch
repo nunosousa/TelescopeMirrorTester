@@ -5591,7 +5591,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 35.56) (xy 160.02 35.56)
+			(xy 149.86 35.56) (xy 162.56 35.56)
 		)
 		(stroke
 			(width 0)
@@ -9130,6 +9130,17 @@
 		)
 		(uuid "f37a1267-2811-43cd-9b32-c8524b00c26f")
 	)
+	(hierarchical_label "RESET_TRIGGER"
+		(shape input)
+		(at 170.18 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f818e156-ce77-4af3-920a-b328ee0357b8")
+	)
 	(hierarchical_label "MISO"
 		(shape input)
 		(at 132.08 139.7 180)
@@ -9162,6 +9173,119 @@
 			(justify left)
 		)
 		(uuid "ffdb434a-9bb8-452c-aa9c-62bde5a0f0a0")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 166.37 35.56 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "00363cb9-e126-4f6b-ad3d-630e849dae60")
+		(property "Reference" "C145"
+			(at 166.37 27.94 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nC"
+			(at 166.37 30.48 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 170.18 34.5948 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 166.37 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Status" ""
+			(at 166.37 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 166.37 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 166.37 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f78656c2-61ce-42b1-8feb-009f3efaf222")
+		)
+		(pin "1"
+			(uuid "c366068d-c0de-4caa-b5fe-1a83d97d5601")
+		)
+		(instances
+			(project "BDCMotorController"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/486ec072-7cd7-4839-92cd-8e85aa0696c7"
+					(reference "C145")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:+5V")
